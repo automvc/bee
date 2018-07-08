@@ -1,27 +1,57 @@
 
 Bee
 =========
-Bee is ORM framework.
-Honey implements the interface in the Bee.
-Bee see:</br>
-https://github.com/automvc/bee</br>
-Honey see:</br>
-https://github.com/automvc/honey</br>
+**Bee** is an ORM framework.  
+**Honey** is the implementation of the Bee.  
+**Bee** see:  
+https://github.com/automvc/bee  
+**Honey** see:  
+https://github.com/automvc/honey  
 
-<h1> Function: </h1>
-<B>Bee</B> is <B>Sea</B>(Simple, Easy, Automatic) style ORM framework.</br>
-<B>V1.0</B></br>
-Single entity Suid (select,update,insert,delete) object-oriented operation.</br>
-Automatic generate the Javabean via DB table (mysql).</br>
-PreparedStatement support.</br>
-Procedure support.</br>
-Native SQL support.</br>
-Automatic filter the null and empty field for default.</br>
-Order by,MAX,MIN,SUM,AVG,COUNT support.</br>
+
+##Requirement  
+jdk1.7+
+
+##Function: 
+
+**Bee** is **Sea** (Simple, Easy, Automatic) style ORM framework.  
+**V1.0**  
+Single entity Suid (select,update,insert,delete) object-oriented operation.  
+Automatically generate the Javabean via DB table or view(MySQL,MariaDB).  
+Javabean no annotation,no xml.  
+Automatically mapping the table column and the javabean field.  
+Javabean support the raw type:int,double,and so on.  
+PreparedStatement support.  
+Procedure support.  
+Native SQL support.  
+Batch operate support.  
+Transaction support.  
+Automatic filter the null and empty field for default.  
+MAX,MIN,SUM,AVG,COUNT support.  
+Order by,Paging.  
+Select some field.  
+Dynamic & random combination of query conditions,no need to prepare the interface in advance; new query requirements, no need to change the query interface.  
+All suid(select,update,insert,delete) operation use the same bee interface,no longer need any new one.  
+Users/Developer only need to pay attention to the Bee interface.
 
 
 Quick Start:
 =========	
+##1. Create the database and the table  
+
+Create one database,default name is bee.  
+Create the table and init the data by run the bee.sql file(it is mysql sql script).  
+
+##2. Update the database configuration in bee.properties if need  
+
+bee.db.driverName = com.mysql.jdbc.Driver  
+bee.db.url =jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8  
+bee.db.username = root  
+bee.db.password =  
+
+##3. Run the following java code  
+
+```java
 		
 	public static void main(String[] args) {
 		Suid suid=BeeFactory.getHoneyFactory().getSuid();
@@ -55,8 +85,10 @@ Quick Start:
 			System.out.println(list2.get(i).toString());
 		}
 	}
+```
 
 
 
+####Author's email:    honeysoft@126.com  
 
 
