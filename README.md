@@ -9,10 +9,10 @@ https://github.com/automvc/bee
 https://github.com/automvc/honey  
 
 
-##Requirement  
+## Requirement  
 jdk1.7+
 
-##Function: 
+## Function: 
 
 **Bee** is **Sea** (Simple, Easy, Automatic) style ORM framework.  
 **V1.0**  
@@ -37,19 +37,19 @@ Users/Developer only need to pay attention to the Bee interface.
 
 Quick Start:
 =========	
-##1. Create the database and the table  
+## 1. Create the database and the table  
 
 Create one database,default name is bee.  
 Create the table and init the data by run the bee.sql file(it is mysql sql script).  
 
-##2. Update the database configuration in bee.properties if need  
+## 2. Update the database configuration in bee.properties if need  
 
 bee.db.driverName = com.mysql.jdbc.Driver  
 bee.db.url =jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8  
 bee.db.username = root  
 bee.db.password =  
 
-##3. Run the following java code  
+## 3. Run the following java code  
 
 ```java
 		
@@ -88,7 +88,4 @@ bee.db.password =
 ```
 
 
-
-####Author's email:    honeysoft@126.com  
-
-
+#### Author's email:    honeysoft@126.com  
