@@ -26,23 +26,54 @@ import java.util.List;
  */
 public interface CallableSQL {
 	
-	public <T> List<T> select(String sql,T entity,Object preValues[]);
+	/**
+	 * 
+	 * @param callSql procedure sql
+	 * @param entity
+	 * @param preValues 只支持in类型的参数
+	 * @return
+	 */
+	public <T> List<T> select(String callSql,T entity,Object preValues[]);
 	
-	public List<String> select(String sql,Object preValues[]);
+	/**
+	 * 
+	 * @param callSql procedure sql
+	 * @param preValues 只支持in类型的参数
+	 * @return
+	 */
+	public List<String[]> select(String callSql,Object preValues[]);
 	
-	public String selectJson(String sql,Object preValues[]);
+	/**
+	 * 
+	 * @param callSql procedure sql
+	 * @param preValues 只支持in类型的参数
+	 * @return
+	 * @since  1.1
+	 */
+	public String selectJson(String callSql,Object preValues[]);
+	
+	
 //	int executeUpdate()
-	public int modify(String sql,Object preValues[]);
+	/**
+	 * 
+	 * @param callSql procedure sql
+	 * @param preValues 只支持in类型的参数
+	 * @return
+	 */
+	public int modify(String callSql,Object preValues[]);
 
 	/**
-	 * 返回CallableStatement对象以便可以设置in,out,inout参数
+	 * 返回CallableStatement对象以便可以设置in,out,inout参数.可方便调用JDBC底层的方法
 	 * @param callSql procedure sql
 	 * @return
 	 */
 	public CallableStatement getCallableStatement(String callSql);
 	
+	/**
+	 * 对于有out或inout类型的参数,可设计参数后,再调用该方法.
+	 * @param cstmt
+	 * @return
+	 */
 	public int modify(CallableStatement cstmt);
-	public <T> List<T> select(CallableStatement cstmt, T entity);
-	public String selectJson(CallableStatement cstmt);
-
+	
 }

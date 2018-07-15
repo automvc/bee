@@ -34,6 +34,9 @@ Dynamic & random combination of query conditions,no need to prepare the interfac
 All suid(select,update,insert,delete) operation use the same bee interface,no longer need any new one.  
 Users/Developer only need to pay attention to the Bee interface.
 
+**V1.1**  
+Json format Result support.  
+Procedure(Query type) support.  
 
 Quick Start:
 =========	

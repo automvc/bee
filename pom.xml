@@ -3,25 +3,24 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.bee</groupId>
 	<artifactId>bee-osql</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 
-    <properties>  
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
-    </properties>  
-    
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+	</properties>
+
 	<build>
 		<finalName>bee-${project.version}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.3.1</version>
-				<configuration>
-					<outputDirectory>D:/JavaWeb/workspace/VincyCom/WebContent/WEB-INF/lib</outputDirectory>  <!-- 生成的jar包要保存到的目录 -->
-				</configuration>
+				<version>3.0.0</version>
 			</plugin>
+
 		</plugins>
 	</build>
-
 
 </project>

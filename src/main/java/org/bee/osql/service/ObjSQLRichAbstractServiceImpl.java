@@ -147,5 +147,18 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 		//Add the business logic if need.
 		return getSuidRich().selectString(entity, selectFields);
 	}
+
+	@Override
+	public <T> String selectJson(T entity) {
+		//Add the business logic if need.
+		return getSuidRich().selectJson(entity);
+	}
+
+	@Override
+	public <T> String selectJson(T entity, IncludeType includeType) {
+		//Add the business logic if need.
+		return getSuidRich().selectJson(entity, includeType);
+	}
+	
 	
 }

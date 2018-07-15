@@ -59,6 +59,15 @@ public interface SuidRich extends Suid {
 	public <T> List<String[]> selectString(T entity,String selectFields); 
 	
 	/**
+	 * 根据实体对象entity查询数据
+	 * @param entity 与表对应的实体对象,且不能为空
+	 * entity中非null与非空字符串作为过虑条件,操作符是等号.eg:field=value
+	 * @return 返回json格式的字符串
+	 * @since  1.1
+	 */
+	public <T> String selectJson(T entity);
+	
+	/**
 	 * 只返回一个实体,数量不为1测返回null
 	 * @param entity
 	 * @return
@@ -141,4 +150,15 @@ public interface SuidRich extends Suid {
 	 * @return 成功删除的记录数
 	 */
 	public <T> int delete(T entity,IncludeType includeType);
+	
+	/**
+	 * 根据实体对象entity查询数据
+	 * @param entity 与表对应的实体对象,且不能为空
+	 * id为null不作为过滤条件
+	 * @param includeType 空字符串与null是否包含设置
+	 * @return 返回json格式的字符串
+	 * @since  1.1
+	 */
+	public <T> String selectJson(T entity,IncludeType includeType);
+
 }
