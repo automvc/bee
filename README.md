@@ -3,23 +3,24 @@ Bee
 =========
 **Bee** is an ORM framework.  
 **Honey** is the implementation of the Bee.  
+**Bee** is **Sea** (Simple, Easy, Automatic) style ORM framework.  
 **Bee** see:  
 https://github.com/automvc/bee  
 **Honey** see:  
 https://github.com/automvc/honey  
 
+## [中文文档](https://github.com/automvc/bee/blob/master/README_CN.md)
 
 ## Requirement  
 jdk1.7+
 
 ## Function: 
 
-**Bee** is **Sea** (Simple, Easy, Automatic) style ORM framework.  
 **V1.0**  
-Single entity Suid (select,update,insert,delete) object-oriented operation.  
+Single entity(table) Suid (select,update,insert,delete) object-oriented operation.  
 Automatically generate the Javabean via DB table or view(MySQL,MariaDB).  
 Javabean no annotation,no xml.  
-Automatically mapping the table column and the javabean field.  
+Automatically mapping the table column and the Javabean field.  
 Javabean support the raw type:int,double,and so on.  
 PreparedStatement support.  
 Procedure support.  
@@ -31,8 +32,8 @@ MAX,MIN,SUM,AVG,COUNT support.
 Order by,Paging.  
 Select some field.  
 Dynamic & random combination of query conditions,no need to prepare the interface in advance; new query requirements, no need to change the query interface.  
-All suid(select,update,insert,delete) operation use the same bee interface,no longer need any new one.  
-Users/Developer only need to pay attention to the Bee interface.
+All Suid(select,update,insert,delete) operation use the same Bee interface,no longer need any new dao interface.  
+Users/Developer only need to pay attention to the Bee interface.  
 
 **V1.1**  
 Json format Result support.  
@@ -56,8 +57,22 @@ bee.db.password =
 
 ```java
 		
+import java.math.BigDecimal;
+import java.util.List;
+
+import org.bee.osql.Suid;
+import org.honey.osql.core.BeeFactory;
+import org.honey.osql.example.entity.Orders;
+
+/**
+ * @author KingStar
+ * @since  1.0
+ */
+public class OsqlExamEN {
+	
 	public static void main(String[] args) {
 		Suid suid=BeeFactory.getHoneyFactory().getSuid();
+		
 		Orders orders1=new Orders();
 		orders1.setId(100001L);
 		orders1.setName("Bee--ORM Framework");
@@ -67,7 +82,7 @@ bee.db.password =
 			System.out.println(list1.get(i).toString());
 		}
 		
-		orders1.setName("Bee(V1.0)--ORM Framework");
+		orders1.setName("Bee--ORM Framework");
 		int updateNum=suid.update(orders1);   //update
 		System.out.println("update record:"+updateNum);
 		
@@ -88,7 +103,10 @@ bee.db.password =
 			System.out.println(list2.get(i).toString());
 		}
 	}
+
+}
 ```
 
 
 #### Author's email:    honeysoft@126.com  
+##### If you have any problem on bee, please let me know kindly! Thank you, so much! 
