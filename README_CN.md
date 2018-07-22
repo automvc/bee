@@ -3,7 +3,7 @@ Bee
 =========
 **Bee** 是一个 ORM框架.  
 **Honey** 是Bee的实现.  
-**Bee** 是 **Sea** 简单、易用、自动(Simple, Easy, Automatic) 风格的 ORM框架.  
+**Bee** 是 **I Sea** 直观、简单、易用、自动(Simple, Easy, Automatic) 风格的 ORM框架.  
 **Bee** 网址:  
 https://github.com/automvc/bee  
 **Honey** 网址:  

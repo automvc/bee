@@ -3,7 +3,7 @@ Bee
 =========
 **Bee** is an ORM framework.  
 **Honey** is the implementation of the Bee.  
-**Bee** is **Sea** (Simple, Easy, Automatic) style ORM framework.  
+**Bee** is **I Sea** (Intuitive,Simple, Easy, Automatic) style ORM framework.  
 **Bee** see:  
 https://github.com/automvc/bee  
 **Honey** see:  
