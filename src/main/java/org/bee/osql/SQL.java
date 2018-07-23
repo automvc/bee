@@ -41,7 +41,7 @@ public interface SQL {
 	 * select property1,property2 from beanName;
 	 * return list element as: property1[#Bee#]property2 
 	 */
-	public List<String[]> select(String sql);    //PreparedSqlLib 有调用
+	public List<String[]> select(String sql);    //PreparedSqlLib ObjSQLRich有调用
 	
 	public String selectJson(String sql);
 	

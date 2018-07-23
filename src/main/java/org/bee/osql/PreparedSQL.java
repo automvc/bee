@@ -18,20 +18,34 @@
 package org.bee.osql;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 支持带占位符(?)的sql操作.sql语句是DB能识别的SQL,非面向对象的sql.
  * 若是简单的操作,建议用面向对象的操作方式,ObjSQL和ObjSQLRich.
  * @author KingStar
  * @since  1.0
+ * 支持如name=#{name}的map参数形式
+ * @since  1.2
  */
 public interface PreparedSQL {
 
-	public <T> List<T> select(String sql,T entity,Object preValues[]);
+	public <T> List<T> select(String sql,T returnType,Object preValues[]);
 	
-	public <T> List<T> selectSomeField(String sql,T entity,Object preValues[]);
+	/**
+	 * 
+	 * @param sqlStr
+	 * @param returnType
+	 * @param map
+	 * @return
+	 */
+	public <T> List<T> select(String sqlStr,T returnType,Map<String,Object> map);
+	
+	public <T> List<T> selectSomeField(String sql,T returnType,Object preValues[]);
+	public <T> List<T> selectSomeField(String sqlStr,T returnType,Map<String,Object> map);
 	
 	public String selectFun(String sql,Object preValues[]) throws ObjSQLException;
+	public String selectFun(String sqlStr,Map<String,Object> map) throws ObjSQLException;
 
 	/**
 	 * @param sql
@@ -42,9 +56,10 @@ public interface PreparedSQL {
 	 * return list element as: property1[#Bee#]property2 
 	 */
 	public List<String[]> select(String sql,Object preValues[]);
+	public List<String[]> select(String sqlStr,Map<String,Object> map);
 	
 	public String selectJson(String sql,Object preValues[]);
-	
+	public String selectJson(String sqlStr,Map<String,Object> map);
 	/**
 	 * 操作update,insert,delete
 	 * @param sql
@@ -52,5 +67,5 @@ public interface PreparedSQL {
 	 * @return the number of successful records 返回成功操作的记录行数
 	 */
 	public int modify(String sql,Object preValues[]);
-	
+	public int modify(String sqlStr,Map<String,Object> map);
 }
