@@ -15,7 +15,7 @@ https://github.com/automvc/honey
 ## Requirement  
 jdk1.7+
 
-## Function: 
+## Feature & Function: 
 
 **V1.0**  
 Single entity(table) Suid (select,update,insert,delete) object-oriented operation.  
@@ -39,6 +39,9 @@ Users/Developer only need to pay attention to the Bee interface.
 **V1.1**  
 Json format Result support.  
 Procedure(Query type) support.  
+
+**V1.2**  
+Customer sql support #{para} placeholder,eg:name=#{name}; like keyword support:#{%para%},#{%para},#{para%}  
 
 Quick Start:
 =========	

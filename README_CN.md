@@ -39,6 +39,9 @@ SQL中排序,分页.
 Json格式结果支持.  
 Procedure存储过程支持(CallableStatement.executeQuery).  
 
+**V1.2**  
+用户自定义sql支持#{para}占位参数设置，如：eg:name=#{name}; like查询 支持:#{%para%},#{%para},#{para%} 
+
 快速开始:
 =========	
 ## 1. 创建数据库和表  
