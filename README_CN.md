@@ -22,7 +22,7 @@ jdk1.7+
 约定优于配置:Javabean没有注释,没有xml,只是纯的Javabean即可(为什么要给Javabean那么重的负担呢??!!!).  
 自动映射表的列与的字段.  
 Javabean支持原生类型:int,double等.  
-PreparedStatement支持,可防止SQL注入.  
+使用PreparedStatement防止SQL注入攻击.  
 Procedure存储过程支持.  
 原生SQL支持.  
 批处理操作支持.  
