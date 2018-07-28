@@ -20,7 +20,7 @@ package org.bee.osql;
 /**
  * Object to SQL string for rich Suid
  * 
- * @author KingStar
+ * @author Kingstar
  * @since  1.0
  */
 public interface ObjToSQLRich extends ObjToSQL{

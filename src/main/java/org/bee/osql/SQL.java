@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * 直接用sql语句操作数据库的接口
  * 在该接口中的sql字符串要是DB能识别的SQL语句
- * @author KingStar
+ * @author Kingstar
  * Create on 2013-6-30 下午10:05:36
  * @since  1.0
  */

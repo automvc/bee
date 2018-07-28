@@ -1,7 +1,7 @@
 package org.bee.osql;
 
 /**
- * @author KingStar
+ * @author Kingstar
  * @since  1.0
  */
 public enum FunctionType {

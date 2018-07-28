@@ -21,7 +21,7 @@ import java.sql.CallableStatement;
 import java.util.List;
 
 /**
- * @author KingStar
+ * @author Kingstar
  * @since  1.0
  */
 public interface CallableSQL {

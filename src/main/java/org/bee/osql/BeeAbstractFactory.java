@@ -22,7 +22,7 @@ import javax.sql.DataSource;
 import org.bee.osql.transaction.Transaction;
 
 /**
- * @author KingStar
+ * @author Kingstar
  * @since  1.0
  */
 public abstract class BeeAbstractFactory {

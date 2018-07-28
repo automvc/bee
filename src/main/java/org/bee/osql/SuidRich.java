@@ -20,7 +20,7 @@ package org.bee.osql;
 import java.util.List;
 
 /**
- * @author KingStar
+ * @author Kingstar
  * Create on 2013-6-30 下午10:06:18
  * @since  1.0
  */

@@ -22,7 +22,7 @@ package org.bee.osql;
  * entity must not be null
  * 根据entity对象转换成DB能识别的sql语句(包括:select,update,insert,delete)
  * entity 参数不能为null.
- * @author KingStar
+ * @author Kingstar
  * @since  1.0
  */
 public interface ObjToSQL{

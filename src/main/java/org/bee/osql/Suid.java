@@ -24,7 +24,7 @@ import java.util.List;
  * Don't process the null and empty string by default.
  * 数据库操作接口,包括查,改,增,删 Suid (select,update,insert,delete)
  * 默认不处理null和空字符串
- * @author KingStar
+ * @author Kingstar
  * Create on 2013-6-30 下午10:03:15
  * @since  1.0
  *
