@@ -69,7 +69,7 @@ import org.honey.osql.core.BeeFactory;
 import org.honey.osql.example.entity.Orders;
 
 /**
- * @author KingStar
+ * @author Kingstar
  * @since  1.0
  */
 public class OsqlExamEN {
