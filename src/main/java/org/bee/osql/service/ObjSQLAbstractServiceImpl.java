@@ -22,7 +22,7 @@ import java.util.List;
 import org.bee.osql.Suid;
 
 /**
- * @author KingStar
+ * @author Kingstar
  * @since  1.0
  */
 public abstract class ObjSQLAbstractServiceImpl implements ObjSQLService {

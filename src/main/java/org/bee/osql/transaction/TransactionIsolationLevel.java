@@ -18,7 +18,7 @@
 package org.bee.osql.transaction;
 
 /**
- * @author KingStar
+ * @author Kingstar
  * @since  1.0
  */
 public enum TransactionIsolationLevel

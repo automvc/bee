@@ -19,7 +19,7 @@ package org.bee.osql.dialect;
 
 /**
  * 为特定DB转换成对应的sql
- * @author KingStar
+ * @author Kingstar
  * @since  1.0
  */
 public interface DbFeature {

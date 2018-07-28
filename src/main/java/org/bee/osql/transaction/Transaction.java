@@ -20,7 +20,7 @@ package org.bee.osql.transaction;
 import java.sql.SQLException;
 
 /**
- * @author KingStar
+ * @author Kingstar
  * @since  1.0
  */
 public interface Transaction {

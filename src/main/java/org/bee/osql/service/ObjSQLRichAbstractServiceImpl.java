@@ -25,7 +25,7 @@ import org.bee.osql.OrderType;
 import org.bee.osql.SuidRich;
 
 /**
- * @author KingStar
+ * @author Kingstar
  * @since  1.0
  */
 public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServiceImpl implements ObjSQLRichService{
