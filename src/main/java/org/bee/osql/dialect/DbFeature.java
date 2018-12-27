@@ -23,6 +23,6 @@ package org.bee.osql.dialect;
  * @since  1.0
  */
 public interface DbFeature {
-	public String toFromSql(String sql,int from,int size);
-	public String toFromSql(String sql, int size);
+	public String toPageSql(String sql,int start,int size);
+	public String toPageSql(String sql, int size);
 }
