@@ -28,7 +28,7 @@ import java.util.List;
  * Create on 2013-6-30 下午10:05:36
  * @since  1.0
  */
-public interface SQL {
+public interface BeeSql {
 	
 	/**
 	 * 根据sql查询数据,数据类型与entity类型一致
