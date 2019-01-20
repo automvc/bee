@@ -35,7 +35,7 @@ public interface Suid {
 	 * 根据实体对象entity查询数据
 	 * According to entity object select records from database.
 	 * @param entity 与表对应的实体对象,且不能为空
-	 * entity中非null与非空字符串作为过虑条件,操作符是等号.eg:field=value
+	 * entity中非null且非空字符串作为过虑条件,操作符是等号.eg:field=value
 	 * entity corresponding to table and can not be null.
 	 * If the field value is not null and not empty string as filter condition, 
 	 * the operator is equal sign.eg:field=value
@@ -46,7 +46,7 @@ public interface Suid {
 	/**
 	 * 根据实体对象entity更新数据   According to entity object update database.
 	 * @param entity 与表对应的实体对象,且不能为空;entity中id属性不能为空,作为过虑条件
-	 * entity中非null与非空字符串将更新到数据库(id除外) 
+	 * entity中非null且非空字符串将更新到数据库(id除外) 
 	 * @see  SuidRich#update(T entity,String updateFieldList)
 	 * The entity corresponding to table and can not be null. 
 	 * The ID field of entity must be not null and as filter condition. 
@@ -60,7 +60,7 @@ public interface Suid {
 	/**
 	 * 根据实体对象entity插入数据 According to entity object insert record. 
 	 * @param entity 与表对应的实体对象,且不能为空
-	 * entity中非null与非空字符串将插入到数据库
+	 * entity中非null且非空字符串将插入到数据库
 	 * The entity corresponding to table and can not be null. 
 	 * The not null and not empty string will insert to database.
 	 * @return 成功插入的记录数   the numbers of insert records successfully.
@@ -70,7 +70,7 @@ public interface Suid {
 	/**
 	 * 根据实体对象entity删除数据 According to entity object delete record. 
 	 * @param entity 与表对应的实体对象,且不能为空
-	 * entity中非null与非空字符串作为过虑条件,操作符是等号.eg:field=value
+	 * entity中非null且非空字符串作为过虑条件,操作符是等号.eg:field=value
 	 * The entity corresponding to table and can not be null.
 	 * If the field value is not null and not empty string as filter condition, 
 	 * the operator is equal sign.eg:field=value
