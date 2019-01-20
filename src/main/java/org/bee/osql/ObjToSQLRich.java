@@ -32,7 +32,7 @@ public interface ObjToSQLRich extends ObjToSQL{
 	public <T> String toUpdateSQL(T entity,String updateFieldList) throws ObjSQLException;
 	public <T> String toUpdateSQL(T entity,String updateFieldList,IncludeType includeType) throws ObjSQLException;
 	
-	public <T> String toSelectFunSQL(T entity, String FieldForFun,FunctionType functionType) throws ObjSQLException;
+	public <T> String toSelectFunSQL(T entity,FunctionType functionType, String FieldForFun) throws ObjSQLException;
 	
 	public <T> String toSelectOrderBySQL(T entity, String orderFieldList) throws ObjSQLException;
 	public <T> String toSelectOrderBySQL(T entity, String orderFieldList,OrderType[] orderTypes) throws ObjSQLException;
@@ -45,5 +45,13 @@ public interface ObjToSQLRich extends ObjToSQL{
 	public  <T> String[] toInsertSQL(T[] entity);
 	public  <T> String[] toInsertSQL(T[] entity,String excludeFieldList);
 	
+	public  String toDeleteByIdSQL(Class c, Integer id);
+	public  String toDeleteByIdSQL(Class c, Long id);
+	public  String toDeleteByIdSQL(Class c, String ids);
+
+	public  <T> String toSelectByIdSQL(T entity, Integer id);
+	public  <T> String toSelectByIdSQL(T entity, Long id);
+	public  <T> String toSelectByIdSQL(T entity, String ids);
+
 	
 }
