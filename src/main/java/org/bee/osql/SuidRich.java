@@ -25,6 +25,11 @@ import java.util.List;
  * @since  1.0
  */
 public interface SuidRich extends Suid {
+	/**
+	 * @param entity
+	 * @param size 结果集大小 大于等于1
+	 * @return
+	 */
 	public <T> List<T> select(T entity,int size);
 	/**
 	 * @param entity
@@ -80,7 +85,7 @@ public interface SuidRich extends Suid {
 	 * @param functionType MAX,MIN,SUM,AVG,COUNT
 	 * @return
 	 */
-	public <T> String selectWithFun(T entity,String fieldForFun,FunctionType functionType);
+	public <T> String selectWithFun(T entity,FunctionType functionType,String fieldForFun);
 	
 	/**
 	 * order type default is:asc
@@ -160,5 +165,53 @@ public interface SuidRich extends Suid {
 	 * @since  1.1
 	 */
 	public <T> String selectJson(T entity,IncludeType includeType);
+	
+	/**
+	 * @param entity
+	 * @param id
+	 * @return
+	 * @since  1.4
+	 */
+	public <T> List<T> selectById(T entity,Integer id);
+	
+	/**
+	 * @param entity
+	 * @param id
+	 * @return
+	 * @since  1.4
+	 */
+	public <T> List<T> selectById(T entity,Long id);
+	
+	/**
+	 * @param entity
+	 * @param ids
+	 * @return
+	 * @since  1.4
+	 */
+	public <T> List<T> selectById(T entity,String ids);
+	
+	/**
+	 * @param c
+	 * @param id
+	 * @return
+	 * @since  1.4
+	 */
+	public int deleteById(Class c,Integer id);
+	
+	/**
+	 * @param c
+	 * @param id
+	 * @return
+	 * @since  1.4
+	 */
+	public int deleteById(Class c,Long id);
+	
+	/**
+	 * @param c
+	 * @param ids
+	 * @return
+	 * @since  1.4
+	 */
+	public int deleteById(Class c,String ids);
 
 }
