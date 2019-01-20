@@ -88,9 +88,9 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 	}
 
 	@Override
-	public <T> String selectWithFun(T entity, String fieldForFun,FunctionType functionType) {
+	public <T> String selectWithFun(T entity,FunctionType functionType, String fieldForFun) {
 		//Add the business logic if need.
-		return getSuidRich().selectWithFun(entity, fieldForFun, functionType);
+		return getSuidRich().selectWithFun(entity, functionType, fieldForFun);
 	}
 
 	@Override
@@ -159,6 +159,41 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 		//Add the business logic if need.
 		return getSuidRich().selectJson(entity, includeType);
 	}
-	
+
+	@Override
+	public <T> List<T> selectById(T entity, Integer id) {
+		//Add the business logic if need.
+		return  getSuidRich().selectById(entity, id);
+	}
+
+	@Override
+	public <T> List<T> selectById(T entity, Long id) {
+		//Add the business logic if need.
+		return  getSuidRich().selectById(entity, id);
+	}
+
+	@Override
+	public <T> List<T> selectById(T entity, String ids) {
+		//Add the business logic if need.
+		return  getSuidRich().selectById(entity, ids);
+	}
+
+	@Override
+	public int deleteById(Class c, Integer id) {
+		//Add the business logic if need.
+		return getSuidRich().deleteById(c, id);
+	}
+
+	@Override
+	public int deleteById(Class c, Long id) {
+		//Add the business logic if need.
+		return getSuidRich().deleteById(c, id);
+	}
+
+	@Override
+	public int deleteById(Class c, String ids) {
+		//Add the business logic if need.
+		return getSuidRich().deleteById(c, ids);
+	}
 	
 }
