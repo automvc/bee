@@ -3,7 +3,7 @@ Bee
 =========
 **Bee** 是一个 ORM框架.  
 **Honey** 是Bee的实现.  
-**Bee** 是一个直观、简单、易用、自动( **I Sea:** Intuitive, Simple, Easy, Automatic) 风格的ORM框架.  
+**Bee** 是一个节省时间的/优雅的、简易的、自动的( **Tea:** Timesaving/Tasteful, Easy, Automatic) 风格的ORM框架.  
 **Bee** 网址:  
 https://github.com/automvc/bee  
 **Honey** 网址:  
@@ -41,6 +41,12 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 
 **V1.2**  
 用户自定义sql支持#{para}占位参数设置，如：eg:name=#{name}; like查询 支持:#{%para%},#{%para},#{para%} 
+
+**V1.3**  
+增加:select/update链式编程
+
+**V1.4**  
+增加: selectById,deleteById
 
 快速开始:
 =========	
