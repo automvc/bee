@@ -8,7 +8,7 @@ Bee
 https://github.com/automvc/bee  
 **Honey** 网址:  
 https://github.com/automvc/honey  
-**Bee在gitee** 的网址:
+**Bee在gitee** 的网址:  
 https://gitee.com/automvc/bee
 
 
