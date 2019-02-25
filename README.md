@@ -9,8 +9,8 @@ https://github.com/automvc/bee
 **Honey** see:  
 https://github.com/automvc/honey  
 
-## [中文介绍](https://github.com/automvc/bee/blob/master/README_CN.md)  
-[点击链接可查看中文介绍](https://github.com/automvc/bee/blob/master/README_CN.md)  
+## [中文介绍](../../automvc/bee/blob/master/README_CN.md)  
+[点击链接可查看中文介绍](../automvc/bee/blob/master/README_CN.md)  
 
 ## Requirement  
 jdk1.7+
