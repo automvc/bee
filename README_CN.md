@@ -4,6 +4,9 @@ Bee
 **Bee** 是一个 ORM框架.  
 **Honey** 是Bee的实现.  
 **Bee** 是一个具有省时/优雅、简易、自动( **Tea:** Timesaving/Tasteful, Easy, Automatic) 风格的ORM框架.  
+你还在为不断重复写orm操作数据库的代码而烦恼吗?每写一个service业务层，就要写一个dao层(即使我们知道dao就是简单的查改增删suid操作)。
+请试试**Bee** 吧,让它帮你从烦琐的编码工程中解脱出来。它的编码复杂度是O(1)。
+
 **Bee** 网址:  
 https://github.com/automvc/bee  
 **Honey** 网址:  
