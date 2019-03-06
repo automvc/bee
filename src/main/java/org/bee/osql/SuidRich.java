@@ -184,7 +184,7 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * @param entity
-	 * @param ids
+	 * @param ids 主键id,多个用逗号隔开
 	 * @return
 	 * @since  1.4
 	 */
@@ -208,7 +208,7 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * @param c
-	 * @param ids
+	 * @param ids 主键id,多个用逗号隔开
 	 * @return
 	 * @since  1.4
 	 */

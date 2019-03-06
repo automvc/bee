@@ -4,7 +4,7 @@ package org.bee.osql;
  * @author Kingstar
  * @since  1.0
  */
-public class ObjSQLException extends Exception {
+public class ObjSQLException extends BeeException {
 	static final long serialVersionUID = -875516993124211111L;
 
 	public ObjSQLException() {

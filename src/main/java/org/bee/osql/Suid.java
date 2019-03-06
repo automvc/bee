@@ -49,7 +49,7 @@ public interface Suid {
 	 * entity中非null且非空字符串将更新到数据库(id除外) 
 	 * @see  SuidRich#update(T entity,String updateFieldList)
 	 * The entity corresponding to table and can not be null. 
-	 * The ID field of entity must be not null and as filter condition. 
+	 * The ID field of entity cannot be null and as filter condition. 
 	 * The not null and not empty string will update to database except ID.
 	 * @see  SuidRich#update(T entity,String updateFieldList)
 	 * @return 成功更新的记录数  the numbers of update records successfully.
