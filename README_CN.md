@@ -77,9 +77,9 @@ bee.db.password =
 import java.math.BigDecimal;
 import java.util.List;
 
-import org.bee.osql.Suid;
-import org.honey.osql.core.BeeFactory;
-import org.honey.osql.example.entity.Orders;
+import org.teasoft.bee.osql.Suid;
+import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.example.entity.Orders;
 
 /**
  * @author Kingstar
