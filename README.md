@@ -51,19 +51,36 @@ Add: selectById,deleteById
 
 Quick Start:
 =========	
-## 1. Create the database and the table  
+## 1. Add Bee   
+#### 1.1 if it is a maven project,add the following dependency  
+
+		<dependency>
+			<groupId>org.teasoft</groupId>
+			<artifactId>bee</artifactId>
+			<version>1.4.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.teasoft</groupId>
+			<artifactId>honey</artifactId>
+			<version>1.4.23</version>
+		</dependency>
+
+#### 1.2  Of course, can download the jar file directly  
+
+## 2. Create the database and the table  
 
 Create one database,default name is bee.  
 Create the table and init the data by run the bee.sql file(it is mysql sql script).  
 
-## 2. Update the database configuration in bee.properties if need  
+## 3. Update the database configuration in bee.properties if need  
 
 bee.db.driverName = com.mysql.jdbc.Driver  
 bee.db.url =jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8  
 bee.db.username = root  
 bee.db.password =  
 
-## 3. Run the following java code  
+## 4. Run the following java code  
 
 ```java
 		
