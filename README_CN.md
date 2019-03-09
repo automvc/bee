@@ -58,19 +58,36 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 
 快速开始:
 =========	
-## 1. 创建数据库和表  
+## 1. 引入Bee  
+#### 1.1 maven工程,添加如下依赖  
+
+		<dependency>
+			<groupId>org.teasoft</groupId>
+			<artifactId>bee</artifactId>
+			<version>1.4.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.teasoft</groupId>
+			<artifactId>honey</artifactId>
+			<version>1.4.23</version>
+		</dependency>
+
+#### 1.2  也可以直接下载jar文件  	
+		
+## 2. 创建数据库和表  
 
 创建一个数据库,默认名称为bee.  
 用bee.sql脚本创建一个表和插入初始化数据.  
 
-## 2. 更新数据库的配置信息(在bee.properties)  
+## 3. 更新数据库的配置信息(在bee.properties)  
 
 bee.db.driverName = com.mysql.jdbc.Driver  
 bee.db.url =jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8  
 bee.db.username = root  
 bee.db.password =  
 
-## 3. 运行下面的 java代码    
+## 4. 运行下面的 java代码    
 
 ```java
 		
