@@ -1,13 +1,21 @@
 
 Bee
 =========
-**Bee** 是一个 ORM框架.  
-**Honey** 是Bee的实现.  
-**Bee** 是 **I Sea** 直观、简单、易用、自动(Simple, Easy, Automatic) 风格的 ORM框架.  
+**Bee** 是一个 ORM框架。  
+**Honey** 是Bee的实现。  
+**Bee** 是一个具有省时/优雅、简易、自动( **Tea:** Timesaving/Tasteful, Easy, Automatic) 风格的ORM框架。  
+你还在为不断重复写orm操作数据库的代码而烦恼吗?每写一个service业务层，就要写一个dao层(即使我们知道dao就是简单的查改增删suid操作)。  
+请试试**Bee** 吧，让它帮你从烦琐的编码工程中解脱出来。  
+Bee是一种更接近SQL语言思维的ORM框架，  
+一种开发速度和开发成本都不比php差的Java ORM框架，  
+而且它的编码复杂度是O(1)。  
+
 **Bee** 网址:  
 https://github.com/automvc/bee  
 **Honey** 网址:  
 https://github.com/automvc/honey  
+**Bee在gitee** 的网址:  
+https://gitee.com/automvc/bee
 
 
 ## 环境要求  
@@ -19,10 +27,10 @@ jdk1.7+
 
 单表Suid(select,update,insert,delete)面向对象方式的操作,方法名与数据库Suid操作对应.  
 自动通过DB的表或视图生成Javabean(目前支持MySQL,MariaDB,其它数据库有部分类型未做映射处理,客户可通过在配置文件添加配置信息实现).  
-Javabean没有注释,没有xml,只是纯的Javabean即可(为什么要给Javabean那么重的负担呢??!!!).  
+约定优于配置:Javabean没有注解,没有xml,只是纯的Javabean即可(为什么要给Javabean那么重的负担呢??!!!).  
 自动映射表的列与的字段.  
 Javabean支持原生类型:int,double等.  
-PreparedStatement支持,可防止SQL注入.  
+使用PreparedStatement防止SQL注入攻击.  
 Procedure存储过程支持.  
 原生SQL支持.  
 批处理操作支持.  
@@ -42,33 +50,56 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 **V1.2**  
 用户自定义sql支持#{para}占位参数设置，如：eg:name=#{name}; like查询 支持:#{%para%},#{%para},#{para%} 
 
+**V1.3**  
+增加:select/update链式编程
+
+**V1.4**  
+增加: selectById,deleteById
+
 快速开始:
 =========	
-## 1. 创建数据库和表  
+## 1. 引入Bee  
+#### 1.1 maven工程,添加如下依赖  
+
+		<dependency>
+			<groupId>org.teasoft</groupId>
+			<artifactId>bee</artifactId>
+			<version>1.4.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.teasoft</groupId>
+			<artifactId>honey</artifactId>
+			<version>1.4.23</version>
+		</dependency>
+
+#### 1.2  也可以直接下载jar文件  	
+		
+## 2. 创建数据库和表  
 
 创建一个数据库,默认名称为bee.  
 用bee.sql脚本创建一个表和插入初始化数据.  
 
-## 2. 更新数据库的配置信息(在bee.properties)  
+## 3. 更新数据库的配置信息(在bee.properties)  
 
 bee.db.driverName = com.mysql.jdbc.Driver  
 bee.db.url =jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8  
 bee.db.username = root  
 bee.db.password =  
 
-## 3. 运行下面的 java代码    
+## 4. 运行下面的 java代码    
 
 ```java
 		
 import java.math.BigDecimal;
 import java.util.List;
 
-import org.bee.osql.Suid;
-import org.honey.osql.core.BeeFactory;
-import org.honey.osql.example.entity.Orders;
+import org.teasoft.bee.osql.Suid;
+import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.example.entity.Orders;
 
 /**
- * @author KingStar
+ * @author Kingstar
  * @since  1.0
  */
 public class SuidExam {
@@ -118,4 +149,5 @@ public class SuidExam {
 
 
 #### 作者的电子邮箱email:    honeysoft@126.com  
-##### 如有任何相关建议,欢迎给作者发邮件,不胜感激!
+#### 如有任何相关建议,欢迎给作者发邮件,不胜感激!  
+#### 同时,也欢迎你加入到Bee框架的开发之中,相信有你的加入,Bee会更加美好! 

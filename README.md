@@ -3,14 +3,14 @@ Bee
 =========
 **Bee** is an ORM framework.  
 **Honey** is the implementation of the Bee.  
-**Bee** is **I Sea** (Intuitive,Simple, Easy, Automatic) style ORM framework.  
+**Bee** is **Tea** (Timesaving/Tasteful, Easy, Automatic) style ORM framework.  
 **Bee** see:  
 https://github.com/automvc/bee  
 **Honey** see:  
 https://github.com/automvc/honey  
 
-## [中文介绍](https://github.com/automvc/bee/blob/master/README_CN.md)  
-[点击链接可查看中文介绍](https://github.com/automvc/bee/blob/master/README_CN.md)  
+## [中文介绍](../../../bee/blob/master/README_CN.md)  
+[点击链接可查看中文介绍](../../../bee/blob/master/README_CN.md)  
 
 ## Requirement  
 jdk1.7+
@@ -20,7 +20,7 @@ jdk1.7+
 **V1.0**  
 Single entity(table) Suid (select,update,insert,delete) object-oriented operation.  
 Automatically generate the Javabean via DB table or view(MySQL,MariaDB).  
-Javabean no annotation,no xml.  
+Convention-over-configuration:Javabean no annotation,no xml.  
 Automatically mapping the table column and the Javabean field.  
 Javabean support the raw type:int,double,and so on.  
 PreparedStatement support.  
@@ -43,33 +43,56 @@ Procedure(Query type) support.
 **V1.2**  
 Customer sql support #{para} placeholder,eg:name=#{name}; like keyword support:#{%para%},#{%para},#{para%}  
 
+**V1.3**  
+Add: chain programming(select&update)
+
+**V1.4**  
+Add: selectById,deleteById
+
 Quick Start:
 =========	
-## 1. Create the database and the table  
+## 1. Add Bee   
+#### 1.1 if it is a maven project,add the following dependency  
+
+		<dependency>
+			<groupId>org.teasoft</groupId>
+			<artifactId>bee</artifactId>
+			<version>1.4.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.teasoft</groupId>
+			<artifactId>honey</artifactId>
+			<version>1.4.23</version>
+		</dependency>
+
+#### 1.2  Of course, can download the jar file directly  
+
+## 2. Create the database and the table  
 
 Create one database,default name is bee.  
 Create the table and init the data by run the bee.sql file(it is mysql sql script).  
 
-## 2. Update the database configuration in bee.properties if need  
+## 3. Update the database configuration in bee.properties if need  
 
 bee.db.driverName = com.mysql.jdbc.Driver  
 bee.db.url =jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8  
 bee.db.username = root  
 bee.db.password =  
 
-## 3. Run the following java code  
+## 4. Run the following java code  
 
 ```java
 		
 import java.math.BigDecimal;
 import java.util.List;
 
-import org.bee.osql.Suid;
-import org.honey.osql.core.BeeFactory;
-import org.honey.osql.example.entity.Orders;
+import org.teasoft.bee.osql.Suid;
+import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.example.entity.Orders;
 
 /**
- * @author KingStar
+ * @author Kingstar
  * @since  1.0
  */
 public class OsqlExamEN {
@@ -113,4 +136,5 @@ public class OsqlExamEN {
 
 
 #### Author's email:    honeysoft@126.com  
-##### If you have any problem on bee, please let me know kindly! Thank you, so much! 
+#### If you have any problem on bee, please let me know kindly! Thank you, so much!  
+#### At the same time, welcome you to join Bee team create a better future. 
