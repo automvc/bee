@@ -55,6 +55,7 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 
 **V1.4**  
 增加: selectById,deleteById
+增加: public <T> List<T> select(T entity,String selectFields,int from,int size)
 
 快速开始:
 =========	
