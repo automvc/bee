@@ -29,9 +29,9 @@ public interface Select extends ToSql{
 	public Select rParentheses();
 	
 	//<==============condition
-	public Select op(String field, Op opType, String value);
+	public Select op(String field, Op Op, String value);
 
-	public Select op(String field, Op opType, Number value);
+	public Select op(String field, Op Op, Number value);
 
 	/**
 	 * 默认自动加 and default will automatically add and
