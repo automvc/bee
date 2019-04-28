@@ -47,6 +47,17 @@ public interface SuidRich extends Suid {
 	public <T> List<T> select(T entity,String selectFields);
 	
 	/**
+	 * 
+	 * @param entity
+	 * @param selectFields
+	 * @param from
+	 * @param size
+	 * @return
+	 * @since 1.4.3
+	 */
+	public <T> List<T> select(T entity,String selectFields,int from,int size);
+	
+	/**
 	 * select some field, every field will return the string type 
 	 * 查询部分字段,每个字段都是以字符串类型返回
 	 * @param entity
