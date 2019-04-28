@@ -48,6 +48,7 @@ Add: chain programming(select&update)
 
 **V1.4**  
 Add: selectById,deleteById
+Add: public <T> List<T> select(T entity,String selectFields,int from,int size)
 
 Quick Start:
 =========	
