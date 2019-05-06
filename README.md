@@ -1,13 +1,10 @@
 
 Bee
 =========
-**Bee** is an ORM framework.  
-**Honey** is the implementation of the Bee.  
+**Bee** is an ORM framework.   
 **Bee** is **Tea** (Timesaving/Tasteful, Easy, Automatic) style ORM framework.  
 **Bee** see:  
 https://github.com/automvc/bee  
-**Honey** see:  
-https://github.com/automvc/honey  
 
 ## [中文介绍](../../../bee/blob/master/README_CN.md)  
 [点击链接可查看中文介绍](../../../bee/blob/master/README_CN.md)  
