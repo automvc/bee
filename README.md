@@ -2,7 +2,10 @@
 Bee
 =========
 **Bee** is an ORM framework.   
-**Bee** is **Tea** (Timesaving/Tasteful, Easy, Automatic) style ORM framework.  
+**Bee** is an easy and high efficiency ORM framework.    
+**Coding Complexity is O(1),it means that Bee will do the Dao for you**.  
+**You don't need to write the Dao by yourself anymore**.  
+**Good Feature:**  Timesaving/Tasteful, Easy, Automatic (**Tea Style**)   
 **Bee** see:  
 https://github.com/automvc/bee  
 
@@ -45,13 +48,14 @@ Add: chain programming(select&update)
 
 **V1.4**  
 Add: selectById,deleteById  
-Add: public <T> List<T> select(T entity,String selectFields,int from,int size)
+Add: public <T> List<T> select(T entity,String selectFields,int from,int size)  
 
 Quick Start:
 =========	
 ## 1. Add Bee   
 #### 1.1 if it is a maven project,add the following dependency  
 
+```xml
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
@@ -63,6 +67,7 @@ Quick Start:
 			<artifactId>honey</artifactId>
 			<version>1.4.23</version>
 		</dependency>
+```
 
 #### 1.2  Of course, can download the jar file directly  
 
