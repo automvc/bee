@@ -71,6 +71,7 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 ## 1. 引入Bee  
 #### 1.1 maven工程,添加如下依赖  
 
+```xml
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
@@ -82,6 +83,7 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 			<artifactId>honey</artifactId>
 			<version>1.4.23</version>
 		</dependency>
+```
 
 #### 1.2  也可以直接下载jar文件  	
 		
