@@ -161,7 +161,7 @@ public class SuidExam {
 
 综合应用:
 =========	
-**  更快的开发Java Web的新组合：**  
+**更快的开发Java Web的新组合：**  
 [Bee+Spring+SpringMVC](../../aiteasoft/bee-spring-springmvc)  
 
 
