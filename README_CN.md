@@ -159,6 +159,11 @@ public class SuidExam {
 
 ```
 
+综合应用:
+=========	
+**  更快的开发Java Web的新组合：**  
+[Bee+Spring+SpringMVC](../../aiteasoft/bee-spring-springmvc)  
+
 
 #### 作者的电子邮箱email:    honeysoft@126.com  
 #### 如有任何相关建议,欢迎给作者发邮件,不胜感激!  
