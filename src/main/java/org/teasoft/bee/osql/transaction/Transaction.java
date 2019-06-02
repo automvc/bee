@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 the original author.All rights reserved.
+ * Copyright 2013-2019 the original author.All rights reserved.
  * Kingstar(honeysoft@126.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,23 +17,21 @@
 
 package org.teasoft.bee.osql.transaction;
 
-import java.sql.SQLException;
-
 /**
  * @author Kingstar
  * @since  1.0
  */
 public interface Transaction {
 	
-	public void begin() throws SQLException; 
-	public void commit() throws SQLException; 
-	public void rollback() throws SQLException;
+	public void begin();
+	public void commit();
+	public void rollback();
 	
-	public void setReadOnly(boolean readOnly) throws SQLException;
-	public void setTransactionIsolation(TransactionIsolationLevel level) throws SQLException;
+	public void setReadOnly(boolean readOnly);
+	public void setTransactionIsolation(TransactionIsolationLevel level);
 
-	public boolean isReadOnly() throws SQLException;
-	public int getTransactionIsolation() throws SQLException;
+	public boolean isReadOnly();
+	public int getTransactionIsolation();
 	
-	public void setTimeout(int second);
+	public void setTimeout(int seconds);
 }
