@@ -77,6 +77,7 @@ Create one database,default name is bee.
 Create the table and init the data by run the bee.sql file(it is mysql sql script).  
 
 ## 3. Update the database configuration in bee.properties if need  
+If no the bee.properties file, you can create it by yourself.
 
 bee.db.driverName = com.mysql.jdbc.Driver  
 bee.db.url =jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8  
