@@ -93,6 +93,7 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 用bee.sql脚本创建一个表和插入初始化数据.  
 
 ## 3. 更新数据库的配置信息(在bee.properties)  
+注:如果还没有bee.properties文件,可以自己新建一个.
 
 bee.db.driverName = com.mysql.jdbc.Driver  
 bee.db.url =jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8  
