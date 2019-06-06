@@ -146,6 +146,9 @@ Rapid application development:
 **Faster development of new combinations of Spring Cloud microservices：**  
 [Bee + Spring Boot](../../../bee-springboot)  
 
+  
+Contact & Welcome:
+=========	
 #### Author's email:    honeysoft@126.com  
 #### If you have any problem on bee, please let me know kindly! Thank you, so much!  
 #### At the same time, welcome you to join Bee team create a better future. 
