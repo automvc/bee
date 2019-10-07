@@ -67,6 +67,7 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 增加: public <T> List<T> select(T entity,String selectFields,int from,int size)  
 增加: selectJson add config:ignoreNull;date,time,timestamp Wit hMillisecond format  
 增加: List<String[]> select(String sql), add config:nullToEmptyString  
+完善查询结果缓存机制  
 
 快速开始:
 =========	
