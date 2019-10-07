@@ -51,7 +51,7 @@ Add: selectById,deleteById
 Add: public <T> List<T> select(T entity,String selectFields,int from,int size)  
 Enhance: selectJson add config:ignoreNull;date,time,timestamp Wit hMillisecond format  
 Enhance: List<String[]> select(String sql), add config:nullToEmptyString  
-Enhance: Cache ResultSet  
+Enhance ResultSet Cache mechanism  
 
 Quick Start:
 =========	
