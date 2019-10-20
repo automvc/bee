@@ -52,6 +52,8 @@ Add: public <T> List<T> select(T entity,String selectFields,int from,int size)
 Enhance: selectJson add config:ignoreNull;date,time,timestamp Wit hMillisecond format  
 Enhance: List<String[]> select(String sql), add config:nullToEmptyString  
 Enhance ResultSet Cache mechanism  
+Cache support: never,forever,forever and modify Syn,resultSet's size control.  
+Add: SysValue annotation  
 
 Quick Start:
 =========	
