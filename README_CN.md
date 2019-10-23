@@ -67,7 +67,9 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 增加: public <T> List<T> select(T entity,String selectFields,int from,int size)  
 增加: selectJson add config:ignoreNull;date,time,timestamp Wit hMillisecond format  
 增加: List<String[]> select(String sql), add config:nullToEmptyString  
-完善查询结果缓存机制  
+完善查询结果缓存机制(一级缓存可对用户编程透明,也可进行细粒度配置调优控制)  
+一级缓存即可支持: 不缓存列表,永久缓存列表,永久缓存且可更新列表,结果集超过一定大小可不放缓存 等细粒度配置调优控制.  
+增加: SysValue注解  
 
 快速开始:
 =========	
@@ -178,5 +180,7 @@ public class SuidExam {
 联系与欢迎:
 =========	
 #### 作者的电子邮箱email:    honeysoft@126.com  
-#### 如有任何相关建议,欢迎给作者发邮件,不胜感激!  
+#### 如有任何相关建议,欢迎给作者发邮件,不胜感激! 
+#### 更多设计细节,请关注微信公众号: 软件设计活跃区  
+<img src="weixin.jpg" width="200" heigh="200"> 
 #### 同时,也欢迎你加入到Bee框架的开发之中,相信有你的加入,Bee会更加美好! 
