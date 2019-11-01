@@ -18,29 +18,41 @@
 package org.teasoft.bee.osql;
 
 /**
+ * table name<-->entity name, coloumn name<-->field name
+ * 表名与实体名,列名与字段名互转
  * @author Kingstar
- * @since  1.4
+ * @since  1.5
  */
-public interface Cache {
-	
+public interface NameTransform {
+
 	/**
-	 * 通过查询用的sql获取缓存结果记录
-	 * @param sql 查询用的sql
+	 * 将Java实体名转成DB表名
+	 * @param entityName
 	 * @return
 	 */
-	public Object get(String sql);
+	public String toTableName(String entityName);
+	
 	
 	/**
-	 * 将结果集放入缓存
-	 * @param sql 查询用的sql
-	 * @param resultSet 结果记录
+	 * 将Java实体类的字段名转成DB表的列名
+	 * @param fieldName field name in Java entity. Java里实体类的字段名
+	 * @return
 	 */
-	public void add(String sql,Object resultSet);
+	public String toColumnName(String fieldName);
+	
+
+	/**
+	 * 将DB表名转成Java实体名
+	 * @param tableName
+	 * @return
+	 */
+	public String toEntityName(String tableName);
+	
 	
 	/**
-	 * 清除某个表相关的缓存
-	 * @param sql  会更新表数据的sql
+	 * 将DB表的列名转成Java里实体类的字段名
+	 * @param columnName DB table's column name. DB表的列名
+	 * @return
 	 */
-	public void clear(String sql);
-	
+	public String toFieldName(String columnName);
 }
