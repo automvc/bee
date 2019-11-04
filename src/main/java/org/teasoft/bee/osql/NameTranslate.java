@@ -23,7 +23,7 @@ package org.teasoft.bee.osql;
  * @author Kingstar
  * @since  1.5
  */
-public interface NameTransform {
+public interface NameTranslate {
 
 	/**
 	 * 将Java实体名转成DB表名
