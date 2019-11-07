@@ -8,7 +8,7 @@ package org.teasoft.bee.osql;
 public enum Op {
 
 	/**
-	 * eg is : =
+	 * eq is : =
 	 */
 	eq("="),
 	
@@ -28,20 +28,51 @@ public enum Op {
 	nq("!="),   // <> 
 	
 	/**
-	 * le is : <=
-	 */
-	le("<="),
-	
-	/**
 	 * ge is : >=
 	 */
 	ge(">="),
+	
+	/**
+	 * le is : <=
+	 */
+	le("<="),
 	
 	like(" like "),
 	notLike(" not like "),
 	
 	in("in"),
-	notIn("not in");
+	notIn("not in"),
+	
+	
+	/**
+	 * equal is : =
+	 */
+	equal("="),
+	
+	/**
+	 * great than(same as gt) is : >
+	 */
+	greatThan(">"),
+	
+	/**
+	 * less than(same as lt) is : <
+	 */
+	lessThan("<"),
+	
+	/**
+	 * not equal(same as nq) is : !=
+	 */
+	notEqual("!="),   // <> 
+	
+	/**
+	 * great equal(same as ge) is : >=
+	 */
+	greatEqual(">="),
+	
+	/**
+	 * less equal(same as le) is : <=
+	 */
+	lessEqual("<=");
 	
 //	not("!");   //????
 	
