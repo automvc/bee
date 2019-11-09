@@ -55,6 +55,15 @@ Enhance ResultSet Cache mechanism
 Cache support: never,forever,forever and modify Syn,resultSet's size control.  
 Add: SysValue annotation  
 
+**V1.5**  
+1.add NameTranslate interface and default implement class,support customize translation rule of  DB and   Java naming.  
+2.support jdbcTypeToFieldType-{DbName}.properties,define DB's column type map java type.  
+3.enhance Oracle's type translation；other DB can define the column type and java type.  
+mapping in file: jdbcTypeToFieldType-{DbName}.properties.  
+4.add special entity and table name mapping support.  
+5.add BeeIllegalEntityException for check illegal Entity  
+6.add file create file util.  
+
 Quick Start:
 =========	
 ## 1. Add Bee   
