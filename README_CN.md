@@ -72,12 +72,12 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 增加: SysValue注解  
 
 **V1.5**  
-1.增加NameTranslate接口和默认转换实现类，支持Jav与DB命名转换规则自定义。  
+1.增加NameTranslate接口和默认转换实现类，支持Java与DB命名转换规则自定义。  
 2.支持jdbcTypeToFieldType-{DbName}.properties,自定义DB列转Java的类型。  
 3.完善Oracle类型转换；未实现转换类型的DB，可将类型映射关系放在文件:  
   jdbcTypeToFieldType-{DbName}.properties，即可完成自动转换。  
-4.增加entity实体名与表名的特殊映射关系。  
-5.过滤非法实体类型 。 
+4.增加entity实体名与表名的特殊映射关系支持。  
+5.过滤非法实体类型。  
 6.增加文件生成工具。  
 
 快速开始:
