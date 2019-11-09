@@ -62,7 +62,7 @@ Add: SysValue annotation
 mapping in file: jdbcTypeToFieldType-{DbName}.properties.  
 4.add special entity and table name mapping support.  
 5.add BeeIllegalEntityException for check illegal Entity  
-6.add file create file util.  
+6.add create file util.  
 
 Quick Start:
 =========	
