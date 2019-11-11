@@ -61,8 +61,13 @@ Add: SysValue annotation
 3.enhance Oracle's type translation；other DB can define the column type and java type.  
 mapping in file: jdbcTypeToFieldType-{DbName}.properties.  
 4.add special entity and table name mapping support.  
-5.add BeeIllegalEntityException for check illegal Entity  
+  Optimize table name to entity name.  
+5.add BeeIllegalEntityException for check illegal Entity.  
 6.add create file util.  
+7.enhance paging function,and support customize extend interface.  
+8.fix ORA-00911 bug,it will cause when operate oracle DB with JDBC.  
+9.override the op method for default equal(in UpdateImpl and SelectImpl).  
+10.add override OperationType in enum Op.  
 
 Quick Start:
 =========	
