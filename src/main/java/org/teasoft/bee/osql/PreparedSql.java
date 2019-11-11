@@ -28,7 +28,7 @@ import java.util.Map;
  * 支持如name=#{name}的map参数形式
  * @since  1.2
  */
-public interface PreparedSQL {
+public interface PreparedSql {
 
 	public <T> List<T> select(String sql,T returnType,Object preValues[]);
 	
