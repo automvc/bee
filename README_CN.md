@@ -76,9 +76,13 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 2.支持jdbcTypeToFieldType-{DbName}.properties,自定义DB列转Java的类型。  
 3.完善Oracle类型转换；未实现转换类型的DB，可将类型映射关系放在文件:  
   jdbcTypeToFieldType-{DbName}.properties，即可完成自动转换。  
-4.增加entity实体名与表名的特殊映射关系支持。  
+4.增加entity实体名与表名的特殊映射关系支持,优化表名转实体名的情况。  
 5.过滤非法实体类型。  
 6.增加文件生成工具。  
+7.完善分页功能,并支持自定义扩展接口。  
+8.修复Oracle JDBC操作数据库ORA-00911 bug。  
+9.增加op方法重载，默认为等号(in UpdateImpl and SelectImpl)。  
+10.增加OperationType重载(in enum Op)。  
 
 快速开始:
 =========	
