@@ -24,13 +24,13 @@ import java.util.List;
  * @author Kingstar
  * @since  1.0
  */
-public interface CallableSQL {
+public interface CallableSql {
 	
 	/**
 	 * 
 	 * @param callSql procedure sql
 	 * @param entity
-	 * @param preValues 只支持in类型的参数
+	 * @param preValues parameter,just support In type; 只支持in类型的参数
 	 * @return
 	 */
 	public <T> List<T> select(String callSql,T entity,Object preValues[]);
@@ -38,7 +38,7 @@ public interface CallableSQL {
 	/**
 	 * 
 	 * @param callSql procedure sql
-	 * @param preValues 只支持in类型的参数
+	 * @param preValues parameter,just support In type; 只支持in类型的参数
 	 * @return
 	 */
 	public List<String[]> select(String callSql,Object preValues[]);
@@ -46,7 +46,7 @@ public interface CallableSQL {
 	/**
 	 * 
 	 * @param callSql procedure sql
-	 * @param preValues 只支持in类型的参数
+	 * @param preValues parameter,just support In type; 只支持in类型的参数
 	 * @return
 	 * @since  1.1
 	 */
@@ -57,7 +57,7 @@ public interface CallableSQL {
 	/**
 	 * 
 	 * @param callSql procedure sql
-	 * @param preValues 只支持in类型的参数
+	 * @param preValues parameter,just support In type; 只支持in类型的参数
 	 * @return
 	 */
 	public int modify(String callSql,Object preValues[]);
@@ -70,7 +70,7 @@ public interface CallableSQL {
 	public CallableStatement getCallableStatement(String callSql);
 	
 	/**
-	 * 对于有out或inout类型的参数,可设计参数后,再调用该方法.
+	 * 对于有out或inout类型的参数,可设置参数后,再调用该方法.
 	 * @param cstmt
 	 * @return
 	 */
