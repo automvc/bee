@@ -25,6 +25,7 @@ public interface Cache {
 	
 	/**
 	 * 通过查询用的sql获取缓存结果记录
+	 * get the cache result by sql 
 	 * @param sql 查询用的sql
 	 * @return
 	 */
@@ -32,6 +33,7 @@ public interface Cache {
 	
 	/**
 	 * 将结果集放入缓存
+	 * put the result in the cache identify with sql
 	 * @param sql 查询用的sql
 	 * @param resultSet 结果记录
 	 */
@@ -39,6 +41,7 @@ public interface Cache {
 	
 	/**
 	 * 清除某个表相关的缓存
+	 * clear the cache result by sql
 	 * @param sql  会更新表数据的sql
 	 */
 	public void clear(String sql);
