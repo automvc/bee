@@ -93,13 +93,13 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<version>1.4.2</version>
+			<version>1.5.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<version>1.4.23</version>
+			<version>1.5.0</version>
 		</dependency>
 ```
 
