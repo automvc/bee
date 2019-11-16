@@ -20,19 +20,23 @@ package org.teasoft.bee.osql;
 import java.util.List;
 
 /**
+ * 数据库操作接口,包括查,改,增,删 Suid (select,update,insert,delete),
+ * 该接口比Suid接口提供更多的参数选择.
+ * Database operation: Suid (select,update,insert,delete),
+ * it support more parameters than Suid.
  * @author Kingstar
  * Create on 2013-6-30 下午10:06:18
  * @since  1.0
  */
 public interface SuidRich extends Suid {
 	/**
-	 * @param entity
+	 * @param entity 实体类对象 
 	 * @param size 结果集大小 大于等于1
 	 * @return
 	 */
 	public <T> List<T> select(T entity,int size);
 	/**
-	 * @param entity
+	 * @param entity 实体类对象
 	 * @param from 开始下标  大于等于0
 	 * @param size 结果集大小 大于等于1
 	 * @return
@@ -40,7 +44,7 @@ public interface SuidRich extends Suid {
 	public <T> List<T> select(T entity,int from,int size);
 	
 	/**
-	 * @param entity
+	 * @param entity 实体类对象
 	 * @param selectFields 需要查询的字段  多个用逗号隔开
 	 * @return
 	 */
@@ -48,7 +52,7 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 
-	 * @param entity
+	 * @param entity 实体类对象
 	 * @param selectFields
 	 * @param from
 	 * @param size
@@ -58,9 +62,9 @@ public interface SuidRich extends Suid {
 	public <T> List<T> select(T entity,String selectFields,int from,int size);
 	
 	/**
-	 * select some field, every field will return the string type 
-	 * 查询部分字段,每个字段都是以字符串类型返回
-	 * @param entity
+	 * select,every field will return the string type 
+	 * 查询,每个字段都是以字符串类型返回
+	 * @param entity 实体类对象
 	 * @return
 	 */
 	public <T> List<String[]> selectString(T entity); 
@@ -68,14 +72,15 @@ public interface SuidRich extends Suid {
 	/**
 	 * select some field, every field will return the string type 
 	 * 查询部分字段,每个字段都是以字符串类型返回
-	 * @param entity
+	 * @param entity 实体类对象
 	 * @param selectFields  需要查询的字段  多个用逗号隔开
 	 * @return
 	 */
 	public <T> List<String[]> selectString(T entity,String selectFields); 
 	
 	/**
-	 * 根据实体对象entity查询数据
+	 * select Json type result by entity. 
+	 * 根据实体对象entity查询数据,并返回Json格式结果.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * entity中非null与非空字符串作为过虑条件,操作符是等号.eg:field=value
 	 * @return 返回json格式的字符串
@@ -84,13 +89,15 @@ public interface SuidRich extends Suid {
 	public <T> String selectJson(T entity);
 	
 	/**
-	 * 只返回一个实体,数量不为1测返回null
-	 * @param entity
-	 * @return
+	 * select one record.  
+	 * 查询一个实体
+	 * @param entity 实体类对象
+	 * @return return one record,if the size do not equal one return null.只返回一个实体,数量不为1测返回null.
 	 */
 	public <T> T selectOne(T entity);
 	
 	/**
+	 * 使用函数查询结果
 	 * @param entity 传入的实体对象,且不能为空
 	 * @param fieldForFun 需要使用函数的字段
 	 * @param functionType MAX,MIN,SUM,AVG,COUNT
@@ -99,18 +106,28 @@ public interface SuidRich extends Suid {
 	public <T> String selectWithFun(T entity,FunctionType functionType,String fieldForFun);
 	
 	/**
-	 * order type default is:asc
-	 * 返回有排序的结果集,排序的字段默认按升序排列
+	 * select result by key:order,order type default is:asc
+	 * 应用排序查询结果,排序的字段默认按升序排列
 	 * @param entity 传入的实体对象,且不能为空
 	 * @param orderFieldList 排序字段列表,多个用逗号隔开
-	 * @return
+	 * @return 返回有排序的结果集
 	 */
 	public <T> List<T> selectOrderBy(T entity,String orderFieldList);
+	
+	/**
+	 * select result by key:order
+	 * 应用排序查询结果
+	 * @param entity 传入的实体对象,且不能为空
+	 * @param orderFieldList 排序字段列表,多个用逗号隔开
+	 * @param orderTypes 排序类型列表
+	 * @return 返回有排序的结果集
+	 */
 	public <T> List<T> selectOrderBy(T entity,String orderFieldList,OrderType[] orderTypes);
 	
 	/**
-	 * 
-	 * @param entity 不能为空
+	 * update record, can list update fields. 
+	 * 更新记录,且可以指定需要更新的字段.
+	 * @param entity 实体类对象,不能为空
 	 * @param updateFieldList 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新);其它非空,非null的字段作为过滤条件
 	 * @return
 	 */
@@ -178,49 +195,49 @@ public interface SuidRich extends Suid {
 	public <T> String selectJson(T entity,IncludeType includeType);
 	
 	/**
-	 * @param entity
-	 * @param id
-	 * @return
+	 * @param entity 实体类对象
+	 * @param id value of entity's id field. 实体id字段的值
+	 * @return 返回查询对象列表
 	 * @since  1.4
 	 */
 	public <T> List<T> selectById(T entity,Integer id);
 	
 	/**
-	 * @param entity
-	 * @param id
-	 * @return
+	 * @param entity 实体类对象
+	 * @param id value of entity's id field. 实体id字段的值
+	 * @return 返回查询对象列表
 	 * @since  1.4
 	 */
 	public <T> List<T> selectById(T entity,Long id);
 	
 	/**
-	 * @param entity
-	 * @param ids 主键id,多个用逗号隔开
-	 * @return
+	 * @param entity 实体类对象
+	 * @param ids values of entity's id field.实体id字段的值,多个用逗号隔开
+	 * @return 返回查询对象列表
 	 * @since  1.4
 	 */
 	public <T> List<T> selectById(T entity,String ids);
 	
 	/**
-	 * @param c
+	 * @param c 实体类类型
 	 * @param id
-	 * @return
+	 * @return 返回成功删除记录数
 	 * @since  1.4
 	 */
 	public int deleteById(Class c,Integer id);
 	
 	/**
-	 * @param c
-	 * @param id
-	 * @return
+	 * @param c 实体类类型
+	 * @param id value of entity's id field. 实体id字段的值
+	 * @return 返回成功删除记录数
 	 * @since  1.4
 	 */
 	public int deleteById(Class c,Long id);
 	
 	/**
-	 * @param c
-	 * @param ids 主键id,多个用逗号隔开
-	 * @return
+	 * @param c 实体类类型
+	 * @param ids ids values of entity's id field.实体id字段的值,多个用逗号隔开
+	 * @return 返回成功删除记录数
 	 * @since  1.4
 	 */
 	public int deleteById(Class c,String ids);
