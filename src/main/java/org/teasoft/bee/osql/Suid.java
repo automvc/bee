@@ -20,9 +20,9 @@ package org.teasoft.bee.osql;
 import java.util.List;
 
 /**
- * 数据库操作接口,包括查,改,增,删 Suid (select,update,insert,delete)
+ * 数据库操作接口,包括查,改,增,删 Suid (select,update,insert,delete),
  * 默认不处理null和空字符串
- * Database operation: Suid (select,update,insert,delete)
+ * Database operation: Suid (select,update,insert,delete),
  * the null and empty string are not handled by default
  * @author Kingstar
  * Create on 2013-6-30 下午10:03:15
