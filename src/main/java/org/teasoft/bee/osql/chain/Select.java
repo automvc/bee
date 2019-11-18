@@ -32,9 +32,13 @@ public interface Select extends ToSql{
 	public Select op(String field, Op Op, String value);
 
 	public Select op(String field, Op Op, Number value);
+	
+	public Select op(String field, String value);
+
+	public Select op(String field, Number value);
 
 	/**
-	 * 默认自动加 and default will automatically add and
+	 * 默认自动加 and. Default will automatically add and.
 	 * 
 	 * @return
 	 */
