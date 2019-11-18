@@ -32,9 +32,13 @@ public interface Update extends ToSql{
 	public Update op(String field, Op opType, String value);
 
 	public Update op(String field, Op opType, Number value);
+	
+	public Update op(String field, String value);
+
+	public Update op(String field, Number value);
 
 	/**
-	 * 默认自动加 and default will automatically add and
+	 * 默认自动加 and. Default will automatically add and.
 	 * 
 	 * @return
 	 */
