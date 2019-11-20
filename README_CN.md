@@ -2,7 +2,7 @@
 Bee
 =========
 **Bee** 是一个 ORM框架,它的开发速度快，编码少,还很简单。    
-**Bee** 是一个具有省时/优雅、简易、自动( **Tea:** Timesaving/Tasteful, Easy, Automatic) 风格的ORM框架。  
+**Bee** 是一个具有人工智能(AI)特性，省时/优雅、简易、自动( **AiTea:** Timesaving/Tasteful, Easy, Automatic) 风格的ORM软件框架(AiTeaSoft)(IT-->AiTea 的思维转变!)。  
 你还在为不断重复写ORM操作数据库的代码而烦恼吗?每写一个service业务层，就要写一个dao层(即使我们知道dao就是简单的查改增删suid操作)。  
 请试试**Bee** 吧，让它帮你从烦琐的编码工作中解脱出来。  
 Bee是一种更接近SQL语言思维的ORM框架，  
