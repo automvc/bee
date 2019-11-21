@@ -23,64 +23,63 @@ import java.util.List;
  * 数据库操作接口,包括查,改,增,删 Suid (select,update,insert,delete),
  * 该接口比Suid接口提供更多的参数选择.
  * Database operation: Suid (select,update,insert,delete),
- * it support more parameters than Suid.
+ * it supports more parameters than Suid.
  * @author Kingstar
  * Create on 2013-6-30 下午10:06:18
  * @since  1.0
  */
 public interface SuidRich extends Suid {
 	/**
-	 * @param entity 实体类对象 
-	 * @param size 结果集大小 大于等于1
+	 * @param entity 实体类对象 ,且不能为空
+	 * @param size 结果集大小 大于等于1. fetch result size (>0).
 	 * @return
 	 */
 	public <T> List<T> select(T entity,int size);
 	/**
-	 * @param entity 实体类对象
-	 * @param from 开始下标  大于等于0
-	 * @param size 结果集大小 大于等于1
+	 * @param entity 实体类对象,且不能为空
+	 * @param from 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size 结果集大小 大于等于1. fetch result size (>0).
 	 * @return
 	 */
 	public <T> List<T> select(T entity,int from,int size);
 	
 	/**
-	 * @param entity 实体类对象
-	 * @param selectFields 需要查询的字段  多个用逗号隔开
+	 * @param entity 实体类对象,且不能为空
+	 * @param selectFields 需要查询的字段,多个用逗号隔开. select fields,if more than one,separate with comma.
 	 * @return
 	 */
 	public <T> List<T> select(T entity,String selectFields);
 	
 	/**
-	 * 
-	 * @param entity 实体类对象
-	 * @param selectFields
-	 * @param from
-	 * @param size
+	 * @param entity 实体类对象,且不能为空
+	 * @param selectFields 需要查询的字段,多个用逗号隔开. select fields,if more than one,separate with comma.
+	 * @param from 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size 结果集大小 大于等于1. fetch result size (>0).
 	 * @return
 	 * @since 1.4.3
 	 */
 	public <T> List<T> select(T entity,String selectFields,int from,int size);
 	
 	/**
-	 * select,every field will return the string type 
-	 * 查询,每个字段都是以字符串类型返回
-	 * @param entity 实体类对象
+	 * 查询实体,每个字段都是以字符串类型返回.
+	 * select entity,every field will return the string type.
+	 * @param entity 实体类对象,且不能为空
 	 * @return
 	 */
 	public <T> List<String[]> selectString(T entity); 
 	
 	/**
-	 * select some field, every field will return the string type 
-	 * 查询部分字段,每个字段都是以字符串类型返回
-	 * @param entity 实体类对象
-	 * @param selectFields  需要查询的字段  多个用逗号隔开
+	 * 查询部分字段,每个字段都是以字符串类型返回.
+	 * select some field, every field will return the string type. 
+	 * @param entity 实体类对象,且不能为空
+	 * @param selectFields  需要查询的字段,多个用逗号隔开. select fields,if more than one,separate with comma.
 	 * @return
 	 */
 	public <T> List<String[]> selectString(T entity,String selectFields); 
 	
 	/**
-	 * select Json type result by entity. 
 	 * 根据实体对象entity查询数据,并返回Json格式结果.
+	 * select Json type result by entity. 
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * entity中非null与非空字符串作为过虑条件,操作符是等号.eg:field=value
 	 * @return 返回json格式的字符串
@@ -89,15 +88,15 @@ public interface SuidRich extends Suid {
 	public <T> String selectJson(T entity);
 	
 	/**
+	 * 查询一个实体.
 	 * select one record.  
-	 * 查询一个实体
 	 * @param entity 实体类对象
-	 * @return return one record,if the size do not equal one return null.只返回一个实体,数量不为1测返回null.
+	 * @return 只返回一个实体,数量不为1测返回null.return one record,if the size do not equal one, return null.
 	 */
 	public <T> T selectOne(T entity);
 	
 	/**
-	 * 使用函数查询结果
+	 * 使用函数查询结果.select result with function.
 	 * @param entity 传入的实体对象,且不能为空
 	 * @param fieldForFun 需要使用函数的字段
 	 * @param functionType MAX,MIN,SUM,AVG,COUNT
@@ -106,8 +105,8 @@ public interface SuidRich extends Suid {
 	public <T> String selectWithFun(T entity,FunctionType functionType,String fieldForFun);
 	
 	/**
+	 * 应用排序查询结果,排序的字段默认按升序排列.
 	 * select result by key:order,order type default is:asc
-	 * 应用排序查询结果,排序的字段默认按升序排列
 	 * @param entity 传入的实体对象,且不能为空
 	 * @param orderFieldList 排序字段列表,多个用逗号隔开
 	 * @return 返回有排序的结果集
@@ -115,8 +114,8 @@ public interface SuidRich extends Suid {
 	public <T> List<T> selectOrderBy(T entity,String orderFieldList);
 	
 	/**
-	 * select result by key:order
-	 * 应用排序查询结果
+	 * 应用排序查询结果.
+	 * select result by key:order.
 	 * @param entity 传入的实体对象,且不能为空
 	 * @param orderFieldList 排序字段列表,多个用逗号隔开
 	 * @param orderTypes 排序类型列表
@@ -125,8 +124,8 @@ public interface SuidRich extends Suid {
 	public <T> List<T> selectOrderBy(T entity,String orderFieldList,OrderType[] orderTypes);
 	
 	/**
-	 * update record, can list update fields. 
 	 * 更新记录,且可以指定需要更新的字段.
+	 * update record, can list update fields. 
 	 * @param entity 实体类对象,不能为空
 	 * @param updateFieldList 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新);其它非空,非null的字段作为过滤条件
 	 * @return
@@ -134,7 +133,8 @@ public interface SuidRich extends Suid {
 	public <T> int update(T entity,String updateFieldList);
 	
 	/**
-	 * 根据实体对象entity更新数据
+	 * 根据实体对象entity更新数据.
+	 * update record according to entity.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * id为null不作为过滤条件
 	 * @param updateFieldList 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新)
@@ -150,9 +150,10 @@ public interface SuidRich extends Suid {
 	public <T> int[] insert(T[] entity,int batchSize,String excludeFieldList);
 	
 	/**
-	 * 根据实体对象entity查询数据
+	 * 根据实体对象entity查询数据.
+	 * select record according to entity.
 	 * @param entity 与表对应的实体对象,且不能为空
-	 * id为null不作为过滤条件
+	 * id为时null不作为过滤条件
 	 * @param includeType 空字符串与null是否包含设置
 	 * @return 返回的list可包含多个实体(多条记录)
 	 */
@@ -195,31 +196,31 @@ public interface SuidRich extends Suid {
 	public <T> String selectJson(T entity,IncludeType includeType);
 	
 	/**
-	 * @param entity 实体类对象
-	 * @param id value of entity's id field. 实体id字段的值
+	 * @param entity 实体类对象,且不能为空
+	 * @param id 实体id字段的值.value of entity's id field. 
 	 * @return 返回查询对象列表
 	 * @since  1.4
 	 */
 	public <T> List<T> selectById(T entity,Integer id);
 	
 	/**
-	 * @param entity 实体类对象
-	 * @param id value of entity's id field. 实体id字段的值
+	 * @param entity 实体类对象,且不能为空
+	 * @param id 实体id字段的值.value of entity's id field.
 	 * @return 返回查询对象列表
 	 * @since  1.4
 	 */
 	public <T> List<T> selectById(T entity,Long id);
 	
 	/**
-	 * @param entity 实体类对象
-	 * @param ids values of entity's id field.实体id字段的值,多个用逗号隔开
+	 * @param entity 实体类对象,且不能为空
+	 * @param ids 实体id字段的值,多个用逗号隔开.values of entity's id field.
 	 * @return 返回查询对象列表
 	 * @since  1.4
 	 */
 	public <T> List<T> selectById(T entity,String ids);
 	
 	/**
-	 * @param c 实体类类型
+	 * @param c 实体类类型,且不能为空
 	 * @param id
 	 * @return 返回成功删除记录数
 	 * @since  1.4
@@ -227,16 +228,16 @@ public interface SuidRich extends Suid {
 	public int deleteById(Class c,Integer id);
 	
 	/**
-	 * @param c 实体类类型
-	 * @param id value of entity's id field. 实体id字段的值
+	 * @param c 实体类类型,且不能为空
+	 * @param id 实体id字段的值. value of entity's id field.
 	 * @return 返回成功删除记录数
 	 * @since  1.4
 	 */
 	public int deleteById(Class c,Long id);
 	
 	/**
-	 * @param c 实体类类型
-	 * @param ids ids values of entity's id field.实体id字段的值,多个用逗号隔开
+	 * @param c 实体类类型,且不能为空
+	 * @param ids 实体id字段的值,多个用逗号隔开.ids values of entity's id field.
 	 * @return 返回成功删除记录数
 	 * @since  1.4
 	 */
