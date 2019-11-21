@@ -143,10 +143,34 @@ public interface SuidRich extends Suid {
 	 */
 	public <T> int update(T entity,String updateFieldList,IncludeType includeType);
 	
+	/**
+	 * 批量插入数据. insert records by batch.
+	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
+	 * @return
+	 */
 	public <T> int[] insert(T[] entity);
+	
+	/**
+	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
+	 * @param batchSize
+	 * @return
+	 */
 	public <T> int[] insert(T[] entity,int batchSize);
 	
+	/**
+	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
+	 * @param excludeFieldList
+	 * @return
+	 */
 	public <T> int[] insert(T[] entity,String excludeFieldList);
+	
+	/**
+	 * 批量插入数据,可以指定不插入的字段.
+	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
+	 * @param batchSize 批操作数量大小.batch size.
+	 * @param excludeFieldList 不插入的字段列表.don't insert fields list.
+	 * @return
+	 */
 	public <T> int[] insert(T[] entity,int batchSize,String excludeFieldList);
 	
 	/**
