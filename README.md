@@ -50,7 +50,7 @@ Add: chain programming(select&update)
 
 **V1.4**  
 Add: selectById,deleteById  
-Add: public <T> List<T> select(T entity,String selectFields,int from,int size)  
+Add: public <T> List<T> select(T entity,String selectFields,int start,int size)  
 Enhance: selectJson add config:ignoreNull;date,time,timestamp Wit hMillisecond format  
 Enhance: List<String[]> select(String sql), add config:nullToEmptyString  
 Enhance ResultSet Cache mechanism  
