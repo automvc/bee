@@ -19,6 +19,7 @@ package org.teasoft.bee.osql.service;
 
 import java.util.List;
 
+import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Suid;
 
 /**
@@ -51,5 +52,11 @@ public abstract class ObjSQLAbstractServiceImpl implements ObjSQLService {
 	public <T> int update(T entity){
 		//Add the business logic if need.
 		return getSuid().update(entity);
+	}
+	
+	@Override
+	public <T> List<T> select(T entity, Condition condition) {
+		//Add the business logic if need.
+		return getSuid().select(entity, condition);
 	}
 }
