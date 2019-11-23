@@ -40,8 +40,8 @@ public enum Op {
 	like(" like "),
 	notLike(" not like "),
 	
-	in("in"),
-	notIn("not in"),
+	in(" in"),
+	notIn(" not in"),
 	
 	
 	/**
