@@ -10,7 +10,7 @@ import org.teasoft.bee.osql.BeeException;
 
 /**
  * @author Kingstar
- * @since  1.6
+ * @since  1.5
  */
 public class BeeIllegalParameterException extends BeeException {
 	
