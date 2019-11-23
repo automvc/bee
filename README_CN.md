@@ -64,7 +64,7 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 
 **V1.4**  
 增加: selectById,deleteById  
-增加: public <T> List<T> select(T entity,String selectFields,int from,int size)  
+增加: public <T> List<T> select(T entity,String selectFields,int start,int size)  
 增加: selectJson add config:ignoreNull;date,time,timestamp Wit hMillisecond format  
 增加: List<String[]> select(String sql), add config:nullToEmptyString  
 完善查询结果缓存机制(一级缓存可对用户编程透明,也可进行细粒度配置调优控制)  
