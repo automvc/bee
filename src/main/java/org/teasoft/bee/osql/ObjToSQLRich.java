@@ -26,9 +26,9 @@ package org.teasoft.bee.osql;
 public interface ObjToSQLRich extends ObjToSQL{
 
 	public <T> String toSelectSQL(T entity,int size);
-	public <T> String toSelectSQL(T entity,int from,int size);
+	public <T> String toSelectSQL(T entity,int start,int size);
 	public <T> String toSelectSQL(T entity,String fieldList) throws ObjSQLException;
-	public <T> String toSelectSQL(T entity,String selectFields,int from,int size);
+	public <T> String toSelectSQL(T entity,String selectFields,int start,int size);
 	
 	public <T> String toUpdateSQL(T entity,String updateFieldList) throws ObjSQLException;
 	public <T> String toUpdateSQL(T entity,String updateFieldList,IncludeType includeType) throws ObjSQLException;
