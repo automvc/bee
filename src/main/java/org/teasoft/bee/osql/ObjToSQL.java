@@ -31,5 +31,13 @@ public interface ObjToSQL{
 	public  <T> String toDeleteSQL(T entity) ;
 	public  <T> String toInsertSQL(T entity) ;
 	public  <T> String toUpdateSQL(T entity) throws ObjSQLException;
+	
+    /**
+     * @param entity
+     * @param condition
+     * @return
+     * @since  1.6
+     */
+	public  <T> String toSelectSQL(T entity,Condition condition) ;
 
 }
