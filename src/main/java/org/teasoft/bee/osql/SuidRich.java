@@ -37,11 +37,11 @@ public interface SuidRich extends Suid {
 	public <T> List<T> select(T entity,int size);
 	/**
 	 * @param entity 实体类对象,且不能为空
-	 * @param from 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
 	 * @param size 结果集大小 大于等于1. fetch result size (>0).
 	 * @return
 	 */
-	public <T> List<T> select(T entity,int from,int size);
+	public <T> List<T> select(T entity,int start,int size);
 	
 	/**
 	 * @param entity 实体类对象,且不能为空
@@ -53,12 +53,12 @@ public interface SuidRich extends Suid {
 	/**
 	 * @param entity 实体类对象,且不能为空
 	 * @param selectFields 需要查询的字段,多个用逗号隔开. select fields,if more than one,separate with comma.
-	 * @param from 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
 	 * @param size 结果集大小 大于等于1. fetch result size (>0).
 	 * @return
 	 * @since 1.4.3
 	 */
-	public <T> List<T> select(T entity,String selectFields,int from,int size);
+	public <T> List<T> select(T entity,String selectFields,int start,int size);
 	
 	/**
 	 * 查询实体,每个字段都是以字符串类型返回.
