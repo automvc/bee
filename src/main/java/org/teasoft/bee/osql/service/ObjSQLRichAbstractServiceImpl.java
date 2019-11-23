@@ -39,15 +39,15 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 	}
 
 	@Override
-	public <T> List<T> select(T entity, int from, int size){
+	public <T> List<T> select(T entity, int start, int size){
 		//Add the business logic if need.
-		return getSuidRich().select(entity,from,size);
+		return getSuidRich().select(entity,start,size);
 	}
 	
 	@Override
-	public <T> List<T> select(T entity, String selectFields, int from, int size) {
+	public <T> List<T> select(T entity, String selectFields, int start, int size) {
 		//Add the business logic if need.
-		return getSuidRich().select(entity,selectFields,from,size);
+		return getSuidRich().select(entity,selectFields,start,size);
 	}
 
 	@Override
