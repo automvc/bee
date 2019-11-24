@@ -62,6 +62,8 @@ public interface ObjToSQLRich extends ObjToSQL{
      * @since  1.6
      */
 	public  <T> String toSelectSQL(T entity, IncludeType includeType, Condition condition);
+	public <T> String toUpdateBySQL(T entity,String whereFieldList);
+	public <T> String toUpdateBySQL(T entity,String whereFieldList,IncludeType includeType);
 	
 
 	
