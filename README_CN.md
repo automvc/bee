@@ -85,9 +85,16 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 10.增加OperationType重载(in enum Op)。  
 
 **V1.6**  
-1.增加面向对象方式复杂查询支持.  
+1.Suid增加面向对象方式复杂查询支持.  
   Suid接口增加方法:public <T> List<T> select(T entity,Condition condition);  
-
+   支持范围查询;支持同时使用范围查询、模糊查询、in、>、>=、<、<=、分组、having过滤、排序、分页等复杂查询。  
+2.SuidRich增加面向对象方式复杂查询支持.  
+SuidRich接口增加方法:  
+select(T entity, IncludeType includeType, Condition condition)  
+selectJson(T entity, IncludeType includeType, Condition condition)  
+3.SuidRich增加更新方法:  
+updateBy(T entity,String whereFieldList)  
+updateBy(T entity,String whereFieldList,IncludeType includeType)  
 
 快速开始:
 =========	
@@ -180,6 +187,7 @@ public class SuidExam {
 	}
 
 }
+//注意: 事务,分页,排序,范围查询,查询结果返回json等都支持,这里只是一个入门例子.
 
 ```
 
