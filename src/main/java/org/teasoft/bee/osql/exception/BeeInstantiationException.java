@@ -9,6 +9,7 @@ package org.teasoft.bee.osql.exception;
 import org.teasoft.bee.osql.BeeException;
 
 /**
+ * 对应java.lang.InstantiationException
  * @author Kingstar
  * @since  1.4
  */
