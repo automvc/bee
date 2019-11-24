@@ -84,6 +84,11 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 9.增加op方法重载，默认为等号(in UpdateImpl and SelectImpl)。  
 10.增加OperationType重载(in enum Op)。  
 
+**V1.6**  
+1.增加面向对象方式复杂查询支持.  
+  Suid接口增加方法:public <T> List<T> select(T entity,Condition condition);  
+
+
 快速开始:
 =========	
 ## 1. 引入Bee  
