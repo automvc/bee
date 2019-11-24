@@ -19,6 +19,7 @@ package org.teasoft.bee.osql.service;
 
 import java.util.List;
 
+import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.IncludeType;
 import org.teasoft.bee.osql.OrderType;
@@ -200,6 +201,32 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 	public int deleteById(Class c, String ids) {
 		//Add the business logic if need.
 		return getSuidRich().deleteById(c, ids);
+	}
+
+	
+	
+	@Override
+	public <T> List<T> select(T entity, IncludeType includeType, Condition condition) {
+		//Add the business logic if need.
+		return getSuidRich().select(entity, includeType,condition);
+	}
+
+	@Override
+	public <T> String selectJson(T entity, IncludeType includeType, Condition condition) {
+		//Add the business logic if need.
+		return getSuidRich().selectJson(entity, includeType,condition);
+	}
+
+	@Override
+	public <T> int updateBy(T entity, String whereFieldList) {
+		//Add the business logic if need.
+		return getSuidRich().updateBy(entity, whereFieldList);
+	}
+
+	@Override
+	public <T> int updateBy(T entity, String whereFieldList, IncludeType includeType) {
+		//Add the business logic if need.
+		return getSuidRich().updateBy(entity, whereFieldList,includeType);
 	}
 	
 }
