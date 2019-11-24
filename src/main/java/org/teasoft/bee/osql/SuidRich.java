@@ -133,7 +133,7 @@ public interface SuidRich extends Suid {
 	public <T> int update(T entity,String updateFieldList);
 	
 	/**
-	 * 根据实体对象entity更新数据.
+	 * 根据实体对象entity更新数据,可以指定需要更新的字段.
 	 * update record according to entity.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * id为null不作为过滤条件
@@ -266,5 +266,51 @@ public interface SuidRich extends Suid {
 	 * @since  1.4
 	 */
 	public int deleteById(Class c,String ids);
+	
+	
+	/**
+	 * 根据实体对象entity查询数据.
+	 * select record according to entity.
+	 * @param entity 与表对应的实体对象,且不能为空
+	 * id为时null不作为过滤条件
+	 * @param includeType 空字符串与null是否包含设置
+	 * @return 返回的list可包含多个实体(多条记录)
+	 * @since  1.6
+	 */
+    public <T> List<T> select(T entity,IncludeType includeType,Condition condition);
+    
+	/**
+	 * 根据实体对象entity查询数据
+	 * @param entity 与表对应的实体对象,且不能为空
+	 * id为null不作为过滤条件
+	 * @param includeType 空字符串与null是否包含设置
+	 * @return 返回json格式的字符串
+	 * @since  1.6
+	 */
+	public <T> String selectJson(T entity,IncludeType includeType,Condition condition);
+	
+	
+	/**
+	 * 更新记录,且可以指定作为条件的字段.
+	 * update record according to whereFieldList.
+	 * @param entity 实体类对象,不能为空
+	 * 默认只处理非空,非null的字段
+	 * @param whereFieldList 作为条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
+	 * @return
+	 * @since  1.6
+	 */
+	public <T> int updateBy(T entity,String whereFieldList);
+	
+	/**
+	 * 更新记录,且可以指定作为条件的字段和指定字段的过滤类型
+	 * update record according to whereFieldList.
+	 * @param entity 与表对应的实体对象,且不能为空
+	 * id为null不作为过滤条件
+	 * @param whereFieldList 作为条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
+	 * @param includeType 空字符串与null是否包含设置(是否作为过滤条件)
+	 * @return 更新的记录数
+	 * @since  1.6
+	 */
+	public <T> int updateBy(T entity,String whereFieldList,IncludeType includeType);
 
 }
