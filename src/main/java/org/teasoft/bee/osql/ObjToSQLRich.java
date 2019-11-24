@@ -53,6 +53,16 @@ public interface ObjToSQLRich extends ObjToSQL{
 	public  <T> String toSelectByIdSQL(T entity, Integer id);
 	public  <T> String toSelectByIdSQL(T entity, Long id);
 	public  <T> String toSelectByIdSQL(T entity, String ids);
+	
+    /**
+     * @param entity
+     * @param includeType
+     * @param condition
+     * @return
+     * @since  1.6
+     */
+	public  <T> String toSelectSQL(T entity, IncludeType includeType, Condition condition);
+	
 
 	
 }
