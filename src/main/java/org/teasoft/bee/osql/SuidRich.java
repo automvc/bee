@@ -294,8 +294,9 @@ public interface SuidRich extends Suid {
 	 * 更新记录,且可以指定作为条件的字段.
 	 * update record according to whereFieldList.
 	 * @param entity 实体类对象,不能为空
-	 * 默认只处理非空,非null的字段
+	 * 没指定为whereFieldList的字段,作为set部分,默认只处理非空,非null的字段
 	 * @param whereFieldList 作为条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
+	 * 指定作为条件的,都转换.id为null不作为过滤条件
 	 * @return
 	 * @since  1.6
 	 */
@@ -305,8 +306,9 @@ public interface SuidRich extends Suid {
 	 * 更新记录,且可以指定作为条件的字段和指定字段的过滤类型
 	 * update record according to whereFieldList.
 	 * @param entity 与表对应的实体对象,且不能为空
-	 * id为null不作为过滤条件
+	 * 没指定为whereFieldList的字段,作为set部分.
 	 * @param whereFieldList 作为条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
+	 * 指定作为条件的,都转换.id为null不作为过滤条件
 	 * @param includeType 空字符串与null是否包含设置(是否作为过滤条件)
 	 * @return 更新的记录数
 	 * @since  1.6
