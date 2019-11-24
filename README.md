@@ -80,13 +80,13 @@ Quick Start:
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<version>1.5.0</version>
+			<version>1.6.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<version>1.5.0</version>
+			<version>1.6.0</version>
 		</dependency>
 ```
 
@@ -155,7 +155,7 @@ public class OsqlExamEN {
 			System.out.println(list2.get(i).toString());
 		}
 	}
-
+// notice: this is just a simple sample. Bee suport transaction,paging,complicate select,slect json,and so on.
 }
 ```
 
