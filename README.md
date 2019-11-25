@@ -71,6 +71,19 @@ mapping in file: jdbcTypeToFieldType-{DbName}.properties.
 9.override the op method for default equal(in UpdateImpl and SelectImpl).  
 10.add override OperationType in enum Op.  
 
+**V1.6**  
+1.Suid add complicate select oriented object. 
+  Suid add method:public <T> List<T> select(T entity,Condition condition);  
+  support complicate select;support between、like、in、>、>=、<、<=、group by、having、order by、paging use at same time.  
+2.SuidRich add complicate select oriented object.  
+SuidRich add new method:  
+select(T entity, IncludeType includeType, Condition condition)  
+selectJson(T entity, IncludeType includeType, Condition condition)  
+3.SuidRich add new method:  
+updateBy(T entity,String whereFieldList)  
+updateBy(T entity,String whereFieldList,IncludeType includeType)  
+4.add SqlNullException in PreparedSqlLib.  
+
 Quick Start:
 =========	
 ## 1. Add Bee   
