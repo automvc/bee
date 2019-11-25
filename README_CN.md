@@ -95,6 +95,7 @@ selectJson(T entity, IncludeType includeType, Condition condition)
 3.SuidRich增加更新方法:  
 updateBy(T entity,String whereFieldList)  
 updateBy(T entity,String whereFieldList,IncludeType includeType)  
+4.add SqlNullException in PreparedSqlLib.  
 
 快速开始:
 =========	
