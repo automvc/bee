@@ -58,7 +58,7 @@ Cache support: never,forever,forever and modify Syn,resultSet's size control.
 Add: SysValue annotation  
 
 **V1.5**  
-1.add NameTranslate interface and default implement class,support customize translation rule of  DB and   Java naming.  
+1.add NameTranslate interface and default implement class,support customize translation rule of DB and Java naming.  
 2.support jdbcTypeToFieldType-{DbName}.properties,define DB's column type map java type.  
 3.enhance Oracle's type translation；other DB can define the column type and java type.  
 mapping in file: jdbcTypeToFieldType-{DbName}.properties.  
@@ -74,7 +74,7 @@ mapping in file: jdbcTypeToFieldType-{DbName}.properties.
 **V1.6**  
 1.Suid add complicate select oriented object. 
   Suid add method:public <T> List<T> select(T entity,Condition condition);  
-  support complicate select;support between、like、in、>、>=、<、<=、group by、having、order by、paging use at same time.  
+  support complicate select;support to use between、like、in、>、>=、<、<=、group by、having、order by、paging  at same time.  
 2.SuidRich add complicate select oriented object.  
 SuidRich add new method:  
 select(T entity, IncludeType includeType, Condition condition)  
