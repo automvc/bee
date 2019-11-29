@@ -25,7 +25,7 @@ import java.util.List;
  * Database operation: Suid (select,update,insert,delete),
  * the null and empty string are not handled by default.
  * @author Kingstar
- * Create on 2013-6-30 下午10:03:15
+ * Create on 2013-6-30 22:03:15
  * @since  1.0
  *
  */
@@ -44,7 +44,7 @@ public interface Suid {
 	public <T> List<T> select(T entity);
 	
 	/**
-	 * 根据实体对象entity更新数据   According to entity object update database.
+	 * 根据实体对象entity更新数据   According to entity object update record.
 	 * @param entity 与表对应的实体对象,且不能为空;entity中id属性不能为空,作为过虑条件
 	 * entity中非null且非空字符串将更新到数据库(id除外).
 	 * table's entity(do not allow null);id is where condition,do not allow null.
@@ -80,7 +80,7 @@ public interface Suid {
 	public <T> int delete(T entity);
 	
 	/**
-	 * 
+	 * 根据实体对象和Condition查询数据.select the records according to entity and condition.
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
 	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
 	 * if the field is not null or empty, it will be translate to field=value.Other can define with condition. 
