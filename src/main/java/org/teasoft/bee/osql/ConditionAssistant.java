@@ -9,12 +9,13 @@ package org.teasoft.bee.osql;
 import java.util.Set;
 
 /**
+ * Condition的辅助接口.Assistant of Condition.
  * @author Kingstar
  * @since  1.6
  */
 public interface ConditionAssistant {
 	
-	public Set getFieldSet();
+	public Set<String> getFieldSet();
 	
 	 void setSuidType(SuidType SuidType);
 }
