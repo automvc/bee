@@ -25,47 +25,146 @@ import java.util.Map;
  * 若是简单的操作,建议用面向对象的操作方式,ObjSQL和ObjSQLRich.
  * @author Kingstar
  * @since  1.0
- * 支持如name=#{name}的map参数形式
+ * 支持如name=#{name},name like #{name%}的map参数形式
  * @since  1.2
  */
 public interface PreparedSql {
 
+	/**
+	 * 通过问号的占位语句查询数据
+	 * eg: select * from orders where userid=?
+	 * @param sql 直接用?作为占位符的sql查询语句.
+	 * @param returnType 返回entity的类型.
+	 * @param preValues	按下标顺序给sql的占位符设值的Object数组.
+	 * @return 返回returnType类型的实体List.
+	 */
 	public <T> List<T> select(String sql,T returnType,Object preValues[]);
 	
+	
+	public <T> List<T> select(String sql,T returnType,Object preValues[],int start,int size);
+	
 	/**
-	 * 
-	 * @param sqlStr
-	 * @param returnType
-	 * @param map
-	 * @return
+	 * 通过变量的占位语句查询数据.entity和map都可以向参数传递值,map可以作为entity的补充,用于传递范围查询等复杂查询的参数.
+	 * eg:select * from orders where userid=#{userid}
+	 * eg:select * from orders where name like #{name%}
+	 * @param sqlStr 使用#{para}作为占位符的sql查询语句.
+	 * @param entity entity中非null的值,会转换成map的元素作为参数,entity的字段会自动转成表的列名.
+	 * @param parameterMap map结构的参数,通过map的key与sqlStr中变量名对应.
+	 *            若map有元素的key与从entity转来的一样,会使用map的.
+	 * @return 返回与entity类型一样的实体List.
 	 */
-	public <T> List<T> select(String sqlStr,T returnType,Map<String,Object> map);
+	public <T> List<T> select(String sqlStr,T entity,Map<String,Object> parameterMap);
 	
+	public <T> List<T> select(String sqlStr,T entity,Map<String,Object> parameterMap,int start,int size);
+	
+	/**
+	 * 通过问号的占位语句查询数据(只查询部分字段)
+	 * eg: select * from orders where userid=?
+	 * @param sql 直接用?作为占位符的sql查询语句.
+	 * @param returnType 返回entity的类型.
+	 * @param preValues	按下标顺序给sql的占位符设值的Object数组.
+	 * @return 返回returnType类型的实体List.
+	 */
 	public <T> List<T> selectSomeField(String sql,T returnType,Object preValues[]);
-	public <T> List<T> selectSomeField(String sqlStr,T returnType,Map<String,Object> map);
 	
+	public <T> List<T> selectSomeField(String sql,T returnType,Object preValues[],int start,int size);
+	
+	/**
+	 * 通过变量的占位语句查询数据(只查询部分字段).entity和map都可以向参数传递值,map可以作为entity的补充,用于传递范围查询等复杂查询的参数.
+	 * eg:select * from orders where userid=#{userid}
+	 * eg:select * from orders where name like #{name%}
+	 * @param sqlStr 使用#{para}作为占位符的sql查询语句.
+	 * @param entity entity中非null的值,会转换成map的元素作为参数,entity的字段会自动转成表的列名.
+	 * @param parameterMap map结构的参数,通过map的key与sqlStr中变量名对应.
+	 *            若map有元素的key与从entity转来的一样,会使用map的.
+	 * @return 返回与entity类型一样的实体List.
+	 */
+	public <T> List<T> selectSomeField(String sqlStr,T entity,Map<String,Object> parameterMap);
+	
+	public <T> List<T> selectSomeField(String sqlStr,T entity,Map<String,Object> parameterMap,int start,int size);
+	
+	/**
+	 * 用函数查询结果.select result with function. SQL function: max,min,avg,sum,count. 
+	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * @param sql SQL select statement
+	 * @param preValues	按下标顺序给sql的占位符设值的Object数组.
+	 * @return 返回函数统计的值.如果统计的结果集为空,除了count返回0,其它都返回空字符.
+	 * @throws ObjSQLException
+	 */
 	public String selectFun(String sql,Object preValues[]) throws ObjSQLException;
+	
+	/**
+	 * 用函数查询结果.select result with function. SQL function: max,min,avg,sum,count. 
+	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * @param sql SQL select statement
+	 * @param map map结构的参数,通过map的key与sqlStr中变量名对应.
+	 * @return 返回函数统计的值.如果统计的结果集为空,除了count返回0,其它都返回空字符.
+	 * @throws ObjSQLException
+	 */
 	public String selectFun(String sqlStr,Map<String,Object> map) throws ObjSQLException;
 
 	/**
-	 * @param sql
-	 * @param preValues 占位符对应的参数
-	 * @return
-	 * eg:
-	 * select property1,property2 from beanName;
-	 * return list element as: property1[#Bee#]property2 
+	 * 查询并将每一行结果转成String数组.select and transform every record to string array.
+	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * @param sql	SQL select statement
+	 * @param preValues  parameter values for placeholder
+	 * @return List,每个元素是一行记录转换成的string数组.
+	 * List, every element is string array(transform from record).
 	 */
 	public List<String[]> select(String sql,Object preValues[]);
+	
+	public List<String[]> select(String sql,Object preValues[],int start,int size);
+	/**
+	 * 查询并将每一行结果转成String数组.select and transform every record to string array.
+	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * @param sql	SQL select statement
+	 * @param map  parameter values for placeholder
+	 * @return List,每个元素是一行记录转换成的string数组.
+	 * List, every element is string array(transform from record).
+	 */
 	public List<String[]> select(String sqlStr,Map<String,Object> map);
 	
+	public List<String[]> select(String sqlStr,Map<String,Object> map,int start,int size);
+	/**
+	 * 查询结果,并以json格式返回.select and return json format result.
+	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * @param sql	SQL select statement
+	 * @param preValues 占位符对应的参数数组.parameter values for placeholder
+	 * @return 返回json格式结果集.json format result .
+	 */
 	public String selectJson(String sql,Object preValues[]);
+	
+	
+	public String selectJson(String sql,Object preValues[],int start,int size);
+	
+	/**
+	 * 查询结果,并以json格式返回.select and return json format result.
+	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * @param sql	SQL select statement
+	 * @param map 占位符对应的参数map.parameter values for placeholder
+	 * @return 返回json格式结果集.json format result .
+	 */
 	public String selectJson(String sqlStr,Map<String,Object> map);
+	
+	
+	public String selectJson(String sqlStr,Map<String,Object> map,int start,int size);
 	/**
 	 * 操作update,insert,delete
-	 * @param sql
-	 * @param preValues 占位符对应的参数
-	 * @return the number of successful records 返回成功操作的记录行数
+	 * @deprecated 不建议使用,因为框架不知道具体是更改了什么表,会影响缓存的正确性,从而产生缓存数据不准确的危险
+	 * @param sql	SQL select statement
+	 * @param preValues 占位符对应的参数数组.parameter values for placeholder
+	 * @return	返回成功操作的记录行数. the number of successful records.
 	 */
+	@Deprecated
 	public int modify(String sql,Object preValues[]);
+	
+	/**
+	 * 操作update,insert,delete
+	 * @deprecated 不建议使用,因为框架不知道具体是更改了什么表,会影响缓存的正确性,从而产生缓存数据不准确的危险
+	 * @param sql	SQL select statement
+	 * @param map 占位符对应的参数map.parameter values for placeholder
+	 * @return	返回成功操作的记录行数. the number of successful records.
+	 */
+	@Deprecated
 	public int modify(String sqlStr,Map<String,Object> map);
 }
