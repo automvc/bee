@@ -1,6 +1,7 @@
 package org.teasoft.bee.osql;
 
 /**
+ * SQL对应的函数类型.Function type of SQL.
  * @author Kingstar
  * @since  1.0
  */
