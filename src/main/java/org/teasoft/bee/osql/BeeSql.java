@@ -25,14 +25,14 @@ import java.util.List;
  * The interface of operating database with SQL statement directly
  * The SQL string in this interface is the SQL statement that DB can recognize
  * @author Kingstar
- * Create on 2013-6-30 下午10:05:36
+ * Create on 2013-6-30 22:05:36
  * @since  1.0
  */
 public interface BeeSql {
 	
 	/**
 	 * 根据sql查询数据,数据类型与entity类型一致
-	 * @param sql
+	 * @param sql	SQL select statement
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * entity corresponding to table and can not be null.
 	 * @return 返回的list可包含多个实体(多条记录) return list can contain more than one entity
@@ -41,33 +41,33 @@ public interface BeeSql {
 	
 	/**
 	 * 查询部分字段  select some field
-	 * @param sql  select sql string
+	 * @param sql	SQL select statement
 	 * @param entity 
 	 * @return
 	 */
 	public <T> List<T> selectSomeField(String sql,T entity );  //调用者:public <T> List<T> select(T entity, String selectField)
 	
 	/**
-	 * SQL function: max,min,avg,sum,count. 如果统计的结果集为空,除了count返回0,其它都返回空字符.
-	 * @param sql
-	 * @return
+	 * 用函数查询结果.select result with function. SQL function: max,min,avg,sum,count. 
+	 * @param sql	SQL select statement
+	 * @return 返回函数统计的值.如果统计的结果集为空,除了count返回0,其它都返回空字符.
 	 * @throws ObjSQLException
 	 */
 	public String selectFun(String sql) throws ObjSQLException;
 
+
 	/**
-	 * @param sql
-	 * @return
-	 * eg:
-	 * select field1,field2 from beanName;
-	 * return list element as: field1[#Bee#]field2 
+	 * 查询并将每一行结果转成String数组.select and transform every record to string array.
+	 * @param sql	SQL select statement
+	 * @return List,每个元素是一行记录转换成的string数组.
+	 * List, every element is string array(transform from record).
 	 */
 	public List<String[]> select(String sql);    //PreparedSqlLib ObjSQLRich有调用
 	
 	/**
-	 * 返回json格式结果的查询操作
-	 * @param sql SQL statement to execute
-	 * @return
+	 * 查询结果,并以json格式返回.select and return json format result.
+	 * @param sql	SQL select statement
+	 * @return 返回json格式结果集.json format result .
 	 */
 	public String selectJson(String sql);
 	
