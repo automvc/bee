@@ -18,6 +18,7 @@
 package org.teasoft.bee.osql;
 
 /**
+ * 缓存接口  cache
  * @author Kingstar
  * @since  1.4
  */
