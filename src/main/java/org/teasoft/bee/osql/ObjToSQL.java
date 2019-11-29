@@ -18,10 +18,10 @@
 package org.teasoft.bee.osql;
 
 /**
- * Object to SQL string for Suid (select,update,insert,delete)
- * entity must not be null
- * 根据entity对象转换成DB能识别的sql语句(包括:select,update,insert,delete)
+ * 根据entity对象转换成DB能识别的sql语句(包括:select,update,insert,delete),
  * entity 参数不能为null.
+ * Object to SQL string for Suid (select,update,insert,delete),
+ * entity must not be null.
  * @author Kingstar
  * @since  1.0
  */
@@ -33,6 +33,7 @@ public interface ObjToSQL{
 	public  <T> String toUpdateSQL(T entity) throws ObjSQLException;
 	
     /**
+     * 根据entity和Condition转换成sql语句
      * @param entity
      * @param condition
      * @return
