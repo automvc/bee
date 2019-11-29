@@ -25,7 +25,7 @@ import java.util.List;
  * Database operation: Suid (select,update,insert,delete),
  * it supports more parameters than Suid.
  * @author Kingstar
- * Create on 2013-6-30 下午10:06:18
+ * Create on 2013-6-30 22:06:18
  * @since  1.0
  */
 public interface SuidRich extends Suid {
@@ -220,6 +220,7 @@ public interface SuidRich extends Suid {
 	public <T> String selectJson(T entity,IncludeType includeType);
 	
 	/**
+	 * 根据id查询记录. select record by id.
 	 * @param entity 实体类对象,且不能为空
 	 * @param id 实体id字段的值.value of entity's id field. 
 	 * @return 返回查询对象列表
@@ -228,6 +229,7 @@ public interface SuidRich extends Suid {
 	public <T> List<T> selectById(T entity,Integer id);
 	
 	/**
+	 * 根据id查询记录. select record by id.
 	 * @param entity 实体类对象,且不能为空
 	 * @param id 实体id字段的值.value of entity's id field.
 	 * @return 返回查询对象列表
@@ -236,6 +238,7 @@ public interface SuidRich extends Suid {
 	public <T> List<T> selectById(T entity,Long id);
 	
 	/**
+	 * 根据id查询记录. select record by id.
 	 * @param entity 实体类对象,且不能为空
 	 * @param ids 实体id字段的值,多个用逗号隔开.values of entity's id field.
 	 * @return 返回查询对象列表
@@ -244,6 +247,7 @@ public interface SuidRich extends Suid {
 	public <T> List<T> selectById(T entity,String ids);
 	
 	/**
+	 * 根据id删记录.delete record by id.
 	 * @param c 实体类类型,且不能为空
 	 * @param id
 	 * @return 返回成功删除记录数
@@ -252,6 +256,7 @@ public interface SuidRich extends Suid {
 	public int deleteById(Class c,Integer id);
 	
 	/**
+	 * 根据id删记录.delete record by id.
 	 * @param c 实体类类型,且不能为空
 	 * @param id 实体id字段的值. value of entity's id field.
 	 * @return 返回成功删除记录数
@@ -260,6 +265,7 @@ public interface SuidRich extends Suid {
 	public int deleteById(Class c,Long id);
 	
 	/**
+	 * 根据id删记录.delete record by id.
 	 * @param c 实体类类型,且不能为空
 	 * @param ids 实体id字段的值,多个用逗号隔开.ids values of entity's id field.
 	 * @return 返回成功删除记录数
@@ -271,19 +277,25 @@ public interface SuidRich extends Suid {
 	/**
 	 * 根据实体对象entity查询数据.
 	 * select record according to entity.
+	 * @deprecated Suid的 select(T entity,Condition condition)方法中,可以通过condition设置includeType.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * id为时null不作为过滤条件
 	 * @param includeType 空字符串与null是否包含设置
+	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
+	 * if the field is not null or empty, it will be translate to field=value.Other can define with condition. 
 	 * @return 返回的list可包含多个实体(多条记录)
 	 * @since  1.6
 	 */
+	@Deprecated
     public <T> List<T> select(T entity,IncludeType includeType,Condition condition);
     
 	/**
-	 * 根据实体对象entity查询数据
+	 * 根据实体对象entity查询数据,并以Json格式返回
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * id为null不作为过滤条件
 	 * @param includeType 空字符串与null是否包含设置
+	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
+	 * if the field is not null or empty, it will be translate to field=value.Other can define with condition. 
 	 * @return 返回json格式的字符串
 	 * @since  1.6
 	 */
