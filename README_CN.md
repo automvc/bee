@@ -96,6 +96,14 @@ selectJson(T entity, IncludeType includeType, Condition condition)
 updateBy(T entity,String whereFieldList)  
 updateBy(T entity,String whereFieldList,IncludeType includeType)  
 4.add SqlNullException in PreparedSqlLib.  
+V1.6.1  
+1.PreparedSql相关方法添加start,size分页参数，使自定义sql查询的分页更方便，  
+    自定义的sql语句中不用带分页部分,移植性更高。  
+2.PreparedSql的modify加注解:@Deprecated  
+3.Condition的方法getFieldSet返回传由Set改为Set<String>。  
+4.fix bug.ConditionImpl的fieldSet需要记录在between方法使用的记录。  
+
+
 
 快速开始:
 =========	
