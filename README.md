@@ -83,6 +83,11 @@ selectJson(T entity, IncludeType includeType, Condition condition)
 updateBy(T entity,String whereFieldList)  
 updateBy(T entity,String whereFieldList,IncludeType includeType)  
 4.add SqlNullException in PreparedSqlLib.  
+V1.6.1  
+1.PreparedSql add start & size paging parameters in relative methods.  
+2.add Deprecated to modify method in PreparedSql.  
+3.update getFieldSet method's return type with Java generics.  
+4.fix bug.ConditionImpl's fieldSet need record the field in between method.  
 
 Quick Start:
 =========	
