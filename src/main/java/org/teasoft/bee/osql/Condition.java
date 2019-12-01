@@ -1,12 +1,24 @@
 /*
- * Copyright 2016-2019 the original author.All rights reserved.
+ * Copyright 2016-2020 the original author.All rights reserved.
  * Kingstar(honeysoft@126.com)
- * The license,see the LICENSE file.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package org.teasoft.bee.osql;
 
 /**
+ * 为面向对象方式操作数据库提供封装的条件.
  * @author Kingstar
  * @since  1.6
  */
@@ -15,6 +27,15 @@ public interface Condition extends ConditionAssistant {
 	public Condition start(Integer start);
 
 	public Condition size(Integer size);
+	
+	/**
+	 * 设置IncludeType过滤参数.op,between,notBetween方法设置的字段,不受includeType的值影响.
+	 * 如果Condition没有使用该方法设置,则按默认过滤方式处理.
+	 * @param includeType
+	 * @return
+	 * @since  1.7
+	 */
+	public Condition setIncludeType(IncludeType includeType);
 
 	public Condition op(String field, Op Op, Object value);
 
