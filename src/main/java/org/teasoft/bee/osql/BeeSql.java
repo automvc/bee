@@ -39,6 +39,18 @@ public interface BeeSql {
 	 */
 	public <T> List<T> select(String sql,T entity );
 	
+	
+	/**
+	 * 为多表查询准备的方法.根据sql查询数据,数据类型与entity类型一致
+	 * @param sql	SQL select statement
+	 * @param entity 与表对应的实体对象,且不能为空
+	 * entity corresponding to table and can not be null.
+	 * @return 返回的list可包含多个实体(多条记录) return list can contain more than one entity
+	 * @since 1.7
+	 */
+	public <T> List<T> moreTableSelect(String sql,T entity );
+	
+	
 	/**
 	 * 查询部分字段  select some field
 	 * @param sql	SQL select statement
