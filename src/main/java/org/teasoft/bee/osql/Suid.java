@@ -39,7 +39,7 @@ public interface Suid {
 	 * entity corresponding to table and can not be null.
 	 * If the field value is not null and not empty string as filter condition, 
 	 * the operator is equal sign.eg:field=value
-	 * @return 返回的list可包含多个实体(多条记录) return list can contain more than one entity
+	 * @return 返回可包含多个实体(多条记录)的list. return list can contain more than one entity
 	 */
 	public <T> List<T> select(T entity);
 	
@@ -81,6 +81,7 @@ public interface Suid {
 	
 	/**
 	 * 根据实体对象和Condition查询数据.select the records according to entity and condition.
+	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
 	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
 	 * if the field is not null or empty, it will be translate to field=value.Other can define with condition. 
