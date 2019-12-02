@@ -61,24 +61,4 @@ public interface MoreTable {
 	 */
 	public <T> List<T> select(T entity, Condition condition);
 
-	/**
-	 * 根据实体对象entity查询数据,并返回Json格式结果.
-	 * select Json type result by entity. 
-	 * @param entity 与表对应的实体对象,且不能为空
-	 * entity中非null与非空字符串作为过虑条件,操作符是等号.eg:field=value
-	 * @return 返回可包含多个实体(多条记录)的list转换成的json格式的字符串. return Json string, it transform from list which can contain more than one entity.
-	 */
-	public <T> String selectJson(T entity);
-
-	
-	/**
-	 * 根据实体对象和Condition查询数据.select the records according to entity and condition.
-	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
-	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
-	 * if the field is not null or empty, it will be translate to field=value.Other can define with condition. 
-	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
-	 * @return 返回可包含多个实体(多条记录)的list转换成的json格式的字符串. return Json string, it transform from list which can contain more than one entity.
-	 */
-	public <T> String selectJson(T entity, Condition condition);
-
 }
