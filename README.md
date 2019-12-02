@@ -89,6 +89,9 @@ V1.6.1
 3.update getFieldSet method's return type with Java generics.  
 4.fix bug.ConditionImpl's fieldSet need record the field in between method.  
 
+**V1.7**  
+more tables select oriented object support.  
+
 Quick Start:
 =========	
 ## 1. Add Bee   
