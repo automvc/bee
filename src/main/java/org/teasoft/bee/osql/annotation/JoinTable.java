@@ -29,15 +29,15 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface JoinTable {
-	
-	JoinType joinType() default JoinType.JOIN;  //join type: left join,right join,join (full join)
-//	String mainEntity();
-//	String subEntity();
-	
+
+	JoinType joinType() default JoinType.JOIN; //join type: left join,right join,join (full join)
+	//	String mainEntity();
+	//	String subEntity();
+
 	String mainField() default ""; //主表关联的字段
-	String subField() default "";  //从表关联的字段
-	String subAlias() default "";  //从表别名
-	
-	
+
+	String subField() default ""; //从表关联的字段
+
+	String subAlias() default ""; //从表别名  sub table alias.
 
 }
