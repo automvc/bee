@@ -22,6 +22,16 @@ package org.teasoft.bee.osql.annotation;
  * @since  1.7
  */
 public enum JoinType {
-	JOIN,  //inner join
-	LEFT_JOIN,RIGHT_JOIN,FULL_JOIN
+	JOIN(" join "),  //inner join
+	LEFT_JOIN(" left join "),RIGHT_JOIN(" right join "),FULL_JOIN(" full join ");
+	
+    String type;
+    
+    JoinType(String type){
+    	this.type = type;  
+    }
+    
+    public String getType(){
+    	return type;
+    }
 }
