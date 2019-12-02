@@ -103,7 +103,8 @@ V1.6.1
 3.Condition的方法getFieldSet返回传由Set改为Set<String>。  
 4.fix bug.ConditionImpl的fieldSet需要记录在between方法使用的记录。  
 
-
+**V1.7**  
+增加面向对象方式多表查询支持.  
 
 快速开始:
 =========	
