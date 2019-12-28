@@ -107,7 +107,7 @@ V1.6.1
 **V1.7**  
 增加面向对象方式多表查询支持.  
 1.支持一对一,一对多,多对一,多对多。  
-2.支持inner join, left join,right join, no join。  
+2.支持join(inner join), left join,right join, no join。  
 3.单表、多表的查询操作互不干扰。  
 
 快速开始:
