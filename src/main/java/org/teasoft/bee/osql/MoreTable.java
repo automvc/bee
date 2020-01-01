@@ -20,6 +20,53 @@ package org.teasoft.bee.osql;
 import java.util.List;
 
 /**
+ * 多表查询.More table select.
+ * <p>
+ * example:
+<p>
+public class Orders{
+<p>	private Long id;
+<p>	private String userid;
+<p>	private String name;
+<p>	private BigDecimal total;
+<p>	private Timestamp createtime;
+<p>	private String remark;
+<p>	private String sequence;
+<p>	
+<p> @JoinTable(mainField="userid", subField="name")
+<p>	private User user;
+<p>	
+<p>	// ... get,set methods.
+<p>	 }
+<p>	 
+<p>	 public class User {
+<p>
+<p>	private Integer id;
+<p>	private String email;
+<p>	private String lastName;
+<p>	private String name;
+<p>	private String password;
+<p>	private String username;
+<p>	
+<p>		// ... get,set methods.
+<p>	 }
+<p>	 
+<p>public class MoreTableExam {
+<p>	
+<p>	public static void main(String[] args) {
+<p>		MoreTable moreTable=BeeFactory.getHoneyFactory().getMoreTable();
+<p>		
+<p>	 	Orders orders1=new Orders();
+<p>		orders1.setUserid("Bee"); 
+<p>		
+<p>		User user=new User();
+<p>		user.setEmail("beeUser@163.com");
+<p>		orders1.setUser(user);
+<p>	    List<Orders> list1 =moreTable.select(orders1);
+<p>	    //... process list1
+<p>	    }
+<p>	 }
+
  * @author Kingstar
  * @since  1.7
  */
