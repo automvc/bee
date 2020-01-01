@@ -18,6 +18,7 @@
 package org.teasoft.bee.osql;
 
 /**
+ * 将多表查询的实体转成SQL语句.More select Object to SQL.
  * @author Kingstar
  * @since  1.7
  */
