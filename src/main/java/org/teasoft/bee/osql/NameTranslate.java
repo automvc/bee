@@ -18,8 +18,7 @@
 package org.teasoft.bee.osql;
 
 /**
- * 表名与实体名,列名与字段名互转.
- * table name<-->entity name, coloumn name<-->field name.
+ * 表名与实体名,列名与字段名互转.table name<-->entity name, coloumn name<-->field name.
  * @author Kingstar
  * @since  1.5
  */
