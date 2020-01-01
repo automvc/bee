@@ -21,6 +21,7 @@ import java.sql.CallableStatement;
 import java.util.List;
 
 /**
+ * 存储过程方式Sql操作DB的接口.Procedure sql operate the DB.
  * @author Kingstar
  * @since  1.0
  */
