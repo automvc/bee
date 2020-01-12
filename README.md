@@ -94,6 +94,9 @@ more tables select oriented object support.
 1.support one to one,one to many,many to one,many to many.  
 2.support join(inner join), left join,right join, no join.  
 3.The select operations of single table and more tables do not affect each other.  
+**V1.7.1**  
+fix the bug for the define sql no placeholder.
+fix the bug for page in PreparedSqlLib.
 
 Quick Start:
 =========	
