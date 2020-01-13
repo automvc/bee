@@ -98,6 +98,7 @@ more tables select oriented object support.
 fix the bug for the define sql no placeholder.  
 fix the bug for page in PreparedSqlLib.  
 enhance the exception when the sql string is null(CustomSql).  
+fix bug about cache.  
 
 Quick Start:
 =========	
