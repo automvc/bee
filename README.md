@@ -95,10 +95,13 @@ more tables select oriented object support.
 2.support join(inner join), left join,right join, no join.  
 3.The select operations of single table and more tables do not affect each other.  
 **V1.7.1**  
+gen javabean support create comment.  
+support getColumnNames,getFieldNames method in GenBean.
 fix the bug for the define sql no placeholder.  
 fix the bug for page in PreparedSqlLib.  
 enhance the exception when the sql string is null(CustomSql).  
 fix bug about cache.  
+fix bug in SelectImpl.  
 
 Quick Start:
 =========	
