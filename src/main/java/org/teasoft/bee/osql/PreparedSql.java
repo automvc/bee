@@ -135,7 +135,15 @@ public interface PreparedSql {
 	 */
 	public String selectJson(String sql,Object preValues[]);
 	
-	
+	/**
+	 * 查询结果,并以json格式返回.select and return json format result.
+	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * @param sql	SQL select statement
+	 * @param preValues 占位符对应的参数数组.parameter values for placeholder
+	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size 结果集大小 大于等于1. fetch result size (>0).
+	 * @return 返回json格式结果集.json format result .
+	 */
 	public String selectJson(String sql,Object preValues[],int start,int size);
 	
 	/**
@@ -148,6 +156,15 @@ public interface PreparedSql {
 	public String selectJson(String sqlStr,Map<String,Object> map);
 	
 	
+	/**
+	 * 查询结果,并以json格式返回.select and return json format result.
+	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * @param sqlStr SQL select statement
+	 * @param map 占位符对应的参数map.parameter values for placeholder
+	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size 结果集大小 大于等于1. fetch result size (>0).
+	 * @return 返回json格式结果集.json format result .
+	 */
 	public String selectJson(String sqlStr,Map<String,Object> map,int start,int size);
 	/**
 	 * 操作update,insert,delete
