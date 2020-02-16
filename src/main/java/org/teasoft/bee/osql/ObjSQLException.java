@@ -1,6 +1,7 @@
 package org.teasoft.bee.osql;
 
 /**
+ * Bee的面向对象SQL异常父类.Bee's Object SQL super exception class.
  * @author Kingstar
  * @since  1.0
  */
