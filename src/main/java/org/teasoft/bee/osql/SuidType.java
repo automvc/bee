@@ -18,6 +18,7 @@
 package org.teasoft.bee.osql;
 
 /**
+ * 数据库Suid操作类型.Database Suid type.
  * @author Kingstar
  * @since  1.4
  */
