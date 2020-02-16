@@ -21,8 +21,7 @@ import java.util.List;
 
 /**
  * 数据库操作接口,包括查,改,增,删 Suid (select,update,insert,delete),
- * 该接口比Suid接口提供更多的参数选择.
- * Database operation: Suid (select,update,insert,delete),
+ * 该接口比Suid接口提供更多的参数选择.Database operation: Suid (select,update,insert,delete),
  * it supports more parameters than Suid.
  * @author Kingstar
  * Create on 2013-6-30 22:06:18
