@@ -1,6 +1,7 @@
 package org.teasoft.bee.osql;
 
 /**
+ * SQL语言的各种操作符.SQL's Operation Type
  * @author Kingstar
  * @since  1.3
  */
