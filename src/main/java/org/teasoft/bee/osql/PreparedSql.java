@@ -21,7 +21,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 支持带占位符(?)的sql操作.sql语句是DB能识别的SQL,非面向对象的sql.
+ * 支持带占位符的sql操作.sql语句是DB能识别的SQL,非面向对象的sql.Support sql string 
+ * with placeholder.The sql statement is really DB's grammar,not object oriented type.
  * 若是简单的操作,建议用面向对象的操作方式,ObjSQL和ObjSQLRich.
  * 若没有用占位符(?),则传入空数组或Map即可.
  * @author Kingstar
