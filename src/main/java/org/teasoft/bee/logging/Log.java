@@ -7,6 +7,7 @@
 package org.teasoft.bee.logging;
 
 /**
+ * 日志接口.Log interface.
  * @author Kingstar
  * @since  1.4
  */
