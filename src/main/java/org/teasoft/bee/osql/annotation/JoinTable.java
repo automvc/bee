@@ -23,6 +23,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * 用于表连接的注解.Annotation for tables join.
  * @author Kingstar
  * @since  1.7
  */
