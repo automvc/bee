@@ -18,6 +18,7 @@
 package org.teasoft.bee.osql.transaction;
 
 /**
+ * 事务隔离级别.Transaction isolation level.
  * @author Kingstar
  * @since  1.0
  */
