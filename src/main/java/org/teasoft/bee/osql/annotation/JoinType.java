@@ -18,6 +18,7 @@
 package org.teasoft.bee.osql.annotation;
 
 /**
+ * SQL连接类型.SQL join type.
  * @author Kingstar
  * @since  1.7
  */
