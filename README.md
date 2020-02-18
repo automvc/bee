@@ -102,6 +102,7 @@ fix the bug for page in PreparedSqlLib.
 enhance the exception when the sql string is null(CustomSql).  
 fix bug about cache.  
 fix bug in SelectImpl.  
+fix bug for inner join condition type.  
 
 Quick Start:
 =========	
