@@ -18,7 +18,7 @@
 package org.teasoft.bee.osql.dialect;
 
 /**
- * 为特定DB转换成对应的sql
+ * 为特定DB转换成对应的sql.Translate the sql for really DB.
  * @author Kingstar
  * @since  1.0
  */
