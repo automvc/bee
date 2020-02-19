@@ -23,6 +23,7 @@ import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Suid;
 
 /**
+ * 默认抽象通用面向对象SQL服务实现类.Default common abstract object SQLService implement class.
  * @author Kingstar
  * @since  1.0
  */
