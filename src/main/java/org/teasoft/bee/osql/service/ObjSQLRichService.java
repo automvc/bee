@@ -20,6 +20,7 @@ package org.teasoft.bee.osql.service;
 import org.teasoft.bee.osql.SuidRich;
 
 /**
+ * 默认通用丰富的面向对象SQL服务接口.Default common object rich SQLService.
  * @author Kingstar
  * @since  1.0
  */
