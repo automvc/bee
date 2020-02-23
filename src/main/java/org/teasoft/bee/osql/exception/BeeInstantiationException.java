@@ -20,7 +20,7 @@ package org.teasoft.bee.osql.exception;
 import org.teasoft.bee.osql.BeeException;
 
 /**
- * 对应java.lang.InstantiationException
+ * 与java.lang.InstantiationException对应的异常. Define for java.lang.InstantiationException.
  * @author Kingstar
  * @since  1.4
  */
