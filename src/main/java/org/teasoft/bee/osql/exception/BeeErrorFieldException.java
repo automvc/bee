@@ -20,7 +20,7 @@ package org.teasoft.bee.osql.exception;
 import org.teasoft.bee.osql.ObjSQLException;
 
 /**
- * Bee面向对象实体转SQL错误字段异常.Bee Error Field Exception.
+ * Bee面向对象实体转SQL错误字段异常.Bee error field exception.
  * @author Kingstar
  * @since  1.4
  */

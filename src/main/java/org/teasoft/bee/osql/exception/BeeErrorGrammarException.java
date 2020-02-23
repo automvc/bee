@@ -20,6 +20,7 @@ package org.teasoft.bee.osql.exception;
 import org.teasoft.bee.osql.BeeException;
 
 /**
+ * Bee错误语法异常.Bee Error Grammar Exception
  * @author Kingstar
  * @since  1.6
  */
