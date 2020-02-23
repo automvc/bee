@@ -20,6 +20,7 @@ package org.teasoft.bee.osql.exception;
 import org.teasoft.bee.osql.BeeException;
 
 /**
+ * 表连接参数异常.Join table parameter exception.
  * @author Kingstar
  * @since  1.7
  */
