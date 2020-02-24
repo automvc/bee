@@ -109,6 +109,16 @@ V1.6.1
 1.支持一对一,一对多,多对一,多对多。  
 2.支持join(inner join), left join,right join, no join。  
 3.单表、多表的查询操作互不干扰。  
+**V1.7.1**  
+创建javabean支持添加注释.  
+创建javabean的类新增getColumnNames,getFieldNames方法.  
+修复定义sql没有占位符的bug.  
+修复在PreparedSqlLib分页的bug.  
+完善在CustomSql中sql字符串为null的异常.  
+修复关于缓存的bug.  
+修复SelectImpl的bug. 
+修复内连接条件风格转换的bug.  
+添加FileCreator接口.  
 
 快速开始:
 =========	
