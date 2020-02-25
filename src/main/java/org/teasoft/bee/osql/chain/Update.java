@@ -19,7 +19,7 @@ package org.teasoft.bee.osql.chain;
 import org.teasoft.bee.osql.Op;
 
 /**
- * 链式风格写SQL语句的Update接口.Update interface for SQL with chain programming.
+ * Update接口,用于 链式风格写SQL语句.Update interface for SQL with chain programming.
  * @author Kingstar
  * @since  1.3
  */
@@ -39,8 +39,7 @@ public interface Update extends ToSql{
 	public Update op(String field, Number value);
 
 	/**
-	 * Ĭ���Զ��� and. Default will automatically add and.
-	 * 
+	 * 默认自动加and. Default will automatically add and.
 	 * @return
 	 */
 	public Update and();

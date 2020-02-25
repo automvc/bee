@@ -17,7 +17,7 @@
 package org.teasoft.bee.osql.chain;
 
 /**
- * 链式风格写SQL语句的ToSql接口.ToSql interface for SQL with chain programming.
+ * ToSql接口,用于 链式风格写SQL语句.ToSql interface for SQL with chain programming.
  * @author Kingstar
  * @since  1.3
  */
