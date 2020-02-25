@@ -20,7 +20,7 @@ import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.OrderType;
 
 /**
- * 链式风格写SQL语句的Select接口.Select interface for SQL with chain programming.
+ * 閾惧紡椋庢牸鍐橲QL璇彞鐨凷elect鎺ュ彛.Select interface for SQL with chain programming.
  * @author Kingstar
  * @since  1.3
  */
@@ -39,7 +39,7 @@ public interface Select extends ToSql{
 	public Select op(String field, Number value);
 
 	/**
-	 * 默认自动加 and. Default will automatically add and.
+	 * 默锟斤拷锟皆讹拷锟斤拷 and. Default will automatically add and.
 	 * 
 	 * @return
 	 */
