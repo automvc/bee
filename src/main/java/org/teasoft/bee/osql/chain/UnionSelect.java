@@ -19,7 +19,7 @@ package org.teasoft.bee.osql.chain;
 import org.teasoft.bee.osql.chain.Select;
 
 /**
- * 閾惧紡椋庢牸鍐橲QL璇彞鐨刄nionSelect鎺ュ彛.UnionSelect interface for SQL with chain programming.
+ * 链式风格写SQL语句的UnionSelect接口.UnionSelect interface for SQL with chain programming.
  * @author Kingstar
  * @since  1.3
  */

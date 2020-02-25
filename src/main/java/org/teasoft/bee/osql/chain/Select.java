@@ -20,7 +20,7 @@ import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.OrderType;
 
 /**
- * é“¾å¼é£æ ¼å†™SQLè¯­å¥çš„Selectæ¥å£.Select interface for SQL with chain programming.
+ * Á´Ê½·ç¸ñĞ´SQLÓï¾äµÄSelect½Ó¿Ú.Select interface for SQL with chain programming.
  * @author Kingstar
  * @since  1.3
  */
@@ -39,7 +39,7 @@ public interface Select extends ToSql{
 	public Select op(String field, Number value);
 
 	/**
-	 * é»˜è®¤è‡ªåŠ¨åŠ  and. Default will automatically add and.
+	 * Ä¬ÈÏ×Ô¶¯¼Ó and. Default will automatically add and.
 	 * 
 	 * @return
 	 */

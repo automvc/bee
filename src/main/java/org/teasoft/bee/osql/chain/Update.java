@@ -19,7 +19,7 @@ package org.teasoft.bee.osql.chain;
 import org.teasoft.bee.osql.Op;
 
 /**
- * é“¾å¼é£æ ¼å†™SQLè¯­å¥çš„Updateæ¥å£.Update interface for SQL with chain programming.
+ * Á´Ê½·ç¸ñĞ´SQLÓï¾äµÄUpdate½Ó¿Ú.Update interface for SQL with chain programming.
  * @author Kingstar
  * @since  1.3
  */
@@ -39,7 +39,7 @@ public interface Update extends ToSql{
 	public Update op(String field, Number value);
 
 	/**
-	 * é»˜è®¤è‡ªåŠ¨åŠ  and. Default will automatically add and.
+	 * Ä¬ÈÏ×Ô¶¯¼Ó and. Default will automatically add and.
 	 * 
 	 * @return
 	 */
