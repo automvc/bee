@@ -19,6 +19,7 @@ package org.teasoft.bee.osql.chain;
 import org.teasoft.bee.osql.Op;
 
 /**
+ * 链式风格写SQL语句的Update接口.Update interface for SQL with chain programming.
  * @author Kingstar
  * @since  1.3
  */
