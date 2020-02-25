@@ -129,13 +129,13 @@ V1.6.1
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<version>1.7.0</version>
+			<version>1.7.1</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<version>1.7.0</version>
+			<version>1.7.1</version>
 		</dependency>
 ```
 
