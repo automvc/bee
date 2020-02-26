@@ -103,7 +103,10 @@ enhance the exception when the sql string is null(CustomSql).
 fix bug about cache.  
 fix bug in SelectImpl.  
 fix bug for inner join condition style.  
-add FileCreator interface.  
+add FileCreator interface. 
+**V1.7.2**  
+add config default naming translate type.  
+update for static instance in HoneyFactory.  
 
 Quick Start:
 =========	
