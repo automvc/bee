@@ -20,7 +20,7 @@ import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.OrderType;
 
 /**
- * Select接口,用于 链式风格写SQL语句.Select interface for SQL with chain programming.
+ * Select接口,用于链式风格写SQL语句.Select interface for SQL with chain programming.
  * @author Kingstar
  * @since  1.3
  */
