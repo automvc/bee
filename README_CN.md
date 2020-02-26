@@ -119,6 +119,9 @@ V1.6.1
 修复SelectImpl的bug. 
 修复内连接条件风格转换的bug.  
 添加FileCreator接口.  
+**V1.7.2**   
+添加默认命名类型配置功能. 
+将在BeeFactory类的HoneyFactory实例改为静态实例. 
 
 快速开始:
 =========	

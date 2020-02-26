@@ -106,7 +106,7 @@ fix bug for inner join condition style.
 add FileCreator interface.  
 **V1.7.2**  
 add config default naming translate type.  
-update for static instance in HoneyFactory.  
+update HoneyFactory instance to static in BeeFactory.  
 
 Quick Start:
 =========	
