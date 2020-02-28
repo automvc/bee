@@ -40,16 +40,29 @@ public interface Condition extends ConditionAssistant {
 	public Condition op(String field, Op Op, Object value);
 
 	/**
-	 * 默认自动加 and. Default will automatically add and.
+	 * 默认自动加 'and'. Default will automatically add 'and'.
 	 * 
 	 * @return
 	 */
 	public Condition and();
 
+	/**
+	 * 添加 'or'. add 'or'.
+	 * 
+	 * @return
+	 */
 	public Condition or();
 
+	/**
+	 * 添加左括号.add left parentheses.
+	 * @return
+	 */
 	public Condition lParentheses();
 
+	/**
+	 * 添加右括号.add right parentheses.
+	 * @return
+	 */
 	public Condition rParentheses();
 
 	public Condition between(String field, Number low, Number high);
