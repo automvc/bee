@@ -24,7 +24,7 @@ package org.teasoft.bee.osql.dialect;
  */
 public interface DbFeature {
 	/**
-	 * 为SQL添加分页部分的语句.
+	 * 为SQL添加分页部分的语句.add the page part for sql.
 	 * @param sql sql语句
 	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
 	 * @param size 结果集大小 大于等于1. fetch result size (>0).
@@ -32,7 +32,7 @@ public interface DbFeature {
 	 */
 	public String toPageSql(String sql,int start,int size);
 	/**
-	 * 为SQL添加分页部分的语句,默认从第0或1条记录开始返回.
+	 * 为SQL添加分页部分的语句,默认从第0或1条记录开始返回.add the page part for sql,default start index,min value is 0 or 1
 	 * @param sql sql语句
 	 * @param size 结果集大小 大于等于1. fetch result size (>0).
 	 * @return
