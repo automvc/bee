@@ -109,6 +109,7 @@ support set the default naming translate type by config.
 update HoneyFactory instance to static in BeeFactory.  
 adjust the format of SQL log.  
 support set the date format by config.  
+[move test/example to new project bee-exam](../../../bee-exam).  
 
 Quick Start:
 =========	
