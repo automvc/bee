@@ -16,7 +16,7 @@ public interface Log {
     public boolean isTraceEnabled();
 
     /**
-     * Log a message at the TRACE level.
+     * 记录一个跟踪级别的消息.Log a message at the TRACE level.
      *
      * @param msg the message string to be logged
      */
@@ -25,7 +25,7 @@ public interface Log {
     public boolean isDebugEnabled();
 
     /**
-     * Log a message at the DEBUG level.
+     * 记录一个调试级别的消息.Log a message at the DEBUG level.
      *
      * @param msg the message string to be logged
      */
@@ -34,7 +34,7 @@ public interface Log {
     public boolean isInfoEnabled();
 
     /**
-     * Log a message at the INFO level.
+     * 记录一个信息级别的消息.Log a  at the INFO level.
      *
      * @param msg the message string to be logged
      */
@@ -43,7 +43,7 @@ public interface Log {
     public boolean isWarnEnabled();
 
     /**
-     * Log a message at the WARN level.
+     * 记录一个警告级别的消息.Log a message at the  level.
      *
      * @param msg the message string to be logged
      */
@@ -52,7 +52,7 @@ public interface Log {
     public boolean isErrorEnabled();
 
     /**
-     * Log a message at the ERROR level.
+     * 记录一个错误级别的消息.Log a message at the ERROR level.
      *
      * @param msg the message string to be logged
      */
