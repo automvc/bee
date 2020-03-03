@@ -122,10 +122,11 @@ V1.6.1
 添加FileCreator接口.  
 **V1.7.2**   
 可以通过配置选择已实现的命名转换规则.  
-将在BeeFactory类的HoneyFactory实例改为静态实例.  
+完善BeeFactory类的功能.  
 调整SQL输出日志格式.  
 日期格式可以通过配置定义.  
 [将测试/使用实例迁移到bee-exam项目](../../../bee-exam).  
+添加类FileLogger,用于将日志记录到文件中.  
 
 快速开始:
 =========	
