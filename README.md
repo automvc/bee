@@ -106,10 +106,11 @@ fix bug for inner join condition style.
 add FileCreator interface.  
 **V1.7.2**  
 support set the default naming translate type by config.  
-update HoneyFactory instance to static in BeeFactory.  
+enhance function of BeeFactory.  
 adjust the format of SQL log.  
 support set the date format by config.  
 [move test/example to new project bee-exam](../../../bee-exam).  
+add class FileLogger for write the log in file.  
 
 Quick Start:
 =========	
