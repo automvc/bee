@@ -111,6 +111,7 @@ adjust the format of SQL log.
 support set the date format by config.  
 [move test/example to new project bee-exam](../../../bee-exam).  
 add class FileLogger for write the log in file.  
+support control print log level or not by config.  
 
 Quick Start:
 =========	
