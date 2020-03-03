@@ -42,7 +42,14 @@ public interface PreparedSql {
 	 */
 	public <T> List<T> select(String sql,T returnType,Object preValues[]);
 	
-	
+	/**
+	 * 通过问号的占位语句查询数据
+	 * eg: select * from orders where userid=?
+	 * @param sql 直接用?作为占位符的sql查询语句.
+	 * @param returnType 返回entity的类型.
+	 * @param preValues	按下标顺序给sql的占位符设值的Object数组.
+	 * @return 返回returnType类型的实体List.
+	 */
 	public <T> List<T> select(String sql,T returnType,Object preValues[],int start,int size);
 	
 	/**
@@ -53,10 +60,24 @@ public interface PreparedSql {
 	 * @param entity entity中非null的值,会转换成map的元素作为参数,entity的字段会自动转成表的列名.
 	 * @param parameterMap map结构的参数,通过map的key与sqlStr中变量名对应.
 	 *            若map有元素的key与从entity转来的一样,会使用map的.
+	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size 结果集大小 大于等于1. fetch result size (>0).   
 	 * @return 返回与entity类型一样的实体List.
 	 */
 	public <T> List<T> select(String sqlStr,T entity,Map<String,Object> parameterMap);
 	
+	/**
+	 * 通过变量的占位语句查询数据.entity和map都可以向参数传递值,map可以作为entity的补充,用于传递范围查询等复杂查询的参数.
+	 * eg:select * from orders where userid=#{userid}
+	 * eg:select * from orders where name like #{name%}
+	 * @param sqlStr 使用#{para}作为占位符的sql查询语句.
+	 * @param entity entity中非null的值,会转换成map的元素作为参数,entity的字段会自动转成表的列名.
+	 * @param parameterMap map结构的参数,通过map的key与sqlStr中变量名对应.
+	 *            若map有元素的key与从entity转来的一样,会使用map的.
+	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size 结果集大小 大于等于1. fetch result size (>0).           
+	 * @return 返回与entity类型一样的实体List.
+	 */
 	public <T> List<T> select(String sqlStr,T entity,Map<String,Object> parameterMap,int start,int size);
 	
 	/**
@@ -69,6 +90,16 @@ public interface PreparedSql {
 	 */
 	public <T> List<T> selectSomeField(String sql,T returnType,Object preValues[]);
 	
+	/**
+	 * 通过问号的占位语句查询数据(只查询部分字段)
+	 * eg: select * from orders where userid=?
+	 * @param sql 直接用?作为占位符的sql查询语句.
+	 * @param returnType 返回entity的类型.
+	 * @param preValues	按下标顺序给sql的占位符设值的Object数组.
+	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size 结果集大小 大于等于1. fetch result size (>0).   
+	 * @return 返回returnType类型的实体List.
+	 */
 	public <T> List<T> selectSomeField(String sql,T returnType,Object preValues[],int start,int size);
 	
 	/**
@@ -83,6 +114,18 @@ public interface PreparedSql {
 	 */
 	public <T> List<T> selectSomeField(String sqlStr,T entity,Map<String,Object> parameterMap);
 	
+	/**
+	 * 通过变量的占位语句查询数据(只查询部分字段).entity和map都可以向参数传递值,map可以作为entity的补充,用于传递范围查询等复杂查询的参数.
+	 * eg:select * from orders where userid=#{userid}
+	 * eg:select * from orders where name like #{name%}
+	 * @param sqlStr 使用#{para}作为占位符的sql查询语句.
+	 * @param entity entity中非null的值,会转换成map的元素作为参数,entity的字段会自动转成表的列名.
+	 * @param parameterMap map结构的参数,通过map的key与sqlStr中变量名对应.
+	 *            若map有元素的key与从entity转来的一样,会使用map的.
+	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size 结果集大小 大于等于1. fetch result size (>0).   
+	 * @return 返回与entity类型一样的实体List.
+	 */
 	public <T> List<T> selectSomeField(String sqlStr,T entity,Map<String,Object> parameterMap,int start,int size);
 	
 	/**
@@ -115,6 +158,17 @@ public interface PreparedSql {
 	 */
 	public List<String[]> select(String sql,Object preValues[]);
 	
+	
+	/**
+	 * 查询并将每一行结果转成String数组.select and transform every record to string array.
+	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * @param sql	SQL select statement
+	 * @param preValues  parameter values for placeholder
+	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size 结果集大小 大于等于1. fetch result size (>0).   
+	 * @return List,每个元素是一行记录转换成的string数组.
+	 * List, every element is string array(transform from record).
+	 */
 	public List<String[]> select(String sql,Object preValues[],int start,int size);
 	/**
 	 * 查询并将每一行结果转成String数组.select and transform every record to string array.
@@ -126,6 +180,16 @@ public interface PreparedSql {
 	 */
 	public List<String[]> select(String sqlStr,Map<String,Object> map);
 	
+	/**
+	 * 查询并将每一行结果转成String数组.select and transform every record to string array.
+	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * @param sql	SQL select statement
+	 * @param map  parameter values for placeholder
+	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size 结果集大小 大于等于1. fetch result size (>0).   
+	 * @return List,每个元素是一行记录转换成的string数组.
+	 * List, every element is string array(transform from record).
+	 */
 	public List<String[]> select(String sqlStr,Map<String,Object> map,int start,int size);
 	/**
 	 * 查询结果,并以json格式返回.select and return json format result.
