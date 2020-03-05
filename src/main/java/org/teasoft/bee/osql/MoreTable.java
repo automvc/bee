@@ -33,7 +33,10 @@ public class Orders{
 <p>	private String remark;
 <p>	private String sequence;
 <p>	
-<p> @JoinTable(mainField="userid", subField="name")
+<p>//@JoinTable(mainField="userid", subField="username")
+<p> @JoinTable(mainField="userid", subField="username", joinType=JoinType.LEFT_JOIN)
+<p>//@JoinTable(mainField="userid", subField="username",subAlias="myuser" , joinType=JoinType.RIGHT_JOIN)
+<p>//@JoinTable()
 <p>	private User user;
 <p>	
 <p>	// ... get,set methods.
@@ -47,6 +50,7 @@ public class Orders{
 <p>	private String name;
 <p>	private String password;
 <p>	private String username;
+<p>	private Timestamp createtime;
 <p>	
 <p>		// ... get,set methods.
 <p>	 }
@@ -57,12 +61,14 @@ public class Orders{
 <p>		MoreTable moreTable=BeeFactory.getHoneyFactory().getMoreTable();
 <p>		
 <p>	 	Orders orders1=new Orders();
-<p>		orders1.setUserid("Bee"); 
-<p>		
+<p>		orders1.setUserid("bee"); 
+<p>		orders1.setName("Bee(ORM Framework)");
+
 <p>		User user=new User();
 <p>		user.setEmail("beeUser@163.com");
 <p>		orders1.setUser(user);
-<p>	    List<Orders> list1 =moreTable.select(orders1);
+<p>	    List<Orders> list1 =moreTable.select(orders1);       //select
+<p>//	List<Orders> list1 =moreTable.select(orders1,0,10);  //select,paging
 <p>	    //... process list1
 <p>	    }
 <p>	 }
