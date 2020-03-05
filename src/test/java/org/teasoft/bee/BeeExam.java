@@ -35,13 +35,23 @@ public class BeeExam {
 		System.out.println("https://github.com/automvc/bee-exam");
 		System.out.println("");
 		System.out.println("让开发爱上测试，从Bee开始！");
+		System.out.println("");
 		
+		System.out.println("------------------------");
+		System.out.println("");
 //		test case see new project:bee-exam
 //		url as below：
 //		https://github.com/automvc/bee-exam
 //		https://gitee.com/automvc/bee-exam
 //
 //		Let developers like test, starting with Bee!
+		
+		System.out.println("test case see new project:bee-exam");
+		System.out.println("url as below：");
+		System.out.println("https://github.com/automvc/bee-exam");
+		System.out.println("https://gitee.com/automvc/bee-exam");
+		System.out.println("");
+		System.out.println("Let developers like test, starting with Bee!");
 
 	}
 }
