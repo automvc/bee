@@ -153,12 +153,14 @@ V1.6.1
 		
 ## 2. 创建数据库和表  
 
+举例如下:  
 创建一个数据库,默认名称为bee.  
-用bee.sql脚本创建一个表和插入初始化数据.  
+可以用bee-mysql-demo.sql脚本创建一个表和插入初始化数据.  
 
 ## 3. 更新数据库的配置信息(在bee.properties)  
-注:如果还没有bee.properties文件,可以自己新建一个.
+注:如果还没有bee.properties文件,可以自己新建一个.  
 
+bee.databaseName=mysql  
 bee.db.driverName = com.mysql.jdbc.Driver  
 bee.db.url =jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8  
 bee.db.username = root  
@@ -182,11 +184,13 @@ import org.teasoft.honey.osql.example.entity.Orders;
 public class SuidExam {
 	
 	public static void main(String[] args) {
+
 		Suid suid=BeeFactory.getHoneyFactory().getSuid();
 		
+		//需要先生成相应的Javabean
 		Orders orders1=new Orders();
 		orders1.setId(100001L);
-		orders1.setName("Bee--ORM Framework");
+		orders1.setName("Bee(ORM Framework)");
 		
 		//默认不处理null和空字符串.不用再写一堆的判断;其它有值的字段全部自动作为过滤条件
 		List<Orders> list1 =suid.select(orders1);  //select
@@ -201,7 +205,7 @@ public class SuidExam {
 		
 		Orders orders2=new Orders();
 		orders2.setUserid("bee");
-		orders2.setName("Bee-ORM framework");
+		orders2.setName("Bee(ORM Framework)");
 		orders2.setTotal(new BigDecimal(91.99));
 		orders2.setRemark("");  //empty String test
 		
@@ -221,7 +225,7 @@ public class SuidExam {
 	}
 
 }
-//注意: 事务,分页,排序,范围查询,查询结果返回json等都支持,这里只是一个入门例子.
+//注意: 事务,分页,排序,范围查询,查询结果直接返回json等都支持,这里只是一个入门例子.
 
 ```
 
