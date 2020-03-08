@@ -137,12 +137,14 @@ Quick Start:
 
 ## 2. Create the database and the table  
 
+eg:  
 Create one database,default name is bee.  
-Create the table and init the data by run the bee.sql file(it is mysql sql script).  
+Create the table and init the data by run the bee-mysql-demo.sql file(it is mysql sql script).  
 
 ## 3. Update the database configuration in bee.properties if need  
 If no the bee.properties file, you can create it by yourself.
 
+bee.databaseName=mysql  
 bee.db.driverName = com.mysql.jdbc.Driver  
 bee.db.url =jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8  
 bee.db.username = root  
@@ -170,7 +172,7 @@ public class OsqlExamEN {
 		
 		Orders orders1=new Orders();
 		orders1.setId(100001L);
-		orders1.setName("Bee--ORM Framework");
+		orders1.setName("Bee(ORM Framework)");
 		
 		List<Orders> list1 =suid.select(orders1);  //select
 		for (int i = 0; i < list1.size(); i++) {
@@ -183,7 +185,7 @@ public class OsqlExamEN {
 		
 		Orders orders2=new Orders();
 		orders2.setUserid("client01");
-		orders2.setName("ORM book");
+		orders2.setName("Bee(ORM Framework)");
 		orders2.setTotal(new BigDecimal(91));
 		orders2.setRemark("");  //empty String test
 		
