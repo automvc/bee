@@ -139,7 +139,7 @@ Quick Start:
 
 eg:  
 Create one database,default name is bee.  
-Create the table and init the data by run the bee-mysql-demo.sql file(it is mysql sql script).  
+Create the table and init the data by run the [bee-mysql-demo.sql](../../../honey/blob/master/src/main/resources/bee-mysql-demo.sql) file(it is mysql sql script).  
 
 ## 3. Update the database configuration in bee.properties if need  
 If no the bee.properties file, you can create it by yourself.
