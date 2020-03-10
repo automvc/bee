@@ -155,7 +155,7 @@ V1.6.1
 
 举例如下:  
 创建一个数据库,默认名称为bee.  
-可以用bee-mysql-demo.sql脚本创建一个表和插入初始化数据.  
+可以用[bee-mysql-demo.sql](../../../honey/blob/master/src/main/resources/bee-mysql-demo.sql)脚本创建一个表和插入初始化数据.  
 
 ## 3. 更新数据库的配置信息(在bee.properties)  
 注:如果还没有bee.properties文件,可以自己新建一个.  
