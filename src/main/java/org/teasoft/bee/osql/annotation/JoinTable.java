@@ -35,10 +35,22 @@ public @interface JoinTable {
 	//	String mainEntity();
 	//	String subEntity();
 
-	String mainField() default ""; //主表关联的字段
+	/**
+	 * 主表关联的字段.The join on field of main table.
+	 * @return
+	 */
+	String mainField() default ""; 
 
-	String subField() default ""; //从表关联的字段
+	/**
+	 * 从表关联的字段.The join on field of subtable.
+	 * @return
+	 */
+	String subField() default ""; 
 
-	String subAlias() default ""; //从表别名  sub table alias.
+	/**
+	 * 从表别名.Subtable alias.
+	 * @return
+	 */
+	String subAlias() default ""; 
 
 }
