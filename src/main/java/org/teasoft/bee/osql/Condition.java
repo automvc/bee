@@ -24,8 +24,18 @@ package org.teasoft.bee.osql;
  */
 public interface Condition extends ConditionAssistant {
 
+	/**
+	 * 添加用于分页时设置开始的页数.for setting the start of the page.
+	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @return
+	 */
 	public Condition start(Integer start);
 
+	 /**
+	  * 添加用于分页时设置每页返回的记录数量.for setting the size of the page.
+	  * @param size 结果集大小 大于等于1. fetch result size (>0).
+	  * @return
+	  */
 	public Condition size(Integer size);
 	
 	/**
@@ -37,6 +47,13 @@ public interface Condition extends ConditionAssistant {
 	 */
 	public Condition setIncludeType(IncludeType includeType);
 
+	/**
+	 * 添加一个表达式条件.add a expression condition.
+	 * @param field 字段名.field name
+	 * @param Op 操作符.operator.
+	 * @param value 字段对应的值.value of the field.
+	 * @return
+	 */
 	public Condition op(String field, Op Op, Object value);
 
 	/**
