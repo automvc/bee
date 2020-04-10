@@ -113,7 +113,7 @@ V1.6.1
 **V1.7.1**  
 创建javabean支持添加注释.  
 创建javabean的类新增getColumnNames,getFieldNames方法.  
-修复定义sql没有占位符的bug.  
+修复自定义sql没有占位符时出现的bug.  
 修复在PreparedSqlLib分页的bug.  
 完善在CustomSql中sql字符串为null的异常.  
 修复关于缓存的bug.  
