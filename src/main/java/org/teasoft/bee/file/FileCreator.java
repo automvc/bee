@@ -22,7 +22,7 @@ package org.teasoft.bee.file;
  * @author Kingstar
  * @since  1.7.1
  */
-public interface FileCreator {
+public interface FileCreator extends FileReader{
 	/**
 	 * 将内容写到生成的文件中
 	 * @param fullPathAndName 全部路径,包括文件名
