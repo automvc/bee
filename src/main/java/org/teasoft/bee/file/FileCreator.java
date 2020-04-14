@@ -51,7 +51,7 @@ public interface FileCreator extends FileReader{
 	/**
 	 * 将内容追加到文件尾部
 	 * @param fullPathAndName 全部路径,包括文件名
-	 * @param content 文件内容.content
+	 * @param content 文件内容.content of file.
 	 * @since  1.7.2
 	 */
 	public void genAppendFile(String fullPathAndName, String content);
