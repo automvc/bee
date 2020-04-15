@@ -107,15 +107,26 @@ public interface Condition extends ConditionAssistant {
 	 */
 	public Condition having(FunctionType functionType, String field, Op Op, Number value);
 
+	/**
+	 * eg: orderBy("price")-->order by price
+	 * @param field
+	 * @return
+	 */
 	public Condition orderBy(String field);
 
+	/**
+	 * eg: orderBy("price", OrderType.DESC)-->order by price desc
+	 * @param field 字段名.field name.
+	 * @param orderType 排序类型(asc或desc). order type(asc or desc)
+	 * @return
+	 */
 	public Condition orderBy(String field, OrderType orderType);
 
 	/**
 	 * eg: orderBy(FunctionType.MAX, "total", OrderType.DESC)-->order by max(total) desc
-	 * @param functionType
-	 * @param field
-	 * @param orderType
+	 * @param functionType 函数类型.Function type of SQL.
+	 * @param field 字段名.field name.
+	 * @param orderType 排序类型(asc或desc). order type(asc or desc)
 	 * @return
 	 */
 	public Condition orderBy(FunctionType functionType, String field, OrderType orderType);
