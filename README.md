@@ -113,6 +113,7 @@ support set the date format by config.
 add class FileLogger for write the log in file.  
 support control print log level or not by config.  
 enhance test case/example.  
+support generate the file according to template.  
 
 Quick Start:
 =========	
