@@ -18,7 +18,8 @@
 package org.teasoft.bee.osql;
 
 /**
- * 为面向对象方式操作数据库提供封装的条件.
+ * 为面向对象方式操作数据库提供封装的条件.Condition for operate DB with Object Oriented Programming way.
+ * 用户需要保证SQL的书写顺序,如order by应在group by的后面.
  * @author Kingstar
  * @since  1.6
  */
