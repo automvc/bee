@@ -22,6 +22,9 @@ package org.teasoft.bee;
  */
 public class BeeExam {
 	public static void main(String[] args) {
+		
+//		bee-exam last update time:2020-04-17 16:18 (yyyy-MM-dd HH:mm)
+		
 //		测试用例请查看工程:bee-exam
 //		以下任意一个地址：
 //		https://gitee.com/automvc/bee-exam
