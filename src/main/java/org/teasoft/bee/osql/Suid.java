@@ -90,4 +90,6 @@ public interface Suid {
 	public <T> List<T> select(T entity,Condition condition);
 
 	
+	public <T> int delete(T entity,Condition condition);
+	
 }
