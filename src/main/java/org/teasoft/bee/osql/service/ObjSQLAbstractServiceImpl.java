@@ -60,4 +60,11 @@ public abstract class ObjSQLAbstractServiceImpl implements ObjSQLService {
 		//Add the business logic if need.
 		return getSuid().select(entity, condition);
 	}
+
+	@Override
+	public <T> int delete(T entity, Condition condition) {
+		//Add the business logic if need.
+		return getSuid().delete(entity, condition);
+	}
+
 }
