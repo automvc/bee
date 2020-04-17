@@ -42,4 +42,5 @@ public interface ObjToSQL{
      */
 	public  <T> String toSelectSQL(T entity,Condition condition) ;
 
+	public  <T> String toDeleteSQL(T entity,Condition condition) ;
 }
