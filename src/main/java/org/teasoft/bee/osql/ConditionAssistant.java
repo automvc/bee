@@ -26,9 +26,13 @@ import java.util.Set;
  */
 public interface ConditionAssistant {
 	
+	/**
+	 * Condition的FieldSet已包含的字段,默认情况不再遍历.If the field use in Condition,it would not be processed again in default.
+	 * @return
+	 */
 	public Set<String> getFieldSet();
 	
-	 void setSuidType(SuidType SuidType);
+	void setSuidType(SuidType SuidType);
 	 
 	 /**
 	  * 
