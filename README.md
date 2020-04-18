@@ -114,6 +114,8 @@ add class FileLogger for write the log in file.
 support control print log level or not by config.  
 enhance test case/example.  
 support generate the file according to template.  
+add method delete(T entity, Condition condition) in Suid.  
+support setting not allowed delete whole records in one table while Object Oriented way.  
 
 Quick Start:
 =========	
