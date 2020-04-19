@@ -140,7 +140,7 @@ public interface SuidRich extends Suid {
 	 * 更新记录,且可以指定需要更新的字段.
 	 * update record, can list update fields. 
 	 * @param entity 实体类对象,不能为空
-	 * @param updateFieldList 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新);其它非空,非null的字段作为过滤条件
+	 * @param updateFieldList 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空;其它非空,非null的字段作为过滤条件
 	 * @return
 	 */
 	public <T> int update(T entity,String updateFieldList);
@@ -150,7 +150,7 @@ public interface SuidRich extends Suid {
 	 * update record according to entity.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * id为null不作为过滤条件
-	 * @param updateFieldList 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新)
+	 * @param updateFieldList 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空
 	 * @param includeType 空字符串与null是否包含设置(是否作为过滤条件)
 	 * @return 更新的记录数
 	 */
