@@ -43,7 +43,7 @@ public interface Suid {
 	public <T> List<T> select(T entity);
 	
 	/**
-	 * 根据实体对象entity更新数据   According to entity object update record.
+	 * 根据实体对象entity更新数据,这个方法用于SQL的where条件的只有id属性.According to entity object update record.This method just has id field to SQL where expression.
 	 * @param entity 与表对应的实体对象,且不能为空;entity中id属性不能为空,作为过虑条件
 	 * entity中非null且非空字符串将更新到数据库(id除外).
 	 * table's entity(do not allow null);id is where condition,do not allow null.
