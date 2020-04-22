@@ -30,8 +30,10 @@ public interface ObjToSQLRich extends ObjToSQL{
 	public <T> String toSelectSQL(T entity,String fieldList) throws ObjSQLException;
 	public <T> String toSelectSQL(T entity,String selectFields,int start,int size);
 	
-	public <T> String toUpdateSQL(T entity,String updateFieldList) throws ObjSQLException;
-	public <T> String toUpdateSQL(T entity,String updateFieldList,IncludeType includeType) throws ObjSQLException;
+//	public <T> String toUpdateSQL(T entity,String updateFieldList) throws ObjSQLException;
+//	public <T> String toUpdateSQL(T entity,String updateFieldList,IncludeType includeType) throws ObjSQLException;
+	public <T> String toUpdateSQL(T entity,String updateFieldList);
+	public <T> String toUpdateSQL(T entity,String updateFieldList,IncludeType includeType);
 	
 	public <T> String toSelectFunSQL(T entity,FunctionType functionType, String FieldForFun) throws ObjSQLException;
 	
@@ -65,6 +67,25 @@ public interface ObjToSQLRich extends ObjToSQL{
 	public <T> String toUpdateBySQL(T entity,String whereFieldList);
 	public <T> String toUpdateBySQL(T entity,String whereFieldList,IncludeType includeType);
 	
+	/**
+	 * 
+	 * @param entity
+	 * @param whereFieldList
+	 * @param condition
+	 * @return
+	 * @since 1.7.2
+	 */
+	public <T> String toUpdateBySQL(T entity, String whereFieldList, Condition condition);
+
+	/**
+	 * 
+	 * @param entity
+	 * @param updateFieldList
+	 * @param condition
+	 * @return
+	 * @since 1.7.2
+	 */
+	public <T> String toUpdateSQL(T entity, String updateFieldList, Condition condition);
 
 	
 }
