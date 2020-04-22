@@ -132,6 +132,10 @@ V1.6.1
 支持使用模板快速生成文件.  
 在Suid接口增加方法 delete(T entity, Condition condition).  
 支持配置是否允许删除一个表的所有数据(在面向对象方式下有效).  
+SuidRich 新增两个方法:  
+  updateBy(T entity,String whereFields,Condition condition)  
+  update(T entity,String updateFields,Condition condition)  
+新增不使用缓存配置支持.  
 
 快速开始:
 =========	
