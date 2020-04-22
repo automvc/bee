@@ -29,9 +29,10 @@ package org.teasoft.bee.osql;
 public interface ObjToSQL{
 	
 	public  <T> String toSelectSQL(T entity) ;
-	public  <T> String toDeleteSQL(T entity) ;
+//	public  <T> String toUpdateSQL(T entity) throws ObjSQLException;
+	public  <T> String toUpdateSQL(T entity) ;
 	public  <T> String toInsertSQL(T entity) ;
-	public  <T> String toUpdateSQL(T entity) throws ObjSQLException;
+	public  <T> String toDeleteSQL(T entity) ;
 	
     /**
      * 根据entity和Condition转换成sql语句
@@ -42,5 +43,12 @@ public interface ObjToSQL{
      */
 	public  <T> String toSelectSQL(T entity,Condition condition) ;
 
+    /**
+     * 根据entity和Condition转换成sql语句
+     * @param entity
+     * @param condition
+     * @return
+     * @since  1.7.2
+     */
 	public  <T> String toDeleteSQL(T entity,Condition condition) ;
 }
