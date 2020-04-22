@@ -80,8 +80,8 @@ SuidRich add new method:
 select(T entity, IncludeType includeType, Condition condition)  
 selectJson(T entity, IncludeType includeType, Condition condition)  
 3.SuidRich add new method:  
-updateBy(T entity,String whereFieldList)  
-updateBy(T entity,String whereFieldList,IncludeType includeType)  
+updateBy(T entity,String whereFields)  
+updateBy(T entity,String whereFields,IncludeType includeType)  
 4.add SqlNullException in PreparedSqlLib.  
 V1.6.1  
 1.PreparedSql add start & size paging parameters in relative methods.  
@@ -116,6 +116,10 @@ enhance test case/example.
 support generate the file according to template.  
 add method delete(T entity, Condition condition) in Suid.  
 support setting not allowed delete whole records in one table while Object Oriented way.  
+SuidRich add 2 methods:  
+updateBy(T entity,String whereFields,Condition condition)  
+update(T entity,String updateFields,Condition condition)  
+add nocache config support.  
 
 Quick Start:
 =========	
