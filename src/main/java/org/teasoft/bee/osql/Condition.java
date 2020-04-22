@@ -28,14 +28,14 @@ public interface Condition extends ConditionAssistant {
 	/**
 	 * 添加用于分页时设置开始的页数.for setting the start of the page.
 	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
-	 * @return
+	 * @return Condition
 	 */
 	public Condition start(Integer start);
 
 	 /**
 	  * 添加用于分页时设置每页返回的记录数量.for setting the size of the page.
 	  * @param size 结果集大小 大于等于1. fetch result size (>0).
-	  * @return
+	  * @return Condition
 	  */
 	public Condition size(Integer size);
 	
@@ -43,7 +43,7 @@ public interface Condition extends ConditionAssistant {
 	 * 设置IncludeType过滤参数.op,between,notBetween方法设置的字段,不受includeType的值影响.
 	 * 如果Condition没有使用该方法设置,则按默认过滤方式处理.
 	 * @param includeType
-	 * @return
+	 * @return Condition
 	 * @since  1.7
 	 */
 	public Condition setIncludeType(IncludeType includeType);
@@ -53,33 +53,33 @@ public interface Condition extends ConditionAssistant {
 	 * @param field 字段名.field name
 	 * @param Op 操作符.operator.
 	 * @param value 字段对应的值.value of the field.
-	 * @return
+	 * @return Condition
 	 */
 	public Condition op(String field, Op Op, Object value);
 
 	/**
 	 * 默认自动加 'and'. Default will automatically add 'and'.
 	 * 
-	 * @return
+	 * @return Condition
 	 */
 	public Condition and();
 
 	/**
 	 * 添加 'or'. add 'or'.
 	 * 
-	 * @return
+	 * @return Condition
 	 */
 	public Condition or();
 
 	/**
 	 * 添加左括号.add left parentheses.
-	 * @return
+	 * @return Condition
 	 */
 	public Condition lParentheses();
 
 	/**
 	 * 添加右括号.add right parentheses.
-	 * @return
+	 * @return Condition
 	 */
 	public Condition rParentheses();
 
@@ -94,7 +94,7 @@ public interface Condition extends ConditionAssistant {
 	 * eg:having("count(*)>5")  --> having count(*)>5
 	 * @param expressionStr 表达式字符串,field不会被转化.
 	 * expression string,if contain field,it will not be translated.
-	 * @return
+	 * @return Condition
 	 */
 	public Condition having(String expressionStr);
 
@@ -104,14 +104,14 @@ public interface Condition extends ConditionAssistant {
 	 * @param field 实体字段,会被命名转换(如果需要).
 	 * @param Op 操作类型
 	 * @param value 值
-	 * @return
+	 * @return Condition
 	 */
 	public Condition having(FunctionType functionType, String field, Op Op, Number value);
 
 	/**
 	 * eg: orderBy("price")-->order by price
 	 * @param field
-	 * @return
+	 * @return Condition
 	 */
 	public Condition orderBy(String field);
 
@@ -119,7 +119,7 @@ public interface Condition extends ConditionAssistant {
 	 * eg: orderBy("price", OrderType.DESC)-->order by price desc
 	 * @param field 字段名.field name.
 	 * @param orderType 排序类型(asc或desc). order type(asc or desc)
-	 * @return
+	 * @return Condition
 	 */
 	public Condition orderBy(String field, OrderType orderType);
 
@@ -128,8 +128,29 @@ public interface Condition extends ConditionAssistant {
 	 * @param functionType 函数类型.Function type of SQL.
 	 * @param field 字段名.field name.
 	 * @param orderType 排序类型(asc或desc). order type(asc or desc)
-	 * @return
+	 * @return Condition
 	 */
 	public Condition orderBy(FunctionType functionType, String field, OrderType orderType);
+	
+	
+	/**
+	 * 只用于SQL语句的update.Just use in SQL update.
+	 * eg: setAdd("price","2.0")--> price=price+2.0
+	 * @param field
+	 * @param num
+	 * @return Condition
+	 * @since 1.7.2
+	 */
+	public Condition setAdd(String field,double num);
+	
+	/**
+	 * 只用于SQL语句的update.Just use in SQL update.
+	 * eg: setMultiply("price","1.05")--> price=price*1.05
+	 * @param field
+	 * @param num
+	 * @return Condition
+	 * @since 1.7.2
+	 */
+	public Condition setMultiply(String field,double num);
 
 }
