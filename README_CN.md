@@ -136,6 +136,7 @@ SuidRich 新增两个方法:
   updateBy(T entity,String whereFields,Condition condition)  
   update(T entity,String updateFields,Condition condition)  
 新增不使用缓存配置支持.  
+Condition接口新增方法setAdd,setMultiply.  
 
 快速开始:
 =========	
