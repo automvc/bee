@@ -57,7 +57,7 @@ public interface BeeSql {
 	 * @param entity 
 	 * @return
 	 */
-	public <T> List<T> selectSomeField(String sql,T entity );  //调用者:public <T> List<T> select(T entity, String selectField)
+	public <T> List<T> selectSomeField(String sql,T entity ); 
 	
 	/**
 	 * 用函数查询结果.select result with function. SQL function: max,min,avg,sum,count. 
