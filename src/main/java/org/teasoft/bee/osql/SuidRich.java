@@ -121,40 +121,40 @@ public interface SuidRich extends Suid {
 	 * 应用排序查询结果,排序的字段默认按升序排列.
 	 * select result by key:order,order type default is:asc
 	 * @param entity 传入的实体对象,且不能为空
-	 * @param orderFieldList 排序字段列表,多个用逗号隔开
+	 * @param orderFields 排序字段列表,多个用逗号隔开
 	 * @return 返回有排序的结果集
 	 */
-	public <T> List<T> selectOrderBy(T entity,String orderFieldList);
+	public <T> List<T> selectOrderBy(T entity,String orderFields);
 	
 	/**
 	 * 应用排序查询结果.
 	 * select result by key:order.
 	 * @param entity 传入的实体对象,且不能为空
-	 * @param orderFieldList 排序字段列表,多个用逗号隔开
+	 * @param orderFields 排序字段列表,多个用逗号隔开
 	 * @param orderTypes 排序类型列表
 	 * @return 返回有排序的结果集
 	 */
-	public <T> List<T> selectOrderBy(T entity,String orderFieldList,OrderType[] orderTypes);
+	public <T> List<T> selectOrderBy(T entity,String orderFields,OrderType[] orderTypes);
 	
 	/**
 	 * 更新记录,且可以指定需要更新的字段.
 	 * update record, can list update fields. 
 	 * @param entity 实体类对象,不能为空
-	 * @param updateFieldList 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,默认每个字段会被转化成SQL的set表达式;其它非空,非null的字段作为过滤条件,转成SQL的where表达式.
+	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,默认每个字段会被转化成SQL的set表达式;其它非空,非null的字段作为过滤条件,转成SQL的where表达式.
 	 * @return
 	 */
-	public <T> int update(T entity,String updateFieldList);
+	public <T> int update(T entity,String updateFields);
 	
 	/**
 	 * 根据实体对象entity更新数据,可以指定需要更新的字段.
 	 * update record according to entity.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * id为null不作为过滤条件
-	 * @param updateFieldList 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,且不受includeType参数的影响,默认每个字段会被转化成SQL的set表达式
+	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,且不受includeType参数的影响,默认每个字段会被转化成SQL的set表达式
 	 * @param includeType 空字符串与null是否包含设置(是否作为过滤条件)
 	 * @return 更新的记录数
 	 */
-	public <T> int update(T entity,String updateFieldList,IncludeType includeType);
+	public <T> int update(T entity,String updateFields,IncludeType includeType);
 	
 	/**
 	 * 批量插入数据. insert records by batch.
@@ -172,19 +172,19 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
-	 * @param excludeFieldList
+	 * @param excludeFields
 	 * @return
 	 */
-	public <T> int[] insert(T[] entity,String excludeFieldList);
+	public <T> int[] insert(T[] entity,String excludeFields);
 	
 	/**
 	 * 批量插入数据,可以指定不插入的字段.
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
 	 * @param batchSize 批操作数量大小.batch size.
-	 * @param excludeFieldList 不插入的字段列表.don't insert fields list.
+	 * @param excludeFields 不插入的字段列表.don't insert fields list.
 	 * @return
 	 */
-	public <T> int[] insert(T[] entity,int batchSize,String excludeFieldList);
+	public <T> int[] insert(T[] entity,int batchSize,String excludeFields);
 	
 	/**
 	 * 根据实体对象entity查询数据.
@@ -318,52 +318,52 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 更新记录,且可以指定作为条件的字段.
-	 * update record according to whereFieldList.
+	 * update record according to whereFields.
 	 * @param entity 实体类对象,不能为空
-	 * 没指定为whereFieldList的字段,作为set部分,默认只处理非空,非null的字段
-	 * @param whereFieldList 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
+	 * 没指定为whereFields的字段,作为set部分,默认只处理非空,非null的字段
+	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
 	 * 指定作为条件的,都转换.id为null不作为过滤条件
 	 * @return
 	 * @since  1.6
 	 */
-	public <T> int updateBy(T entity,String whereFieldList);
+	public <T> int updateBy(T entity,String whereFields);
 	
 	/**
 	 * 更新记录,且可以指定作为条件的字段和指定字段的过滤类型
-	 * update record according to whereFieldList.
+	 * update record according to whereFields.
 	 * @param entity 与表对应的实体对象,且不能为空
-	 * 没指定为whereFieldList的字段,作为set部分.
-	 * @param whereFieldList 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
+	 * 没指定为whereFields的字段,作为set部分.
+	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
 	 * 指定作为条件的,都转换.id为null不作为过滤条件
 	 * @param includeType 空字符串与null是否包含设置(是否作为过滤条件)
 	 * @return 更新的记录数
 	 * @since  1.6
 	 */
-	public <T> int updateBy(T entity,String whereFieldList,IncludeType includeType);
+	public <T> int updateBy(T entity,String whereFields,IncludeType includeType);
 	
 	/**
 	 * 更新记录,且可以指定作为条件的字段.
-	 * update record according to whereFieldList.
+	 * update record according to whereFields.
 	 * @param entity 实体类对象,不能为空
-	 * 没指定为whereFieldList的字段,作为set部分,默认只处理非空,非null的字段
-	 * @param whereFieldList 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
+	 * 没指定为whereFields的字段,作为set部分,默认只处理非空,非null的字段
+	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
 	 * 指定作为条件的,都转换.id为null不作为过滤条件
 	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
 	 * @return
 	 * @since 1.7.2
 	 */
-	public <T> int updateBy(T entity,String whereFieldList,Condition condition);
+	public <T> int updateBy(T entity,String whereFields,Condition condition);
 	
 	
 	/**
 	 * 更新记录,且可以指定需要更新的字段,高级条件可通过Condition参数设置.
 	 * update record, can list update fields. 
 	 * @param entity 实体类对象,不能为空
-	 * @param updateFieldList 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,默认每个字段会被转化成SQL的set表达式;其它非空,非null的字段作为过滤条件,转成SQL的where表达式.
+	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,默认每个字段会被转化成SQL的set表达式;其它非空,非null的字段作为过滤条件,转成SQL的where表达式.
 	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
 	 * @return
 	 * @since 1.7.2
 	 */
-	public <T> int update(T entity,String updateFieldList,Condition condition);
+	public <T> int update(T entity,String updateFields,Condition condition);
 
 }
