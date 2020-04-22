@@ -27,18 +27,18 @@ public interface ObjToSQLRich extends ObjToSQL{
 
 	public <T> String toSelectSQL(T entity,int size);
 	public <T> String toSelectSQL(T entity,int start,int size);
-	public <T> String toSelectSQL(T entity,String fieldList) throws ObjSQLException;
+	public <T> String toSelectSQL(T entity,String fields) throws ObjSQLException;
 	public <T> String toSelectSQL(T entity,String selectFields,int start,int size);
 	
 //	public <T> String toUpdateSQL(T entity,String updateFieldList) throws ObjSQLException;
 //	public <T> String toUpdateSQL(T entity,String updateFieldList,IncludeType includeType) throws ObjSQLException;
-	public <T> String toUpdateSQL(T entity,String updateFieldList);
-	public <T> String toUpdateSQL(T entity,String updateFieldList,IncludeType includeType);
+	public <T> String toUpdateSQL(T entity,String updateFields);
+	public <T> String toUpdateSQL(T entity,String updateFields,IncludeType includeType);
 	
 	public <T> String toSelectFunSQL(T entity,FunctionType functionType, String FieldForFun) throws ObjSQLException;
 	
-	public <T> String toSelectOrderBySQL(T entity, String orderFieldList) throws ObjSQLException;
-	public <T> String toSelectOrderBySQL(T entity, String orderFieldList,OrderType[] orderTypes) throws ObjSQLException;
+	public <T> String toSelectOrderBySQL(T entity, String orderFields) throws ObjSQLException;
+	public <T> String toSelectOrderBySQL(T entity, String orderFields,OrderType[] orderTypes) throws ObjSQLException;
 
 	public  <T> String toSelectSQL(T entity, IncludeType includeType);
 	public  <T> String toDeleteSQL(T entity, IncludeType includeType);
@@ -46,7 +46,7 @@ public interface ObjToSQLRich extends ObjToSQL{
 	public  <T> String toUpdateSQL(T entity, IncludeType includeType);
 	
 	public  <T> String[] toInsertSQL(T[] entity);
-	public  <T> String[] toInsertSQL(T[] entity,String excludeFieldList);
+	public  <T> String[] toInsertSQL(T[] entity,String excludeFields);
 	
 	public  String toDeleteByIdSQL(Class c, Integer id);
 	public  String toDeleteByIdSQL(Class c, Long id);
@@ -64,28 +64,28 @@ public interface ObjToSQLRich extends ObjToSQL{
      * @since  1.6
      */
 	public  <T> String toSelectSQL(T entity, IncludeType includeType, Condition condition);
-	public <T> String toUpdateBySQL(T entity,String whereFieldList);
-	public <T> String toUpdateBySQL(T entity,String whereFieldList,IncludeType includeType);
+	public <T> String toUpdateBySQL(T entity,String whereFields);
+	public <T> String toUpdateBySQL(T entity,String whereFields,IncludeType includeType);
 	
 	/**
 	 * 
 	 * @param entity
-	 * @param whereFieldList
+	 * @param whereFields
 	 * @param condition
 	 * @return
 	 * @since 1.7.2
 	 */
-	public <T> String toUpdateBySQL(T entity, String whereFieldList, Condition condition);
+	public <T> String toUpdateBySQL(T entity, String whereFields, Condition condition);
 
 	/**
 	 * 
 	 * @param entity
-	 * @param updateFieldList
+	 * @param updateFields
 	 * @param condition
 	 * @return
 	 * @since 1.7.2
 	 */
-	public <T> String toUpdateSQL(T entity, String updateFieldList, Condition condition);
+	public <T> String toUpdateSQL(T entity, String updateFields, Condition condition);
 
 	
 }
