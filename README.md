@@ -120,6 +120,7 @@ SuidRich add 2 methods:
 updateBy(T entity,String whereFields,Condition condition)  
 update(T entity,String updateFields,Condition condition)  
 add nocache config support.  
+add method setAdd,setMultiply in Condition.  
 
 Quick Start:
 =========	
