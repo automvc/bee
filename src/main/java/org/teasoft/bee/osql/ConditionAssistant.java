@@ -40,4 +40,11 @@ public interface ConditionAssistant {
 	  * @since  1.7
 	  */
 	 public IncludeType getIncludeType();
+	 
+	 /**
+	  * 
+	  * @return
+	  * @since 1.7.2
+	  */
+	 public Set<String> getUpdatefieldSet();
 }
