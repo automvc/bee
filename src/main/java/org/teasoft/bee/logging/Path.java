@@ -18,7 +18,7 @@
 package org.teasoft.bee.logging;
 
 /**
- * 设置日志文件的路径与文件名.set the log file path and name.
+ * 设置日志文件的路径与文件名.set the log file path(include file name).
  * @author Kingstar
  * @since  1.7.2
  */
