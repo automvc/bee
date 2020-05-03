@@ -290,7 +290,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * 根据实体对象entity查询数据.
 	 * select record according to entity.
-	 * @deprecated Suid的 select(T entity,Condition condition)方法中,可以通过condition设置includeType.
+	 * @deprecated Suid.select(T entity,Condition condition)方法中,可以通过condition设置includeType.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * id为时null不作为过滤条件
 	 * @param includeType 空字符串与null是否包含设置
