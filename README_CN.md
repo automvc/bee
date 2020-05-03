@@ -147,13 +147,13 @@ Condition接口新增方法setAdd,setMultiply.
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<version>1.7.1</version>
+			<version>1.7.2</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<version>1.7.1</version>
+			<version>1.7.2</version>
 		</dependency>
 ```
 
