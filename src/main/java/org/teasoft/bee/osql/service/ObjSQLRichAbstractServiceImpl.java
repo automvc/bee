@@ -219,9 +219,9 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 	}
 
 	@Override
-	public <T> int updateBy(T entity, String whereFieldList) {
+	public <T> int updateBy(T entity, String whereFields) {
 		//Add the business logic if need.
-		return getSuidRich().updateBy(entity, whereFieldList);
+		return getSuidRich().updateBy(entity, whereFields);
 	}
 
 	@Override
@@ -231,15 +231,15 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 	}
 	
 	@Override
-	public <T> int updateBy(T entity, String whereFieldList, Condition condition) {
+	public <T> int updateBy(T entity, String whereFields, Condition condition) {
 		//Add the business logic if need.
-		return getSuidRich().updateBy(entity, whereFieldList, condition);
+		return getSuidRich().updateBy(entity, whereFields, condition);
 	}
 
 	@Override
-	public <T> int update(T entity, String updateFieldList, Condition condition) {
+	public <T> int update(T entity, String updateFields, Condition condition) {
 		//Add the business logic if need.
-		return getSuidRich().update(entity, updateFieldList, condition);
+		return getSuidRich().update(entity, updateFields, condition);
 	}
 	
 }
