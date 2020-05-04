@@ -225,9 +225,9 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 	}
 
 	@Override
-	public <T> int updateBy(T entity, String whereFieldList, IncludeType includeType) {
+	public <T> int updateBy(T entity, String whereFields, IncludeType includeType) {
 		//Add the business logic if need.
-		return getSuidRich().updateBy(entity, whereFieldList,includeType);
+		return getSuidRich().updateBy(entity, whereFields,includeType);
 	}
 	
 	@Override
