@@ -132,7 +132,6 @@ public interface Condition extends ConditionAssistant {
 	 */
 	public Condition orderBy(FunctionType functionType, String field, OrderType orderType);
 	
-	
 	/**
 	 * 只用于SQL语句的update.Just use in SQL update.
 	 * eg: setAdd("price","2.0")--> price=price+2.0

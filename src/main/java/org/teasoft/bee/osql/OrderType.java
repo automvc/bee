@@ -15,7 +15,7 @@ public enum OrderType {
     
     /**
      * 返回排序类型.
-     * @return
+     * @return type of order.
      */
     public String getName(){
     	return name;
