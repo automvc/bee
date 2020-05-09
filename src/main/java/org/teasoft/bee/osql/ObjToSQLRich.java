@@ -60,7 +60,7 @@ public interface ObjToSQLRich extends ObjToSQL{
      * @param entity
      * @param includeType
      * @param condition
-     * @return
+     * @return the sql string.
      * @since  1.6
      */
 	public  <T> String toSelectSQL(T entity, IncludeType includeType, Condition condition);
@@ -72,7 +72,7 @@ public interface ObjToSQLRich extends ObjToSQL{
 	 * @param entity
 	 * @param whereFields
 	 * @param condition
-	 * @return
+	 * @return the sql string.
 	 * @since 1.7.2
 	 */
 	public <T> String toUpdateBySQL(T entity, String whereFields, Condition condition);
@@ -82,7 +82,7 @@ public interface ObjToSQLRich extends ObjToSQL{
 	 * @param entity
 	 * @param updateFields
 	 * @param condition
-	 * @return
+	 * @return the sql string.
 	 * @since 1.7.2
 	 */
 	public <T> String toUpdateSQL(T entity, String updateFields, Condition condition);
