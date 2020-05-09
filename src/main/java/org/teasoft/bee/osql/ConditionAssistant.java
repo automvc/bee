@@ -42,8 +42,8 @@ public interface ConditionAssistant {
 	 public IncludeType getIncludeType();
 	 
 	 /**
-	  * 
-	  * @return
+	  * return the fields use in method of setAdd and setMultiply.
+	  * @return set of fields
 	  * @since 1.7.2
 	  */
 	 public Set<String> getUpdatefieldSet();
