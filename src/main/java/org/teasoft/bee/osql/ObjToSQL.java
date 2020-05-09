@@ -38,7 +38,7 @@ public interface ObjToSQL{
      * 根据entity和Condition转换成sql语句
      * @param entity
      * @param condition
-     * @return
+     * @return the sql string.
      * @since  1.6
      */
 	public  <T> String toSelectSQL(T entity,Condition condition) ;
@@ -47,7 +47,7 @@ public interface ObjToSQL{
      * 根据entity和Condition转换成sql语句
      * @param entity
      * @param condition
-     * @return
+     * @return the sql string.
      * @since  1.7.2
      */
 	public  <T> String toDeleteSQL(T entity,Condition condition) ;
