@@ -323,7 +323,7 @@ public interface SuidRich extends Suid {
 	 * 没指定为whereFields的字段,作为set部分,默认只处理非空,非null的字段
 	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
 	 * 指定作为条件的,都转换.id为null不作为过滤条件
-	 * @return
+	 * @return 被更新记录的行数.the row number of updated record(s).
 	 * @since  1.6
 	 */
 	public <T> int updateBy(T entity,String whereFields);
@@ -336,7 +336,7 @@ public interface SuidRich extends Suid {
 	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
 	 * 指定作为条件的,都转换.id为null不作为过滤条件
 	 * @param includeType 空字符串与null是否包含设置(是否作为过滤条件)
-	 * @return 更新的记录数
+	 * @return 被更新记录的行数.the row number of updated record(s).
 	 * @since  1.6
 	 */
 	public <T> int updateBy(T entity,String whereFields,IncludeType includeType);
@@ -349,7 +349,7 @@ public interface SuidRich extends Suid {
 	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
 	 * 指定作为条件的,都转换.id为null不作为过滤条件
 	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
-	 * @return
+	 * @return 被更新记录的行数.the row number of updated record(s).
 	 * @since 1.7.2
 	 */
 	public <T> int updateBy(T entity,String whereFields,Condition condition);
@@ -361,7 +361,7 @@ public interface SuidRich extends Suid {
 	 * @param entity 实体类对象,不能为空
 	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,默认每个字段会被转化成SQL的set表达式;其它非空,非null的字段作为过滤条件,转成SQL的where表达式.
 	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
-	 * @return
+	 * @return 被更新记录的行数.the row number of updated record(s).
 	 * @since 1.7.2
 	 */
 	public <T> int update(T entity,String updateFields,Condition condition);
