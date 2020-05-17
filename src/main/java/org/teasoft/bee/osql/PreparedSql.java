@@ -233,7 +233,9 @@ public interface PreparedSql {
 	public String selectJson(String sqlStr,Map<String,Object> map,int start,int size);
 	/**
 	 * 操作update,insert,delete
-	 * @deprecated 不建议使用,因为框架不知道具体是更改了什么表,会影响缓存的正确性,从而产生缓存数据不准确的危险
+	 * @deprecated 不建议使用,因为框架不知道具体是更改了什么表,会影响缓存的正确性,从而产生缓存数据不准确的危险.It is not recommended because 
+	 * the framework does not know what table has been changed, which will affect the correctness of the cache and 
+	 * cause the risk of inaccurate cache data.
 	 * @param sql	SQL select statement
 	 * @param preValues 占位符对应的参数数组.parameter values for placeholder
 	 * @return	返回成功操作的记录行数. the number of successful records.
@@ -243,7 +245,9 @@ public interface PreparedSql {
 	
 	/**
 	 * 操作update,insert,delete
-	 * @deprecated 不建议使用,因为框架不知道具体是更改了什么表,会影响缓存的正确性,从而产生缓存数据不准确的危险
+	 * @deprecated 不建议使用,因为框架不知道具体是更改了什么表,会影响缓存的正确性,从而产生缓存数据不准确的危险.It is not recommended because 
+	 * the framework does not know what table has been changed, which will affect the correctness of the cache and 
+	 * cause the risk of inaccurate cache data.
 	 * @param sql	SQL select statement
 	 * @param map 占位符对应的参数map.parameter values for placeholder
 	 * @return	返回成功操作的记录行数. the number of successful records.
