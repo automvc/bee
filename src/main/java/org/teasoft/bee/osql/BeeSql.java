@@ -31,7 +31,7 @@ import java.util.List;
 public interface BeeSql {
 	
 	/**
-	 * 根据sql查询数据,数据类型与entity类型一致
+	 * 根据sql查询数据,数据类型与entity类型一致.According to SQL query data, data type is consistent with entity type.
 	 * @param sql	SQL select statement
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * entity corresponding to table and can not be null.
@@ -52,7 +52,7 @@ public interface BeeSql {
 	
 	
 	/**
-	 * 查询部分字段  select some field
+	 * 查询部分字段.select some field.
 	 * @param sql	SQL select statement
 	 * @param entity 
 	 * @return
@@ -103,7 +103,7 @@ public interface BeeSql {
 	public int[] batch(String sqls[]);
 	
 	/**
-	 * 提交一批命令到数据库
+	 * 提交一批命令到数据库.Submit a batch of commands to the database.
 	 * Submits a batch of commands to the database.
 	 * @param sqls 要执行的sql语句数组 Array of SQL statements to execute
 	 * @param batchSize
