@@ -31,7 +31,7 @@ import java.util.List;
 public interface Suid {
 	
 	/**
-	 * 根据实体对象entity查询数据
+	 * 根据实体对象entity查询数据.
 	 * According to entity object select records from database.
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
 	 * entity中非null且非空字符串作为过虑条件,操作符是等号.eg:field=value
@@ -58,7 +58,7 @@ public interface Suid {
 	
 	
 	/**
-	 * 根据实体对象entity插入数据 According to entity object insert record. 
+	 * 根据实体对象entity插入数据.According to entity object insert record. 
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
 	 * entity中非null且非空字符串将插入到数据库
 	 * The entity corresponding to table and can not be null. 
@@ -68,7 +68,7 @@ public interface Suid {
 	public <T> int insert(T entity);
 	
 	/**
-	 * 根据实体对象entity删除数据 According to entity object delete record. 
+	 * 根据实体对象entity删除数据.According to entity object delete record. 
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
 	 * entity中非null且非空字符串作为过虑条件,操作符是等号.eg:field=value
 	 * The entity corresponding to table and can not be null.
@@ -79,7 +79,7 @@ public interface Suid {
 	public <T> int delete(T entity);
 	
 	/**
-	 * 根据实体对象和Condition查询数据.select the records according to entity and condition.
+	 * 根据实体对象和Condition查询数据.Select the records according to entity and condition.
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
 	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
@@ -91,7 +91,7 @@ public interface Suid {
 
 	
 	/**
-	 * 根据实体对象和Condition删记录.delete the records according to entity and condition.
+	 * 根据实体对象和Condition删记录.Delete the records according to entity and condition.
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
 	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
