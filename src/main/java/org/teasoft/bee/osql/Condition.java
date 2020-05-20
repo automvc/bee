@@ -26,7 +26,7 @@ package org.teasoft.bee.osql;
 public interface Condition extends ConditionAssistant {
 
 	/**
-	 * 添加用于分页时设置开始的页数.for setting the start of the page.
+	 * 添加用于分页时设置开始的页数.For setting the start of the page.
 	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
 	 * @return Condition
 	 */
@@ -40,7 +40,7 @@ public interface Condition extends ConditionAssistant {
 	public Condition size(Integer size);
 	
 	/**
-	 * 设置IncludeType过滤参数.op,between,notBetween方法设置的字段,不受includeType的值影响.
+	 * 设置IncludeType过滤参数.op,between,notBetween方法设置的字段,不受includeType的值影响.Set IncludeType.
 	 * 如果Condition没有使用该方法设置,则按默认过滤方式处理.
 	 * @param includeType
 	 * @return Condition
@@ -49,7 +49,7 @@ public interface Condition extends ConditionAssistant {
 	public Condition setIncludeType(IncludeType includeType);
 
 	/**
-	 * 添加一个表达式条件.add a expression condition.
+	 * 添加一个表达式条件.Add a expression condition.
 	 * @param field 字段名.field name
 	 * @param Op 操作符.operator.
 	 * @param value 字段对应的值.value of the field.
@@ -65,20 +65,20 @@ public interface Condition extends ConditionAssistant {
 	public Condition and();
 
 	/**
-	 * 添加 'or'. add 'or'.
+	 * 添加 'or'. Add 'or'.
 	 * 
 	 * @return Condition
 	 */
 	public Condition or();
 
 	/**
-	 * 添加左括号.add left parentheses.
+	 * 添加左括号.Add left parentheses.
 	 * @return Condition
 	 */
 	public Condition lParentheses();
 
 	/**
-	 * 添加右括号.add right parentheses.
+	 * 添加右括号.Add right parentheses.
 	 * @return Condition
 	 */
 	public Condition rParentheses();
