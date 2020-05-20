@@ -153,7 +153,7 @@ public interface SuidRich extends Suid {
 	public <T> int update(T entity,String updateFields,IncludeType includeType);
 	
 	/**
-	 * 批量插入数据. insert records by batch.
+	 * 批量插入数据. Insert records by batch.
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
 	 * @return
 	 */
@@ -184,7 +184,7 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 根据实体对象entity查询数据.
-	 * select record according to entity.
+	 * Select record according to entity.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * id为时null不作为过滤条件
 	 * @param includeType 空字符串与null是否包含设置
