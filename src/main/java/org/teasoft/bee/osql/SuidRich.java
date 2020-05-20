@@ -91,8 +91,7 @@ public interface SuidRich extends Suid {
 	public <T> List<String[]> selectString(T entity,String selectFields); 
 	
 	/**
-	 * 根据实体对象entity查询数据,并返回Json格式结果.
-	 * select Json type result by entity. 
+	 * 根据实体对象entity查询数据,并返回Json格式结果.Select Json type result by entity. 
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * entity中非null与非空字符串作为过虑条件,操作符是等号.eg:field=value
 	 * @return 返回可包含多个实体(多条记录)的list转换成的json格式的字符串. return Json string, it transform from list which can contain more than one entity.
@@ -101,15 +100,14 @@ public interface SuidRich extends Suid {
 	public <T> String selectJson(T entity);
 	
 	/**
-	 * 查询一个实体.
-	 * select one record.  
+	 * 查询一个实体.Select one record.  
 	 * @param entity 实体类对象
 	 * @return 只返回一个实体,数量不为1测返回null.return one record,if the size do not equal one, return null.
 	 */
 	public <T> T selectOne(T entity);
 	
 	/**
-	 * 使用函数查询结果.select result with function.
+	 * 使用函数查询结果.Select result with function.
 	 * @param entity 传入的实体对象,且不能为空
 	 * @param fieldForFun 需要使用函数的字段
 	 * @param functionType MAX,MIN,SUM,AVG,COUNT
@@ -119,7 +117,7 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 应用排序查询结果,排序的字段默认按升序排列.
-	 * select result by key:order,order type default is:asc
+	 * Select result by key:order,order type default is:asc
 	 * @param entity 传入的实体对象,且不能为空
 	 * @param orderFields 排序字段列表,多个用逗号隔开
 	 * @return 返回有排序的结果集
@@ -128,7 +126,7 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 应用排序查询结果.
-	 * select result by key:order.
+	 * Select result by key:order.
 	 * @param entity 传入的实体对象,且不能为空
 	 * @param orderFields 排序字段列表,多个用逗号隔开
 	 * @param orderTypes 排序类型列表
@@ -137,8 +135,7 @@ public interface SuidRich extends Suid {
 	public <T> List<T> selectOrderBy(T entity,String orderFields,OrderType[] orderTypes);
 	
 	/**
-	 * 更新记录,且可以指定需要更新的字段.
-	 * update record, can list update fields. 
+	 * 更新记录,且可以指定需要更新的字段.Update record, can list update fields. 
 	 * @param entity 实体类对象,不能为空
 	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,默认每个字段会被转化成SQL的set表达式;其它非空,非null的字段作为过滤条件,转成SQL的where表达式.
 	 * @return
@@ -146,8 +143,7 @@ public interface SuidRich extends Suid {
 	public <T> int update(T entity,String updateFields);
 	
 	/**
-	 * 根据实体对象entity更新数据,可以指定需要更新的字段.
-	 * update record according to entity.
+	 * 根据实体对象entity更新数据,可以指定需要更新的字段.Update record according to entity.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * id为null不作为过滤条件
 	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,且不受includeType参数的影响,默认每个字段会被转化成SQL的set表达式
@@ -233,7 +229,7 @@ public interface SuidRich extends Suid {
 	public <T> String selectJson(T entity,IncludeType includeType);
 	
 	/**
-	 * 根据id查询记录. select record by id.
+	 * 根据id查询记录. Select record by id.
 	 * @param entity 实体类对象,且不能为空
 	 * @param id 实体id字段的值.value of entity's id field. 
 	 * @return 返回查询对象列表
@@ -242,7 +238,7 @@ public interface SuidRich extends Suid {
 	public <T> List<T> selectById(T entity,Integer id);
 	
 	/**
-	 * 根据id查询记录. select record by id.
+	 * 根据id查询记录. Select record by id.
 	 * @param entity 实体类对象,且不能为空
 	 * @param id 实体id字段的值.value of entity's id field.
 	 * @return 返回查询对象列表
@@ -251,7 +247,7 @@ public interface SuidRich extends Suid {
 	public <T> List<T> selectById(T entity,Long id);
 	
 	/**
-	 * 根据id查询记录. select record by id.
+	 * 根据id查询记录. Select record by id.
 	 * @param entity 实体类对象,且不能为空
 	 * @param ids 实体id字段的值,多个用逗号隔开.values of entity's id field.
 	 * @return 返回查询对象列表
@@ -260,7 +256,7 @@ public interface SuidRich extends Suid {
 	public <T> List<T> selectById(T entity,String ids);
 	
 	/**
-	 * 根据id删记录.delete record by id.
+	 * 根据id删记录.Delete record by id.
 	 * @param c 实体类类型,且不能为空
 	 * @param id
 	 * @return 返回成功删除记录数
@@ -269,7 +265,7 @@ public interface SuidRich extends Suid {
 	public int deleteById(Class c,Integer id);
 	
 	/**
-	 * 根据id删记录.delete record by id.
+	 * 根据id删记录.Delete record by id.
 	 * @param c 实体类类型,且不能为空
 	 * @param id 实体id字段的值. value of entity's id field.
 	 * @return 返回成功删除记录数
@@ -278,7 +274,7 @@ public interface SuidRich extends Suid {
 	public int deleteById(Class c,Long id);
 	
 	/**
-	 * 根据id删记录.delete record by id.
+	 * 根据id删记录.Delete record by id.
 	 * @param c 实体类类型,且不能为空
 	 * @param ids 实体id字段的值,多个用逗号隔开.ids values of entity's id field.
 	 * @return 返回成功删除记录数
@@ -288,8 +284,7 @@ public interface SuidRich extends Suid {
 	
 	
 	/**
-	 * 根据实体对象entity查询数据.
-	 * select record according to entity.
+	 * 根据实体对象entity查询数据.Select record according to entity.
 	 * @deprecated Suid.select(T entity,Condition condition)方法中,可以通过condition设置includeType.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * id为时null不作为过滤条件
@@ -317,8 +312,7 @@ public interface SuidRich extends Suid {
 	
 	
 	/**
-	 * 更新记录,且可以指定作为条件的字段.
-	 * update record according to whereFields.
+	 * 更新记录,且可以指定作为条件的字段.Update record according to whereFields.
 	 * @param entity 实体类对象,不能为空
 	 * 没指定为whereFields的字段,作为set部分,默认只处理非空,非null的字段
 	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
@@ -329,8 +323,7 @@ public interface SuidRich extends Suid {
 	public <T> int updateBy(T entity,String whereFields);
 	
 	/**
-	 * 更新记录,且可以指定作为条件的字段和指定字段的过滤类型
-	 * update record according to whereFields.
+	 * 更新记录,且可以指定作为条件的字段和指定字段的过滤类型.Update record according to whereFields.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * 没指定为whereFields的字段,作为set部分.
 	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
@@ -342,8 +335,7 @@ public interface SuidRich extends Suid {
 	public <T> int updateBy(T entity,String whereFields,IncludeType includeType);
 	
 	/**
-	 * 更新记录,且可以指定作为条件的字段.
-	 * update record according to whereFields.
+	 * 更新记录,且可以指定作为条件的字段.Update record according to whereFields.
 	 * @param entity 实体类对象,不能为空
 	 * 没指定为whereFields的字段,作为set部分,默认只处理非空,非null的字段
 	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
@@ -356,8 +348,7 @@ public interface SuidRich extends Suid {
 	
 	
 	/**
-	 * 更新记录,且可以指定需要更新的字段,高级条件可通过Condition参数设置.
-	 * update record, can list update fields. 
+	 * 更新记录,且可以指定需要更新的字段,高级条件可通过Condition参数设置.Update record, can list update fields. 
 	 * @param entity 实体类对象,不能为空
 	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,默认每个字段会被转化成SQL的set表达式;其它非空,非null的字段作为过滤条件,转成SQL的where表达式.
 	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
