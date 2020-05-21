@@ -55,7 +55,7 @@ public interface BeeSql {
 	 * 查询部分字段.select some field.
 	 * @param sql	SQL select statement
 	 * @param entity 
-	 * @return
+	 * @return 返回entity的list,这些entity只有查询的部分字段会设值.return list entity which just has some field.
 	 */
 	public <T> List<T> selectSomeField(String sql,T entity ); 
 	
