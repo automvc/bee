@@ -28,7 +28,7 @@ public interface ConditionAssistant {
 	
 	/**
 	 * Condition的FieldSet已包含的字段,默认情况不再遍历.If the field use in Condition,it would not be processed again in default.
-	 * @return
+	 * @return 返回用于Condition表达式的字段集合.
 	 */
 	public Set<String> getFieldSet();
 	
