@@ -29,7 +29,7 @@ public interface DbFeature {
 	 * @param sql sql语句
 	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
 	 * @param size 结果集大小 大于等于1. fetch result size (>0).
-	 * @return
+	 * @return 返回增加分页功能的sql. Return paging sql.
 	 */
 	public String toPageSql(String sql,int start,int size);
 	
@@ -38,7 +38,7 @@ public interface DbFeature {
 	 * it is equal: toPageSql(sql,0,size)
 	 * @param sql sql语句
 	 * @param size 结果集大小 大于等于1. fetch result size (>0).
-	 * @return
+	 * @return 返回增加分页功能的sql. Return paging sql.
 	 */
 	public String toPageSql(String sql, int size);
 }
