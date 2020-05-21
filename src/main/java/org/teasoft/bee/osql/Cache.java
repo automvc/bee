@@ -28,7 +28,7 @@ public interface Cache {
 	 * 通过查询用的sql获取缓存结果记录
 	 * get the cache result by sql 
 	 * @param sql 查询用的sql
-	 * @return
+	 * @return 返回缓存的结果集.return the cache resultset.
 	 */
 	public Object get(String sql);
 	
