@@ -40,7 +40,7 @@ public interface Select extends ToSql{
 
 	/**
 	 * 默认自动加and. Default will automatically add and.
-	 * @return
+	 * @return Select
 	 */
 	public Select and();
 

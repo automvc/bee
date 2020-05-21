@@ -40,7 +40,7 @@ public interface Update extends ToSql{
 
 	/**
 	 * 默认自动加and. Default will automatically add and.
-	 * @return
+	 * @return Update
 	 */
 	public Update and();
 
