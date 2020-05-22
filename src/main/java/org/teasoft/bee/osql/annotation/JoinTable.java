@@ -37,19 +37,19 @@ public @interface JoinTable {
 
 	/**
 	 * 主表关联的字段.The join on field of main table.
-	 * @return
+	 * @return main table's join field name.
 	 */
 	String mainField() default ""; 
 
 	/**
 	 * 从表关联的字段.The join on field of subtable.
-	 * @return
+	 * @return subtable's join field name.
 	 */
 	String subField() default ""; 
 
 	/**
 	 * 从表别名.Subtable alias.
-	 * @return
+	 * @return subtable alias.
 	 */
 	String subAlias() default ""; 
 
