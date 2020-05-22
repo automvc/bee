@@ -28,7 +28,7 @@ public interface NameTranslate {
 	 * 将Java实体名转成DB表名
 	 * entity name to table name
 	 * @param entityName
-	 * @return
+	 * @return Return table name.
 	 */
 	public String toTableName(String entityName);
 	
@@ -37,7 +37,7 @@ public interface NameTranslate {
 	 * 将Java实体类的字段名转成DB表的列名
 	 * field name to column name
 	 * @param fieldName field name in Java entity. Java里实体类的字段名
-	 * @return
+	 * @return Return column name.
 	 */
 	public String toColumnName(String fieldName);
 	
@@ -46,7 +46,7 @@ public interface NameTranslate {
 	 * 将DB表名转成Java实体名
 	 * table name to entity name
 	 * @param tableName
-	 * @return
+	 * @return Return entity name(Javabean name).
 	 */
 	public String toEntityName(String tableName);
 	
@@ -55,7 +55,7 @@ public interface NameTranslate {
 	 * 将DB表的列名转成Java里实体类的字段名
 	 * column name to field name
 	 * @param columnName DB table's column name. DB表的列名
-	 * @return
+	 * @return Return Javabean's field name.
 	 */
 	public String toFieldName(String columnName);
 }
