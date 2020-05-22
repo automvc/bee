@@ -87,7 +87,7 @@ public interface BeeSql {
 	 * 操作update,insert,delete.对应Jdbc的executeUpdate方法
 	 * operate update,insert,delete. corresponding to Jdbc executeUpdate method.
 	 * @param sql  SQL statement to execute
-	 * @return the number of successful records 返回成功操作的记录行数
+	 * @return 成功操作的记录行数. the number of affected successfully records.
 	 */
 	public int modify(String sql);
 	
