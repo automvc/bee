@@ -72,7 +72,7 @@ public interface PreparedSql {
 	
 	/**
 	 * 通过变量的占位语句查询数据.entity和map都可以向参数传递值,map可以作为entity的补充,用于传递范围查询等复杂查询的参数
-	 * Select the record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters. <br>
+	 * <br>Select the record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters. <br>
 	 * Map can be used as a supplement of entity to pass parameters of complex queries such as range query.<p>
 	 * eg:select * from orders where userid=#{userid}
 	 * eg:select * from orders where name like #{name%}

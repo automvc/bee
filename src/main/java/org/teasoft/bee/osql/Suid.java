@@ -31,24 +31,25 @@ import java.util.List;
 public interface Suid {
 	
 	/**
-	 * 根据实体对象entity查询数据.
-	 * According to entity object select records from database.
-	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
-	 * entity中非null且非空字符串作为过虑条件,操作符是等号.eg:field=value. 
-	 * Entity corresponding to table and can not be null.
-	 * If the field value is not null and not empty field as filter condition, 
+	 * 根据实体对象entity查询数据
+	 * <br>According to entity object select records from database.
+	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).<br>
+	 * entity中非null且非空字符串作为过虑条件,操作符是等号.eg:field=value. <br>
+	 * Entity corresponding to table and can not be null.<br>
+	 * If the field value is not null and not empty field as filter condition, <br>
 	 * the operator is equal sign.eg:field=value
 	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
 	 */
 	public <T> List<T> select(T entity);
 	
 	/**
-	 * 根据实体对象entity更新数据,这个方法用于SQL的where条件的只有id属性.According to entity object update record.This method just has id field to SQL where expression.
-	 * @param entity 与表对应的实体对象,且不能为空;entity中id属性不能为空,作为过虑条件
-	 * entity中非null且非空字符串将更新到数据库(id除外).
-	 * table's entity(do not allow null);id is where condition,do not allow null.
-	 * The entity corresponding to table and can not be null. 
-	 * The ID field of entity cannot be null and as filter condition. 
+	 * 根据实体对象entity更新数据,这个方法用于SQL的where条件的只有id属性
+	 * <br>According to entity object update record.This method just has id field to SQL where expression.
+	 * @param entity 与表对应的实体对象,且不能为空;entity中id属性不能为空,作为过虑条件<br>
+	 * entity中非null且非空字符串将更新到数据库(id除外).<br>
+	 * table's entity(do not allow null);id is where condition,do not allow null.<br>
+	 * The entity corresponding to table and can not be null. <br>
+	 * The ID field of entity cannot be null and as filter condition. <br>
 	 * The not null and not empty field will update to database except ID.
 	 * @return 成功更新的记录数.the numbers of update records successfully.
 	 * @see SuidRich#update(Object,java.lang.String)
@@ -58,9 +59,9 @@ public interface Suid {
 	
 	/**
 	 * 根据实体对象entity插入数据.According to entity object insert record. 
-	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
-	 * entity中非null且非空字符串将插入到数据库
-	 * The entity corresponding to table and can not be null. 
+	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).<br>
+	 * entity中非null且非空字符串将插入到数据库<br>
+	 * The entity corresponding to table and can not be null. <br>
 	 * The not null and not empty field will insert to database.
 	 * @return 成功插入的记录数.the numbers of insert records successfully.
 	 */
@@ -68,20 +69,20 @@ public interface Suid {
 	
 	/**
 	 * 根据实体对象entity删除数据.According to entity object delete record. 
-	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
-	 * entity中非null且非空字符串作为过虑条件,操作符是等号.eg:field=value
-	 * The entity corresponding to table and can not be null.
-	 * If the field value is not null and not empty field as filter condition, 
+	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).<br>
+	 * entity中非null且非空字符串作为过虑条件,操作符是等号.eg:field=value<br>
+	 * The entity corresponding to table and can not be null.<br>
+	 * If the field value is not null and not empty field as filter condition, <br>
 	 * the operator is equal sign.eg:field=value
 	 * @return 成功删除的记录数. the numbers of delete records successfully.
 	 */
 	public <T> int delete(T entity);
 	
 	/**
-	 * 根据实体对象和Condition查询数据.Select the records according to entity and condition.
+	 * 根据实体对象和Condition查询数据.Select the records according to entity and condition.<br>
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
-	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
+	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.<br>
 	 * if the field is not null or empty, it will be translate to field=value.Other can define with condition. 
 	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
 	 * @since  1.6
@@ -90,10 +91,10 @@ public interface Suid {
 
 	
 	/**
-	 * 根据实体对象和Condition删记录.Delete the records according to entity and condition.
+	 * 根据实体对象和Condition删记录.Delete the records according to entity and condition.<br>
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
-	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
+	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.<br>
 	 * if the field is not null or empty, it will be translate to field=value.Other can define with condition. 
 	 * @return 成功删除的记录行数. the number of deleted record(s) successfully.
 	 * @since 1.7.2
