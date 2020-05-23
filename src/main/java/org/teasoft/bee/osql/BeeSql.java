@@ -31,61 +31,63 @@ import java.util.List;
 public interface BeeSql {
 	
 	/**
-	 * 根据sql查询数据,数据类型与entity类型一致.According to SQL query data, data type is consistent with entity type.
+	 * 根据sql查询数据,数据类型与entity类型一致
+	 * According to SQL query data, data type is consistent with entity type.
 	 * @param sql	SQL select statement
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * entity corresponding to table and can not be null.
-	 * @return 返回的list可包含多个实体(多条记录) return list can contain more than one entity
+	 * @return 可包含多个实体(多条记录)的list. list can contain more than one entity.
 	 */
 	public <T> List<T> select(String sql,T entity );
 	
 	
 	/**
-	 * 为多表查询准备的方法.根据sql查询数据,数据类型与entity类型一致
+	 * 多表查询的方法.根据sql查询数据,数据类型与entity类型一致
+	 * According to SQL query more table data, data type is consistent with entity type.
 	 * @param sql	SQL select statement
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * entity corresponding to table and can not be null.
-	 * @return 返回的list可包含多个实体(多条记录) return list can contain more than one entity
+	 * @return 可包含多个实体(多条记录)的list. list can contain more than one entity.
 	 * @since 1.7
 	 */
 	public <T> List<T> moreTableSelect(String sql,T entity );
 	
 	
 	/**
-	 * 查询部分字段.select some field.
+	 * 查询部分字段.Select some field.
 	 * @param sql	SQL select statement
 	 * @param entity 
-	 * @return 返回entity的list,这些entity只有查询的部分字段会设值.return list entity which just has some field.
+	 * @return entity的list,这些entity只有查询的部分字段会设值.list entity which just has some field.
 	 */
 	public <T> List<T> selectSomeField(String sql,T entity ); 
 	
 	/**
-	 * 用函数查询结果.select result with function. SQL function: max,min,avg,sum,count. 
+	 * 用函数查询结果.Select result with function. SQL function: max,min,avg,sum,count. 
 	 * @param sql	SQL select statement
-	 * @return 返回函数统计的值.如果统计的结果集为空,除了count返回0,其它都返回空字符.
+	 * @return 函数统计的值.如果统计的结果集为空,除了count返回0,其它都返回空字符.
 	 * @throws ObjSQLException
 	 */
 	public String selectFun(String sql) throws ObjSQLException;
 
 
 	/**
-	 * 查询并将每一行结果转成String数组.select and transform every record to string array.
+	 * 查询并将每一行结果转成String数组.Select and transform every record to string array.
 	 * @param sql	SQL select statement
 	 * @return List,每个元素是一行记录转换成的string数组.
 	 * List, every element is string array(transform from record).
 	 */
-	public List<String[]> select(String sql);    //PreparedSqlLib ObjSQLRich有调用
+	public List<String[]> select(String sql);
 	
 	/**
-	 * 查询结果,并以json格式返回.select and return json format result.
+	 * 查询结果,并以json格式返回.Select and return json format result.
 	 * @param sql	SQL select statement
-	 * @return 返回json格式结果集.json format result .
+	 * @return json格式结果集.json format result .
 	 */
 	public String selectJson(String sql);
 	
 	/**
-	 * 操作update,insert,delete.对应Jdbc的executeUpdate方法
-	 * operate update,insert,delete. corresponding to Jdbc executeUpdate method.
+	 * 操作update,insert,delete.对应Jdbc的executeUpdate方法  
+	 * Operate update,insert,delete. corresponding to Jdbc executeUpdate method.
 	 * @param sql  SQL statement to execute
 	 * @return 成功操作的记录行数. the number of affected successfully records.
 	 */
@@ -103,7 +105,7 @@ public interface BeeSql {
 	public int[] batch(String sqls[]);
 	
 	/**
-	 * 提交一批命令到数据库.Submit a batch of commands to the database.
+	 * 提交一批命令到数据库
 	 * Submits a batch of commands to the database.
 	 * @param sqls 要执行的sql语句数组 Array of SQL statements to execute
 	 * @param batchSize
