@@ -32,7 +32,7 @@ public interface CallableSql {
 	 * @param callSql procedure sql
 	 * @param entity
 	 * @param preValues parameter,just support In type; 只支持in类型的参数
-	 * @return 返回可包含多个实体(多条记录)的list. Return list which contains more than one entity.
+	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
 	 */
 	public <T> List<T> select(String callSql,T entity,Object preValues[]);
 	
@@ -40,7 +40,7 @@ public interface CallableSql {
 	 * 
 	 * @param callSql procedure sql
 	 * @param preValues parameter,just support In type; 只支持in类型的参数
-	 * @return 返回可包含多个String数组结构的多条记录的list. Return list can contain more than one record with String array struct.
+	 * @return 可包含多个String数组结构的多条记录的list. list can contain more than one record with String array struct.
 	 */
 	public List<String[]> select(String callSql,Object preValues[]);
 	
@@ -48,7 +48,7 @@ public interface CallableSql {
 	 * 
 	 * @param callSql procedure sql
 	 * @param preValues parameter,just support In type; 只支持in类型的参数
-	 * @return 返回可包含多个实体(多条记录)的list转换成的json格式的字符串. return Json string, it transform from list which can contain more than one entity.
+	 * @return 可包含多个实体(多条记录)的list转换成的json格式的字符串. Json string, it transform from list which can contain more than one entity.
 	 * @since  1.1
 	 */
 	public String selectJson(String callSql,Object preValues[]);
@@ -59,21 +59,21 @@ public interface CallableSql {
 	 * 
 	 * @param callSql procedure sql
 	 * @param preValues parameter,just support In type; 只支持in类型的参数
-	 * @return 返回成功操作的记录行数.Return the number of affected successfully records.
+	 * @return 成功操作的记录行数. the number of affected successfully records.
 	 */
 	public int modify(String callSql,Object preValues[]);
 
 	/**
 	 * 返回CallableStatement对象以便可以设置in,out,inout参数.可方便调用JDBC底层的方法
 	 * @param callSql procedure sql
-	 * @return Return CallableStatement.
+	 * @return CallableStatement.
 	 */
 	public CallableStatement getCallableStatement(String callSql);
 	
 	/**
 	 * 对于有out或inout类型的参数,可设置参数后,再调用该方法.
 	 * @param cstmt
-	 * @return 返回成功操作的记录行数.Return the number of affected successfully records.
+	 * @return 成功操作的记录行数. the number of affected successfully records.
 	 */
 	public int modify(CallableStatement cstmt);
 	
