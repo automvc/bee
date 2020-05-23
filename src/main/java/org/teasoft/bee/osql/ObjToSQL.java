@@ -18,9 +18,9 @@
 package org.teasoft.bee.osql;
 
 /**
- * 对象到SQL的转换(对应Suid).Object to SQL string for Suid. 
+ * 对象到SQL的转换(对应Suid).Object to SQL string for Suid. <br>
  * 根据entity对象转换成DB能识别的sql语句(包括:select,update,insert,delete),
- * entity 参数不能为null.
+ * entity 参数不能为null.<br>
  * Object to SQL string for Suid (select,update,insert,delete),
  * entity must not be null.
  * @author Kingstar

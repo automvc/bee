@@ -33,7 +33,7 @@ public interface Condition extends ConditionAssistant {
 	public Condition start(Integer start);
 
 	 /**
-	  * 添加用于分页时设置每页返回的记录数量.for setting the size of the page.
+	  * 添加用于分页时设置每页返回的记录数量.For setting the size of the page.
 	  * @param size 结果集大小 大于等于1. fetch result size (>0).
 	  * @return Condition
 	  */
@@ -58,14 +58,14 @@ public interface Condition extends ConditionAssistant {
 	public Condition op(String field, Op Op, Object value);
 
 	/**
-	 * 默认自动加 'and'. Default will automatically add 'and'.
+	 * 默认自动加 'and'.Default will automatically add 'and'.
 	 * 
 	 * @return Condition
 	 */
 	public Condition and();
 
 	/**
-	 * 添加 'or'. Add 'or'.
+	 * 添加 'or'.Add 'or'.
 	 * 
 	 * @return Condition
 	 */
