@@ -30,71 +30,73 @@ import java.util.List;
 public interface SuidRich extends Suid {
 	
 	/**
-	 * 根据实体对象entity查询数据
+	 * 根据实体对象entity查询数据,且可以分页.Select record(s),and can specify page information.
 	 * According to entity object select records from database.
 	 * @param entity 实体类对象,且不能为空. table's entity(do not allow null).
-	 * entity中非null且非空字符串作为过虑条件,操作符是等号.eg:field=value
+	 * entity中非null且非空字符串作为过虑条件,操作符是等号.eg:field=value.
 	 * entity corresponding to table and can not be null.
-	 * If the field value is not null and not empty string as filter condition, 
+	 * If the field value is not null and not empty field as filter condition, 
 	 * the operator is equal sign.eg:field=value
 	 * @param size 结果集大小 大于等于1. fetch result size (>0).
-	 * @return 返回可包含多个实体(多条记录)的list. Return list which contains more than one entity.
+	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
 	 */
 	public <T> List<T> select(T entity,int size);
 	
 	/**
-	 * 根据实体对象entity查询数据
+	 * 根据实体对象entity查询数据,且可以分页.Select record(s),and can specify page information.
 	 * According to entity object select records from database.
 	 * @param entity 实体类对象,且不能为空. table's entity(do not allow null).
-	 * entity中非null且非空字符串作为过虑条件,操作符是等号.eg:field=value
+	 * entity中非null且非空字符串作为过虑条件,操作符是等号.eg:field=value.  
 	 * entity corresponding to table and can not be null.
-	 * If the field value is not null and not empty string as filter condition, 
+	 * If the field value is not null and not empty field as filter condition, 
 	 * the operator is equal sign.eg:field=value
 	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
 	 * @param size 结果集大小 大于等于1. fetch result size (>0).
-	 * @return 返回可包含多个实体(多条记录)的list. Return list can contain more than one entity
+	 * @return 可包含多个实体(多条记录)的list. list can contain more than one entity
 	 */
 	public <T> List<T> select(T entity,int start,int size);
 	
 	/**
+	 * 查询实体时,只查询部分一部分字段.Just select some fields.
 	 * @param entity 实体类对象,且不能为空
 	 * @param selectFields 需要查询的字段,多个用逗号隔开. select fields,if more than one,separate with comma.
-	 * @return 返回可包含多个实体(多条记录)的list. Return list which contains more than one entity.
+	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
 	 */
 	public <T> List<T> select(T entity,String selectFields);
 	
 	/**
+	 * 查询实体时,只查询部分一部分字段,且可以分页.Just select some fields,and can specify page information.
 	 * @param entity 实体类对象,且不能为空
 	 * @param selectFields 需要查询的字段,多个用逗号隔开. select fields,if more than one,separate with comma.
 	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
 	 * @param size 结果集大小 大于等于1. fetch result size (>0).
-	 * @return 返回可包含多个实体(多条记录)的list. Return list which contains more than one entity.
+	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
 	 * @since 1.4.3
 	 */
 	public <T> List<T> select(T entity,String selectFields,int start,int size);
 	
 	/**
-	 * 查询实体,每个字段都是以字符串类型返回.
-	 * select entity,every field will return the string type.
+	 * 查询实体,每个字段都是以字符串类型返回 
+	 * Select entity,every field will return the string type.
 	 * @param entity 实体类对象,且不能为空
-	 * @return 返回可包含多个String数组结构的多条记录的list. Return list can contain more than one record with String array struct.
+	 * @return 可包含多个String数组结构的多条记录的list. list can contain more than one record with String array struct.
 	 */
 	public <T> List<String[]> selectString(T entity); 
 	
 	/**
-	 * 查询部分字段,每个字段都是以字符串类型返回.
-	 * select some field, every field will return the string type. 
+	 * 查询部分字段,每个字段都是以字符串类型返回 
+	 * Select some field, every field will return the string type. 
 	 * @param entity 实体类对象,且不能为空
 	 * @param selectFields  需要查询的字段,多个用逗号隔开. Select fields,if more than one,separate with comma.
-	 * @return 返回可包含多个String数组结构的多条记录的list. Return list can contain more than one record with String array struct.
+	 * @return 可包含多个String数组结构的多条记录的list. list can contain more than one record with String array struct.
 	 */
 	public <T> List<String[]> selectString(T entity,String selectFields); 
 	
 	/**
-	 * 根据实体对象entity查询数据,并返回Json格式结果.Select Json type result by entity. 
+	 * 根据实体对象entity查询数据,并返回Json格式结果.Select and return data in Json format according to entity object.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * entity中非null与非空字符串作为过虑条件,操作符是等号.eg:field=value
-	 * @return 返回可包含多个实体(多条记录)的list转换成的json格式的字符串. return Json string, it transform from list which can contain more than one entity.
+	 * @return 可包含多个实体(多条记录)的list转换成的json格式的字符串. Json string, it transform from list which can contain more than one entity.
 	 * @since  1.1
 	 */
 	public <T> String selectJson(T entity);
@@ -102,7 +104,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * 查询一个实体.Select one record.  
 	 * @param entity 实体类对象
-	 * @return 只返回一个实体,数量不为1测返回null.return one record,if the size do not equal one, return null.
+	 * @return 只返回一个实体,数量不为1时返回null.return one record,if the size do not equal one, return null.
 	 */
 	public <T> T selectOne(T entity);
 	
@@ -116,21 +118,21 @@ public interface SuidRich extends Suid {
 	public <T> String selectWithFun(T entity,FunctionType functionType,String fieldForFun);
 	
 	/**
-	 * 应用排序查询结果,排序的字段默认按升序排列.
-	 * Select result by key:order,order type default is:asc
+	 * 查询应用排序的结果,排序的字段默认按升序排列 
+	 * Select result with order,order type default is:asc
 	 * @param entity 传入的实体对象,且不能为空
 	 * @param orderFields 排序字段列表,多个用逗号隔开
-	 * @return 返回有排序的结果集
+	 * @return 可包含多个有排序的实体(多条记录)的list. list which contains more than one entity.
 	 */
 	public <T> List<T> selectOrderBy(T entity,String orderFields);
 	
 	/**
-	 * 应用排序查询结果.
-	 * Select result by key:order.
+	 * 查询应用排序的结果 
+	 * Select result with order.
 	 * @param entity 传入的实体对象,且不能为空
 	 * @param orderFields 排序字段列表,多个用逗号隔开
 	 * @param orderTypes 排序类型列表
-	 * @return 返回有排序的结果集
+	 * @return 可包含多个有排序的实体(多条记录)的list. list which contains more than one entity.
 	 */
 	public <T> List<T> selectOrderBy(T entity,String orderFields,OrderType[] orderTypes);
 	
@@ -138,7 +140,7 @@ public interface SuidRich extends Suid {
 	 * 更新记录,且可以指定需要更新的字段.Update record, can list update fields. 
 	 * @param entity 实体类对象,不能为空
 	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,默认每个字段会被转化成SQL的set表达式;其它非空,非null的字段作为过滤条件,转成SQL的where表达式.
-	 * @return 返回更新受影响的行. Return the number of updated record(s).
+	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
 	 */
 	public <T> int update(T entity,String updateFields);
 	
@@ -148,37 +150,39 @@ public interface SuidRich extends Suid {
 	 * id为null不作为过滤条件
 	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,且不受includeType参数的影响,默认每个字段会被转化成SQL的set表达式
 	 * @param includeType 空字符串与null是否包含设置(是否作为过滤条件)
-	 * @return  返回更新受影响的行. Return the number of updated record(s) successfully.
+	 * @return  成功更新的记录数.the numbers of update record(s) successfully.
 	 */
 	public <T> int update(T entity,String updateFields,IncludeType includeType);
 	
 	/**
-	 * 批量插入数据. Insert records by batch.
+	 * 批量插入数据.Insert records by batch type.
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
-	 * @return 返回成功插入的记录行数. Return the number of inserted record(s) successfully.
+	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
 	 */
 	public <T> int[] insert(T[] entity);
 	
 	/**
+	 * 批量插入数据.Insert records by batch type.
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
 	 * @param batchSize 
-	 * @return 返回成功插入的记录行数. Return the number of inserted record(s) successfully.
+	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
 	 */
 	public <T> int[] insert(T[] entity,int batchSize);
 	
 	/**
+	 * 批量插入数据,且可以声明不用插入的字段列表.Insert record by batch type,and can point out which field(s) don't need to insert.
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
-	 * @param excludeFields 声明不用插入的字段列表.Don't insert fields list.
+	 * @param excludeFields 声明不用插入的字段列表.fields list that don't need to insert .
 	 * @return 返回成功插入的记录行数. Return the number of inserted record(s) successfully.
 	 */
 	public <T> int[] insert(T[] entity,String excludeFields);
 	
 	/**
-	 * 批量插入数据,可以指定不插入的字段.
+	 * 批量插入数据,且可以指定不用插入的字段列表.Insert record by batch type,and can point out which field(s) don't need to insert.
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
 	 * @param batchSize 批操作数量大小.batch size.
 	 * @param excludeFields 声明不用插入的字段列表.Don't insert fields list.
-	 * @return 返回成功插入的记录行数. Return the number of inserted record(s) successfully.
+	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
 	 */
 	public <T> int[] insert(T[] entity,int batchSize,String excludeFields);
 	
@@ -187,7 +191,7 @@ public interface SuidRich extends Suid {
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * id为null时不作为过滤条件
 	 * @param includeType 空字符串与null是否包含设置
-	 * @return 返回的list可包含多个实体(多条记录)
+	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
 	 */
     public <T> List<T> select(T entity,IncludeType includeType);
 	
@@ -196,7 +200,7 @@ public interface SuidRich extends Suid {
 	 * @param entity 与表对应的实体对象,且不能为空;entity中id字段不能为空,作为过虑条件
 	 * id为null不作为过滤条件
 	 * @param includeType 空字符串与null是否包含设置
-	 * @return 更新的记录数
+	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
 	 */
 	public <T> int update(T entity,IncludeType includeType);
 	
@@ -204,7 +208,7 @@ public interface SuidRich extends Suid {
 	 * 根据实体对象entity插入数据.Insert record according to entity.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * @param includeType 空字符串与null是否包含设置
-	 * @return 成功插入的记录数
+	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
 	 */
 	public <T> int insert(T entity,IncludeType includeType);
 	
@@ -213,70 +217,70 @@ public interface SuidRich extends Suid {
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * id为null不作为过滤条件
 	 * @param includeType 空字符串与null是否包含设置
-	 * @return 返回成功删除的记录行数. Return the number of deleted record(s) successfully.
+	 * @return 成功删除的记录行数. the number of deleted record(s) successfully.
 	 */
 	public <T> int delete(T entity,IncludeType includeType);
 	
 	/**
-	 * 根据实体对象entity查询并返回Json格式的数据.
+	 * 根据实体对象entity查询并返回Json格式的数据.Select and return data in Json format according to entity object.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * id为null不作为过滤条件
 	 * @param includeType 空字符串与null是否包含设置
-	 * @return 返回可包含多个实体(多条记录)的list转换成的json格式的字符串. return Json string, it transform from list which can contain more than one entity.
+	 * @return 可包含多个实体(多条记录)的list转换成的json格式的字符串. Json string, it transform from list which can contain more than one entity.
 	 * @since  1.1
 	 */
 	public <T> String selectJson(T entity,IncludeType includeType);
 	
 	/**
-	 * 根据id查询记录. Select record by id.
+	 * 根据id查询记录.Select record by id.
 	 * @param entity 实体类对象,且不能为空
 	 * @param id 实体id字段的值.value of entity's id field. 
-	 * @return 返回查询对象列表
+	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
 	 * @since  1.4
 	 */
 	public <T> List<T> selectById(T entity,Integer id);
 	
 	/**
-	 * 根据id查询记录. Select record by id.
+	 * 根据id查询记录.Select record by id.
 	 * @param entity 实体类对象,且不能为空
 	 * @param id 实体id字段的值.value of entity's id field.
-	 * @return 返回查询对象列表
+	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
 	 * @since  1.4
 	 */
 	public <T> List<T> selectById(T entity,Long id);
 	
 	/**
-	 * 根据id查询记录. Select record by id.
+	 * 根据id查询记录.Select record by id.
 	 * @param entity 实体类对象,且不能为空
 	 * @param ids 实体id字段的值,多个用逗号隔开.values of entity's id field.
-	 * @return 返回查询对象列表
+	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
 	 * @since  1.4
 	 */
 	public <T> List<T> selectById(T entity,String ids);
 	
 	/**
-	 * 根据id删记录.Delete record by id.
+	 * 根据id删除记录.Delete record by id.
 	 * @param c 实体类类型,且不能为空
 	 * @param id
-	 * @return 返回成功删除记录数
+	 * @return 成功删除的记录行数. the number of deleted record(s) successfully.
 	 * @since  1.4
 	 */
 	public int deleteById(Class c,Integer id);
 	
 	/**
-	 * 根据id删记录.Delete record by id.
+	 * 根据id删除记录.Delete record by id.
 	 * @param c 实体类类型,且不能为空
 	 * @param id 实体id字段的值. value of entity's id field.
-	 * @return 返回成功删除记录数
+	 * @return 成功删除的记录行数. the number of deleted record(s) successfully.
 	 * @since  1.4
 	 */
 	public int deleteById(Class c,Long id);
 	
 	/**
-	 * 根据id删记录.Delete record by id.
+	 * 根据id删除记录.Delete record by id.
 	 * @param c 实体类类型,且不能为空
 	 * @param ids 实体id字段的值,多个用逗号隔开.ids values of entity's id field.
-	 * @return 返回成功删除记录数
+	 * @return 成功删除的记录行数. the number of deleted record(s) successfully.
 	 * @since  1.4
 	 */
 	public int deleteById(Class c,String ids);
@@ -284,27 +288,27 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 根据实体对象entity查询数据.Select record according to entity.
-	 * @deprecated Suid.select(T entity,Condition condition)方法中,可以通过condition设置includeType.
+	 * @deprecated {@link Suid#select(Object,Condition)}方法中,可以通过condition设置includeType.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * id为null时不作为过滤条件
 	 * @param includeType 空字符串与null是否包含设置
 	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
 	 * if the field is not null or empty, it will be translate to field=value.Other can define with condition. 
-	 * @return 返回的list可包含多个实体(多条记录)
+	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
 	 * @since  1.6
 	 */
 	@Deprecated
     public <T> List<T> select(T entity,IncludeType includeType,Condition condition);
     
 	/**
-	 * 根据实体对象entity查询数据,并以Json格式返回
+	 * 根据实体对象entity查询数据,并以Json格式返回.Select and return data in Json format according to entity object.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * id为null不作为过滤条件
 	 * @param includeType 空字符串与null是否包含设置
 	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
 	 * if the field is not null or empty, it will be translate to field=value.Other can define with condition. 
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
-	 * @return 返回可包含多个实体(多条记录)的list转换成的json格式的字符串. return Json string, it transform from list which can contain more than one entity.
+	 * @return 可包含多个实体(多条记录)的list转换成的json格式的字符串. Json string, it transform from list which can contain more than one entity.
 	 * @since  1.6
 	 */
 	public <T> String selectJson(T entity,IncludeType includeType,Condition condition);
@@ -316,7 +320,7 @@ public interface SuidRich extends Suid {
 	 * 没指定为whereFields的字段,作为set部分,默认只处理非空,非null的字段
 	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
 	 * 指定作为条件的,都转换.id为null不作为过滤条件
-	 * @return 被更新记录的行数.the row number of updated record(s).
+	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
 	 * @since  1.6
 	 */
 	public <T> int updateBy(T entity,String whereFields);
@@ -328,7 +332,7 @@ public interface SuidRich extends Suid {
 	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
 	 * 指定作为条件的,都转换.id为null不作为过滤条件
 	 * @param includeType 空字符串与null是否包含设置(是否作为过滤条件)
-	 * @return 被更新记录的行数.the row number of updated record(s).
+	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
 	 * @since  1.6
 	 */
 	public <T> int updateBy(T entity,String whereFields,IncludeType includeType);
@@ -340,7 +344,7 @@ public interface SuidRich extends Suid {
 	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
 	 * 指定作为条件的,都转换.id为null不作为过滤条件
 	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
-	 * @return 被更新记录的行数.the row number of updated record(s).
+	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
 	 * @since 1.7.2
 	 */
 	public <T> int updateBy(T entity,String whereFields,Condition condition);
@@ -351,7 +355,7 @@ public interface SuidRich extends Suid {
 	 * @param entity 实体类对象,不能为空
 	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,默认每个字段会被转化成SQL的set表达式;其它非空,非null的字段作为过滤条件,转成SQL的where表达式.
 	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
-	 * @return 被更新记录的行数.the row number of updated record(s).
+	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
 	 * @since 1.7.2
 	 */
 	public <T> int update(T entity,String updateFields,Condition condition);
