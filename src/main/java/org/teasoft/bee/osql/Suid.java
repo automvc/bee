@@ -34,11 +34,11 @@ public interface Suid {
 	 * 根据实体对象entity查询数据.
 	 * According to entity object select records from database.
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
-	 * entity中非null且非空字符串作为过虑条件,操作符是等号.eg:field=value
-	 * entity corresponding to table and can not be null.
-	 * If the field value is not null and not empty string as filter condition, 
+	 * entity中非null且非空字符串作为过虑条件,操作符是等号.eg:field=value. 
+	 * Entity corresponding to table and can not be null.
+	 * If the field value is not null and not empty field as filter condition, 
 	 * the operator is equal sign.eg:field=value
-	 * @return 返回可包含多个实体(多条记录)的list. list which contains more than one entity.
+	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
 	 */
 	public <T> List<T> select(T entity);
 	
@@ -49,7 +49,7 @@ public interface Suid {
 	 * table's entity(do not allow null);id is where condition,do not allow null.
 	 * The entity corresponding to table and can not be null. 
 	 * The ID field of entity cannot be null and as filter condition. 
-	 * The not null and not empty string will update to database except ID.
+	 * The not null and not empty field will update to database except ID.
 	 * @return 成功更新的记录数.the numbers of update records successfully.
 	 * @see SuidRich#update(Object,java.lang.String)
 	 */
@@ -61,7 +61,7 @@ public interface Suid {
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
 	 * entity中非null且非空字符串将插入到数据库
 	 * The entity corresponding to table and can not be null. 
-	 * The not null and not empty string will insert to database.
+	 * The not null and not empty field will insert to database.
 	 * @return 成功插入的记录数.the numbers of insert records successfully.
 	 */
 	public <T> int insert(T entity);
@@ -71,7 +71,7 @@ public interface Suid {
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
 	 * entity中非null且非空字符串作为过虑条件,操作符是等号.eg:field=value
 	 * The entity corresponding to table and can not be null.
-	 * If the field value is not null and not empty string as filter condition, 
+	 * If the field value is not null and not empty field as filter condition, 
 	 * the operator is equal sign.eg:field=value
 	 * @return 成功删除的记录数. the numbers of delete records successfully.
 	 */
