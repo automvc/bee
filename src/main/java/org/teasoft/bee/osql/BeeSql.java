@@ -32,7 +32,7 @@ public interface BeeSql {
 	
 	/**
 	 * 根据sql查询数据,数据类型与entity类型一致
-	 * According to SQL query data, data type is consistent with entity type.
+	 * <br>According to SQL query data, data type is consistent with entity type.
 	 * @param sql	SQL select statement
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * entity corresponding to table and can not be null.
@@ -43,7 +43,7 @@ public interface BeeSql {
 	
 	/**
 	 * 多表查询的方法.根据sql查询数据,数据类型与entity类型一致
-	 * According to SQL query more table data, data type is consistent with entity type.
+	 * <br>According to SQL query more table data, data type is consistent with entity type.
 	 * @param sql	SQL select statement
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * entity corresponding to table and can not be null.
@@ -87,7 +87,7 @@ public interface BeeSql {
 	
 	/**
 	 * 操作update,insert,delete.对应Jdbc的executeUpdate方法  
-	 * Operate update,insert,delete. corresponding to Jdbc executeUpdate method.
+	 * <br>Operate update,insert,delete. corresponding to Jdbc executeUpdate method.
 	 * @param sql  SQL statement to execute
 	 * @return 成功操作的记录行数. the number of affected successfully records.
 	 */
@@ -97,9 +97,9 @@ public interface BeeSql {
 	 * 提交一批命令到数据库
 	 * Submits a batch of commands to the database.
 	 * @param sqls 要执行的sql语句数组 Array of SQL statements to execute
-	 * @return 包含批中每个命令的一个元素的更新计数所组成的数组
+	 * @return 包含批中每个命令的一个元素的更新计数所组成的数组<br>
 	 * an array of update counts containing one element for each
-     * command in the batch.  The elements of the array are ordered according
+     * command in the batch.  <br>The elements of the array are ordered according
      * to the order in which commands were added to the batch.
 	 */
 	public int[] batch(String sqls[]);
@@ -109,9 +109,9 @@ public interface BeeSql {
 	 * Submits a batch of commands to the database.
 	 * @param sqls 要执行的sql语句数组 Array of SQL statements to execute
 	 * @param batchSize
-	 * @return 包含批中每个命令的一个元素的更新计数所组成的数组
+	 * @return 包含批中每个命令的一个元素的更新计数所组成的数组<br>
 	 * an array of update counts containing one element for each
-     * command in the batch.  The elements of the array are ordered according
+     * command in the batch.  <br>The elements of the array are ordered according
      * to the order in which commands were added to the batch.
 	 */
 	public int[] batch(String []sqls,int batchSize);

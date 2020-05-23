@@ -246,7 +246,7 @@ public interface PreparedSql {
 	/**
 	 * 用操作类型为update,insert,delete的语句更新数据库记录
 	 * Modify database records with update, insert or delete statement.
-	 * @deprecated 不建议使用,因为框架不知道具体是更改了什么表,会影响缓存的正确性,从而产生缓存数据不准确的危险.It is not recommended because 
+	 * @deprecated 不建议使用,因为框架不知道具体是更改了什么表,会影响缓存的正确性,从而产生缓存数据不准确的危险.<br>It is not recommended because 
 	 * the framework does not know what table has been changed, which will affect the correctness of the cache and 
 	 * cause the risk of inaccurate cache data.
 	 * @param sql	SQL语句.SQL statement.
@@ -259,7 +259,7 @@ public interface PreparedSql {
 	/**
 	 * 用操作类型为update,insert,delete的语句更新数据库记录
 	 * Modify database records with update, insert or delete statement.
-	 * @deprecated 不建议使用,因为框架不知道具体是更改了什么表,会影响缓存的正确性,从而产生缓存数据不准确的危险.It is not recommended because 
+	 * @deprecated 不建议使用,因为框架不知道具体是更改了什么表,会影响缓存的正确性,从而产生缓存数据不准确的危险.<br>It is not recommended because 
 	 * the framework does not know what table has been changed, which will affect the correctness of the cache and 
 	 * cause the risk of inaccurate cache data.
 	 * @param sql	SQL语句.SQL statement.
