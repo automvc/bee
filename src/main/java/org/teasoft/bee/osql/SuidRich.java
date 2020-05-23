@@ -70,7 +70,8 @@ public interface SuidRich extends Suid {
 	 * <br>Just select some fields,and can specify page information.
 	 * @param entity 实体类对象,且不能为空
 	 * @param selectFields 需要查询的字段,多个用逗号隔开. select fields,if more than one,separate with comma.
-	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  
+	 * <br>start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
 	 * @param size 结果集大小 大于等于1. fetch result size (>0).
 	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
 	 * @since 1.4.3
