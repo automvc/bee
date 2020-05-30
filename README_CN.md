@@ -137,6 +137,10 @@ SuidRich 新增两个方法:
   update(T entity,String updateFields,Condition condition)  
 新增不使用缓存配置支持.  
 Condition接口新增方法setAdd,setMultiply用于设置SQL中update操作的set设置.  
+**V1.7.3** 
+Oracle DATE字段在Javabean里转成java.sql.Date存入数据库时会丢失时分秒，
+转成Timestamp可以解决这个问题。
+bug修复:缓存key生成;批插入后清缓存.
 
 快速开始:
 =========	
