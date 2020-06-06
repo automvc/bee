@@ -51,6 +51,14 @@ package org.teasoft.bee.distribution;
 <p>不完号码的情况下的。可以循环使用段号，如获取到3，那就从3-7,0,1,2这样使用段号，后面0，1，2这几个段号要是分派出去，
 <p>号码就不递增了。具体怎么用，还是要根据自己的情况做取舍。
 
+
+<p> ---------------------------------------------
+<p> org.teasoft.honey.distribution.SerialUniqueId
+<p> 在一个workid内连续唯一的ID.Serial Unique Id in one workid.
+<p> 优点:连续唯一;不强依赖时钟. 在DB内实现,可达到分布式全局唯一ID在DB内自增长.
+<p> Advantages:continuous and unique;less clock dependent.Implemented in dB, it can achieve auto increment of distributed global unique ID in dB.
+<p> 缺点/Shortcoming:worker1's ID<worker2's ID...<worker1023's ID.
+
  * 
  * @author Kingstar
  * @since  1.7.2
