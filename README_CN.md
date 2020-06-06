@@ -140,7 +140,9 @@ Condition接口新增方法setAdd,setMultiply用于设置SQL中update操作的se
 **V1.7.3**   
 Oracle DATE字段在Javabean里转成java.sql.Date存入数据库时会丢失时分秒，
 转成Timestamp可以解决这个问题。   
-bug修复:缓存key生成;批插入后清缓存.   
+bug修复:缓存key生成;批插入后清缓存.  
+分布式环境下生成全局唯一数字id.	  
+分布式环境下在一个workid内生成连续唯一数字id.	
 
 快速开始:
 =========	
