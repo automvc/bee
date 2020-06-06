@@ -124,6 +124,8 @@ add method setAdd,setMultiply in Condition for set value in SQL update.
 **V1.7.3**  
 Oracle DATE column mapping to Timestamp,fix the problem:miss the hour,minute,second in Oracle DATE column.  
 fix cache bug:genkey;clear cache for batch insert.   
+Generate global unique id number in distributed environment.			
+Generate Serial Unique id number in one workid of distributed environment.	
 
 Quick Start:
 =========	
