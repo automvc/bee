@@ -19,7 +19,7 @@ package org.teasoft.bee.distribution;
 
 /**
  * 
- * 分布式环境下生成数字id.Generate id number in distributed environment.
+ * 分布式环境下生成全局唯一数字id.Generate global unique id number in distributed environment.
  * 
 <p>改进的雪花算法——姑且称为梨花算法吧  （忽如一夜春风来，千树万树梨花开）。
 <p>改进目标：解决雪花算法的时钟回拨问题；部分避免机器id重复时，号码冲突问题。
