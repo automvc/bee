@@ -126,6 +126,7 @@ Oracle DATE column mapping to Timestamp,fix the problem:miss the hour,minute,sec
 fix cache bug:genkey;clear cache for batch insert.   
 Generate global unique id number in distributed environment.			
 Generate Serial Unique id number in one workid of distributed environment.	
+fixed bug:parse the json has extra comma.	
 
 Quick Start:
 =========	
