@@ -128,11 +128,11 @@ add method setAdd,setMultiply in Condition for set value in SQL update.
 4.Generate Serial Unique id number in one workid of distributed environment.  
 5.fixed bug:parse the json has extra comma.  
 6.add 2 methods in Condition:  	
-  public Condition setAdd(String field, String fieldName)  
-  public Condition setMultiply(String field, String fieldName)  
+public Condition setAdd(String field, String fieldName)  
+public Condition setMultiply(String field, String fieldName)  
 7.Support show type of data in sql and show ExecutableSql:  
-  bee.osql.showSQL.showType=false  
-  bee.osql.showSQL.showExecutableSql=false  
+bee.osql.showSQL.showType=false  
+bee.osql.showSQL.showExecutableSql=false  
 
 Quick Start:
 =========	
