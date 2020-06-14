@@ -54,11 +54,27 @@ package org.teasoft.bee.distribution;
 
 <p> ---------------------------------------------
 <p> org.teasoft.honey.distribution.SerialUniqueId
-<p> 在一个workid内连续唯一的ID.Serial Unique Id in one workid.
+<p> 在一个workid内连续单调递增唯一的ID.Serial Unique Id in one workid.
 <p> 优点:连续唯一;不强依赖时钟. 在DB内实现,可达到分布式全局唯一ID在DB内自增长.
 <p> Advantages:continuous and unique;less clock dependent.Implemented in dB, it can achieve auto increment of distributed global unique ID in dB.
 <p> 缺点/Shortcoming:worker1's ID<worker2's ID...<worker1023's ID.
 
+ * SerialUniqueId:绝对连续单调递增，全局唯一.
+ * 连续单调递增ID生成算法SerialUniqueId：不依赖于时间，也不依赖于任何第三方组件，只是启动时，用一个时间作为第一个ID设置的种子，
+ * 设置了初值ID后，就可获取并递增ID。在一台DB内与传统的一样，连续单调递增（而不只是趋势递增），而代表DB的workerid作为DB的区别放在高位，
+ * 从所有DB节点看，则满足分布式DB生成全局唯一ID。本地（C8 I7 16g）1981ms可生成1亿个ID号,利用上批获取，分隔业务，每秒生成过10亿个ID号
+ * 不成问题，能满足双11的峰值要求。可用作分布式DB内置生成64位long型ID自增主键。只要按本算法设置了记录的ID初值，然后默认让数据库表id主键自
+ * 增就可以（如MYSQL）。
+ * 绝对连续单调递增，全局唯一的方案，如下：
+ * 只能是由DBA等角色，在新增一个库时，就分配一个库的workerid. 然后在初始化表时，设置初始ID开始用的值，以后由DB自动增长。Workerid的分配
+ * 可统一放在一个配置文件，由工具检测到某个表是空表，且使用的主键对应的是Java的long型时，设置初始ID开始用的值，以后由DB自动增长。
+
+ * OneTimeSnowflakeId，进一步改进了梨花算法。
+ * 不依赖时间的梨花算法，Workerid应放在序号sequence的上一段，且应用SerialUniqueId算法，使ID不依赖于时间自动递增。
+ * 使用不依赖时间的梨花算法OneTimeSnowflakeId，应保证各节点大概均衡轮流出号，这样入库的ID会比较有序，因此每个段号内的序列号不能太多。
+ * 支持批获取ID号。可以一次取一批ID（即一个范围内的ID一次就可以获取了）。可以代替依赖DB的号段模式。
+ * 应用订单号等有安全要求的场景,可随机不定时获取一些批的号码不用即可。
+ * 
  * 
  * @author Kingstar
  * @since  1.7.2
@@ -66,12 +82,12 @@ package org.teasoft.bee.distribution;
 public interface GenId {
 	
 	/**
-	 * @return 返回id号码
+	 * @return 返回id号码.return the id number.
 	 */
 	public long get();
 	
 	/**
-	 * 一次获取一段号码,返回一个批次可用号码的最大值和最小值,eg: [100000,101000].return the min and max long in this batch.eg: [100000,101000]
+	 * 一次获取一段号码,返回一个批次可用号码的最小值和最大值,eg: [100000,101000].return the min and max long in this batch.eg: [100000,101000]
 	 * @param sizeOfIds 返回的一批id的数量.the size Of ids in one batch.
 	 * @return return the array of long. array[0]=min,array[1]=max.
 	 */
