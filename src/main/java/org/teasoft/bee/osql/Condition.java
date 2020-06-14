@@ -133,23 +133,39 @@ public interface Condition extends ConditionAssistant {
 	public Condition orderBy(FunctionType functionType, String field, OrderType orderType);
 	
 	/**
-	 * 只用于SQL语句的update.Just use in SQL update.
-	 * eg: setAdd("price","2.0")--> price=price+2.0
+	 * 只用于SQL语句的update set 部分.Just use in SQL update set part.
+	 * eg: setAdd("price",2.0)--> price=price+2.0
 	 * @param field
 	 * @param num
 	 * @return Condition
 	 * @since 1.7.2
 	 */
-	public Condition setAdd(String field,double num);
+	public Condition setAdd(String field,Number num);
 	
 	/**
 	 * 只用于SQL语句的update.Just use in SQL update.
-	 * eg: setMultiply("price","1.05")--> price=price*1.05
+	 * eg: setMultiply("price",1.05)--> price=price*1.05
 	 * @param field
 	 * @param num
 	 * @return Condition
 	 * @since 1.7.2
 	 */
-	public Condition setMultiply(String field,double num);
+	public Condition setMultiply(String field,Number num);
+	
+	/**
+	 * eg:setAdd("price","delta")--> price=price+delta
+	 * @param field
+	 * @param fieldName
+	 * @return
+	 */
+	public Condition setAdd(String field, String fieldName);
+
+	/**
+     * eg: setMultiply("price","delta")--> price=price*delta
+	 * @param field
+	 * @param fieldName
+	 * @return
+	 */
+	public Condition setMultiply(String field, String fieldName);
 
 }
