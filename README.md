@@ -127,6 +127,9 @@ fix cache bug:genkey;clear cache for batch insert.
 Generate global unique id number in distributed environment.			
 Generate Serial Unique id number in one workid of distributed environment.	
 fixed bug:parse the json has extra comma.	
+add 2 methods in Condition:	
+  public Condition setAdd(String field, String fieldName)	
+  public Condition setMultiply(String field, String fieldName)	
 
 Quick Start:
 =========	
