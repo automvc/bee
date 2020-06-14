@@ -123,16 +123,16 @@ add nocache config support.
 add method setAdd,setMultiply in Condition for set value in SQL update.  
 **V1.7.3**  
 1.Oracle DATE column mapping to Timestamp,fix the problem:miss the hour,minute,second in Oracle DATE column.  
-2.fix cache bug:genkey;clear cache for batch insert.   
-3.Generate global unique id number in distributed environment.			
-4.Generate Serial Unique id number in one workid of distributed environment.	
-5.fixed bug:parse the json has extra comma.	
-6.add 2 methods in Condition:	
-  public Condition setAdd(String field, String fieldName)	
-  public Condition setMultiply(String field, String fieldName)	
-7.Support show type of data in sql and show ExecutableSql:	
-  bee.osql.showSQL.showType=false	
-  bee.osql.showSQL.showExecutableSql=false	
+2.fix cache bug:genkey;clear cache for batch insert.  
+3.Generate global unique id number in distributed environment.  
+4.Generate Serial Unique id number in one workid of distributed environment.  
+5.fixed bug:parse the json has extra comma.  
+6.add 2 methods in Condition:  	
+  public Condition setAdd(String field, String fieldName)  
+  public Condition setMultiply(String field, String fieldName)  
+7.Support show type of data in sql and show ExecutableSql:  
+  bee.osql.showSQL.showType=false  
+  bee.osql.showSQL.showExecutableSql=false  
 
 Quick Start:
 =========	
