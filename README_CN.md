@@ -138,11 +138,19 @@ SuidRich 新增两个方法:
 新增不使用缓存配置支持.  
 Condition接口新增方法setAdd,setMultiply用于设置SQL中update操作的set设置.  
 **V1.7.3**   
-Oracle DATE字段在Javabean里转成java.sql.Date存入数据库时会丢失时分秒，
+1.Oracle DATE字段在Javabean里转成java.sql.Date存入数据库时会丢失时分秒，
 转成Timestamp可以解决这个问题。   
-bug修复:缓存key生成;批插入后清缓存.  
-分布式环境下生成全局唯一数字id.	  
-分布式环境下在一个workid内生成连续唯一数字id.	
+2.bug修复:缓存key生成;批插入后清缓存.  
+3.分布式环境下生成全局唯一数字id.	  
+4.分布式环境下生成连续单调递增(在一个workerid内),全局唯一数字id.	
+update id gen:SerialUniqueId,OneTimeSnowflakeId.  
+5.修复缺陷:解析json时多余的逗号错误.  
+6.在Condition添加两个新方法:  
+public Condition setAdd(String field, String fieldName)  
+public Condition setMultiply(String field, String fieldName)  
+7.支持SQL输出日志配置,占位参数可显示参数,将带占位的sql,转成可执行的sql:  
+bee.osql.showSQL.showType=false  
+bee.osql.showSQL.showExecutableSql=false  
 
 快速开始:
 =========	
