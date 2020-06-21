@@ -1,6 +1,8 @@
 
 Bee
 =========
+#### 工欲善其事必先利其器！————《论语·卫灵公》    
+**Bee**————一个 Java ORM框架利器！
 **Bee** 是一个 ORM框架,它的开发速度快，编码少,还很简单。    
 **Bee** 是一个具有人工智能(AI)特性，省时/优雅、简易、自动( **AiTea:** Timesaving/Tasteful, Easy, Automatic) 的ORM软件框架(AiTeaSoft)(IT-->AiTea 的思维转变!)。  
 你还在为不断重复写ORM操作数据库的代码而烦恼吗?每写一个service业务层，就要写一个dao层(即使我们知道dao就是简单的查改增删suid操作)。  
