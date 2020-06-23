@@ -143,7 +143,7 @@ public interface Condition extends ConditionAssistant {
 	public Condition setAdd(String field,Number num);
 	
 	/**
-	 * 只用于SQL语句的update.Just use in SQL update.
+	 * 只用于SQL语句的update set 部分.Just use in SQL update set part.
 	 * eg: setMultiply("price",1.05)--> price=price*1.05
 	 * @param field
 	 * @param num
@@ -156,7 +156,7 @@ public interface Condition extends ConditionAssistant {
 	 * eg:setAdd("price","delta")--> price=price+delta
 	 * @param field
 	 * @param fieldName
-	 * @return
+	 * @return Condition
 	 */
 	public Condition setAdd(String field, String fieldName);
 
@@ -164,7 +164,7 @@ public interface Condition extends ConditionAssistant {
      * eg: setMultiply("price","delta")--> price=price*delta
 	 * @param field
 	 * @param fieldName
-	 * @return
+	 * @return Condition
 	 */
 	public Condition setMultiply(String field, String fieldName);
 
