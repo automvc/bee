@@ -83,11 +83,47 @@ public interface Condition extends ConditionAssistant {
 	 */
 	public Condition rParentheses();
 
+	/**
+	 * 
+	 * @param field
+	 * @param low
+	 * @param high
+	 * @return Condition
+	 */
 	public Condition between(String field, Number low, Number high);
+	
+	/**
+	 * 
+	 * @param field
+	 * @param low
+	 * @param high
+	 * @return Condition
+	 */
 	public Condition notBetween(String field, Number low, Number high);
+	
+	/**
+	 * 
+	 * @param field
+	 * @param low
+	 * @param high
+	 * @return Condition
+	 */
 	public Condition between(String field, String low, String high);
+	
+	/**
+	 * 
+	 * @param field
+	 * @param low
+	 * @param high
+	 * @return Condition
+	 */
 	public Condition notBetween(String field, String low, String high);
 
+	/**
+	 * 
+	 * @param field
+	 * @return Condition
+	 */
 	public Condition groupBy(String field);
 
 	/**
