@@ -17,6 +17,8 @@
 
 package org.teasoft.bee.osql;
 
+import java.util.Map;
+
 import javax.sql.DataSource;
 
 import org.teasoft.bee.osql.transaction.Transaction;
@@ -30,6 +32,8 @@ public abstract class BeeAbstractFactory {
 
 	private DataSource dataSource;
 	private Transaction transaction;
+	
+	private Map<String,DataSource> dataSourceMap;
 	
 	public DataSource getDataSource() {
 		return dataSource;
@@ -46,4 +50,13 @@ public abstract class BeeAbstractFactory {
 	public void setTransaction(Transaction transaction) {
 		this.transaction = transaction;
 	}
+
+	public Map<String, DataSource> getDataSourceMap() {
+		return dataSourceMap;
+	}
+
+	public void setDataSourceMap(Map<String, DataSource> dataSourceMap) {
+		this.dataSourceMap = dataSourceMap;
+	}
+	
 }

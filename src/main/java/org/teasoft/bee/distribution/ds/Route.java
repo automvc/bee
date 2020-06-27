@@ -18,16 +18,16 @@
 package org.teasoft.bee.distribution.ds;
 
 /**
- * 多数据源的路由接口.the route interface of multi-Datasource.
+ * 多数据源的路由接口.the route interface of multi-DataSource.
  * @author Kingstar
  * @since  1.7.3
  */
 public interface Route {
 	
 	/**
-	 * 返回数据源的名称.Return the name of Datasource.
-	 * @return the name of Datasource.
+	 * 返回数据源的名称.Return the name of DataSource.
+	 * @return the name of DataSource.
 	 */
-	public String getDs();
+	public String getDsName();
 
 }
