@@ -134,6 +134,10 @@ public Condition setMultiply(String field, String fieldName)
 7.Support show type of data in sql and show ExecutableSql:  
 bee.osql.showSQL.showType=false  
 bee.osql.showSQL.showExecutableSql=false  
+8.add the route interface of multi-Datasource.  
+add multi-DataSource support(Write/Read, only Split Database).  
+add multi-DataSource route.  
+add multi-DataSource config.  
 
 Quick Start:
 =========	
