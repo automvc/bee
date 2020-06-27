@@ -153,6 +153,10 @@ public Condition setMultiply(String field, String fieldName)
 7.支持SQL输出日志配置,占位参数可显示参数,将带占位的sql,转成可执行的sql:  
 bee.osql.showSQL.showType=false  
 bee.osql.showSQL.showExecutableSql=false  
+8.添加多数据源路由接口.  
+添加多数据源支持(读写分离一主多从, 仅分库).  
+添加多数据源路由.  
+添加多数据源配置.  
 
 快速开始:
 =========	
