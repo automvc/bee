@@ -242,4 +242,10 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 		return getSuidRich().update(entity, updateFields, condition);
 	}
 	
+	@Override
+	public <T> int update(T entity, Condition condition) {
+		//Add the business logic if need.
+		return getSuidRich().update(entity,condition);
+	}
+	
 }
