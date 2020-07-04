@@ -145,7 +145,7 @@ public interface SuidRich extends Suid {
 	 * 更新记录,且可以指定需要更新的字段.Update record, can list update fields. 
 	 * @param entity 实体类对象,不能为空
 	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,
-	 * <br>默认每个字段会被转化成SQL的set表达式;其它非空,非null的字段作为过滤条件,转成SQL的where表达式.
+	 * <br>默认每个字段会被转化成SQL update的set表达式;其它非空,非null的字段作为过滤条件,转成SQL的where表达式.
 	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
 	 */
 	public <T> int update(T entity,String updateFields);
@@ -154,7 +154,7 @@ public interface SuidRich extends Suid {
 	 * 根据实体对象entity更新数据,可以指定需要更新的字段.Update record according to entity.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * id为null不作为过滤条件
-	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,且不受includeType参数的影响,默认每个字段会被转化成SQL的set表达式
+	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,且不受includeType参数的影响,默认每个字段会被转化成SQL update的set表达式
 	 * @param includeType 空字符串与null是否包含设置(是否作为过滤条件)
 	 * @return  成功更新的记录数.the numbers of update record(s) successfully.
 	 */
@@ -355,11 +355,10 @@ public interface SuidRich extends Suid {
 	/**
 	 * 更新记录,且可以指定作为条件的字段.Update record according to whereFields.
 	 * @param entity 实体类对象,不能为空
-	 * 没指定为whereFields的字段,作为set部分,默认只处理非空,非null的字段
+	 * 没指定为whereFields的字段,作为set部分(默认只处理非空,非null的字段)
 	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
 	 * 指定作为条件的,都转换.id为null不作为过滤条件
-	 * @param condition entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.<br>
-	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition.<br>
+	 * @param condition 用来设置默认情况不能表达的条件.
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
 	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
 	 * @since 1.7.2
@@ -370,14 +369,28 @@ public interface SuidRich extends Suid {
 	/**
 	 * 更新记录,且可以指定需要更新的字段,高级条件可通过Condition参数设置.Update record, can list update fields. 
 	 * @param entity 实体类对象,不能为空
-	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,
-	 * <br>默认每个字段会被转化成SQL的set表达式;其它非空,非null的字段作为过滤条件,转成SQL的where表达式.
-	 * @param condition entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.<br>
+	 * entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition中op,between等方法设置的转换到where中的字段,默认情况不会再处理.<br>
 	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition.<br>
+	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,
+	 * <br>默认updateFields的每个字段会被转化成SQL update的set表达式;其它非空,非null的字段作为过滤条件,转成SQL的where表达式.
+	 * @param condition 
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
 	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
 	 * @since 1.7.2
 	 */
 	public <T> int update(T entity,String updateFields,Condition condition);
+	
+	
+	/**
+	 * 当SQL update的set表达式通过Condition定义时,可以不用再指定set使用的字段.
+	 * @param entity 实体类对象,不能为空
+	 * entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition中op,between等方法设置的转换到where中的字段,默认情况不会再处理.<br>
+	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition.<br>
+	 * @param condition
+	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
+	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
+	 * @since 1.7.3
+	 */
+	public <T> int update(T entity,Condition condition);
 
 }
