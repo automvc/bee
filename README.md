@@ -138,6 +138,8 @@ bee.osql.showSQL.showExecutableSql=false
 add multi-DataSource support(Write/Read, only Split Database).  
 add multi-DataSource route.  
 add multi-DataSource config.  
+9.add one method in SuidRich:  
+public <T> int update(T entity,Condition condition);  
 
 Quick Start:
 =========	
