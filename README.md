@@ -126,6 +126,7 @@ add method setAdd,setMultiply in Condition for set value in SQL update.
 2.fix cache bug:genkey;clear cache for batch insert.  
 3.Generate global unique id number in distributed environment.  
 4.Generate Serial Unique id number in one workid of distributed environment.  
+Independent clock,workerid can config and easily expand.	
 update id gen:SerialUniqueId,OneTimeSnowflakeId.  
 5.fixed bug:parse the json has extra comma.  
 6.add 2 methods in Condition:  
