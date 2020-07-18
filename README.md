@@ -128,6 +128,7 @@ add method setAdd,setMultiply in Condition for set value in SQL update.
 4.Generate Serial Unique id number in one workid of distributed environment.  
 Independent clock,workerid can config and easily expand.	
 update id gen:SerialUniqueId,OneTimeSnowflakeId.  
+Support GenId Factory:GenIdFactory,and can config the id generator.	
 5.fixed bug:parse the json has extra comma.  
 6.add 2 methods in Condition:  
 public Condition setAdd(String field, String fieldName)  
