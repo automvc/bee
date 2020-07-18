@@ -145,7 +145,8 @@ Condition接口新增方法setAdd,setMultiply用于设置SQL中update操作的se
 2.bug修复:缓存key生成;批插入后清缓存.  
 3.分布式环境下生成全局唯一数字id.	  
 4.分布式环境下生成连续单调递增(在一个workerid内),全局唯一数字id.	
-update id gen:SerialUniqueId,OneTimeSnowflakeId.  
+不依赖时钟,workerid可配置,易扩展.	  
+update id gen:SerialUniqueId,OneTimeSnowflakeId.	
 5.修复缺陷:解析json时多余的逗号错误.  
 6.在Condition添加两个新方法:  
 public Condition setAdd(String field, String fieldName)  
