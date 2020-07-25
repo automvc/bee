@@ -199,9 +199,33 @@ public interface Condition extends ConditionAssistant {
 	/**
      * eg: setMultiply("price","delta")--> price=price*delta
 	 * @param field
-	 * @param fieldName
+	 * @param fieldName another fieldName
 	 * @return Condition
 	 */
 	public Condition setMultiply(String field, String fieldName);
+	
+	/**
+	 * eg: set("maxid", 1000)-->maxid=1000
+	 * @param fieldNmae
+	 * @param num
+	 * @return
+	 */
+	public Condition set(String fieldNmae, Number num);
+
+	/**
+	 * eg: set("name", 'bee')-->name='bee'
+	 * @param fieldNmae
+	 * @param value
+	 * @return
+	 */
+	public Condition set(String fieldNmae, String value);
+	
+	
+	/**
+	 * 指定需要查询的部分字段.
+	 * @param fieldList 需要查询的字段,多个用逗号隔开. select fields,if more than one,separate with comma.
+	 * @return
+	 */
+	public Condition selectField(String fieldList);
 
 }
