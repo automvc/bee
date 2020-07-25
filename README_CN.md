@@ -150,7 +150,7 @@ update id gen:SerialUniqueId,OneTimeSnowflakeId.
 提供GenId生成工厂:GenIdFactory,且可配置GenId生成器类型.	  
 4.2为所有表的Long型Id字段自动生成全局唯一ID主键.	  
 5.修复缺陷:解析json时多余的逗号错误.	
-修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[])		
+修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[]).  
 6.在Condition添加5个新方法:  
 public Condition setAdd(String field, String fieldName)  
 public Condition setMultiply(String field, String fieldName)  
