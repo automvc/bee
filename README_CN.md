@@ -149,10 +149,14 @@ Condition接口新增方法setAdd,setMultiply用于设置SQL中update操作的se
 update id gen:SerialUniqueId,OneTimeSnowflakeId.	
 提供GenId生成工厂:GenIdFactory,且可配置GenId生成器类型.	
 4.2为所有表的Long型Id字段自动生成全局唯一ID主键.	
-5.修复缺陷:解析json时多余的逗号错误.  
-6.在Condition添加两个新方法:  
+5.修复缺陷:解析json时多余的逗号错误.	
+修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[])	
+6.在Condition添加5个新方法:  
 public Condition setAdd(String field, String fieldName)  
 public Condition setMultiply(String field, String fieldName)  
+public Condition set(String fieldNmae, Number num)  
+public Condition set(String fieldNmae, String value)  
+public Condition selectField(String fieldList)  
 7.支持SQL输出日志配置,占位参数可显示参数,将带占位的sql,转成可执行的sql:  
 bee.osql.showSQL.showType=false  
 bee.osql.showSQL.showExecutableSql=false  
