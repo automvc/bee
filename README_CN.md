@@ -146,9 +146,9 @@ Condition接口新增方法setAdd,setMultiply用于设置SQL中update操作的se
 3.分布式环境下生成全局唯一数字id.	  
 4.分布式环境下生成连续单调递增(在一个workerid内),全局唯一数字id.	
 不依赖时钟,workerid可配置,易扩展.	  
-update id gen:SerialUniqueId,OneTimeSnowflakeId.	
-提供GenId生成工厂:GenIdFactory,且可配置GenId生成器类型.	
-4.2为所有表的Long型Id字段自动生成全局唯一ID主键.	
+update id gen:SerialUniqueId,OneTimeSnowflakeId.	  
+提供GenId生成工厂:GenIdFactory,且可配置GenId生成器类型.	  
+4.2为所有表的Long型Id字段自动生成全局唯一ID主键.	  
 5.修复缺陷:解析json时多余的逗号错误.	
 修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[])	
 6.在Condition添加5个新方法:  
