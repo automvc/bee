@@ -193,6 +193,7 @@ public interface Condition extends ConditionAssistant {
 	 * @param field
 	 * @param fieldName
 	 * @return Condition
+	 * @since 1.7.3
 	 */
 	public Condition setAdd(String field, String fieldName);
 
@@ -201,6 +202,7 @@ public interface Condition extends ConditionAssistant {
 	 * @param field
 	 * @param fieldName another fieldName
 	 * @return Condition
+	 * @since 1.7.3
 	 */
 	public Condition setMultiply(String field, String fieldName);
 	
@@ -208,7 +210,8 @@ public interface Condition extends ConditionAssistant {
 	 * eg: set("maxid", 1000)-->maxid=1000
 	 * @param fieldNmae
 	 * @param num
-	 * @return
+	 * @return Condition
+	 * @since 1.7.3
 	 */
 	public Condition set(String fieldNmae, Number num);
 
@@ -216,7 +219,8 @@ public interface Condition extends ConditionAssistant {
 	 * eg: set("name", 'bee')-->name='bee'
 	 * @param fieldNmae
 	 * @param value
-	 * @return
+	 * @return Condition
+	 * @since 1.7.3
 	 */
 	public Condition set(String fieldNmae, String value);
 	
@@ -224,7 +228,8 @@ public interface Condition extends ConditionAssistant {
 	/**
 	 * 指定需要查询的部分字段.
 	 * @param fieldList 需要查询的字段,多个用逗号隔开. select fields,if more than one,separate with comma.
-	 * @return
+	 * @return Condition
+	 * @since 1.7.3
 	 */
 	public Condition selectField(String fieldList);
 
