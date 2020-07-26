@@ -24,6 +24,7 @@ import java.util.Set;
  * @author Kingstar
  * @since  1.6
  */
+//用于不需要放在Condition链式编程的方法
 public interface ConditionAssistant {
 	
 	/**
@@ -47,4 +48,8 @@ public interface ConditionAssistant {
 	  * @since 1.7.2
 	  */
 	 public Set<String> getUpdatefieldSet();
+	 
+	 public String getSelectField();
+	 
+	 public Boolean getForUpdate();
 }
