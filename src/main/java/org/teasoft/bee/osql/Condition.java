@@ -169,7 +169,7 @@ public interface Condition extends ConditionAssistant {
 	public Condition orderBy(FunctionType functionType, String field, OrderType orderType);
 	
 	/**
-	 * 只用于SQL语句的update set 部分.Just use in SQL update set part.
+	 * 设置需要更新的字段(仅用于SQL的update),字段在自身基础上变化.Set the fields to be updated (for only update of SQL),and the field change on itself.
 	 * eg: setAdd("price",2.0)--> price=price+2.0
 	 * @param field
 	 * @param num
@@ -179,7 +179,7 @@ public interface Condition extends ConditionAssistant {
 	public Condition setAdd(String field,Number num);
 	
 	/**
-	 * 只用于SQL语句的update set 部分.Just use in SQL update set part.
+	 * 设置需要更新的字段(仅用于SQL的update),字段在自身基础上变化.Set the fields to be updated (for only update of SQL),and the field change on itself.
 	 * eg: setMultiply("price",1.05)--> price=price*1.05
 	 * @param field
 	 * @param num
@@ -189,7 +189,8 @@ public interface Condition extends ConditionAssistant {
 	public Condition setMultiply(String field,Number num);
 	
 	/**
-	 * eg:setAdd("price","delta")--> price=price+delta
+	 * 设置需要更新的字段(仅用于SQL的update),字段在自身基础上变化.Set the fields to be updated (for only update of SQL),and the field change on itself.
+     * eg:setAdd("price","delta")--> price=price+delta
 	 * @param field
 	 * @param fieldName
 	 * @return Condition
@@ -198,6 +199,7 @@ public interface Condition extends ConditionAssistant {
 	public Condition setAdd(String field, String fieldName);
 
 	/**
+	 * 设置需要更新的字段(仅用于SQL的update),字段在自身基础上变化.Set the fields to be updated (for only update of SQL),and the field change on itself.
      * eg: setMultiply("price","delta")--> price=price*delta
 	 * @param field
 	 * @param fieldName another fieldName
@@ -207,7 +209,9 @@ public interface Condition extends ConditionAssistant {
 	public Condition setMultiply(String field, String fieldName);
 	
 	/**
-	 * eg: set("maxid", 1000)-->maxid=1000
+	 * 设置需要更新的字段(仅用于SQL的update);当设置的字段也需要用于where条件时,可用该方法.
+     * <br>Set the fields that need to be updated (only for update of SQL ); this method can be used when the set fields also need to be used for the where expression.
+     * eg: set("maxid", 1000)-->maxid=1000
 	 * @param fieldNmae
 	 * @param num
 	 * @return Condition
@@ -216,7 +220,9 @@ public interface Condition extends ConditionAssistant {
 	public Condition set(String fieldNmae, Number num);
 
 	/**
-	 * eg: set("name", 'bee')-->name='bee'
+	 * 设置需要更新的字段(仅用于SQL的update);当设置的字段也需要用于where条件时,可用该方法.
+     * <br>Set the fields that need to be updated (only for update of SQL ); this method can be used when the set fields also need to be used for the where expression.
+     * eg: set("name", 'bee')-->name='bee'
 	 * @param fieldNmae
 	 * @param value
 	 * @return Condition
@@ -226,7 +232,7 @@ public interface Condition extends ConditionAssistant {
 	
 	
 	/**
-	 * 指定需要查询的部分字段.
+	 * 指定需要查询的部分字段(仅用于SQL的select).
 	 * @param fieldList 需要查询的字段,多个用逗号隔开. select fields,if more than one,separate with comma.
 	 * @return Condition
 	 * @since 1.7.3
