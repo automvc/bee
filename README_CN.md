@@ -154,12 +154,13 @@ update id gen:SerialUniqueId,OneTimeSnowflakeId.
 4.2为所有表的Long型Id字段自动生成全局唯一ID主键.  
 5.修复缺陷:解析json时多余的逗号错误.	
 修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[]).  
-6.在Condition添加5个新方法:  
+6.在Condition添加6个新方法:  
 public Condition setAdd(String field, String fieldName)  
 public Condition setMultiply(String field, String fieldName)  
 public Condition set(String fieldNmae, Number num)  
 public Condition set(String fieldNmae, String value)  
 public Condition selectField(String fieldList)  
+public Condition forUpdate()  
 7.支持SQL输出日志配置,占位参数可显示参数,将带占位的sql,转成可执行的sql:  
 bee.osql.showSQL.showType=false  
 bee.osql.showSQL.showExecutableSql=false  
@@ -167,6 +168,8 @@ bee.osql.showSQL.showExecutableSql=false
 添加多数据源支持(读写分离一主多从, 仅分库).  
 添加多数据源路由.  
 添加多数据源配置.  
+9.添加for update功能,用于锁住某个表的一些记录.  
+10.GenFiles根据模板自动生成文件代码添加支持首字母大写,如: #{entityName?up1}.  
 
 快速开始:
 =========	
