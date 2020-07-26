@@ -133,12 +133,13 @@ Support GenId Factory:GenIdFactory,and can config the id generator.
 4.2 Gen Serial Unique Id for all Table's Long Id field as primary key.  
 5.fixed bug:parse the json has extra comma.	
 fixed null bug about:PreparedSql's method select(String sql,Object preValues[]).  
-6.add 2 methods in Condition:  
+6.add 6 methods in Condition:  
 public Condition setAdd(String field, String fieldName)  
 public Condition setMultiply(String field, String fieldName)  
 public Condition set(String fieldNmae, Number num)  
 public Condition set(String fieldNmae, String value)  
 public Condition selectField(String fieldList)  
+public Condition forUpdate()  
 7.Support show type of data in sql and show ExecutableSql:  
 bee.osql.showSQL.showType=false  
 bee.osql.showSQL.showExecutableSql=false  
