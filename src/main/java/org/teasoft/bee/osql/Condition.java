@@ -238,5 +238,11 @@ public interface Condition extends ConditionAssistant {
 	 * @since 1.7.3
 	 */
 	public Condition selectField(String fieldList);
+	
+	/**
+	 * 锁定查询的部分记录(仅用于SQL的单个表select)
+	 * @return Condition
+	 */
+	public Condition forUpdate();
 
 }
