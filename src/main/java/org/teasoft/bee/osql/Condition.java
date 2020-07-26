@@ -26,14 +26,14 @@ package org.teasoft.bee.osql;
 public interface Condition extends ConditionAssistant {
 
 	/**
-	 * 添加用于分页时设置开始的页数.For setting the start of the page.
+	 * 添加用于分页时设置开始的页数(仅用于SQL的select).For setting the start of the page(only for select of SQL).
 	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
 	 * @return Condition
 	 */
 	public Condition start(Integer start);
 
 	 /**
-	  * 添加用于分页时设置每页返回的记录数量.For setting the size of the page.
+	  * 添加用于分页时设置每页返回的记录数量(仅用于SQL的select).For setting the size of the page(only for select of SQL).
 	  * @param size 结果集大小 大于等于1. fetch result size (>0).
 	  * @return Condition
 	  */
@@ -170,7 +170,7 @@ public interface Condition extends ConditionAssistant {
 	
 	/**
 	 * 设置需要更新的字段(仅用于SQL的update),字段在自身基础上变化.Set the fields to be updated (for only update of SQL),and the field change on itself.
-	 * eg: setAdd("price",2.0)--> price=price+2.0
+	 * <br>eg: setAdd("price",2.0)--> price=price+2.0
 	 * @param field
 	 * @param num
 	 * @return Condition
@@ -180,7 +180,7 @@ public interface Condition extends ConditionAssistant {
 	
 	/**
 	 * 设置需要更新的字段(仅用于SQL的update),字段在自身基础上变化.Set the fields to be updated (for only update of SQL),and the field change on itself.
-	 * eg: setMultiply("price",1.05)--> price=price*1.05
+	 * <br>eg: setMultiply("price",1.05)--> price=price*1.05
 	 * @param field
 	 * @param num
 	 * @return Condition
@@ -190,7 +190,7 @@ public interface Condition extends ConditionAssistant {
 	
 	/**
 	 * 设置需要更新的字段(仅用于SQL的update),字段在自身基础上变化.Set the fields to be updated (for only update of SQL),and the field change on itself.
-     * eg:setAdd("price","delta")--> price=price+delta
+     * <br>eg:setAdd("price","delta")--> price=price+delta
 	 * @param field
 	 * @param fieldName
 	 * @return Condition
@@ -200,7 +200,7 @@ public interface Condition extends ConditionAssistant {
 
 	/**
 	 * 设置需要更新的字段(仅用于SQL的update),字段在自身基础上变化.Set the fields to be updated (for only update of SQL),and the field change on itself.
-     * eg: setMultiply("price","delta")--> price=price*delta
+     * <br>eg: setMultiply("price","delta")--> price=price*delta
 	 * @param field
 	 * @param fieldName another fieldName
 	 * @return Condition
@@ -209,9 +209,9 @@ public interface Condition extends ConditionAssistant {
 	public Condition setMultiply(String field, String fieldName);
 	
 	/**
-	 * 设置需要更新的字段(仅用于SQL的update);当设置的字段也需要用于where条件时,可用该方法.
+	 * 设置需要更新的字段(仅用于SQL的update);当设置的字段也需要用于where条件时,可用该方法 
      * <br>Set the fields that need to be updated (only for update of SQL ); this method can be used when the set fields also need to be used for the where expression.
-     * eg: set("maxid", 1000)-->maxid=1000
+     * <br>eg: set("maxid", 1000)-->maxid=1000
 	 * @param fieldNmae
 	 * @param num
 	 * @return Condition
@@ -220,9 +220,9 @@ public interface Condition extends ConditionAssistant {
 	public Condition set(String fieldNmae, Number num);
 
 	/**
-	 * 设置需要更新的字段(仅用于SQL的update);当设置的字段也需要用于where条件时,可用该方法.
-     * <br>Set the fields that need to be updated (only for update of SQL ); this method can be used when the set fields also need to be used for the where expression.
-     * eg: set("name", 'bee')-->name='bee'
+	 * 设置需要更新的字段(仅用于SQL的update);当设置的字段也需要用于where条件时,可用该方法 
+     * <br>Set the fields that need to be updated (only for update of SQL); this method can be used when the set fields also need to be used for the where expression.
+     * <br>eg: set("name", 'bee')-->name='bee'
 	 * @param fieldNmae
 	 * @param value
 	 * @return Condition
@@ -232,7 +232,7 @@ public interface Condition extends ConditionAssistant {
 	
 	
 	/**
-	 * 指定需要查询的部分字段(仅用于SQL的select).
+	 * 指定需要查询的部分字段(仅用于SQL的select).Specify the partial fields to be queried (only for select of SQL).
 	 * @param fieldList 需要查询的字段,多个用逗号隔开. select fields,if more than one,separate with comma.
 	 * @return Condition
 	 * @since 1.7.3
