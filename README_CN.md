@@ -170,6 +170,8 @@ bee.osql.showSQL.showExecutableSql=false
 添加多数据源配置.  
 9.添加for update功能,用于锁住某个表的一些记录.  
 10.GenFiles根据模板自动生成文件代码添加支持首字母大写,如: #{entityName?up1}.  
+11.add one method in SuidRich:  
+public <T> int update(T entity,Condition condition);  
 
 快速开始:
 =========	
