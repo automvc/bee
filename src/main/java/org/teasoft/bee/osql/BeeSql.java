@@ -21,9 +21,9 @@ import java.util.List;
 
 /**
  * 直接用sql语句操作数据库的接口
- * 在该接口中的sql字符串要是DB能识别的SQL语句
- * The interface of operating database with SQL statement directly
- * The SQL string in this interface is the SQL statement that DB can recognize
+ * <br>在该接口中的sql字符串要是DB能识别的SQL语句
+ * <br>The interface of operating database with SQL statement directly
+ * <br>The SQL string in this interface is the SQL statement that DB can recognize
  * @author Kingstar
  * Create on 2013-6-30 22:05:36
  * @since  1.0
