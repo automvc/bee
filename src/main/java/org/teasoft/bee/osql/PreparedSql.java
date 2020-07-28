@@ -21,8 +21,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 支持带占位符的sql操作.sql语句是DB能识别的SQL,非面向对象的sql.Support sql string 
- * with placeholder.The sql statement is really DB's grammar,not object oriented type.
+ * 支持带占位符的sql操作.sql语句是DB能识别的SQL,非面向对象的sql
+ * <br>Support sql string with placeholder.The sql statement is really DB's grammar,not object oriented type.
  * <p>支持的占位符有:? 或者   #{para} 或者   #{para%}, 都可以通过PreparedStatement防范SQL注入攻击.
  * <br>Support placeholder ? or #{para} or #{para%}
  * <p>若是可以,建议使用面向对象的操作方式,如:Suid和SuidRich,可以使用Bee缓存,获取更高的查询效率.
