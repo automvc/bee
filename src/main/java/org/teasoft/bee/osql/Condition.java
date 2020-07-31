@@ -146,14 +146,14 @@ public interface Condition extends ConditionAssistant {
 
 	/**
 	 * eg: orderBy("price")-->order by price
-	 * @param field
+	 * @param field 用于排序的字段名.field name.
 	 * @return Condition
 	 */
 	public Condition orderBy(String field);
 
 	/**
 	 * eg: orderBy("price", OrderType.DESC)-->order by price desc
-	 * @param field 字段名.field name.
+	 * @param field 用于排序的字段名.field name.
 	 * @param orderType 排序类型(asc或desc). order type(asc or desc)
 	 * @return Condition
 	 */
@@ -162,7 +162,7 @@ public interface Condition extends ConditionAssistant {
 	/**
 	 * eg: orderBy(FunctionType.MAX, "total", OrderType.DESC)-->order by max(total) desc
 	 * @param functionType 函数类型.Function type of SQL.
-	 * @param field 字段名.field name.
+	 * @param field 用于排序的字段名.field name.
 	 * @param orderType 排序类型(asc或desc). order type(asc or desc)
 	 * @return Condition
 	 */
