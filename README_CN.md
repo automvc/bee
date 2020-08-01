@@ -202,6 +202,7 @@ public <T> int update(T entity,Condition condition);
 
 ## 3. 更新数据库的配置信息(在bee.properties)  
 注:如果还没有bee.properties文件,可以自己新建一个.  
+也可以配置数据源(此处只是一个例子).  
 
 bee.databaseName=mysql  
 bee.db.driverName = com.mysql.jdbc.Driver  
