@@ -146,14 +146,14 @@ public interface Condition extends ConditionAssistant {
 
 	/**
 	 * eg: orderBy("price")-->order by price
-	 * @param field
+	 * @param field 用于排序的字段名.field name.
 	 * @return Condition
 	 */
 	public Condition orderBy(String field);
 
 	/**
 	 * eg: orderBy("price", OrderType.DESC)-->order by price desc
-	 * @param field 字段名.field name.
+	 * @param field 用于排序的字段名.field name.
 	 * @param orderType 排序类型(asc或desc). order type(asc or desc)
 	 * @return Condition
 	 */
@@ -162,7 +162,7 @@ public interface Condition extends ConditionAssistant {
 	/**
 	 * eg: orderBy(FunctionType.MAX, "total", OrderType.DESC)-->order by max(total) desc
 	 * @param functionType 函数类型.Function type of SQL.
-	 * @param field 字段名.field name.
+	 * @param field 用于排序的字段名.field name.
 	 * @param orderType 排序类型(asc或desc). order type(asc or desc)
 	 * @return Condition
 	 */
@@ -209,7 +209,7 @@ public interface Condition extends ConditionAssistant {
 	public Condition setMultiply(String field, String fieldName);
 	
 	/**
-	 * 设置需要更新的字段(仅用于SQL的update);当设置的字段也需要用于where条件时,可用该方法 
+	 * 设置需要更新的字段(仅用于SQL的update);当要更新的字段也需要用于where条件时,可用该方法 
      * <br>Set the fields that need to be updated (only for update of SQL ); this method can be used when the set fields also need to be used for the where expression.
      * <br>eg: set("maxid", 1000)-->maxid=1000
 	 * @param fieldNmae
@@ -220,7 +220,7 @@ public interface Condition extends ConditionAssistant {
 	public Condition set(String fieldNmae, Number num);
 
 	/**
-	 * 设置需要更新的字段(仅用于SQL的update);当设置的字段也需要用于where条件时,可用该方法 
+	 * 设置需要更新的字段(仅用于SQL的update);当要更新的字段也需要用于where条件时,可用该方法 
      * <br>Set the fields that need to be updated (only for update of SQL); this method can be used when the set fields also need to be used for the where expression.
      * <br>eg: set("name", 'bee')-->name='bee'
 	 * @param fieldNmae
