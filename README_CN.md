@@ -160,7 +160,7 @@ Condition接口新增方法setAdd,setMultiply用于设置SQL中update操作的se
 实体与任意表名映射支持. 
 Suid add one method:	
 public Suid setDynamicParameter(String para,String value);  
-add 2 annotation:@Table,@Entity 	
+add 2 annotation:@Table,@Entity.  
 6.添加for update功能,用于锁住某个表的一些记录.  
 public Condition forUpdate()  
 7.增加高级更新设置值支持,复杂查询、多表查询支持只查部分字段:	
