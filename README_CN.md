@@ -168,6 +168,8 @@ bee.osql.showSQL.showExecutableSql=false
 添加多数据源支持(读写分离一主多从, 仅分库).  
 添加多数据源路由.  
 添加多数据源配置.  
+同库分表支持,动态表名映射支持.  
+实体与任意表名映射支持. 
 9.添加for update功能,用于锁住某个表的一些记录.  
 10.GenFiles根据模板自动生成文件代码添加支持首字母大写,如: #{entityName?up1}.  
 11.add one method in SuidRich:  
