@@ -154,7 +154,7 @@ Entity and any table name mapping support.
 11.add one method in SuidRich:  
 public <T> int update(T entity,Condition condition);  
 12.Suid add 1 method:	
-public Suid setDynamicParameter(String para,String value);	
+public Suid setDynamicParameter(String para,String value)	
 13.add 2 annotation:	
 Table,Entity	
 

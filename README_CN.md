@@ -174,6 +174,10 @@ bee.osql.showSQL.showExecutableSql=false
 10.GenFiles根据模板自动生成文件代码添加支持首字母大写,如: #{entityName?up1}.  
 11.add one method in SuidRich:  
 public <T> int update(T entity,Condition condition);  
+12.Suid add 1 method:	
+public Suid setDynamicParameter(String para,String value)	
+13.add 2 annotation:	
+Table,Entity	
 
 快速开始:
 =========	
