@@ -242,6 +242,7 @@ public interface Condition extends ConditionAssistant {
 	/**
 	 * 锁定查询的部分记录(仅用于SQL的单个表select)
 	 * @return Condition
+     * @since 1.7.3
 	 */
 	public Condition forUpdate();
 
