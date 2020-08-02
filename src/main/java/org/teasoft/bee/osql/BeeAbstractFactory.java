@@ -33,7 +33,7 @@ public abstract class BeeAbstractFactory {
 	private DataSource dataSource;
 	private Transaction transaction;
 	
-	//v1.7.3
+	//v1.8
 	private Map<String,DataSource> dataSourceMap;
 	
 	public DataSource getDataSource() {
