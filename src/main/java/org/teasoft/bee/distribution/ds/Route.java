@@ -20,7 +20,7 @@ package org.teasoft.bee.distribution.ds;
 /**
  * 多数据源的路由接口.the route interface of multi-DataSource.
  * @author Kingstar
- * @since  1.7.3
+ * @since  1.8
  */
 public interface Route {
 	
