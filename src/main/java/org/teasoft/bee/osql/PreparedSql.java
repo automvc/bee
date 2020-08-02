@@ -243,6 +243,12 @@ public interface PreparedSql {
 	 * @return 返回json格式结果集.json format result .
 	 */
 	public String selectJson(String sqlStr,Map<String,Object> map,int start,int size);
+	
+	
+	public String selectJson(String sqlStr);
+	
+	public List<String[]> select(String sql);
+	
 	/**
 	 * 用操作类型为update,insert,delete的语句更新数据库记录
 	 * Modify database records with update, insert or delete statement.
