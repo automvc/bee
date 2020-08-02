@@ -22,7 +22,7 @@ import org.teasoft.bee.osql.BeeException;
 /**
  * 配置信息错误异常.Config wrong exception.
  * @author Kingstar
- * @since  1.7.3
+ * @since  1.8
  */
 public class ConfigWrongException extends BeeException {
 	
