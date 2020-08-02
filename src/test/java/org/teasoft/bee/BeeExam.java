@@ -27,7 +27,8 @@ public class BeeExam {
 	  //add multi-DataSource support(Write/Read, only Split Database)
 //		bee-exam last update time:2020-06-27 16:40 (yyyy-MM-dd HH:mm) 
 		
-//		bee-exam last update time:2020-07-26 22.53 (yyyy-MM-dd HH:mm)
+//		bee-exam last update time:2020-07-26 22:53 (yyyy-MM-dd HH:mm)
+//		bee-exam last update time:2020-08-02 16:43 (yyyy-MM-dd HH:mm)
 		
 		
 //		测试用例请查看工程:bee-exam 

@@ -38,3 +38,8 @@ bee-exam(v1.7.3)-normal-2020-07-25 23.05.05.465.txt
 
 use 'for update' lock some select record(s). 
 bee-exam(v1.7.3)-normal-2020-07-26 22.53.23.807.txt
+
+The same database sub table support, dynamic table name mapping support.  
+Entity and any table name mapping support.
+field is not null
+bee-exam(v1.7.3)-normal-2020-08-02 16.43.40.905.txt
