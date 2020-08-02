@@ -153,6 +153,10 @@ Entity and any table name mapping support.
 10.GenFiles support upper case first letter,eg: #{entityName?up1}.  
 11.add one method in SuidRich:  
 public <T> int update(T entity,Condition condition);  
+12.Suid add 1 method:	
+public Suid setDynamicParameter(String para,String value);	
+13.add 2 annotation:	
+Table,Entity	
 
 Quick Start:
 =========	
