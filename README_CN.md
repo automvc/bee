@@ -150,7 +150,7 @@ Condition接口新增方法setAdd,setMultiply用于设置SQL中update操作的se
 添加多数据源路由实现算法.  
 添加多数据源配置.  
 2.分布式环境下生成全局唯一数字递增id.	  
-  分布式环境下生成连续单调递增(在一个workerid内),全局唯一数字id.	
+分布式环境下生成连续单调递增(在一个workerid内),全局唯一数字id.  
 3.Bee分布式唯一id算法特性:不依赖时钟,workerid可配置,易扩展.	  
 具体算法实现:SerialUniqueId,OneTimeSnowflakeId,PearFlowerId.		  
 提供id生成工厂:GenIdFactory,且可配置id生成器具体实现类.	  
@@ -160,7 +160,7 @@ Condition接口新增方法setAdd,setMultiply用于设置SQL中update操作的se
 实体与任意表名映射支持. 
 Suid add one method:	
 public Suid setDynamicParameter(String para,String value);  
-add 2 annotation:@Table,@Entity	
+add 2 annotation:@Table,@Entity 	
 6.添加for update功能,用于锁住某个表的一些记录.  
 public Condition forUpdate()  
 7.增加高级更新设置值支持,复杂查询、多表查询支持只查部分字段:	
@@ -180,7 +180,7 @@ public <T> int update(T entity,Condition condition);
 11.GenFiles根据模板自动生成文件代码添加支持首字母大写,如: #{entityName?up1}.  
 #### 修复原有问题:	
 12.bug修复:缓存key生成;批插入后清缓存.  
-修复缺陷:解析json时多余的逗号错误.	
+修复缺陷:解析json时多余的逗号错误.  
 修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[]).  	
 
 快速开始:
