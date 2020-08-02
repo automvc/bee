@@ -67,4 +67,10 @@ public abstract class ObjSQLAbstractServiceImpl implements ObjSQLService {
 		return getSuid().delete(entity, condition);
 	}
 
+	@Override
+	public Suid setDynamicParameter(String para, String value) {
+		//Add the business logic if need.
+		return getSuid().setDynamicParameter(para, value);
+	}
+	
 }
