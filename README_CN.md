@@ -143,8 +143,8 @@ SuidRich 新增两个方法:
 新增不使用缓存配置支持.  
 Condition接口新增方法setAdd,setMultiply用于设置SQL中update操作的set设置.  
 
-#### V1.8   
-#### 增加分布式特性:	
+**V1.8**   
+**增加分布式特性:**   
 1.添加多数据源支持(读写分离一主多从, 仅分库).  
 添加多数据源路由接口. 
 添加多数据源路由实现算法.  
@@ -155,7 +155,7 @@ Condition接口新增方法setAdd,setMultiply用于设置SQL中update操作的se
 具体算法实现:SerialUniqueId,OneTimeSnowflakeId,PearFlowerId.		  
 提供id生成工厂:GenIdFactory,且可配置id生成器具体实现类.	  
 4.可为所有表的Long型id字段自动生成全局唯一id主键.  
-#### 增强功能:	
+**增强功能:**   
 5.同库分表支持,动态表名映射支持.  
 实体与任意表名映射支持. 
 Suid add one method:	
@@ -178,7 +178,7 @@ public <T> int update(T entity,Condition condition);
 10.Oracle DATE字段在Javabean里转成java.sql.Date存入数据库时会丢失时分秒，
 转成Timestamp可以解决这个问题。  
 11.GenFiles根据模板自动生成文件代码添加支持首字母大写,如: #{entityName?up1}.  
-#### 修复原有问题:	
+**修复原有问题:**   
 12.bug修复:缓存key生成;批插入后清缓存.  
 修复缺陷:解析json时多余的逗号错误.  
 修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[]).  	
