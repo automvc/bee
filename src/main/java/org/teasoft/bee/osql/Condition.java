@@ -194,7 +194,7 @@ public interface Condition extends ConditionAssistant {
 	 * @param field
 	 * @param fieldName
 	 * @return Condition
-	 * @since 1.7.3
+	 * @since 1.8
 	 */
 	public Condition setAdd(String field, String fieldName);
 
@@ -204,7 +204,7 @@ public interface Condition extends ConditionAssistant {
 	 * @param field
 	 * @param fieldName another fieldName
 	 * @return Condition
-	 * @since 1.7.3
+	 * @since 1.8
 	 */
 	public Condition setMultiply(String field, String fieldName);
 	
@@ -215,7 +215,7 @@ public interface Condition extends ConditionAssistant {
 	 * @param fieldNmae
 	 * @param num
 	 * @return Condition
-	 * @since 1.7.3
+	 * @since 1.8
 	 */
 	public Condition set(String fieldNmae, Number num);
 
@@ -226,7 +226,7 @@ public interface Condition extends ConditionAssistant {
 	 * @param fieldNmae
 	 * @param value
 	 * @return Condition
-	 * @since 1.7.3
+	 * @since 1.8
 	 */
 	public Condition set(String fieldNmae, String value);
 	
@@ -235,14 +235,14 @@ public interface Condition extends ConditionAssistant {
 	 * 指定需要查询的部分字段(仅用于SQL的select).Specify the partial fields to be queried (only for select of SQL).
 	 * @param fieldList 需要查询的字段,多个用逗号隔开. select fields,if more than one,separate with comma.
 	 * @return Condition
-	 * @since 1.7.3
+	 * @since 1.8
 	 */
 	public Condition selectField(String fieldList);
 	
 	/**
 	 * 锁定查询的部分记录(仅用于SQL的单个表select)
 	 * @return Condition
-     * @since 1.7.3
+     * @since 1.8
 	 */
 	public Condition forUpdate();
 

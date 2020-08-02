@@ -390,7 +390,7 @@ public interface SuidRich extends Suid {
 	 * @param condition
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
 	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
-	 * @since 1.7.3
+	 * @since 1.8
 	 */
 	public <T> int update(T entity,Condition condition);
 
