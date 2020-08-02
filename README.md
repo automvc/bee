@@ -147,6 +147,8 @@ bee.osql.showSQL.showExecutableSql=false
 add multi-DataSource support(Write/Read, only Split Database).  
 add multi-DataSource route.  
 add multi-DataSource config.  
+The same database sub table support, dynamic table name mapping support.  
+Entity and any table name mapping support.  
 9.use 'for update' lock some select record(s).    
 10.GenFiles support upper case first letter,eg: #{entityName?up1}.  
 11.add one method in SuidRich:  
