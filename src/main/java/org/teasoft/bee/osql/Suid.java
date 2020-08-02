@@ -106,9 +106,10 @@ public interface Suid {
 	
 	/**
 	 * 为动态表名、实体名参数设置值.for dynamic table & entity name
-	 * @param para
-	 * @param value
-	 * @return
+	 * @param para parameter name
+	 * @param value parameter value
+	 * @return Suid
+	 * @since  1.8
 	 */
 	public Suid setDynamicParameter(String para,String value);
 	
