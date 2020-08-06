@@ -249,6 +249,8 @@ public interface PreparedSql {
 	
 	public List<String[]> select(String sql);
 	
+	public String selectFun(String sql) throws ObjSQLException;
+	
 	/**
 	 * 用操作类型为update,insert,delete的语句更新数据库记录
 	 * Modify database records with update, insert or delete statement.
