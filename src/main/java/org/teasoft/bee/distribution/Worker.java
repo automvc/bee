@@ -25,7 +25,7 @@ package org.teasoft.bee.distribution;
 public interface Worker {
 	
 	/**
-	 * 返回唯一标识ID生成程序的ID编号.
+	 * 获取唯一标识ID生成程序的ID编号.get long number of unique worker ID.
 	 * @return long number of unique worker ID.
 	 */
 	long getWorkerId();
