@@ -22,6 +22,16 @@ package org.teasoft.bee.osql.chain;
  * @since  1.3
  */
 public interface ToSql {
+	/**
+	 * 转成SQL语句. to SQL statement.
+	 * @return sql语句.sql statement.
+	 */
 	public String toSQL();
+	
+	/**
+	 * 转成SQL语句. to SQL statement.
+	 * @param noSemicolon 不包含分号.no semicolon.
+	 * @return sql语句.sql statement.
+	 */
 	public String toSQL(boolean noSemicolon);
 }
