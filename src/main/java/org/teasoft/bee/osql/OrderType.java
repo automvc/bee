@@ -6,7 +6,17 @@ package org.teasoft.bee.osql;
  * @since  1.0
  */
 public enum OrderType {
-    ASC("asc"),DESC("desc");
+	
+	/**
+	 * 顺序,对应SQL的asc.Corresponding to ASC of SQL
+	 */
+    ASC("asc"),
+    
+	/**
+	 * 倒序,对应SQL的desc.Corresponding to desc of SQL
+	 */
+    DESC("desc");
+    
     String name;
     
     OrderType(String name){
