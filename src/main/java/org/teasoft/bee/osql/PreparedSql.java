@@ -245,11 +245,30 @@ public interface PreparedSql {
 	public String selectJson(String sqlStr,Map<String,Object> map,int start,int size);
 	
 	
+	/**
+	 * 查询结果,并以json格式返回.Select and return json format result.<p>
+	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * @param sqlStr 无参数的sql查询语句.SQL select statement
+	 * @return 返回json格式结果集.json format result .
+	 */
 	public String selectJson(String sqlStr);
 	
+	/**
+	 * 通过无参数的sql查询语句数据.Select record(s) via the sql statement.
+	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * eg: select * from orders where userid=10001
+	 * @param sql 无参数的sql查询语句.SQL select statement
+	 * @return 返回returnType类型的实体List.
+	 */
 	public List<String[]> select(String sql);
 	
-	public String selectFun(String sql) throws ObjSQLException;
+	/**
+	 * 用函数查询结果.Select result with function. SQL function: max,min,avg,sum,count. <p>
+	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * @param sql SQL select statement
+	 * @return 返回函数统计的值.如果统计的结果集为空,除了count返回0,其它都返回空字符.
+	 */
+	public String selectFun(String sql);
 	
 	/**
 	 * 用操作类型为update,insert,delete的语句更新数据库记录
