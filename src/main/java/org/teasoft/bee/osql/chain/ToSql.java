@@ -30,7 +30,7 @@ public interface ToSql {
 	
 	/**
 	 * 转成SQL语句. to SQL statement.
-	 * @param noSemicolon 不包含分号.no semicolon.
+	 * @param noSemicolon 为true时,不包含分号.true means: no semicolon.
 	 * @return sql语句.sql statement.
 	 */
 	public String toSQL(boolean noSemicolon);

@@ -22,8 +22,10 @@ import java.util.List;
 /**
  * 直接用sql语句操作数据库的接口
  * <br>在该接口中的sql字符串要是DB能识别的SQL语句
+ * <br>该接口为Bee框架使用的底层接口,不建议用户直接使用
  * <br>The interface of operating database with SQL statement directly
  * <br>The SQL string in this interface is the SQL statement that DB can recognize
+ * <br>BeeSql is the underlying interface used by Bee framework, and it is not recommended for users to use it directly
  * @author Kingstar
  * Create on 2013-6-30 22:05:36
  * @since  1.0
