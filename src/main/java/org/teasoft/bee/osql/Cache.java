@@ -44,7 +44,7 @@ public interface Cache {
 	
 	/**
 	 * 清除某个表相关的缓存
-	 * Clear the cache result by sql.
+	 * Clear the cache result of related table by sql.
 	 * @param sql  会更新表数据的sql
 	 */
 	public void clear(String sql);
