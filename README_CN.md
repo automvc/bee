@@ -177,6 +177,10 @@ bee.osql.showSQL.showType=true
 bee.osql.showSQL.showExecutableSql=true  
 9.SuidRich添加一个新方法:  
 public <T> int update(T entity,Condition condition);  
+PreparedSql添加三个新方法:  
+public String selectJson(String sqlStr);  
+public List<String[]> select(String sql);  
+public String selectFun(String sql);  
 10.Oracle DATE字段在Javabean里转成java.sql.Date存入数据库时会丢失时分秒，
 转成Timestamp可以解决这个问题。  
 11.GenFiles根据模板自动生成文件代码添加支持首字母大写,如: #{entityName?up1}.  
