@@ -158,6 +158,10 @@ bee.osql.showSQL.showType=false
 bee.osql.showSQL.showExecutableSql=false  
 9.Add one method in SuidRich:  
 public <T> int update(T entity,Condition condition);  
+Add three methods in PreparedSql:  
+public String selectJson(String sqlStr);  
+public List<String[]> select(String sql);  
+public String selectFun(String sql);  
 10.Oracle DATE column mapping to Timestamp,fix the problem:miss the hour,minute,second in Oracle DATE column.  
 11.GenFiles support upper case first letter,eg: #{entityName?up1}.  
 **Fix bug:**   
