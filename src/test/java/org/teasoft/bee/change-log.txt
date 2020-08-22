@@ -43,3 +43,7 @@ The same database sub table support, dynamic table name mapping support.
 Entity and any table name mapping support.
 field is not null
 bee-exam(v1.7.3)-normal-2020-08-02 16.43.40.905.txt
+
+multi-DS:only more database
+bee-exam(v1.8)-cache-2020-08-22 22.14.10.158.txt
+bee-exam(v1.8)-normal-2020-08-22 22.14.00.204.txt
