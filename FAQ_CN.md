@@ -20,7 +20,7 @@ A: V1.8支持**读写分离**一主多从, 仅**分库**等**多数据源**模�
 
 4.**Q:**在一个DB中，随着数据量不断增长，需要将老的数据移到历史表中.	
 如，订单表orders,将5月，6月数据移到 orders_202005,orders_202006,结构与表orders一样。		
-如何用同一javabean，同时映射多个数据表？	
+如何用同一javabean，同时映射多个数据表？  
 A: **V1.8支持同库分表,动态表名映射**。  
 参考:https://gitee.com/automvc/bee/issues/I1P8YH		
 或:https://github.com/automvc/bee/issues/18	
@@ -29,7 +29,7 @@ A: **V1.8支持同库分表,动态表名映射**。
 A: 请参考Bee源码网站wiki,或: JavaWeb开发的利器 系统文章，请关注微信公众号: 软件设计活跃区.		
 测试用例,请查看:https://gitee.com/automvc/bee-exam	
 
-6.**Q: **	请教下bee的多对多映射是类似mybatis那种可以全部查出来然后映射，还是hibernate那种多次查询?	
+6.Q:请教下bee的多对多映射是类似mybatis那种可以全部查出来然后映射，还是hibernate那种多次查询?	
 A: bee更接近原生SQL,可用原生语句分页，不需要全部查出来，也不需要查多次	
    wiki相关文档: 	
    (四): 分页、查询部分字段原来如此简单		
