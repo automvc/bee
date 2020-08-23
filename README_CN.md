@@ -81,9 +81,9 @@ public List<String[]> select(String sql);
 public String selectFun(String sql);  
 **10.**Oracle DATE字段在Javabean里转成java.sql.Date存入数据库时会丢失时分秒，
 转成Timestamp可以解决这个问题。  
-**11.**GenFiles**根据模板自动生成文件**代码添加支持首字母大写,如: #{entityName?up1}.  
+**11**.GenFiles**根据模板自动生成文件**代码添加支持首字母大写,如: #{entityName?up1}.  
 **修复原有问题:**   
-**12.**bug修复:缓存key生成;批插入后清缓存.  
+**12**.bug修复:缓存key生成;批插入后清缓存.  
 修复缺陷:解析json时多余的逗号错误.  
 修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[]).  	
 
