@@ -70,7 +70,7 @@ public Condition setMultiply(String field, String fieldName)
 public Condition set(String fieldNmae, Number num)  
 public Condition set(String fieldNmae, String value)  
 public Condition selectField(String fieldList)  
-**8.**支持SQL输出日志配置,占位参数可显示参数,**可输出直接可执行的sql**:  
+**8**.支持SQL输出日志配置,占位参数可显示参数,**可输出直接可执行的sql**:  
 bee.osql.showSQL.showType=true  
 bee.osql.showSQL.showExecutableSql=true  
 **9**.SuidRich添加一个新方法:  
