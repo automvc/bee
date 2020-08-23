@@ -43,27 +43,27 @@ jdk1.7+
 
 **V1.8**   
 **增加分布式特性:**   
-**1.**添加**多数据源**支持(**读写分离**一主多从, 仅分库).  
+**1**.添加**多数据源**支持(**读写分离**一主多从, 仅分库).  
 增加多数据源无需改动Java代码(对编码透明)，只需添加配置信息即可. 
 添加**多数据源路由**接口. 
 添加多数据源路由实现算法.  
 添加多数据源配置.  
 支持配置信息刷新.  
-**2.****分布式**环境下生成**全局唯一**数字**递增id**.	  
+**2**.**分布式**环境下生成**全局唯一**数字**递增id**.	  
 分布式环境下生成**连续单调递增**(在一个workerid内),全局唯一数字id.  
-**3.****Bee分布式唯一id**算法特性:不依赖时钟,workerid可配置,易扩展.	  
+**3**.**Bee分布式唯一id**算法特性:不依赖时钟,workerid可配置,易扩展.	  
 具体算法实现:SerialUniqueId,OneTimeSnowflakeId,PearFlowerId.		  
 提供id生成工厂:GenIdFactory,且可配置id生成器具体实现类.	  
-**4.**可为所有表的Long型id字段自动生成全局唯一id主键.  
+**4**.可为所有表的Long型id字段自动生成全局唯一id主键.  
 **增强功能:**   
-**5.****同库分表**支持,**动态表名映射**支持.  
+**5**.**同库分表**支持,**动态表名映射**支持.  
 **实体与任意表名映射支持**. 
 Suid add one method:	
 public Suid setDynamicParameter(String para,String value);  
 add 2 annotation:**@Table,@Entity**.  
-**6.**添加**for update**功能,用于锁住某个表的一些记录.  
+**6**.添加**for update**功能,用于锁住某个表的一些记录.  
 public Condition forUpdate()  
-**7.**增加高级更新设置值支持,复杂查询、多表查询支持**只查部分字段**:	
+**7**.增加高级更新设置值支持,复杂查询、多表查询支持**只查部分字段**:	
 在Condition添加5个新方法:  
 public Condition setAdd(String field, String fieldName)  
 public Condition setMultiply(String field, String fieldName)  
@@ -73,13 +73,13 @@ public Condition selectField(String fieldList)
 **8.**支持SQL输出日志配置,占位参数可显示参数,**可输出直接可执行的sql**:  
 bee.osql.showSQL.showType=true  
 bee.osql.showSQL.showExecutableSql=true  
-**9.**SuidRich添加一个新方法:  
+**9**.SuidRich添加一个新方法:  
 public <T> int update(T entity,Condition condition);  
 PreparedSql添加三个新方法:  
 public String selectJson(String sqlStr);  
 public List<String[]> select(String sql);  
 public String selectFun(String sql);  
-**10.**Oracle DATE字段在Javabean里转成java.sql.Date存入数据库时会丢失时分秒，
+**10**.Oracle DATE字段在Javabean里转成java.sql.Date存入数据库时会丢失时分秒，
 转成Timestamp可以解决这个问题。  
 **11**.GenFiles**根据模板自动生成文件**代码添加支持首字母大写,如: #{entityName?up1}.  
 **修复原有问题:**   
