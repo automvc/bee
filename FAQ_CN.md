@@ -76,11 +76,13 @@ A: Hibernate的概念太复杂，学习成本高，更新会先查询再更新�
 
 10.
 **Q:**	Bee如何提高Java web软件开发效率?	
+
 A: 除了可以不需要写dao代码外(编码复杂度为O(1)),还提供了表对应的实体Javabean自动生成工具,	
 根据模板自动生成Java web前后端代码;人性化的SQL日志,可输出直接运行的sql语句(而不只是有占位符的).	
 
 11.
 **Q:**	Bee如何设置缓存?	
+
 A: 支持。还可以像调优JVM一样，对一级缓存进行调优。有暂时缓存，也有永久缓存，还有同步更新的永久缓存。	
 ```properties
 #cache=======================start
@@ -142,6 +144,7 @@ condition.setAdd("p", "step");
 会转化为: set p=p+step	
 
 **其它相关资源:**	
+
 gitee issue:	
 https://gitee.com/automvc/bee/issues?assignee_id=&author_id=&branch=&issue_search=&label_name=&milestone_id=&program_id=&scope=&sort=&state=closed
 gitee wiki:	
@@ -152,5 +155,4 @@ https://github.com/automvc/bee/issues?q=is%3Aissue+is%3Aclosed
 github wiki:	
 https://github.com/automvc/bee/wiki	
 
-**Q: **	
-A: 
+
