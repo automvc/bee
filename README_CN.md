@@ -88,7 +88,7 @@ public String selectFun(String sql);
 修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[]).  	
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log.md)  
-[点击链接可查看详细完整功能介绍](../../../bee/blob/master/Changed_Log.md)  
+[点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log.md)  
 	
 快速开始:
 =========	
