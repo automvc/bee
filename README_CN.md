@@ -196,7 +196,7 @@ public class SuidExam {
 
 **更快的开发Java Web的新组合：**  
 [Bee+Spring+SpringMVC](../../../../aiteasoft/bee-spring-springmvc)  
-** 包括仅分库多数据源实例** 		
+**包括仅分库多数据源实例**	
 
 **更快的开发Spring Cloud微服务的新组合：**  
 [Bee + Spring Boot](../../../bee-springboot)  
