@@ -156,4 +156,5 @@ public String selectFun(String sql);
 12.bug修复:缓存key生成;批插入后清缓存.  
 修复缺陷:解析json时多余的逗号错误.  
 修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[]).  
-
+	
+	

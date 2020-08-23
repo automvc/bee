@@ -25,8 +25,8 @@ jdk1.7+
 * 3.**约定优于配置**:Javabean没有注解,也不需要xml映射文件,只是纯的Javabean即可,甚至get,set方法不用也可以。  
 * 4.**智能化自动过滤**null和空字符串，不用再写判断非空的代码。  
 * 5.**动态/任意组合**查询条件,不需要提前准备dao接口,有新的查询需求也不用修改或添加接口。  
-* 6.支持原生SQL排序,**原生语句分页**(不需要将全部数据查出来)。  
-* 7.支持直接返回**Json**格式查询结果;链式编程。  
+* 6.支持原生SQL排序, **原生语句分页**(不需要将全部数据查出来)。  
+* 7.支持直接返回**Json**格式查询结果; 链式编程。  
 * 8.支持**存储过程**，支持原生SQL(**自定义sql**语句)，支持**事务**、**for update**，支持**批处理**操作。
 * 9.支持**只查询一部分字段**。    
 * 10.支持面向对象方式复杂查询、**多表查询**(无n+1问题; 支持：一对一,一对多,多对一,多对多)。 
@@ -61,16 +61,16 @@ jdk1.7+
 Suid add one method:	
 public Suid setDynamicParameter(String para,String value);  
 add 2 annotation:**@Table,@Entity**.  
-6.添加for update功能,用于锁住某个表的一些记录.  
+6.添加**for update**功能,用于锁住某个表的一些记录.  
 public Condition forUpdate()  
-7.增加高级更新设置值支持,复杂查询、多表查询支持只查部分字段:	
+7.增加高级更新设置值支持,复杂查询、多表查询支持**只查部分字段**:	
 在Condition添加5个新方法:  
 public Condition setAdd(String field, String fieldName)  
 public Condition setMultiply(String field, String fieldName)  
 public Condition set(String fieldNmae, Number num)  
 public Condition set(String fieldNmae, String value)  
 public Condition selectField(String fieldList)  
-8.支持SQL输出日志配置,占位参数可显示参数,可输出直接可执行的sql:  
+8.支持SQL输出日志配置,占位参数可显示参数,**可输出直接可执行的sql**:  
 bee.osql.showSQL.showType=true  
 bee.osql.showSQL.showExecutableSql=true  
 9.SuidRich添加一个新方法:  
@@ -87,8 +87,9 @@ public String selectFun(String sql);
 修复缺陷:解析json时多余的逗号错误.  
 修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[]).  	
 
-## [详细完整功能介绍](../../../bee/blob/master/Changed_Log.md) : 
+## [详细完整功能介绍](../../../bee/blob/master/Changed_Log.md)  
 
+	
 快速开始:
 =========	
 ## 1. 引入Bee  
@@ -195,6 +196,7 @@ public class SuidExam {
 
 **更快的开发Java Web的新组合：**  
 [Bee+Spring+SpringMVC](../../../../aiteasoft/bee-spring-springmvc)  
+** 包括仅分库多数据源实例** 		
 
 **更快的开发Spring Cloud微服务的新组合：**  
 [Bee + Spring Boot](../../../bee-springboot)  
