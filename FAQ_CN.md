@@ -29,7 +29,7 @@ Q: 在一个DB中，随着数据量不断增长，需要将老的数据移到历
 如，订单表orders,将5月，6月数据移到 orders_202005,orders_202006,结构与表orders一样。		
 如何用同一javabean，同时映射多个数据表？  
 
-A: **V1.8支持同库分表,动态表名映射**。	
+A: **V1.8支持同库分表,动态表名映射**.	
 参考:https://gitee.com/automvc/bee/issues/I1P8YH		
 或:https://github.com/automvc/bee/issues/18	
 
@@ -39,13 +39,17 @@ Q: Bee有说明文档吗?有测试用例吗?这么好用的orm竟然没文档??!
 A: 请参考Bee源码网站wiki,或: JavaWeb开发的利器 系统文章，请关注微信公众号: 软件设计活跃区.		
 测试用例,请查看:https://gitee.com/automvc/bee-exam	
 
-6.Q:请教下bee的多对多映射是类似mybatis那种可以全部查出来然后映射，还是hibernate那种多次查询?	
+6.
+Q: 请教下bee的多对多映射是类似mybatis那种可以全部查出来然后映射，还是hibernate那种多次查询?	
+
 A:bee更接近原生SQL,可用原生语句分页，不需要全部查出来，也不需要查多次	
    wiki相关文档: 	
    (四): 分页、查询部分字段原来如此简单		
    (六): 多表查询(面向对象方式)	
 
-7.**Q: Bee怎么具有AI特性?**	
+7.
+**Q: Bee怎么具有AI特性?**	
+A: 
 通过从手工写sql语句直接用JDBC操作数据库，到简单的DB工具类，	
 再到像Hibernate的旧版本通过操作对象将操作DB封闭到Dao；	
 再到后来写dao都觉得累赘，通用操作只写个空接口。	
@@ -58,18 +62,24 @@ ORM工具的发展，就是一步一提炼，简化操作的历史。
 原来编码复杂度是O(n)的，现在变成是O(1),**无论多少个表**,你都可以不用另外再写dao代码。	
 可以用时间复杂度和空间复杂度体会下编码复杂度这种变化。	
 
-8.**Q: **	分布式ORM正在解决的问题之一:  能不能找到一种，既不依赖DB，也不依赖时间的ID生成算法呢？ DB表自增ID真的不能用在分布式场景吗？
-A: 都是可以的.参考Bee的org.teasoft.bee.distribution.GenId接口的三种实现.
+8.
+**Q: **	分布式ORM正在解决的问题之一:  能不能找到一种，既不依赖DB，也不依赖时间的ID生成算法呢？ DB表自增ID真的不能用在分布式场景吗？	
 
-9.**Q: **	与传统ORM工具的比较?	
+A: 都是可以的.参考Bee的org.teasoft.bee.distribution.GenId接口的三种实现.	
+
+9.
+**Q: **	与传统ORM工具的比较?	
+
 A: Hibernate的概念太复杂，学习成本高，更新会先查询再更新，n+1问题。Mybatis即使进行单表的Suid操作也需要人工写sql或生成sql文件，需要维护的sql太多。	
 更多比较,参考: https://blog.csdn.net/abckingaa/article/details/84557336 
 
-10.**Q: **	Bee如何提高Java web软件开发效率?	
+10.
+**Q: **	Bee如何提高Java web软件开发效率?	
 A: 除了可以不需要写dao代码外(编码复杂度为O(1)),还提供了表对应的实体Javabean自动生成工具,	
 根据模板自动生成Java web前后端代码;人性化的SQL日志,可输出直接运行的sql语句(而不只是有占位符的).	
 
-11.**Q: **	Bee如何设置缓存?	
+11.
+**Q: **	Bee如何设置缓存?	
 A: 支持。还可以像调优JVM一样，对一级缓存进行调优。有暂时缓存，也有永久缓存，还有同步更新的永久缓存。	
 ```properties
 #cache=======================start
@@ -103,17 +113,19 @@ bee.osql.cache.fullClearCache.rate=0.2
 #cache=======================end
 ```	
 
-12.**Q: **	Bee设计原理?	
-A: 
+12.
+**Q: **	Bee设计原理?	
+
+A:	
 参考wiki或公众号相关文章:	
 (十一)：如何设计ORM架构及Bee源码分析	
 (十二)：为什么需要一个新的ORM框架	
 
 13.**Q: **	Bee查询自己怎么写筛选条件呢？像筛选状态大于2的
 A: 写法类似：
- Condition condition=new ConditionImpl();
-		 condition
-		 .op("status", Op.gt, 2) // 会转化到SQL中的where status>2
+ Condition condition=new ConditionImpl();	
+		 condition	
+		 .op("status", Op.gt, 2) // 会转化到SQL中的where status>2		
 详情参考wiki:	
 (五): 复杂查询(面向对象方式)	
 (十三)：update高级用法说明	
