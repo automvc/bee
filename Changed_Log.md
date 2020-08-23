@@ -2,7 +2,7 @@
 Bee
 =========
 #### 工欲善其事必先利其器！——《论语·卫灵公》    
-**Bee** 是一个 Java ORM框架利器,它的开发速度快, 编码少, 还很简单！       
+**Bee** 是一个 Java ORM框架利器, 它的开发速度快, 编码少, 还很简单！       
 **Bee** 编码复杂度是O(1)，即用了Bee，**无论多少个表**,你都可以不用另外再写dao代码。  
 
 
@@ -156,3 +156,4 @@ public String selectFun(String sql);
 12.bug修复:缓存key生成;批插入后清缓存.  
 修复缺陷:解析json时多余的逗号错误.  
 修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[]).  
+
