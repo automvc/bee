@@ -1,12 +1,14 @@
 常见问题收集:
 
 1.	
-**Q: Bee支持几种数据库?**		
-A:mysql,MariaDB,oracle,sqlserver...只要该DB支持JDBC,Bee就可以轻松支持它!		
+**Q: Bee支持几种数据库?**	
+	
+A: mysql,MariaDB,oracle,sqlserver...只要该DB支持JDBC,Bee就可以轻松支持它!		
 
 2.	
 **Q:** 表与实体Javabean可以自动映射吗?	
-A:Bee采用**约定优于配置**的方式,默认实现有三种方式, 且支持**自定义映射规则扩展**.  
+
+A: Bee采用**约定优于配置**的方式,默认实现有三种方式, 且支持**自定义映射规则扩展**.  
 在bee.properties作相关配置即可切换默认实现方式.		
 ```properties
 #since 1.7.2
@@ -18,14 +20,16 @@ bee.osql.naming.translate.type=1
 
 3.	
 **Q:** Bee支持读写分离,支持多数据源吗?	
-A:V1.8支持**读写分离**一主多从, 仅**分库**等**多数据源**模式。  
+
+A: V1.8支持**读写分离**一主多从, 仅**分库**等**多数据源**模式。  
 **分布式**环境下生成**连续单调递增**(在一个workerid内),**全局唯一**数字**id**。  
 
 4.	
-Q:在一个DB中，随着数据量不断增长，需要将老的数据移到历史表中.	
+Q: 在一个DB中，随着数据量不断增长，需要将老的数据移到历史表中.	
 如，订单表orders,将5月，6月数据移到 orders_202005,orders_202006,结构与表orders一样。		
 如何用同一javabean，同时映射多个数据表？  
-A:**V1.8支持同库分表,动态表名映射**。  
+
+A: **V1.8支持同库分表,动态表名映射**。	
 参考:https://gitee.com/automvc/bee/issues/I1P8YH		
 或:https://github.com/automvc/bee/issues/18	
 
