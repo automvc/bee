@@ -30,9 +30,9 @@ A:**V1.8支持同库分表,动态表名映射**。
 或:https://github.com/automvc/bee/issues/18	
 
 5.
-Q:Bee有说明文档吗?有测试用例吗?这么好用的orm竟然没文档??!!!	
+Q: Bee有说明文档吗?有测试用例吗?这么好用的orm竟然没文档??!!!	
 
-A:请参考Bee源码网站wiki,或: JavaWeb开发的利器 系统文章，请关注微信公众号: 软件设计活跃区.		
+A: 请参考Bee源码网站wiki,或: JavaWeb开发的利器 系统文章，请关注微信公众号: 软件设计活跃区.		
 测试用例,请查看:https://gitee.com/automvc/bee-exam	
 
 6.Q:请教下bee的多对多映射是类似mybatis那种可以全部查出来然后映射，还是hibernate那种多次查询?	
