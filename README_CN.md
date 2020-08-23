@@ -7,32 +7,36 @@ Bee
 **Bee** 是一个 ORM框架,它的开发速度快，编码少,还很简单。    
 **Bee** 是一个具有人工智能(AI)特性，省时/优雅、简易、自动( **AiTea:** Timesaving/Tasteful, Easy, Automatic) 的ORM软件框架(AiTeaSoft)(IT-->AiTea 的思维转变!)。  
 你还在为不断重复写ORM操作数据库的代码而烦恼吗?每写一个service业务层，就要写一个dao层(即使我们知道dao就是简单的查改增删suid操作)。  
-请试试**Bee** 吧，让它帮你从烦琐的编码工作中解脱出来。  
+让**Bee**帮助你从烦琐的编码工作中解脱出来。  
 Bee是一种更接近SQL语言思维的ORM框架，  
 一种开发速度和开发成本都不比php差的Java ORM框架，  
-而且它的编码复杂度是O(1)，即用了Bee，你可以不用另外再写dao代码。  
-
-## Bee主要功能特点介绍：  
-* 1.接口简单，使用方便。Suid接口中4个方法,对应SQL语言的select,update,insert,delete操作。  
-* 2.使用了Bee,你可以不用再另外编写dao代码，直接调用Bee的api即可完成对DB的操作。  
-* 3.Javabean没有注解,也不需要xml映射文件,只是纯的Javabean即可,甚至get,set方法不用也可以。  
-* 4.自动过滤null和空字符串，不用再写判断非空的代码。  
-* 5.支持只查询一部分字段。  
-* 6.动态/任意组合查询条件,不需要提前准备dao接口,有新的查询需求也不用修改或添加接口。  
-* 7.支持存储过程，支持原生SQL，支持事务、for update，支持批处理操作。  
-* 8.支持原生SQL排序,分页。  
-* 9.支持直接返回Json格式查询结果;链式编程。  
-* 10.支持面向对象方式复杂查询、多表查询。  
-* 11.支持读写分离一主多从, 仅分库等多数据源模式。  
-* 12.分布式环境下生成连续单调递增(在一个workerid内),全局唯一数字id。  
-* 13.支持同库分表,动态表名映射。  
-
+而且它的编码复杂度是O(1)，即用了Bee，**无论多少个表**,你都可以不用另外再写dao代码。  
 
 **Bee** 网址:  
 https://github.com/automvc/bee  
 **Bee在gitee** 的网址:  
 https://gitee.com/automvc/bee
 
+## Bee主要功能特点介绍：  
+* 1.接口简单，使用方便。Suid接口中对应SQL语言的select,update,insert,delete操作提供4个同名方法。  
+* 2.使用了Bee,你可以不用再另外编写dao代码，直接调用Bee的api即可完成对DB的操作。  
+* 3.约定优于配置:Javabean没有注解,也不需要xml映射文件,只是纯的Javabean即可,甚至get,set方法不用也可以。  
+* 4.智能化自动过滤null和空字符串，不用再写判断非空的代码。  
+* 5.动态/任意组合查询条件,不需要提前准备dao接口,有新的查询需求也不用修改或添加接口。  
+* 6.支持原生SQL排序,原生语句分页(不需要将全部数据查出来)。  
+* 7.支持直接返回Json格式查询结果;链式编程。  
+* 8.支持存储过程，支持原生SQL(自定义sql语句)，支持事务、for update，支持批处理操作。
+* 9.支持只查询一部分字段。    
+* 10.支持面向对象方式复杂查询、多表查询(无n+1问题;支持：一对一,一对多,多对一,多对多)。 
+* 11.一级缓存，概念简单，功能强大；一级缓存也可以像JVM一样进行细粒度调优；智能缓存，支持更新配置表，不用重启。  
+* 12.表名与实体名、字段名与属性名默认提供多种实现，且支持自定义映射规则扩展。  
+* 13.多种DB支持轻松扩展。 
+* 14.无第三方插件依赖。  
+* 15.提供表对应的javabean自动生成工具，Javaweb后端代码根据模板自动生成;能打印非占位符的可执行sql,方便调试。  
+* 16.**支持读写分离一主多从, 仅分库等多数据源模式**。  
+* 17.**分布式环境下生成连续单调递增(在一个workerid内),全局唯一数字id**。  
+* 18.**支持同库分表,动态表名映射**。  
+ 
 
 ## 环境要求  
 jdk1.7+
@@ -42,7 +46,7 @@ jdk1.7+
 **V1.0**  
 
 单表Suid(select,update,insert,delete)面向对象方式的操作,方法名与数据库Suid操作对应.  
-自动通过DB的表或视图生成Javabean(目前支持MySQL,MariaDB,其它数据库有部分类型未做映射处理,客户可通过在配置文件添加配置信息实现).  
+自动通过DB的表或视图生成Javabean(V1.0支持MySQL,MariaDB,其它数据库有部分类型未做映射处理,客户可通过在配置文件添加配置信息实现).  
 约定优于配置:Javabean没有注解,没有xml,只是纯的Javabean即可(为什么要给Javabean那么重的负担呢??!!!).  
 自动映射表的列与的字段.  
 Javabean支持原生类型:int,double等.  
@@ -60,7 +64,7 @@ SQL中排序,分页支持.
 用户/开发者仅需要关注bee接口如何调用即可.  
 
 **V1.1**  
-直接返回Json格式查询结果支持.  
+**直接返回Json**格式查询结果支持.  
 Procedure存储过程支持(CallableStatement.executeQuery).  
 
 **V1.2**  
@@ -74,25 +78,25 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 增加: public <T> List<T> select(T entity,String selectFields,int start,int size)  
 增加: selectJson add config:ignoreNull;date,time,timestamp Wit hMillisecond format  
 增加: List<String[]> select(String sql), add config:nullToEmptyString  
-完善查询结果缓存机制(一级缓存可对用户编程透明,也可进行细粒度配置调优控制)  
-一级缓存即可支持: 不缓存列表,永久缓存列表,永久缓存且可更新列表,结果集超过一定大小可不放缓存 等细粒度配置调优控制.  
+完善查询结果缓存机制(一级缓存可**对用户编程透明**,也可进行细粒度配置调优控制)  
+**一级缓存**即可支持: **不缓存列表,永久缓存列表,永久缓存且可更新列表**,结果集超过一定大小可不放缓存 等细粒度配置调优控制.  
 增加: SysValue注解  
 
 **V1.5**  
 1.增加NameTranslate接口和默认转换实现类，支持Java与DB命名转换规则自定义。  
 2.支持jdbcTypeToFieldType-{DbName}.properties,自定义DB列转Java的类型。  
-3.完善Oracle类型转换；未实现转换类型的DB，可将类型映射关系放在文件:  
+3.完善Oracle类型转换；**多种DB支持轻松扩展**:可将某种DB特有的类型映射关系放在文件:  
   jdbcTypeToFieldType-{DbName}.properties，即可完成自动转换。  
 4.增加entity实体名与表名的特殊映射关系支持,优化表名转实体名的情况。  
 5.过滤非法实体类型。  
-6.增加文件生成工具。  
+6.增加**文件生成工具**。  
 7.完善分页功能,并支持自定义扩展接口。  
 8.修复Oracle JDBC操作数据库ORA-00911 bug。  
 9.增加op方法重载，默认为等号(in UpdateImpl and SelectImpl)。  
 10.增加OperationType重载(in enum Op)。  
 
 **V1.6**  
-1.Suid增加面向对象方式复杂查询支持.  
+1.Suid增加**面向对象方式复杂查询**支持.  
   Suid接口增加方法:public <T> List<T> select(T entity,Condition condition);  
    支持范围查询;支持同时使用范围查询、模糊查询、in、>、>=、<、<=、分组、having过滤、排序、分页等复杂查询。  
 2.SuidRich增加面向对象方式复杂查询支持.  
@@ -107,12 +111,12 @@ V1.6.1
 1.PreparedSql相关方法添加start,size分页参数，使自定义sql查询的分页更方便，  
     自定义的sql语句中不用带分页部分,移植性更高。  
 2.PreparedSql的modify加注解:@Deprecated  
-3.Condition的方法getFieldSet返回传由Set改为Set<String>。  
+3.Condition的方法getFieldSet返回值由Set改为Set<String>。  
 4.fix bug.ConditionImpl的fieldSet需要记录在between方法使用的记录。  
 
 **V1.7**  
-增加面向对象方式多表查询支持.  
-1.支持一对一,一对多,多对一,多对多。  
+增加面向对象方式**多表查询**支持.  
+1.**支持一对一,一对多,多对一,多对多**。  
 2.支持join(inner join), left join,right join, no join。  
 3.单表、多表的查询操作互不干扰。  
 **V1.7.1**  
