@@ -39,7 +39,7 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 
 **V1.4**  
 增加: selectById,deleteById  
-增加: public <T> List<T> select(T entity,String selectFields,int start,int size)  
+增加: public &lt;T> List&lt;T> select(T entity,String selectFields,int start,int size)  
 增加: selectJson add config:ignoreNull;date,time,timestamp Wit hMillisecond format  
 增加: List<String[]> select(String sql), add config:nullToEmptyString  
 完善查询结果缓存机制(一级缓存可**对用户编程透明**,也可进行细粒度配置调优控制)  
@@ -61,7 +61,7 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 
 **V1.6**  
 1.Suid增加**面向对象方式复杂查询**支持.  
-  Suid接口增加方法:public <T> List<T> select(T entity,Condition condition);  
+  Suid接口增加方法:public &lt;T> List&lt;T> select(T entity,Condition condition);  
    支持范围查询;支持同时使用范围查询、模糊查询、in、>、>=、<、<=、分组、having过滤、排序、分页等复杂查询。  
 2.SuidRich增加面向对象方式复杂查询支持.  
 SuidRich接口增加方法:  
@@ -144,7 +144,7 @@ public Condition selectField(String fieldList)
 bee.osql.showSQL.showType=true  
 bee.osql.showSQL.showExecutableSql=true  
 9.SuidRich添加一个新方法:  
-public <T> int update(T entity,Condition condition);  
+public &lt;T> int update(T entity,Condition condition);  
 PreparedSql添加三个新方法:  
 public String selectJson(String sqlStr);  
 public List<String[]> select(String sql);  

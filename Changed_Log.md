@@ -39,7 +39,7 @@ Add: chain programming(select&update)
 
 **V1.4**  
 Add: selectById,deleteById  
-Add: public <T> List<T> select(T entity,String selectFields,int start,int size)  
+Add: public &lt;T> List&lt;T> select(T entity,String selectFields,int start,int size)  
 Enhance: selectJson add config:ignoreNull;date,time,timestamp Wit hMillisecond format  
 Enhance: List<String[]> select(String sql), add config:nullToEmptyString  
 Enhance ResultSet Cache mechanism  
@@ -62,7 +62,7 @@ mapping in file: jdbcTypeToFieldType-{DbName}.properties.
 
 **V1.6**  
 1.Suid add complicate select oriented object. 
-  Suid add method:public <T> List<T> select(T entity,Condition condition);  
+  Suid add method:public &lt;T> List&lt;T> select(T entity,Condition condition);  
   support complicate select;support to use between、like、in、>、>=、<、<=、group by、having、order by、paging  at same time.  
 2.SuidRich add complicate select oriented object.  
 SuidRich add new method:  
@@ -145,7 +145,7 @@ public Condition selectField(String fieldList)
 bee.osql.showSQL.showType=false  
 bee.osql.showSQL.showExecutableSql=false  
 9.Add one method in SuidRich:  
-public <T> int update(T entity,Condition condition);  
+public &lt;T> int update(T entity,Condition condition);  
 Add three methods in PreparedSql:  
 public String selectJson(String sqlStr);  
 public List<String[]> select(String sql);  

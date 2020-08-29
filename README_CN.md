@@ -74,7 +74,7 @@ public Condition selectField(String fieldList)
 bee.osql.showSQL.showType=true  
 bee.osql.showSQL.showExecutableSql=true  
 **9**.SuidRich添加一个新方法:  
-public <T> int update(T entity,Condition condition);  
+public &lt;T> int update(T entity,Condition condition);  
 PreparedSql添加三个新方法:  
 public String selectJson(String sqlStr);  
 public List<String[]> select(String sql);  
