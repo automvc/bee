@@ -39,89 +39,7 @@ Dynamic & random combination of query conditions,no need to prepare the interfac
 All Suid(select,update,insert,delete) operation use the same Bee interface,no longer need any new dao interface.  
 Users/Developer only need to pay attention to the Bee interface.  
 
-**V1.1**  
-Json format Result support.  
-Procedure(Query type) support.  
-
-**V1.2**  
-Customer sql support #{para} placeholder,eg:name=#{name}; like keyword support:#{%para%},#{%para},#{para%}  
-
-**V1.3**  
-Add: chain programming(select&update)
-
-**V1.4**  
-Add: selectById,deleteById  
-Add: public <T> List<T> select(T entity,String selectFields,int start,int size)  
-Enhance: selectJson add config:ignoreNull;date,time,timestamp Wit hMillisecond format  
-Enhance: List<String[]> select(String sql), add config:nullToEmptyString  
-Enhance ResultSet Cache mechanism  
-Cache support: never,forever,forever and modify Syn,resultSet's size control.  
-Add: SysValue annotation  
-
-**V1.5**  
-1.add NameTranslate interface and default implement class,support customize translation rule of DB and Java naming.  
-2.support jdbcTypeToFieldType-{DbName}.properties,define DB's column type map java type.  
-3.enhance Oracle's type translation；other DB can define the column type and java type.  
-mapping in file: jdbcTypeToFieldType-{DbName}.properties.  
-4.add special entity and table name mapping support.  
-  Optimize table name to entity name.  
-5.add BeeIllegalEntityException for check illegal Entity.  
-6.add create file util.  
-7.enhance paging function,and support customize extend interface.  
-8.fix ORA-00911 bug,it will cause when operate oracle DB with JDBC.  
-9.override the op method for default equal(in UpdateImpl and SelectImpl).  
-10.add override OperationType in enum Op.  
-
-**V1.6**  
-1.Suid add complicate select oriented object. 
-  Suid add method:public <T> List<T> select(T entity,Condition condition);  
-  support complicate select;support to use between、like、in、>、>=、<、<=、group by、having、order by、paging  at same time.  
-2.SuidRich add complicate select oriented object.  
-SuidRich add new method:  
-select(T entity, IncludeType includeType, Condition condition)  
-selectJson(T entity, IncludeType includeType, Condition condition)  
-3.SuidRich add new method:  
-updateBy(T entity,String whereFields)  
-updateBy(T entity,String whereFields,IncludeType includeType)  
-4.add SqlNullException in PreparedSqlLib.  
-V1.6.1  
-1.PreparedSql add start & size paging parameters in relative methods.  
-2.add Deprecated to modify method in PreparedSql.  
-3.update getFieldSet method's return type with Java generics.  
-4.fix bug.ConditionImpl's fieldSet need record the field in between method.  
-
-**V1.7**  
-more tables select oriented object support.  
-1.support one to one,one to many,many to one,many to many.  
-2.support join(inner join), left join,right join, no join.  
-3.The select operations of single table and more tables do not affect each other.  
-**V1.7.1**  
-gen javabean support create comment.  
-support getColumnNames,getFieldNames method in GenBean.  
-fix the bug for the define sql no placeholder.  
-fix the bug for page in PreparedSqlLib.  
-enhance the exception when the sql string is null(CustomSql).  
-fix bug about cache.  
-fix bug in SelectImpl.  
-fix bug for inner join condition style.  
-add FileCreator interface.  
-**V1.7.2**  
-support set the default naming translate type by config.  
-enhance function of BeeFactory.  
-adjust the format of SQL log.  
-support set the date format by config.  
-[move test/example to new project bee-exam](../../../bee-exam).  
-add class FileLogger for write the log in file.  
-support control print log level or not by config.  
-enhance test case/example.  
-support generate the file according to template.  
-add method delete(T entity, Condition condition) in Suid.  
-support setting not allowed delete whole records in one table while Object Oriented way.  
-SuidRich add 2 methods:  
-updateBy(T entity,String whereFields,Condition condition)  
-update(T entity,String updateFields,Condition condition)  
-add nocache config support.  
-add method setAdd,setMultiply in Condition for set value in SQL update.  
+......
 
 **V1.8**   
 **Add Distributed Feature:**   
@@ -168,6 +86,9 @@ public String selectFun(String sql);
 12.fixed cache bug:genkey;clear cache for batch insert.  
 fixed bug:parse the json has extra comma.	
 fixed null bug about:PreparedSql's method select(String sql,Object preValues[]).  	
+
+## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
+[click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
 
 Quick Start:
 =========	

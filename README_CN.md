@@ -87,8 +87,8 @@ public String selectFun(String sql);
 修复缺陷:解析json时多余的逗号错误.  
 修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[]).  	
 
-## [详细完整功能介绍](../../../bee/blob/master/Changed_Log.md)  
-[点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log.md)  
+## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
+[点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 	
 快速开始:
 =========	
