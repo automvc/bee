@@ -106,7 +106,7 @@ PreparedSql添加三个新方法
 
 举例如下:  
 创建一个数据库,默认名称为bee.  
-可以用[init-data(user-orders)-mysql.sql](../../../bee-exam/blob/master/src/main/resources/init-data(user-orders)-mysql.sql)脚本创建两个表和插入初始化数据.  
+可以用[init-data(user-orders)-mysql.sql](../../../bee-exam/blob/master/src/main/resources/init-data(user-orders)-mysql.sql)脚本创建表和插入初始化数据.  
 
 ## 3. 更新数据库的配置信息(在bee.properties)  
 注:如果还没有bee.properties文件,可以自己新建一个.  
