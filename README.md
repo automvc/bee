@@ -65,21 +65,13 @@ add 2 annotation:@Table,@Entity.
 public Condition forUpdate()  
 7.Added support for advanced update set,   
 Complex query and multi table query support only project some fields.   
-Add 5 methods in Condition:  
-public Condition setAdd(String field, String fieldName)  
-public Condition setMultiply(String field, String fieldName)  
-public Condition set(String fieldNmae, Number num)  
-public Condition set(String fieldNmae, String value)  
-public Condition selectField(String fieldList)  
+Add 5 methods in Condition  
 8.Support show type of data in sql and show ExecutableSql:  
 bee.osql.showSQL.showType=false  
 bee.osql.showSQL.showExecutableSql=false  
-9.Add one method in SuidRich:  
+9.Add one method in SuidRich  
 public &lt;T> int update(T entity,Condition condition);  
-Add three methods in PreparedSql:  
-public String selectJson(String sqlStr);  
-public List<String[]> select(String sql);  
-public String selectFun(String sql);  
+Add three methods in PreparedSql  
 10.Oracle DATE column mapping to Timestamp,fix the problem:miss the hour,minute,second in Oracle DATE column.  
 11.GenFiles support upper case first letter,eg: #{entityName?up1}.  
 **Fix bug:**   
