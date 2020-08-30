@@ -20,6 +20,7 @@ package org.teasoft.bee.file;
 import java.io.BufferedReader;
 
 /**
+ * 用来读取字符文件的便捷类.Easy class of Read file by fullPathAndName.
  * @author Kingstar
  * @since  1.7.2
  */
