@@ -106,7 +106,8 @@ package org.teasoft.bee.distribution;
 public interface GenId {
 	
 	/**
-	 * @return 返回id号码.return the id number.
+	 * 返回id号码.return the id number.
+	 * @return long id号码.long id number.
 	 */
 	public long get();
 	
