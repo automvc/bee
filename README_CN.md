@@ -64,21 +64,12 @@ add 2 annotation:**@Table,@Entity**.
 **6**.添加**for update**功能,用于锁住某个表的一些记录.  
 public Condition forUpdate()  
 **7**.增加高级更新设置值支持,复杂查询、多表查询支持**只查部分字段**:	
-在Condition添加5个新方法:  
-public Condition setAdd(String field, String fieldName)  
-public Condition setMultiply(String field, String fieldName)  
-public Condition set(String fieldNmae, Number num)  
-public Condition set(String fieldNmae, String value)  
-public Condition selectField(String fieldList)  
+在Condition添加5个新方法.  
 **8**.支持SQL输出日志配置,占位参数可显示参数,**可输出直接可执行的sql**:  
 bee.osql.showSQL.showType=true  
 bee.osql.showSQL.showExecutableSql=true  
-**9**.SuidRich添加一个新方法:  
-public &lt;T> int update(T entity,Condition condition);  
-PreparedSql添加三个新方法:  
-public String selectJson(String sqlStr);  
-public List<String[]> select(String sql);  
-public String selectFun(String sql);  
+**9**.SuidRich添加一个新方法  
+PreparedSql添加三个新方法  
 **10**.Oracle DATE字段在Javabean里转成java.sql.Date存入数据库时会丢失时分秒，
 转成Timestamp可以解决这个问题。  
 **11**.GenFiles**根据模板自动生成文件**代码添加支持首字母大写,如: #{entityName?up1}.  
