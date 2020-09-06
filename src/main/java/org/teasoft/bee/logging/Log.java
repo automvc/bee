@@ -41,6 +41,7 @@ public interface Log {
      * @param msg the message string to be logged
      */
     public void debug(String msg);
+    public void debug(String msg, Throwable t);
     
     public boolean isInfoEnabled();
 
@@ -59,6 +60,7 @@ public interface Log {
      * @param msg the message string to be logged
      */
     public void warn(String msg);
+    public void warn(String msg, Throwable t); 
     
     public boolean isErrorEnabled();
 
@@ -71,8 +73,4 @@ public interface Log {
     
     public void error(String msg, Throwable t);
     
-    public void warn(String msg, Throwable t); 
-    public void debug(String msg, Throwable t);
-    
-    public boolean isOff();
 }
