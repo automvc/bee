@@ -166,7 +166,7 @@ public interface SuidRich extends Suid {
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
 	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
 	 */
-	public <T> int[] insert(T[] entity);
+	public <T> int insert(T[] entity);
 	
 	/**
 	 * 批量插入数据.Insert records by batch type.
@@ -174,7 +174,7 @@ public interface SuidRich extends Suid {
 	 * @param batchSize 
 	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
 	 */
-	public <T> int[] insert(T[] entity,int batchSize);
+	public <T> int insert(T[] entity,int batchSize);
 	
 	/**
 	 * 批量插入数据,且可以声明不用插入的字段列表 
@@ -183,7 +183,7 @@ public interface SuidRich extends Suid {
 	 * @param excludeFields 声明不用插入的字段列表.fields list that don't need to insert .
 	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
 	 */
-	public <T> int[] insert(T[] entity,String excludeFields);
+	public <T> int insert(T[] entity,String excludeFields);
 	
 	/**
 	 * 批量插入数据,且可以指定不用插入的字段列表 
@@ -193,7 +193,7 @@ public interface SuidRich extends Suid {
 	 * @param excludeFields 声明不用插入的字段列表.Don't insert fields list.
 	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
 	 */
-	public <T> int[] insert(T[] entity,int batchSize,String excludeFields);
+	public <T> int insert(T[] entity,int batchSize,String excludeFields);
 	
 	/**
 	 * 根据实体对象entity查询数据.Select record according to entity.

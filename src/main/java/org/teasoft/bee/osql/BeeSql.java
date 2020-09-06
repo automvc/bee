@@ -99,22 +99,16 @@ public interface BeeSql {
 	 * 提交一批命令到数据库
 	 * Submits a batch of commands to the database.
 	 * @param sqls 要执行的sql语句数组 Array of SQL statements to execute
-	 * @return 包含批中每个命令的一个元素的更新计数所组成的数组<br>
-	 * an array of update counts containing one element for each
-     * command in the batch.  <br>The elements of the array are ordered according
-     * to the order in which commands were added to the batch.
+	 * @return 受影响的行数  Affected rows.
 	 */
-	public int[] batch(String sqls[]);
+	public int batch(String sqls[]);
 	
 	/**
 	 * 提交一批命令到数据库
 	 * Submits a batch of commands to the database.
 	 * @param sqls 要执行的sql语句数组 Array of SQL statements to execute
-	 * @param batchSize
-	 * @return 包含批中每个命令的一个元素的更新计数所组成的数组<br>
-	 * an array of update counts containing one element for each
-     * command in the batch.  <br>The elements of the array are ordered according
-     * to the order in which commands were added to the batch.
+	 * @param batchSize 一个批次提交的命令数目  the size of commands in a batch
+	 * @return 受影响的行数  Affected rows.
 	 */
-	public int[] batch(String []sqls,int batchSize);
+	public int batch(String []sqls,int batchSize);
 }

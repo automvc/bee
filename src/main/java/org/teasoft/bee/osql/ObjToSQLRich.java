@@ -46,7 +46,9 @@ public interface ObjToSQLRich extends ObjToSQL{
 	public  <T> String toUpdateSQL(T entity, IncludeType includeType);
 	
 	public  <T> String[] toInsertSQL(T[] entity);
+	public  <T> String[] toInsertSQL(T[] entity,int batchSize);
 	public  <T> String[] toInsertSQL(T[] entity,String excludeFields);
+	public  <T> String[] toInsertSQL(T[] entity,int batchSize,String excludeFields);
 	
 	public  String toDeleteByIdSQL(Class c, Integer id);
 	public  String toDeleteByIdSQL(Class c, Long id);

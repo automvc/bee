@@ -71,9 +71,8 @@ public interface Log {
     
     public void error(String msg, Throwable t);
     
-    public boolean isOff();
+    public void warn(String msg, Throwable t); 
+    public void debug(String msg, Throwable t);
     
-    public Log getLogger();
-	public Log getLogger(String name);
-	public Log getLogger(Class<?> clazz);
+    public boolean isOff();
 }

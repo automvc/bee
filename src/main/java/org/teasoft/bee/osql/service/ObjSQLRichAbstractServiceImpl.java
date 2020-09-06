@@ -59,26 +59,26 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 	}
 	
 	@Override
-	public <T> int[] insert(T[] entity){
+	public <T> int insert(T[] entity){
 		//Add the business logic if need.
 		return getSuidRich().insert(entity);
 	}
 	
 	@Override
-	public <T> int[] insert(T[] entity,String excludeFieldList){
+	public <T> int insert(T[] entity,String excludeFieldList){
 		//Add the business logic if need.
 		return getSuidRich().insert(entity,excludeFieldList);
 	}
 	
 
 	@Override
-	public <T> int[] insert(T[] entity, int batchSize){
+	public <T> int insert(T[] entity, int batchSize){
 		//Add the business logic if need.
 		return getSuidRich().insert(entity, batchSize);
 	}
 	
 	@Override
-	public <T> int[] insert(T[] entity, int batchSize, String excludeFieldList) {
+	public <T> int insert(T[] entity, int batchSize, String excludeFieldList) {
 		//Add the business logic if need.
 		return getSuidRich().insert(entity,batchSize,excludeFieldList);
 	}
