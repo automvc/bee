@@ -156,5 +156,6 @@ public String selectFun(String sql);
 12.fixed cache bug:genkey;clear cache for batch insert.  
 fixed bug:parse the json has extra comma.	
 fixed null bug about:PreparedSql's method select(String sql,Object preValues[]).  
+fixed bug about Oracle more table paing.  
 
 	
