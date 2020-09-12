@@ -90,13 +90,13 @@ Quick Start:
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<version>1.7.2</version>
+			<version>1.8</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<version>1.7.2</version>
+			<version>1.8</version>
 		</dependency>
 ```
 
