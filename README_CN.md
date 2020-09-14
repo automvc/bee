@@ -207,10 +207,14 @@ PreparedSql添加三个新方法
 			<artifactId>bee</artifactId>
 			<version>1.8</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
+			<version>1.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.teasoft</groupId>
+			<artifactId>bee-ext</artifactId>
 			<version>1.8</version>
 		</dependency>
 ```
