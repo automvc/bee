@@ -96,7 +96,7 @@ PreparedSql添加三个新方法
   <col width="69" span="2" />
   <col width="96" />
   <tr height="19">
-    <td colspan="6" height="19" width="429"><div align="center">Batch Insert(unit: ms)</div></td>
+    <td colspan="6" height="19" width="429"><div align="center">批量插入(单位: ms)</div></td>
   </tr>
   <tr height="19">
     <td height="19">　</td>
@@ -132,7 +132,7 @@ PreparedSql添加三个新方法
   <col width="69" span="2" />
   <col width="96" />
   <tr height="19">
-    <td colspan="6" height="19" width="429"><div align="center">Paging Select(unit: ms)</div></td>
+    <td colspan="6" height="19" width="429"><div align="center">分页查询(单位: ms)</div></td>
   </tr>
   <tr height="19">
     <td height="19">　</td>
@@ -168,7 +168,7 @@ PreparedSql添加三个新方法
   <col width="69" span="2" />
   <col width="96" />
   <tr height="19">
-    <td colspan="6" height="19" width="429"><div align="center">Transaction(update and select) (unit: ms)</div></td>
+    <td colspan="6" height="19" width="429"><div align="center">事务(update and select) (单位: ms)</div></td>
   </tr>
   <tr height="19">
     <td height="19">　</td>
