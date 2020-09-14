@@ -212,6 +212,7 @@ Quick Start:
 			<artifactId>honey</artifactId>
 			<version>1.8</version>
 		</dependency>
+		<!--for log framework,web sql -->
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee-ext</artifactId>
