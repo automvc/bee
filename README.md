@@ -87,7 +87,7 @@ fixed null bug about:PreparedSql's method select(String sql,Object preValues[]).
 
 Test Evn : Local windows.  
 DB: MySQL (Version 5.6.24).  
-Test point: Batch Insert;Select paging; Transaction(update and select).  
+Test point: Batch Insert;Paging Select; Transaction(update and select).  
 
 <table cellspacing="0" cellpadding="0">
   <col width="62" />
@@ -123,6 +123,7 @@ Test point: Batch Insert;Select paging; Transaction(update and select).
     <td>Exception</td>
   </tr>
 </table>
+
 <p>&nbsp;</p>
 <table cellspacing="0" cellpadding="0">
   <col width="62" />
@@ -131,7 +132,7 @@ Test point: Batch Insert;Select paging; Transaction(update and select).
   <col width="69" span="2" />
   <col width="96" />
   <tr height="19">
-    <td colspan="6" height="19" width="429"><div align="center">Select(unit: ms)</div></td>
+    <td colspan="6" height="19" width="429"><div align="center">Paging Select(unit: ms)</div></td>
   </tr>
   <tr height="19">
     <td height="19">　</td>
@@ -158,6 +159,7 @@ Test point: Batch Insert;Select paging; Transaction(update and select).
     <td align="right">6216.67 </td>
   </tr>
 </table>
+
 <p>&nbsp;</p>
 <table cellspacing="0" cellpadding="0">
   <col width="62" />

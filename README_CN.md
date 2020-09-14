@@ -80,6 +80,121 @@ PreparedSql添加三个新方法
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
+
+## Compare	
+
+[ORM-Compare](../../../orm-compare)  
+
+测试环境: Windows.  
+数据库: MySQL (Version 5.6.24).  
+测试点: 批量插入;分页查询;事务(update and select).  
+
+<table cellspacing="0" cellpadding="0">
+  <col width="62" />
+  <col width="69" />
+  <col width="64" />
+  <col width="69" span="2" />
+  <col width="96" />
+  <tr height="19">
+    <td colspan="6" height="19" width="429"><div align="center">Batch Insert(unit: ms)</div></td>
+  </tr>
+  <tr height="19">
+    <td height="19">　</td>
+    <td>5k</td>
+    <td>1w</td>
+    <td>2w</td>
+    <td>5w</td>
+    <td>10w</td>
+  </tr>
+  <tr height="19">
+    <td height="19">Bee</td>
+    <td align="right">529.00 </td>
+    <td align="right">458.33 </td>
+    <td align="right">550.00 </td>
+    <td align="right">1315.67 </td>
+    <td align="right">4056.67 </td>
+  </tr>
+  <tr height="19">
+    <td height="19">MyBatis</td>
+    <td align="right">1193</td>
+    <td align="right">713</td>
+    <td align="right">1292.67 </td>
+    <td align="right">1824.33 </td>
+    <td>Exception</td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0">
+  <col width="62" />
+  <col width="69" />
+  <col width="64" />
+  <col width="69" span="2" />
+  <col width="96" />
+  <tr height="19">
+    <td colspan="6" height="19" width="429"><div align="center">Paging Select(unit: ms)</div></td>
+  </tr>
+  <tr height="19">
+    <td height="19">　</td>
+    <td align="right">20次</td>
+    <td align="right">50次</td>
+    <td align="right">100次</td>
+    <td align="right">200次</td>
+    <td align="right">500次</td>
+  </tr>
+  <tr height="19">
+    <td height="19">Bee</td>
+    <td align="right">17.33 </td>
+    <td align="right">58.67 </td>
+    <td align="right">52.33 </td>
+    <td align="right">38.33 </td>
+    <td align="right">57.33 </td>
+  </tr>
+  <tr height="19">
+    <td height="19">MyBatis</td>
+    <td align="right">314.33 </td>
+    <td align="right">446.00 </td>
+    <td align="right">1546.00 </td>
+    <td align="right">2294.33 </td>
+    <td align="right">6216.67 </td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+<table cellspacing="0" cellpadding="0">
+  <col width="62" />
+  <col width="69" />
+  <col width="64" />
+  <col width="69" span="2" />
+  <col width="96" />
+  <tr height="19">
+    <td colspan="6" height="19" width="429"><div align="center">Transaction(update and select) (unit: ms)</div></td>
+  </tr>
+  <tr height="19">
+    <td height="19">　</td>
+    <td align="right">20次</td>
+    <td align="right">50次</td>
+    <td align="right">100次</td>
+    <td align="right">200次</td>
+    <td align="right">500次</td>
+  </tr>
+  <tr height="19">
+    <td height="19">Bee</td>
+    <td align="right">1089.00 </td>
+    <td align="right">70.00 </td>
+    <td align="right">84.00 </td>
+    <td align="right">161.33 </td>
+    <td align="right">31509.33 </td>
+  </tr>
+  <tr height="19">
+    <td height="19">MyBatis</td>
+    <td align="right">1144</td>
+    <td align="right">35</td>
+    <td>79.67 </td>
+    <td align="right">146.00 </td>
+    <td align="right">32155.33 </td>
+  </tr>
+</table>
 	
 快速开始:
 =========	
@@ -204,6 +319,6 @@ public class SuidExam {
 #### 更多设计思想,请关注微信公众号: 软件设计活跃区  
 <img src="weixin.jpg" width="200" heigh="200">
 
-#### 为了能及时解答大家的疑问，可以加入Bee的QQ技术群(ORM框架Bee交流群)：992650213
+#### 为了能及时解答大家的疑问，可以加入Bee的技术QQ群：992650213
 
 #### 同时,也欢迎你加入到Bee框架的开发之中,相信有你的加入,Bee会更加美好! 
