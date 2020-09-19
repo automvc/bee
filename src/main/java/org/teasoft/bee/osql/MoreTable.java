@@ -44,7 +44,7 @@ public class Orders{
 <p>	 
 <p>	 public class User {
 <p>
-<p>	private Integer id;
+<p>	private Long id;
 <p>	private String email;
 <p>	private String lastName;
 <p>	private String name;
