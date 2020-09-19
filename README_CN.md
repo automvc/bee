@@ -81,7 +81,7 @@ PreparedSql添加三个新方法
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 
-## Compare	
+## ORM Compare	
 
 [ORM-Compare](../../../orm-compare)  
 
