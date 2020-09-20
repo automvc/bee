@@ -1,5 +1,10 @@
 package org.teasoft.bee.osql;
 
+/**
+ * @author Kingstar
+ * @since  1.0
+ * @since  1.8.6
+ */
 public interface DatabaseConst {
 
 	String MYSQL = "mysql";
