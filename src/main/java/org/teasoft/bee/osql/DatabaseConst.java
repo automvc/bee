@@ -8,9 +8,9 @@ package org.teasoft.bee.osql;
  */
 public interface DatabaseConst {
 
-	String MYSQL = "mysql";
+	String MYSQL = "MySQL";
 	String MariaDB = "MariaDB";
-	String ORACLE = "oracle";
+	String ORACLE = "Oracle";
 	String SQLSERVER = "sqlserver";
 
 	String H2 = "H2";
