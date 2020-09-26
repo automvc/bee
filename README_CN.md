@@ -83,7 +83,7 @@ PreparedSql添加三个新方法
 
 ## ORM Compare	
 
-[ORM-Compare](../../../orm-compare)  
+[ORM-Compare (More Detail)](../../../orm-compare)  
 
 测试环境: Windows.  
 数据库: MySQL (Version 5.6.24).  
