@@ -83,7 +83,7 @@ fixed null bug about:PreparedSql's method select(String sql,Object preValues[]).
 
 ## ORM Compare	
 
-[ORM-Compare](../../../orm-compare)  
+[ORM-Compare (More Detail)](../../../orm-compare)  
 
 Test Evn : Local windows.  
 DB: MySQL (Version 5.6.24).  
