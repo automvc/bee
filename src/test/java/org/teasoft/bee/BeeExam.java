@@ -33,6 +33,11 @@ public class BeeExam {
 //		multi-DS:only more database
 //		bee-exam last update time:2020-08-22 22:14 (yyyy-MM-dd HH:mm)
 		
+//		add H2,SQLite Support:
+//		bee-exam(v1.8.6)-normal(H2)-2020-09-20 21.37.23.126.txt
+//		bee-exam(v1.8.6)-normal(MySQL)-2020-09-20 18.28.31.764.txt
+//		bee-exam(v1.8.6)-normal(SQLite)-2020-09-20 19.43.53.751.txt
+		
 		
 		
 //		测试用例请查看工程:bee-exam 
