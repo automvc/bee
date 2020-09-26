@@ -78,6 +78,14 @@ PreparedSql添加三个新方法
 修复缺陷:解析json时多余的逗号错误.  
 修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[]).  	
 
+**v1.8.6**  
+**1**.增强对数据库H2,SQLite,PostgreSQL的支持.	
+**2**.增强分页功能,分页参数也用占位符.	
+**3**.可零配置使用.	
+**4**.完善梨花算法经常不使用时,产生连续尾数为0的偶数的问题(SerialUniqueId和OneTimeSnowflakeId这两种ID生成算法不会有这些缺陷).	
+**5**.完善日志Log功能.	
+**6**.修复json转换bug.	
+
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 
