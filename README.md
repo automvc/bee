@@ -78,7 +78,7 @@ Add three methods in PreparedSql
 fixed bug:parse the json has extra comma.	
 fixed null bug about:PreparedSql's method select(String sql,Object preValues[]). 
 
-**v1.8.6**(2020-10-01 3Festivals)  
+**v1.8.15**(2020-10-01 3Festivals)  
 1.增强对数据库H2,SQLite,PostgreSQL的支持.  
 2.增强分页功能,分页参数也用占位符.  
 3.可零配置使用.  

@@ -22,7 +22,7 @@ import org.teasoft.bee.osql.BeeException;
 /**
  * 不支持功能的异常.Not Supported Exception.
  * @author Kingstar
- * @since  1.8.6
+ * @since  1.8.15
  */
 public class NotSupportedException  extends BeeException {
 	

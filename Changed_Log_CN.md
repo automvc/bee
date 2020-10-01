@@ -158,7 +158,7 @@ public String selectFun(String sql);
 修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[]).  
 修复关于oracle多表查询分页bug.  
 	
-**v1.8.6**(2020-10-01 3节日)  
+**v1.8.15**(2020-10-01 3节日)  
 1.增强对数据库H2,SQLite,PostgreSQL的支持.  
 2.增强分页功能,分页参数也用占位符.  
 3.可零配置使用.  
