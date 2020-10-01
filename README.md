@@ -76,7 +76,15 @@ Add three methods in PreparedSql
 **Fix bug:**   
 12.fixed cache bug:genkey;clear cache for batch insert.  
 fixed bug:parse the json has extra comma.	
-fixed null bug about:PreparedSql's method select(String sql,Object preValues[]).  	
+fixed null bug about:PreparedSql's method select(String sql,Object preValues[]). 
+
+**v1.8.6**(2020-10-01 3Festivals)  
+1.增强对数据库H2,SQLite,PostgreSQL的支持.  
+2.增强分页功能,分页参数也用占位符.  
+3.可零配置使用.  
+4.完善梨花算法经常不使用时,产生连续尾数为0的偶数的问题(SerialUniqueId和OneTimeSnowflakeId这两种ID生成算法不会有这些缺陷).  
+5.完善日志Log功能.  
+6.修复json转换bug.   	
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
