@@ -78,7 +78,7 @@ PreparedSql添加三个新方法
 修复缺陷:解析json时多余的逗号错误.  
 修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[]).  	
 
-**v1.8.6**  
+**v1.8.6**(2020-10-01 3节日)  
 1.增强对数据库H2,SQLite,PostgreSQL的支持.  
 2.增强分页功能,分页参数也用占位符.  
 3.可零配置使用.  
