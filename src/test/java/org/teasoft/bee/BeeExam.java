@@ -38,7 +38,13 @@ public class BeeExam {
 //		bee-exam(v1.8.6)-normal(MySQL)-2020-09-20 18.28.31.764.txt
 //		bee-exam(v1.8.6)-normal(SQLite)-2020-09-20 19.43.53.751.txt
 		
-		
+//		add PostgreSQL Support:
+//		bee-exam(v1.8.6)-normal(H2)-2020-10-01 17.50.37.507.txt
+//		bee-exam(v1.8.6)-normal(MySQL)-2020-10-01 16.43.57.577.txt
+//		bee-exam(v1.8.6)-normal(PostgreSQL)-2020-10-01 14.12.13.668-autoGenId.txt
+//		bee-exam(v1.8.6)-normal(PostgreSQL)-2020-10-01 15.59.45.647.txt
+//		bee-exam(v1.8.6)-normal(SQLite)-2020-10-01 19.16.47.115-autoGenId.txt
+//		bee-exam(v1.8.6)-normal(SQLite)-2020-10-01 19.19.10.831.txt 
 		
 //		测试用例请查看工程:bee-exam 
 //		以下任意一个地址：
