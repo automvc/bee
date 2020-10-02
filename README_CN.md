@@ -203,11 +203,11 @@ PreparedSql添加三个新方法
     <td align="right">32155.33 </td>
   </tr>
 </table>
-
-**Bee需要的文件**	
+	
+**Bee需要的文件**   
 orm\compare\bee\service\BeeOrdersService.java	
 
-**Mybatis需要的文件**	
+**Mybatis需要的文件**   
 orm\compare\mybatis\service\MybatisOrdersService.java	
 orm\compare\mybatis\dao\OrdersDao.java	
 orm\compare\mybatis\dao\OrdersMapper.java	
