@@ -212,7 +212,7 @@ orm\compare\mybatis\service\MybatisOrdersService.java
 orm\compare\mybatis\dao\OrdersDao.java	
 orm\compare\mybatis\dao\OrdersMapper.java	
 orm\compare\mybatis\dao\impl\OrdersDaoImpl.java	
-
+	
 公共都需要的有,Javabean和Service接口:	
 Orders.java	
 OrdersService.java	
