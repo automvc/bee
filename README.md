@@ -207,11 +207,11 @@ Test point: Batch Insert;Paging Select; Transaction(update and select).
 **Bee need files**   
 orm\compare\bee\service\BeeOrdersService.java	
 
-**MyBatis need files**   
-orm\compare\mybatis\service\MybatisOrdersService.java	
-orm\compare\mybatis\dao\OrdersDao.java	
-orm\compare\mybatis\dao\OrdersMapper.java	
-orm\compare\mybatis\dao\impl\OrdersDaoImpl.java	
+**MyBatis need files**  
+orm\compare\mybatis\service\MybatisOrdersService.java  
+orm\compare\mybatis\dao\OrdersDao.java  
+orm\compare\mybatis\dao\OrdersMapper.java  
+orm\compare\mybatis\dao\impl\OrdersDaoImpl.java  
 
 common,Javabean and Service interface:  
 Orders.java  
