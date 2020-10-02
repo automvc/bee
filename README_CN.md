@@ -203,6 +203,19 @@ PreparedSql添加三个新方法
     <td align="right">32155.33 </td>
   </tr>
 </table>
+
+**Bee需要的文件**	
+orm\compare\bee\service\BeeOrdersService.java	
+
+**Mybatis需要的文件**	
+orm\compare\mybatis\service\MybatisOrdersService.java	
+orm\compare\mybatis\dao\OrdersDao.java	
+orm\compare\mybatis\dao\OrdersMapper.java	
+orm\compare\mybatis\dao\impl\OrdersDaoImpl.java	
+
+公共都需要的有,Javabean和Service接口:	
+Orders.java	
+OrdersService.java	
 	
 快速开始:
 =========	
