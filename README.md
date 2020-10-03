@@ -86,7 +86,7 @@ fixed null bug about:PreparedSql's method select(String sql,Object preValues[]).
 3.Can be used in zero configuration.  
 4.Enhance PearFlowerId algorithm that it will produce even number with continuous mantissa of 0 when is often not used (there are no such defect in SerialUniqueId and OneTimeSnowflakeId).  
 5.Enhance Log function.  
-6.Fixed json transfer bug.  
+6.Fixed json transform bug.  
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
