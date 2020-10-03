@@ -8,9 +8,11 @@ Bee
 
 ## 详细功能介绍: 
 
+**多种DB**支持轻松扩展(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL等直接可用)。 
+
 **V1.0**  
 单表Suid(select,update,insert,delete)面向对象方式的操作,方法名与数据库Suid操作对应.  
-自动通过DB的表或视图生成Javabean(V1.0支持MySQL,MariaDB,其它数据库有部分类型未做映射处理,客户可通过在配置文件添加配置信息实现).  
+自动通过DB的表或视图生成Javabean.  
 约定优于配置:Javabean没有注解,没有xml,只是纯的Javabean即可(为什么要给Javabean那么重的负担呢??!!!).  
 自动映射表的列与的字段.  
 Javabean支持原生类型:int,double等.  
