@@ -253,13 +253,17 @@ OrdersService.java
 注:如果还没有bee.properties文件,可以自己新建一个.  
 也可以配置数据源(此处只是一个例子).  
 
-bee.databaseName=mysql  
+bee.databaseName=MySQL  
 bee.db.driverName = com.mysql.jdbc.Driver  
 bee.db.url =jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8  
 bee.db.username = root  
 bee.db.password =  
 
-## 4. 运行下面的 java代码    
+## 4. 生成Javabean Orders可参考:  
+[Orders(Javabean)](../../../bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/entity/Orders.java)  
+[Auto Genernate Javabean](../../../bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/autogen/GenBeanExam.java)  
+
+## 5. 运行下面的 java代码    
 
 ```java
 		
@@ -268,7 +272,6 @@ import java.util.List;
 
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.honey.osql.core.BeeFactory;
-import org.teasoft.honey.osql.example.entity.Orders;
 
 /**
  * @author Kingstar
