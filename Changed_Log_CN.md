@@ -162,7 +162,7 @@ public String selectFun(String sql);
 	
 **v1.8.15**(2020-10-01 3节日)  
 1.增强对数据库H2,SQLite,PostgreSQL的支持.  
-2.增强分页功能,分页参数也用占位符.  
+2.优化分页功能,分页参数也用占位符.  
 3.可零配置使用.  
 4.完善梨花算法经常不使用时,产生连续尾数为0的偶数的问题(SerialUniqueId和OneTimeSnowflakeId这两种ID生成算法不会有这些缺陷).  
 5.完善日志Log功能.  
