@@ -259,7 +259,7 @@ bee.db.username = root
 bee.db.password =  
 
 ## 4. The Javabean Orders reference as below:  
-(../../../bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/entity/Orders.java) Orders(Javabean).  
+[Orders(Javabean)](../../../bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/entity/Orders.java)  
 
 ## 5. Run the following java code  
 
