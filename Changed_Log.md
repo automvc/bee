@@ -8,7 +8,7 @@ Bee
 
 ## Feature & Function: 
 
-**多种DB**支持轻松扩展(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL等直接可用)。 
+**Support many Database**(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL and so on) and easy extend。 
 
 **V1.0**  
 Single entity(table) Suid (select,update,insert,delete) object-oriented operation.  
