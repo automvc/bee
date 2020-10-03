@@ -252,13 +252,16 @@ Create the tables and init the data by run the [init-data(user-orders)-mysql.sql
 ## 3. Update the database configuration in bee.properties if need  
 If no the bee.properties file, you can create it by yourself.
 
-bee.databaseName=mysql  
+bee.databaseName=MySQL  
 bee.db.driverName = com.mysql.jdbc.Driver  
 bee.db.url =jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8  
 bee.db.username = root  
 bee.db.password =  
 
-## 4. Run the following java code  
+## 4. The Javabean Orders reference as below:  
+(../../../bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/entity/Orders.java) Orders(Javabean).  
+
+## 5. Run the following java code  
 
 ```java
 		
@@ -267,49 +270,56 @@ import java.util.List;
 
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.honey.osql.core.BeeFactory;
-import org.teasoft.honey.osql.example.entity.Orders;
 
 /**
  * @author Kingstar
  * @since  1.0
  */
-public class OsqlExamEN {
+public class SuidExam {
 	
 	public static void main(String[] args) {
+
 		Suid suid=BeeFactory.getHoneyFactory().getSuid();
 		
-		Orders orders1=new Orders();
+		//需要先生成相应的Javabean
+		Orders orders1=new Orders(); //need define the Javabean
 		orders1.setId(100001L);
 		orders1.setName("Bee(ORM Framework)");
 		
+		//默认不处理null和空字符串.不用再写一堆的判断;其它有值的字段全部自动作为过滤条件
 		List<Orders> list1 =suid.select(orders1);  //select
 		for (int i = 0; i < list1.size(); i++) {
 			System.out.println(list1.get(i).toString());
 		}
 		
 		orders1.setName("Bee--ORM Framework");
+		//默认只更新需要更新的字段. 过滤条件默认只用id字段,其它需求可用SuidRich中的方法.
 		int updateNum=suid.update(orders1);   //update
 		System.out.println("update record:"+updateNum);
 		
 		Orders orders2=new Orders();
-		orders2.setUserid("client01");
+		orders2.setUserid("bee");
 		orders2.setName("Bee(ORM Framework)");
-		orders2.setTotal(new BigDecimal(91));
+		orders2.setTotal(new BigDecimal(91.99));
 		orders2.setRemark("");  //empty String test
 		
+		//默认不处理null和空字符串.不用再写一堆的判断;其它有值的字段全部自动插入数据库中. 
+		//方便结合DB插值,如id自动增长,由DB插入;createtime由DB默认插入
 		int insertNum=suid.insert(orders2); //insert
 		System.out.println("insert record:"+insertNum);
 		
-		int deleteNum=suid.delete(orders2);   //delete
-		System.out.println("delete record:"+deleteNum);
+		//默认不处理null和空字符串.不用再写一堆的判断;其它有值的字段全部自动作为过滤条件
+//		int deleteNum=suid.delete(orders2);   //delete
+//		System.out.println("delete record:"+deleteNum);
 		
 		List<Orders> list2 =suid.select(orders1); //select  confirm the data
 		for (int i = 0; i < list2.size(); i++) {
 			System.out.println(list2.get(i).toString());
 		}
 	}
-// notice: this is just a simple sample. Bee suport transaction,paging,complicate select,slect json,and so on.
+
 }
+//注意: 事务,分页,排序,范围查询,查询结果直接返回json等都支持,这里只是一个入门例子.
 ```
 
 Rapid application development:
