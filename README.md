@@ -260,6 +260,7 @@ bee.db.password =
 
 ## 4. The Javabean Orders reference as below:  
 [Orders(Javabean)](../../../bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/entity/Orders.java)  
+[Auto Genernate Javabean](../../../bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/autogen/GenBeanExam.java)  
 
 ## 5. Run the following java code  
 
