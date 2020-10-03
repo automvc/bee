@@ -8,9 +8,11 @@ Bee
 
 ## Feature & Function: 
 
+**多种DB**支持轻松扩展(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL等直接可用)。 
+
 **V1.0**  
 Single entity(table) Suid (select,update,insert,delete) object-oriented operation.  
-Automatically generate the Javabean via DB table or view(MySQL,MariaDB).  
+Automatically generate the Javabean via DB table or view.  
 Convention-over-configuration:Javabean no annotation,no xml.  
 Automatically mapping the table column and the Javabean field.  
 Javabean support the raw type:int,double,and so on.  
