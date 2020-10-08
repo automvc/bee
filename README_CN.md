@@ -220,7 +220,7 @@ orm\compare\mybatis\dao\impl\OrdersDaoImpl.java
 Orders.java  
 OrdersService.java  
 
-用Bee无需用户再写Dao代码，一个表少三个Dao文件，100个表就少300个dao文件.	
+**用Bee无需用户再写Dao代码，一个表少三个Dao文件，100个表就少300个Dao文件.**	
 	
 快速开始:
 =========	
