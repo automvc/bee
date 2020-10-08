@@ -325,6 +325,8 @@ public class SuidExam {
 //注意: 事务,分页,排序,范围查询,查询结果直接返回json等都支持,这里只是一个入门例子.
 ```
 
+#### [More example/test case](../../../bee-exam/)	
+
 Rapid application development:
 =========	
 **Let Java more quicker programming than php and Rails.**  
