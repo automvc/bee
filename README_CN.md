@@ -328,6 +328,8 @@ public class SuidExam {
 
 ```
 
+[More example/test case](../../../bee-exam/)	
+
 综合应用:
 =========	
 **Java快速编程, 让Java的开发速度超过php和Rails。**  
