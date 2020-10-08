@@ -219,6 +219,8 @@ orm\compare\mybatis\dao\impl\OrdersDaoImpl.java
 公共都需要的有,Javabean和Service接口:  
 Orders.java  
 OrdersService.java  
+
+用Bee无需用户再写Dao代码，一个表少三个Dao文件，100个表就少300个dao文件.	
 	
 快速开始:
 =========	
