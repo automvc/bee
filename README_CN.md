@@ -242,7 +242,7 @@ OrdersService.java
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee-ext</artifactId>
-			<version>1.8.15</version>
+			<version>1.8</version>
 		</dependency>
 ```
 
