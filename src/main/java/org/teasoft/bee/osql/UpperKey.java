@@ -18,6 +18,7 @@
 package org.teasoft.bee.osql;
 
 /**
+ * SQL关键字的大写形式.SQL KeyWord upper case.
  * @author Kingstar
  * @since  1.8.99
  */
