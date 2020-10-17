@@ -60,3 +60,7 @@ bee-exam(v1.8.15)-normal(PostgreSQL)-2020-10-01 14.12.13.668-autoGenId.txt
 bee-exam(v1.8.15)-normal(PostgreSQL)-2020-10-01 15.59.45.647.txt
 bee-exam(v1.8.15)-normal(SQLite)-2020-10-01 19.16.47.115-autoGenId.txt
 bee-exam(v1.8.15)-normal(SQLite)-2020-10-01 19.19.10.831.txt 
+
+Support lower and upper case option for SQL KeyWord:
+bee-exam(v1.8.99)-normal(MySQL)-2020-10-17 21.41.40.37.txt
+bee-exam(v1.8.99)-normal(MySQL)-2020-10-17 21.42.02.730-UPPER.txt
