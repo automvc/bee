@@ -88,6 +88,10 @@ fixed null bug about:PreparedSql's method select(String sql,Object preValues[]).
 5.Enhance Log function.  
 6.Fixed json transform bug.  
 
+**v1.8.99**(2020-10)  
+1.Support lower and upper case option for SQL KeyWord.  
+2.Cache sql key support MD5 string.  
+
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
 
