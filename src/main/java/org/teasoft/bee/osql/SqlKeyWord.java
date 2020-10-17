@@ -50,9 +50,11 @@ public interface SqlKeyWord {
 	String offset();
 	String top();
 	
+	String groupBy();
+	String having();
+	String between();
+	String notBetween();
+	
 	String space(); 
-	
-	
-	
 
 }
