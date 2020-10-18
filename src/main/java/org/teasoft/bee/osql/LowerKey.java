@@ -22,7 +22,7 @@ package org.teasoft.bee.osql;
  * @author Kingstar
  * @since  1.8.99
  */
-public class LowerKey implements SqlKeyWord{
+public class LowerKey implements SqlKeyWord {
 	
 	public static String SPACE=" ",
 	        select="select",

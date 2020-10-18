@@ -23,7 +23,7 @@ package org.teasoft.bee.osql;
  * @author Kingstar
  * @since  1.0
  */
-public interface ObjToSQLRich extends ObjToSQL{
+public interface ObjToSQLRich extends ObjToSQL {
 
 	public <T> String toSelectSQL(T entity,int size);
 	public <T> String toSelectSQL(T entity,int start,int size);
