@@ -89,6 +89,10 @@ PreparedSql添加三个新方法
 5.完善日志Log功能.  
 6.修复json转换bug.  
 
+**v1.8.99**(2020-10)  
+1.SQL关键字支持可配置大写或小写输出.  
+2.SQL缓存key可用MD5字符.  
+
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 
