@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author.All rights reserved.
+ * Copyright 2013-2020 the original author.All rights reserved.
  * Kingstar(honeysoft@126.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +18,7 @@
 package org.teasoft.bee.osql;
 
 /**
+ * SQL关键字.SQL KeyWord.
  * @author Kingstar
  * @since  1.8.99
  */
