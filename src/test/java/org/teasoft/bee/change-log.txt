@@ -64,3 +64,6 @@ bee-exam(v1.8.15)-normal(SQLite)-2020-10-01 19.19.10.831.txt
 Support lower and upper case option for SQL KeyWord:
 bee-exam(v1.8.99)-normal(MySQL)-2020-10-17 21.41.40.37.txt
 bee-exam(v1.8.99)-normal(MySQL)-2020-10-17 21.42.02.730-UPPER.txt
+
+Optimize the way of setting DB information with Honeyconfig:
+bee-exam(v1.8.99)-normal(MySQL)-2020-10-24 21.40.20.605.txt
