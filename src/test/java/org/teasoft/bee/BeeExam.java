@@ -49,6 +49,9 @@ public class BeeExam {
 //		Support lower and upper case option for SQL KeyWord:
 //		bee-exam(v1.8.99)-normal(MySQL)-2020-10-17 21.41.40.37.txt
 //		bee-exam(v1.8.99)-normal(MySQL)-2020-10-17 21.42.02.730-UPPER.txt
+
+//		Optimize the way of setting DB information with Honeyconfig:
+//		bee-exam(v1.8.99)-normal(MySQL)-2020-10-24 21.40.20.605.txt
 		
 //		测试用例请查看工程:bee-exam 
 //		以下任意一个地址：
