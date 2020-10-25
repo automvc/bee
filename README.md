@@ -11,8 +11,6 @@ Bee
 https://gitee.com/automvc/bee  
 or:  
 https://github.com/automvc/bee  
-**Honey** see:  
-https://github.com/automvc/honey  
 
 ## [中文介绍](../../../bee/blob/master/README_CN.md)  
 [点击链接可查看中文介绍](../../../bee/blob/master/README_CN.md)  
