@@ -26,6 +26,7 @@ public class LowerKey implements SqlKeyWord {
 	
 	public static String SPACE=" ",
 	        select="select",
+	        as="as",
 			from="from", 
 			where="where",
 			insert="insert",
@@ -57,6 +58,11 @@ public class LowerKey implements SqlKeyWord {
 	@Override
 	public String select() {
 		return select;
+	}
+	
+	@Override
+	public String as() {
+		return as;
 	}
 
 	@Override

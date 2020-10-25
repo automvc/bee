@@ -26,6 +26,7 @@ public class UpperKey implements SqlKeyWord {
 	
 	public static String SPACE=" ",
 			select="SELECT",
+			as="AS",
 			from="FROM", 
 			where="WHERE",
 			insert="INSERT",
@@ -59,6 +60,11 @@ public class UpperKey implements SqlKeyWord {
 	@Override
 	public String select() {
 		return select;
+	}
+	
+	@Override
+	public String as() {
+		return as;
 	}
 
 	@Override
