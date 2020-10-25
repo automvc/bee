@@ -25,6 +25,7 @@ package org.teasoft.bee.osql;
 public interface SqlKeyWord {
 	
 	String select();
+	String as();
 	String from();
 	String where();
 	
