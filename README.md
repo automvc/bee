@@ -8,7 +8,7 @@ Bee
 **You don't need to write the Dao by yourself anymore**.  
 **Good Feature:**  AI, Timesaving/Tasteful, Easy, Automatic (**AiTeaSoft Style**)   
 **Bee** see:  
-https://gitee.com/automvc/bee
+https://gitee.com/automvc/bee  
 or:	
 https://github.com/automvc/bee  
 **Honey** see:  
