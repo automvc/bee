@@ -160,6 +160,7 @@ public String selectFun(String sql);
 修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[]).  
 修复关于oracle多表查询分页bug.  
 	
+
 **v1.8.15**(2020-10-01 3节日)  
 1.增强对数据库H2,SQLite,PostgreSQL的支持.  
 2.优化分页功能,分页参数也用占位符.  
@@ -167,5 +168,11 @@ public String selectFun(String sql);
 4.完善梨花算法经常不使用时,产生连续尾数为0的偶数的问题(SerialUniqueId和OneTimeSnowflakeId这两种ID生成算法不会有这些缺陷).  
 5.完善日志Log功能.  
 6.修复json转换bug.  
+
+**v1.8.99**(2020-10-25 重阳节)  
+1.SQL关键字支持可配置大写或小写输出.  
+2.SQL缓存key可用MD5字符.  
+3.优化利用HoneyConfig设置DB信息的方式.  
+4.修复关于checkSelectField的bug.  
 
 	
