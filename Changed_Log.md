@@ -160,4 +160,30 @@ fixed bug:parse the json has extra comma.
 fixed null bug about:PreparedSql's method select(String sql,Object preValues[]).  
 fixed bug about Oracle more table paing.  
 
-	
+**v1.8.15**(2020-10-01 3Festivals)  
+1.Enhance support for H2,SQLite,PostgreSQL.  
+2.Enhance page funtion,paging para also use placeholder.  
+3.Can be used in zero configuration.  
+4.Enhance PearFlowerId algorithm that it will produce even number with continuous mantissa of 0 when is often not used (there are no such defect in SerialUniqueId and OneTimeSnowflakeId).  
+5.Enhance Log function.  
+6.Fixed json transform bug.  
+
+**v1.8.99**(2020-10-25 Double Ninth Festival)  
+1.Support lower and upper case option for SQL KeyWord.  
+2.Cache sql key support MD5 string.  
+3.Optimize the way of setting DB information with Honeyconfig.  
+4.Fix bug about checkSelectField.  
+
+**v1.8.15**(2020-10-01 3Festivals)  
+1.Enhance support for H2,SQLite,PostgreSQL.  
+2.Enhance page funtion,paging para also use placeholder.  
+3.Can be used in zero configuration.  
+4.Enhance PearFlowerId algorithm that it will produce even number with continuous mantissa of 0 when is often not used (there are no such defect in SerialUniqueId and OneTimeSnowflakeId).  
+5.Enhance Log function.  
+6.Fixed json transform bug.  
+
+**v1.8.99**(2020-10-25 Double Ninth Festival)  
+1.Support lower and upper case option for SQL KeyWord.  
+2.Cache sql key support MD5 string.  
+3.Optimize the way of setting DB information with Honeyconfig.  
+4.Fix bug about checkSelectField.  
