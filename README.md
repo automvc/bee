@@ -9,7 +9,7 @@ Bee
 **Good Feature:**  AI, Timesaving/Tasteful, Easy, Automatic (**AiTeaSoft Style**)   
 **Bee** see:  
 https://gitee.com/automvc/bee  
-or:	
+or:  
 https://github.com/automvc/bee  
 **Honey** see:  
 https://github.com/automvc/honey  
