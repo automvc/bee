@@ -6,6 +6,8 @@ Bee
 **Bee** 是一个简单，易用，功能强大，开发速度快，编码少的 JAVA ORM 框架。  
 Bee简单易用：单表操作、多表关联操作，可以不用写sql,极少语句就可以完成SQL操作；10分钟即可学会使用。  
 Bee功能强大：复杂查询也支持向对象方式，分页查询性能更高，一级缓存即可支持个性化优化；具有分布式特性。高级要求，还可以方便自定义SQL语句。  
+**如果说Mybatis在Hibernate之后不是重复造轮子,那Bee在Hibernate和Mybatis之后也不会是重复造轮子!  **
+择其优点,避其缺点,此外,还加有自己的优点!  
 
 #### 磨刀不误砍柴工！    Bee连磨刀的时间都帮你省了。  
 **Bee** 是一个具有人工智能(AI)特性，省时/优雅、简易、自动( **AiTea:** Timesaving/Tasteful, Easy, Automatic) 的ORM软件框架(AiTeaSoft)(IT-->AiTea 的思维转变!)。  
@@ -96,7 +98,7 @@ PreparedSql添加三个新方法
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 
-## ORM Compare	
+## ORM比较	
 
 [ORM-Compare (More Detail)](../../../orm-compare)  
 
@@ -335,7 +337,7 @@ public class SuidExam {
 
 ```
 
-#### [More example/test case](../../../bee-exam/)	
+#### [更多例子/测试用例](../../../bee-exam/)	
 
 综合应用:
 =========	
