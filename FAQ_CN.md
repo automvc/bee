@@ -4,7 +4,7 @@
 
 Q: Bee支持几种数据库?  
 
-A: mysql,MariaDB,oracle,sqlserver...只要该DB支持JDBC,Bee就可以轻松支持它!
+A: MySQL,MariaDB,Oracle,SQL Server,H2,SQLite,PostgreSQL等等都是支持的,只要该DB支持JDBC,Bee就可以轻松支持它!
 
 2.
 
@@ -145,6 +145,19 @@ condition.setAdd("p", "step");
 14.Q:&nbsp;Bee与Honey是什么关系? 
 
 A: ORM Bee框架是采用接口与实现分离的设计方式.Bee是接口,而Honey则是Bee的实现.	
+
+15.
+
+Q:&nbsp;Bee非常易用,编写代码少,但使用是一方面, 它的性能如何?
+
+A: 性能绝对是过得去的．README给出了详细的表格比较数据．　　详细比较还开户了一个项目，欢迎ＰＫ.	
+https://gitee.com/automvc/orm-compare  
+
+16.
+
+Q:&nbsp;Bee适合手机开发领域吗?
+
+A: Bee文件小。bee V1.8 jar files 仅217k. 而且性能也接近JDBC的性能.还专门对H2,SQLite作了优化.
 
 **其它相关资源:**
 
