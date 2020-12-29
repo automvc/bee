@@ -163,14 +163,14 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 批量插入数据.Insert records by batch type.
-	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
+	 * @param entity 与表对应的实体对象数组,且不能为空. table's entity array(do not allow null).
 	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
 	 */
 	public <T> int insert(T[] entity);
 	
 	/**
 	 * 批量插入数据.Insert records by batch type.
-	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
+	 * @param entity 与表对应的实体对象,且不能为空. table's entity array(do not allow null).
 	 * @param batchSize 
 	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
 	 */
@@ -179,7 +179,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * 批量插入数据,且可以声明不用插入的字段列表 
 	 * <br>Insert record by batch type,and can point out which field(s) don't need to insert.
-	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
+	 * @param entity 与表对应的实体对象数组,且不能为空. table's entity array(do not allow null).
 	 * @param excludeFields 声明不用插入的字段列表.fields list that don't need to insert .
 	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
 	 */
@@ -188,12 +188,52 @@ public interface SuidRich extends Suid {
 	/**
 	 * 批量插入数据,且可以指定不用插入的字段列表 
 	 * <br>Insert record by batch type,and can point out which field(s) don't need to insert.
-	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
+	 * @param entity 与表对应的实体对象数组,且不能为空. table's entity array(do not allow null).
 	 * @param batchSize 批操作数量大小.batch size.
 	 * @param excludeFields 声明不用插入的字段列表.Don't insert fields list.
 	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
 	 */
 	public <T> int insert(T[] entity,int batchSize,String excludeFields);
+	
+	
+	
+	/**
+	 * 批量插入数据.Insert records by batch type.
+	 * @param entityList 与表对应的实体对象链表,且不能为空. table's entity list(do not allow null).
+	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
+	 * @since  1.9
+	 */
+	public <T> int insert(List<T> entityList);
+	
+	/**
+	 * 批量插入数据.Insert records by batch type.
+	 * @param entityList 与表对应的实体对象链表,且不能为空. table's entity list(do not allow null).
+	 * @param batchSize 
+	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
+	 * @since  1.9
+	 */
+	public <T> int insert(List<T> entityList,int batchSize);
+	
+	/**
+	 * 批量插入数据,且可以声明不用插入的字段列表 
+	 * <br>Insert record by batch type,and can point out which field(s) don't need to insert.
+	 * @param entityList 与表对应的实体对象链表,且不能为空. table's entity list(do not allow null).
+	 * @param excludeFields 声明不用插入的字段列表.fields list that don't need to insert .
+	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
+	 * @since  1.9
+	 */
+	public <T> int insert(List<T> entityList,String excludeFields);
+	
+	/**
+	 * 批量插入数据,且可以指定不用插入的字段列表 
+	 * <br>Insert record by batch type,and can point out which field(s) don't need to insert.
+	 * @param entityList 与表对应的实体对象链表,且不能为空. table's entity list(do not allow null).
+	 * @param batchSize 批操作数量大小.batch size.
+	 * @param excludeFields 声明不用插入的字段列表.Don't insert fields list.
+	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
+	 * @since  1.9
+	 */
+	public <T> int insert(List<T> entityList,int batchSize,String excludeFields);
 	
 	/**
 	 * 根据实体对象entity查询数据.Select record according to entity.
@@ -248,28 +288,41 @@ public interface SuidRich extends Suid {
 	 * 根据id查询记录.Select record by id.
 	 * @param entity 实体类对象,且不能为空
 	 * @param id 实体id字段的值.value of entity's id field. 
-	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
-	 * @since  1.4
+	 * @return 返回id对应的实体.return one entity which owns this id.
+	 * @since  1.9
 	 */
-	public <T> List<T> selectById(T entity,Integer id);
+	public <T> T selectById(T entity,Integer id);
 	
 	/**
 	 * 根据id查询记录.Select record by id.
 	 * @param entity 实体类对象,且不能为空
 	 * @param id 实体id字段的值.value of entity's id field.
-	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
-	 * @since  1.4
+	 * @return 返回id对应的实体.return one entity which owns this id.
+	 * @since  1.9
 	 */
-	public <T> List<T> selectById(T entity,Long id);
+	public <T> T selectById(T entity,Long id);
+	
+	
+	/**
+	 * 根据id查询记录.Select record by id.
+	 * @param entity 实体类对象,且不能为空
+	 * @param id 实体id字段的值.value of entity's id field.
+	 * @return 返回id对应的实体.return one entity which owns this id.
+	 * @since  1.9
+	 */
+	public <T> T selectById(T entity,String id);
 	
 	/**
 	 * 根据id查询记录.Select record by id.
 	 * @param entity 实体类对象,且不能为空
 	 * @param ids 实体id字段的值,多个用逗号隔开.values of entity's id field.
 	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
-	 * @since  1.4
+	 * @since  1.9
 	 */
-	public <T> List<T> selectById(T entity,String ids);
+	public <T> List<T> selectByIds(T entity,String ids);
+	
+	
+
 	
 	/**
 	 * 根据id删除记录.Delete record by id.
