@@ -24,36 +24,36 @@ package org.teasoft.bee.osql;
  */
 public class LowerKey implements SqlKeyWord {
 	
-	public static String SPACE=" ",
-	        select="select",
-	        as="as",
-			from="from", 
-			where="where",
-			insert="insert",
-			into="into",
-			values="values",
-			and="and",
-			or="or",
-			Null="null",
-			isNull="is null",
-			isNotNull="is not null",
-			update="update",
-			set="set",
-			delete="delete",
-			orderBy="order by",
-			count="count",
-			asc="asc",
-			on="on",
-			limit="limit",
-			offset="offset",
-			top="top",
-			
-			groupBy="group by",
-			having="having",
-			between="between",
-			notBetween="not between",
-			
-			forUpdate="for update";
+	private static final String SPACE=" ";
+	private static final String select="select";
+	private static final String as="as";
+	private static final String from="from"; 
+	private static final String where="where";
+	private static final String insert="insert";
+	private static final String into="into";
+	private static final String values="values";
+	private static final String and="and";
+	private static final String or="or";
+	private static final String Null="null";
+	private static final String isNull="is null";
+	private static final String isNotNull="is not null";
+	private static final String update="update";
+	private static final String set="set";
+	private static final String delete="delete";
+	private static final String orderBy="order by";
+	private static final String count="count";
+	private static final String asc="asc";
+	private static final String on="on";
+	private static final String limit="limit";
+	private static final String offset="offset";
+	private static final String top="top";
+
+	private static final String groupBy="group by";
+	private static final String having="having";
+	private static final String between="between";
+	private static final String notBetween="not between";
+
+	private static final String forUpdate="for update";
 
 	@Override
 	public String select() {

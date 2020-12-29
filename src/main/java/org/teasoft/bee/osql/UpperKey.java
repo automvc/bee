@@ -24,38 +24,37 @@ package org.teasoft.bee.osql;
  */
 public class UpperKey implements SqlKeyWord {
 	
-	public static String SPACE=" ",
-			select="SELECT",
-			as="AS",
-			from="FROM", 
-			where="WHERE",
-			insert="INSERT",
-			into="INTO",
-			values="VALUES",
-			and="AND",
-			or="OR",
-			Null="NULL",
-			isNull="IS NULL",
-			isNotNull="IS NOT NULL",
-			update="UPDATE",
-			set="SET",
-			delete="DELETE",
-			orderBy="ORDER BY",
-			count="COUNT",
-			asc="ASC",
-			on="ON",
-			
-			limit="LIMIT",
-			offset="OFFSET",
-			top="TOP",
-			
-			groupBy="GROUP BY",
-			having="HAVING",
-			between="BETWEEN",
-			notBetween="NOT BETWEEN",
-			
-			forUpdate="FOR UPDATE"  ;
+	private static final String SPACE=" ";
+	private static final String select="SELECT";
+	private static final String as="AS";
+	private static final String from="FROM"; 
+	private static final String where="WHERE";
+	private static final String insert="INSERT";
+	private static final String into="INTO";
+	private static final String values="VALUES";
+	private static final String and="AND";
+	private static final String or="OR";
+	private static final String Null="NULL";
+	private static final String isNull="IS NULL";
+	private static final String isNotNull="IS NOT NULL";
+	private static final String update="UPDATE";
+	private static final String set="SET";
+	private static final String delete="DELETE";
+	private static final String orderBy="ORDER BY";
+	private static final String count="COUNT";
+	private static final String asc="ASC";
+	private static final String on="ON";
 
+	private static final String limit="LIMIT";
+	private static final String offset="OFFSET";
+	private static final String top="TOP";
+
+	private static final String groupBy="GROUP BY";
+	private static final String having="HAVING";
+	private static final String between="BETWEEN";
+	private static final String notBetween="NOT BETWEEN";
+
+	private static final String forUpdate="FOR UPDATE"  ;
 	
 	@Override
 	public String select() {
