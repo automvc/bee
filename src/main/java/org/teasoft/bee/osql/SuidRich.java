@@ -321,9 +321,6 @@ public interface SuidRich extends Suid {
 	 */
 	public <T> List<T> selectByIds(T entity,String ids);
 	
-	
-
-	
 	/**
 	 * 根据id删除记录.Delete record by id.
 	 * @param c 实体类类型,且不能为空
