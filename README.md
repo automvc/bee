@@ -94,6 +94,14 @@ fixed null bug about:PreparedSql's method select(String sql,Object preValues[]).
 3.Optimize the way of setting DB information with Honeyconfig.  
 4.Fix bug about checkSelectField.  
 
+**V1.9**  
+SuidRich add new methods support list parameter in batch insert.  
+SuidRich adjust methods selectById for unique entity and intelligently judge the Javabean id type of string id parameter.  
+enhance DB conn management.  
+some db more tables confuse field.  
+enhance code quality.  
+fix the problem that the fields with the same name will be confused in some databases(oracle) when multi table paging query.  
+
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
 
