@@ -175,4 +175,11 @@ public String selectFun(String sql);
 3.优化利用HoneyConfig设置DB信息的方式.  
 4.修复关于checkSelectField的bug.  
 
+**V1.9**  
+SuidRich新增支持List参数的批量插入方法.  
+SuidRich调整selectById方法且String类型参数的id智能识别Javabean的id类型.  
+完善DB连接管理.  
+加强代码质量.  
+修复多表分页查询时,同名字段在部分数据库会混淆的缺陷(oracle).  
+
 	
