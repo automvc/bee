@@ -100,6 +100,7 @@ SuidRich adjust methods selectById for unique entity and intelligently judge the
 enhance DB conn management.  
 enhance code quality.  
 fix the problem that the fields with the same name will be confused in some databases(oracle) when multi table paging query.  
+update batchSize(bee.osql.insert.batchSize) in bee.properties.  
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
