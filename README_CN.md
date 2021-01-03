@@ -44,63 +44,13 @@ jdk1.7+
 
 ## 最新功能介绍: 
 
-**V1.8**   
-**增加分布式特性:**   
-**1**.添加**多数据源**支持(**读写分离**一主多从, 仅分库).  
-增加多数据源无需改动Java代码(对编码透明)，只需添加配置信息即可. 
-添加**多数据源路由**接口. 
-添加多数据源路由实现算法.  
-添加多数据源配置.  
-支持配置信息刷新.  
-**2**.**分布式**环境下生成**全局唯一**数字**递增id**.	  
-分布式环境下生成**连续单调递增**(在一个workerid内),全局唯一数字id.  
-**3**.**Bee分布式唯一id**算法特性:不依赖时钟,workerid可配置,易扩展.	  
-具体算法实现:SerialUniqueId,OneTimeSnowflakeId,PearFlowerId.		  
-提供id生成工厂:GenIdFactory,且可配置id生成器具体实现类.	  
-**4**.可为所有表的Long型id字段自动生成全局唯一id主键.  
-**增强功能:**   
-**5**.**同库分表**支持,**动态表名映射**支持.  
-**实体与任意表名映射支持**. 
-Suid add one method:	
-public Suid setDynamicParameter(String para,String value);  
-add 2 annotation:**@Table,@Entity**.  
-**6**.添加**for update**功能,用于锁住某个表的一些记录.  
-public Condition forUpdate()  
-**7**.增加高级更新设置值支持,复杂查询、多表查询支持**只查部分字段**:	
-在Condition添加5个新方法.  
-**8**.支持SQL输出日志配置,占位参数可显示参数,**可输出直接可执行的sql**:  
-bee.osql.showSQL.showType=true  
-bee.osql.showSQL.showExecutableSql=true  
-**9**.SuidRich添加一个新方法  
-PreparedSql添加三个新方法  
-**10**.Oracle DATE字段在Javabean里转成java.sql.Date存入数据库时会丢失时分秒，
-转成Timestamp可以解决这个问题。  
-**11**.GenFiles**根据模板自动生成文件**代码添加支持首字母大写,如: #{entityName?up1}.  
-**修复原有问题:**   
-**12**.bug修复:缓存key生成;批插入后清缓存.  
-修复缺陷:解析json时多余的逗号错误.  
-修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[]).  	
-
-**v1.8.15**(2020-10-01 3节日)  
-1.增强对数据库H2,SQLite,PostgreSQL的支持.  
-2.优化分页功能,分页参数也用占位符.  
-3.可零配置使用.  
-4.完善梨花算法经常不使用时,产生连续尾数为0的偶数的问题(SerialUniqueId和OneTimeSnowflakeId这两种ID生成算法不会有这些缺陷).  
-5.完善日志Log功能.  
-6.修复json转换bug.  
-
-**v1.8.99**(2020-10-25 重阳节)  
-1.SQL关键字支持可配置大写或小写输出.  
-2.SQL缓存key可用MD5字符.  
-3.优化利用HoneyConfig设置DB信息的方式.  
-4.修复关于checkSelectField的bug.  
-
 **V1.9**  
 SuidRich新增支持List参数的批量插入方法.  
 SuidRich调整selectById方法且String类型参数的id智能识别Javabean的id类型.  
 完善DB连接管理.  
 加强代码质量.  
 修复多表分页查询时,同名字段在部分数据库会混淆的缺陷(oracle).  
+更新bee.properties文件中batchSize(bee.osql.insert.batchSize).  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
