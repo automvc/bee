@@ -12,9 +12,11 @@ Bee功能强大：复杂查询也支持向对象方式，分页查询性能更�
 #### 磨刀不误砍柴工！    Bee连磨刀的时间都帮你省了。  
 **Bee** 是一个具有人工智能(AI)特性，省时/优雅、简易、自动( **AiTea:** Timesaving/Tasteful, Easy, Automatic) 的ORM软件框架(AiTeaSoft)(IT-->AiTea 的思维转变!)。  
 Bee是一种更接近SQL语言思维的ORM框架，  
-一种开发速度和开发成本都不比php差的Java ORM框架，  
+一种开发速度和开发成本都不比Php,Ruby on Rail差的Java ORM框架，  
 而且它的编码复杂度是O(1)，即用了Bee，**无论多少个表**,你都可以不用另外再写dao代码。  
 
+**Bee** 网址:  
+https://github.com/automvc/bee  
 **Bee在gitee** 的网址:  
 https://gitee.com/automvc/bee
 
@@ -51,6 +53,7 @@ SuidRich调整selectById方法且String类型参数的id智能识别Javabean的i
 加强代码质量.  
 修复多表分页查询时,同名字段在部分数据库会混淆的缺陷(oracle).  
 更新bee.properties文件中batchSize(bee.osql.insert.batchSize).  
+用模板生成文件支持自定义起止标签.  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
@@ -291,6 +294,7 @@ public class SuidExam {
 	}
 }
 //注意: 事务,分页,排序,范围查询,查询结果直接返回json等都支持,这里只是一个入门例子.
+//更加应用参考,请查看: 更多例子   和    综合应用 .
 
 ```
 
