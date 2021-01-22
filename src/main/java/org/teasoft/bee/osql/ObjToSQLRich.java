@@ -35,7 +35,8 @@ public interface ObjToSQLRich extends ObjToSQL {
 	public <T> String toUpdateSQL(T entity,String updateFields);
 	public <T> String toUpdateSQL(T entity,String updateFields,IncludeType includeType);
 	
-	public <T> String toSelectFunSQL(T entity,FunctionType functionType, String FieldForFun) throws ObjSQLException;
+	public <T> String toSelectFunSQL(T entity,FunctionType functionType, String FieldForFun);
+	public <T> String toSelectFunSQL(T entity,Condition condition);
 	
 	public <T> String toSelectOrderBySQL(T entity, String orderFields) throws ObjSQLException;
 	public <T> String toSelectOrderBySQL(T entity, String orderFields,OrderType[] orderTypes) throws ObjSQLException;
