@@ -91,7 +91,6 @@ public interface Suid {
 	 */
 	public <T> List<T> select(T entity,Condition condition);
 
-	
 	/**
 	 * 根据实体对象和Condition删记录.Delete the records according to entity and condition.<br>
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串
