@@ -54,6 +54,17 @@ SuidRich调整selectById方法且String类型参数的id智能识别Javabean的i
 修复多表分页查询时,同名字段在部分数据库会混淆的缺陷(oracle).  
 更新bee.properties文件中batchSize(bee.osql.insert.batchSize).  
 用模板生成文件支持自定义起止标签.  
+修改缺陷:update默认主键为id时,无id字段或id为null时,异常处理.  
+修改缺陷:cache bug. 
+视图强烈建议不放缓存,因会产生脏数据.  
+Condition add method:  
+	public Condition selectFun(FunctionType functionType,String fieldForFun);  
+	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias);  
+SuidRich add method: 
+	public <T> List<String[]> selectString(T entity,Condition condition);  
+	public <T> String selectWithFun(T entity, Condition condition);  
+	public <T> int updateById(T entity,Condition condition);  
+IncludeType support exclude "  ".  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
