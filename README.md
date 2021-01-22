@@ -100,7 +100,19 @@ SuidRich adjust methods selectById for unique entity and intelligently judge the
 enhance DB conn management.  
 enhance code quality.  
 fix the problem that the fields with the same name will be confused in some databases(oracle) when multi table paging query.  
-update batchSize(bee.osql.insert.batchSize) in bee.properties.  
+update batchSize(bee.osql.insert.batchSize) in bee.properties. 
+support define start and end token when generate file by template. 
+fixed: update is default by id,but no id field or id is null,will have exception.  
+fixed: cache bug.  
+when entity is view(not table), recommend put in bee.osql.cache.never(bee.properties).  
+Condition add method:  
+	public Condition selectFun(FunctionType functionType,String fieldForFun);  
+	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias);  
+SuidRich add method: 
+	public <T> List<String[]> selectString(T entity,Condition condition);  
+	public <T> String selectWithFun(T entity, Condition condition);  
+	public <T> int updateById(T entity,Condition condition);  
+IncludeType support exclude "  ".  
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
