@@ -49,6 +49,20 @@ jdk1.7+
 **V1.9**  
 SuidRich新增支持List参数的批量插入方法.  
 SuidRich调整selectById方法且String类型参数的id智能识别Javabean的id类型.  
+加强聚合函数cont,sum,avg,min,max功能,Condition add method:  
+	public Condition selectFun(FunctionType functionType,String fieldForFun);  
+	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias); 
+增强SuidRich功能, SuidRich add method: 
+	public <T> List<String[]> selectString(T entity,Condition condition);  
+	public <T> int updateById(T entity,Condition condition);  
+	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun, Condition condition); 
+	public <T> int count(T entity);
+	public <T> int count(T entity, Condition condition);
+支持长度大于0空字符串排除处理.IncludeType support exclude "  ".  
+增加Ignore注解，忽略javabean字段，不进行转换.  
+无javabean，用map承载需要转换的实体信息，查询数据库.  
+将excel的数据转成List<String[]>,并导入到数据库(bee-ext).  
+多表关联查询支持多个关联条件.  
 完善DB连接管理.  
 加强代码质量.  
 修复多表分页查询时,同名字段在部分数据库会混淆的缺陷(oracle).  
@@ -57,14 +71,6 @@ SuidRich调整selectById方法且String类型参数的id智能识别Javabean的i
 修改缺陷:update默认主键为id时,无id字段或id为null时,异常处理.  
 修改缺陷:cache bug. 
 视图强烈建议不放缓存,因会产生脏数据.  
-Condition add method:  
-	public Condition selectFun(FunctionType functionType,String fieldForFun);  
-	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias);  
-SuidRich add method: 
-	public <T> List<String[]> selectString(T entity,Condition condition);  
-	public <T> String selectWithFun(T entity, Condition condition);  
-	public <T> int updateById(T entity,Condition condition);  
-IncludeType support exclude "  ".  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
