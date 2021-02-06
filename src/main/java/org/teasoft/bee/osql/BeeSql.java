@@ -18,6 +18,7 @@
 package org.teasoft.bee.osql;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 直接用sql语句操作数据库的接口
@@ -79,6 +80,8 @@ public interface BeeSql {
 	 * List, every element is string array(transform from record).
 	 */
 	public List<String[]> select(String sql);
+	
+	public List<Map<String,Object>> selectMapList(String sql);
 	
 	/**
 	 * 查询结果,并以json格式返回.Select and return json format result.
