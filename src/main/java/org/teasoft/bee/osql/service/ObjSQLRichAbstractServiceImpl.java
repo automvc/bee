@@ -69,7 +69,6 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 		//Add the business logic if need.
 		return getSuidRich().insert(entity,excludeFieldList);
 	}
-	
 
 	@Override
 	public <T> int insert(T[] entity, int batchSize){
@@ -100,11 +99,23 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 		//Add the business logic if need.
 		return getSuidRich().selectWithFun(entity, functionType, fieldForFun);
 	}
+	
+	@Override
+	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun, Condition condition) {
+		//Add the business logic if need.
+		return getSuidRich().selectWithFun(entity, functionType, fieldForFun, condition);
+	}
 
 	@Override
-	public <T> String selectWithFun(T entity, Condition condition) {
+	public <T> int count(T entity) {
 		//Add the business logic if need.
-		return getSuidRich().selectWithFun(entity, condition);
+		return getSuidRich().count(entity);
+	}
+
+	@Override
+	public <T> int count(T entity, Condition condition) {
+		//Add the business logic if need.
+		return getSuidRich().count(entity, condition);
 	}
 
 	@Override
@@ -124,7 +135,6 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 		//Add the business logic if need.
 		return getSuidRich().update(entity, updateFieldList, includeType);
 	}
-	
 
 	@Override
 	public <T> List<T> select(T entity, IncludeType includeType) {
