@@ -159,6 +159,91 @@ Q:&nbsp;Bee适合手机开发领域吗?
 
 A: Bee文件小。bee V1.8 jar files 仅217k. 而且性能也接近JDBC的性能.还专门对H2,SQLite作了优化.
 
+17.    
+    
+
+Q: 如何自动填日期字段?
+
+A: Bee默认不支持是null或空的字段；
+当Javabean的日期是null时，Bee不会解析. 像mysql可以在DB端自动触发填充日期值。
+
+18. 
+
+Q: 轻松用ORM Bee实现将excel的数据转成List<String[]>,并导入到数据库。
+参考bee-exam项目里:
+ExcelReaderTest.java
+ImportExcelTest.java
+八行代码搞定将excel数据导入到DB
+https://blog.csdn.net/abckingaa/article/details/113603130
+或:
+https://my.oschina.net/u/4111850/blog/4944468
+
+19.
+
+没有与表对应的实体javabean，如何操作数据?
+用map进行转换实体信息，查询/删除数据库中的数据.
+参考bee-exam项目里:
+MapSuidExam
+```java
+  		  MapSuid mapSuid=BeeFactory.getHoneyFactory().getMapSuid();
+		  MapSql mapSql=BeeFactory.getHoneyFactory().getMapSql();
+		  
+//		  mapSql.put(MapSqlKey.Table, "test_user");
+		  mapSql.put(MapSqlKey.Table, "testUser");
+		  mapSql.put(MapSqlKey.SelectColumns, "name,password");
+		  mapSql.put(MapSqlKey.OrderBy, "name");
+		  mapSql.put(MapSqlKey.IsNamingTransfer, Boolean.TRUE+"");
+		  
+		  mapSql.put("name","Bee");
+		  
+		  String json=mapSuid.selectJson(mapSql);
+		  Logger.info(json);       
+```         
+
+20.
+
+表对应的实体Javabean有些字段不想解析,如何实现?
+Ignore注解，忽略javabean字段，不进行转换.
+但这种应尽量少用.  纯的javabean，当DB有变动时，很容易就可以更改了,自动生成纯Javabean更方便,安全.
+Bee默认是不处理为null或空字符的字段的，因此，操作DB前将其置空即可.
+
+21.
+How to use ORM Bee develop when the sql like: select examno, subject,max(score) ,avg(score) ,min(score) from scores?
+Detail see wiki:
+More SQL Function, more Group by
+
+```java
+		Condition condition=new ConditionImpl();
+		
+		condition
+		.selectField("classno,term,examno,subject")
+		.selectFun(FunctionType.MAX, "score","maxScore")
+		.selectFun(FunctionType.AVG, "score","avgScore")
+		.selectFun(FunctionType.MIN, "score","minScore");
+		
+		condition.op("status", Op.nq, "FIN"); 
+		
+		condition
+		.groupBy("term,examno,subjectno,subject")
+		.orderBy("classno,term,examno,subjectno")
+		;
+		
+		Scores scores=new Scores();
+		String r=suidRich.selectJson(scores, condition); // json result
+		System.out.println(r);
+		
+		List<String[]> listString=suidRich.selectString(scores, condition);  // string array result
+		String str[];
+		for (int i = 0; i < listString.size(); i++) {
+			str=listString.get(i);
+			for (int j = 0; j < str.length; j++) {
+				System.out.print(str[j]+"     ");
+			}
+			System.out.println();
+		}
+```
+
+
 **其它相关资源:**
 
 gitee issue:&nbsp;[https://gitee.com/automvc/bee/issues?assignee\_id=&amp;author\_id=&amp;branch=&amp;issue\_search=&amp;label\_name=&amp;milestone\_id=&amp;program\_id=&amp;scope=&amp;sort=&amp;state=closed](https://gitee.com/automvc/bee/issues?assignee_id=&amp;author_id=&amp;branch=&amp;issue_search=&amp;label_name=&amp;milestone_id=&amp;program_id=&amp;scope=&amp;sort=&amp;state=closed)&nbsp;
