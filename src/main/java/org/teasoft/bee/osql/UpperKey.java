@@ -54,7 +54,7 @@ public class UpperKey implements SqlKeyWord {
 	private static final String between="BETWEEN";
 	private static final String notBetween="NOT BETWEEN";
 
-	private static final String forUpdate="FOR UPDATE"  ;
+	private static final String forUpdate="FOR UPDATE";
 	
 	@Override
 	public String select() {
