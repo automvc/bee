@@ -126,24 +126,30 @@ public interface SuidRich extends Suid {
 	public <T> T selectOne(T entity);
 	
 	/**
-	 * 使用函数查询结果.Select result with function.
+	 * 使用函数查询一个统计结果.Select result with one function,Just select one function.
 	 * @param entity 传入的实体对象,且不能为空
 	 * @param fieldForFun 需要使用函数的字段
 	 * @param functionType MAX,MIN,SUM,AVG,COUNT
-	 * @return 返回使用函数查询结果.Result select result with function.
+	 * @return 返回使用函数查询结果.one function result.
 	 */
-	public <T> String selectWithFun(T entity,FunctionType functionType,String fieldForFun);
-	
+	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun);
 	
 	/**
-	 * 使用函数查询结果,functionType在condition中设置 
-	 * Select result with function,set functionType in condition
+	 * 使用函数查询一个统计结果,通过Condition可添加复杂过滤条件.只查询一个统计结果. 
+	 * Select result with one function,Just select one function.
 	 * @param entity 传入的实体对象,且不能为空
+	 * @param fieldForFun 需要使用函数的字段
+	 * @param functionType MAX,MIN,SUM,AVG,COUNT
 	 * @param condition condition.若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
-	 * @return 返回使用函数查询结果.Result select result with function.
+	 * <br>condition的selectFun方法将被忽略.will ignore the condition's selectFun method.
+	 * @return 返回使用函数查询结果.one function result.
 	 * @since 1.9
 	 */
-	public <T> String selectWithFun(T entity, Condition condition);
+	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun, Condition condition); //selectOneFun
+	
+	public <T> int count(T entity);
+
+	public <T> int count(T entity, Condition condition);
 	
 	/**
 	 * 查询应用排序的结果,排序的字段默认按升序排列 
