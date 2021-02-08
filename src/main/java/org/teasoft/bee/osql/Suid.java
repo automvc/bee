@@ -112,4 +112,14 @@ public interface Suid {
 	 */
 	public Suid setDynamicParameter(String para,String value);
 	
+	/**
+	 * declare begin Same Connection for some ORM operation.
+	 */
+	public void beginSameConnection();
+	
+	/**
+	 * declare end Same Connection for some ORM operation.
+	 */
+	public void endSameConnection();
+
 }
