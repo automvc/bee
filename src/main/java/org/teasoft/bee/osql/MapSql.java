@@ -25,14 +25,14 @@ package org.teasoft.bee.osql;
 public interface MapSql {
 
 	/**
-	 * 设置SQL用到的相关信息,Map的key由MapSqlKey提供.
+	 * 设置SQL用到的相关信息,Map的key由MapSqlKey提供.Set the relevant information used by SQL. The key of map is provided by MapSqlKey.
 	 * @param MapSqlKey
 	 * @param value
 	 */
 	public void put(MapSqlKey MapSqlKey, String value);
 
 	/**
-	 * 设置用于SQL中where过虑的实体信息.
+	 * 设置用于SQL中where过虑的字段信息.Set the field information used for where filtering in SQL.
 	 * @param fieldName
 	 * @param value
 	 */
