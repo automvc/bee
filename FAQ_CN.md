@@ -169,7 +169,9 @@ A: Bee默认不支持是null或空的字段；
 
 18. 
 
-Q: 轻松用ORM Bee实现将excel的数据转成List<String[]>,并导入到数据库。  
+Q: Bee对Excel导入什么什么? 有简化操作吗?  
+
+A: 轻松用ORM Bee实现将excel的数据转成List<String[]>,并导入到数据库。  
 参考bee-exam项目里:  
 ExcelReaderTest.java  
 ImportExcelTest.java  
