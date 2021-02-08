@@ -162,21 +162,21 @@ A: Bee文件小。bee V1.8 jar files 仅217k. 而且性能也接近JDBC的性能
 17.    
     
 
-Q: 如何自动填日期字段?
+Q: 如何自动填日期字段?  
 
-A: Bee默认不支持是null或空的字段；	
-当Javabean的日期是null时，Bee不会解析. 像mysql可以在DB端自动触发填充日期值。	
+A: Bee默认不支持是null或空的字段；  
+当Javabean的日期是null时，Bee不会解析. 像mysql可以在DB端自动触发填充日期值。  
 
 18. 
 
-Q: 轻松用ORM Bee实现将excel的数据转成List<String[]>,并导入到数据库。		
-参考bee-exam项目里:	
-ExcelReaderTest.java		
-ImportExcelTest.java		
-八行代码搞定将excel数据导入到DB	
-https://blog.csdn.net/abckingaa/article/details/113603130	
-或:	
-https://my.oschina.net/u/4111850/blog/4944468	
+Q: 轻松用ORM Bee实现将excel的数据转成List<String[]>,并导入到数据库。  
+参考bee-exam项目里:  
+ExcelReaderTest.java  
+ImportExcelTest.java  
+八行代码搞定将excel数据导入到DB  
+https://blog.csdn.net/abckingaa/article/details/113603130  
+或:  
+https://my.oschina.net/u/4111850/blog/4944468  
 
 19.
 
@@ -202,16 +202,16 @@ MapSuidExam
 
 20.
 
-Q：表对应的实体Javabean有些字段不想解析,如何实现?	
+Q：表对应的实体Javabean有些字段不想解析,如何实现?  
 A：
-Ignore注解，忽略javabean字段，不进行转换.	
-但这种应尽量少用.  纯的javabean，当DB有变动时，很容易就可以更改了,自动生成纯Javabean更方便,安全.	
-Bee默认是不处理为null或空字符的字段的，因此，操作DB前将其置空即可.	
+Ignore注解，忽略javabean字段，不进行转换.  
+但这种应尽量少用.  纯的javabean，当DB有变动时，很容易就可以更改了,自动生成纯Javabean更方便,安全.  
+Bee默认是不处理为null或空字符的字段的，因此，操作DB前将其置空即可.  
 
 21.
-How to use ORM Bee develop when the sql like: select examno, subject,max(score) ,avg(score) ,min(score) from scores?	
-Detail see wiki:	
-More SQL Function, more Group by	
+How to use ORM Bee develop when the sql like: select examno, subject,max(score) ,avg(score) ,min(score) from scores?  
+Detail see wiki:  
+More SQL Function, more Group by  
 
 ```java
 		Condition condition=new ConditionImpl();
