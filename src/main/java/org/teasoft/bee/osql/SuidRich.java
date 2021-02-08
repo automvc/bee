@@ -128,9 +128,9 @@ public interface SuidRich extends Suid {
 	/**
 	 * 使用函数查询一个统计结果.Select result with one function,Just select one function.
 	 * @param entity 传入的实体对象,且不能为空
-	 * @param fieldForFun 需要使用函数的字段
 	 * @param functionType MAX,MIN,SUM,AVG,COUNT
-	 * @return 返回使用函数查询结果.one function result.
+	 * @param fieldForFun 需要使用函数的字段
+	 * @return 一个函数查询的结果.one function result.
 	 */
 	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun);
 	
@@ -138,17 +138,30 @@ public interface SuidRich extends Suid {
 	 * 使用函数查询一个统计结果,通过Condition可添加复杂过滤条件.只查询一个统计结果. 
 	 * Select result with one function,Just select one function.
 	 * @param entity 传入的实体对象,且不能为空
-	 * @param fieldForFun 需要使用函数的字段
 	 * @param functionType MAX,MIN,SUM,AVG,COUNT
+	 * @param fieldForFun 需要使用函数的字段
 	 * @param condition condition.若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
 	 * <br>condition的selectFun方法将被忽略.will ignore the condition's selectFun method.
-	 * @return 返回使用函数查询结果.one function result.
+	 * @return 一个函数查询的结果.one function result.
 	 * @since 1.9
 	 */
 	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun, Condition condition); //selectOneFun
 	
+    /**
+	 * 统计记录总数.total number of statistical records.
+	 * @param entity 实体类对象,且不能为空. table's entity(do not allow null).
+	 * @return 统计记录行数. total number of records that satisfy the condition.
+	 * @since 1.9
+	 */
 	public <T> int count(T entity);
 
+	/**
+	 * 统计记录总数.total number of statistical records.
+	 * @param entity 实体类对象,且不能为空. table's entity(do not allow null).
+	 * @param condition condition用于设置过滤条件.condition as filter the record.
+	 * @return 统计记录行数. total number of records that satisfy the condition.
+	 * @since 1.9
+	 */
 	public <T> int count(T entity, Condition condition);
 	
 	/**
