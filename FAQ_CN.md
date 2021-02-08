@@ -180,10 +180,10 @@ https://my.oschina.net/u/4111850/blog/4944468
 
 19.
 
-Q: 没有与表对应的实体javabean，如何操作数据?	
-A: 用map进行转换实体信息，查询/删除数据库中的数据.	
-参考bee-exam项目里:	
-MapSuidExam	
+Q: 没有与表对应的实体javabean，如何操作数据?  
+A: 用map进行转换实体信息，查询/删除数据库中的数据.  
+参考bee-exam项目里:  
+MapSuidExam  
 ```java
   		  MapSuid mapSuid=BeeFactory.getHoneyFactory().getMapSuid();
 		  MapSql mapSql=BeeFactory.getHoneyFactory().getMapSql();
