@@ -113,6 +113,7 @@ SuidRich add method:
 	public <T> String selectWithFun(T entity, Condition condition);  
 	public <T> int updateById(T entity,Condition condition);  
 IncludeType support exclude "  ".  
+Same Connection for some ORM operation.  
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  

@@ -58,11 +58,12 @@ SuidRich调整selectById方法且String类型参数的id智能识别Javabean的i
 加强聚合函数cont,sum,avg,min,max功能,Condition增加方法:  
 	public Condition selectFun(FunctionType functionType,String fieldForFun);  
 	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias); 
-支持长度大于0空字符串忽略处理,如"     ".
-增加Ignore注解，忽略javabean字段，不进行转换.  
 无Javabean，用map承载需要转换的实体信息，查询数据库.  
 将Excel的数据转成List<String[]>,并导入到数据库(bee-ext).  
 多表关联查询支持多个关联条件.  
+多个ORM操作使用同一个Connection.  
+支持长度大于0空字符串忽略处理,如"     ".
+增加Ignore注解，忽略javabean字段，不进行转换.  
 用模板生成文件支持自定义起止标签.  
 完善DB连接管理.  
 加强代码质量.  
@@ -70,7 +71,7 @@ SuidRich调整selectById方法且String类型参数的id智能识别Javabean的i
 修复多表分页查询时,同名字段在部分数据库会混淆的缺陷(oracle).  
 修改缺陷:update默认主键为id时,无id字段或id为null时,异常处理.  
 修改缺陷:cache bug. 
-强烈建议视图不放缓存,因会产生脏数据.  
+强烈建议:使用视图时,声明视图不放缓存(因会产生脏数据).  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
