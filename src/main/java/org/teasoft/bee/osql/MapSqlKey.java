@@ -33,11 +33,22 @@ public enum MapSqlKey {
 //	Size("Size"),
     
     /**
-     * 是否命令转换.Is naming transfer. 'true' or 'false',default is 'false'
+     * 是否命令转换.Is naming transfer. value is 'true' or 'false',default is 'false'
      * 真时,会根据配置的规则(bee.properties)如进行转换;假时不转换.
      * if true, will transfer by the rule (eg: bee.properties). if false,do not transfer.
      */
-    IsNamingTransfer("IsNamingTransfer") ;
+    IsNamingTransfer("IsNamingTransfer") ,
+    
+    /**
+     * include Null.value is 'true' or 'false',default is 'false'
+     */
+    IsIncludeNull("IsIncludeNull"),
+    
+    /**
+     * include empty string.value is 'true' or 'false',default is 'false'
+     */
+    IsIncludeEmptyString("IsIncludeEmptyString")
+    ;
 	
     String name;
     
