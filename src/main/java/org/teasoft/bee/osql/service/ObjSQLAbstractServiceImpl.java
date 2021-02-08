@@ -72,5 +72,17 @@ public abstract class ObjSQLAbstractServiceImpl implements ObjSQLService {
 		//Add the business logic if need.
 		return getSuid().setDynamicParameter(para, value);
 	}
+
+	@Override
+	public void beginSameConnection() {
+		//Add the business logic if need.
+	     getSuid().beginSameConnection();
+	}
+
+	@Override
+	public void endSameConnection() {
+		//Add the business logic if need.
+	     getSuid().endSameConnection();
+	}
 	
 }
