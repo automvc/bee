@@ -59,7 +59,7 @@ SuidRich调整selectById方法且String类型参数的id智能识别Javabean的i
 	public Condition selectFun(FunctionType functionType,String fieldForFun);  
 	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias); 
 无Javabean，用map承载需要转换的实体信息，操作数据库(查询,删除数据).  
-支持读取Excel(*.xls,*.xlsx),并将数据转成List<String[]>,并导入到数据库(bee-ext).  
+支持读取Excel(*.xls,*.xlsx),并将数据转成List<String[]>,且导入到数据库(bee-ext).  
 多表关联查询支持多个关联条件.  
 多个ORM操作使用同一个Connection.  
 支持长度大于0空字符串忽略处理,如"     ".  
