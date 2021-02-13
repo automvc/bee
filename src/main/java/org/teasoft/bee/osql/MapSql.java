@@ -37,5 +37,12 @@ public interface MapSql {
 	 * @param value
 	 */
 	public void put(String fieldName, Object value);
+	
+	/**
+	 * 用于Javabean与DB转换时配置信息设置
+	 * @param MapSqlSetting 设置的MapSqlSetting Key
+	 * @param value 设置的值
+	 */
+	public void put(MapSqlSetting MapSqlSetting, boolean value);
 
 }
