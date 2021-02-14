@@ -26,15 +26,15 @@ public interface MapSql {
 
 	/**
 	 * 设置SQL用到的相关信息,Map的key由MapSqlKey提供.Set the relevant information used by SQL. The key of map is provided by MapSqlKey.
-	 * @param MapSqlKey
-	 * @param value
+	 * @param MapSqlKey 设置的MapSqlKey Key
+	 * @param value value
 	 */
 	public void put(MapSqlKey MapSqlKey, String value);
 
 	/**
 	 * 设置用于SQL中where过虑的字段信息.Set the field information used for where filtering in SQL.
-	 * @param fieldName
-	 * @param value
+	 * @param fieldName field name
+	 * @param value value
 	 */
 	public void put(String fieldName, Object value);
 	
