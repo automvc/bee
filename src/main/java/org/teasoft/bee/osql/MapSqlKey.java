@@ -24,11 +24,31 @@ package org.teasoft.bee.osql;
  */
 public enum MapSqlKey {
 	
-    Table("Table"),
+    /**
+     * 声明需要操作的表.Declare the table to be operated on.
+     */
+	Table("Table"),
+	
+	/**
+	 * 声明需要查询的字段.Declare the select fields.
+	 */
     SelectColumns("SelectColumns"),
+    
+    /**
+     * 对应SQL的group by.It corresponds to the group by of SQL.
+     */
     GroupBy("GroupBy"),
+    
+    /**
+     * 对应SQL的having.It corresponds to the having of SQL.
+     */
     Having("Having"),
+    
+    /**
+     * 对应SQL的order by.It corresponds to the order by of SQL.
+     */
     OrderBy("OrderBy")
+    
 //	Start("Start"),
 //	Size("Size"),
     ;
