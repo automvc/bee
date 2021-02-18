@@ -34,8 +34,9 @@ public class Orders{
 <p>	private String sequence;
 <p>	
 <p>//@JoinTable(mainField="userid", subField="username")
-<p> @JoinTable(mainField="userid", subField="username", joinType=JoinType.LEFT_JOIN)
-<p>//@JoinTable(mainField="userid", subField="username",subAlias="myuser" , joinType=JoinType.RIGHT_JOIN)
+<p>//@JoinTable(mainField="userid", subField="username", joinType=JoinType.LEFT_JOIN)  //ok //... from orders left join user on orders.userid=user.username where ...
+<p>	@JoinTable(mainField="userid,name", subField="username,name", joinType=JoinType.JOIN)
+<p>//@JoinTable(mainField="userid", subField="username",subAlias="myuser" , joinType=JoinType.FULL_JOIN)
 <p>//@JoinTable()
 <p>	private User user;
 <p>	
