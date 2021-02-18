@@ -18,6 +18,7 @@
 package org.teasoft.bee.osql;
 
 /**
+ * 用于MapSuid的MapSql配置信息.MapSql configuration information for MapSuid.
  * @author Kingstar
  * @since  1.9
  */

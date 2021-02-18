@@ -18,6 +18,7 @@
 package org.teasoft.bee.osql;
 
 /**
+ * 用于MapSuid的对应SQL功能的MapSql关键字.MapSql keyword for the corresponding SQL function of MapSuid.
  * @author Kingstar
  * @since  1.9
  */
