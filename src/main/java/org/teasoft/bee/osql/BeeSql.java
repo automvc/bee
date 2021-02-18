@@ -81,6 +81,13 @@ public interface BeeSql {
 	 */
 	public List<String[]> select(String sql);
 	
+	/**
+	 * 查询并将每一行结果转成Map<String,Object>.Select and transform every record to Map<String,Object>.
+	 * @param sql SQL select statement
+	 * @return List,每个元素是一行记录转换成的Map<String,Object>.
+	 * List, every element is a Map<String,Object>(transform from record).
+	 * @since 1.9
+	 */
 	public List<Map<String,Object>> selectMapList(String sql);
 	
 	/**
