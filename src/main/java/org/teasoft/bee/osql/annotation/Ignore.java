@@ -23,6 +23,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * Ignore the field which do not want to transfer.
+ * It is recommended that the annotation be used as little as possible,
+ * <br>because you have the following features:
+ * <br>the null and empty string are not handled by default.
  * @author Kingstar
  * @since  1.9
  */
