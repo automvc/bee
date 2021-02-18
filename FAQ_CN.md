@@ -188,19 +188,36 @@ A: 用map进行转换实体信息，查询/删除数据库中的数据.
 参考bee-exam项目里:  
 MapSuidExam  
 ```java
-  		  MapSuid mapSuid=BeeFactory.getHoneyFactory().getMapSuid();
-		  MapSql mapSql=BeeFactory.getHoneyFactory().getMapSql();
-		  
-//		  mapSql.put(MapSqlKey.Table, "test_user");
-		  mapSql.put(MapSqlKey.Table, "testUser");
-		  mapSql.put(MapSqlKey.SelectColumns, "name,password");
-		  mapSql.put(MapSqlKey.OrderBy, "name");
-		  mapSql.put(MapSqlKey.IsNamingTransfer, Boolean.TRUE+"");
-		  
-		  mapSql.put("name","Bee");
-		  
-		  String json=mapSuid.selectJson(mapSql);
-		  Logger.info(json);       
+			MapSuid mapSuid = BeeFactory.getHoneyFactory().getMapSuid();
+			MapSql mapSql = BeeFactory.getHoneyFactory().getMapSql();
+
+		    mapSql.put(MapSqlKey.Table, "test_user");
+//			mapSql.put(MapSqlKey.Table, "testUser");
+			mapSql.put(MapSqlKey.SelectColumns, "name,password");
+			mapSql.put(MapSqlKey.OrderBy, "name");
+			
+			mapSql.put(MapSqlSetting.IsNamingTransfer, true);
+//			mapSql.put(MapSqlSetting.IsIncludeEmptyString, true);
+			mapSql.put(MapSqlSetting.IsIncludeNull, true);
+
+			mapSql.put("name", "Bee");
+			mapSql.put("email", ""); //emptyString
+			mapSql.put("lastName", null);
+//			mapSql.put("last_name", null);
+
+			String json = mapSuid.selectJson(mapSql);
+			Logger.info(json);
+//		    mapSuid.selectJson(mapSql); //test cache
+
+			mapSuid.select(mapSql);
+			mapSuid.select(mapSql);
+
+			Map map = mapSuid.selectOne(mapSql);
+			if (ObjectUtils.isNotEmpty(map)) {
+				Logger.info(map.get("name").toString());
+				Logger.info(map.get("password").toString());
+			}
+			mapSuid.selectOne(mapSql);     
 ```         
 
 20.
