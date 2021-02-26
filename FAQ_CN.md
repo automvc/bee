@@ -31,7 +31,7 @@ A: V1.8支持读写分离一主多从, 仅分库等多数据源模式。
 4.    
     
 
-Q: 在一个DB中，随着数据量不断增长，需要将老的数据移到历史表中. 如，订单表orders,将5月，6月数据移到 orders\_202005,orders\_202006,结构与表orders一样。 如何用同一javabean，同时映射多个数据表？
+Q: 在一个DB中，随着数据量不断增长，需要将老的数据移到历史表中. 如，订单表orders,将5月，6月数据移到 orders\_202005,orders\_202006,结构与表orders一样。 如何用同一Javabean，同时映射多个数据表？
 
 A:&nbsp;V1.8支持同库分表,动态表名映射.&nbsp;
 
@@ -183,7 +183,7 @@ https://my.oschina.net/u/4111850/blog/4944468
 
 19.
 
-Q: 没有与表对应的实体javabean，如何操作数据?  
+Q: 没有与表对应的实体Javabean，如何操作数据?  
 A: 用map进行转换实体信息，查询/删除数据库中的数据.  
 参考bee-exam项目里:  
 MapSuidExam  
@@ -224,8 +224,8 @@ MapSuidExam
 
 Q：表对应的实体Javabean有些字段不想解析,如何实现?  
 A：
-Ignore注解，忽略javabean字段，不进行转换.  
-但这种应尽量少用.  纯的javabean，当DB有变动时，很容易就可以更改了,自动生成纯Javabean更方便,安全.  
+Ignore注解，忽略Javabean字段，不进行转换.  
+但这种应尽量少用.  纯的Javabean，当DB有变动时，很容易就可以更改了,自动生成纯Javabean更方便,安全.  
 Bee默认是不处理为null或空字符的字段的，因此，操作DB前将其置空即可.  
 
 21.
