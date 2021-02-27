@@ -31,14 +31,14 @@ jdk1.7+
 * 5.**动态/任意组合**查询条件,不需要提前准备dao接口,有新的查询需求也不用修改或添加接口。  
 * 6.支持原生SQL排序, **原生语句分页**(不需要将全部数据查出来)。  
 * 7.支持直接返回**Json**格式查询结果; 链式编程。  
-* 8.支持**存储过程**，支持原生SQL(**自定义sql**语句)，支持**事务**、**for update**，支持**批处理**操作。
+* 8.支持**事务**、**for update**，支持**批处理**操作，支持原生SQL(**自定义sql**语句)，支持**存储过程**。
 * 9.支持**只查询一部分字段**。    
 * 10.支持面向对象方式复杂查询、**多表查询**(无n+1问题; 支持：一对一,一对多,多对一,多对多)。 
 * 11.**一级缓存**，概念简单，功能强大；一级缓存也可以**像JVM一样进行细粒度调优**；**智能缓存**，支持更新配置表，**不用重启**。  
 * 12.表名与实体名、字段名与属性名映射默认提供多种实现，且支持**自定义映射规则扩展**。  
 * 13.**多种DB**支持轻松扩展(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL等直接可用)。 
 * 14.**无**第三方插件依赖；可零配置使用。  
-* 15.提供表对应的javabean**自动生成工具**，Javaweb**后端代码**根据**模板自动生成**;能打印非占位符的**可执行sql**,方便调试。  
+* 15.提供表对应的Javabean**自动生成工具**，Javaweb**后端代码**根据**模板自动生成**;能打印非占位符的**可执行sql**,方便调试。  
 * 16.支持**读写分离**一主多从, 仅**分库**等**多数据源**模式。  
 * 17.**分布式**环境下生成**连续单调递增**(在一个workerid内),**全局唯一**数字**id**；提供自然简单的分布式主键生成方式。  
 * 18.**支持同库分表,动态表名映射**。  
@@ -63,7 +63,7 @@ SuidRich调整selectById方法且String类型参数的id智能识别Javabean的i
 多表关联查询支持多个关联条件.  
 多个ORM操作使用同一个Connection.  
 支持长度大于0空字符串忽略处理,如"     ".  
-增加Ignore注解，忽略javabean字段，不进行转换.  
+增加Ignore注解，忽略Javabean字段，不进行转换.  
 用模板生成文件支持自定义起止标签.  
 完善DB连接管理.  
 加强代码质量.  
@@ -194,7 +194,7 @@ SuidRich调整selectById方法且String类型参数的id智能识别Javabean的i
 **Bee需要的文件**   
 orm\compare\bee\service\BeeOrdersService.java	
 
-**Mybatis需要的文件**   
+**Mybatis需要的文件**(对一个表的操作,就会比Bee多三个dao相关文件)   
 orm\compare\mybatis\service\MybatisOrdersService.java	
 orm\compare\mybatis\dao\OrdersDao.java	
 orm\compare\mybatis\dao\OrdersMapper.java	
