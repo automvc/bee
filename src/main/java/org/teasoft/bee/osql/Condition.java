@@ -62,6 +62,18 @@ public interface Condition extends ConditionAssistant {
 	 * @return Condition
 	 */
 	public Condition op(String field, Op Op, Object value);
+	
+	/**
+	 * 添加一个表达式条件.Add a expression condition.
+	 * <br>此方法不能用于SQL的update set.
+	 * eg: opWithField(field1,Op.eq,field2)-->field1=field2
+	 * @param field1
+	 * @param Op 操作符.operator.
+	 * @param field2 
+	 * @return Condition
+	 * @since 1.9
+	 */
+	public Condition opWithField(String field1, Op Op, String field2);
 
 	/**
 	 * 默认自动加 'and'.Default will automatically add 'and'.
@@ -198,21 +210,21 @@ public interface Condition extends ConditionAssistant {
 	 * 设置需要更新的字段(仅用于SQL的update set),字段在自身基础上变化.Set the fields to be updated (for only update of SQL),and the field change on itself.
      * <br>eg:setAdd("price","delta")--> price=price+delta
 	 * @param field
-	 * @param fieldName
+	 * @param otherFieldName
 	 * @return Condition
 	 * @since 1.8
 	 */
-	public Condition setAdd(String field, String fieldName);
+	public Condition setAdd(String field, String otherFieldName);
 
 	/**
 	 * 设置需要更新的字段(仅用于SQL的update set),字段在自身基础上变化.Set the fields to be updated (for only update of SQL),and the field change on itself.
      * <br>eg: setMultiply("price","delta")--> price=price*delta
 	 * @param field
-	 * @param fieldName another fieldName
+	 * @param otherFieldName other fieldName
 	 * @return Condition
 	 * @since 1.8
 	 */
-	public Condition setMultiply(String field, String fieldName);
+	public Condition setMultiply(String field, String otherFieldName);
 	
 	/**
 	 * 设置需要更新的字段(仅用于SQL的update set);当要更新的字段也需要用于where条件时,可用该方法 
@@ -236,6 +248,16 @@ public interface Condition extends ConditionAssistant {
 	 */
 	public Condition set(String fieldNmae, String value);
 	
+	
+	/**
+	 * set one field with other field value
+	 * eg: setWithField(field1,field2)--> set field1=field2
+	 * @param field1
+	 * @param field2
+	 * @return Condition
+	 * @since 1.9
+	 */
+	public Condition setWithField(String field1, String field2);
 	
 	/**
 	 * 指定需要查询的部分字段(仅用于SQL的select).Specify the partial fields to be queried (only for select of SQL).

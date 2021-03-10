@@ -28,10 +28,10 @@ import java.util.Set;
 public interface ConditionAssistant {
 	
 	/**
-	 * Condition的FieldSet已包含的字段,默认情况不再遍历.If the field use in Condition,it would not be processed again in default.
-	 * @return 返回用于Condition表达式的字段集合.
+	 * Condition的whereField已包含的字段,默认情况不再遍历.If the field use in Condition,it would not be processed again in default.
+	 * @return 返回用于where Condition表达式的字段集合.
 	 */
-	public Set<String> getFieldSet();
+	public Set<String> getWhereFields();
 	
 	void setSuidType(SuidType SuidType);
 	 
@@ -47,7 +47,7 @@ public interface ConditionAssistant {
 	  * @return set of fields
 	  * @since 1.7.2
 	  */
-	 public Set<String> getUpdatefieldSet();
+	 public Set<String> getUpdatefields();
 	 
 	 public String getSelectField();
 	 
