@@ -59,6 +59,7 @@ SuidRich调整selectById方法且String类型参数的id智能识别Javabean的i
 加强聚合函数cont,sum,avg,min,max功能,Condition增加方法:  
 	public Condition selectFun(FunctionType functionType,String fieldForFun);  
 	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias);  
+Condition 添加方法:opWithField,setWithField 支持像:field1=field2的表达式  	
 无Javabean，用map承载需要转换的实体信息，操作数据库(查询,删除数据).  
 支持读取Excel(*.xls,*.xlsx),并将数据转成List<String[]>,且导入到数据库(bee-ext).  
 多表关联查询支持多个关联条件.  
