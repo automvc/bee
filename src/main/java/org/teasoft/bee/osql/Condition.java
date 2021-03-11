@@ -67,9 +67,9 @@ public interface Condition extends ConditionAssistant {
 	 * 添加一个表达式条件.Add a expression condition.
 	 * <br>此方法不能用于SQL的update set.
 	 * eg: opWithField(field1,Op.eq,field2)-->field1=field2
-	 * @param field1
+	 * @param field1 first field
 	 * @param Op 操作符.operator.
-	 * @param field2 
+	 * @param field2 second field
 	 * @return Condition
 	 * @since 1.9
 	 */
@@ -252,8 +252,8 @@ public interface Condition extends ConditionAssistant {
 	/**
 	 * set one field with other field value
 	 * eg: setWithField(field1,field2)--> set field1=field2
-	 * @param field1
-	 * @param field2
+	 * @param field1 first field
+	 * @param field2 second field
 	 * @return Condition
 	 * @since 1.9
 	 */
