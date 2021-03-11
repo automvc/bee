@@ -230,23 +230,23 @@ public interface Condition extends ConditionAssistant {
 	 * 设置需要更新的字段(仅用于SQL的update set);当要更新的字段也需要用于where条件时,可用该方法 
      * <br>Set the fields that need to be updated (only for update of SQL ); this method can be used when the set fields also need to be used for the where expression.
      * <br>eg: set("maxid", 1000)-->maxid=1000
-	 * @param fieldNmae
+	 * @param fieldName field name
 	 * @param num
 	 * @return Condition
 	 * @since 1.8
 	 */
-	public Condition set(String fieldNmae, Number num);
+	public Condition set(String fieldName, Number num);
 
 	/**
 	 * 设置需要更新的字段(仅用于SQL的update set);当要更新的字段也需要用于where条件时,可用该方法 
      * <br>Set the fields that need to be updated (only for update of SQL); this method can be used when the set fields also need to be used for the where expression.
      * <br>eg: set("name", 'bee')-->name='bee'
-	 * @param fieldNmae
+	 * @param fieldName
 	 * @param value
 	 * @return Condition
 	 * @since 1.8
 	 */
-	public Condition set(String fieldNmae, String value);
+	public Condition set(String fieldName, String value);
 	
 	
 	/**
