@@ -58,6 +58,9 @@ public class BeeExam {
 //		bee-exam(v1.9)-normal(MySQL)-2021-01-17 23.52.19.330.txt
 //		bee-exam(v1.9)-normal(MySQL)-2021-02-07 11.56.33.739.txt
 //		bee-exam(v1.9)-normal(MySQL)-2021-02-14 10.11.34.561.txt
+//		bee-exam(v1.9)-normal(MySQL)-2021-03-11 08.47.40.114.txt
+//		bee-exam(v1.9)-cache-2021-03-11 08.52.07.423.txt
+		
 		
 //		测试用例请查看工程:bee-exam 
 //		以下任意一个地址：
