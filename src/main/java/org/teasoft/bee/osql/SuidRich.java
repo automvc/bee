@@ -135,8 +135,8 @@ public interface SuidRich extends Suid {
 	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun);
 	
 	/**
-	 * 使用函数查询一个统计结果,通过Condition可添加复杂过滤条件.只查询一个统计结果. 
-	 * Select result with one function,Just select one function.
+	 * 使用函数查询一个统计结果,通过Condition可添加复杂过滤条件(一次只查询一个统计结果) 
+	 * Select result with one function,just select one function at a time.
 	 * @param entity 传入的实体对象,且不能为空
 	 * @param functionType MAX,MIN,SUM,AVG,COUNT
 	 * @param fieldForFun 需要使用函数的字段
@@ -391,7 +391,7 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 根据实体对象entity查询数据.Select record according to entity.
-	 * @deprecated {@link Suid#select(Object,Condition)}方法中,可以通过condition设置includeType.
+	 * @deprecated {@link Suid#select(Object,Condition)}方法中,可以通过condition设置includeType.can set includeType via condition.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * id为null时不作为过滤条件
 	 * @param includeType 空字符串与null是否包含设置
@@ -407,7 +407,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * 根据实体对象entity查询数据,并以Json格式返回 
 	 * <br>Select and return data in Json format according to entity object.
-	 * @deprecated {@link SuidRich#selectJson(Object,Condition)}方法中,可以通过condition设置includeType.
+	 * @deprecated {@link SuidRich#selectJson(Object,Condition)}方法中,可以通过condition设置includeType.can set includeType via condition.
 	 * @param entity 与表对应的实体对象,且不能为空
 	 * id为null不作为过滤条件
 	 * @param includeType 空字符串与null是否包含设置
@@ -474,8 +474,7 @@ public interface SuidRich extends Suid {
 	public <T> int updateBy(T entity,String whereFields,Condition condition);
 	
 	/**
-	 * 此方法,相当于SuidRich接口的 updateBy(entity,"id",condition);
-	 * 更新记录,且可以指定作为条件的字段.Update record according to whereFields.
+	 * 此方法,相当于调用SuidRich接口的 updateBy(entity,"id",condition); it is equivalent to updateBy(entity,"id",condition)
 	 * @param entity 实体类对象,不能为空
 	 * entity中除了id字段,作为set部分(默认只处理非空,非null的字段)
 	 * @param condition 用来设置默认情况不能表达的条件.
@@ -504,7 +503,8 @@ public interface SuidRich extends Suid {
 	
 	
 	/**
-	 * 当SQL update的set表达式通过Condition定义时,可以不用再指定set使用的字段.
+	 * 更新记录,高级条件可通过Condition参数设置  Update record,and can help with Condition.
+	 * <br>当SQL update的set表达式通过Condition定义时,可以不用再指定set使用的字段.
 	 * @param entity 实体类对象,不能为空
 	 * entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition中op,between等方法设置的转换到where中的字段,默认情况不会再处理.<br>
 	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition.<br>
