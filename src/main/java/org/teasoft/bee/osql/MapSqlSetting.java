@@ -25,7 +25,7 @@ package org.teasoft.bee.osql;
 public enum MapSqlSetting {
 	
     /**
-     * 是否命令转换.Is naming transfer. value is 'true' or 'false',default is 'false'
+     * 是否命名转换.Is naming transfer. value is 'true' or 'false',default is 'false'
      * 真时,会根据配置的规则(bee.properties)如进行转换;假时不转换.
      * if true, will transfer by the rule (eg: bee.properties). if false,do not transfer.
      */
