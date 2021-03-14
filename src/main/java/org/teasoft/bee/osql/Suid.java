@@ -104,7 +104,7 @@ public interface Suid {
 	public <T> int delete(T entity,Condition condition);
 	
 	/**
-	 * 为动态表名、实体名参数设置值.for dynamic table & entity name
+	 * 为动态表名、实体名参数设置值.set dynamic parameter for dynamic table & entity name
 	 * @param para parameter name
 	 * @param value parameter value
 	 * @return Suid
