@@ -66,7 +66,7 @@ public interface Condition extends ConditionAssistant {
 	/**
 	 * 添加一个表达式条件.Add a expression condition.
 	 * <br>此方法不能用于SQL的update set.
-	 * eg: opWithField(field1,Op.eq,field2)-->field1=field2
+	 * eg: opWithField(field1,Op.gt,field2)-->where field1>field2
 	 * @param field1 first field
 	 * @param Op 操作符.operator.
 	 * @param field2 second field
