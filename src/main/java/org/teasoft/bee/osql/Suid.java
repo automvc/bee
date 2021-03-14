@@ -113,12 +113,12 @@ public interface Suid {
 	public Suid setDynamicParameter(String para,String value);
 	
 	/**
-	 * declare begin Same Connection for some ORM operation.
+	 * 声明开始使用同一Connection.declare begin Same Connection for some ORM operation.
 	 */
 	public void beginSameConnection();
 	
 	/**
-	 * declare end Same Connection for some ORM operation.
+	 * 声明结束使用同一Connection.declare end Same Connection for some ORM operation.
 	 */
 	public void endSameConnection();
 
