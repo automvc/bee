@@ -114,11 +114,13 @@ public interface Suid {
 	
 	/**
 	 * 声明开始使用同一Connection.declare begin Same Connection for some ORM operation.
+	 * @since 1.9
 	 */
 	public void beginSameConnection();
 	
 	/**
 	 * 声明结束使用同一Connection.declare end Same Connection for some ORM operation.
+	 * @since 1.9
 	 */
 	public void endSameConnection();
 
