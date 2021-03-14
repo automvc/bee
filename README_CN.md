@@ -40,7 +40,7 @@ jdk1.7+
 * 13.**多种DB**支持轻松扩展(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL等直接可用)。 
 * 14.**无**第三方插件依赖；可零配置使用。  
 * 15.提供表对应的Javabean**自动生成工具**，Javaweb**后端代码**根据**模板自动生成**;能打印非占位符的**可执行sql**,方便调试。  
-* 16.支持**读写分离**一主多从, 仅**分库**等**多数据源**模式。  
+* 16.支持**读写分离**一主多从, 仅**分库**等**多数据源**模式(对以前的代码无需修改,该功能对代码是透明的,即无需额外编码)。  
 * 17.**分布式**环境下生成**连续单调递增**(在一个workerid内),**全局唯一**数字**id**；提供自然简单的分布式主键生成方式。  
 * 18.**支持同库分表,动态表名映射**。  
 * 19.**性能好:接近JDBC的速度；文件小：Bee V1.8 jar 仅217k**。  
@@ -59,7 +59,7 @@ SuidRich调整selectById方法且String类型参数的id智能识别Javabean的i
 加强聚合函数cont,sum,avg,min,max功能,Condition增加方法:  
 	public Condition selectFun(FunctionType functionType,String fieldForFun);  
 	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias);  
-Condition 添加方法:opWithField,setWithField 支持像:field1=field2的表达式  	
+Condition 添加方法:opWithField,setWithField 支持像:field1=field2的表达式  
 无Javabean，用map承载需要转换的实体信息，操作数据库(查询,删除数据).  
 支持读取Excel(*.xls,*.xlsx),并将数据转成List<String[]>,且导入到数据库(bee-ext).  
 多表关联查询支持多个关联条件.  
