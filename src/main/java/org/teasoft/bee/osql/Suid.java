@@ -122,6 +122,6 @@ public interface Suid {
 	 * 声明结束使用同一Connection.declare end Same Connection for some ORM operation.
 	 * @since 1.9
 	 */
-	public void endSameConnection();
+	public void endSameConnection(); 
 
 }
