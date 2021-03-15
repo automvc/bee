@@ -24,6 +24,19 @@ import java.util.List;
  * 该接口比Suid接口提供更多的参数选择
  * <br>Database operation: Suid (select,update,insert,delete),
  * it supports more parameters than Suid.
+ * 
+ * <br>
+ * SQL UPDATE语句包括两大部分SET和WHERE,SuidRich采取指定其中一样,另一样尽量采用默认的实现方式.所以有关更新的方法分为两部分:
+ * <br>update和updateBy.
+ * <br>update方法中,String updateFields参数(若有),可以指明要更新的字段,其余字段则有可能转为SQL UPDATE语句的WHERE部分(默认过
+ * <br>滤NULL和空字符串,可通过IncludeType显示设置).
+ * 
+ * <br>updateBy方法中,String whereFields(若有),可以指明用于SQL中WHERE的字段.当指定了whereFields, 没在whereFields的字段,将默认
+ * <br>转换为SQL UPDATE语句的SET部分(默认过滤NULL和空字符串,可通过IncludeType显示设置);另外,需要注意的是,id字段是不允许更改的.
+ * <br>同一个实体的某个属性的值,若用于WHERE部分了,再用于UPDATE SET部分就没有意义(因为此时它们的值是一样的),但可以用Condition的
+ * <br>set(String fieldName, Number num)等方法设置;Condition的方法set,setMultiply,setAdd,setWithField,是在处理WHERE字段前
+ * <br>已完成处理的,所以不受指定的WHERE条件字段的影响.
+ * 
  * @author Kingstar
  * Create on 2013-6-30 22:06:18
  * @since  1.0
@@ -110,7 +123,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * 根据实体对象entity查询数据,并返回Json格式结果
 	 * <br>Select and return data in Json format according to entity object.
-	 * @param entity 与表对应的实体对象,且不能为空
+	 * @param entity 与表对应的实体对象,且不能为空.table's entity(do not allow null).
 	 * entity中非null与非空字符串作为过虑条件,操作符是等号.eg:field=value
 	 * @return 可包含多个实体(多条记录)的list转换成的json格式的字符串. 
 	 * <br>Json string, it transform from list which can contain more than one entity.
@@ -127,9 +140,9 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 使用函数查询一个统计结果.Select result with one function,Just select one function.
-	 * @param entity 传入的实体对象,且不能为空
+	 * @param entity 传入的实体对象,且不能为空.table's entity(do not allow null).
 	 * @param functionType MAX,MIN,SUM,AVG,COUNT
-	 * @param fieldForFun 需要使用函数的字段
+	 * @param fieldForFun 需要使用函数的字段.field for function.
 	 * @return 一个函数查询的结果.one function result.
 	 */
 	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun);
@@ -137,9 +150,9 @@ public interface SuidRich extends Suid {
 	/**
 	 * 使用函数查询一个统计结果,通过Condition可添加复杂过滤条件(一次只查询一个统计结果) 
 	 * Select result with one function,just select one function at a time.
-	 * @param entity 传入的实体对象,且不能为空
+	 * @param entity 传入的实体对象,且不能为空.table's entity(do not allow null).
 	 * @param functionType MAX,MIN,SUM,AVG,COUNT
-	 * @param fieldForFun 需要使用函数的字段
+	 * @param fieldForFun 需要使用函数的字段.field for function.
 	 * @param condition condition.若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
 	 * <br>condition的selectFun方法将被忽略.will ignore the condition's selectFun method.
 	 * @return 一个函数查询的结果.one function result.
@@ -167,7 +180,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * 查询应用排序的结果,排序的字段默认按升序排列 
 	 * Select result with order,order type default is:asc
-	 * @param entity 传入的实体对象,且不能为空
+	 * @param entity 传入的实体对象,且不能为空.table's entity(do not allow null).
 	 * @param orderFields 排序字段列表,多个用逗号隔开
 	 * @return 可包含多个有排序的实体(多条记录)的list. list which contains more than one entity.
 	 */
@@ -176,7 +189,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * 查询应用排序的结果 
 	 * Select result with order.
-	 * @param entity 传入的实体对象,且不能为空
+	 * @param entity 传入的实体对象,且不能为空.table's entity(do not allow null).
 	 * @param orderFields 排序字段列表,多个用逗号隔开.order fields,if more than one,separate with comma.
 	 * @param orderTypes 排序类型列表
 	 * @return 可包含多个有排序的实体(多条记录)的list. list which contains more than one entity.
@@ -185,19 +198,24 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 更新记录,且可以指定需要更新的字段.Update record, can list update fields. 
-	 * @param entity 实体类对象,不能为空
+	 * @param entity 实体类对象,不能为空.table's entity(do not allow null).
 	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,
 	 * <br>除了updateFields中声明要更新的字段,其它非空,非null的字段作为过滤条件,转成SQL的where表达式.
+	 * <br>For the list of fields to be updated, multiple fields are separated by commas (those fields will be updated). 
+	 * <br>This attribute cannot be empty. By default, each field will be converted to a set expression of SQL update.
 	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
 	 */
 	public <T> int update(T entity,String updateFields);
 	
 	/**
 	 * 根据实体对象entity更新数据,可以指定需要更新的字段.Update record according to entity.
-	 * @param entity 与表对应的实体对象,且不能为空
+	 * @param entity 与表对应的实体对象,且不能为空.table's entity(do not allow null).
 	 * id为null不作为过滤条件
 	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,且不受includeType参数的影响,默认每个字段会被转化成SQL update的set表达式
-	 * @param includeType 空字符串与null是否包含设置(是否作为过滤条件)
+	 * <br>For the list of fields to be updated, multiple fields are separated by commas (those fields will be updated). 
+	 * <br>This attribute cannot be empty and is not affected by the includeType parameter. By default, each field will be
+	 * <br> converted to a set expression of SQL update.
+	 * @param includeType 空字符串与null是否作为过滤条件.whether null string and null as a filter conditions.
 	 * @return  成功更新的记录数.the numbers of update record(s) successfully.
 	 */
 	public <T> int update(T entity,String updateFields,IncludeType includeType);
@@ -290,8 +308,8 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 根据实体对象entity中id更新该实体对象的数据.Update record according to entity.
-	 * @param entity 与表对应的实体对象,且不能为空;entity中id字段不能为空,作为过虑条件
-	 * id为null将引发ObjSQLException.
+	 * @param entity 与表对应的实体对象,且不能为空;entity中id字段不能为空,作为过虑条件.id为null将引发ObjSQLException.
+	 * <br>table's entity(do not allow null),The id field in entity cannot be empty as a filtering condition.
 	 * @param includeType 空字符串与null是否包含设置
 	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
 	 */
@@ -299,7 +317,7 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 根据实体对象entity插入数据.Insert record according to entity.
-	 * @param entity 与表对应的实体对象,且不能为空
+	 * @param entity 与表对应的实体对象,且不能为空.table's entity(do not allow null).
 	 * @param includeType 空字符串与null是否包含设置
 	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
 	 */
@@ -307,8 +325,8 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 根据实体对象entity删除数据.Delete record according to entity.
-	 * @param entity 与表对应的实体对象,且不能为空
-	 * id为null不作为过滤条件
+	 * @param entity 与表对应的实体对象,且不能为空,id为null不作为过滤条件.table's entity(do not allow null).
+	 * 
 	 * @param includeType 空字符串与null是否包含设置
 	 * @return 成功删除的记录行数. the number of deleted record(s) successfully.
 	 */
@@ -317,8 +335,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * 根据实体对象entity查询并返回Json格式的数据
 	 * <br>Select and return data in Json format according to entity object.
-	 * @param entity 与表对应的实体对象,且不能为空
-	 * id为null不作为过滤条件
+	 * @param entity 与表对应的实体对象,且不能为空,id为null不作为过滤条件.table's entity(do not allow null).
 	 * @param includeType 空字符串与null是否包含设置
 	 * @return 可包含多个实体(多条记录)的list转换成的json格式的字符串. <br>Json string, it transform from list which can contain more than one entity.
 	 * @since  1.1
@@ -392,8 +409,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * 根据实体对象entity查询数据.Select record according to entity.
 	 * @deprecated {@link Suid#select(Object,Condition)}方法中,可以通过condition设置includeType.can set includeType via condition.
-	 * @param entity 与表对应的实体对象,且不能为空
-	 * id为null时不作为过滤条件
+	 * @param entity 与表对应的实体对象,且不能为空,id为null不作为过滤条件.table's entity(do not allow null).
 	 * @param includeType 空字符串与null是否包含设置
 	 * @param condition entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.<br>
 	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition.<br> 
@@ -408,8 +424,7 @@ public interface SuidRich extends Suid {
 	 * 根据实体对象entity查询数据,并以Json格式返回 
 	 * <br>Select and return data in Json format according to entity object.
 	 * @deprecated {@link SuidRich#selectJson(Object,Condition)}方法中,可以通过condition设置includeType.can set includeType via condition.
-	 * @param entity 与表对应的实体对象,且不能为空
-	 * id为null不作为过滤条件
+	 * @param entity 与表对应的实体对象,且不能为空,id为null不作为过滤条件.table's entity(do not allow null).
 	 * @param includeType 空字符串与null是否包含设置
 	 * @param condition entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.<br>
 	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition. <br>
@@ -424,8 +439,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * 根据实体对象entity查询数据,并以Json格式返回 
 	 * <br>Select and return data in Json format according to entity object.
-	 * @param entity 与表对应的实体对象,且不能为空
-	 * id为null不作为过滤条件
+	 * @param entity 与表对应的实体对象,且不能为空, id为null不作为过滤条件.table's entity(do not allow null).
 	 * @param condition entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.<br>
 	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition. <br>
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
@@ -437,7 +451,7 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 更新记录,且可以指定作为条件的字段.Update record according to whereFields.
-	 * @param entity 实体类对象,不能为空
+	 * @param entity 实体类对象,不能为空.table's entity(do not allow null).
 	 * 没指定为whereFields的字段,作为set部分,默认只处理非空,非null的字段
 	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
 	 * 指定作为条件的,都转换.id为null不作为过滤条件
@@ -452,7 +466,7 @@ public interface SuidRich extends Suid {
 	 * 没指定为whereFields的字段,作为set部分.
 	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
 	 * 指定作为条件的,都转换.id为null不作为过滤条件
-	 * @param includeType 空字符串与null是否包含设置(是否作为过滤条件)
+	 * @param includeType 空字符串与null是否作为过滤条件.whether null string and null as a filter conditions.
 	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
 	 * @since  1.6
 	 */
@@ -460,7 +474,7 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 更新记录,且可以指定作为条件的字段.Update record according to whereFields.
-	 * @param entity 实体类对象,不能为空
+	 * @param entity 实体类对象,不能为空.table's entity(do not allow null).
 	 * 没指定为whereFields的字段,作为set部分(默认只处理非空,非null的字段)
 	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
 	 * 指定作为条件的,都转换.id为null不作为过滤条件.
@@ -475,7 +489,7 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 此方法,相当于调用SuidRich接口的 updateBy(entity,"id",condition); it is equivalent to updateBy(entity,"id",condition)
-	 * @param entity 实体类对象,不能为空
+	 * @param entity 实体类对象,不能为空.table's entity(do not allow null).
 	 * entity中除了id字段,作为set部分(默认只处理非空,非null的字段)
 	 * @param condition 用来设置默认情况不能表达的条件.
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
@@ -485,15 +499,17 @@ public interface SuidRich extends Suid {
 	 */
 	public <T> int updateById(T entity,Condition condition);
 	
-	
 	/**
 	 * 更新记录,且可以指定需要更新的字段,高级条件可通过Condition参数设置.Update record, can list update fields. 
-	 * @param entity 实体类对象,不能为空
+	 * @param entity 实体类对象,不能为空.table's entity(do not allow null).
 	 * entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition中op,between等方法设置的转换到where中的字段,默认情况不会再处理.<br>
 	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition.<br>
 	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,
 	 * <br>默认updateFields的每个字段会被转化成SQL update的set表达式;其它非空,非null的字段作为过滤条件,转成SQL的where表达式.
 	 * <br>condition中setMultiply,setAdd,set方法设置的字段不受此限制.The methods setMultiply,setAdd,set in condition are not subject to this restriction. 
+	 * <br>For the list of fields to be updated, multiple fields are separated by commas (those fields will be updated). 
+	 * <br>This attribute cannot be empty and is not affected by the includeType parameter. By default, each field will be
+	 * <br> converted to a set expression of SQL update.
 	 * @param condition 
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
 	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
@@ -501,11 +517,10 @@ public interface SuidRich extends Suid {
 	 */
 	public <T> int update(T entity,String updateFields,Condition condition);
 	
-	
 	/**
 	 * 更新记录,高级条件可通过Condition参数设置  Update record,and can help with Condition.
 	 * <br>当SQL update的set表达式通过Condition定义时,可以不用再指定set使用的字段.
-	 * @param entity 实体类对象,不能为空
+	 * @param entity 实体类对象,不能为空.table's entity(do not allow null).
 	 * entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition中op,between等方法设置的转换到where中的字段,默认情况不会再处理.<br>
 	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition.<br>
 	 * @param condition
