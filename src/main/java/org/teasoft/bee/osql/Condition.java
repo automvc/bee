@@ -150,7 +150,10 @@ public interface Condition extends ConditionAssistant {
 	 * expression string,if contain field,it will not be translated.
 	 * @return Condition
 	 */
-	public Condition having(String expressionStr);
+//	public Condition having(String expressionStr);
+	//closed. because can use:
+//	 .having(FunctionType.COUNT, "*", Op.ge, 1)
+//	 .having(FunctionType.COUNT, "distinct(userid)", Op.ge, 1)
 
 	/**
 	 * eg: having(FunctionType.MIN, "field", Op.ge, 60)-->having min(field)>=60
