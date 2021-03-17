@@ -72,6 +72,7 @@ Condition 添加方法:opWithField,setWithField 支持像:field1=field2的表达
 用模板生成文件支持自定义起止标签.  
 完善DB连接管理.  
 加强代码质量.  
+增强链式编程:Select,Update.  
 更新bee.properties文件中batchSize(bee.osql.insert.batchSize).  
 修复多表分页查询时,同名字段在部分数据库会混淆的缺陷(oracle).  
 修改缺陷:update默认主键为id时,无id字段或id为null时,异常处理.  
