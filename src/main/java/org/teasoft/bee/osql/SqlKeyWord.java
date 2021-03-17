@@ -59,4 +59,13 @@ public interface SqlKeyWord {
 	
 	String space(); 
 
+	String distinct();
+	String join();
+	String innerJoin();
+	String leftJoin();
+	String rightJoin();
+	String in();
+	String notIn();
+	String exists();
+	String notExists();
 }
