@@ -54,6 +54,16 @@ public class LowerKey implements SqlKeyWord {
 	private static final String notBetween="not between";
 
 	private static final String forUpdate="for update";
+	
+	private static final String distinct="distinct";
+	private static final String join="join";
+	private static final String innerJoin="inner join";
+	private static final String leftJoin="left join";
+	private static final String rightJoin="right join";
+	private static final String in="in";
+	private static final String notIn="not in";
+	private static final String exists="exists";
+	private static final String notExists="not exists";
 
 	@Override
 	public String select() {
@@ -193,6 +203,51 @@ public class LowerKey implements SqlKeyWord {
 	@Override
 	public String notBetween() {
 		return notBetween;
+	}
+
+	@Override
+	public String distinct() {
+		return distinct;
+	}
+
+	@Override
+	public String join() {
+		return join;
+	}
+
+	@Override
+	public String innerJoin() {
+		return innerJoin;
+	}
+
+	@Override
+	public String leftJoin() {
+		return leftJoin;
+	}
+
+	@Override
+	public String rightJoin() {
+		return rightJoin;
+	}
+	
+	@Override
+	public String in() {
+		return in;
+	}
+
+	@Override
+	public String notIn() {
+		return notIn;
+	}
+	
+	@Override
+	public String exists() {
+		return exists;
+	}
+
+	@Override
+	public String notExists() {
+		return notExists;
 	}
 
 }
