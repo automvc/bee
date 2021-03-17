@@ -13,35 +13,36 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ 
 
 package org.teasoft.bee.osql.exception;
 
 import org.teasoft.bee.osql.BeeException;
 
-/**
- * 与java.lang.InstantiationException对应的异常. Define for java.lang.InstantiationException.
- * @author Kingstar
- * @since  1.4
- */
-public class BeeInstantiationException extends BeeException {
-	
-	static final long serialVersionUID = -875516993124222231L;
-
-
-	public BeeInstantiationException() {
-		super();
-	}
-
-	public BeeInstantiationException(String message) {
-		super(message);
-	}
-
-	public BeeInstantiationException(String message, Throwable cause) {
-		super(message, cause);
-	}
-
-	public BeeInstantiationException(Throwable cause) {
-		super(cause);
-	}
-}
+*//**
+	* 与java.lang.InstantiationException对应的异常. Define for java.lang.InstantiationException.
+	* @author Kingstar
+	* @since  1.4
+	*//*
+		public class BeeInstantiationException extends BeeException {
+		
+		static final long serialVersionUID = -875516993124222231L;
+		
+		
+		public BeeInstantiationException() {
+			super();
+		}
+		
+		public BeeInstantiationException(String message) {
+			super(message);
+		}
+		
+		public BeeInstantiationException(String message, Throwable cause) {
+			super(message, cause);
+		}
+		
+		public BeeInstantiationException(Throwable cause) {
+			super(cause);
+		}
+		}
+		*/
