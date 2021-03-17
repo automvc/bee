@@ -56,6 +56,16 @@ public class UpperKey implements SqlKeyWord {
 
 	private static final String forUpdate="FOR UPDATE";
 	
+	private static final String distinct="DISTINCT";
+	private static final String join="JOIN";
+	private static final String innerJoin="INNER JOIN";
+	private static final String leftJoin="LEFT JOIN";
+	private static final String rightJoin="RIGHT JOIN";
+	private static final String in="IN";
+	private static final String notIn="NOT IN";
+	private static final String exists="EXISTS";
+	private static final String notExists="NOT EXISTS";
+	
 	@Override
 	public String select() {
 		return select;
@@ -194,6 +204,51 @@ public class UpperKey implements SqlKeyWord {
 	@Override
 	public String notBetween() {
 		return notBetween;
+	}
+	
+	@Override
+	public String distinct() {
+		return distinct;
+	}
+
+	@Override
+	public String join() {
+		return join;
+	}
+
+	@Override
+	public String innerJoin() {
+		return innerJoin;
+	}
+
+	@Override
+	public String leftJoin() {
+		return leftJoin;
+	}
+
+	@Override
+	public String rightJoin() {
+		return rightJoin;
+	}
+
+	@Override
+	public String in() {
+		return in;
+	}
+
+	@Override
+	public String notIn() {
+		return notIn;
+	}
+
+	@Override
+	public String exists() {
+		return exists;
+	}
+
+	@Override
+	public String notExists() {
+		return notExists;
 	}
 	
 }
