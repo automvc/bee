@@ -26,10 +26,20 @@ import org.teasoft.bee.osql.OrderType;
  */
 public interface Select extends ToSql{
 	
+	//<==============condition
+	
+	/**
+	 * 添加左括号.add "("
+	 * @return Update
+	 */
 	public Select lParentheses();
+	
+	/**
+	 * 添加右括号.add ")"
+	 * @return Update
+	 */
 	public Select rParentheses();
 	
-	//<==============condition
 	public Select op(String field, Op Op, String value);
 
 	public Select op(String field, Op Op, Number value);
@@ -50,6 +60,19 @@ public interface Select extends ToSql{
 	public Select where();
 
 	public Select where(String expression) ;
+	
+	public Select between(String field, Number low, Number high);
+	public Select notBetween(String field, Number low, Number high);
+
+	public Select isNull(String field);
+	public Select isNotNull(String field);
+
+	public Select in(String field, Number... valueList);
+	public Select notIn(String field, Number... valueList);
+	
+	public Select in(String field, String valueList);
+	public Select notIn(String field, String valueList);
+	
 	//=============>
 	
 	public Select select() ;
@@ -62,27 +85,15 @@ public interface Select extends ToSql{
 
 	public Select join(String anotherTable) ;
 
-	public Select innerjoin(String anotherTable);
+	public Select innerJoin(String anotherTable);
 
-	public Select leftjoin(String anotherTable);
+	public Select leftJoin(String anotherTable);
 
-	public Select rightjoin(String anotherTable);
+	public Select rightJoin(String anotherTable);
 
 	public Select on();
 
 	public Select on(String expression);
-
-	public Select between(String field, Number low, Number high);
-	public Select notBetween(String field, Number low, Number high);
-
-	public Select isNull(String field);
-	public Select isNotNull(String field);
-
-	public Select in(String field, Number... valueList);
-	public Select notIn(String field, Number... valueList);
-	
-	public Select in(String field, String valueList);
-	public Select notIn(String field, String valueList);
 
 	public Select groupBy(String field);
 
@@ -97,12 +108,10 @@ public interface Select extends ToSql{
 	public Select size(int size) ;
 
 	public Select exists(Select subSelect) ;
-	public Select exists(String subSelect);
+//	public Select exists(String subSelect);
 	public Select notExists(Select subSelect);
-	public Select notExists(String subSelect);
+//	public Select notExists(String subSelect);
 	
-	public Select in(Select subSelect);
-	public Select in(String subSelect) ;
-	public Select notIn(Select subSelect);
-	public Select notIn(String subSelect);
+	public Select in(String field, Select subSelect);
+	public Select notIn(String field, Select subSelect);
 }
