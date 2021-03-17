@@ -116,6 +116,7 @@ add Ignore Annotation, ignore the field which do not want to transfer.
 support define start and end token when generate file by template.  
 enhance DB conn management.  
 enhance code quality.  
+enhance chain coding:Select,Update.  
 update batchSize(bee.osql.insert.batchSize) in bee.properties.  
 fix the problem that the fields with the same name will be confused in some databases(oracle) when multi table paging query.  
 fixed: update is default by id,but no id field or id is null,will have exception.  
