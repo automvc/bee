@@ -66,6 +66,21 @@ public class BeeExam {
 //		bee-exam(v1.9)-normal(MySQL)-2021-03-11 08.47.40.114.txt
 //		bee-exam(v1.9)-cache-2021-03-11 08.52.07.423.txt
 		
+//		2021-03-18 (yyyy-MM-dd)
+//		Instructions Counters	
+//		Element	   Coverage
+//		Bee	        90.0%
+//		Honey	    63.6%
+//			
+//		Method Counters	
+//		Element	  Coverage
+//		Bee	       88.0%
+//		Honey	   70.3%
+//			
+//		Type Counters	
+//		Element	  Coverage
+//		Bee	       97.0%
+//		Honey	   86.3%
 		
 //		测试用例请查看工程:bee-exam 
 //		以下任意一个地址：
