@@ -16,12 +16,17 @@
  */
 package org.teasoft.bee;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 /**
  * @author Kingstar
  * @since  1.7.2
  */
 public class BeeExam {
-	public static void main(String[] args) {
+	
+	@Test
+	public void test(){
 		
 //		bee-exam last update time:2020-06-13 13:14 (yyyy-MM-dd HH:mm)
 	  //add multi-DataSource support(Write/Read, only Split Database)
@@ -69,6 +74,8 @@ public class BeeExam {
 //
 //		让开发爱上测试，从Bee开始！
 		
+		boolean isFinished=false;
+		
 		System.out.println("测试用例请查看工程:bee-exam");
 		System.out.println("以下任意一个地址：");
 		System.out.println("https://gitee.com/automvc/bee-exam");
@@ -92,6 +99,9 @@ public class BeeExam {
 		System.out.println("https://gitee.com/automvc/bee-exam");
 		System.out.println("");
 		System.out.println("Let developers like test, starting with Bee!");
+		
+		isFinished=true;
+		Assert.assertEquals(isFinished,true);
 
 	}
 }
