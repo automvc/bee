@@ -68,6 +68,8 @@ public class BeeExam {
 		
 //		bee-exam(v1.9)-normal(Oracle)-2021-03-20 20.01.44.213.txt
 //		bee-exam(v1.9)-cache(Oracle)-2021-03-20 20.02.02.758.txt
+//		bee-exam(v1.9)-normal(MySQL)-2021-03-20 23.10.06.324.txt
+//		bee-exam(v1.9)-cache(MySQL)-2021-03-20 23.10.16.346.txt
 		
 //		2021-03-20 (yyyy-MM-dd)
 //		Instructions Counters	
