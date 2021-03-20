@@ -66,11 +66,14 @@ public class BeeExam {
 //		bee-exam(v1.9)-normal(MySQL)-2021-03-11 08.47.40.114.txt
 //		bee-exam(v1.9)-cache-2021-03-11 08.52.07.423.txt
 		
-//		2021-03-18 (yyyy-MM-dd)
+//		bee-exam(v1.9)-normal(Oracle)-2021-03-20 20.01.44.213.txt
+//		bee-exam(v1.9)-cache(Oracle)-2021-03-20 20.02.02.758.txt
+		
+//		2021-03-20 (yyyy-MM-dd)
 //		Instructions Counters	
 //		Element	   Coverage
-//		Bee	        90.0%
-//		Honey	    63.6%
+//		Bee	        91.6%
+//		Honey	    65.6%
 //			
 //		Method Counters	
 //		Element	  Coverage
