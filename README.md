@@ -111,6 +111,7 @@ no Javabean, use map to set the entity information that needs to be transformed 
 support read excel(*.xls,*.xlsx), converting data into List<String[]> and importing them into database(bee-ext).  
 more table join select support more join condition.  
 same Connection for some ORM operation.  
+support different type muli-Ds at same time.  
 IncludeType support exclude "  ".  
 add Ignore Annotation, ignore the field which do not want to transfer.  
 support define start and end token when generate file by template.  
