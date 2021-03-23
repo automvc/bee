@@ -105,8 +105,8 @@ public interface Suid {
 	
 	/**
 	 * 为动态表名、实体名参数设置值.set dynamic parameter for dynamic table & entity name
-	 * <br>本方法的调用要早于Suid(select,update,insert,delete)方法.
-	 * <br>This method is called earlier than the Suid(select, update, insert, delete) method.
+	 * <br>本方法的调用要早于select,update,insert,delete等方法.
+	 * <br>This method is called earlier than the select, update, insert, delete methods.
 	 * @param para parameter name
 	 * @param value parameter value
 	 * @return Suid

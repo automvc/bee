@@ -529,5 +529,19 @@ public interface SuidRich extends Suid {
 	 * @since 1.8
 	 */
 	public <T> int update(T entity,Condition condition);
+	
+	/**
+	 * 为动态表名、实体名参数设置值.set dynamic parameter for dynamic table & entity name
+	 * <br>本方法的调用要早于select,update,insert,delete等方法.
+	 * <br>This method is called earlier than the select, update, insert, delete methods.
+	 * <br>本方法与Suid接口中的同名方法效果一样,只是为了方便链式编程.
+	 * <br>This method has the same effect as the same name method in suid interface, 
+	 * <br>only for the convenience of chain programming
+	 * @param para parameter name
+	 * @param value parameter value
+	 * @return SuidRich
+	 * @since  1.9
+	 */
+	public SuidRich setDynamicParameter(String para, String value);
 
 }
