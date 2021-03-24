@@ -114,5 +114,16 @@ public interface MoreTable {
 	 * @return 返回可包含多个实体(多条记录)的list. return list can contain more than one entity
 	 */
 	public <T> List<T> select(T entity, Condition condition);
+	
+	/**
+	 * 为动态表名、实体名参数设置值.set dynamic parameter for dynamic table & entity name
+	 * <br>本方法的调用要早于select等方法.
+	 * <br>This method is called earlier than the select methods.
+	 * @param para parameter name
+	 * @param value parameter value
+	 * @return MoreTable
+	 * @since 1.9
+	 */
+	public MoreTable setDynamicParameter(String para,String value);
 
 }
