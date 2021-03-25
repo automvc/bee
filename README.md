@@ -20,7 +20,7 @@ jdk1.7+
 
 ## Feature & Function: 
 
-**Support many Database**(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL and so on) and easy extend。 
+**Support many Database**(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server and so on) and easily extend。 
 
 **V1.0**  
 Single entity(table) Suid (select,update,insert,delete) object-oriented operation.  
