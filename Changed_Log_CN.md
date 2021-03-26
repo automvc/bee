@@ -192,15 +192,17 @@ Condition 添加方法:opWithField,setWithField 支持像:field1=field2的表达
 支持读取Excel(*.xls,*.xlsx),并将数据转成List<String[]>,且导入到数据库(bee-ext).  
 多表关联查询支持多个关联条件.  
 多个ORM操作使用同一个Connection.  
+支持同时使用不同数据库(多个数据源).  
 支持长度大于0空字符串忽略处理,如"     ".  
-增加Ignore注解，忽略javabean字段，不进行转换.  
+增加Ignore注解，忽略Javabean字段，不进行转换.  
 用模板生成文件支持自定义起止标签.  
 完善DB连接管理.  
 加强代码质量.  
+增强链式编程:Select,Update.  
 更新bee.properties文件中batchSize(bee.osql.insert.batchSize).  
 修复多表分页查询时,同名字段在部分数据库会混淆的缺陷(oracle).  
 修改缺陷:update默认主键为id时,无id字段或id为null时,异常处理.  
 修改缺陷:cache bug.  
-强烈建议:使用视图时,声明视图不放缓存(因会产生脏数据).  
+强烈建议:使用视图时,声明视图不放缓存(因会产生脏数据).   
 
 	
