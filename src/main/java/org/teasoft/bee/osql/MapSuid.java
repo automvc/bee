@@ -41,12 +41,13 @@ public interface MapSuid {
 	/**
 	 * 使用MapSql查询数据.Use MapSql to select data.
 	 * @param mapSql MapSql instance
-	 * @return Json格式的多行记录.multi-line record in JSON format.
+	 * @return Json格式的多行记录.multi-line record in Json format.
 	 */
 	public String selectJson(MapSql mapSql);
 
 	/**
 	 * 使用MapSql查询数据.Use MapSql to select data.
+	 * <br>one map element as : field-name:value
 	 * @param mapSql MapSql instance
 	 * @return List<Map<String, Object>>结构的多行记录.
 	 * <br>the multi-line record of List<Map<String, Object>> structure.
@@ -55,6 +56,7 @@ public interface MapSuid {
 
 	/**
 	 * 使用MapSql查询数据.Use MapSql to select data.
+	 * <br>one map element as : field-name:value
 	 * @param mapSql MapSql instance
 	 * @return 包装在一个Map中的一行数据.returns a row of data wrapped in a map.
 	 */
