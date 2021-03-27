@@ -111,7 +111,7 @@ public interface Condition extends ConditionAssistant {
 	public Condition between(String field, Number low, Number high);
 	
 	/**
-	 * 
+	 * not between
 	 * @param field
 	 * @param low
 	 * @param high
@@ -120,7 +120,7 @@ public interface Condition extends ConditionAssistant {
 	public Condition notBetween(String field, Number low, Number high);
 	
 	/**
-	 * 
+	 * between
 	 * @param field
 	 * @param low
 	 * @param high
@@ -129,7 +129,7 @@ public interface Condition extends ConditionAssistant {
 	public Condition between(String field, String low, String high);
 	
 	/**
-	 * 
+	 * not between
 	 * @param field
 	 * @param low
 	 * @param high
@@ -138,7 +138,7 @@ public interface Condition extends ConditionAssistant {
 	public Condition notBetween(String field, String low, String high);
 
 	/**
-	 * 
+	 * group by
 	 * @param field
 	 * @return Condition
 	 */
@@ -156,6 +156,7 @@ public interface Condition extends ConditionAssistant {
 //	 .having(FunctionType.COUNT, "distinct(userid)", Op.ge, 1)
 
 	/**
+	 * having
 	 * eg: having(FunctionType.MIN, "field", Op.ge, 60)-->having min(field)>=60
 	 * @param functionType SQL函数类型
 	 * @param field 实体字段,会被命名转换(如果需要).
@@ -166,6 +167,7 @@ public interface Condition extends ConditionAssistant {
 	public Condition having(FunctionType functionType, String field, Op Op, Number value);
 
 	/**
+	 * order by
 	 * eg: orderBy("price")-->order by price
 	 * @param field 用于排序的字段名.field name.
 	 * @return Condition
@@ -173,6 +175,7 @@ public interface Condition extends ConditionAssistant {
 	public Condition orderBy(String field);
 
 	/**
+	 * order by
 	 * eg: orderBy("price", OrderType.DESC)-->order by price desc
 	 * @param field 用于排序的字段名.field name.
 	 * @param orderType 排序类型(asc或desc). order type(asc or desc)
