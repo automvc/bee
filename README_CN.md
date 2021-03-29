@@ -249,7 +249,8 @@ OrdersService.java
 注:如果还没有bee.properties文件,可以自己新建一个.  
 也可以配置数据源(此处只是一个例子).  
 
-bee.databaseName=MySQL  
+//#bee.databaseName=MySQL  
+bee.db.dbName=MySQL  
 bee.db.driverName = com.mysql.jdbc.Driver  
 bee.db.url =jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8  
 bee.db.username = root  
