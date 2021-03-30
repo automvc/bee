@@ -23,7 +23,6 @@ import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.IncludeType;
 import org.teasoft.bee.osql.OrderType;
-import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.SuidRich;
 
 /**
