@@ -184,6 +184,7 @@ public interface Condition extends ConditionAssistant {
 	public Condition orderBy(String field, OrderType orderType);
 
 	/**
+	 * order by
 	 * eg: orderBy(FunctionType.MAX, "total", OrderType.DESC)-->order by max(total) desc
 	 * @param functionType SQL函数类型.Function type of SQL.
 	 * @param field 用于排序的字段名.field name.
