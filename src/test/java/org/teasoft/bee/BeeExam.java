@@ -65,6 +65,23 @@ public class BeeExam {
 		Assert.assertEquals(isFinished,true);
 		
 		
+//		2021-04-01 (yyyy-MM-dd)
+//		Instructions Counters	
+//		Element	   Coverage
+//		Bee	        96.7%
+//		Honey	    73.1%
+//			
+//		Method Counters	
+//		Element	  Coverage
+//		Bee	       95.5%
+//		Honey	   75.6%
+//			
+//		Type Counters	
+//		Element	  Coverage
+//		Bee	       100.0%
+//		Honey	   93.8%
+		
+		
 //		2021-03-20 (yyyy-MM-dd)
 //		Instructions Counters	
 //		Element	   Coverage
