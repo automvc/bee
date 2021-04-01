@@ -92,3 +92,10 @@ bee-exam(v1.9)2021-03-25 13.20.15.761-normal(Oracle).txt
 bee-exam(v1.9)2021-03-25 13.23.08.180-normal(H2).txt
 bee-exam(v1.9)2021-03-25 13.25.51.23-normal(PostgreSQL).txt
 
+bee-exam(v1.9)2021-04-01 21.32.08.537-normal(MySQL).txt
+bee-exam(v1.9)2021-04-01 21.32.24.79-normal(Oracle).txt
+bee-exam(v1.9)2021-04-01 21.32.47.917-normal(SQLite).txt
+bee-exam(v1.9)2021-04-01 21.33.04.663-normal(H2).txt
+bee-exam(v1.9)2021-04-01 21.33.08.408-normal(PostgreSQL).txt
+bee-exam(v1.9)2021-04-01 21.33.20.953-normal(Microsoft SQL Server).txt
+
