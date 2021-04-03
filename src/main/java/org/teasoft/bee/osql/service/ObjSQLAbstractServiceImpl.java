@@ -36,6 +36,12 @@ public abstract class ObjSQLAbstractServiceImpl implements ObjSQLService {
 		//Add the business logic if need.
 		return getSuid().insert(entity);
 	}
+	
+	@Override
+	public <T> long insertAndReturnId(T entity) {
+		//Add the business logic if need.
+		return getSuid().insertAndReturnId(entity);
+	}
 
 	@Override
 	public <T> List<T> select(T entity) {
