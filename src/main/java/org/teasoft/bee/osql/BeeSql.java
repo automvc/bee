@@ -105,6 +105,8 @@ public interface BeeSql {
 	 */
 	public int modify(String sql);
 	
+	public long insertAndReturnId(String sql);
+	
 	/**
 	 * 提交一批命令到数据库
 	 * Submits a batch of commands to the database.
