@@ -68,6 +68,9 @@ public interface Suid {
 	 */
 	public <T> int insert(T entity);
 	
+	
+	public <T> long insertAndReturnId(T entity);
+	
 	/**
 	 * 根据实体对象entity删除数据.According to entity object delete record. 
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).<br>
