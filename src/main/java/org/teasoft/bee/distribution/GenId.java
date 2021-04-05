@@ -113,6 +113,16 @@ public interface GenId {
 	
 	/**
 	 * 一次获取一段号码,返回一个批次可用号码的最小值和最大值,eg: [100000,101000].return the min and max long in this batch.eg: [100000,101000]
+	 * <br>在一些算法中,如:PearFlowerId,OneTimeSnowflakeId,
+	 * <br> 1) 参数sizeOfIds不应该大于8192.
+	 * <br> 2) 为了使array[0]=min,array[1]=max在连续的范围,会存在浪费id号的可能;
+	 * <br>    如果不想出现这种情况,可以循环调用get()方法,或使用SerialUniqueId算法.
+	 * <br> SerialUniqueId算法不会出现以上两种问题.
+	 * <br>In some algorithms, such as:PearFlowerId,OneTimeSnowflakeId,
+	 * <br> 1) The parameter sizeOfIds should not be greater than 8192.
+	 * <br> 2) In order to make array[0]=min,array[1]=max in the range of series, it is possible to waste id number;
+	 * <br>    if you don't want to, you can loop call the get() method or use SerialUniqueId algorithm.
+	 * <br> The SerialUniqueId algorithm does not have the above two problems.
 	 * @param sizeOfIds 返回的一批id的数量.the size Of ids in one batch.
 	 * @return return the array of long. array[0]=min,array[1]=max.
 	 */
