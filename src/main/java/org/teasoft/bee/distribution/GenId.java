@@ -99,7 +99,6 @@ package org.teasoft.bee.distribution;
  * 考虑到2019年双11的峰值不超过55万笔/秒, 因此419w/s这个值已可以满足此苛刻要求;采用testSpeedLimit()检测平均值不超过419w/s这个值即可,而且在空闲时
  * 段省下的ID号,还可以在高峰时使用。
  * 
- * 
  * @author Kingstar
  * @since  1.7.2
  */
