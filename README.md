@@ -103,6 +103,7 @@ enhance SuidRich function, SuidRich add method:
 	public <T> int count(T entity);  
 	public <T> int count(T entity, Condition condition);  
 SuidRich adjust methods selectById for unique entity and intelligently judge the Javabean id type of string id parameter.  
+Suid add method insertAndReturnId.  
 enhance aggregate function cont,sum,avg,min,max,Condition add method:  
 	public Condition selectFun(FunctionType functionType,String fieldForFun);  
 	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias);  
@@ -122,6 +123,7 @@ update batchSize(bee.osql.insert.batchSize) in bee.properties.
 fix the problem that the fields with the same name will be confused in some databases(oracle) when multi table paging query.  
 fixed: update is default by id,but no id field or id is null,will have exception.  
 fixed: cache bug.  
+fixed: about getRangeId(int sizeOfIds) of GenId.  
 when entity is view(not table), recommend put in bee.osql.cache.never(bee.properties). 
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
