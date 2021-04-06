@@ -59,6 +59,7 @@ SuidRich新增支持List参数的批量插入方法.
 	public <T> int count(T entity);  
 	public <T> int count(T entity, Condition condition);  
 SuidRich调整selectById方法且String类型参数的id智能识别Javabean的id类型.  
+Suid新增insertAndReturnId方法.  
 加强聚合函数cont,sum,avg,min,max功能,Condition增加方法:  
 	public Condition selectFun(FunctionType functionType,String fieldForFun);  
 	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias);  
@@ -78,6 +79,7 @@ Condition 添加方法:opWithField,setWithField 支持像:field1=field2的表达
 修复多表分页查询时,同名字段在部分数据库会混淆的缺陷(oracle).  
 修改缺陷:update默认主键为id时,无id字段或id为null时,异常处理.  
 修改缺陷:cache bug.  
+修改缺陷:有关GenId的 getRangeId(int sizeOfIds)方法.  
 强烈建议:使用视图时,声明视图不放缓存(因会产生脏数据).  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
