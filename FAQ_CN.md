@@ -164,7 +164,7 @@ A: Bee文件小。bee V1.8 jar files 仅217k. 而且性能也接近JDBC的性能
 
 Q: 如何自动填日期字段?  
 
-A: Bee默认不支持是null或空的字段；  
+A: Bee默认不解析是null或空的字段；  
 当Javabean的日期是null时，Bee不会解析. 像mysql可以在DB端自动触发填充日期值。  
 
 18. 
