@@ -38,7 +38,7 @@ public interface CallableSql {
 	
 	/**
 	 * 
-	 * @param callSql procedure sql
+	 * @param callSql procedure sql,eg: procedure_name(?)
 	 * @param preValues parameter,just support In type; 只支持in类型的参数
 	 * @return 可包含多个String数组结构的多条记录的list. list can contain more than one record with String array struct.
 	 */
@@ -46,7 +46,7 @@ public interface CallableSql {
 	
 	/**
 	 * 
-	 * @param callSql procedure sql
+	 * @param callSql procedure sql,eg: procedure_name(?)
 	 * @param preValues parameter,just support In type; 只支持in类型的参数
 	 * @return 可包含多个实体(多条记录)的list转换成的json格式的字符串. Json string, it transform from list which can contain more than one entity.
 	 * @since  1.1
@@ -54,10 +54,9 @@ public interface CallableSql {
 	public String selectJson(String callSql,Object preValues[]);
 	
 	
-//	int executeUpdate()
 	/**
 	 * 
-	 * @param callSql procedure sql
+	 * @param callSql procedure sql,eg: procedure_name(?)
 	 * @param preValues parameter,just support In type; 只支持in类型的参数
 	 * @return 成功操作的记录行数. the number of affected successfully records.
 	 */
@@ -65,7 +64,7 @@ public interface CallableSql {
 
 	/**
 	 * 返回CallableStatement对象以便可以设置in,out,inout参数.可方便调用JDBC底层的方法
-	 * @param callSql procedure sql
+	 * @param callSql procedure sql,eg: procedure_name(?)
 	 * @return CallableStatement.
 	 */
 	public CallableStatement getCallableStatement(String callSql);
