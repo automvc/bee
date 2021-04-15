@@ -154,7 +154,7 @@ public interface SuidRich extends Suid {
 	 * @param functionType MAX,MIN,SUM,AVG,COUNT
 	 * @param fieldForFun 需要使用函数的字段.field for function.
 	 * @param condition condition.若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
-	 * <br>condition的selectFun方法将被忽略.will ignore the condition's selectFun method.
+	 * <br>在此,condition的selectFun方法将被忽略.here will ignore the condition's selectFun method.
 	 * @return 一个函数查询的结果.one function result.
 	 * @since 1.9
 	 */
@@ -411,7 +411,7 @@ public interface SuidRich extends Suid {
 	 * @deprecated {@link Suid#select(Object,Condition)}方法中,可以通过condition设置includeType.can set includeType via condition.
 	 * @param entity 与表对应的实体对象,且不能为空,id为null不作为过滤条件.table's entity(do not allow null).
 	 * @param includeType 空字符串与null是否包含设置
-	 * @param condition entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.<br>
+	 * @param condition entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.<br>
 	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition.<br> 
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
 	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
@@ -426,7 +426,7 @@ public interface SuidRich extends Suid {
 	 * @deprecated {@link SuidRich#selectJson(Object,Condition)}方法中,可以通过condition设置includeType.can set includeType via condition.
 	 * @param entity 与表对应的实体对象,且不能为空,id为null不作为过滤条件.table's entity(do not allow null).
 	 * @param includeType 空字符串与null是否包含设置
-	 * @param condition entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.<br>
+	 * @param condition entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.<br>
 	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition. <br>
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
 	 * @return 可包含多个实体(多条记录)的list转换成的json格式的字符串.
@@ -440,7 +440,7 @@ public interface SuidRich extends Suid {
 	 * 根据实体对象entity查询数据,并以Json格式返回 
 	 * <br>Select and return data in Json format according to entity object.
 	 * @param entity 与表对应的实体对象,且不能为空, id为null不作为过滤条件.table's entity(do not allow null).
-	 * @param condition entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.<br>
+	 * @param condition entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.<br>
 	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition. <br>
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
 	 * @return 可包含多个实体(多条记录)的list转换成的json格式的字符串.
@@ -502,7 +502,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * 更新记录,且可以指定需要更新的字段,高级条件可通过Condition参数设置.Update record, can list update fields. 
 	 * @param entity 实体类对象,不能为空.table's entity(do not allow null).
-	 * entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition中op,between等方法设置的转换到where中的字段,默认情况不会再处理.<br>
+	 * entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.<br>
 	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition.<br>
 	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,
 	 * <br>默认updateFields的每个字段会被转化成SQL update的set表达式;其它非空,非null的字段作为过滤条件,转成SQL的where表达式.
@@ -521,7 +521,7 @@ public interface SuidRich extends Suid {
 	 * 更新记录,高级条件可通过Condition参数设置  Update record,and can help with Condition.
 	 * <br>当SQL update的set表达式通过Condition定义时,可以不用再指定set使用的字段.
 	 * @param entity 实体类对象,不能为空.table's entity(do not allow null).
-	 * entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition中op,between等方法设置的转换到where中的字段,默认情况不会再处理.<br>
+	 * entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.<br>
 	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition.<br>
 	 * @param condition
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)

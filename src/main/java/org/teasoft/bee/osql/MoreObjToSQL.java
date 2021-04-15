@@ -31,7 +31,7 @@ public interface MoreObjToSQL {
 	/**
 	 * 根据entity和Condition转换成sql语句
 	 * @param entity 实体类对象,且不能为空. table's entity(do not allow null).
-	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.
+	 * @param condition 默认有值的字段会转成field=value的形式,其它形式可通过condition指定.
 	 * if the field is not null or empty, it will be translate to field=value.Other can define with condition. 
 	 * @return Return the sql String.
 	 */
