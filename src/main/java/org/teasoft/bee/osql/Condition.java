@@ -274,6 +274,11 @@ public interface Condition extends ConditionAssistant {
 	 */
 	public Condition selectField(String fieldList);
 	
+	
+	public Condition selectDistinctField(String fieldName);
+
+	public Condition selectDistinctField(String fieldName, String alias);
+	
 	/**
 	 * 设置使用函数查询结果.set select result with function.
 	 * <br>eg: condition.selectFun(FunctionType.COUNT, "*");-->count(*)
@@ -282,7 +287,7 @@ public interface Condition extends ConditionAssistant {
 	 * @return Condition
 	 * @since 1.9
 	 */
-	public Condition selectFun(FunctionType functionType,String fieldForFun);
+	public Condition selectFun(FunctionType functionType, String fieldForFun);
 	
 	/**
 	 * 设置使用函数查询结果.set select result with function.
@@ -293,7 +298,7 @@ public interface Condition extends ConditionAssistant {
 	 * @return Condition
 	 * @since 1.9
 	 */
-	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias);
+	public Condition selectFun(FunctionType functionType, String fieldForFun, String alias);
 	
 	/**
 	 * 锁定查询的部分记录(仅用于SQL的单个表select).lock the select record with 'for update'.
