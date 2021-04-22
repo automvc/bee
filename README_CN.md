@@ -270,7 +270,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import org.teasoft.bee.osql.Suid;
-import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.BeeFactoryHelper;
 
 /**
  * 查,改,增,删 Suid (select,update,insert,delete)实例
@@ -281,7 +281,7 @@ public class SuidExam {
 	
 	public static void main(String[] args) {
 
-		Suid suid=BeeFactory.getHoneyFactory().getSuid();
+		Suid suid=BeeFactoryHelper.getSuid();
 		
 		//需要先生成相应的Javabean
 		Orders orders1=new Orders();
