@@ -312,7 +312,7 @@ import java.util.List;
 
 import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Suid;
-import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.BeeFactoryHelper;
 import org.teasoft.honey.osql.core.Logger;
 
 /**
@@ -324,7 +324,7 @@ public class SuidExamEN {
 	public static void main(String[] args) {
 
 		try {
-			Suid suid = BeeFactory.getHoneyFactory().getSuid();
+			Suid suid = BeeFactoryHelper.getSuid();
 
 			Orders orders1 = new Orders();//need gen the Javabean
 			orders1.setId(100001L);
