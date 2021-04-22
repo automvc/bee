@@ -109,7 +109,7 @@ enhance aggregate function cont,sum,avg,min,max,Condition add method:
 	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias);  
 Condition add method:opWithField,setWithField support like :field1=field2  
 no Javabean, use map to set the entity information that needs to be transformed and operate the database(select/delete record).  
-support read excel(*.xls,*.xlsx), converting data into List<String[]> and importing them into database(bee-ext).  
+support read Excel(*.xls,*.xlsx), converting data into List<String[]> and importing them into database(bee-ext).  
 more table join select support more join condition.  
 same Connection for some ORM operation.  
 support different type muli-Ds at same time.  
@@ -370,10 +370,10 @@ Rapid application development:
 =========	
 **Let Java more quicker programming than php and Rails.**  
 
-**Faster development of new combinations of Java Web：**  
+**Faster development of new combinations for Java Web：**  
 [Bee+Spring+SpringMVC](../../../../aiteasoft/bee-spring-springmvc)  
 
-**Faster development of new combinations of Spring Cloud microservices：**  
+**Faster development of new combinations for Spring Cloud microservices：**  
 [Bee + Spring Boot](../../../bee-springboot)  
 
 ...  
