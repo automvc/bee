@@ -120,7 +120,7 @@ support define start and end token when generate file by template.
 enhance DB conn management.  
 enhance code quality.  
 enhance chain coding:Select,Update.  
-adjust bee.properties.  
+adjust config information of bee.properties,HoneyConfig.  
 Bee integration with Spring Boot,provide bee-spring-boot-starter.  
 support use Javabean create the DB table.  
 fix the problem that the fields with the same name will be confused in some databases(oracle) when multi table paging query.  

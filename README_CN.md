@@ -76,7 +76,7 @@ MapSuid,无Javabean，用map承载需要转换的实体信息，操作数据库(
 完善DB连接管理.  
 加强代码质量.  
 增强链式编程:Select,Update.  
-调整bee.properties配置信息.  
+调整bee.properties,HoneyConfig配置信息.  
 整合Spring boot,提供bee-spring-boot-starter.  
 支持利用Javabean生成表.  
 修复多表分页查询时,同名字段在部分数据库会混淆的缺陷(oracle).  
