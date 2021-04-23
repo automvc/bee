@@ -274,9 +274,23 @@ public interface Condition extends ConditionAssistant {
 	 */
 	public Condition selectField(String fieldList);
 	
-	
+	/**
+	 * 设置字段fieldName为distinct(fieldName)
+	 * eg: selectDistinctField(fieldName) --> distinct(fieldName)
+	 * @param fieldName 要设置为distinct的字段
+	 * @return Condition
+	 * @since 1.9
+	 */
 	public Condition selectDistinctField(String fieldName);
 
+	/**
+	 * 设置字段fieldName为distinct(fieldName)
+	 * eg: selectDistinctField(fieldName,alias) --> distinct(fieldName) as alias
+	 * @param fieldName 要设置为distinct的字段
+	 * @param alias 别名
+	 * @return Condition
+	 * @since 1.9
+	 */
 	public Condition selectDistinctField(String fieldName, String alias);
 	
 	/**
