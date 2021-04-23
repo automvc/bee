@@ -80,9 +80,10 @@ MapSuid,无Javabean，用map承载需要转换的实体信息，操作数据库(
 整合Spring boot,提供bee-spring-boot-starter.  
 支持利用Javabean生成表.  
 修复多表分页查询时,同名字段在部分数据库会混淆的缺陷(oracle).  
-修改缺陷:update默认主键为id时,无id字段或id为null时,异常处理.  
-修改缺陷:cache bug.  
-修改缺陷:有关GenId的 getRangeId(int sizeOfIds)方法.  
+修复缺陷:update默认主键为id时,无id字段或id为null时,异常处理.  
+修复缺陷:cache bug.  
+修复缺陷:有关GenId的 getRangeId(int sizeOfIds)方法.  
+修复缺陷:jdk 11下,LoggerFactory在配置log4j2时,报错.  
 强烈建议:使用视图时,声明视图不放缓存(因会产生脏数据).  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  

@@ -108,7 +108,7 @@ enhance aggregate function cont,sum,avg,min,max,Condition add method:
 	public Condition selectFun(FunctionType functionType,String fieldForFun);  
 	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias);  
 Condition add method:opWithField,setWithField support like :field1=field2  
-Condition add method:selectDistinctField,support distinct as select distinct(userid) from table_name 
+Condition add method:selectDistinctField,support distinct as select distinct(userid) from table_name  
 MapSuid,no Javabean, use map to set the entity information that needs to be transformed and operate the database(select/delete record).  
 support read Excel(*.xls,*.xlsx), converting data into List<String[]> and importing them into database(bee-ext).  
 more table join select support more join condition.  
@@ -127,6 +127,7 @@ fix the problem that the fields with the same name will be confused in some data
 fixed: update is default by id,but no id field or id is null,will have exception.  
 fixed: cache bug.  
 fixed: about getRangeId(int sizeOfIds) of GenId.  
+fixed: in jdk 11,LoggerFactory use log4j2,have exception.  
 when entity is view(not table), recommend put in bee.osql.cache.never(bee.properties). 
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
