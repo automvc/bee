@@ -108,7 +108,8 @@ enhance aggregate function cont,sum,avg,min,max,Condition add method:
 	public Condition selectFun(FunctionType functionType,String fieldForFun);  
 	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias);  
 Condition add method:opWithField,setWithField support like :field1=field2  
-no Javabean, use map to set the entity information that needs to be transformed and operate the database(select/delete record).  
+Condition add method:selectDistinctField,support distinct as select distinct(userid) from table_name 
+MapSuid,no Javabean, use map to set the entity information that needs to be transformed and operate the database(select/delete record).  
 support read Excel(*.xls,*.xlsx), converting data into List<String[]> and importing them into database(bee-ext).  
 more table join select support more join condition.  
 same Connection for some ORM operation.  
@@ -119,7 +120,9 @@ support define start and end token when generate file by template.
 enhance DB conn management.  
 enhance code quality.  
 enhance chain coding:Select,Update.  
-update batchSize(bee.osql.insert.batchSize) in bee.properties.  
+adjust bee.properties.  
+Bee integration with Spring Boot,provide bee-spring-boot-starter.  
+support use Javabean create the DB table.  
 fix the problem that the fields with the same name will be confused in some databases(oracle) when multi table paging query.  
 fixed: update is default by id,but no id field or id is null,will have exception.  
 fixed: cache bug.  
