@@ -21,6 +21,7 @@ package org.teasoft.bee.osql;
  * 为面向对象方式操作数据库提供封装的条件.Condition for operate DB with Object Oriented Programming way.
  * <br>用户需要保证SQL的书写顺序,如order by应在group by的后面.
  * <br>setMultiply,setAdd,set等方法仅用于SQL Update语句的set部分.
+ * <br>Users need to ensure the order of SQL writing, such as order by should be behind group by.
  * <br>The methods setMultiply,setAdd,set just use in SQL Update 'set' part.
  * @author Kingstar
  * @since  1.6
