@@ -543,5 +543,6 @@ public interface SuidRich extends Suid {
 	 * @since  1.9
 	 */
 	public SuidRich setDynamicParameter(String para, String value);
-
+	
+	public <T> boolean exist(T entity);
 }
