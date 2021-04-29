@@ -32,11 +32,19 @@ public interface MapSql {
 	public void put(MapSqlKey MapSqlKey, String value);
 
 	/**
-	 * 设置用于SQL中where过虑的字段信息.Set the field information used for where filtering in SQL.
+	 * 设置用于SQL select,delete,update中where过虑的字段信息;也可用于SQL insert,设置插入的字段及相应值
+	 * Set the field information used for where filtering in SQL select,delete, also can use in SQL insert.
 	 * @param fieldName field name
 	 * @param value value
 	 */
 	public void put(String fieldName, Object value);
+	
+//	/**
+//	 * 用于update的Set部分
+//	 * @param fieldName
+//	 * @param value
+//	 */
+//	public void putNew(String fieldName, Object value);
 	
 	/**
 	 * 用于Javabean与DB转换时配置信息设置

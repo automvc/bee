@@ -68,5 +68,14 @@ public interface MapSuid {
 	 * @return 成功删除的记录数. the numbers of delete records successfully. 
 	 */
 	public int delete(MapSql mapSql);
+	
+	/**
+	 * 插入并返回记录的id值.
+	 * id值可由Bee自动生成分布式id.
+	 * 注意:若id由DB生成,需考虑DB是否支持.
+	 * @param mapSql
+	 * @return 若成功,返回插入记录的id值;若失败则返回-1.
+	 */
+	public long insert(MapSql mapSql);
 
 }
