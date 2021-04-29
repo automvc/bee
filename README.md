@@ -102,6 +102,7 @@ enhance SuidRich function, SuidRich add method:
 	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun, Condition condition);  
 	public <T> int count(T entity);  
 	public <T> int count(T entity, Condition condition);  
+	public <T> boolean exist(T entity); //check the record whether exist in table  
 SuidRich adjust methods selectById for unique entity and intelligently judge the Javabean id type of string id parameter.  
 Suid add method insertAndReturnId.  
 enhance aggregate function cont,sum,avg,min,max,Condition add method:  
@@ -109,7 +110,7 @@ enhance aggregate function cont,sum,avg,min,max,Condition add method:
 	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias);  
 Condition add method:opWithField,setWithField support like :field1=field2  
 Condition add method:selectDistinctField,support distinct as select distinct(userid) from table_name  
-MapSuid,no Javabean, use map to set the entity information that needs to be transformed and operate the database(select/delete record).  
+MapSuid,no need Javabean, use map to set the entity information that needs to be transformed and operate the database(select/insert/delete record).  
 support read Excel(*.xls,*.xlsx), converting data into List<String[]> and importing them into database(bee-ext).  
 more table join select support more join condition.  
 same Connection for some ORM operation.  
