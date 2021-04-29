@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 使用Map而非具体实体的数据库操作接口,默认不处理null和空字符串(因要与Suid,SuidRich风格兼容)
+ * 使用Map而非具体实体的数据库操作接口,默认不处理null和空字符串(与Suid,SuidRich风格兼容)
  * <br>Database operation interface using map instead of specific entity,
  * <br>the null and empty string are not handled by default.
  * Suid (select,update,insert,delete)
@@ -72,7 +72,7 @@ public interface MapSuid {
 	/**
 	 * 插入并返回记录的id值.
 	 * id值可由Bee自动生成分布式id.
-	 * 注意:若id由DB生成,需考虑DB是否支持.
+	 * 注意:若id由DB生成,需考虑DB是否支持,且对应JDBC驱动要支持返回id.
 	 * @param mapSql
 	 * @return 若成功,返回插入记录的id值;若失败则返回-1.
 	 */
