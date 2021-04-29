@@ -317,4 +317,11 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 		//Add the business logic if need.
 		return getSuidRich().setDynamicParameter(para, value);
 	}
+
+	@Override
+	public <T> boolean exist(T entity) {
+		//Add the business logic if need.
+		return getSuidRich().exist(entity);
+	}
+	
 }
