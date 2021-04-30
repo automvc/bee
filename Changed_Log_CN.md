@@ -183,12 +183,15 @@ SuidRich新增支持List参数的批量插入方法.
 	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun, Condition condition);  
 	public <T> int count(T entity);  
 	public <T> int count(T entity, Condition condition);  
+	public <T> boolean exist(T entity); //判断记录是否存在  
 SuidRich调整selectById方法且String类型参数的id智能识别Javabean的id类型.  
+Suid新增insertAndReturnId方法.  
 加强聚合函数cont,sum,avg,min,max功能,Condition增加方法:  
 	public Condition selectFun(FunctionType functionType,String fieldForFun);  
 	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias);  
 Condition 添加方法:opWithField,setWithField 支持像:field1=field2的表达式  
-无Javabean，用map承载需要转换的实体信息，操作数据库(查询,删除数据).  
+Condition 添加方法:selectDistinctField,支持distinct像 select distinct(userid) from table_name  
+MapSuid,无需Javabean，用map承载需要转换的实体信息，操作数据库(查询,插入,删除数据).  
 支持读取Excel(*.xls,*.xlsx),并将数据转成List<String[]>,且导入到数据库(bee-ext).  
 多表关联查询支持多个关联条件.  
 多个ORM操作使用同一个Connection.  
@@ -199,10 +202,14 @@ Condition 添加方法:opWithField,setWithField 支持像:field1=field2的表达
 完善DB连接管理.  
 加强代码质量.  
 增强链式编程:Select,Update.  
-更新bee.properties文件中batchSize(bee.osql.insert.batchSize).  
+调整bee.properties,HoneyConfig配置信息.  
+整合Spring boot,提供bee-spring-boot-starter.  
+支持利用Javabean生成表.  
 修复多表分页查询时,同名字段在部分数据库会混淆的缺陷(oracle).  
-修改缺陷:update默认主键为id时,无id字段或id为null时,异常处理.  
-修改缺陷:cache bug.  
-强烈建议:使用视图时,声明视图不放缓存(因会产生脏数据).   
+修复缺陷:update默认主键为id时,无id字段或id为null时,异常处理.  
+修复缺陷:cache bug.  
+修复缺陷:有关GenId的 getRangeId(int sizeOfIds)方法.  
+修复缺陷:jdk 11下,LoggerFactory在配置log4j2时,报错.  
+强烈建议:使用视图时,声明视图不放缓存(因会产生脏数据).    
 
 	

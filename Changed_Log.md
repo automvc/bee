@@ -196,13 +196,16 @@ enhance SuidRich function, SuidRich add method:
 	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun, Condition condition);  
 	public <T> int count(T entity);  
 	public <T> int count(T entity, Condition condition);  
+	public <T> boolean exist(T entity); //check the record whether exist in table  
 SuidRich adjust methods selectById for unique entity and intelligently judge the Javabean id type of string id parameter.  
+Suid add method insertAndReturnId.  
 enhance aggregate function cont,sum,avg,min,max,Condition add method:  
 	public Condition selectFun(FunctionType functionType,String fieldForFun);  
 	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias);  
 Condition add method:opWithField,setWithField support like :field1=field2  
-no Javabean, use map to set the entity information that needs to be transformed and operate the database(select/delete record).  
-support read excel(*.xls,*.xlsx), converting data into List<String[]> and importing them into database(bee-ext).  
+Condition add method:selectDistinctField,support distinct as select distinct(userid) from table_name  
+MapSuid,no need Javabean, use map to set the entity information that needs to be transformed and operate the database(select/insert/delete record).  
+support read Excel(*.xls,*.xlsx), converting data into List<String[]> and importing them into database(bee-ext).  
 more table join select support more join condition.  
 same Connection for some ORM operation.  
 support different type muli-Ds at same time.  
@@ -212,8 +215,12 @@ support define start and end token when generate file by template.
 enhance DB conn management.  
 enhance code quality.  
 enhance chain coding:Select,Update.  
-update batchSize(bee.osql.insert.batchSize) in bee.properties.  
+adjust config information of bee.properties,HoneyConfig.  
+Bee integration with Spring Boot,provide bee-spring-boot-starter.  
+support use Javabean create the DB table.  
 fix the problem that the fields with the same name will be confused in some databases(oracle) when multi table paging query.  
 fixed: update is default by id,but no id field or id is null,will have exception.  
 fixed: cache bug.  
+fixed: about getRangeId(int sizeOfIds) of GenId.  
+fixed: in jdk 11,LoggerFactory use log4j2,have exception.  
 when entity is view(not table), recommend put in bee.osql.cache.never(bee.properties). 
