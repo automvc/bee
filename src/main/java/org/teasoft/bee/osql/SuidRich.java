@@ -32,10 +32,12 @@ import java.util.List;
  * <br>滤NULL和空字符串,可通过IncludeType显示设置).
  * 
  * <br>updateBy方法中,String whereFields(若有),可以指明用于SQL中WHERE的字段.当指定了whereFields, 没在whereFields的字段,将默认
- * <br>转换为SQL UPDATE语句的SET部分(默认过滤NULL和空字符串,可通过IncludeType显示设置);另外,需要注意的是,id字段是不允许更改的.
+ * <br>转换为SQL UPDATE语句的SET部分(默认过滤NULL和空字符串,可通过IncludeType显示设置).
  * <br>同一个实体的某个属性的值,若用于WHERE部分了,再用于UPDATE SET部分就没有意义(因为此时它们的值是一样的),但可以用Condition的
  * <br>set(String fieldName, Number num)等方法设置;Condition的方法set,setMultiply,setAdd,setWithField,是在处理WHERE字段前
  * <br>已完成处理的,所以不受指定的WHERE条件字段的影响.
+ * 
+ * <br>update和updateBy方法的Condition设置的字段都会被解析,不受IncludeType的限制,也不受updateFields参数和whereFields参数的影响.
  * 
  * @author Kingstar
  * Create on 2013-6-30 22:06:18
