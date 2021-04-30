@@ -256,8 +256,6 @@ public interface SuidRich extends Suid {
 	 */
 	public <T> int insert(T[] entity,int batchSize,String excludeFields);
 	
-	
-	
 	/**
 	 * 批量插入数据.Insert records by batch type.
 	 * @param entityList 与表对应的实体对象链表,且不能为空. table's entity list(do not allow null).
@@ -546,5 +544,11 @@ public interface SuidRich extends Suid {
 	 */
 	public SuidRich setDynamicParameter(String para, String value);
 	
+	/**
+	 * 检测实体对应记录是否存在.Check whether the entity corresponding record exist
+	 * @param entity 实体类对象,不能为空.table's entity(do not allow null).
+	 * @return true,if have the record;or return false.
+	 * @since 1.9
+	 */
 	public <T> boolean exist(T entity);
 }
