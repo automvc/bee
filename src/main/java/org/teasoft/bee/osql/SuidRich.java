@@ -546,5 +546,11 @@ public interface SuidRich extends Suid {
 	 */
 	public SuidRich setDynamicParameter(String para, String value);
 	
+	/**
+	 * 检测实体对应记录是否存在.Check whether the entity corresponding record exist
+	 * @param entity 实体类对象,不能为空.table's entity(do not allow null).
+	 * @return true,if have the record;or return false.
+	 * @since 1.9
+	 */
 	public <T> boolean exist(T entity);
 }
