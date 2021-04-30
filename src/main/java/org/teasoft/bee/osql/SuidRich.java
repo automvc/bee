@@ -256,8 +256,6 @@ public interface SuidRich extends Suid {
 	 */
 	public <T> int insert(T[] entity,int batchSize,String excludeFields);
 	
-	
-	
 	/**
 	 * 批量插入数据.Insert records by batch type.
 	 * @param entityList 与表对应的实体对象链表,且不能为空. table's entity list(do not allow null).
