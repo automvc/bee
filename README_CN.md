@@ -58,7 +58,7 @@ SuidRich新增支持List参数的批量插入方法.
 	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun, Condition condition);  
 	public <T> int count(T entity);  
 	public <T> int count(T entity, Condition condition);  
-	public <T> boolean exist(T entity); //判断记录是否存在
+	public <T> boolean exist(T entity); //判断记录是否存在  
 SuidRich调整selectById方法且String类型参数的id智能识别Javabean的id类型.  
 Suid新增insertAndReturnId方法.  
 加强聚合函数cont,sum,avg,min,max功能,Condition增加方法:  
