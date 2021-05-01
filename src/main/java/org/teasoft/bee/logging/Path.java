@@ -26,6 +26,8 @@ public class Path {
 	
 	private static String fullPath="";
 	
+	private Path() {}
+	
 	public static String getFullPath(){
 		return fullPath;
 	}

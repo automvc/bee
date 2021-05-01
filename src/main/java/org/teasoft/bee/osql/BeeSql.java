@@ -68,9 +68,8 @@ public interface BeeSql {
 	 * 用函数查询结果.Select result with function. SQL function: max,min,avg,sum,count. 
 	 * @param sql	SQL select statement
 	 * @return 函数统计的值.如果统计的结果集为空,除了count返回0,其它都返回空字符.
-	 * @throws ObjSQLException
 	 */
-	public String selectFun(String sql) throws ObjSQLException;
+	public String selectFun(String sql) ;
 
 
 	/**

@@ -152,9 +152,8 @@ public interface PreparedSql {
 	 * @param sql SQL select statement
 	 * @param preValues	按下标顺序给sql的占位符设值的Object数组.
 	 * @return 返回函数统计的值.如果统计的结果集为空,除了count返回0,其它都返回空字符.
-	 * @throws ObjSQLException
 	 */
-	public String selectFun(String sql,Object preValues[]) throws ObjSQLException;
+	public String selectFun(String sql,Object preValues[]);
 	
 	/**
 	 * 用函数查询结果.Select result with function. SQL function: max,min,avg,sum,count. <p>
@@ -162,9 +161,8 @@ public interface PreparedSql {
 	 * @param sqlStr SQL select statement
 	 * @param map map结构的参数,通过map的key与sqlStr中变量名对应.
 	 * @return 返回函数统计的值.如果统计的结果集为空,除了count返回0,其它都返回空字符.
-	 * @throws ObjSQLException
 	 */
-	public String selectFun(String sqlStr,Map<String,Object> map) throws ObjSQLException;
+	public String selectFun(String sqlStr, Map<String, Object> map);
 
 	/**
 	 * 查询并将每一行结果转成String数组.Select and transform every record to string array.<p>
