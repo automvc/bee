@@ -371,6 +371,8 @@ public class SuidExamEN {
 
 #### [More example/test case](../../../bee-exam/)	
 
+#### [Bee+Spring-boot Demo](../../../bee-starter-demo/)	
+
 Rapid application development:
 =========	
 **Let Java more quicker programming than php and Rails.**  
