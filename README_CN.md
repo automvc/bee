@@ -229,18 +229,18 @@ OrdersService.java
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<version>1.8.99</version>
+			<version>1.9.5</version>
 		</dependency>
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<version>1.8.99</version>
+			<version>1.9.5</version>
 		</dependency>
 		<!--for log framework,web sql -->
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee-ext</artifactId>
-			<version>1.8.99</version>
+			<version>1.9.5</version>
 		</dependency>
 ```
 
