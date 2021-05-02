@@ -21,6 +21,7 @@ jdk1.7+
 ## Feature & Function: 
 
 **Support many Database**(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server and so on) and easily extend。 
+**Good performance, close to the speed of JDBC; Small files：Bee V1.8 jar 217k**, **V1.9.5 jar,315k**。  
 
 **V1.0**  
 Single entity(table) Suid (select,update,insert,delete) object-oriented operation.  
