@@ -333,6 +333,8 @@ public class SuidExam {
 
 #### [更多例子/测试用例](../../../bee-exam/)	
 
+#### [Bee+Spring-boot Demo](../../../bee-starter-demo/)	
+
 综合应用:
 =========	
 **Java快速编程, 让Java的开发速度超过php和Rails。**  
