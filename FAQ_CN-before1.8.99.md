@@ -18,7 +18,7 @@ A: Bee采用约定优于配置的方式,默认实现有三种方式, 且支持�
 #default implement translate type. 1 : order_no<-->orderNo(DB<-->Java), 2: ORDER_NO<-->orderNo(DB<-->Java), 3: original
 #if want to use other naming rule, you can define a new class implements NameTranslate
 #default value is :1
-bee.osql.naming.translateType=1
+bee.osql.naming.translate.type=1
 ```
 
 3.
@@ -92,32 +92,30 @@ A: 支持。还可以像调优JVM一样，对一级缓存进行调优。有暂�
 #缓存类型
 #bee.osql.cache.type=FIFO
 #缓存集数据量数目
-bee.osql.cache.mapSize=10
+bee.osql.cache.map.size=10
 #resultset超过一定的值将不会放缓存
-bee.osql.cache.workResultSetSize=300
+bee.osql.cache.work.resultSet.size=300
 #缓存保存时间(毫秒 ms)
-bee.osql.cache.timeout=3000
+bee.osql.cache.timeout=10000
 #检测到超时,超过这个使用比例则顺便起线程清除缓存
-bee.osql.cache.startDeleteRate=0.6
+bee.osql.cache.startDeleteCache.rate=0.6
 #缓存容量使用率;添加缓存,检测达到该使用率则清除一定比例缓存
-bee.osql.cache.fullUsedRate=0.8
+bee.osql.cache.fullUsed.rate=0.8
 #添加缓存,检测到缓存容量快满时,删除缓存数的比例
-bee.osql.cache.fullClearRate=0.2
+bee.osql.cache.fullClearCache.rate=0.2
 
-#仅分库时(bee.dosql.multiDS.type=2),可用格式:  dsName.tableName
+#仅分库时(bee.dosql.multi-DS.type=2),可用格式:  dsName.tableName
 #use table name, not entity name
-#不缓存表的列表, 表名不区分大小写.视图强烈建议不放缓存,因会产生脏数据.
+#不缓存表的列表, 表名不区分大小写
 #bee.osql.cache.never=user
 #永久缓存表的列表, 表名不区分大小写
 #bee.osql.cache.forever=constant
-#只有更改时才会清除缓存,以便同步新的值到缓存. 表名不区分大小写
-#bee.osql.cache.modifySyn=para
+#永久缓存,但有更改时也会清除缓存,以便同步新的值到缓存. 表名不区分大小写
+#bee.osql.cache.forever.modifySyn=para
 
 # since v1.7.2. default value is: false (use cache)
-#bee.osql.cache.nocache=false
+#bee.osql.cache.nocache=true
 
-#since 1.8.99
-bee.osql.cache.keyUseMD5=true
 #cache=======================end
 
 ```	
@@ -190,8 +188,8 @@ A: 用map进行转换实体信息，查询/删除数据库中的数据.
 参考bee-exam项目里:  
 MapSuidExam  
 ```java
-			MapSuid mapSuid = BeeFactoryHelper.getMapSuid();
-			MapSql mapSql = BeeFactoryHelper.getMapSql();
+			MapSuid mapSuid = BeeFactory.getHoneyFactory().getMapSuid();
+			MapSql mapSql = BeeFactory.getHoneyFactory().getMapSql();
 
 		    mapSql.put(MapSqlKey.Table, "test_user");
 //			mapSql.put(MapSqlKey.Table, "testUser");
