@@ -279,6 +279,7 @@ A: 在一个系统里，几乎是不会有删除整个表的应用场景的。�
 Q: Bee为什么没有save方法?  
 A: 别的ORM框架，将insert与update合为一个save方法，每次操作前都要查询一次数据，看数据库是否存在该记录，  
   以确定是要用insert还是update. 更新操作时，entity要设置id值，以便让查询确定该实体是否存在。  
+  相当于更新操作，只能以id为where 条件,一次只能更新一条(有更新多条的需要时，这种做法效率不会高)。  
   当使用mysql数据库且JPA主键策略为@GeneratedValue(strategy = GenerationType.IDENTITY)，全局更新未带version数据时，  
   更新操作会变为保存操作。  
   但在很多业务场景，insert与update是明确可以区分开的，特别是在互联网应用。  
