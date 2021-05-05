@@ -264,6 +264,44 @@ More SQL Function, more Group by
 		}
 ```
 
+22.
+
+Q: Bee为什么没有findAll(),deleteAll()方法?  
+A: 在一个系统里，几乎是不会有删除整个表的应用场景的。即使写demo样例也很少。所在Bee还特意加了一个检测开关，  
+  以防止误删整个表的数据。 要是软删除(只标记一个字段状态表示不用该数据了),那直接用update就好了。  
+  findAll()应用的场景也很有限，除了配置表，只存储少量记录，会查询所有数据；像用户表，订单表等是不可能查询所有数据的，  
+  一般都是要分页(另外，Bee的分页功能比其它工具的都好用，性能也高)。在Bee,查询所有数据，可以用:   
+   suid.select(new ConstValue());//查询所有常量,假设表名对应的实体名为:ConstValue  
+
+
+23.
+
+Q: Bee为什么没有save方法?  
+A: 别的ORM框架，将insert与update合为一个save方法，每次操作前都要查询一次数据，看数据库是否存在该记录，  
+  以确定是要用insert还是update. 更新操作时，entity要设置id值，以便让查询确定该实体是否存在。  
+  当使用mysql数据库且JPA主键策略为@GeneratedValue(strategy = GenerationType.IDENTITY)，全局更新未带version数据时，  
+  更新操作会变为保存操作。  
+  但在很多业务场景，insert与update是明确可以区分开的，特别是在互联网应用。  
+  要是用save反而会降低系统的性能。  
+  如果确实有需要，可自己封装一个，参考:  
+ 
+ ```java 
+    	public int save(Orders orders) {
+		Orders one = suidRich.selectById(orders, orders.getId());
+		if (one != null)
+			return suidRich.update(orders);
+		else
+			return suidRich.insert(orders);
+	}  
+ ```
+ 
+
+24.
+
+Q:  Bee为什么不需要写mapper,dao?  
+A:  这是Bee的一大优势，Bee的编码复杂度是O(1). Bee概念简单，易于使用，编码量少。  
+    Bee通过约定优于配置原则,通过封装,已经简化了开发.  
+
 
 **其它相关资源:**
 
