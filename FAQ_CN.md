@@ -288,6 +288,8 @@ A: 别的ORM框架，将insert与update合为一个save方法，每次操作前�
  
  ```java 
     	public int save(Orders orders) {
+    	     if(orders==null) return 0;
+    	     if(orders.getId()==null) return suidRich.insert(orders);
 		Orders one = suidRich.selectById(orders, orders.getId());
 		if (one != null)
 			return suidRich.update(orders);
