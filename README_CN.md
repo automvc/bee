@@ -75,7 +75,7 @@ MapSuid,无需Javabean，用map承载需要转换的实体信息，操作数据�
 增加Ignore注解，忽略Javabean字段，不进行转换.  
 用模板生成文件支持自定义起止标签.  
 完善DB连接管理.  
-加强代码质量.  
+加强代码质量(测试覆盖率达70%以上，关键代码达90%以上).  
 增强链式编程:Select,Update.  
 调整bee.properties,HoneyConfig配置信息.  
 整合Spring boot,提供bee-spring-boot-starter.  

@@ -120,7 +120,7 @@ IncludeType support exclude "  ".
 add Ignore Annotation, ignore the field which do not want to transfer.  
 support define start and end token when generate file by template.  
 enhance DB conn management.  
-enhance code quality.  
+enhance code quality(The test coverage is more than 70%, and the key code is more than 90%).  
 enhance chain coding:Select,Update.  
 adjust config information of bee.properties,HoneyConfig.  
 Bee integration with Spring Boot,provide bee-spring-boot-starter.  
