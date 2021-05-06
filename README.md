@@ -279,7 +279,7 @@ Quick Start:
 			<artifactId>honey</artifactId>
 			<version>1.9.5</version>
 		</dependency>
-		<!--for log framework,web sql -->
+		<!--for log framework,Excel(poi) -->
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee-ext</artifactId>
