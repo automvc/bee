@@ -24,7 +24,8 @@ https://gitee.com/automvc/bee
 jdk1.7+
 
 ## Bee主要功能特点介绍：  
-**Bee概念简单**(10分钟即可入门)、功能强大。
+**Bee概念简单**(10分钟即可入门)、功能强大。  
+Bee **简化了与DB交互的编码**工作量.连接，事务都可以由Bee框架负责管理。  
 * 1.**接口简单，使用方便**。Suid接口中对应SQL语言的select,update,insert,delete操作提供**4个同名方法**。  
 * 2.使用了Bee,你可以不用再另外编写dao代码，直接调用Bee的api即可完成对DB的操作。  
 * 3.**约定优于配置**:Javabean没有注解,也不需要xml映射文件,只是纯的Javabean即可,甚至get,set方法不用也可以。  
