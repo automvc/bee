@@ -344,40 +344,44 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 根据id查询记录.Select record by id.
-	 * @param entity 实体类对象,且不能为空.table's entity(do not allow null).
+	 * @param returnType 实体类对象,且不能为空.table's entity(do not allow null).
+	 * <br> returnType的属性值,不会被解析.The property value of returnType will not be parsed.
 	 * @param id 实体id字段的值.value of entity's id field. 
 	 * @return 返回id对应的实体.return one entity which owns this id.
 	 * @since  1.9
 	 */
-	public <T> T selectById(T entity,Integer id);
+	public <T> T selectById(T returnType,Integer id);
 	
 	/**
 	 * 根据id查询记录.Select record by id.
-	 * @param entity 实体类对象,且不能为空.table's entity(do not allow null).
+	 * @param returnType 实体类对象,且不能为空.table's entity(do not allow null).
+	 * <br> returnType的属性值,不会被解析.The property value of returnType will not be parsed.
 	 * @param id 实体id字段的值.value of entity's id field.
 	 * @return 返回id对应的实体.return one entity which owns this id.
 	 * @since  1.9
 	 */
-	public <T> T selectById(T entity,Long id);
+	public <T> T selectById(T returnType,Long id);
 	
 	
 	/**
 	 * 根据id查询记录.Select record by id.
-	 * @param entity 实体类对象,且不能为空.table's entity(do not allow null).
+	 * @param returnType 实体类对象,且不能为空.table's entity(do not allow null).
+	 * <br> returnType的属性值,不会被解析.The property value of returnType will not be parsed.
 	 * @param id 实体id字段的值.value of entity's id field.
 	 * @return 返回id对应的实体.return one entity which owns this id.
 	 * @since  1.9
 	 */
-	public <T> T selectById(T entity,String id);
+	public <T> T selectById(T returnType,String id);
 	
 	/**
 	 * 根据id查询记录.Select record by id.
-	 * @param entity 实体类对象,且不能为空.table's entity(do not allow null).
+	 * @param returnType 实体类对象,且不能为空.table's entity(do not allow null).
+	 * <br> entity的属性值,不会被解析.The property value of returnType will not be parsed.
 	 * @param ids 实体id字段的值,多个用逗号隔开.values of entity's id field,if more than one,separate with comma.
 	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
 	 * @since  1.9
 	 */
-	public <T> List<T> selectByIds(T entity,String ids);
+	public <T> List<T> selectByIds(T returnType,String ids);
 	
 	/**
 	 * 根据id删除记录.Delete record by id.
