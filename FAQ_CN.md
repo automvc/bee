@@ -328,8 +328,23 @@ A:  参考第26.
 
 28.
 
-Q:  表名与实体名、字段名与属性名映射默认提供多种实现，且支持自定义映射规则扩展。  请问这个是怎么设置的，谢谢。 
-A:  实现NameTranslate接口, 并在NameTranslateHandle类设置setNameTranslat(NameTranslate nameTranslat)	
+Q:  表名与实体名、字段名与属性名映射默认提供多种实现，且支持自定义映射规则扩展。  请问这个是怎么设置的，谢谢。  
+    How to set customized NameTranslate?   
+A:  实现NameTranslate接口, 并在NameTranslateHandle类设置setNameTranslat(NameTranslate nameTranslat)  
+
+29.
+
+Q:  多数据源如何配置(多数据源实例)?  
+A:  相关用例可以查看,  
+https://github.com/automvc/bee-exam  
+或:  
+https://gitee.com/automvc/bee-exam  
+如:  
+https://gitee.com/automvc/bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/ds/RwDsExam.java  
+DiffDdExam.java  
+
+若是用spring boot可参考:  
+https://gitee.com/automvc/bee-starter-demo  
 
 
 **其它相关资源:**
