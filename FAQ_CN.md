@@ -76,12 +76,12 @@ A: Hibernate的概念太复杂，学习成本高，更新会先查询再更新�
 10.    
     
 
-Q:&nbsp;Bee如何提高Java web软件开发效率?	
+Q:&nbsp;Bee如何提高Java web软件开发效率?  
 
-A: 除了可以不需要写dao代码外(编码复杂度为O(1)),还提供了表对应的实体Javabean自动生成工具, 根据模板自动生成Java web前后端代码;人性化的SQL日志,可输出直接运行的sql语句(有占位符的SQL不能直接运行,不方便调试).	
-bee-exam工程,org.teasoft.exam.bee.osql.autogen包下:	
-GenBeanExam.java javabean生成实例	
-GenFilesExam.java SpringMVC Rest Controller生成实例	
+A: 除了可以不需要写dao代码外(编码复杂度为O(1)),还提供了表对应的实体Javabean自动生成工具, 根据模板自动生成Java web前后端代码;人性化的SQL日志,可输出直接运行的sql语句(有占位符的SQL不能直接运行,不方便调试).  
+bee-exam工程,org.teasoft.exam.bee.osql.autogen包下:  
+GenBeanExam.java javabean生成实例  
+GenFilesExam.java SpringMVC Rest Controller生成实例  
 
 11.    
     
