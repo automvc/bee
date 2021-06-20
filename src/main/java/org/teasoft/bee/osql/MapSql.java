@@ -17,6 +17,8 @@
 
 package org.teasoft.bee.osql;
 
+import java.util.Map;
+
 /**
  * 用Map承载SQL信息.Record SQL information with map.
  * @author Kingstar
@@ -39,12 +41,16 @@ public interface MapSql {
 	 */
 	public void put(String fieldName, Object value);
 	
-//	/**
-//	 * 用于update的Set部分
-//	 * @param fieldName
-//	 * @param value
-//	 */
-//	public void putNew(String fieldName, Object value);
+	public void put(Map<String, ? extends Object> map);
+	
+	/**
+	 * 用于update的Set部分
+	 * @param fieldName
+	 * @param value
+	 */
+	public void putNew(String fieldName, Object value);
+	
+	public void putNew(Map<String, ? extends Object> map);
 	
 	/**
 	 * 用于Javabean与DB转换时配置信息设置
@@ -52,5 +58,16 @@ public interface MapSql {
 	 * @param value 设置的值
 	 */
 	public void put(MapSqlSetting MapSqlSetting, boolean value);
+	
+	/**
+	 * 当用于count()时,忽略此方法
+	 * @param start
+	 */
+	public void start(Integer start);
+	/**
+	 * 当用于count()时,忽略此方法
+	 * @param size
+	 */
+	public void size(Integer size);
 
 }
