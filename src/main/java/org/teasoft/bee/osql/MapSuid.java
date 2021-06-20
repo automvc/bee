@@ -61,14 +61,10 @@ public interface MapSuid {
 	 * @return 包装在一个Map中的一行数据.returns a row of data wrapped in a map.
 	 */
 	public Map<String, Object> selectOne(MapSql mapSql);
-
-	/**
-	 * 使用MapSql查询数据.Use MapSql to select data.
-	 * @param mapSql MapSql instance
-	 * @return 成功删除的记录数. the numbers of delete records successfully. 
-	 */
-	public int delete(MapSql mapSql);
 	
+	
+	public int update(MapSql mapSql);
+
 	/**
 	 * 插入并返回记录的id值.Insert and return the id value of the record.
 	 * id值可由Bee自动生成分布式id.
@@ -81,5 +77,13 @@ public interface MapSuid {
 	 * <br>If successful, return the id value of the inserted record; If fails, return -1.
 	 */
 	public long insert(MapSql mapSql);
-
+	
+	/**
+	 * 使用MapSql查询数据.Use MapSql to select data.
+	 * @param mapSql MapSql instance
+	 * @return 成功删除的记录数. the numbers of delete records successfully. 
+	 */
+	public int delete(MapSql mapSql);
+	
+	public int count(MapSql mapSql);
 }
