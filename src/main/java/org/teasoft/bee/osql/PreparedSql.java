@@ -324,4 +324,8 @@ public interface PreparedSql {
 	 */
 	@Deprecated
 	public int modify(String sql);
+	
+	public List<Map<String, Object>> selectMapList(String sql);
+	
+	public List<Map<String, Object>> selectMapList(String sql,int start,int size);
 }
