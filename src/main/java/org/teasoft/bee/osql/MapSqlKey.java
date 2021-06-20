@@ -30,7 +30,7 @@ public enum MapSqlKey {
 	Table("Table"),
 	
 	/**
-	 * 声明需要查询的字段.Declare the select fields.
+	 * 声明需要查询的字段,多个用逗号隔开.Declare the select fields,if more than one,separate with comma.
 	 */
     SelectColumns("SelectColumns"),
     
@@ -49,7 +49,8 @@ public enum MapSqlKey {
      */
     OrderBy("OrderBy")
     
-//	Start("Start"),
+//	,
+//  Start("Start"),
 //	Size("Size"),
     ;
 	
