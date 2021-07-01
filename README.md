@@ -143,7 +143,7 @@ use LinkedHashMap in List<Map> result for selectMapList(String sql).
 PreparedSqlLib support selectMapList method.  
 
 fix bug for ExecutableSql.  
-transfer the the field of 'order by' .  
+transfer the the field of 'order by'.  
 fix null bug in create() of ObjectCreatorFactory.  
 fix bug for max column number(excel in bee-ext).  
 
