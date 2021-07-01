@@ -132,6 +132,18 @@ fixed: about getRangeId(int sizeOfIds) of GenId.
 fixed: in jdk 11,LoggerFactory use log4j2,have exception.  
 when entity is view(not table), recommend put in bee.osql.cache.never(bee.properties). 
 
+**V1.9.8**  
+add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSql.  
+add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuid.  
+
+use LinkedHashMap in List<Map> result for selectMapList(String sql).  
+PreparedSqlLib support selectMapList method.  
+
+fix bug for ExecutableSql.  
+transfer the the field of 'order by' .  
+fix null bug in create() of ObjectCreatorFactory.  
+fix bug for max column number(excel in bee-ext).  
+
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
 
