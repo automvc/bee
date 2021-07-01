@@ -135,6 +135,9 @@ when entity is view(not table), recommend put in bee.osql.cache.never(bee.proper
 **V1.9.8**  
 add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSql.  
 add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuid.  
+add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSqlImpl.  
+add method toUpdateSqlByMap ,toCountSqlByMap ,support page in MapSqlProcessor.  
+add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuidImpl.  
 
 use LinkedHashMap in List<Map> result for selectMapList(String sql).  
 PreparedSqlLib support selectMapList method.  
