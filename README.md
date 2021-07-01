@@ -138,7 +138,6 @@ add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuid.
 add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSqlImpl.  
 add method toUpdateSqlByMap ,toCountSqlByMap ,support page in MapSqlProcessor.  
 add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuidImpl.  
-
 use LinkedHashMap in List&lt;Map> result for selectMapList(String sql).  
 PreparedSqlLib support selectMapList method.  
 
