@@ -326,9 +326,37 @@ A:  Bee通过约定优于配置原则,约定主键名称是id,这样可以使问
 	
 27.
 
-Q:  表主键名称不是id的如何处理?  
-A:  参考第26.	
+Q:  表主键名称不是id或id类型是String类型,如何处理?  
+A:  Suid的update方法,SuidRich的selectById等方法默认是将id为会字段用于where条件,以便确认要修改的记录.  
+没有id字段,则指定作为where的字段即可.如: suidRich.updateBy(noid, "uuid"); //noid为实体对象,"uuid"字段作为过滤的字段.  
+以下为详细例子.  
 
+ ```java 
+ //Noid总共有以下4个字段.
+//	private String uuid;
+//	private String name;
+//	private Integer num;
+//	private String remark;
+ 
+	public static void testNoId() {
+		Noid noid=new Noid();
+		noid.setUuid("aaaaaa-no-id");
+		noid.setName("test no id");
+		suid.insert(noid);
+		
+		List<Noid> list=suid.select(noid);
+		Printer.printList(list);
+		
+		noid.setUuid("aaaaaa-no-id");
+		noid.setName("new name3");
+//		suid.update(noid);   //默认id作为where条件里的表达式,用于确定需要更新的记录
+		suidRich.updateBy(noid, "uuid"); //没有id字段,则指定作为where的字段即可.
+		
+		List<Noid> list2=suid.select(noid);
+		Printer.printList(list2);
+	}
+ ```
+ 
 28.
 
 Q:  表名与实体名、字段名与属性名映射默认提供多种实现，且支持自定义映射规则扩展。  请问这个是怎么设置的，谢谢。  
