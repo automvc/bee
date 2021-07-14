@@ -344,6 +344,8 @@ public class SuidExam {
 [Bee+Spring+SpringMVC](../../../../aiteasoft/bee-spring-springmvc)  
 **包括仅分库多数据源实例**	
 
+[Bee+Spring+SpringMVC开发学校教务管理与分数管理系统](../../../../aiteasoft/schoolsys)  
+
 **更快的开发Spring Cloud微服务的新组合：**  
 [Bee + Spring Boot](../../../bee-springboot)  
 
