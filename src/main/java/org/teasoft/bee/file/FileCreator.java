@@ -55,4 +55,12 @@ public interface FileCreator extends FileReader{
 	 * @since  1.7.2
 	 */
 	public void genAppendFile(String fullPathAndName, String content);
+	
+	/**
+	 * set charsetName
+	 * @param charsetName
+	 * @since 1.8.9
+	 */
+	public void setCharsetName(String charsetName);
+	
 }
