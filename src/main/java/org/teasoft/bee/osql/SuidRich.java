@@ -588,4 +588,13 @@ public interface SuidRich extends Suid {
 	 * @since 1.9
 	 */
 	public <T> boolean exist(T entity);
+	
+	/**
+	 * 保存一个实体(一条记录).
+	 * 如果可以区分开,建议明确调用insert(entity)或者update(entity),这样更加安全和高效.
+	 * @param entity
+	 * @return 返回受影响的行数.
+	 * @since 1.9.8
+	 */
+	public <T> int save(T entity);
 }
