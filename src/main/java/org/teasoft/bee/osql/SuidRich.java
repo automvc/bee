@@ -350,6 +350,34 @@ public interface SuidRich extends Suid {
 	 * @return 返回id对应的实体.return one entity which owns this id.
 	 * @since  1.9
 	 */
+	
+	/**
+	 * 
+	 * @param entity
+	 * @param selectField
+	 * @return
+	 * @since 1.9.8
+	 */
+	public <T> String selectJson(T entity, String selectField);
+	
+	
+	
+	
+	
+	/**
+	 * 只查询部分一部分字段,且可以分页 ,并返回Json字符串
+	 * <br>Just select some fields,and can specify page information.
+	 * @param entity 实体类对象,且不能为空.table's entity(do not allow null).
+	 * @param selectFields 需要查询的字段,多个用逗号隔开. select fields,if more than one,separate with comma.
+	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  
+	 * <br>start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size 结果集大小 大于等于1. fetch result size (>0).
+	 * @return 包含多个实体的部分字段的Json字符串
+	 * @since 1.9.8
+	 */
+	public <T> String selectJson(T entity, String selectField, int start, int size);
+	
+	
 	public <T> T selectById(T returnType,Integer id);
 	
 	/**
@@ -534,6 +562,9 @@ public interface SuidRich extends Suid {
 	 */
 	public <T> int update(T entity,Condition condition);
 	
+	
+	public <T> int update(T oldEntity,T newEntity);
+	
 	/**
 	 * 为动态表名、实体名参数设置值.set dynamic parameter for dynamic table & entity name
 	 * <br>本方法的调用要早于select,update,insert,delete等方法.
@@ -547,6 +578,8 @@ public interface SuidRich extends Suid {
 	 * @since  1.9
 	 */
 	public SuidRich setDynamicParameter(String para, String value);
+	
+	public SuidRich saveSqlString();
 	
 	/**
 	 * 检测实体对应记录是否存在.Check whether the entity corresponding record exist
