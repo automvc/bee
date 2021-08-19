@@ -347,5 +347,11 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 		//Add the business logic if need.
 		return getSuidRich().selectJson(entity, selectField, start, size);
 	}
+
+	@Override
+	public <T> int save(T entity) {
+		//Add the business logic if need.
+		return getSuidRich().save(entity);
+	}
 	
 }
