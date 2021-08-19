@@ -579,7 +579,7 @@ public interface SuidRich extends Suid {
 	 */
 	public SuidRich setDynamicParameter(String para, String value);
 	
-	public SuidRich saveSqlString();
+//	public SuidRich saveSqlString();
 	
 	/**
 	 * 检测实体对应记录是否存在.Check whether the entity corresponding record exist

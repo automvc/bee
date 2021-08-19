@@ -317,11 +317,35 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 		//Add the business logic if need.
 		return getSuidRich().setDynamicParameter(para, value);
 	}
+	
+//	@Override
+//	public SuidRich saveSqlString() {
+//		//Add the business logic if need.
+//		return getSuidRich().saveSqlString();
+//	}
 
 	@Override
 	public <T> boolean exist(T entity) {
 		//Add the business logic if need.
 		return getSuidRich().exist(entity);
+	}
+
+	@Override
+	public <T> int update(T oldEntity, T newEntity) {
+		//Add the business logic if need.
+		return getSuidRich().update(oldEntity, newEntity);
+	}
+
+	@Override
+	public <T> String selectJson(T entity, String selectField) {
+		//Add the business logic if need.
+		return getSuidRich().selectJson(entity, selectField);
+	}
+
+	@Override
+	public <T> String selectJson(T entity, String selectField, int start, int size) {
+		//Add the business logic if need.
+		return getSuidRich().selectJson(entity, selectField, start, size);
 	}
 	
 }
