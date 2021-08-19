@@ -14,33 +14,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+ 
 package org.teasoft.bee.osql.exception;
 
-import org.teasoft.bee.osql.ObjSQLException;
+import org.teasoft.bee.osql.BeeException;
 
 /**
- * 变量名命名异常.Bee error name exception.
+ * 
  * @author Kingstar
  * @since  1.9.8
  */
-public class BeeErrorNameException extends ObjSQLException {
-	static final long serialVersionUID = -875516993124222236L;
+public class BeeIllegalSQLException extends BeeException {
 
+	static final long serialVersionUID = -875516993124222232L;
 
-	public BeeErrorNameException() {
+	public BeeIllegalSQLException() {
 		super();
 	}
 
-	public BeeErrorNameException(String message) {
+	public BeeIllegalSQLException(String message) {
 		super(message);
 	}
 
-	public BeeErrorNameException(String message, Throwable cause) {
+	public BeeIllegalSQLException(String message, Throwable cause) {
 		super(message, cause);
 	}
 
-	public BeeErrorNameException(Throwable cause) {
+	public BeeIllegalSQLException(Throwable cause) {
 		super(cause);
 	}
+
 }
