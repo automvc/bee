@@ -76,7 +76,14 @@ public interface MapSuid {
 	 * @return 若成功,返回插入记录的id值;若失败则返回-1.
 	 * <br>If successful, return the id value of the inserted record; If fails, return -1.
 	 */
-	public long insert(MapSql mapSql);
+	public long insertAndReturnId(MapSql mapSql);
+	
+	/**
+	 * 插入记录,并返回成功插入的记录数.
+	 * @param mapSql MapSql instance
+	 * @return 成功插入的记录数.the numbers of insert records successfully.
+	 */
+	public int insert(MapSql mapSql);
 	
 	/**
 	 * 使用MapSql查询数据.Use MapSql to select data.
