@@ -41,15 +41,26 @@ public interface MapSql {
 	 */
 	public void put(String fieldName, Object value);
 	
+	/**
+	 * 设置用于SQL select,delete,update中where过虑的字段信息;也可用于SQL insert,设置插入的字段及相应值
+	 * Set the field information used for where filtering in SQL select,delete, also can use in SQL insert.
+	 * @param map 字段和值组成的map对象
+	 */
 	public void put(Map<String, ? extends Object> map);
 	
 	/**
-	 * 用于update的Set部分
+	 * 设置需要更新的字段和值,用于update的Set部分
+	 * Set the fields and values that need to be updated for the set part of SQL update
 	 * @param fieldName
 	 * @param value
 	 */
 	public void putNew(String fieldName, Object value);
 	
+	/**
+	 * 设置需要更新的字段和值,用于update SQL的Set部分
+	 * Set the fields and values that need to be updated for the set part of SQL update
+	 * @param map 需要更新的字段和值组成的map对象. A map object consisting of fields and values that need to be updated
+	 */
 	public void putNew(Map<String, ? extends Object> map);
 	
 	/**
