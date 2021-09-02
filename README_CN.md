@@ -86,6 +86,7 @@ MapSuid,无需Javabean，用map承载需要转换的实体信息，操作数据�
 修复缺陷:cache bug.  
 修复缺陷:有关GenId的 getRangeId(int sizeOfIds)方法.  
 修复缺陷:jdk 11下,LoggerFactory在配置log4j2时,报错.  
+Bee可查询数据库直接返回 Json，添加一个项，将long转为string。
 强烈建议:使用视图时,声明视图不放缓存(因会产生脏数据).  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
