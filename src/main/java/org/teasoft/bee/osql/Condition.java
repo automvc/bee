@@ -64,6 +64,11 @@ public interface Condition extends ConditionAssistant {
 	 */
 	public Condition op(String field, Op Op, Object value);
 	
+	//表达式将对应  table1 JoinType table2 on field Op value
+	//eg: op("table2.valid",Op.eq,"1")    table1 left join table2 on table1.id=table2.id and table2.valid='1'
+    // it is different from where part: table1 left join table2  on table1.id=table2.id where valid='1'
+	public Condition opOn(String field, Op Op, Object value);
+	
 	/**
 	 * 添加一个表达式条件.Add a expression condition.
 	 * <br>此方法不能用于SQL的update set.
