@@ -562,7 +562,13 @@ public interface SuidRich extends Suid {
 	 */
 	public <T> int update(T entity,Condition condition);
 	
-	
+	/**
+	 * 更新实体,oldEntity的非null,非空属性作为过虑条件;newEntity的非null,非空属性作为需要更新的属性对应值
+	 * 新旧实体必须是相同类型
+	 * @param oldEntity 含有旧值属性的实体
+	 * @param newEntity 含有新值属性的实体
+	 * @return
+	 */
 	public <T> int update(T oldEntity,T newEntity);
 	
 	/**
