@@ -134,17 +134,37 @@ when entity is view(not table), recommend put in bee.osql.cache.never(bee.proper
 
 **V1.9.8**  
 add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSql.  
-add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuid.  
+add method count(MapSql mapSql),update(MapSql mapSql),insertAndReturnId(MapSql mapSql),support page in MapSuid.  
 add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSqlImpl.  
 add method toUpdateSqlByMap ,toCountSqlByMap ,support page in MapSqlProcessor.  
 add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuidImpl.  
 use LinkedHashMap in List&lt;Map> result for selectMapList(String sql).  
 PreparedSqlLib support selectMapList method.  
+Suid add method save(T entity)  
+SuidRich add 3 method:  
+public <T> int update(T oldEntity,T newEntity);  
+public <T> String selectJson(T entity, String selectField);  
+public <T> String selectJson(T entity, String selectField, int start, int size);  
+MoreTable:  
+support List field type for more tables join;  
+support two sub tables join(right join, left join);  
+support one sub table have another join sub table;  
+if all fields is null, the sub table field will set null;  
+JoinTable add method:subClass()  
+Condition add method:  
+public Condition opOn(String field, Op Op, Object value);  
+enhance autoGenBean ,support to generate SQL Json Script.  
+MapSuidImpl change two different method:insert(MapSql mapSql) & insertAndReturnId(MapSql mapSql)  
+Logger: support two method have parameter Throwable.  
+add class StreamUtil  
+ObjectUtils add one method: isTrue(Boolean b)  
+enhance check field  
 
 fix bug for ExecutableSql.  
 transfer the the field of 'order by'.  
 fix null bug in create() of ObjectCreatorFactory.  
-fix bug for max column number(excel in bee-ext).  
+fix bug for max column number(excel in bee-ext). 
+fix bug about HoneyContext  
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
