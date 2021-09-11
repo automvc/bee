@@ -1,7 +1,8 @@
 
 Bee
 =========
-#### 工欲善其事必先利其器！——《论语·卫灵公》    
+#### 工欲善其事必先利其器！——《论语·卫灵公》  
+#### 为适应互联网时代软件需求量大,需求变更频繁,性能要求高等要求,ORM Bee应运而生!
 
 **Bee** 是一个简单，易用，功能强大，开发速度快，编码少的 JAVA ORM 框架。  
 Bee简单易用：单表操作、多表关联操作，可以不用写sql,极少语句就可以完成SQL操作；**概念简单**,10分钟即可入门。  
@@ -86,8 +87,34 @@ MapSuid,无需Javabean，用map承载需要转换的实体信息，操作数据�
 修复缺陷:cache bug.  
 修复缺陷:有关GenId的 getRangeId(int sizeOfIds)方法.  
 修复缺陷:jdk 11下,LoggerFactory在配置log4j2时,报错.  
-Bee可查询数据库直接返回 Json，添加一个项，将long转为string。
 强烈建议:使用视图时,声明视图不放缓存(因会产生脏数据).  
+
+**V1.9.8**  
+add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSql.  
+add method count(MapSql mapSql),update(MapSql mapSql),insertAndReturnId(MapSql mapSql),support page in MapSuid.  
+add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSqlImpl.  
+add method toUpdateSqlByMap ,toCountSqlByMap ,support page in MapSqlProcessor.  
+add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuidImpl.  
+use LinkedHashMap in List&lt;Map> result for selectMapList(String sql).  
+PreparedSqlLib support selectMapList method.  
+Suid add method save(T entity)  
+SuidRich add 3 method:  
+public <T> int update(T oldEntity,T newEntity);  
+public <T> String selectJson(T entity, String selectField);  
+public <T> String selectJson(T entity, String selectField, int start, int size);  
+enhance autoGenBean ,support to generate SQL Json Script.  
+MapSuidImpl change two different method:insert(MapSql mapSql) & insertAndReturnId(MapSql mapSql)  
+Logger: support two method have parameter Throwable.  
+add class StreamUtil  
+ObjectUtils add one method: isTrue(Boolean b)  
+enhance check field  
+selectJson支持通过配置将long转为string  
+
+fix bug for ExecutableSql.  
+transfer the the field of 'order by'.  
+fix null bug in create() of ObjectCreatorFactory.  
+fix bug for max column number(excel in bee-ext). 
+fix bug about HoneyContext  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
