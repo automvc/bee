@@ -310,11 +310,18 @@ A:  Bee一对多查询不需要List. 呈现方式,像我们用DB客户端查询�
 
 26.
 
+Q:  多表关联时,一对多查询,字段类型用List?  
+     当为了前端显示方便等原因,需要将从表数据作为主表的list属性时,可以用该功能.	
+A:  V1.9.8有该功能支持,参考例子:  
+https://gitee.com/automvc/bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/ListEntityTest.java  
+    
+27.
+
 Q:  联合主键如何查询或更新记录?  
 A:  Bee通过约定优于配置原则,约定主键名称是id,这样可以使问题变量简单,处理的效率也更高.  
 	对于一些老的系统,有联合主键的,当作一般查询处理即可,即有两个字段作为主键,要用联合主键时,设置两个属性的值,框架就会负责解析(Suid的update方法,SuidRich的selectById等方法默认是id主键则不适用).  
 	
-27.
+28.
 
 Q:  表主键名称不是id或id类型是String类型,如何处理?  
 A:  Suid的update方法,SuidRich的selectById等方法默认是将id为会字段用于where条件,以便确认要修改的记录.  
@@ -347,27 +354,18 @@ A:  Suid的update方法,SuidRich的selectById等方法默认是将id为会字段
 	}
  ```
  
-28.
+29.
 
 Q:  表名与实体名、字段名与属性名映射默认提供多种实现，且支持自定义映射规则扩展。  请问这个是怎么设置的，谢谢。  
     How to set customized NameTranslate?   
 A:  实现NameTranslate接口, 并在NameTranslateHandle类设置setNameTranslat(NameTranslate nameTranslat)  
 
-29.
+30.
 
 Q:  多表关联时,如何在SQL on部分加表达式,过滤数据?  
       
 A:  使用Condition接口的opOn方法.
     public Condition opOn(String field, Op Op, Object value);  
-    
-    
-30.
-
-Q:  多表关联时,一对多查询,字段类型用List?  
-     
-A:  V1.9.8有该功能支持,参考例子:  
-https://gitee.com/automvc/bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/ListEntityTest.java  
-    
     
 31.
 
