@@ -290,20 +290,9 @@ A: 别的ORM框架，将insert与update合为一个save方法，每次操作前�
   更新操作会变为保存操作。  
   但在很多业务场景，insert与update是明确可以区分开的，特别是在互联网应用。  
   要是用save反而会降低系统的性能。  
-  如果确实有需要，可自己封装一个，参考:  
  
- ```java 
-    	public int save(Orders orders) {
-    	     if(orders==null) return 0;
-    	     if(orders.getId()==null) return suidRich.insert(orders);
-		Orders one = suidRich.selectById(orders, orders.getId());
-		if (one != null)
-			return suidRich.update(orders);
-		else
-			return suidRich.insert(orders);
-	}  
- ```
- 
+ **V1.9.8 , SuidRich有提供save方法。  
+ 如果可以区分开,建议明确调用insert(entity)或者update(entity),这样更加安全和高效。  
 
 24.
 
@@ -365,6 +354,22 @@ Q:  表名与实体名、字段名与属性名映射默认提供多种实现，�
 A:  实现NameTranslate接口, 并在NameTranslateHandle类设置setNameTranslat(NameTranslate nameTranslat)  
 
 29.
+
+Q:  多表关联时,如何在SQL on部分加表达式,过滤数据?  
+      
+A:  使用Condition接口的opOn方法.
+    public Condition opOn(String field, Op Op, Object value);  
+    
+    
+30.
+
+Q:  多表关联时,一对多查询,字段类型用List?  
+     
+A:  V1.9.8有该功能支持,参考例子:  
+https://gitee.com/automvc/bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/ListEntityTest.java  
+    
+    
+31.
 
 Q:  多数据源如何配置(多数据源实例)?  
 A:  相关用例可以查看,  
