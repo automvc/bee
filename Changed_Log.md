@@ -223,4 +223,46 @@ fixed: update is default by id,but no id field or id is null,will have exception
 fixed: cache bug.  
 fixed: about getRangeId(int sizeOfIds) of GenId.  
 fixed: in jdk 11,LoggerFactory use log4j2,have exception.  
-when entity is view(not table), recommend put in bee.osql.cache.never(bee.properties). 
+when entity is view(not table), recommend put in bee.osql.cache.never(bee.properties).
+
+**V1.9.8**  
+SuidRich add 4 method:  
+public <T> int save(T entity);  
+public <T> int update(T oldEntity,T newEntity);  
+public <T> String selectJson(T entity, String selectField);  
+public <T> String selectJson(T entity, String selectField, int start, int size);  
+
+MoreTable:  
+support List type field for more tables join;  
+support two sub tables join(inner join,right join, left join);  
+support one sub table have another join sub table;  
+if all fields is null, the sub table field will set null;  
+annotation JoinTable add method:subClass() for List type field   
+Condition add method:  
+public Condition opOn(String field, Op Op, Object value);  
+
+MapSuid:  
+add method update,count,paging select, add and adjust insert and insertAndReturnId.  
+add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSql.  
+add method count(MapSql mapSql),update(MapSql mapSql),insertAndReturnId(MapSql mapSql),support page in MapSuid.  
+add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSqlImpl.  
+add method toUpdateSqlByMap ,toCountSqlByMap ,support page in MapSqlProcessor.  
+add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuidImpl.  
+MapSuidImpl change two different method:insert(MapSql mapSql) & insertAndReturnId(MapSql mapSql)  
+
+PreparedSqlLib support selectMapList method.  
+Logger: two method support have parameter Throwable.  
+add class StreamUtil  
+ObjectUtils add one method: isTrue(Boolean b)  
+enhance check field  
+use LinkedHashMap in List&lt;Map> result for selectMapList(String sql).  
+selectJson support config long to string  
+sql log support config the log level  
+enhance autoGenBean ,support to generate SQL Json Script.  
+
+fix bug for ExecutableSql.  
+transfer the the field of 'order by'.  
+fix null bug in create() of ObjectCreatorFactory.  
+fix bug for max column number(excel in bee-ext). 
+fix bug about HoneyContext  
+fix bug about checkPackageByClass   
