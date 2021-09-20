@@ -311,7 +311,7 @@ A:  Bee一对多查询不需要List. 呈现方式,像我们用DB客户端查询�
 26.
 
 Q:  多表关联时,一对多查询,字段类型用List?  
-     当为了前端显示方便等原因,需要将从表数据作为主表的list属性时,可以用该功能.	
+     当为了前端显示方便等原因,需要将从表数据作为主表的list属性时,可以用该功能.  
 A:  V1.9.8有该功能支持,参考例子:  
 https://gitee.com/automvc/bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/ListEntityTest.java  
     
