@@ -141,7 +141,7 @@ public <T> String selectJson(T entity, String selectField, int start, int size);
 
 MoreTable:  
 support List type field for more tables join;  
-support two sub tables join(right join, left join);  
+support two sub tables join(inner join,right join, left join);  
 support one sub table have another join sub table;  
 if all fields is null, the sub table field will set null;  
 annotation JoinTable add method:subClass() for List type field   
@@ -149,6 +149,7 @@ Condition add method:
 public Condition opOn(String field, Op Op, Object value);  
 
 MapSuid:  
+add method update,count,add and adjust insert and insertAndReturnId.  
 add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSql.  
 add method count(MapSql mapSql),update(MapSql mapSql),insertAndReturnId(MapSql mapSql),support page in MapSuid.  
 add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSqlImpl.  
@@ -157,7 +158,7 @@ add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuidImp
 MapSuidImpl change two different method:insert(MapSql mapSql) & insertAndReturnId(MapSql mapSql)  
 
 PreparedSqlLib support selectMapList method.  
-Logger: support two method have parameter Throwable.  
+Logger: two method support have parameter Throwable.  
 add class StreamUtil  
 ObjectUtils add one method: isTrue(Boolean b)  
 enhance check field  
