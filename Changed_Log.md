@@ -225,7 +225,7 @@ fixed: about getRangeId(int sizeOfIds) of GenId.
 fixed: in jdk 11,LoggerFactory use log4j2,have exception.  
 when entity is view(not table), recommend put in bee.osql.cache.never(bee.properties).
 
-**V1.9.8**  
+**V1.9.8**(2021 Mid-Autumn Day)  
 SuidRich add 4 method:  
 public <T> int save(T entity);  
 public <T> int update(T oldEntity,T newEntity);  
