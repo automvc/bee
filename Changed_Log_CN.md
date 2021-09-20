@@ -212,4 +212,46 @@ MapSuid,无需Javabean，用map承载需要转换的实体信息，操作数据�
 修复缺陷:jdk 11下,LoggerFactory在配置log4j2时,报错.  
 强烈建议:使用视图时,声明视图不放缓存(因会产生脏数据).    
 
+**V1.9.8**  
+SuidRich增加4个方法:  
+public <T> int save(T entity);  
+public <T> int update(T oldEntity,T newEntity);  
+public <T> String selectJson(T entity, String selectField);  
+public <T> String selectJson(T entity, String selectField, int start, int size);  
+
+MoreTable:  
+支持List类型字段的多表关联查询.   
+支持两个子表的join关联查询(inner join,right join, left join);  
+支持一个子表里还有一个子表的关联查询.   
+修复问题:当一个子表的属性都为null时,该子表字段直接设置为null.   
+注解 JoinTable添加方法:subClass()用于List类型字段的多表关联查询.   
+Condition新增方法,用于在关联查询时的on表达式达到提前过滤数据:  
+public Condition opOn(String field, Op Op, Object value);  
+
+MapSuid:  
+新增update,count,查询分页,新增和调整insert and insertAndReturnId.  
+add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSql.  
+add method count(MapSql mapSql),update(MapSql mapSql),insertAndReturnId(MapSql mapSql),support page in MapSuid.  
+add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSqlImpl.  
+add method toUpdateSqlByMap ,toCountSqlByMap ,support page in MapSqlProcessor.  
+add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuidImpl.  
+MapSuidImpl change two different method:insert(MapSql mapSql) & insertAndReturnId(MapSql mapSql)  
+
+PreparedSqlLib新增selectMapList方法.  
+Logger: 两个方法支持有Throwable参数.  
+增加流的工具类StreamUtil  
+ObjectUtils增加一个方法: isTrue(Boolean b)  
+增强检测字段合法性,包括MapSuid使用的字段.  
+use LinkedHashMap in List&lt;Map> result for selectMapList(String sql).  
+selectJson支持通过配置将long转为string  
+sql输出日志支持logger不同级别输出设置  
+增强autoGenBean ,支持生成Json格式的SQL脚本(SQL Json Script).  
+
+fix bug for ExecutableSql.  
+transfer the the field of 'order by'.  
+fix null bug in create() of ObjectCreatorFactory.  
+fix bug for max column number(excel in bee-ext). 
+fix bug about HoneyContext  
+fix bug about checkPackageByClass 
+
 	
