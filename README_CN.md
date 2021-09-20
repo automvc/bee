@@ -106,7 +106,7 @@ Condition新增方法,用于在关联查询时的on表达式达到提前过滤�
 public Condition opOn(String field, Op Op, Object value);  
 
 MapSuid:  
-新增update,count,新增和调整insert and insertAndReturnId.  
+新增update,count,查询分页,新增和调整insert and insertAndReturnId.  
 add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSql.  
 add method count(MapSql mapSql),update(MapSql mapSql),insertAndReturnId(MapSql mapSql),support page in MapSuid.  
 add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSqlImpl.  
