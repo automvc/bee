@@ -123,4 +123,4 @@ bee-exam(v1.9)2021-05-02 02.54.34.977-normal(PostgreSQL).txt
 bee-exam(v1.9)2021-05-02 02.54.55.328-normal(Microsoft SQL Server).txt
 bee-exam(v1.9)2021-05-02 02.55.16.45-cache(MySQL).txt
 
-test V1.9.8 with well-known and major database 
+test V1.9.8 with well-known and major database  
