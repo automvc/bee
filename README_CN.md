@@ -96,7 +96,7 @@ public <T> int update(T oldEntity,T newEntity);
 public <T> String selectJson(T entity, String selectField);  
 public <T> String selectJson(T entity, String selectField, int start, int size);  
 
-MoreTable:  
+MoreTable(多表查询):  
 支持List类型字段的多表关联查询.   
 支持两个子表的join关联查询(inner join,right join, left join);  
 支持一个子表里还有一个子表的关联查询.   
@@ -114,7 +114,8 @@ add method toUpdateSqlByMap ,toCountSqlByMap ,support page in MapSqlProcessor.
 add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuidImpl.  
 MapSuidImpl change two different method:insert(MapSql mapSql) & insertAndReturnId(MapSql mapSql)  
 
-PreparedSqlLib新增selectMapList方法.  
+PreparedSqlLib新增selectMapList方法. 
+多数据源读写模式,支持不同类型数据源,方便数据库间转移数据. 
 Logger: 两个方法支持有Throwable参数.  
 增加流的工具类StreamUtil  
 ObjectUtils增加一个方法: isTrue(Boolean b)  
