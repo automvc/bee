@@ -139,7 +139,7 @@ public <T> int update(T oldEntity,T newEntity);
 public <T> String selectJson(T entity, String selectField);  
 public <T> String selectJson(T entity, String selectField, int start, int size);  
 
-MoreTable:  
+MoreTable(more table select):  
 support List type field for more tables join;  
 support two sub tables join(inner join,right join, left join);  
 support one sub table have another join sub table;  
@@ -158,6 +158,7 @@ add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuidImp
 MapSuidImpl change two different method:insert(MapSql mapSql) & insertAndReturnId(MapSql mapSql)  
 
 PreparedSqlLib support selectMapList method.  
+Read/Write multi-DataSource support different type DataSource.  
 Logger: two method support have parameter Throwable.  
 add class StreamUtil  
 ObjectUtils add one method: isTrue(Boolean b)  
