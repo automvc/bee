@@ -97,7 +97,7 @@ public <T> String selectJson(T entity, String selectField);
 public <T> String selectJson(T entity, String selectField, int start, int size);  
 
 MoreTable(多表查询):  
-支持List类型实体字段的多表关联查询.   
+支持子表实体字段为List类型的多表关联查询.   
 支持两个子表的join关联查询(inner join,right join, left join);  
 支持一个子表里还有一个子表的关联查询.   
 修复问题:当一个子表的属性都为null时,该子表字段直接设置为null.   
