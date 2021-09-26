@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * 多表查询.More table select.
  * <p>
- * example:
+ * example1:
 <p>
 public class Orders{
 <p>	private Long id;
@@ -73,6 +73,52 @@ public class Orders{
 <p>	    //... process list1
 <p>	    }
 <p>	 }
+
+<p>--------------------------------
+<p> example2:  List type sub entity field
+
+<p>@Entity("Clazz")
+<p>public class Clazz0 implements Serializable {
+<p>
+<p>	private static final long serialVersionUID = 1591972382398L;
+<p>
+<p>	private Integer id;
+<p>	private String classname;
+<p>	private String place;
+<p>	private String teachername;
+<p>	private String remark;
+<p>	
+<p>	@JoinTable(mainField="id", subField="classno", joinType=JoinType.LEFT_JOIN,subClass="Student")
+<p>	private List<Student> studentList=new ArrayList<>();
+<p>	//subClass="Student",  if sub Entity and main Entity in the same package, can use class name only.
+<p>	//full like,  subClass="org.teasoft.exam.bee.osql.entity.Student")
+<p>	
+<p>	//... get,set method
+<p>}
+<p>
+<p>public class Student implements Serializable {
+<p>
+<p>	private static final long serialVersionUID = 1591622324231L;
+<p>
+<p>	private Integer id;
+<p>	private Integer sid;
+<p>	private String name;
+<p>	private Integer age;
+<p>	private Boolean sex;
+<p>	private String majorid;
+<p>	private Boolean flag;
+<p>	private Integer classno;
+<p>	
+<p>	//... get,set method
+<p>}
+<p>
+<p>	public static void main(String[] args) {
+<p>		
+<p>		MoreTable moreTable = BeeFactoryHelper.getMoreTable();
+<p>		Clazz0 c0=new Clazz0();
+<p>		List<Clazz0> list0=moreTable.select(c0);
+<p>		Printer.printList(list0); //print list
+<p>}
 
  * @author Kingstar
  * @since  1.7
