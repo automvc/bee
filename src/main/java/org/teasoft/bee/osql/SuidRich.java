@@ -343,26 +343,13 @@ public interface SuidRich extends Suid {
 	public <T> String selectJson(T entity,IncludeType includeType);
 	
 	/**
-	 * 根据id查询记录.Select record by id.
-	 * @param returnType 实体类对象,且不能为空.table's entity(do not allow null).
-	 * <br> returnType的属性值,不会被解析.The property value of returnType will not be parsed.
-	 * @param id 实体id字段的值.value of entity's id field. 
-	 * @return 返回id对应的实体.return one entity which owns this id.
-	 * @since  1.9
-	 */
-	
-	/**
-	 * 
-	 * @param entity
-	 * @param selectField
-	 * @return
+	 * 查询实体时,只查询部分一部分字段,并返回Json字符串.Just select some fields,and return Json string.
+	 * @param entity 实体类对象,且不能为空.table's entity(do not allow null).
+	 * @param selectFields 需要查询的字段,多个用逗号隔开. select fields,if more than one,separate with comma.
+	 * @return 包含多个实体的部分字段的Json字符串
 	 * @since 1.9.8
 	 */
 	public <T> String selectJson(T entity, String selectField);
-	
-	
-	
-	
 	
 	/**
 	 * 只查询部分一部分字段,且可以分页 ,并返回Json字符串
@@ -375,9 +362,16 @@ public interface SuidRich extends Suid {
 	 * @return 包含多个实体的部分字段的Json字符串
 	 * @since 1.9.8
 	 */
-	public <T> String selectJson(T entity, String selectField, int start, int size);
+	public <T> String selectJson(T entity, String selectFields, int start, int size);
 	
 	
+	/**
+	 * 根据id查询记录.Select record by id.
+	 * @param entity 实体类对象,且不能为空.table's entity(do not allow null).
+	 * @param id 实体id字段的值.value of entity's id field. 
+	 * @return 返回id对应的实体.return one entity which owns this id.
+	 * @since  1.9
+	 */
 	public <T> T selectById(T returnType,Integer id);
 	
 	/**
@@ -564,10 +558,16 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 更新实体,oldEntity的非null,非空属性作为过虑条件;newEntity的非null,非空属性作为需要更新的属性对应值
-	 * 新旧实体必须是相同类型
-	 * @param oldEntity 含有旧值属性的实体
-	 * @param newEntity 含有新值属性的实体
-	 * @return
+	 * Update the entity. The non null and non empty attributes of oldentity are taken as 
+	 * <br>the filtering conditions; The non null and non empty properties of newentity are 
+	 * <br>used as the corresponding values of the properties to be updated
+	 * 新旧实体必须是相同类型.
+	 * Old and new entities must be of the same type.
+	 * oldEntity转化为SQL的Where部分,newEntity改转化为Set部分.
+	 * oldEntity is converted to Where part of SQL, and newEntity is converted to Set part.
+	 * @param oldEntity 含有旧值属性的实体.Entity with old value field.
+	 * @param newEntity 含有新值属性的实体.Entity with new value field.
+	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
 	 */
 	public <T> int update(T oldEntity,T newEntity);
 	
@@ -596,10 +596,12 @@ public interface SuidRich extends Suid {
 	public <T> boolean exist(T entity);
 	
 	/**
-	 * 保存一个实体(一条记录).
+	 * 保存一个实体(一条记录).save one entity(one record).
 	 * 如果可以区分开,建议明确调用insert(entity)或者update(entity),这样更加安全和高效.
+	 * If it can be distinguished, it is recommended to explicitly call insert (entity) 
+	 * <br>or update (entity), which is more secure and efficient.
 	 * @param entity
-	 * @return 返回受影响的行数.
+	 * @return 返回受影响的行数.the numbers of effect record(s).
 	 * @since 1.9.8
 	 */
 	public <T> int save(T entity);
