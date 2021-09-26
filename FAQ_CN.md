@@ -370,6 +370,18 @@ A:  使用Condition接口的opOn方法.
     
 31.
 
+Q:  请问下Bee中批量更新是怎么处理的呢    
+A:  update 不像insert 有批量的接口。  因为用同一条语句可以更新多条记录.  
+如 update table_name set field1='abc' where field2='aa' and field3='bb',  
+符合where条件的记录都将被更新.  
+这种只用一条语句就可以更新多条记录,用SuidRich接口相关的update方法就好.  
+要是确实要多个update，可以自己写一个循环， 然后用同一个connection连接，提交效率.  
+beginSameConnection();  
+//多个update语句  
+endSameConnection();  
+    
+32.
+
 Q:  多数据源如何配置(多数据源实例)?  
 A:  相关用例可以查看,  
 https://github.com/automvc/bee-exam  
