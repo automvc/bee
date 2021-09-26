@@ -380,6 +380,9 @@ public class SuidExam {
 
 #### [Bee+Spring-boot Demo](../../../bee-starter-demo/)	
 
+### API-DOC  
+API-V1.9.5(https://gitee.com/automvc/bee/attach_files/692020/download)
+
 综合应用:
 =========	
 **Java快速编程, 让Java的开发速度超过php和Rails。**  
