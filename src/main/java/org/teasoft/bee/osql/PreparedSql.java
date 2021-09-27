@@ -325,7 +325,21 @@ public interface PreparedSql {
 	@Deprecated
 	public int modify(String sql);
 	
+	/**
+	 * 查询记录并返回元素为Map<String, Object>的List结构数据.Query records and return list structure data whose element is Map<String, Object>.
+	 * @param sql SQL语句.SQL statement.
+	 * @return List<Map<String, Object>>结构的多行记录.
+	 * <br>the multi-line record of List<Map<String, Object>> structure.
+	 */
 	public List<Map<String, Object>> selectMapList(String sql);
 	
+	/**
+	 * 查询记录并返回元素为Map<String, Object>的List结构数据.Query records and return list structure data whose element is Map<String, Object>.
+	 * @param sql SQL语句.SQL statement.
+	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size 结果集大小 大于等于1. fetch result size (>0).
+	 * @return List<Map<String, Object>>结构的多行记录.
+	 * <br>the multi-line record of List<Map<String, Object>> structure.
+	 */
 	public List<Map<String, Object>> selectMapList(String sql,int start,int size);
 }
