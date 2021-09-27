@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 使用Map而非具体实体的数据库操作接口,默认不处理null和空字符串(与Suid,SuidRich风格兼容)
+ * 使用Map而非Javabean实体的数据库操作接口,默认不处理null和空字符串(与Suid,SuidRich风格兼容)
  * <br>Database operation interface using map instead of specific entity,
  * <br>the null and empty string are not handled by default.
  * Suid (select,update,insert,delete)
@@ -56,13 +56,20 @@ public interface MapSuid {
 
 	/**
 	 * 使用MapSql查询数据.Use MapSql to select data.
-	 * <br>one map element as : field-name:value
+	 * <br>one map element as : fieldName:value
 	 * @param mapSql MapSql instance
 	 * @return 包装在一个Map中的一行数据.returns a row of data wrapped in a map.
 	 */
 	public Map<String, Object> selectOne(MapSql mapSql);
 	
-	
+	/**
+	 * 更新记录,并返回受影响的行数.Update the record and return the number of rows affected.
+	 * @param mapSql MapSql instance
+	 * MapSql的put方法用于SQL语句的where部分,putNew用于update类型SQL的set部分.
+	 * MapSql' put method for SQL where part, putNew for update SQL 's set part.
+	 * @return 成功更新的记录数. the numbers of update records successfully. 
+	 * @since 1.9.8
+	 */
 	public int update(MapSql mapSql);
 
 	/**
@@ -79,18 +86,24 @@ public interface MapSuid {
 	public long insertAndReturnId(MapSql mapSql);
 	
 	/**
-	 * 插入记录,并返回成功插入的记录数.
+	 * 插入记录,并返回成功插入的记录数.Inserts record and returns the number of the record successfully inserted.
 	 * @param mapSql MapSql instance
 	 * @return 成功插入的记录数.the numbers of insert records successfully.
 	 */
 	public int insert(MapSql mapSql);
 	
 	/**
-	 * 使用MapSql查询数据.Use MapSql to select data.
+	 * 使用MapSql删除记录.Use MapSql to delete record.
 	 * @param mapSql MapSql instance
 	 * @return 成功删除的记录数. the numbers of delete records successfully. 
 	 */
 	public int delete(MapSql mapSql);
 	
+	/**
+	 * 统计符合条件的记录数.count the number of qualified record.
+	 * @param mapSql MapSql instance
+	 * @return 符合条件的记录数.the number of qualified record.
+	 * @since 1.9.8
+	 */
 	public int count(MapSql mapSql);
 }
