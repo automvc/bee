@@ -53,6 +53,7 @@ public interface MapSql {
 	 * Set the fields and values that need to be updated for the set part of SQL update
 	 * @param fieldName
 	 * @param value
+	 * @since 1.9.8
 	 */
 	public void putNew(String fieldName, Object value);
 	
@@ -60,24 +61,29 @@ public interface MapSql {
 	 * 设置需要更新的字段和值,用于update SQL的Set部分
 	 * Set the fields and values that need to be updated for the set part of SQL update
 	 * @param map 需要更新的字段和值组成的map对象. A map object consisting of fields and values that need to be updated
+	 * @since 1.9.8
 	 */
 	public void putNew(Map<String, ? extends Object> map);
 	
 	/**
-	 * 用于Javabean与DB转换时配置信息设置
+	 * 设置用于过滤或处理规则的配置.Set the configuration for filtering or processing rule.
 	 * @param MapSqlSetting 设置的MapSqlSetting Key
 	 * @param value 设置的值
 	 */
 	public void put(MapSqlSetting MapSqlSetting, boolean value);
 	
 	/**
+	 * 分页查询时,设置开始页.Set the start page when paging query.
 	 * 当用于count()时,忽略此方法
 	 * @param start
+	 * @since 1.9.8
 	 */
 	public void start(Integer start);
 	/**
+	 * 分页查询时,设置一页的数据记录数量.During paging query, set the number of data records on one page.
 	 * 当用于count()时,忽略此方法
 	 * @param size
+	 * @since 1.9.8
 	 */
 	public void size(Integer size);
 
