@@ -1,4 +1,4 @@
-常见问题收集:
+Bee常见疑问收集:
 
 1.
 
@@ -133,7 +133,7 @@ Q:&nbsp;Bee设计原理?
 
 A: 参考wiki或公众号相关文章: (十一)：如何设计ORM架构及Bee源码分析 (十二)：为什么需要一个新的ORM框架
 
-13.Q:&nbsp;Bee查询自己怎么写筛选条件呢？像筛选状态大于2的 
+13-A.Q:&nbsp;Bee查询怎么写筛选条件(不是等号=的情况)呢？像筛选状态大于2的 ?   还有 update高级用法
 
 A: 写法类似： Condition condition=new ConditionImpl(); condition .op("status", Op.gt, 2) // 会转化到SQL中的where status&gt;2 详情参考wiki: (五): 复杂查询(面向对象方式) (十三)：update高级用法说明    
  **更新的字段是在原来的基础上变化** 
@@ -147,6 +147,24 @@ suidRich.update(entity,condition);
 若字段p每次增加的值由字段step配置，则写为：    
 condition.setAdd("p", "step");    
 会转化为: set p=p+step	
+
+13-B. Q:&nbsp;SuidRich接口,update方法,如何区分SQL的set部分和where部分? 即哪些字段会用在set设置部分,哪些字段会用在where条件过虑部分?
+
+A: 当更新一个实体,是根据id来唯一关联一个实体时,用Suid接口的update(T entity)方法即可,该方法以id作为where条件,其它非null,非空字段转为要更新的值.
+默认转换的如改价格, set price=22; 但要是比原价提高2,set price=price+2,此时不能通过将值放在实体进行默认转换,需要借助Condition,用:condition.setAdd("price", 2);   
+若用id可以唯一关联一个实体,可用:
+updateById(T entity,Condition condition);
+ * SQL UPDATE语句包括两大部分SET和WHERE,SuidRich采取指定其中一样,另一样尽量采用默认的实现方式.所以有关更新的方法分为两部分:
+ * <br>update和updateBy.
+ * <br>update方法中,String updateFields参数(若有),可以指明要更新的字段,其余字段则有可能转为SQL UPDATE语句的WHERE部分(默认过
+ * <br>滤NULL和空字符串,可通过IncludeType显示设置).
+  * <br>updateBy方法中,String whereFields(若有),可以指明用于SQL中WHERE的字段.当指定了whereFields, 没在whereFields的字段,将默认
+ * <br>转换为SQL UPDATE语句的SET部分(默认过滤NULL和空字符串,可通过IncludeType显示设置).
+ * <br>同一个实体的某个属性的值,若用于WHERE部分了,再用于UPDATE SET部分就没有意义(因为此时它们的值是一样的),但可以用Condition的
+ * <br>set(String fieldName, Number num)等方法设置;Condition的方法set,setMultiply,setAdd,setWithField,是在处理WHERE字段前
+ * <br>已完成处理的,所以不受指定的WHERE条件字段的影响.
+ * 
+ * <br>update和updateBy方法的Condition设置的字段都会被解析,不受IncludeType的限制,也不受updateFields参数和whereFields参数的影响.
 
 14.Q:&nbsp;Bee与Honey是什么关系? 
 
