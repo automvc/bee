@@ -133,7 +133,7 @@ Q:&nbsp;Bee设计原理?
 
 A: 参考wiki或公众号相关文章: (十一)：如何设计ORM架构及Bee源码分析 (十二)：为什么需要一个新的ORM框架
 
-13-A.Q:&nbsp;Bee查询怎么写筛选条件(不是等号=的情况)呢？像筛选状态大于2的 ?   还有 update高级用法
+13 (1).Q:&nbsp;Bee查询怎么写筛选条件(不是等号=的情况)呢？像筛选状态大于2的 ?   还有 update高级用法
 
 A: 写法类似： Condition condition=new ConditionImpl(); condition .op("status", Op.gt, 2) // 会转化到SQL中的where status&gt;2 详情参考wiki: (五): 复杂查询(面向对象方式) (十三)：update高级用法说明    
  **更新的字段是在原来的基础上变化** 
@@ -148,7 +148,7 @@ suidRich.update(entity,condition);
 condition.setAdd("p", "step");    
 会转化为: set p=p+step	
 
-13-B. Q:&nbsp;SuidRich接口,update方法,如何区分SQL的set部分和where部分? 即哪些字段会用在set设置部分,哪些字段会用在where条件过虑部分?
+13 (2). Q:&nbsp;SuidRich接口,update方法,如何区分SQL的set部分和where部分? 即哪些字段会用在set设置部分,哪些字段会用在where条件过虑部分?
 
 A: 当更新一个实体,是根据id来唯一关联一个实体时,用Suid接口的update(T entity)方法即可,该方法以id作为where条件,其它非null,非空字段转为要更新的值.
 默认转换的如改价格, set price=22; 但要是比原价提高2,set price=price+2,此时不能通过将值放在实体进行默认转换,需要借助Condition,用:condition.setAdd("price", 2);   
