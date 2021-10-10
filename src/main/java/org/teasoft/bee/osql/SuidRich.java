@@ -205,7 +205,7 @@ public interface SuidRich extends Suid {
 	 * <br>除了updateFields中声明要更新的字段,其它非空,非null的字段作为过滤条件,转成SQL的where表达式.
 	 * <br>For the list of fields to be updated, multiple fields are separated by commas (those fields will be updated). 
 	 * <br>This attribute cannot be empty. By default, each field will be converted to a set expression of SQL update.
-	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
+	 * @return 成功更新的记录数,若失败则返回小于0的整数.the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 */
 	public <T> int update(T entity,String updateFields);
 	
@@ -218,14 +218,14 @@ public interface SuidRich extends Suid {
 	 * <br>This attribute cannot be empty and is not affected by the includeType parameter. By default, each field will be
 	 * <br> converted to a set expression of SQL update.
 	 * @param includeType 空字符串与null是否作为过滤条件.whether null string and null as a filter conditions.
-	 * @return  成功更新的记录数.the numbers of update record(s) successfully.
+	 * @return  成功更新的记录数,若失败则返回小于0的整数.the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 */
 	public <T> int update(T entity,String updateFields,IncludeType includeType);
 	
 	/**
 	 * 批量插入数据.Insert records by batch type.
 	 * @param entity 与表对应的实体对象数组,且不能为空. table's entity array(do not allow null).
-	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
+	 * @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
 	 */
 	public <T> int insert(T[] entity);
 	
@@ -233,7 +233,7 @@ public interface SuidRich extends Suid {
 	 * 批量插入数据.Insert records by batch type.
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity array(do not allow null).
 	 * @param batchSize 批操作数量大小.batch size.
-	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
+	 *  @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
 	 */
 	public <T> int insert(T[] entity,int batchSize);
 	
@@ -242,7 +242,7 @@ public interface SuidRich extends Suid {
 	 * <br>Insert record by batch type,and can point out which field(s) don't need to insert.
 	 * @param entity 与表对应的实体对象数组,且不能为空. table's entity array(do not allow null).
 	 * @param excludeFields 声明不用插入的字段列表.fields list that don't need to insert .
-	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
+	 *  @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
 	 */
 	public <T> int insert(T[] entity,String excludeFields);
 	
@@ -252,14 +252,14 @@ public interface SuidRich extends Suid {
 	 * @param entity 与表对应的实体对象数组,且不能为空. table's entity array(do not allow null).
 	 * @param batchSize 批操作数量大小.batch size.
 	 * @param excludeFields 声明不用插入的字段列表.Don't insert fields list.
-	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
+	 *  @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
 	 */
 	public <T> int insert(T[] entity,int batchSize,String excludeFields);
 	
 	/**
 	 * 批量插入数据.Insert records by batch type.
 	 * @param entityList 与表对应的实体对象链表,且不能为空. table's entity list(do not allow null).
-	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
+	 *  @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
 	 * @since  1.9
 	 */
 	public <T> int insert(List<T> entityList);
@@ -268,7 +268,7 @@ public interface SuidRich extends Suid {
 	 * 批量插入数据.Insert records by batch type.
 	 * @param entityList 与表对应的实体对象链表,且不能为空. table's entity list(do not allow null).
 	 * @param batchSize 批操作数量大小.batch size.
-	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
+	 *  @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
 	 * @since  1.9
 	 */
 	public <T> int insert(List<T> entityList,int batchSize);
@@ -278,7 +278,7 @@ public interface SuidRich extends Suid {
 	 * <br>Insert record by batch type,and can point out which field(s) don't need to insert.
 	 * @param entityList 与表对应的实体对象链表,且不能为空. table's entity list(do not allow null).
 	 * @param excludeFields 声明不用插入的字段列表.fields list that don't need to insert .
-	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
+	 *  @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
 	 * @since  1.9
 	 */
 	public <T> int insert(List<T> entityList,String excludeFields);
@@ -289,7 +289,7 @@ public interface SuidRich extends Suid {
 	 * @param entityList 与表对应的实体对象链表,且不能为空. table's entity list(do not allow null).
 	 * @param batchSize 批操作数量大小.batch size.
 	 * @param excludeFields 声明不用插入的字段列表.Don't insert fields list.
-	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
+	 *  @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
 	 * @since  1.9
 	 */
 	public <T> int insert(List<T> entityList,int batchSize,String excludeFields);
@@ -311,7 +311,7 @@ public interface SuidRich extends Suid {
 	 * @param entity 与表对应的实体对象,且不能为空;entity中id字段不能为空,作为过虑条件.id为null将引发ObjSQLException.
 	 * <br>table's entity(do not allow null),The id field in entity cannot be empty as a filtering condition.
 	 * @param includeType 空字符串与null是否包含设置
-	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
+	 * @return 成功更新的记录数,若失败则返回小于0的整数.the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 */
 	public <T> int update(T entity,IncludeType includeType);
 	
@@ -319,7 +319,7 @@ public interface SuidRich extends Suid {
 	 * 根据实体对象entity插入数据.Insert record according to entity.
 	 * @param entity 与表对应的实体对象,且不能为空.table's entity(do not allow null).
 	 * @param includeType 空字符串与null是否包含设置
-	 * @return 成功插入的记录行数. the number of inserted record(s) successfully.
+	 * @return 成功插入的记录行数,若失败则返回小于0的整数. the number of inserted record(s) successfully,if fails, return integer less than 0.
 	 */
 	public <T> int insert(T entity,IncludeType includeType);
 	
@@ -328,7 +328,7 @@ public interface SuidRich extends Suid {
 	 * @param entity 与表对应的实体对象,且不能为空,id为null不作为过滤条件.table's entity(do not allow null).
 	 * 
 	 * @param includeType 空字符串与null是否包含设置
-	 * @return 成功删除的记录行数. the number of deleted record(s) successfully.
+	 * @return 成功删除的记录行数,若失败则返回小于0的整数. the number of deleted record(s) successfully,if fails, return integer less than 0.
 	 */
 	public <T> int delete(T entity,IncludeType includeType);
 	
@@ -409,7 +409,7 @@ public interface SuidRich extends Suid {
 	 * 根据id删除记录.Delete record by id.
 	 * @param c 实体类类型,且不能为空
 	 * @param id 实体id字段的值. value of entity's id field.
-	 * @return 成功删除的记录行数. the number of deleted record(s) successfully.
+	 * @return 成功删除的记录行数,若失败则返回小于0的整数. the number of deleted record(s) successfully,if fails, return integer less than 0.
 	 * @since  1.4
 	 */
 	public int deleteById(Class c,Integer id);
@@ -418,7 +418,7 @@ public interface SuidRich extends Suid {
 	 * 根据id删除记录.Delete record by id.
 	 * @param c 实体类类型,且不能为空
 	 * @param id 实体id字段的值. value of entity's id field.
-	 * @return 成功删除的记录行数. the number of deleted record(s) successfully.
+	 * @return 成功删除的记录行数,若失败则返回小于0的整数. the number of deleted record(s) successfully,if fails, return integer less than 0.
 	 * @since  1.4
 	 */
 	public int deleteById(Class c,Long id);
@@ -427,7 +427,7 @@ public interface SuidRich extends Suid {
 	 * 根据id删除记录.Delete record by id.
 	 * @param c 实体类类型,且不能为空
 	 * @param ids 实体id字段的值,多个用逗号隔开.ids values of entity's id field,if more than one,separate with comma.
-	 * @return 成功删除的记录行数. the number of deleted record(s) successfully.
+	 * @return 成功删除的记录行数,若失败则返回小于0的整数. the number of deleted record(s) successfully,if fails, return integer less than 0.
 	 * @since  1.4
 	 */
 	public int deleteById(Class c,String ids);
@@ -481,7 +481,7 @@ public interface SuidRich extends Suid {
 	 * 没指定为whereFields的字段,作为set部分,默认只处理非空,非null的字段
 	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
 	 * 指定作为条件的,都转换.id为null不作为过滤条件
-	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
+	 * @return 成功更新的记录数,若失败则返回小于0的整数.the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 * @since  1.6
 	 */
 	public <T> int updateBy(T entity,String whereFields);
@@ -493,7 +493,7 @@ public interface SuidRich extends Suid {
 	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
 	 * 指定作为条件的,都转换.id为null不作为过滤条件
 	 * @param includeType 空字符串与null是否作为过滤条件.whether null string and null as a filter conditions.
-	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
+	 * @return 成功更新的记录数,若失败则返回小于0的整数.the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 * @since  1.6
 	 */
 	public <T> int updateBy(T entity,String whereFields,IncludeType includeType);
@@ -508,7 +508,7 @@ public interface SuidRich extends Suid {
 	 * <br>Notice:the method op of condition also maybe converted to the where expression.
 	 * @param condition 用来设置默认情况不能表达的条件.
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
-	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
+	 * @return 成功更新的记录数,若失败则返回小于0的整数.the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 * @since 1.7.2
 	 */
 	public <T> int updateBy(T entity,String whereFields,Condition condition);
@@ -520,7 +520,7 @@ public interface SuidRich extends Suid {
 	 * @param condition 用来设置默认情况不能表达的条件.
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
 	 * <br>需要注意的是,condition用op设置的条件,也有可能转换为where部分的过滤条件.
-	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
+	 * @return 成功更新的记录数,若失败则返回小于0的整数.the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 * @since 1.9
 	 */
 	public <T> int updateById(T entity,Condition condition);
@@ -538,7 +538,8 @@ public interface SuidRich extends Suid {
 	 * <br> converted to a set expression of SQL update.
 	 * @param condition 
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
-	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
+	 * 一个字段既在指定的updateFields,也用在了Condition.set(arg1,arg2)等方法设置,entity里相应的字段会按规则转化到where部分.(V1.9.8)
+	 * @return 成功更新的记录数,若失败则返回小于0的整数.the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 * @since 1.7.2
 	 */
 	public <T> int update(T entity,String updateFields,Condition condition);
@@ -546,12 +547,14 @@ public interface SuidRich extends Suid {
 	/**
 	 * 更新记录,高级条件可通过Condition参数设置  Update record,and can help with Condition.
 	 * <br>当SQL update的set表达式通过Condition定义时,可以不用再指定set使用的字段.
+	 * <br>此方法相当于调用update(T entity,String updateFields,Condition condition)方法时,将updateFields设置为"".
+	 * <br>it is equivalent to update(entity,"",condition),updateFields value is "".
 	 * @param entity 实体类对象,不能为空.table's entity(do not allow null).
-	 * entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.<br>
-	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition.<br>
+	 * entity默认有值的字段会转成field=value的形式(转到where部分),其它形式可通过condition指定.<br>
+	 * If the field of entity is not null or empty, it will be translate to field=value in where part.Other can define with condition.<br>
 	 * @param condition
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
-	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
+	 * @return 成功更新的记录数,若失败则返回小于0的整数.the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 * @since 1.8
 	 */
 	public <T> int update(T entity,Condition condition);
@@ -567,7 +570,7 @@ public interface SuidRich extends Suid {
 	 * oldEntity is converted to Where part of SQL, and newEntity is converted to Set part.
 	 * @param oldEntity 含有旧值属性的实体.Entity with old value field.
 	 * @param newEntity 含有新值属性的实体.Entity with new value field.
-	 * @return 成功更新的记录数.the numbers of update record(s) successfully.
+	 * @return 成功更新的记录数,若失败则返回小于0的整数.the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 */
 	public <T> int update(T oldEntity,T newEntity);
 	
@@ -601,7 +604,7 @@ public interface SuidRich extends Suid {
 	 * If it can be distinguished, it is recommended to explicitly call insert (entity) 
 	 * <br>or update (entity), which is more secure and efficient.
 	 * @param entity
-	 * @return 返回受影响的行数.the numbers of effect record(s).
+	 * @return 返回受影响的行数,若失败则返回小于0的整数.the numbers of effect record(s),if fails, return integer less than 0.
 	 * @since 1.9.8
 	 */
 	public <T> int save(T entity);
