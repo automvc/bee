@@ -397,8 +397,36 @@ A:  update 不像insert 有批量的接口。  因为用同一条语句可以更
 beginSameConnection();  
 //多个update语句  
 endSameConnection();  
-    
+
 32.
+
+Q:  在where条件里如何使用or  
+      
+A:  例子如下:
+	condition
+		.lParentheses()  // (
+		.op("classno", Op.eq, "201")
+		.or()
+		.op("classno", Op.eq, "202")
+		.rParentheses()  // )
+		;
+		
+	会转化成:  (classno="201" or  classno="202")
+	
+33.
+
+Q:  Bee多表关联查询, 用List和不用List的区别  
+      
+A:  参考:https://blog.csdn.net/abckingaa/article/details/119859192　　
+   
+@JoinTable(mainField="table_id", subField="table_id",subClass="Columns", joinType=JoinType.JOIN)
+	private Columns columns; 
+//	private List<Columns> list;
+
+//注解里subClass属性,当两个实体在同一个包,包名,是可以省略的.
+
+
+34.
 
 Q:  多数据源如何配置(多数据源实例)?  
 A:  相关用例可以查看,  
