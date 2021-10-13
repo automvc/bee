@@ -5,8 +5,8 @@ Bee
 #### 为适应互联网时代软件需求量大,需求变更频繁,性能要求高等要求,ORM Bee应运而生!
 
 **Bee** 是一个简单，易用，功能强大，开发速度快，编码少的 JAVA ORM 框架。  
-Bee简单易用：单表操作、多表关联操作，可以不用写sql,极少语句就可以完成SQL操作；**概念简单**,10分钟即可入门。  
-Bee功能强大：复杂查询也支持向对象方式，分页查询性能更高，一级缓存即可支持个性化优化；具有分布式特性。高级要求，还可以方便自定义SQL语句。  
+**Bee简单易用**：单表操作、多表关联操作，可以不用写sql,极少语句就可以完成SQL操作；**概念简单**,10分钟即可入门。  
+**Bee功能强大**：复杂查询也支持向对象方式，分页查询性能更高，一级缓存即可支持个性化优化；具有分布式特性。高级要求，还可以方便自定义SQL语句。  
 **如果说Mybatis在Hibernate之后不是重复造轮子,那Bee在Hibernate和Mybatis之后也不会是重复造轮子!**  
 择其优点，避其缺点，此外，还加有自己的优点！  
 
@@ -118,24 +118,24 @@ add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuidImp
 MapSuidImpl change two different method:insert(MapSql mapSql) & insertAndReturnId(MapSql mapSql)  
 
 PreparedSqlLib新增selectMapList方法. 
-多数据源读写模式,支持不同类型数据源,方便数据库间转移数据. 
+多数据源读写模式,支持不同类型数据源,方便数据库间转移数据.  
 Logger: 两个方法支持有Throwable参数.  
-增加流的工具类StreamUtil  
+sql输出日志支持logger不同级别输出设置.  
+增加流的工具类StreamUtil.  
 ObjectUtils增加一个方法: isTrue(Boolean b)  
 增强检测字段合法性,包括MapSuid使用的字段.  
 use LinkedHashMap in List&lt;Map> result for selectMapList(String sql).  
 Condition支持condition.set("fieldName", null).  
 selectJson支持通过配置将long转为string  
-sql输出日志支持logger不同级别输出设置  
 增强autoGenBean ,支持生成Json格式的SQL脚本(SQL Json Script).  
-添加通用搜索功能支持(简化后端复杂查询编程).  
+添加通用查询功能支持(简化后端复杂查询编程).  
 
 fix bug for ExecutableSql.  
 transfer the the field of 'order by'.  
 fix null bug in create() of ObjectCreatorFactory.  
-fix bug for max column number(excel in bee-ext). 
-fix bug about HoneyContext  
-fix bug about checkPackageByClass 
+fix bug for max column number(excel in bee-ext).  
+fix bug about HoneyContext.  
+fix bug about checkPackageByClass.  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
