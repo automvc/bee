@@ -136,6 +136,7 @@ fix null bug in create() of ObjectCreatorFactory.
 fix bug for max column number(excel in bee-ext).  
 fix bug about HoneyContext.  
 fix bug about checkPackageByClass.  
+fix bug about multi-thread safe in ConditionHelper.  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
