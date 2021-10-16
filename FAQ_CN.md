@@ -403,6 +403,7 @@ endSameConnection();
 Q:  在where条件里如何使用or  
       
 A:  例子如下:
+
  ```java 
 	condition
 		.lParentheses()  // (
@@ -411,9 +412,10 @@ A:  例子如下:
 		.op("classno", Op.eq, "202")
 		.rParentheses()  // )
 		;
-	```
-		
+ ```
+	
 	会转化成:  (classno="201" or  classno="202")
+	
 	
 33.
 
