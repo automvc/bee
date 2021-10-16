@@ -117,7 +117,7 @@ add method toUpdateSqlByMap ,toCountSqlByMap ,support page in MapSqlProcessor.
 add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuidImpl.  
 MapSuidImpl change two different method:insert(MapSql mapSql) & insertAndReturnId(MapSql mapSql)  
 
-PreparedSqlLib新增selectMapList方法. 
+PreparedSqlLib新增selectMapList方法.  
 多数据源读写模式,支持不同类型数据源,方便数据库间转移数据.  
 Logger: 两个方法支持有Throwable参数.  
 sql输出日志支持logger不同级别输出设置.  
