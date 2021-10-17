@@ -57,7 +57,6 @@ public interface Suid {
 	 */
 	public <T> int update(T entity);
 	
-	
 	/**
 	 * 根据实体对象entity插入数据.According to entity object insert record. 
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).<br>
