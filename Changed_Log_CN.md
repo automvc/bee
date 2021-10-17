@@ -45,7 +45,7 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 增加: selectJson add config:ignoreNull;date,time,timestamp Wit hMillisecond format  
 增加: List<String[]> select(String sql), add config:nullToEmptyString  
 完善查询结果缓存机制(一级缓存可**对用户编程透明**,也可进行细粒度配置调优控制)  
-**一级缓存**即可支持: **不缓存列表,永久缓存列表,永久缓存且可更新列表**,结果集超过一定大小可不放缓存 等细粒度配置调优控制.  
+**一级缓存**即可支持: **不缓存列表,永久缓存列表,可更新的长久缓存列表**,结果集超过一定大小可不放缓存 等细粒度配置调优控制.  
 增加: SysValue注解  
 
 **V1.5**  
