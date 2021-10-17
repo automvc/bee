@@ -135,7 +135,7 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 查询一个实体.Select one record.  
-	 * @param entity 实体类对象
+	 * @param entity 实体类对象.table's entity(do not allow null).
 	 * @return 只返回一个实体,数量不为1时返回null.return one record,if the size do not equal one, return null.
 	 */
 	public <T> T selectOne(T entity);
@@ -364,7 +364,6 @@ public interface SuidRich extends Suid {
 	 */
 	public <T> String selectJson(T entity, String selectFields, int start, int size);
 	
-	
 	/**
 	 * 根据id查询记录.Select record by id.
 	 * @param entity 实体类对象,且不能为空.table's entity(do not allow null).
@@ -383,7 +382,6 @@ public interface SuidRich extends Suid {
 	 * @since  1.9
 	 */
 	public <T> T selectById(T returnType,Long id);
-	
 	
 	/**
 	 * 根据id查询记录.Select record by id.
@@ -587,8 +585,6 @@ public interface SuidRich extends Suid {
 	 * @since  1.9
 	 */
 	public SuidRich setDynamicParameter(String para, String value);
-	
-//	public SuidRich saveSqlString();
 	
 	/**
 	 * 检测实体对应记录是否存在.Check whether the entity corresponding record exist
