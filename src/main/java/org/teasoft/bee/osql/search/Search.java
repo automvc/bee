@@ -18,6 +18,10 @@
 package org.teasoft.bee.osql.search;
 
 /**
+ * eg:
+ * new Search("id",Operator.between,"100030","100035","or");
+ * --> or id between 100030 and 100035
+ * 为了过滤查询记录的结构体.Struct for search the record.
  * @author Kingstar
  * @since  1.9.8
  */
@@ -29,11 +33,31 @@ public class Search {
 	
 	// when like,notLike, value2 is:Left,Right,LeftRight
 	// when function, value2 is: alias name
-	// when Op,value2 is null
+	//between, notBetween value2 is:second para
+	// other Operator,value2 is null
 	private String value2; 
 	
 	private String op2; //or ,   and is default
 	
+	public Search() {}
+	
+	public Search(String field, Operator operator, String value1, String value2) {
+		super();
+		this.field = field;
+		this.op = operator;
+		this.value1 = value1;
+		this.value2 = value2;
+	}
+
+	public Search(String field, Operator operator, String value1, String value2, String op2) {
+		super();
+		this.field = field;
+		this.op = operator;
+		this.value1 = value1;
+		this.value2 = value2;
+		this.op2 = op2;
+	}
+
 	public String getField() {
 		return field;
 	}
@@ -43,8 +67,8 @@ public class Search {
 	public Operator getOp() {
 		return op;
 	}
-	public void setOp(Operator op) {
-		this.op = op;
+	public void setOp(Operator operator) {
+		this.op = operator;
 	}
 	
 	public String getValue1() {
@@ -58,7 +82,8 @@ public class Search {
 	/**
 	 * when like,notLike, value2 is:Left,Right,LeftRight
 	 * when function, value2 is: alias name
-	 * when Op,value2 is null
+	 * between, notBetween value2 is:second para
+	 * other Operator,value2 is null
 	 * @return value2
 	 */
 	public String getValue2() {
@@ -68,17 +93,28 @@ public class Search {
 	/**
 	 * when like,notLike, value2 is:Left,Right,LeftRight
 	 * when function, value2 is: alias name
-	 * when Op,value2 is null
+	 * between, notBetween value2 is:second para
+	 * other Operator,value2 is null
 	 * @param value2
 	 */
 	public void setValue2(String value2) {
 		this.value2 = value2;
 	}
+	
+	/**
+	 * it will be : "or", "and" , "(" , ")" ,   "or (",   ") or",  "and (",  ") and"
+	 * @return operator2
+	 */
 	public String getOp2() {
 		return op2;
 	}
-	public void setOp2(String op2) {
-		this.op2 = op2;
+	
+	/**
+	 * it will be : "or", "and" , "(" , ")" ,   "or (",   ") or",  "and (",  ") and"
+	 * @param operator2
+	 */
+	public void setOp2(String operator2) {
+		this.op2 = operator2;
 	}
 	
 }
