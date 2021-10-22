@@ -17,14 +17,14 @@
 
 package org.teasoft.bee.osql.exception;
 
-import org.teasoft.bee.osql.ObjSQLException;
+import org.teasoft.bee.osql.BeeException;
 
 /**
  * 变量名命名异常.Bee error name exception.
  * @author Kingstar
  * @since  1.9.8
  */
-public class BeeErrorNameException extends ObjSQLException {
+public class BeeErrorNameException extends BeeException {
 	static final long serialVersionUID = -875516993124222236L;
 
 

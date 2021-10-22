@@ -6,6 +6,8 @@ package org.teasoft.bee.osql;
  * @since  1.0
  */
 public final class DatabaseConst {
+	
+	private DatabaseConst() {}
 
 	public static final String MYSQL = "MySQL";
 	public static final String MariaDB = "MariaDB";

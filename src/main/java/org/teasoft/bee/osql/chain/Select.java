@@ -26,7 +26,7 @@ import org.teasoft.bee.osql.OrderType;
  */
 public interface Select extends ToSql{
 	
-	//<==============condition
+	//<==============condition start
 	
 	/**
 	 * 添加左括号.add "("
@@ -73,7 +73,7 @@ public interface Select extends ToSql{
 	public Select in(String field, String valueList);
 	public Select notIn(String field, String valueList);
 	
-	//=============>
+	//==============condition end>
 	
 	public Select select() ;
 
@@ -108,9 +108,7 @@ public interface Select extends ToSql{
 	public Select size(int size) ;
 
 	public Select exists(Select subSelect) ;
-//	public Select exists(String subSelect);
 	public Select notExists(Select subSelect);
-//	public Select notExists(String subSelect);
 	
 	public Select in(String field, Select subSelect);
 	public Select notIn(String field, Select subSelect);
