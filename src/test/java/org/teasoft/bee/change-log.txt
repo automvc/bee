@@ -124,3 +124,11 @@ bee-exam(v1.9)2021-05-02 02.54.55.328-normal(Microsoft SQL Server).txt
 bee-exam(v1.9)2021-05-02 02.55.16.45-cache(MySQL).txt
 
 test V1.9.8 with well-known and major database  
+bee-exam(v1.9.8)2021-10-22 13.28.59.122-normal(MySQL).txt
+bee-exam(v1.9.8)2021-10-22 13.29.18.02-normal(Oracle).txt
+bee-exam(v1.9.8)2021-10-22 13.29.41.620-normal(SQLite).txt
+bee-exam(v1.9.8)2021-10-22 13.30.00.709-normal(H2).txt
+bee-exam(v1.9.8)2021-10-22 13.30.07.72-normal(PostgreSQL).txt
+bee-exam(v1.9.8)2021-10-22 13.30.26.941-normal(Microsoft SQL Server).txt
+bee-exam(v1.9.8)2021-10-22 13.30.36.536-normal(MySQL).txt
+bee-exam(v1.9.8)2021-10-22 13.30.58.799-cache(MySQL).txt
