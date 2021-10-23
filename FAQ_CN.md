@@ -432,6 +432,77 @@ A:  参考:https://blog.csdn.net/abckingaa/article/details/119859192　　
 
 34.
 
+Q:  Java ORM框架Bee如何使用事务  
+      
+A:  //单笔操作,默认自动提交事务
+
+多笔操作要在一次事务提交，可使用：
+
+ ```java 
+ try {
+
+          Transaction transaction=SessionFactory.getTransaction();
+           transaction.begin(); //事务开始
+
+           //......放多个操作在这
+
+           transaction.commit();//提交事务,事务结束
+
+ } catch (BeeException e) {
+      Logger.error(e.getMessage());
+      transaction.rollback();
+    }
+ ```
+ 
+具体例子如下：
+
+ ```java 
+Transaction transaction=SessionFactory.getTransaction();
+    try {
+
+      transaction.begin();
+
+      Suid suid = BeeFactory.getHoneyFactory().getSuid();
+
+      User user=new User();
+      user.setUsername("testuser");
+      user.setPassword("bee-user");
+
+      suid.insert(user);//insert 1
+
+      Orders orders = new Orders();
+      orders.setUserid("bee");
+      orders.setName("Bee(ORM Framework)");
+      orders.setTotal(new BigDecimal("91.99"));
+      orders.setRemark("test transaction"); 
+      orders.setSequence("");//empty String test
+
+      suid.insert(orders); //insert 2
+
+      transaction.commit();
+
+      List<Orders> list = suid.select(orders); //可任意组合条件查询
+      for (int i = 0; i < list.size(); i++) {
+        Logger.info(list.get(i).toString());
+      }
+
+    } catch (BeeException e) {
+     // e.printStackTrace();
+      Logger.error(e.getMessage());
+      transaction.rollback();
+    }
+ ```
+
+35.
+
+Q:  Java ORM框架Bee分页实例  
+      
+A:  
+
+
+
+其它:
+
 Q:  多数据源如何配置(多数据源实例)?  
 A:  相关用例可以查看,  
 https://github.com/automvc/bee-exam  
