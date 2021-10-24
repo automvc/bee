@@ -20,7 +20,7 @@ package org.teasoft.bee.osql.exception;
 import org.teasoft.bee.osql.BeeException;
 
 /**
- * Bee非法参数异常.Bee illegal parameter exception.
+ * 非法的Bee参数异常.Bee illegal parameter exception.
  * @author Kingstar
  * @since  1.5
  */

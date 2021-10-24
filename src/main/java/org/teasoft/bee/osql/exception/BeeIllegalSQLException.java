@@ -20,7 +20,7 @@ package org.teasoft.bee.osql.exception;
 import org.teasoft.bee.osql.BeeException;
 
 /**
- * 
+ * 非法的Bee SQL异常.Bee Illegal SQLException
  * @author Kingstar
  * @since  1.9.8
  */
