@@ -349,7 +349,7 @@ public interface SuidRich extends Suid {
 	 * @return 包含多个实体的部分字段的Json字符串
 	 * @since 1.9.8
 	 */
-	public <T> String selectJson(T entity, String selectField);
+	public <T> String selectJson(T entity, String selectFields);
 	
 	/**
 	 * 只查询部分一部分字段,且可以分页 ,并返回Json字符串
@@ -366,7 +366,7 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 根据id查询记录.Select record by id.
-	 * @param entity 实体类对象,且不能为空.table's entity(do not allow null).
+	 * @param returnType 实体类对象,且不能为空.table's entity(do not allow null).
 	 * @param id 实体id字段的值.value of entity's id field. 
 	 * @return 返回id对应的实体.return one entity which owns this id.
 	 * @since  1.9
@@ -559,8 +559,8 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * 更新实体,oldEntity的非null,非空属性作为过虑条件;newEntity的非null,非空属性作为需要更新的属性对应值
-	 * Update the entity. The non null and non empty attributes of oldentity are taken as 
-	 * <br>the filtering conditions; The non null and non empty properties of newentity are 
+	 * <br>Update the entity. The non null and non empty attributes of oldEntity are taken as 
+	 * <br>the filtering conditions; The non null and non empty properties of newEntity are 
 	 * <br>used as the corresponding values of the properties to be updated
 	 * 新旧实体必须是相同类型.
 	 * Old and new entities must be of the same type.

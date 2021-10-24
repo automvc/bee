@@ -70,9 +70,9 @@ public interface Condition extends ConditionAssistant {
 	 * eg: opOn("table2.valid",Op.eq,"1")    table1 left join table2 on table1.id=table2.id and table2.valid='1'
 	 * it is different from where part: table1 left join table2  on table1.id=table2.id where valid='1'
 	 * @param field
-	 * @param Op
-	 * @param value
-	 * @return
+	 * @param Op 操作符.operator.
+	 * @param value 字段对应的值.value of the field.
+	 * @return Condition
 	 */
 	public Condition opOn(String field, Op Op, Object value);
 	
