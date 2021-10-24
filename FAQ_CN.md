@@ -531,7 +531,7 @@ private [UNKNOWN TYPE]TEXT testData;
 jdbcTypeToFieldType-Oracle.properties  
 文件里,配置:  
 DATE=Timestamp
-可以将DATE指定转换为:Timestamp
+可以将DATE指定转换为:Timestamp  
 Honey工程下,预设了部分文件  
 jdbcTypeToFieldType-Oracle.properties  
 jdbcTypeToFieldType-H2.properties  
@@ -561,10 +561,10 @@ A: 例如,查email为空的用户信息.
 ```
  //转成的sql为:
  
-```properties
+```sql
 
 select id,email,last_name,name,password,username,createtime from test_user where email is null
- 
+
  ```
  
 其它:
