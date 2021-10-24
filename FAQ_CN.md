@@ -526,24 +526,25 @@ A:
 private [UNKNOWN TYPE]TEXT testData;  
 生成Javabean时,有[UNKNOWN TYPE], 则表示遇到了没能识别的类型.  
 可以在相应文件里配置  
-如:Oracle,
-在:
-jdbcTypeToFieldType-Oracle.properties
-文件里,配置:
+如:Oracle,  
+在:  
+jdbcTypeToFieldType-Oracle.properties  
+文件里,配置:  
 DATE=Timestamp
 可以将DATE指定转换为:Timestamp
-Honey工程下,预设了部分文件
+Honey工程下,预设了部分文件  
 jdbcTypeToFieldType-Oracle.properties  
 jdbcTypeToFieldType-H2.properties  
 jdbcTypeToFieldType-MySQL.properties  
-jdbcTypeToFieldType-PostgreSQL.properties
-jdbcTypeToFieldType-SQLite.properties
+jdbcTypeToFieldType-PostgreSQL.properties  
+jdbcTypeToFieldType-SQLite.properties  
 jdbcTypeToFieldType-MariaDB.properties  
 jdbcTypeToFieldType.properties  
-等等..
-jdbcTypeToFieldType.properties是默认的,不需要指定数据库名称.
-规则是:
-#jdbcTypeToFieldType-{DbName}.properties,会覆盖jdbcTypeToFieldType.properties相同key的值
+等等..  
+jdbcTypeToFieldType.properties是默认的,不需要指定数据库名称.  
+规则是:  
+#jdbcTypeToFieldType-{DbName}.properties,会覆盖  
+jdbcTypeToFieldType.properties相同key的值  
 可以只在jdbcTypeToFieldType.properties放配置.  
 
 37.
@@ -561,7 +562,9 @@ A: 例如,查email为空的用户信息.
  //转成的sql为:
  
 ```properties
+
 select id,email,last_name,name,password,username,createtime from test_user where email is null
+ 
  ```
  
 其它:
