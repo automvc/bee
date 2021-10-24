@@ -497,7 +497,54 @@ Transaction transaction=SessionFactory.getTransaction();
 
 Q:  Java ORM框架Bee分页实例  
       
+A:  分页实例如下(结合springMVC):  
+
+分页相关的,只需要传页码和一页的数据条数;返回就返回一页的数据.  
+
+ ```java 
+	@RequestMapping("/list")
+	public Result list(Orderhistory orderhistory,
+	     @RequestParam(value = "page", defaultValue = "1", required = false) int page, 
+		 @RequestParam(value = "rows", defaultValue = "20", required = false) int rows) {	
+	 Result  result =new Result();
+	  
+	int total = objSQLRichService.count(orderhistory); //可以用上缓存,提交效率
+	List<Orderhistory> list=objSQLRichService.select(orderhistory, (page-1)*rows, rows);
+	result.setRows(list);
+	result.setTotal(total);//返回的总数据条数,有些前端框架需要.
+		
+	 return result;
+    }
+ ```
+
+
+36.
+
+Q:  生成Javabean时,遇到Bee无法支持的类型,如何处理?  
+      
 A:  
+private [UNKNOWN TYPE]TEXT testData;  
+生成Javabean时,有[UNKNOWN TYPE], 则表示遇到了没能识别的类型.  
+可以在相应文件里配置  
+如:Oracle,
+在:
+jdbcTypeToFieldType-Oracle.properties
+文件里,配置:
+DATE=Timestamp
+可以将DATE指定转换为:Timestamp
+Honey工程下,预设了部分文件
+jdbcTypeToFieldType-Oracle.properties  
+jdbcTypeToFieldType-H2.properties  
+jdbcTypeToFieldType-MySQL.properties  
+jdbcTypeToFieldType-PostgreSQL.properties
+jdbcTypeToFieldType-SQLite.properties
+jdbcTypeToFieldType-MariaDB.properties  
+jdbcTypeToFieldType.properties  
+等等..
+jdbcTypeToFieldType.properties是默认的,不需要指定数据库名称.
+规则是:
+#jdbcTypeToFieldType-{DbName}.properties,会覆盖jdbcTypeToFieldType.properties相同key的值
+可以只在jdbcTypeToFieldType.properties放配置.  
 
 
 
