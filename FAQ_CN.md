@@ -546,8 +546,24 @@ jdbcTypeToFieldType.properties是默认的,不需要指定数据库名称.
 #jdbcTypeToFieldType-{DbName}.properties,会覆盖jdbcTypeToFieldType.properties相同key的值
 可以只在jdbcTypeToFieldType.properties放配置.  
 
+37.
 
+Q:  想问下如果我想查询某个字段值是空的记录该怎么调用suid呢？  
+      
+A: 例如,查email为空的用户信息.
 
+```java
+			 Condition condition10=BeeFactoryHelper.getCondition();
+			 condition10.op("email", Op.eq, null);
+			 List<TestUser> list10 = suid.select(new TestUser(), condition10);
+			
+```
+ //转成的sql为:
+ 
+```properties
+select id,email,last_name,name,password,username,createtime from test_user where email is null
+ ```
+ 
 其它:
 
 Q:  多数据源如何配置(多数据源实例)?  
