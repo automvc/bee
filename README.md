@@ -170,6 +170,7 @@ selectJson support config long to string
 enhance autoGenBean ,support to generate SQL Json Script.  
 Add general search function support (simplify back-end complex query programming).  
 enhance multi-thread support.  
+custom the path of bee.properties.  
 
 fix bug for ExecutableSql.  
 transfer the the field of 'order by'.  
