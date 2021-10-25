@@ -131,6 +131,7 @@ selectJson支持通过配置将long转为string
 添加通用查询功能支持(简化后端复杂查询编程).  
 增强多线程支持.  
 使用指定路径的bee.properties进行配置.  
+自动生成Javabean(GenBean)支持类型:JSON,TEXT.  
 
 fix bug for ExecutableSql.  
 transfer the the field of 'order by'.  
