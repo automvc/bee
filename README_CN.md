@@ -130,6 +130,7 @@ selectJson支持通过配置将long转为string
 增强autoGenBean ,支持生成Json格式的SQL脚本(SQL Json Script).  
 添加通用查询功能支持(简化后端复杂查询编程).  
 增强多线程支持.  
+使用指定路径的bee.properties进行配置.  
 
 fix bug for ExecutableSql.  
 transfer the the field of 'order by'.  
