@@ -103,7 +103,7 @@ MoreTable(多表查询):
 支持子表实体字段为List类型的多表关联查询.   
 支持两个子表的join关联查询(inner join,right join, left join);  
 支持一个子表里还有一个子表的关联查询.   
-修复问题:当一个子表的属性都为null时,该子表字段直接设置为null.   
+修复问题:当一个子表的属性都为null时,子表字段直接设置为null.   
 注解 JoinTable添加方法:subClass()用于List类型字段的多表关联查询.   
 Condition新增方法,用于在关联查询时的on表达式达到提前过滤数据:  
 public Condition opOn(String field, Op Op, Object value);  
@@ -130,7 +130,7 @@ selectJson支持通过配置将long转为string
 增强autoGenBean ,支持生成Json格式的SQL脚本(SQL Json Script).  
 添加通用查询功能支持(简化后端复杂查询编程).  
 增强多线程支持.  
-使用指定路径的bee.properties进行配置.  
+可指定bee.properties所在路径.  
 自动生成Javabean(GenBean)支持类型:JSON,TEXT.  
 
 fix bug for ExecutableSql.  

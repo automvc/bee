@@ -558,7 +558,7 @@ public interface SuidRich extends Suid {
 	public <T> int update(T entity,Condition condition);
 	
 	/**
-	 * 更新实体,oldEntity的非null,非空属性作为过虑条件;newEntity的非null,非空属性作为需要更新的属性对应值
+	 * 更新实体,oldEntity的非null,非空属性作为过虑条件;newEntity的非null,非空属性作为需要更新的字段对应值
 	 * <br>Update the entity. The non null and non empty attributes of oldEntity are taken as 
 	 * <br>the filtering conditions; The non null and non empty properties of newEntity are 
 	 * <br>used as the corresponding values of the properties to be updated
