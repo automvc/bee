@@ -219,16 +219,16 @@ public <T> int update(T oldEntity,T newEntity);
 public <T> String selectJson(T entity, String selectField);  
 public <T> String selectJson(T entity, String selectField, int start, int size);  
 
-MoreTable:  
-支持List类型字段的多表关联查询.   
+MoreTable(多表查询):  
+支持子表实体字段为List类型的多表关联查询.   
 支持两个子表的join关联查询(inner join,right join, left join);  
 支持一个子表里还有一个子表的关联查询.   
-修复问题:当一个子表的属性都为null时,该子表字段直接设置为null.   
+修复问题:当一个子表的属性都为null时,子表字段直接设置为null.   
 注解 JoinTable添加方法:subClass()用于List类型字段的多表关联查询.   
 Condition新增方法,用于在关联查询时的on表达式达到提前过滤数据:  
 public Condition opOn(String field, Op Op, Object value);  
 
-MapSuid:  
+MapSuid(不用Javabean实体结构操作数据库):  
 新增update,count,查询分页,新增和调整insert and insertAndReturnId.  
 add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSql.  
 add method count(MapSql mapSql),update(MapSql mapSql),insertAndReturnId(MapSql mapSql),support page in MapSuid.  
@@ -238,20 +238,27 @@ add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuidImp
 MapSuidImpl change two different method:insert(MapSql mapSql) & insertAndReturnId(MapSql mapSql)  
 
 PreparedSqlLib新增selectMapList方法.  
+多数据源读写模式,支持不同类型数据源,方便数据库间转移数据.  
 Logger: 两个方法支持有Throwable参数.  
-增加流的工具类StreamUtil  
+sql输出日志支持logger不同级别输出设置.  
+增加流的工具类StreamUtil.  
 ObjectUtils增加一个方法: isTrue(Boolean b)  
 增强检测字段合法性,包括MapSuid使用的字段.  
 use LinkedHashMap in List&lt;Map> result for selectMapList(String sql).  
+Condition支持condition.set("fieldName", null).  
 selectJson支持通过配置将long转为string  
-sql输出日志支持logger不同级别输出设置  
 增强autoGenBean ,支持生成Json格式的SQL脚本(SQL Json Script).  
+添加通用查询功能支持(简化后端复杂查询编程).  
+增强多线程支持.  
+可指定bee.properties所在路径.  
+自动生成Javabean(GenBean)支持类型:JSON,TEXT.  
 
 fix bug for ExecutableSql.  
 transfer the the field of 'order by'.  
 fix null bug in create() of ObjectCreatorFactory.  
-fix bug for max column number(excel in bee-ext). 
-fix bug about HoneyContext  
-fix bug about checkPackageByClass 
+fix bug for max column number(excel in bee-ext).  
+fix bug about HoneyContext.  
+fix bug about checkPackageByClass.  
+fix bug about multi-thread safe in ConditionHelper.  
 
 	
