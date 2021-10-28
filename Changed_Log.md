@@ -232,7 +232,7 @@ public <T> int update(T oldEntity,T newEntity);
 public <T> String selectJson(T entity, String selectField);  
 public <T> String selectJson(T entity, String selectField, int start, int size);  
 
-MoreTable:  
+MoreTable(more table select):  
 support List type field for more tables join;  
 support two sub tables join(inner join,right join, left join);  
 support one sub table have another join sub table;  
@@ -251,18 +251,25 @@ add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuidImp
 MapSuidImpl change two different method:insert(MapSql mapSql) & insertAndReturnId(MapSql mapSql)  
 
 PreparedSqlLib support selectMapList method.  
+Read/Write multi-DataSource support different type DataSource.  
 Logger: two method support have parameter Throwable.  
+sql log support config the log level.  
 add class StreamUtil  
 ObjectUtils add one method: isTrue(Boolean b)  
 enhance check field  
 use LinkedHashMap in List&lt;Map> result for selectMapList(String sql).  
+Condition support condition.set("fieldName", null).  
 selectJson support config long to string  
-sql log support config the log level  
 enhance autoGenBean ,support to generate SQL Json Script.  
+Add general search function support (simplify back-end complex query programming).  
+enhance multi-thread support.  
+custom the path of bee.properties.  
+Generate Javabean(GenBean) support type:JSON,TEXT.  
 
 fix bug for ExecutableSql.  
 transfer the the field of 'order by'.  
 fix null bug in create() of ObjectCreatorFactory.  
 fix bug for max column number(excel in bee-ext). 
 fix bug about HoneyContext  
-fix bug about checkPackageByClass   
+fix bug about checkPackageByClass  
+fix bug about multi-thread safe in ConditionHelper.   
