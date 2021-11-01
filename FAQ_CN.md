@@ -78,10 +78,11 @@ A: Hibernate的概念太复杂，学习成本高，更新会先查询再更新�
     
 
 Q:&nbsp;Bee如何提高Java web软件开发效率?  
+自动生成Javabean实例,自动生成Controller类实例  
 
 A: 除了可以不需要写dao代码外(编码复杂度为O(1)),还提供了表对应的实体Javabean自动生成工具, 根据模板自动生成Java web前后端代码;人性化的SQL日志,可输出直接运行的sql语句(有占位符的SQL不能直接运行,不方便调试).  
 bee-exam工程,org.teasoft.exam.bee.osql.autogen包下:  
-GenBeanExam.java javabean生成实例  
+GenBeanExam.java Javabean生成实例  
 GenFilesExam.java SpringMVC Rest Controller生成实例  
 
 11.    
@@ -123,8 +124,7 @@ bee.osql.cache.fullClearRate=0.2
 #since 1.8.99
 bee.osql.cache.keyUseMD5=true
 #cache=======================end
-
-```	
+```
 
 12.    
     
@@ -211,6 +211,7 @@ Q: 没有与表对应的实体Javabean，如何操作数据?
 A: 用map进行转换实体信息，查询/删除数据库中的数据.  
 参考bee-exam项目里:  
 MapSuidExam  
+
 ```java
 			MapSuid mapSuid = BeeFactoryHelper.getMapSuid();
 			MapSql mapSql = BeeFactoryHelper.getMapSql();
@@ -242,8 +243,8 @@ MapSuidExam
 				Logger.info(map.get("password").toString());
 			}
 			mapSuid.selectOne(mapSql);     
-```         
-
+```
+       
 20.
 
 Q：表对应的实体Javabean有些字段不想解析,如何实现?  
