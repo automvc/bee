@@ -283,18 +283,18 @@ OrdersService.java
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<version>1.9.5</version>
+			<version>1.9.8</version>
 		</dependency>
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<version>1.9.5</version>
+			<version>1.9.8</version>
 		</dependency>
 		<!--for log framework,Excel(poi) -->
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee-ext</artifactId>
-			<version>1.9.5</version>
+			<version>1.9.8</version>
 		</dependency>
 ```
 
