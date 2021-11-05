@@ -192,6 +192,8 @@ Test Evn : Local windows.
 DB: MySQL (Version 5.6.24).  
 Test point: Batch Insert;Paging Select; Transaction(update and select).  
 
+<img src="batch-insert-compare.png">  
+
 <table cellspacing="0" cellpadding="0">
   <col width="62" />
   <col width="69" />
