@@ -394,6 +394,11 @@ public class SuidExam {
 ### API-DOC  
 [API-V1.9.5](https://gitee.com/automvc/bee/attach_files/692020/download)
 
+API-V1.9.8 下载代码含有 bee-1.9.8-javadoc.zip  
+
+### Bee常用接口介绍  
+<img src="common-interface.jpg">  
+
 综合应用:
 =========	
 **Java快速编程, 让Java的开发速度超过php和Rails。**  
