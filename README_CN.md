@@ -154,40 +154,7 @@ fix bug about multi-thread safe in ConditionHelper.
 数据库: MySQL (Version 5.6.24).  
 测试点: 批量插入;分页查询;事务(update and select).  
 
-<table cellspacing="0" cellpadding="0">
-  <col width="62" />
-  <col width="69" />
-  <col width="64" />
-  <col width="69" span="2" />
-  <col width="96" />
-  <tr height="19">
-    <td colspan="6" height="19" width="429"><div align="center">批量插入(单位: ms)</div></td>
-  </tr>
-  <tr height="19">
-    <td height="19">　</td>
-    <td>5k</td>
-    <td>1w</td>
-    <td>2w</td>
-    <td>5w</td>
-    <td>10w</td>
-  </tr>
-  <tr height="19">
-    <td height="19">Bee</td>
-    <td align="right">529.00 </td>
-    <td align="right">458.33 </td>
-    <td align="right">550.00 </td>
-    <td align="right">1315.67 </td>
-    <td align="right">4056.67 </td>
-  </tr>
-  <tr height="19">
-    <td height="19">MyBatis</td>
-    <td align="right">1193</td>
-    <td align="right">713</td>
-    <td align="right">1292.67 </td>
-    <td align="right">1824.33 </td>
-    <td>Exception</td>
-  </tr>
-</table>
+<img src="batch-insert-compare.png">  
 
 <p>&nbsp;</p>
 <table cellspacing="0" cellpadding="0">
