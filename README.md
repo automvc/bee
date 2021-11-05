@@ -5,7 +5,7 @@ Bee
 **Bee** is an ORM framework.   
 **Bee** is an easy and high efficiency ORM framework.    
 **Coding Complexity is O(1),it means that Bee will do the Dao for you**.  
-**You don't need to write the Dao by yourself anymore**.  
+**You don't need to write the Dao by yourself anymore**.Help you to focus more on the development of business logic.  
 **Good Feature:**  AI, Timesaving/Tasteful, Easy, Automatic (**AiTeaSoft Style**)   
 **Bee** see:  
 https://github.com/automvc/bee  
@@ -21,7 +21,7 @@ jdk1.7+
 ## Feature & Function: 
 
 **Support many Database**(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server and so on) and easily extend。 
-**Good performance, close to the speed of JDBC; Small files：Bee V1.8 jar 217k**, **V1.9.5 jar,315k**。  
+**Good performance, close to the speed of JDBC; Small files：Bee V1.8 jar 217k**, **V1.9.5 jar,315k, V1.9.8 jar 310k**。  
 
 **V1.0**  
 Single entity(table) Suid (select,update,insert,delete) object-oriented operation.  
@@ -422,6 +422,9 @@ public class SuidExamEN {
 #### [More example/test case](../../../bee-exam/)	
 
 #### [Bee+Spring-boot Demo](../../../bee-starter-demo/)	
+
+### Bee Common Interface  
+<img src="common-interface_en.jpg">  
 
 Rapid application development:
 =========	
