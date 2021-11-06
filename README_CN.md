@@ -101,7 +101,7 @@ sql输出日志支持logger不同级别输出设置.
 增强检测字段合法性,包括MapSuid使用的字段.  
 use LinkedHashMap in List&lt;Map> result for selectMapList(String sql).  
 Condition支持condition.set("fieldName", null).  
-selectJson支持通过配置将long转为string  
+selectJson支持通过配置将long转为string.  
 增强autoGenBean ,支持生成Json格式的SQL脚本(SQL Json Script).  
 添加通用查询功能支持(简化后端复杂查询编程).  
 增强多线程支持.  
