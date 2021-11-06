@@ -241,7 +241,7 @@ annotation JoinTable add method:subClass() for List type field
 Condition add method:  
 public Condition opOn(String field, Op Op, Object value);  
 
-MapSuid:  
+MapSuid(the Javabean corresponding to the table is not required):  
 add method update,count,paging select, add and adjust insert and insertAndReturnId.  
 add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSql.  
 add method count(MapSql mapSql),update(MapSql mapSql),insertAndReturnId(MapSql mapSql),support page in MapSuid.  
