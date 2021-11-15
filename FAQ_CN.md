@@ -568,6 +568,17 @@ select id,email,last_name,name,password,username,createtime from test_user where
 
  ```
  
+38.
+
+Q:  在Maven工程,使用Bee,编程时没有提示javadoc API信息.如何设置才可以?  
+    Bee为什么没有显示Java API信息  
+      
+A: 因为maven只下载了jar包,没有下载源码文件.  
+在IDE里,下载即可.  
+如Eclipse里, 工程右击, Maven-->Download Sources.  
+可在本地maven仓库验证,是否多了一个文件:bee-1.9.8-sources.jar  
+
+ 
 其它:
 
 Q:  多数据源如何配置(多数据源实例)?  
