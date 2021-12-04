@@ -149,6 +149,9 @@ public interface PreparedSql {
 	/**
 	 * 用函数查询结果.Select result with function. SQL function: max,min,avg,sum,count. <p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sql SQL select statement
 	 * @param preValues	按下标顺序给sql的占位符设值的Object数组.
 	 * @return 返回函数统计的值.如果统计的结果集为空,除了count返回0,其它都返回空字符.
@@ -158,6 +161,9 @@ public interface PreparedSql {
 	/**
 	 * 用函数查询结果.Select result with function. SQL function: max,min,avg,sum,count. <p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sqlStr SQL select statement
 	 * @param map map结构的参数,通过map的key与sqlStr中变量名对应.
 	 * @return 返回函数统计的值.如果统计的结果集为空,除了count返回0,其它都返回空字符.
@@ -167,6 +173,9 @@ public interface PreparedSql {
 	/**
 	 * 查询并将每一行结果转成String数组.Select and transform every record to string array.<p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sql	SQL select statement
 	 * @param preValues  parameter values for placeholder
 	 * @return 可包含多个String数组结构的多条记录的list. list can contain more than one record with String array struct.
@@ -193,6 +202,9 @@ public interface PreparedSql {
 	/**
 	 * 查询并将每一行结果转成String数组.Select and transform every record to string array.<p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sqlStr	SQL select statement
 	 * @param map  parameter values for placeholder
 	 * @return 可包含多个String数组结构的多条记录的list. list can contain more than one record with String array struct.
@@ -217,6 +229,9 @@ public interface PreparedSql {
 	/**
 	 * 用可带问号的占位语句查询结果,并以json格式返回.Select and return json format result.<p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sql	SQL select statement
 	 * @param preValues 占位符对应的参数数组.parameter values for placeholder
 	 * @return 返回json格式结果集.json format result .
@@ -240,6 +255,9 @@ public interface PreparedSql {
 	/**
 	 * 查询结果,并以json格式返回.Select and return json format result.<p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sqlStr	SQL select statement
 	 * @param map 占位符对应的参数map.parameter values for placeholder
 	 * @return 返回json格式结果集.json format result .
@@ -264,6 +282,9 @@ public interface PreparedSql {
 	/**
 	 * 查询结果,并以json格式返回.Select and return json format result.<p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sqlStr 无参数的sql查询语句.SQL select statement
 	 * @return 返回json格式结果集.json format result .
 	 */
@@ -272,6 +293,9 @@ public interface PreparedSql {
 	/**
 	 * 通过无参数的sql查询语句数据.Select record(s) via the sql statement.
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * eg: select * from orders where userid=10001
 	 * @param sql 无参数的sql查询语句.SQL select statement
 	 * @return 返回returnType类型的实体List.
@@ -281,6 +305,9 @@ public interface PreparedSql {
 	/**
 	 * 用函数查询结果.Select result with function. SQL function: max,min,avg,sum,count. <p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sql SQL select statement
 	 * @return 返回函数统计的值.如果统计的结果集为空,除了count返回0,其它都返回空字符.
 	 */
