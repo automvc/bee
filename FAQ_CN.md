@@ -578,6 +578,13 @@ A: 因为maven只下载了jar包,没有下载源码文件.
 如Eclipse里, 工程右击, Maven-->Download Sources.  
 可在本地maven仓库验证,是否多了一个文件:bee-1.9.8-sources.jar  
 
+39.
+
+Q:  PreparedSQL 是否支持多数据源?  
+      
+A: PreparedSQL的方法中带有泛型T的是支持多数据源的; 没带有泛型的，在多数据源场景，会操作默认数据源。	
+
+
  
 其它:
 
