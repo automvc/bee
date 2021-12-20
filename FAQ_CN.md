@@ -568,6 +568,14 @@ select id,email,last_name,name,password,username,createtime from test_user where
 
  ```
  
+ //where email is not null
+ 使用:  condition11.op("email", Op.nq, null);
+ 
+```java 
+condition11.op("email", Op.nq, null);
+//condition11.op("email", Op.notEqual, null); //或者用这个
+ ```
+ 
 38.
 
 Q:  在Maven工程,使用Bee,编程时没有提示javadoc API信息.如何设置才可以?  
