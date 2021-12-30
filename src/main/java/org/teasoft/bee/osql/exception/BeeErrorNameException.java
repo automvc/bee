@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2020 the original author.All rights reserved.
+ * Copyright 2016-2021 the original author.All rights reserved.
  * Kingstar(honeysoft@126.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,25 +15,32 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.logging;
+package org.teasoft.bee.osql.exception;
+
+import org.teasoft.bee.osql.BeeException;
 
 /**
- * 设置日志文件的路径与文件名.set the log file path(include file name).
+ * 变量名命名异常.Bee error name exception.
  * @author Kingstar
- * @since  1.7.2
+ * @since  1.9.8
  */
-public class Path {
-	
-	private static String fullPath="";
-	
-	private Path() {}
-	
-	public static String getFullPath(){
-		return fullPath;
-	}
-	
-	public static void setFullPath(String fullPath) {
-		Path.fullPath = fullPath;
+public class BeeErrorNameException extends BeeException {
+	static final long serialVersionUID = -875516993124222236L;
+
+
+	public BeeErrorNameException() {
+		super();
 	}
 
+	public BeeErrorNameException(String message) {
+		super(message);
+	}
+
+	public BeeErrorNameException(String message, Throwable cause) {
+		super(message, cause);
+	}
+
+	public BeeErrorNameException(Throwable cause) {
+		super(cause);
+	}
 }

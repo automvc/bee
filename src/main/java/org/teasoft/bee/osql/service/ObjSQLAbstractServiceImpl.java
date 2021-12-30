@@ -36,6 +36,12 @@ public abstract class ObjSQLAbstractServiceImpl implements ObjSQLService {
 		//Add the business logic if need.
 		return getSuid().insert(entity);
 	}
+	
+	@Override
+	public <T> long insertAndReturnId(T entity) {
+		//Add the business logic if need.
+		return getSuid().insertAndReturnId(entity);
+	}
 
 	@Override
 	public <T> List<T> select(T entity) {
@@ -71,6 +77,18 @@ public abstract class ObjSQLAbstractServiceImpl implements ObjSQLService {
 	public Suid setDynamicParameter(String para, String value) {
 		//Add the business logic if need.
 		return getSuid().setDynamicParameter(para, value);
+	}
+
+	@Override
+	public void beginSameConnection() {
+		//Add the business logic if need.
+	     getSuid().beginSameConnection();
+	}
+
+	@Override
+	public void endSameConnection() {
+		//Add the business logic if need.
+	     getSuid().endSameConnection();
 	}
 	
 }

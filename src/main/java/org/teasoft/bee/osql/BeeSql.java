@@ -18,6 +18,7 @@
 package org.teasoft.bee.osql;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 直接用sql语句操作数据库的接口
@@ -67,9 +68,8 @@ public interface BeeSql {
 	 * 用函数查询结果.Select result with function. SQL function: max,min,avg,sum,count. 
 	 * @param sql	SQL select statement
 	 * @return 函数统计的值.如果统计的结果集为空,除了count返回0,其它都返回空字符.
-	 * @throws ObjSQLException
 	 */
-	public String selectFun(String sql) throws ObjSQLException;
+	public String selectFun(String sql) ;
 
 
 	/**
@@ -79,6 +79,15 @@ public interface BeeSql {
 	 * List, every element is string array(transform from record).
 	 */
 	public List<String[]> select(String sql);
+	
+	/**
+	 * 查询并将每一行结果转成Map<String,Object>.Select and transform every record to Map<String,Object>.
+	 * @param sql SQL select statement
+	 * @return List,每个元素是一行记录转换成的Map<String,Object>.
+	 * List, every element is a Map<String,Object>(transform from record).
+	 * @since 1.9
+	 */
+	public List<Map<String,Object>> selectMapList(String sql);
 	
 	/**
 	 * 查询结果,并以json格式返回.Select and return json format result.
@@ -94,6 +103,8 @@ public interface BeeSql {
 	 * @return 成功操作的记录行数. the number of affected successfully records.
 	 */
 	public int modify(String sql);
+	
+	public long insertAndReturnId(String sql);
 	
 	/**
 	 * 提交一批命令到数据库

@@ -26,10 +26,9 @@ package org.teasoft.bee.osql;
  * @author Kingstar
  * @since  1.0
  */
-public interface ObjToSQL{
+public interface ObjToSQL {
 	
 	public  <T> String toSelectSQL(T entity) ;
-//	public  <T> String toUpdateSQL(T entity) throws ObjSQLException;
 	public  <T> String toUpdateSQL(T entity) ;
 	public  <T> String toInsertSQL(T entity) ;
 	public  <T> String toDeleteSQL(T entity) ;

@@ -1,4 +1,4 @@
-Bee常见疑问收集:
+常见问题收集:
 
 1.
 
@@ -78,11 +78,10 @@ A: Hibernate的概念太复杂，学习成本高，更新会先查询再更新�
     
 
 Q:&nbsp;Bee如何提高Java web软件开发效率?  
-自动生成Javabean实例,自动生成Controller类实例  
 
 A: 除了可以不需要写dao代码外(编码复杂度为O(1)),还提供了表对应的实体Javabean自动生成工具, 根据模板自动生成Java web前后端代码;人性化的SQL日志,可输出直接运行的sql语句(有占位符的SQL不能直接运行,不方便调试).  
 bee-exam工程,org.teasoft.exam.bee.osql.autogen包下:  
-GenBeanExam.java Javabean生成实例  
+GenBeanExam.java javabean生成实例  
 GenFilesExam.java SpringMVC Rest Controller生成实例  
 
 11.    
@@ -124,7 +123,8 @@ bee.osql.cache.fullClearRate=0.2
 #since 1.8.99
 bee.osql.cache.keyUseMD5=true
 #cache=======================end
-```
+
+```	
 
 12.    
     
@@ -133,7 +133,7 @@ Q:&nbsp;Bee设计原理?
 
 A: 参考wiki或公众号相关文章: (十一)：如何设计ORM架构及Bee源码分析 (十二)：为什么需要一个新的ORM框架
 
-13 (1).Q:&nbsp;Bee查询怎么写筛选条件(不是等号=的情况)呢？像筛选状态大于2的 ?   还有 update高级用法
+13.Q:&nbsp;Bee查询自己怎么写筛选条件呢？像筛选状态大于2的 
 
 A: 写法类似： Condition condition=new ConditionImpl(); condition .op("status", Op.gt, 2) // 会转化到SQL中的where status&gt;2 详情参考wiki: (五): 复杂查询(面向对象方式) (十三)：update高级用法说明    
  **更新的字段是在原来的基础上变化** 
@@ -147,24 +147,6 @@ suidRich.update(entity,condition);
 若字段p每次增加的值由字段step配置，则写为：    
 condition.setAdd("p", "step");    
 会转化为: set p=p+step	
-
-13 (2). Q:&nbsp;SuidRich接口,update方法,如何区分SQL的set部分和where部分? 即哪些字段会用在set设置部分,哪些字段会用在where条件过虑部分?
-
-A: 当更新一个实体,是根据id来唯一关联一个实体时,用Suid接口的update(T entity)方法即可,该方法以id作为where条件,其它非null,非空字段转为要更新的值.
-默认转换的如改价格, set price=22; 但要是比原价提高2,set price=price+2,此时不能通过将值放在实体进行默认转换,需要借助Condition,用:condition.setAdd("price", 2);   
-若用id可以唯一关联一个实体,可用:
-updateById(T entity,Condition condition);
- * SQL UPDATE语句包括两大部分SET和WHERE,SuidRich采取指定其中一样,另一样尽量采用默认的实现方式.所以有关更新的方法分为两部分:
- * <br>update和updateBy.
- * <br>update方法中,String updateFields参数(若有),可以指明要更新的字段,其余字段则有可能转为SQL UPDATE语句的WHERE部分(默认过
- * <br>滤NULL和空字符串,可通过IncludeType显示设置).
-  * <br>updateBy方法中,String whereFields(若有),可以指明用于SQL中WHERE的字段.当指定了whereFields, 没在whereFields的字段,将默认
- * <br>转换为SQL UPDATE语句的SET部分(默认过滤NULL和空字符串,可通过IncludeType显示设置).
- * <br>同一个实体的某个属性的值,若用于WHERE部分了,再用于UPDATE SET部分就没有意义(因为此时它们的值是一样的),但可以用Condition的
- * <br>set(String fieldName, Number num)等方法设置;Condition的方法set,setMultiply,setAdd,setWithField,是在处理WHERE字段前
- * <br>已完成处理的,所以不受指定的WHERE条件字段的影响.
- * 
- * <br>update和updateBy方法的Condition设置的字段都会被解析,不受IncludeType的限制,也不受updateFields参数和whereFields参数的影响.
 
 14.Q:&nbsp;Bee与Honey是什么关系? 
 
@@ -211,7 +193,6 @@ Q: 没有与表对应的实体Javabean，如何操作数据?
 A: 用map进行转换实体信息，查询/删除数据库中的数据.  
 参考bee-exam项目里:  
 MapSuidExam  
-
 ```java
 			MapSuid mapSuid = BeeFactoryHelper.getMapSuid();
 			MapSql mapSql = BeeFactoryHelper.getMapSql();
@@ -243,8 +224,8 @@ MapSuidExam
 				Logger.info(map.get("password").toString());
 			}
 			mapSuid.selectOne(mapSql);     
-```
-       
+```         
+
 20.
 
 Q：表对应的实体Javabean有些字段不想解析,如何实现?  
@@ -295,7 +276,7 @@ Q: Bee为什么没有findAll(),deleteAll()方法?
 A: 在一个系统里，几乎是不会有删除整个表的应用场景的。即使写demo样例也很少。所在Bee还特意加了一个检测开关，  
   以防止误删整个表的数据。 要是软删除(只标记一个字段状态表示不用该数据了),那直接用update就好了。  
   findAll()应用的场景也很有限，除了配置表，只存储少量记录，会查询所有数据；像用户表，订单表等是不可能查询所有数据的，  
-  一般都是要分页(另外，Bee的分页功能比其它工具的都好用，性能也高)。在Bee,查询所有数据，类似用法如下:   
+  一般都是要分页(另外，Bee的分页功能比其它工具的都好用，性能也高)。在Bee,查询所有数据，可以用:   
    suid.select(new ConstValue());//查询所有常量,假设表名对应的实体名为:ConstValue  
 
 
@@ -309,9 +290,20 @@ A: 别的ORM框架，将insert与update合为一个save方法，每次操作前�
   更新操作会变为保存操作。  
   但在很多业务场景，insert与update是明确可以区分开的，特别是在互联网应用。  
   要是用save反而会降低系统的性能。  
+  如果确实有需要，可自己封装一个，参考:  
  
- **V1.9.8 , SuidRich有提供save方法。  
- 如果可以区分开,建议明确调用insert(entity)或者update(entity),这样更加安全和高效。  
+ ```java 
+    	public int save(Orders orders) {
+    	     if(orders==null) return 0;
+    	     if(orders.getId()==null) return suidRich.insert(orders);
+		Orders one = suidRich.selectById(orders, orders.getId());
+		if (one != null)
+			return suidRich.update(orders);
+		else
+			return suidRich.insert(orders);
+	}  
+ ```
+ 
 
 24.
 
@@ -329,19 +321,11 @@ A:  Bee一对多查询不需要List. 呈现方式,像我们用DB客户端查询�
 
 26.
 
-Q:  多表关联时,一对多查询,字段类型用List?  
-     
-A:  当为了前端显示方便等原因,需要将从表数据作为主表的list属性时,可以用该功能.  
-    V1.9.8有该功能支持,参考例子:  
-https://gitee.com/automvc/bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/ListEntityTest.java  
-    
-27.
-
 Q:  联合主键如何查询或更新记录?  
 A:  Bee通过约定优于配置原则,约定主键名称是id,这样可以使问题变量简单,处理的效率也更高.  
 	对于一些老的系统,有联合主键的,当作一般查询处理即可,即有两个字段作为主键,要用联合主键时,设置两个属性的值,框架就会负责解析(Suid的update方法,SuidRich的selectById等方法默认是id主键则不适用).  
 	
-28.
+27.
 
 Q:  表主键名称不是id或id类型是String类型,如何处理?  
 A:  Suid的update方法,SuidRich的selectById等方法默认是将id为会字段用于where条件,以便确认要修改的记录.  
@@ -374,227 +358,13 @@ A:  Suid的update方法,SuidRich的selectById等方法默认是将id为会字段
 	}
  ```
  
-29.
+28.
 
 Q:  表名与实体名、字段名与属性名映射默认提供多种实现，且支持自定义映射规则扩展。  请问这个是怎么设置的，谢谢。  
     How to set customized NameTranslate?   
 A:  实现NameTranslate接口, 并在NameTranslateHandle类设置setNameTranslat(NameTranslate nameTranslat)  
 
-30.
-
-Q:  多表关联时,如何在SQL on部分加表达式,过滤数据?  
-      
-A:  使用Condition接口的opOn方法.
-    public Condition opOn(String field, Op Op, Object value);  
-    
-31.
-
-Q:  请问下Bee中批量更新是怎么处理的呢    
-A:  update 不像insert 有批量的接口。  因为用同一条语句可以更新多条记录.  
-如 update table_name set field1='abc' where field2='aa' and field3='bb',  
-符合where条件的记录都将被更新.  
-这种只用一条语句就可以更新多条记录,用SuidRich接口相关的update方法就好.  
-要是确实要多个update，可以自己写一个循环， 然后用同一个connection连接，提交效率.  
-beginSameConnection();  
-//多个update语句  
-endSameConnection();  
-
-32.
-
-Q:  在where条件里如何使用or  
-      
-A:  例子如下:
-
- ```java 
-	condition
-		.lParentheses()  // (
-		.op("classno", Op.eq, "201")
-		.or()
-		.op("classno", Op.eq, "202")
-		.rParentheses()  // )
-		;
- ```
-	
-	会转化成:  (classno="201" or  classno="202")
-	
-	
-33.
-
-Q:  Bee多表关联查询, 用List和不用List的区别  
-      
-A:  参考:https://blog.csdn.net/abckingaa/article/details/119859192　　
-   
-@JoinTable(mainField="table_id", subField="table_id",subClass="Columns", joinType=JoinType.JOIN)
-	private Columns columns; 
-//	private List<Columns> list;
-
-//注解里subClass属性,当两个实体在同一个包,包名,是可以省略的.
-
-
-34.
-
-Q:  Java ORM框架Bee如何使用事务  
-      
-A:  //单笔操作,默认自动提交事务
-
-多笔操作要在一次事务提交，可使用：
-
- ```java 
- try {
-
-          Transaction transaction=SessionFactory.getTransaction();
-           transaction.begin(); //事务开始
-
-           //......放多个操作在这
-
-           transaction.commit();//提交事务,事务结束
-
- } catch (BeeException e) {
-      Logger.error(e.getMessage());
-      transaction.rollback();
-    }
- ```
- 
-具体例子如下：
-
- ```java 
-Transaction transaction=SessionFactory.getTransaction();
-    try {
-
-      transaction.begin();
-
-      Suid suid = BeeFactory.getHoneyFactory().getSuid();
-
-      User user=new User();
-      user.setUsername("testuser");
-      user.setPassword("bee-user");
-
-      suid.insert(user);//insert 1
-
-      Orders orders = new Orders();
-      orders.setUserid("bee");
-      orders.setName("Bee(ORM Framework)");
-      orders.setTotal(new BigDecimal("91.99"));
-      orders.setRemark("test transaction"); 
-      orders.setSequence("");//empty String test
-
-      suid.insert(orders); //insert 2
-
-      transaction.commit();
-
-      List<Orders> list = suid.select(orders); //可任意组合条件查询
-      for (int i = 0; i < list.size(); i++) {
-        Logger.info(list.get(i).toString());
-      }
-
-    } catch (BeeException e) {
-     // e.printStackTrace();
-      Logger.error(e.getMessage());
-      transaction.rollback();
-    }
- ```
-
-35.
-
-Q:  Java ORM框架Bee分页实例  
-      
-A:  分页实例如下(结合springMVC):  
-
-分页相关的,只需要传页码和一页的数据条数;返回就返回一页的数据.  
-
- ```java 
-	@RequestMapping("/list")
-	public Result list(Orderhistory orderhistory,
-	     @RequestParam(value = "page", defaultValue = "1", required = false) int page, 
-		 @RequestParam(value = "rows", defaultValue = "20", required = false) int rows) {	
-	 Result  result =new Result();
-	  
-	int total = objSQLRichService.count(orderhistory); //可以用上缓存,提交效率
-	List<Orderhistory> list=objSQLRichService.select(orderhistory, (page-1)*rows, rows);
-	result.setRows(list);
-	result.setTotal(total);//返回的总数据条数,有些前端框架需要.
-		
-	 return result;
-    }
- ```
-
-
-36.
-
-Q:  生成Javabean时,遇到Bee无法支持的类型,如何处理?  
-      
-A:  
-private [UNKNOWN TYPE]TEXT testData;  
-生成Javabean时,有[UNKNOWN TYPE], 则表示遇到了没能识别的类型.  
-可以在相应文件里配置  
-如:Oracle,  
-在:  
-jdbcTypeToFieldType-Oracle.properties  
-文件里,配置:  
-DATE=Timestamp
-可以将DATE指定转换为:Timestamp  
-Honey工程下,预设了部分文件  
-jdbcTypeToFieldType-Oracle.properties  
-jdbcTypeToFieldType-H2.properties  
-jdbcTypeToFieldType-MySQL.properties  
-jdbcTypeToFieldType-PostgreSQL.properties  
-jdbcTypeToFieldType-SQLite.properties  
-jdbcTypeToFieldType-MariaDB.properties  
-jdbcTypeToFieldType.properties  
-等等..  
-jdbcTypeToFieldType.properties是默认的,不需要指定数据库名称.  
-规则是:  
-#jdbcTypeToFieldType-{DbName}.properties,会覆盖  
-jdbcTypeToFieldType.properties相同key的值  
-可以只在jdbcTypeToFieldType.properties放配置.  
-
-37.
-
-Q:  想问下如果我想查询某个字段值是空的记录该怎么调用suid呢？  
-      
-A: 例如,查email为空的用户信息.
-
-```java
-			 Condition condition10=BeeFactoryHelper.getCondition();
-			 condition10.op("email", Op.eq, null);
-			 List<TestUser> list10 = suid.select(new TestUser(), condition10);
-			
-```
- //转成的sql为:
- 
-```sql
-
-select id,email,last_name,name,password,username,createtime from test_user where email is null
-
- ```
- 
- //where email is not null
- 使用:  condition11.op("email", Op.nq, null);
- 
-```java 
-condition11.op("email", Op.nq, null);
-//condition11.op("email", Op.notEqual, null); //或者用这个
- ```
- 
-38.
-
-Q:  在Maven工程,使用Bee,编程时没有提示javadoc API信息.如何设置才可以?  
-    Bee为什么没有显示Java API信息  
-      
-A: 因为maven只下载了jar包,没有下载源码文件.  
-在IDE里,下载即可.  
-如Eclipse里, 工程右击, Maven-->Download Sources.  
-可在本地maven仓库验证,是否多了一个文件:bee-1.9.8-sources.jar  
-
-39.
-
-Q:  PreparedSQL 是否支持多数据源?  
-      
-A: PreparedSQL的方法中带有泛型T的是支持多数据源的; 没带有泛型的，在多数据源场景，会操作默认数据源。	
-
-
- 
-其它:
+29.
 
 Q:  多数据源如何配置(多数据源实例)?  
 A:  相关用例可以查看,  

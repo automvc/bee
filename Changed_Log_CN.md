@@ -45,7 +45,7 @@ Procedure存储过程支持(CallableStatement.executeQuery).
 增加: selectJson add config:ignoreNull;date,time,timestamp Wit hMillisecond format  
 增加: List<String[]> select(String sql), add config:nullToEmptyString  
 完善查询结果缓存机制(一级缓存可**对用户编程透明**,也可进行细粒度配置调优控制)  
-**一级缓存**即可支持: **不缓存列表,永久缓存列表,永久缓存且可更新列表**,结果集超过一定大小可不放缓存 等细粒度配置调优控制.  
+**一级缓存**即可支持: **不缓存列表,永久缓存列表,可更新的长久缓存列表**,结果集超过一定大小可不放缓存 等细粒度配置调优控制.  
 增加: SysValue注解  
 
 **V1.5**  
@@ -160,6 +160,7 @@ public String selectFun(String sql);
 修复null bug,关于方法:PreparedSql's method select(String sql,Object preValues[]).  
 修复关于oracle多表查询分页bug.  
 	
+
 **v1.8.15**(2020-10-01 3节日)  
 1.增强对数据库H2,SQLite,PostgreSQL的支持.  
 2.优化分页功能,分页参数也用占位符.  
@@ -167,5 +168,97 @@ public String selectFun(String sql);
 4.完善梨花算法经常不使用时,产生连续尾数为0的偶数的问题(SerialUniqueId和OneTimeSnowflakeId这两种ID生成算法不会有这些缺陷).  
 5.完善日志Log功能.  
 6.修复json转换bug.  
+
+**v1.8.99**(2020-10-25 重阳节)  
+1.SQL关键字支持可配置大写或小写输出.  
+2.SQL缓存key可用MD5字符.  
+3.优化利用HoneyConfig设置DB信息的方式.  
+4.修复关于checkSelectField的bug.  
+
+**V1.9**  
+SuidRich新增支持List参数的批量插入方法.  
+增强SuidRich功能, SuidRich增加方法:  
+	public <T> List<String[]> selectString(T entity,Condition condition);  
+	public <T> int updateById(T entity,Condition condition);  
+	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun, Condition condition);  
+	public <T> int count(T entity);  
+	public <T> int count(T entity, Condition condition);  
+	public <T> boolean exist(T entity); //判断记录是否存在  
+SuidRich调整selectById方法且String类型参数的id智能识别Javabean的id类型.  
+Suid新增insertAndReturnId方法.  
+加强聚合函数cont,sum,avg,min,max功能,Condition增加方法:  
+	public Condition selectFun(FunctionType functionType,String fieldForFun);  
+	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias);  
+Condition 添加方法:opWithField,setWithField 支持像:field1=field2的表达式  
+Condition 添加方法:selectDistinctField,支持distinct像 select distinct(userid) from table_name  
+MapSuid,无需Javabean，用map承载需要转换的实体信息，操作数据库(查询,插入,删除数据).  
+支持读取Excel(*.xls,*.xlsx),并将数据转成List<String[]>,且导入到数据库(bee-ext).  
+多表关联查询支持多个关联条件.  
+多个ORM操作使用同一个Connection.  
+支持同时使用不同数据库(多个数据源).  
+支持长度大于0空字符串忽略处理,如"     ".  
+增加Ignore注解，忽略Javabean字段，不进行转换.  
+用模板生成文件支持自定义起止标签.  
+完善DB连接管理.  
+加强代码质量.  
+增强链式编程:Select,Update.  
+调整bee.properties,HoneyConfig配置信息.  
+整合Spring boot,提供bee-spring-boot-starter.  
+支持利用Javabean生成表.  
+修复多表分页查询时,同名字段在部分数据库会混淆的缺陷(oracle).  
+修复缺陷:update默认主键为id时,无id字段或id为null时,异常处理.  
+修复缺陷:cache bug.  
+修复缺陷:有关GenId的 getRangeId(int sizeOfIds)方法.  
+修复缺陷:jdk 11下,LoggerFactory在配置log4j2时,报错.  
+强烈建议:使用视图时,声明视图不放缓存(因会产生脏数据).    
+
+**V1.9.8**(2021中秋节)  
+SuidRich增加4个方法:  
+public <T> int save(T entity);  
+public <T> int update(T oldEntity,T newEntity);  
+public <T> String selectJson(T entity, String selectField);  
+public <T> String selectJson(T entity, String selectField, int start, int size);  
+
+MoreTable(多表查询):  
+支持子表实体字段为List类型的多表关联查询.   
+支持两个子表的join关联查询(inner join,right join, left join);  
+支持一个子表里还有一个子表的关联查询.   
+修复问题:当一个子表的属性都为null时,子表字段直接设置为null.   
+注解 JoinTable添加方法:subClass()用于List类型字段的多表关联查询.   
+Condition新增方法,用于在关联查询时的on表达式达到提前过滤数据:  
+public Condition opOn(String field, Op Op, Object value);  
+
+MapSuid(不用Javabean实体结构操作数据库):  
+新增update,count,查询分页,新增和调整insert and insertAndReturnId.  
+add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSql.  
+add method count(MapSql mapSql),update(MapSql mapSql),insertAndReturnId(MapSql mapSql),support page in MapSuid.  
+add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSqlImpl.  
+add method toUpdateSqlByMap ,toCountSqlByMap ,support page in MapSqlProcessor.  
+add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuidImpl.  
+MapSuidImpl change two different method:insert(MapSql mapSql) & insertAndReturnId(MapSql mapSql)  
+
+PreparedSqlLib新增selectMapList方法.  
+多数据源读写模式,支持不同类型数据源,方便数据库间转移数据.  
+Logger: 两个方法支持有Throwable参数.  
+sql输出日志支持logger不同级别输出设置.  
+增加流的工具类StreamUtil.  
+ObjectUtils增加一个方法: isTrue(Boolean b)  
+增强检测字段合法性,包括MapSuid使用的字段.  
+use LinkedHashMap in List&lt;Map> result for selectMapList(String sql).  
+Condition支持condition.set("fieldName", null).  
+selectJson支持通过配置将long转为string  
+增强autoGenBean ,支持生成Json格式的SQL脚本(SQL Json Script).  
+添加通用查询功能支持(简化后端复杂查询编程).  
+增强多线程支持.  
+可指定bee.properties所在路径.  
+自动生成Javabean(GenBean)支持类型:JSON,TEXT.  
+
+fix bug for ExecutableSql.  
+transfer the the field of 'order by'.  
+fix null bug in create() of ObjectCreatorFactory.  
+fix bug for max column number(excel in bee-ext).  
+fix bug about HoneyContext.  
+fix bug about checkPackageByClass.  
+fix bug about multi-thread safe in ConditionHelper.  
 
 	

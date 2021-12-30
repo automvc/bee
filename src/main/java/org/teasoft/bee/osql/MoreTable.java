@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * 多表查询.More table select.
  * <p>
- * example:
+ * example1:
 <p>
 public class Orders{
 <p>	private Long id;
@@ -34,8 +34,9 @@ public class Orders{
 <p>	private String sequence;
 <p>	
 <p>//@JoinTable(mainField="userid", subField="username")
-<p> @JoinTable(mainField="userid", subField="username", joinType=JoinType.LEFT_JOIN)
-<p>//@JoinTable(mainField="userid", subField="username",subAlias="myuser" , joinType=JoinType.RIGHT_JOIN)
+<p>//@JoinTable(mainField="userid", subField="username", joinType=JoinType.LEFT_JOIN)  //ok //... from orders left join user on orders.userid=user.username where ...
+<p>	@JoinTable(mainField="userid,name", subField="username,name", joinType=JoinType.JOIN)
+<p>//@JoinTable(mainField="userid", subField="username",subAlias="myuser" , joinType=JoinType.FULL_JOIN)
 <p>//@JoinTable()
 <p>	private User user;
 <p>	
@@ -73,6 +74,52 @@ public class Orders{
 <p>	    }
 <p>	 }
 
+<p>--------------------------------
+<p> example2:  List type sub entity field
+
+<p>@Entity("Clazz")
+<p>public class Clazz0 implements Serializable {
+<p>
+<p>	private static final long serialVersionUID = 1591972382398L;
+<p>
+<p>	private Integer id;
+<p>	private String classname;
+<p>	private String place;
+<p>	private String teachername;
+<p>	private String remark;
+<p>	
+<p>	@JoinTable(mainField="id", subField="classno", joinType=JoinType.LEFT_JOIN,subClass="Student")
+<p>	private List<Student> studentList=new ArrayList<>();
+<p>	//subClass="Student",  if sub Entity and main Entity in the same package, can use class name only.
+<p>	//full like,  subClass="org.teasoft.exam.bee.osql.entity.Student")
+<p>	
+<p>	//... get,set method
+<p>}
+<p>
+<p>public class Student implements Serializable {
+<p>
+<p>	private static final long serialVersionUID = 1591622324231L;
+<p>
+<p>	private Integer id;
+<p>	private Integer sid;
+<p>	private String name;
+<p>	private Integer age;
+<p>	private Boolean sex;
+<p>	private String majorid;
+<p>	private Boolean flag;
+<p>	private Integer classno;
+<p>	
+<p>	//... get,set method
+<p>}
+<p>
+<p>	public static void main(String[] args) {
+<p>		
+<p>		MoreTable moreTable = BeeFactoryHelper.getMoreTable();
+<p>		Clazz0 c0=new Clazz0();
+<p>		List<Clazz0> list0=moreTable.select(c0);
+<p>		Printer.printList(list0); //print list
+<p>}
+
  * @author Kingstar
  * @since  1.7
  */
@@ -107,11 +154,22 @@ public interface MoreTable {
 	/**
 	 * 根据实体对象和Condition查询数据.Select the records according to entity and condition.
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).<br>
-	 * @param condition entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.<br>
+	 * @param condition entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.<br>
 	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition. <br>
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
 	 * @return 返回可包含多个实体(多条记录)的list. return list can contain more than one entity
 	 */
 	public <T> List<T> select(T entity, Condition condition);
+	
+	/**
+	 * 为动态表名、实体名参数设置值.set dynamic parameter for dynamic table & entity name
+	 * <br>本方法的调用要早于select等方法.
+	 * <br>This method is called earlier than the select methods.
+	 * @param para parameter name
+	 * @param value parameter value
+	 * @return MoreTable
+	 * @since 1.9
+	 */
+	public MoreTable setDynamicParameter(String para,String value);
 
 }

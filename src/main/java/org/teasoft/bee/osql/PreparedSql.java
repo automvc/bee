@@ -29,6 +29,12 @@ import java.util.Map;
  * <br>若没有使用占位符,则传入空数组或Map即可.
  * <p>If possible, it is recommended to use object-oriented operation methods, such as Suid and SuidRich. 
  * <br>It can use Bee cache to achieve higher query efficiency.
+ * 
+ * <br>注意  Notice:
+ * <br>PreparedSql没有T参数的方法中,因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+ * <br>PreparedSql method which which no T parameter, is not associated with entity, in the case of 
+ * <br> multiple Datasources, will be select the record from the default Datasource.
+ * 
  * @author Kingstar
  * @since  1.0<p>
  * 支持如name=#{name},name like #{name%}的map参数形式.<p>
@@ -143,26 +149,33 @@ public interface PreparedSql {
 	/**
 	 * 用函数查询结果.Select result with function. SQL function: max,min,avg,sum,count. <p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sql SQL select statement
 	 * @param preValues	按下标顺序给sql的占位符设值的Object数组.
 	 * @return 返回函数统计的值.如果统计的结果集为空,除了count返回0,其它都返回空字符.
-	 * @throws ObjSQLException
 	 */
-	public String selectFun(String sql,Object preValues[]) throws ObjSQLException;
+	public String selectFun(String sql,Object preValues[]);
 	
 	/**
 	 * 用函数查询结果.Select result with function. SQL function: max,min,avg,sum,count. <p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sqlStr SQL select statement
 	 * @param map map结构的参数,通过map的key与sqlStr中变量名对应.
 	 * @return 返回函数统计的值.如果统计的结果集为空,除了count返回0,其它都返回空字符.
-	 * @throws ObjSQLException
 	 */
-	public String selectFun(String sqlStr,Map<String,Object> map) throws ObjSQLException;
+	public String selectFun(String sqlStr, Map<String, Object> map);
 
 	/**
 	 * 查询并将每一行结果转成String数组.Select and transform every record to string array.<p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sql	SQL select statement
 	 * @param preValues  parameter values for placeholder
 	 * @return 可包含多个String数组结构的多条记录的list. list can contain more than one record with String array struct.
@@ -174,6 +187,9 @@ public interface PreparedSql {
 	/**
 	 * 查询并将每一行结果转成String数组.Select and transform every record to string array.<p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sql	SQL select statement
 	 * @param preValues  parameter values for placeholder
 	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
@@ -186,6 +202,9 @@ public interface PreparedSql {
 	/**
 	 * 查询并将每一行结果转成String数组.Select and transform every record to string array.<p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sqlStr	SQL select statement
 	 * @param map  parameter values for placeholder
 	 * @return 可包含多个String数组结构的多条记录的list. list can contain more than one record with String array struct.
@@ -196,6 +215,9 @@ public interface PreparedSql {
 	/**
 	 * 查询并将每一行结果转成String数组.Select and transform every record to string array.<p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sqlStr	SQL select statement
 	 * @param map  parameter values for placeholder
 	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
@@ -207,6 +229,9 @@ public interface PreparedSql {
 	/**
 	 * 用可带问号的占位语句查询结果,并以json格式返回.Select and return json format result.<p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sql	SQL select statement
 	 * @param preValues 占位符对应的参数数组.parameter values for placeholder
 	 * @return 返回json格式结果集.json format result .
@@ -216,6 +241,9 @@ public interface PreparedSql {
 	/**
 	 * 用可带问号的占位语句查询结果,并以json格式返回.Select and return json format result.<p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sql	SQL select statement
 	 * @param preValues 占位符对应的参数数组.parameter values for placeholder
 	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
@@ -227,6 +255,9 @@ public interface PreparedSql {
 	/**
 	 * 查询结果,并以json格式返回.Select and return json format result.<p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sqlStr	SQL select statement
 	 * @param map 占位符对应的参数map.parameter values for placeholder
 	 * @return 返回json格式结果集.json format result .
@@ -236,6 +267,9 @@ public interface PreparedSql {
 	/**
 	 * 查询结果,并以json格式返回.Select and return json format result.<p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sqlStr SQL select statement
 	 * @param map 占位符对应的参数map.parameter values for placeholder
 	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
@@ -248,6 +282,9 @@ public interface PreparedSql {
 	/**
 	 * 查询结果,并以json格式返回.Select and return json format result.<p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sqlStr 无参数的sql查询语句.SQL select statement
 	 * @return 返回json格式结果集.json format result .
 	 */
@@ -256,6 +293,9 @@ public interface PreparedSql {
 	/**
 	 * 通过无参数的sql查询语句数据.Select record(s) via the sql statement.
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * eg: select * from orders where userid=10001
 	 * @param sql 无参数的sql查询语句.SQL select statement
 	 * @return 返回returnType类型的实体List.
@@ -265,6 +305,9 @@ public interface PreparedSql {
 	/**
 	 * 用函数查询结果.Select result with function. SQL function: max,min,avg,sum,count. <p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
+	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
 	 * @param sql SQL select statement
 	 * @return 返回函数统计的值.如果统计的结果集为空,除了count返回0,其它都返回空字符.
 	 */
@@ -295,4 +338,35 @@ public interface PreparedSql {
 	 */
 	@Deprecated
 	public int modify(String sql,Map<String,Object> map);
+	
+	/**
+	 * 用操作类型为update,insert,delete的语句更新数据库记录
+	 * Modify database records with update, insert or delete statement.
+	 * @deprecated 不建议使用,因为框架不知道具体是更改了什么表,会影响缓存的正确性,从而产生缓存数据不准确的危险.<br>It is not recommended because 
+	 * the framework does not know what table has been changed, which will affect the correctness of the cache and 
+	 * cause the risk of inaccurate cache data.
+	 * @param sql	SQL语句.SQL statement.
+	 * @return	返回成功操作的记录行数. the number of successful records.
+	 * @since 1.9
+	 */
+	@Deprecated
+	public int modify(String sql);
+	
+	/**
+	 * 查询记录并返回元素为Map<String, Object>的List结构数据.Query records and return list structure data whose element is Map<String, Object>.
+	 * @param sql SQL语句.SQL statement.
+	 * @return List<Map<String, Object>>结构的多行记录.
+	 * <br>the multi-line record of List<Map<String, Object>> structure.
+	 */
+	public List<Map<String, Object>> selectMapList(String sql);
+	
+	/**
+	 * 查询记录并返回元素为Map<String, Object>的List结构数据.Query records and return list structure data whose element is Map<String, Object>.
+	 * @param sql SQL语句.SQL statement.
+	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size 结果集大小 大于等于1. fetch result size (>0).
+	 * @return List<Map<String, Object>>结构的多行记录.
+	 * <br>the multi-line record of List<Map<String, Object>> structure.
+	 */
+	public List<Map<String, Object>> selectMapList(String sql,int start,int size);
 }

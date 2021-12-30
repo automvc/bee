@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+ 
 package org.teasoft.bee.osql.exception;
 
 import org.teasoft.bee.osql.BeeException;
@@ -25,9 +25,8 @@ import org.teasoft.bee.osql.BeeException;
  * @since  1.4
  */
 public class BeeIllegalAccessException extends BeeException {
-	
-	static final long serialVersionUID = -875516993124222230L;
 
+	static final long serialVersionUID = -875516993124222230L;
 
 	public BeeIllegalAccessException() {
 		super();

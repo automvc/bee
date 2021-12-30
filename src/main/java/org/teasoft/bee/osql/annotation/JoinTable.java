@@ -52,5 +52,14 @@ public @interface JoinTable {
 	 * @return subtable alias.
 	 */
 	String subAlias() default ""; 
+	
+	/**
+	 * 从表的class类型;与主表实体在同一包下,可以只写类名.(在使用List类型的从表时才有效)
+	 * Subtable class type, if it has same package with main table,the package name can be omitted.
+	 * (effect when using a list type Subtable)
+	 * @return sub Class name.
+	 * @since 1.9.8
+	 */
+	String subClass() default ""; 
 
 }

@@ -5,12 +5,12 @@ Bee
 **Bee** is an ORM framework.   
 **Bee** is an easy and high efficiency ORM framework.    
 **Coding Complexity is O(1),it means that Bee will do the Dao for you**.  
-**You don't need to write the Dao by yourself anymore**.  
+**You don't need to write the Dao by yourself anymore**.Help you to focus more on the development of business logic.  
 **Good Feature:**  AI, Timesaving/Tasteful, Easy, Automatic (**AiTeaSoft Style**)   
 **Bee** see:  
 https://github.com/automvc/bee  
-**Honey** see:  
-https://github.com/automvc/honey  
+or:  
+https://gitee.com/automvc/bee  
 
 ## [中文介绍](../../../bee/blob/master/README_CN.md)  
 [点击链接可查看中文介绍](../../../bee/blob/master/README_CN.md)  
@@ -20,7 +20,8 @@ jdk1.7+
 
 ## Feature & Function: 
 
-**Support many Database**(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL and so on) and easy extend。 
+**Support many Database**(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server and so on) and easily extend。 
+**Good performance, close to the speed of JDBC; Small files：Bee V1.8 jar 217k**, **V1.9.5 jar,315k, V1.9.8 jar 310k**。  
 
 **V1.0**  
 Single entity(table) Suid (select,update,insert,delete) object-oriented operation.  
@@ -88,6 +89,75 @@ fixed null bug about:PreparedSql's method select(String sql,Object preValues[]).
 5.Enhance Log function.  
 6.Fixed json transform bug.  
 
+**v1.8.99**(2020-10-25 Double Ninth Festival)  
+1.Support lower and upper case option for SQL KeyWord.  
+2.Cache sql key support MD5 string.  
+3.Optimize the way of setting DB information with Honeyconfig.  
+4.Fix bug about checkSelectField.  
+
+**V1.9**  
+(just a part)   
+more table join select support more join condition.  
+same Connection for some ORM operation.  
+support different type muli-Ds at same time.  
+IncludeType support exclude "  ".  
+add Ignore Annotation, ignore the field which do not want to transfer.  
+support define start and end token when generate file by template.  
+enhance DB conn management.  
+enhance code quality(The test coverage is more than 70%, and the key code is more than 90%).  
+enhance chain coding:Select,Update.  
+adjust config information of bee.properties,HoneyConfig.  
+Bee integration with Spring Boot,provide bee-spring-boot-starter.  
+support use Javabean create the DB table.  
+fix the problem that the fields with the same name will be confused in some databases(oracle) when multi table paging query.  
+fixed: update is default by id,but no id field or id is null,will have exception.  
+fixed: cache bug.  
+fixed: about getRangeId(int sizeOfIds) of GenId.  
+fixed: in jdk 11,LoggerFactory use log4j2,have exception.  
+when entity is view(not table), recommend put in bee.osql.cache.never(bee.properties). 
+
+**V1.9.8**(2021 Mid-Autumn Day)  
+SuidRich add 4 method:  
+public <T> int save(T entity);  
+public <T> int update(T oldEntity,T newEntity);  
+public <T> String selectJson(T entity, String selectField);  
+public <T> String selectJson(T entity, String selectField, int start, int size);  
+
+MoreTable(more table select):  
+support List type field for more tables join;  
+support two sub tables join(inner join,right join, left join);  
+support one sub table have another join sub table;  
+if all fields is null, the sub table field will set null;  
+annotation JoinTable add method:subClass() for List type field   
+Condition add method:  
+public Condition opOn(String field, Op Op, Object value);  
+
+MapSuid(the Javabean corresponding to the table is not required):  
+add method update,count,paging select, add and adjust insert and insertAndReturnId.  
+
+PreparedSqlLib support selectMapList method.  
+Read/Write multi-DataSource support different type DataSource.  
+Logger: two method support have parameter Throwable.  
+sql log support config the log level.  
+add class StreamUtil  
+enhance check field  
+use LinkedHashMap in List&lt;Map> result for selectMapList(String sql).  
+Condition support condition.set("fieldName", null).  
+selectJson support config long to string  
+enhance autoGenBean ,support to generate SQL Json Script.  
+Add general search function support (simplify back-end complex query programming).  
+enhance multi-thread support.  
+custom the path of bee.properties.  
+Generate Javabean(GenBean) support type:JSON,TEXT.  
+
+fix bug for ExecutableSql.  
+transfer the the field of 'order by'.  
+fix null bug in create() of ObjectCreatorFactory.  
+fix bug for max column number(excel in bee-ext). 
+fix bug about HoneyContext  
+fix bug about checkPackageByClass  
+fix bug about multi-thread safe in ConditionHelper.  
+
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
 
@@ -98,6 +168,8 @@ fixed null bug about:PreparedSql's method select(String sql,Object preValues[]).
 Test Evn : Local windows.  
 DB: MySQL (Version 5.6.24).  
 Test point: Batch Insert;Paging Select; Transaction(update and select).  
+
+<img src="batch-insert-compare.png">  
 
 <table cellspacing="0" cellpadding="0">
   <col width="62" />
@@ -228,18 +300,18 @@ Quick Start:
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<version>1.8.15</version>
+			<version>1.9.8</version>
 		</dependency>
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<version>1.8.15</version>
+			<version>1.9.8</version>
 		</dependency>
-		<!--for log framework,web sql -->
+		<!--for log framework,Excel(poi) -->
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee-ext</artifactId>
-			<version>1.8.15</version>
+			<version>1.9.8</version>
 		</dependency>
 ```
 
@@ -254,7 +326,8 @@ Create the tables and init the data by run the [init-data(user-orders)-mysql.sql
 ## 3. Update the database configuration in bee.properties if need  
 If no the bee.properties file, you can create it by yourself.
 
-bee.databaseName=MySQL  
+//#bee.databaseName=MySQL  
+bee.db.dbName=MySQL  
 bee.db.driverName = com.mysql.jdbc.Driver  
 bee.db.url =jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8  
 bee.db.username = root  
@@ -271,70 +344,75 @@ bee.db.password =
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.teasoft.bee.osql.BeeException;
 import org.teasoft.bee.osql.Suid;
-import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.BeeFactoryHelper;
+import org.teasoft.honey.osql.core.Logger;
 
 /**
  * @author Kingstar
- * @since  1.0
+ * @since 1.0
  */
-public class SuidExam {
-	
+public class SuidExamEN {
+
 	public static void main(String[] args) {
 
-		Suid suid=BeeFactory.getHoneyFactory().getSuid();
-		
-		//需要先生成相应的Javabean
-		Orders orders1=new Orders(); //need define the Javabean
-		orders1.setId(100001L);
-		orders1.setName("Bee(ORM Framework)");
-		
-		//默认不处理null和空字符串.不用再写一堆的判断;其它有值的字段全部自动作为过滤条件
-		List<Orders> list1 =suid.select(orders1);  //select
-		for (int i = 0; i < list1.size(); i++) {
-			System.out.println(list1.get(i).toString());
-		}
-		
-		orders1.setName("Bee--ORM Framework");
-		//默认只更新需要更新的字段. 过滤条件默认只用id字段,其它需求可用SuidRich中的方法.
-		int updateNum=suid.update(orders1);   //update
-		System.out.println("update record:"+updateNum);
-		
-		Orders orders2=new Orders();
-		orders2.setUserid("bee");
-		orders2.setName("Bee(ORM Framework)");
-		orders2.setTotal(new BigDecimal(91.99));
-		orders2.setRemark("");  //empty String test
-		
-		//默认不处理null和空字符串.不用再写一堆的判断;其它有值的字段全部自动插入数据库中. 
-		//方便结合DB插值,如id自动增长,由DB插入;createtime由DB默认插入
-		int insertNum=suid.insert(orders2); //insert
-		System.out.println("insert record:"+insertNum);
-		
-		//默认不处理null和空字符串.不用再写一堆的判断;其它有值的字段全部自动作为过滤条件
-//		int deleteNum=suid.delete(orders2);   //delete
-//		System.out.println("delete record:"+deleteNum);
-		
-		List<Orders> list2 =suid.select(orders1); //select  confirm the data
-		for (int i = 0; i < list2.size(); i++) {
-			System.out.println(list2.get(i).toString());
+		try {
+			Suid suid = BeeFactoryHelper.getSuid();
+
+			Orders orders1 = new Orders();//need gen the Javabean
+			orders1.setId(100001L);
+			orders1.setName("Bee(ORM Framework)");
+
+			List<Orders> list1 = suid.select(orders1); // 1. select
+			for (int i = 0; i < list1.size(); i++) {
+				Logger.info(list1.get(i).toString());
+			}
+
+			orders1.setName("Bee(ORM Framework)");
+			int updateNum = suid.update(orders1); //2. update
+			Logger.info("update record:" + updateNum);
+
+			Orders orders2 = new Orders();
+			orders2.setUserid("bee");
+			orders2.setName("Bee(ORM Framework)");
+			orders2.setTotal(new BigDecimal("91.99"));
+			orders2.setRemark(""); // empty String test
+
+			int insertNum = suid.insert(orders2); // 3. insert
+			Logger.info("insert record:" + insertNum);
+
+			int deleteNum = suid.delete(orders2); // 4. delete
+			Logger.info("delete record:" + deleteNum);
+		} catch (BeeException e) {
+			Logger.error("In SuidExamEN (BeeException):" + e.getMessage());
+			e.printStackTrace();
+		} catch (Exception e) {
+			Logger.error("In SuidExamEN (Exception):" + e.getMessage());
+			e.printStackTrace();
 		}
 	}
 
 }
-//注意: 事务,分页,排序,范围查询,查询结果直接返回json等都支持,这里只是一个入门例子.
+// notice: this is just a simple sample. Bee suport transaction,paging,complicate select,slect json,and so on.	
+
 ```
 
 #### [More example/test case](../../../bee-exam/)	
+
+#### [Bee+Spring-boot Demo](../../../bee-starter-demo/)	
+
+### Bee Common Interface  
+<img src="common-interface_en.jpg">  
 
 Rapid application development:
 =========	
 **Let Java more quicker programming than php and Rails.**  
 
-**Faster development of new combinations of Java Web：**  
+**Faster development of new combinations for Java Web：**  
 [Bee+Spring+SpringMVC](../../../../aiteasoft/bee-spring-springmvc)  
 
-**Faster development of new combinations of Spring Cloud microservices：**  
+**Faster development of new combinations for Spring Cloud microservices：**  
 [Bee + Spring Boot](../../../bee-springboot)  
 
 ...  

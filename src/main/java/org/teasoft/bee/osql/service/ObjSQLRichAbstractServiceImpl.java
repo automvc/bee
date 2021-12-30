@@ -69,7 +69,6 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 		//Add the business logic if need.
 		return getSuidRich().insert(entity,excludeFieldList);
 	}
-	
 
 	@Override
 	public <T> int insert(T[] entity, int batchSize){
@@ -100,6 +99,24 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 		//Add the business logic if need.
 		return getSuidRich().selectWithFun(entity, functionType, fieldForFun);
 	}
+	
+	@Override
+	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun, Condition condition) {
+		//Add the business logic if need.
+		return getSuidRich().selectWithFun(entity, functionType, fieldForFun, condition);
+	}
+
+	@Override
+	public <T> int count(T entity) {
+		//Add the business logic if need.
+		return getSuidRich().count(entity);
+	}
+
+	@Override
+	public <T> int count(T entity, Condition condition) {
+		//Add the business logic if need.
+		return getSuidRich().count(entity, condition);
+	}
 
 	@Override
 	public <T> List<T> selectOrderBy(T entity, String orderFieldList) {
@@ -118,7 +135,6 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 		//Add the business logic if need.
 		return getSuidRich().update(entity, updateFieldList, includeType);
 	}
-	
 
 	@Override
 	public <T> List<T> select(T entity, IncludeType includeType) {
@@ -169,21 +185,27 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 	}
 
 	@Override
-	public <T> List<T> selectById(T entity, Integer id) {
+	public <T> T selectById(T entity, Integer id) {
 		//Add the business logic if need.
 		return  getSuidRich().selectById(entity, id);
 	}
 
 	@Override
-	public <T> List<T> selectById(T entity, Long id) {
+	public <T> T selectById(T entity, Long id) {
+		//Add the business logic if need.
+		return  getSuidRich().selectById(entity, id);
+	}
+	
+	@Override
+	public <T> T selectById(T entity, String id) {
 		//Add the business logic if need.
 		return  getSuidRich().selectById(entity, id);
 	}
 
 	@Override
-	public <T> List<T> selectById(T entity, String ids) {
+	public <T> List<T> selectByIds(T entity, String ids) {
 		//Add the business logic if need.
-		return  getSuidRich().selectById(entity, ids);
+		return  getSuidRich().selectByIds(entity, ids);
 	}
 
 	@Override
@@ -217,6 +239,12 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 		//Add the business logic if need.
 		return getSuidRich().selectJson(entity, includeType,condition);
 	}
+	
+	@Override
+	public <T> String selectJson(T entity, Condition condition) {
+		//Add the business logic if need.
+		return getSuidRich().selectJson(entity, condition);
+	}
 
 	@Override
 	public <T> int updateBy(T entity, String whereFields) {
@@ -237,6 +265,12 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 	}
 
 	@Override
+	public <T> int updateById(T entity, Condition condition) {
+		//Add the business logic if need.
+		return getSuidRich().updateById(entity, condition);
+	}
+	
+	@Override
 	public <T> int update(T entity, String updateFields, Condition condition) {
 		//Add the business logic if need.
 		return getSuidRich().update(entity, updateFields, condition);
@@ -246,6 +280,72 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 	public <T> int update(T entity, Condition condition) {
 		//Add the business logic if need.
 		return getSuidRich().update(entity,condition);
+	}
+
+	@Override
+	public <T> int insert(List<T> entityList) {
+		//Add the business logic if need.
+		return getSuidRich().insert(entityList);
+	}
+
+	@Override
+	public <T> int insert(List<T> entityList, int batchSize) {
+		//Add the business logic if need.
+		return getSuidRich().insert(entityList, batchSize);
+	}
+
+	@Override
+	public <T> int insert(List<T> entityList, String excludeFields) {
+		//Add the business logic if need.
+		return getSuidRich().insert(entityList, excludeFields);
+	}
+
+	@Override
+	public <T> int insert(List<T> entityList, int batchSize, String excludeFields) {
+		//Add the business logic if need.
+		return getSuidRich().insert(entityList, batchSize, excludeFields);
+	}
+
+	@Override
+	public <T> List<String[]> selectString(T entity, Condition condition) {
+		//Add the business logic if need.
+		return getSuidRich().selectString(entity, condition);
+	}
+	
+	@Override
+	public SuidRich setDynamicParameter(String para, String value) {
+		//Add the business logic if need.
+		return getSuidRich().setDynamicParameter(para, value);
+	}
+	
+	@Override
+	public <T> boolean exist(T entity) {
+		//Add the business logic if need.
+		return getSuidRich().exist(entity);
+	}
+
+	@Override
+	public <T> int update(T oldEntity, T newEntity) {
+		//Add the business logic if need.
+		return getSuidRich().update(oldEntity, newEntity);
+	}
+
+	@Override
+	public <T> String selectJson(T entity, String selectField) {
+		//Add the business logic if need.
+		return getSuidRich().selectJson(entity, selectField);
+	}
+
+	@Override
+	public <T> String selectJson(T entity, String selectField, int start, int size) {
+		//Add the business logic if need.
+		return getSuidRich().selectJson(entity, selectField, start, size);
+	}
+
+	@Override
+	public <T> int save(T entity) {
+		//Add the business logic if need.
+		return getSuidRich().save(entity);
 	}
 	
 }

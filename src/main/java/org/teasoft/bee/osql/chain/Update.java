@@ -30,9 +30,22 @@ public interface Update extends ToSql{
 	public Update set(String field, Number value);
 	
 	//<==============condition
-	public Update op(String field, Op opType, String value);
+	
+	/**
+	 * 添加左括号.add "("
+	 * @return Update
+	 */
+	public Update lParentheses();
+	
+	/**
+	 * 添加右括号.add ")"
+	 * @return Update
+	 */
+	public Update rParentheses();
+	
+	public Update op(String field, Op Op, String value);
 
-	public Update op(String field, Op opType, Number value);
+	public Update op(String field, Op Op, Number value);
 	
 	public Update op(String field, String value);
 
@@ -40,7 +53,7 @@ public interface Update extends ToSql{
 
 	/**
 	 * 默认自动加and. Default will automatically add and.
-	 * @return Update
+	 * @return Select
 	 */
 	public Update and();
 
@@ -50,5 +63,18 @@ public interface Update extends ToSql{
 	public Update where();
 
 	public Update where(String expression) ;
+	
+	public Update between(String field, Number low, Number high);
+	public Update notBetween(String field, Number low, Number high);
+
+	public Update isNull(String field);
+	public Update isNotNull(String field);
+
+	public Update in(String field, Number... valueList);
+	public Update notIn(String field, Number... valueList);
+	
+	public Update in(String field, String valueList);
+	public Update notIn(String field, String valueList);
+	
 	//=============>
 }

@@ -29,7 +29,7 @@ public interface Transaction {
 	public void rollback();
 	
 	public void setReadOnly(boolean readOnly);
-	public void setTransactionIsolation(TransactionIsolationLevel level);
+	public void setTransactionIsolation(TransactionIsolationLevel transactionIsolationLevel);
 
 	public boolean isReadOnly();
 	public int getTransactionIsolation();

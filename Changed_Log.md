@@ -160,4 +160,116 @@ fixed bug:parse the json has extra comma.
 fixed null bug about:PreparedSql's method select(String sql,Object preValues[]).  
 fixed bug about Oracle more table paing.  
 
-	
+**v1.8.15**(2020-10-01 3Festivals)  
+1.Enhance support for H2,SQLite,PostgreSQL.  
+2.Enhance page funtion,paging para also use placeholder.  
+3.Can be used in zero configuration.  
+4.Enhance PearFlowerId algorithm that it will produce even number with continuous mantissa of 0 when is often not used (there are no such defect in SerialUniqueId and OneTimeSnowflakeId).  
+5.Enhance Log function.  
+6.Fixed json transform bug.  
+
+**v1.8.99**(2020-10-25 Double Ninth Festival)  
+1.Support lower and upper case option for SQL KeyWord.  
+2.Cache sql key support MD5 string.  
+3.Optimize the way of setting DB information with Honeyconfig.  
+4.Fix bug about checkSelectField.  
+
+**v1.8.15**(2020-10-01 3Festivals)  
+1.Enhance support for H2,SQLite,PostgreSQL.  
+2.Enhance page funtion,paging para also use placeholder.  
+3.Can be used in zero configuration.  
+4.Enhance PearFlowerId algorithm that it will produce even number with continuous mantissa of 0 when is often not used (there are no such defect in SerialUniqueId and OneTimeSnowflakeId).  
+5.Enhance Log function.  
+6.Fixed json transform bug.  
+
+**v1.8.99**(2020-10-25 Double Ninth Festival)  
+1.Support lower and upper case option for SQL KeyWord.  
+2.Cache sql key support MD5 string.  
+3.Optimize the way of setting DB information with Honeyconfig.  
+4.Fix bug about checkSelectField.  
+
+**V1.9**  
+SuidRich add new methods support list parameter in batch insert.  
+enhance SuidRich function, SuidRich add method:  
+	public <T> List<String[]> selectString(T entity,Condition condition);  
+	public <T> int updateById(T entity,Condition condition);  
+	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun, Condition condition);  
+	public <T> int count(T entity);  
+	public <T> int count(T entity, Condition condition);  
+	public <T> boolean exist(T entity); //check the record whether exist in table  
+SuidRich adjust methods selectById for unique entity and intelligently judge the Javabean id type of string id parameter.  
+Suid add method insertAndReturnId.  
+enhance aggregate function cont,sum,avg,min,max,Condition add method:  
+	public Condition selectFun(FunctionType functionType,String fieldForFun);  
+	public Condition selectFun(FunctionType functionType,String fieldForFun,String alias);  
+Condition add method:opWithField,setWithField support like :field1=field2  
+Condition add method:selectDistinctField,support distinct as select distinct(userid) from table_name  
+MapSuid,no need Javabean, use map to set the entity information that needs to be transformed and operate the database(select/insert/delete record).  
+support read Excel(*.xls,*.xlsx), converting data into List<String[]> and importing them into database(bee-ext).  
+more table join select support more join condition.  
+same Connection for some ORM operation.  
+support different type muli-Ds at same time.  
+IncludeType support exclude "  ".  
+add Ignore Annotation, ignore the field which do not want to transfer.  
+support define start and end token when generate file by template.  
+enhance DB conn management.  
+enhance code quality.  
+enhance chain coding:Select,Update.  
+adjust config information of bee.properties,HoneyConfig.  
+Bee integration with Spring Boot,provide bee-spring-boot-starter.  
+support use Javabean create the DB table.  
+fix the problem that the fields with the same name will be confused in some databases(oracle) when multi table paging query.  
+fixed: update is default by id,but no id field or id is null,will have exception.  
+fixed: cache bug.  
+fixed: about getRangeId(int sizeOfIds) of GenId.  
+fixed: in jdk 11,LoggerFactory use log4j2,have exception.  
+when entity is view(not table), recommend put in bee.osql.cache.never(bee.properties).
+
+**V1.9.8**(2021 Mid-Autumn Day)  
+SuidRich add 4 method:  
+public <T> int save(T entity);  
+public <T> int update(T oldEntity,T newEntity);  
+public <T> String selectJson(T entity, String selectField);  
+public <T> String selectJson(T entity, String selectField, int start, int size);  
+
+MoreTable(more table select):  
+support List type field for more tables join;  
+support two sub tables join(inner join,right join, left join);  
+support one sub table have another join sub table;  
+if all fields is null, the sub table field will set null;  
+annotation JoinTable add method:subClass() for List type field   
+Condition add method:  
+public Condition opOn(String field, Op Op, Object value);  
+
+MapSuid(the Javabean corresponding to the table is not required):  
+add method update,count,paging select, add and adjust insert and insertAndReturnId.  
+add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSql.  
+add method count(MapSql mapSql),update(MapSql mapSql),insertAndReturnId(MapSql mapSql),support page in MapSuid.  
+add method putNew(String fieldName, Object newValue),putNew(Map map),put(Map map),support page in MapSqlImpl.  
+add method toUpdateSqlByMap ,toCountSqlByMap ,support page in MapSqlProcessor.  
+add method count(MapSql mapSql),update(MapSql mapSql),support page in MapSuidImpl.  
+MapSuidImpl change two different method:insert(MapSql mapSql) & insertAndReturnId(MapSql mapSql)  
+
+PreparedSqlLib support selectMapList method.  
+Read/Write multi-DataSource support different type DataSource.  
+Logger: two method support have parameter Throwable.  
+sql log support config the log level.  
+add class StreamUtil  
+ObjectUtils add one method: isTrue(Boolean b)  
+enhance check field  
+use LinkedHashMap in List&lt;Map> result for selectMapList(String sql).  
+Condition support condition.set("fieldName", null).  
+selectJson support config long to string  
+enhance autoGenBean ,support to generate SQL Json Script.  
+Add general search function support (simplify back-end complex query programming).  
+enhance multi-thread support.  
+custom the path of bee.properties.  
+Generate Javabean(GenBean) support type:JSON,TEXT.  
+
+fix bug for ExecutableSql.  
+transfer the the field of 'order by'.  
+fix null bug in create() of ObjectCreatorFactory.  
+fix bug for max column number(excel in bee-ext). 
+fix bug about HoneyContext  
+fix bug about checkPackageByClass  
+fix bug about multi-thread safe in ConditionHelper.   

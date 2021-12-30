@@ -52,11 +52,10 @@ public interface Suid {
 	 * The entity corresponding to table and can not be null. <br>
 	 * The ID field of entity cannot be null and as filter condition. <br>
 	 * The not null and not empty field will update to database except ID.
-	 * @return 成功更新的记录数.the numbers of update records successfully.
+	 * @return 成功更新的记录数,若失败则返回小于0的整数.the numbers of update records successfully, if fails,return integer less than 0.
 	 * @see SuidRich#update(Object,java.lang.String)
 	 */
 	public <T> int update(T entity);
-	
 	
 	/**
 	 * 根据实体对象entity插入数据.According to entity object insert record. 
@@ -64,9 +63,20 @@ public interface Suid {
 	 * entity中非null且非空字符串将插入到数据库<br>
 	 * The entity corresponding to table and can not be null. <br>
 	 * The not null and not empty field will insert to database.
-	 * @return 成功插入的记录数.the numbers of insert records successfully.
+	 * @return 成功插入的记录数,若失败则返回小于0的整数.the numbers of insert records successfully, if fails,return integer less than 0.
 	 */
 	public <T> int insert(T entity);
+	
+	/**
+	 * 根据实体对象entity插入数据,并返回主键id值.According to entity object insert record and return id value. 
+	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).<br>
+	 * entity中非null且非空字符串将插入到数据库<br>
+	 * The entity corresponding to table and can not be null. <br>
+	 * The not null and not empty field will insert to database.
+	 * @return 若成功,返回插入记录的id值;若失败则返回小于0的数.
+	 * <br>If successful, return the id value of the inserted record; if fails, return number less than 0.
+	 */
+	public <T> long insertAndReturnId(T entity);
 	
 	/**
 	 * 根据实体对象entity删除数据.According to entity object delete record. 
@@ -75,7 +85,7 @@ public interface Suid {
 	 * The entity corresponding to table and can not be null.<br>
 	 * If the field value is not null and not empty field as filter condition, <br>
 	 * the operator is equal sign.eg:field=value
-	 * @return 成功删除的记录数. the numbers of delete records successfully.
+	 * @return 成功删除的记录数,若失败则返回小于0的整数. the numbers of delete records successfully, if fails,return integer less than 0.
 	 */
 	public <T> int delete(T entity);
 	
@@ -83,7 +93,7 @@ public interface Suid {
 	 * 根据实体对象和Condition查询数据.Select the records according to entity and condition.<br>
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
-	 * @param condition entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.<br>
+	 * @param condition entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.<br>
 	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition. 
 	 * <br>若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
 	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
@@ -91,21 +101,22 @@ public interface Suid {
 	 */
 	public <T> List<T> select(T entity,Condition condition);
 
-	
 	/**
 	 * 根据实体对象和Condition删记录.Delete the records according to entity and condition.<br>
 	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串
 	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).
-	 * @param condition entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.condition使用过的字段,默认情况不会再处理.<br>
+	 * @param condition entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.<br>
 	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition. 
 	 * <br>若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
-	 * @return 成功删除的记录行数. the number of deleted record(s) successfully.
+	 * @return 成功删除的记录行数,若失败则返回小于0的整数. the number of deleted record(s) successfully, if fails,return integer less than 0.
 	 * @since 1.7.2
 	 */
 	public <T> int delete(T entity,Condition condition);
 	
 	/**
-	 * 为动态表名、实体名参数设置值.for dynamic table & entity name
+	 * 为动态表名、实体名参数设置值.set dynamic parameter for dynamic table & entity name
+	 * <br>本方法的调用要早于select,update,insert,delete等方法.
+	 * <br>This method is called earlier than the select, update, insert, delete methods.
 	 * @param para parameter name
 	 * @param value parameter value
 	 * @return Suid
@@ -113,4 +124,16 @@ public interface Suid {
 	 */
 	public Suid setDynamicParameter(String para,String value);
 	
+	/**
+	 * 声明开始使用同一Connection.declare begin Same Connection for some ORM operation.
+	 * @since 1.9
+	 */
+	public void beginSameConnection();
+	
+	/**
+	 * 声明结束使用同一Connection.declare end Same Connection for some ORM operation.
+	 * @since 1.9
+	 */
+	public void endSameConnection();
+
 }
