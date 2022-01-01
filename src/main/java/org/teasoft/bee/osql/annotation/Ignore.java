@@ -24,7 +24,7 @@ import java.lang.annotation.Target;
 
 /**
  * 忽略不想转换的字段.Ignore the field which do not want to transfer.
- * <br>建议尽可能少用该注解,因为很多时间你可以用默认忽略null/空字符的特性达到同样的效果.
+ * <br>建议尽可能少用该注解,因为很多时候你可以用默认忽略null/空字符的特性达到同样的效果.
  * <br>It is recommended that the annotation be used as little as possible,
  * <br>because many times you can use the following features to achieve the same effect:
  * <br>the null and empty string are not handled by default.
