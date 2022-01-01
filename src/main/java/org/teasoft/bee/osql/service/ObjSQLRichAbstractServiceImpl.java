@@ -347,5 +347,13 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 		//Add the business logic if need.
 		return getSuidRich().save(entity);
 	}
+
+	@Override
+	public <T> long insertAndReturnId(T entity, IncludeType includeType) {
+		//Add the business logic if need.
+		return getSuidRich().insertAndReturnId(entity, includeType);
+	}
+	
+	
 	
 }
