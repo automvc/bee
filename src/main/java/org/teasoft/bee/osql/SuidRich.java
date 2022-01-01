@@ -323,6 +323,8 @@ public interface SuidRich extends Suid {
 	 */
 	public <T> int insert(T entity,IncludeType includeType);
 	
+	public <T> long insertAndReturnId(T entity,IncludeType includeType);
+	
 	/**
 	 * 根据实体对象entity删除数据.Delete record according to entity.
 	 * @param entity 与表对应的实体对象,且不能为空,id为null不作为过滤条件.table's entity(do not allow null).
