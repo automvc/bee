@@ -52,6 +52,8 @@ public interface PreparedSql {
 	 */
 	public <T> List<T> select(String sql,T returnType,Object preValues[]);
 	
+	public <T> List<T> select(String sql,T returnType);
+	
 	/**
 	 * 通过问号的占位语句查询数据.Select record(s) via the placeholder(?) statement.
 	 * eg: select * from orders where userid=?
