@@ -158,6 +158,16 @@ fix bug about HoneyContext
 fix bug about checkPackageByClass  
 fix bug about multi-thread safe in ConditionHelper.  
 
+**V1.11**(2022)  
+SuidRich  
+public <T> long insertAndReturnId(T entity,IncludeType includeType);  
+PreparedSql  
+public <T> List<T> select(String sql,T returnType);  
+annotation PrimaryKey  
+BF is shortcut for BeeFactoryHelper 
+wDB,rDB add trim(). 
+fix a bug for naming transfer  
+
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
 
