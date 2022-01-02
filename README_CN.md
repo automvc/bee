@@ -41,7 +41,7 @@ Bee **简化了与DB交互的编码**工作量.连接，事务都可以由Bee框
 * 7.支持原生SQL排序, **原生语句分页**(不需要将全部数据查出来)。  
 * 8.支持**直接返回Json**格式查询结果; 链式编程。  
 * 9.支持**事务**、多个ORM操作使用同一连接、**for update**，支持**批处理**操作，支持原生SQL(**自定义sql**语句)，支持**存储过程**。
-* 10.支持面向对象方式复杂查询、**多表查询**(无n+1问题; 支持：一对一,一对多,多对一,多对多)。 
+* 10.支持面向对象方式复杂查询、**多表查询**(无n+1问题; 支持：一对一,一对多,多对一,多对多;返回结果根据子表是否使用List有两种呈现结构)。 
 * 11.**一级缓存**，概念简单，功能强大；一级缓存也可以**像JVM一样进行细粒度调优**；**支持可更新的长久缓存列表**，更新配置表，**不需要重启**。  
 * 12.表名与实体名、字段名与属性名映射默认提供多种实现，且支持**自定义映射规则扩展**。  
 * 13.**多种DB**支持轻松扩展(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server等直接可用)。 
@@ -52,8 +52,10 @@ Bee **简化了与DB交互的编码**工作量.连接，事务都可以由Bee框
 * 18.**无**第三方插件依赖；可零配置使用。  
 * 19.**性能好:接近JDBC的速度；文件小：Bee V1.8 仅217k**, **V1.9.5 仅315k，V1.9.8 仅310k**。  
 辅助功能:  
-* 20.支持自动生成表对应的Javabean，根据Javabean创建表，Javaweb**后端代码**根据**模板自动生成**；能打印非占位符的**可执行sql**,方便调试。  
+* 20.支持自动生成表对应的Javabean，根据Javabean创建表，Javaweb**后端代码**根据**模板自动生成**；能打印非占位符的**可执行sql**,方便调试;支持生成Json格式的SQL脚本。  
 * 21.支持**读取Excel**,从Excel导入数据到DB，操作简单。  
+* 22.流的工具类StreamUtil。  
+* 23.复杂查询前后端可自动解析。  
 
 ## 最新功能介绍: 
 
@@ -115,6 +117,16 @@ fix bug for max column number(excel in bee-ext).
 fix bug about HoneyContext.  
 fix bug about checkPackageByClass.  
 fix bug about multi-thread safe in ConditionHelper.  
+
+**V1.11**(2022)  
+SuidRich  
+public <T> long insertAndReturnId(T entity,IncludeType includeType);  
+PreparedSql  
+public <T> List<T> select(String sql,T returnType);  
+annotation PrimaryKey  
+BF is shortcut for BeeFactoryHelper 
+wDB,rDB add trim(). 
+fix a bug for naming transfer  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
