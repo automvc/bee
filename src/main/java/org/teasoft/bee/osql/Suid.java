@@ -75,6 +75,7 @@ public interface Suid {
 	 * The not null and not empty field will insert to database.
 	 * @return 若成功,返回插入记录的id值;若失败则返回小于0的数.
 	 * <br>If successful, return the id value of the inserted record; if fails, return number less than 0.
+	 * @since 1.9
 	 */
 	public <T> long insertAndReturnId(T entity);
 	

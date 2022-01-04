@@ -307,7 +307,7 @@ public interface SuidRich extends Suid {
     public <T> List<T> select(T entity,IncludeType includeType);
 	
 	/**
-	 * 根据实体对象entity中id更新该实体对象的数据.Update record according to entity.
+	 * 根据实体对象entity中id更新该实体对象的数据.Update record according to entity by primary key.
 	 * @param entity 与表对应的实体对象,且不能为空;entity中id字段不能为空,作为过虑条件.id为null将引发ObjSQLException.
 	 * <br>table's entity(do not allow null),The id field in entity cannot be empty as a filtering condition.
 	 * @param includeType 空字符串与null是否包含设置
