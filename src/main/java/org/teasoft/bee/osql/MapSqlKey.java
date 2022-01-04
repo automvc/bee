@@ -30,6 +30,12 @@ public enum MapSqlKey {
 	Table("Table"),
 	
 	/**
+	 * 在MapSuid的方法insertAndReturnId(MapSql mapSql),当主键名称不是id时使用.
+	 * @since 1.11
+	 */
+	PrimaryKey("PrimaryKey"),
+	
+	/**
 	 * 声明需要查询的字段,多个用逗号隔开.Declare the select fields,if more than one,separate with comma.
 	 */
     SelectColumns("SelectColumns"),
