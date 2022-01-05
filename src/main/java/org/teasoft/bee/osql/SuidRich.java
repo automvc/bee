@@ -323,6 +323,17 @@ public interface SuidRich extends Suid {
 	 */
 	public <T> int insert(T entity,IncludeType includeType);
 	
+	/**
+	 * 根据实体对象entity插入数据,并返回主键id值.According to entity object insert record and return id value. 
+	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).<br>
+	 * entity中非null且非空字符串将插入到数据库<br>
+	 * The entity corresponding to table and can not be null. <br>
+	 * The not null and not empty field will insert to database.
+	 * @param includeType 空字符串与null是否包含设置
+	 * @return 若成功,返回插入记录的id值;若失败则返回小于0的数.
+	 * <br>If successful, return the id value of the inserted record; if fails, return number less than 0.
+	 * @since V1.11
+	 */
 	public <T> long insertAndReturnId(T entity,IncludeType includeType);
 	
 	/**
