@@ -419,9 +419,8 @@ API-V1.9.8(最新版) 下载代码含有 bee-1.9.8-javadoc.zip
 
 其它学习资料:
 =========	
-[wikis Document](../../../bee/wikis)  
-或者:  
-[Wiki Document](../../../bee/wiki)  
+[wiki 文档](../../../bee/wikis)  
+
 [CSDN: ORM Bee资料大全](https://blog.csdn.net/abckingaa/article/details/121664398)
   
 联系与欢迎:
