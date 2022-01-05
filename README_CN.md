@@ -1,6 +1,13 @@
 
 Bee
 =========
+#### 好消息:
+**2022年2月15日元宵节**前登记的企业用户，可获得专业的生产环境使用帮助,为你的系统保驾护航、提高性能；  
+个人用户登记后入群，可获得个性化的使用咨询!  
+登记地址：  
+https://gitee.com/automvc/bee/issues/I3PIUJ  
+https://github.com/automvc/bee/issues/43  
+
 #### 工欲善其事必先利其器！——《论语·卫灵公》  
 #### 为适应互联网时代软件需求量大,需求变更频繁,性能要求高等要求,ORM Bee应运而生!
 
@@ -119,15 +126,16 @@ fix bug about checkPackageByClass.
 fix bug about multi-thread safe in ConditionHelper.  
 
 **V1.11**
-V1.11.0.1(2022新年版)  
-SuidRich  
-public <T> long insertAndReturnId(T entity,IncludeType includeType);  
-PreparedSql  
-public <T> List<T> select(String sql,T returnType);  
-add annotation PrimaryKey  
-MapSqlKey support PrimaryKey  
-BF is shortcut for BeeFactoryHelper  
-Enhance:wDB,rDB add trim().  
+V1.11.0.1.1(2022新年版)  
+SuidRich增加方法:  
+  public <T> long insertAndReturnId(T entity,IncludeType includeType);  
+PreparedSql增加方法:  
+  public <T> List<T> select(String sql,T returnType);  
+增加声明主键支持:  
+  add annotation PrimaryKey  
+  MapSqlKey support PrimaryKey  
+可用BF代替BeeFactoryHelper加快输入  
+增强:读写模式配置信息去除空格  
 fix a bug for naming transfer  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
