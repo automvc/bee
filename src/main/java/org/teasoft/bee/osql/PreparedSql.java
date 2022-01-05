@@ -43,7 +43,7 @@ import java.util.Map;
 public interface PreparedSql {
 
 	/**
-	 * 通过问号的占位语句查询数据.Select record(s) via the placeholder(?) statement.
+	 * 通过问号的占位符语句查询数据.Select record(s) via the placeholder(?) statement.
 	 * eg: select * from orders where userid=?
 	 * @param sql 直接用?作为占位符的sql查询语句.
 	 * @param returnType 返回entity的类型.
@@ -52,6 +52,13 @@ public interface PreparedSql {
 	 */
 	public <T> List<T> select(String sql,T returnType,Object preValues[]);
 	
+	/**
+	 * 通过无占位符语句查询数据.Select record(s) via no placeholder(?) select statement.
+	 * @param sql sql查询语句(无占位符).
+	 * @param returnType 返回entity的类型.
+	 * @return 返回returnType类型的实体List.
+	 * @since V1.11
+	 */
 	public <T> List<T> select(String sql,T returnType);
 	
 	/**
