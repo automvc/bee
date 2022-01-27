@@ -38,9 +38,9 @@ public interface Cache {
 	 * 将结果集放入缓存
 	 * Put the result in the cache identify with sql.
 	 * @param sql 查询用的sql
-	 * @param resultSet 结果记录
+	 * @param result 结果记录
 	 */
-	public void add(String sql,Object resultSet);
+	public void add(String sql,Object result);
 	
 	/**
 	 * 清除某个表相关的缓存
