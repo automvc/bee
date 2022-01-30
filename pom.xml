@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.teasoft</groupId>
 	<artifactId>bee</artifactId>
-	<version>1.11.0.1.1.SNAPSHOP</version>
+	<version>1.11.0.2.1.SNAPSHOP</version>
 	<packaging>jar</packaging>
 	
 	<properties>
