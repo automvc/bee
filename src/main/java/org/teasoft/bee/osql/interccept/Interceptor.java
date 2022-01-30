@@ -25,8 +25,6 @@ public interface Interceptor {
 
 	public void afterAccessDB(List list);
 	
-	public void afterAccessDB(Object entity);
-	
 	public void afterAccessDB();
 
 }
