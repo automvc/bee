@@ -46,7 +46,13 @@ public enum SuidType {
 	/**
 	 * 对应SQL的UPDATE,INSERT,DELETE操作.UPDATE,INSERT,DELETE operation corresponding to SQL
 	 */
-	MODIFY("MODIFY"); 
+	MODIFY("MODIFY"),
+	
+	/**
+	 * SELECT,UPDATE,INSERT,DELETE
+	 * @since 1.11
+	 */
+	SUID("SUID"); 
 	
 	private String type;
 	
