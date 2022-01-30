@@ -28,21 +28,21 @@ package org.teasoft.bee.osql.search;
  * @since  1.9.8
  */
 public class Search {
-	
+
 	private String field;
 	private Operator op;
 	private String value1;
-	
+
 	// when like,notLike, value2 is:Left,Right,LeftRight
 	// when function, value2 is: alias name
 	//between, notBetween value2 is:second para
 	// other Operator,value2 is null
-	private String value2; 
-	
+	private String value2;
+
 	private String op2; //or ,   and is default
-	
+
 	public Search() {}
-	
+
 	public Search(String field, Operator operator, String value1, String value2) {
 		super();
 		this.field = field;
@@ -63,24 +63,27 @@ public class Search {
 	public String getField() {
 		return field;
 	}
+
 	public void setField(String field) {
 		this.field = field;
 	}
+
 	public Operator getOp() {
 		return op;
 	}
+
 	public void setOp(Operator operator) {
 		this.op = operator;
 	}
-	
+
 	public String getValue1() {
 		return value1;
 	}
-	
+
 	public void setValue1(String value1) {
 		this.value1 = value1;
 	}
-	
+
 	/**
 	 * when like,notLike, value2 is:Left,Right,LeftRight
 	 * when function, value2 is: alias name
@@ -91,7 +94,7 @@ public class Search {
 	public String getValue2() {
 		return value2;
 	}
-	
+
 	/**
 	 * when like,notLike, value2 is:Left,Right,LeftRight
 	 * when function, value2 is: alias name
@@ -102,7 +105,7 @@ public class Search {
 	public void setValue2(String value2) {
 		this.value2 = value2;
 	}
-	
+
 	/**
 	 * it will be : "or", "and" , "(" , ")" ,   "or (",   ") or",  "and (",  ") and"
 	 * @return operator2
@@ -110,7 +113,7 @@ public class Search {
 	public String getOp2() {
 		return op2;
 	}
-	
+
 	/**
 	 * it will be : "or", "and" , "(" , ")" ,   "or (",   ") or",  "and (",  ") and"
 	 * @param operator2
@@ -118,5 +121,5 @@ public class Search {
 	public void setOp2(String operator2) {
 		this.op2 = operator2;
 	}
-	
+
 }
