@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author.All rights reserved.
+ * Copyright 2016-2022 the original author.All rights reserved.
  * Kingstar(honeysoft@126.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,10 +23,24 @@ package org.teasoft.bee.osql;
  */
 public interface BeeExtCache extends Cache{
 
+	/**
+	 * 
+	 * @param key
+	 * @return
+	 */
 	public Object getInExtCache(String key);
 
+	/**
+	 * 
+	 * @param key
+	 * @param result
+	 */
 	public void addInExtCache(String key, Object result);
 
+	/**
+	 * 
+	 * @param key
+	 */
 	public void clearInExtCache(String key);
 
 }
