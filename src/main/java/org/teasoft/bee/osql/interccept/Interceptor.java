@@ -30,14 +30,14 @@ public interface Interceptor {
 	/**
 	 * 在解析Entity成sql前触发
 	 * @param entity
-	 * @return
+	 * @return 处理后的Entity
 	 */
 	public Object beforePasreEntity(Object entity); 
 
 	/**
 	 * 设置一次性临时数据源名称
 	 * 在有多个数据源时,指定某个数据源的名称才有效.
-	 * @param ds
+	 * @param ds 一次性临时数据源名称
 	 */
 	public void setDataSourceOneTime(String ds);
 
@@ -50,13 +50,13 @@ public interface Interceptor {
 	/**
 	 * 在完成sql解析后触发
 	 * @param sql
-	 * @return
+	 * @return 处理后的sql语句
 	 */
 	public String afterCompleteSql(String sql);
 
 	/**
 	 * 在访问DB并得到结构化数据后触发,用于有返回Javabean结构的查询
-	 * @param list
+	 * @param list 处理后的结果集List
 	 */
 	@SuppressWarnings("rawtypes")
 //	public void afterAccessDB(List list);
