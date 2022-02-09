@@ -34,11 +34,15 @@ public interface Interceptor {
 	 */
 	public Object beforePasreEntity(Object entity); 
 
-	//在有多个数据源时,指定某个数据源的名称才有效.
+	/**
+	 * 设置一次性临时数据源
+	 * 在有多个数据源时,指定某个数据源的名称才有效.
+	 * @param ds
+	 */
 	public void setDataSourceOneTime(String ds);
 
 	/**
-	 * 
+	 * 获取一次性临时数据源
 	 * @return
 	 */
 	public String getOneTimeDataSource();
