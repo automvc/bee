@@ -20,13 +20,15 @@ package org.teasoft.bee.osql.interccept;
 import java.util.List;
 
 /**
+ * 拦截器.Interceptor
+ * order:beforePasreEntity->afterCompleteSql->beforeReturn
  * @author Kingstar
  * @since  1.11
  */
 public interface Interceptor {
 
 	/**
-	 * 
+	 * 在解析Entity成sql前触发
 	 * @param entity
 	 * @return
 	 */
@@ -42,22 +44,24 @@ public interface Interceptor {
 	public String getOneTimeDataSource();
 
 	/**
-	 * 
+	 * 在完成sql解析后触发
 	 * @param sql
 	 * @return
 	 */
 	public String afterCompleteSql(String sql);
 
 	/**
-	 * 
+	 * 在访问DB并得到结构化数据后触发,用于有返回Javabean结构的查询
 	 * @param list
 	 */
 	@SuppressWarnings("rawtypes")
-	public void afterAccessDB(List list);
+//	public void afterAccessDB(List list);
+	public void beforeReturn(List list);
 	
 	/**
-	 * 
+	 * 在访问DB并得到处理结果后触发,用于update,insert,delete及没有返回Javabean结构的查询方法
 	 */
-	public void afterAccessDB();
+//	public void afterAccessDB();
+	public void beforeReturn();
 
 }
