@@ -21,12 +21,10 @@ import org.teasoft.bee.osql.SuidType;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Datetime {
 
-	String value() default "";
+	String formatter() default "";
 
-	String formatter();
-
-	String override();
+	boolean override() default false;
 	
-	SuidType suidType() default SuidType.INSERT;
+	SuidType suidType();
 
 }
