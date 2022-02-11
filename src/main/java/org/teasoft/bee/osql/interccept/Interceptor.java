@@ -19,6 +19,8 @@ package org.teasoft.bee.osql.interccept;
 
 import java.util.List;
 
+import org.teasoft.bee.osql.SuidType;
+
 /**
  * 拦截器.Interceptor
  * order:beforePasreEntity->afterCompleteSql->beforeReturn
@@ -32,7 +34,7 @@ public interface Interceptor {
 	 * @param entity
 	 * @return 处理后的Entity
 	 */
-	public Object beforePasreEntity(Object entity); 
+	public Object beforePasreEntity(Object entity,SuidType SuidType); 
 
 	/**
 	 * 设置一次性临时数据源名称
