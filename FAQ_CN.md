@@ -170,6 +170,11 @@ updateById(T entity,Condition condition);
 
 A: ORM Bee框架是采用接口与实现分离的设计方式.Bee是接口,而Honey则是Bee的实现.	
 
+14-2. Q: Bee开源的代码都是接口定义吗 没有实现吗？ 
+
+A: 接口与实现分离. 使用API可只关注接口.  
+Bee是接口, Honey是实现, Bee-ext是涉及第三方的扩展实现(可能会用到) 
+
 15.
 
 Q:&nbsp;Bee非常易用,编写代码少,但使用是一方面, 它的性能如何?
