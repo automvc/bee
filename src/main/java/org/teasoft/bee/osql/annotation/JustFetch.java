@@ -12,13 +12,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 用于查询并获取记录信息,但不作为过滤条件
+ * 用于查询并获取记录信息,但不作为过滤条件.
  * eg:
  * @JustFetch("CONCAT(fisrt_name,last_name)") //多表查询时,若字段会混淆,需要带表名
  * private String fullname;
  * -->select CONCAT(fisrt_name,last_name) as fullname
  *  
- *  map field name and column name,but can transfer to where part
+ *  map field name and column name,but can not transform to where part
  *  eg:
  * 	@JustFetch("name")
  * 	private String name2;
@@ -29,5 +29,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface JustFetch {
-	String value() default "";
+	String value();
 }
