@@ -32,9 +32,18 @@ public interface Interceptor {
 	/**
 	 * 在解析Entity成sql前触发
 	 * @param entity
+	 * @param suidType
 	 * @return 处理后的Entity
 	 */
-	public Object beforePasreEntity(Object entity,SuidType SuidType); 
+	public Object beforePasreEntity(Object entity,SuidType suidType); 
+	
+	/**
+	 * 在解析Entity数组成sql前触发
+	 * @param entity 实体数组
+	 * @param suidType
+	 * @return
+	 */
+	public Object beforePasreEntity(Object entityArray[],SuidType suidType); 
 
 	/**
 	 * 设置一次性临时数据源名称
