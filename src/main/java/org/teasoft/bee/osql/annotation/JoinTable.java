@@ -57,9 +57,20 @@ public @interface JoinTable {
 	 * 从表的class类型;与主表实体在同一包下,可以只写类名.(在使用List类型的从表时才有效)
 	 * Subtable class type, if it has same package with main table,the package name can be omitted.
 	 * (effect when using a list type Subtable)
+	 * replace by subClazz() since 1.11
 	 * @return sub Class name.
 	 * @since 1.9.8
 	 */
+	@Deprecated
 	String subClass() default ""; 
+	
+	/**
+	 * 从表实体的Class类型.(在使用List类型的从表时才有效)
+	 * Subtable entity Class type.
+	 * (effect when using a list type Subtable)
+	 * @return subClass Class type.
+	 * @since 1.11
+	 */
+	Class subClazz() default Object.class; 
 
 }
