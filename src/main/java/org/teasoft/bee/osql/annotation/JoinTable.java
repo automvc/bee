@@ -71,6 +71,7 @@ public @interface JoinTable {
 	 * @return subClass Class type.
 	 * @since 1.11
 	 */
+	@SuppressWarnings("rawtypes")
 	Class subClazz() default Object.class; 
 
 }
