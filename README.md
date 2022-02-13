@@ -158,7 +158,7 @@ fix bug about HoneyContext
 fix bug about checkPackageByClass  
 fix bug about multi-thread safe in ConditionHelper.  
 
-**V1.11**
+**V1.11**  
 V1.11.0.1.1(2022 New Year)  
 SuidRich add method:  
   public <T> long insertAndReturnId(T entity,IncludeType includeType);  
@@ -169,6 +169,21 @@ MapSqlKey support PrimaryKey
 BF is shortcut for BeeFactoryHelper  
 Enhance:config info add trim() about multi-DataSource Write/Read  
 fix a bug for naming transfer  
+
+V1.11.0.2.1(2022 Spring Festival)  
+add function: Interceptor、multi-tenant  
+add Interceptor,InterceptorChain  
+add DefaultInterceptor,CommInterceptorChain,DefaultInterceptorChain  
+
+V1.11.0.2.4(2022 Beijing Winter Olympics)  
+level tow ext cache support  
+Redis cache support  
+add BeeExtCache,DefaultBeeExtCache  
+add BeeExtRedisCache  
+
+V1.11.0.2.15(2022 the Lantern Festival)  
+add annotation:Datetime,Createtime,Updatetime;JustFetch  
+add support Jndi DataSource  
 
 
 
