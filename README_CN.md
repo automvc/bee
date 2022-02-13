@@ -125,7 +125,7 @@ fix bug about HoneyContext.
 fix bug about checkPackageByClass.  
 fix bug about multi-thread safe in ConditionHelper.  
 
-**V1.11**
+**V1.11**  
 V1.11.0.1.1(2022新年版)  
 SuidRich增加方法:  
   public <T> long insertAndReturnId(T entity,IncludeType includeType);  
@@ -137,6 +137,21 @@ PreparedSql增加方法:
 可用BF代替BeeFactoryHelper加快输入  
 增强:读写模式配置信息去除空格  
 fix a bug for naming transfer  
+
+V1.11.0.2.1(2022春节版)  
+拦截器、多租户  
+add Interceptor,InterceptorChain  
+add DefaultInterceptor,CommInterceptorChain,DefaultInterceptorChain  
+
+V1.11.0.2.4(2022北京冬奥会版)  
+二级缓存扩展支持  
+Redis缓存支持  
+add BeeExtCache,DefaultBeeExtCache  
+add BeeExtRedisCache  
+
+V1.11.0.2.15(2022元宵节版)  
+添加注解:Datetime,Createtime,Updatetime;JustFetch  
+添加Jndi数据源支持  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
