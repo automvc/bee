@@ -152,6 +152,8 @@ add BeeExtRedisCache
 V1.11.0.2.15(2022元宵节版)  
 添加注解:Datetime,Createtime,Updatetime;JustFetch  
 添加Jndi数据源支持  
+检测MapSqlKey的值  
+
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
