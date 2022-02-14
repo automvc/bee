@@ -28,7 +28,7 @@ import java.util.List;
 public interface CallableSql {
 	
 	/**
-	 * 
+	 * 使用存储过程查询数据.
 	 * @param callSql procedure sql
 	 * @param entity
 	 * @param preValues parameter,just support In type; 只支持in类型的参数
@@ -37,7 +37,7 @@ public interface CallableSql {
 	public <T> List<T> select(String callSql,T entity,Object preValues[]);
 	
 	/**
-	 * 
+	 * 使用存储过程查询数据.
 	 * @param callSql procedure sql,eg: procedure_name(?)
 	 * @param preValues parameter,just support In type; 只支持in类型的参数
 	 * @return 可包含多个String数组结构的多条记录的list. list can contain more than one record with String array struct.
@@ -45,7 +45,7 @@ public interface CallableSql {
 	public List<String[]> select(String callSql,Object preValues[]);
 	
 	/**
-	 * 
+	 * 使用存储过程查询数据并返回Json.
 	 * @param callSql procedure sql,eg: procedure_name(?)
 	 * @param preValues parameter,just support In type; 只支持in类型的参数
 	 * @return 可包含多个实体(多条记录)的list转换成的json格式的字符串. Json string, it transform from list which can contain more than one entity.
@@ -55,7 +55,7 @@ public interface CallableSql {
 	
 	
 	/**
-	 * 
+	 * 使用存储过程修改数据.
 	 * @param callSql procedure sql,eg: procedure_name(?)
 	 * @param preValues parameter,just support In type; 只支持in类型的参数
 	 * @return 成功操作的记录行数. the number of affected successfully records.

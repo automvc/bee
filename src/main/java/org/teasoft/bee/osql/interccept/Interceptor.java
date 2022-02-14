@@ -23,7 +23,7 @@ import org.teasoft.bee.osql.SuidType;
 
 /**
  * 拦截器.Interceptor
- * order:beforePasreEntity->afterCompleteSql->beforeReturn
+ * order:1.beforePasreEntity->2.afterCompleteSql->3.beforeReturn
  * @author Kingstar
  * @since  1.11
  */
@@ -70,13 +70,11 @@ public interface Interceptor {
 	 * @param list 处理后的结果集List
 	 */
 	@SuppressWarnings("rawtypes")
-//	public void afterAccessDB(List list);
 	public void beforeReturn(List list);
 	
 	/**
 	 * 在访问DB并得到处理结果后触发,用于update,insert,delete及没有返回Javabean结构的查询方法
 	 */
-//	public void afterAccessDB();
 	public void beforeReturn();
 
 }
