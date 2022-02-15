@@ -154,6 +154,13 @@ V1.11.0.2.15(2022元宵节版)
 添加Jndi数据源支持  
 检测MapSqlKey的值  
 
+V1.11.0.2.20(荣耀)  
+multi-DS同时使用不同类型DB优化  
+PreparedSql(自定义sql):拦截器，多数据源支持  
+Suid,PreparedSql支持设置数据源名称,获取拦截器链  
+Suid,PreparedSql add method:setDataSourceName,getDataSourceName,getInterceptorChain  
+
+
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
