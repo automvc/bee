@@ -156,9 +156,9 @@ V1.11.0.2.15(2022元宵节版)
 
 V1.11.0.2.20(荣耀)  
 multi-DS同时使用不同类型DB优化  
-PreparedSql(自定义sql):拦截器，多数据源支持  
-Suid,PreparedSql支持设置数据源名称,获取拦截器链  
-Suid,PreparedSql add method:setDataSourceName,getDataSourceName,getInterceptorChain  
+PreparedSql(自定义sql),MapSuid:拦截器，多数据源支持  
+Suid,PreparedSql,MapSuid支持设置数据源名称,获取拦截器链  
+Suid,PreparedSql,MapSuid,MoreTable add method:setDataSourceName,getDataSourceName,getInterceptorChain  
 
 
 
