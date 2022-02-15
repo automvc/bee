@@ -184,7 +184,12 @@ add BeeExtRedisCache
 V1.11.0.2.15(2022 the Lantern Festival)  
 add annotation:Datetime,Createtime,Updatetime;JustFetch  
 add support Jndi DataSource  
-check MapSqlKey value  
+check MapSqlKey value 
+ 
+V1.11.0.2.20(Honor)  
+Optimize use different Database Type at same time(multi-Ds)  
+PreparedSql support Interceptor  
+Suid,PreparedSql add method:setDataSourceName,getDataSourceName,getInterceptorChain  
 
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
