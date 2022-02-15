@@ -136,5 +136,13 @@ public interface Suid {
 	 * @since 1.9
 	 */
 	public void endSameConnection();
+	
+	/**
+	 * 设置数据源名称(对应数据源必须已定义)
+	 * @param dsName dataSource name
+	 */
+	public void setDataSourceName(String dsName);
+
+	public String getDataSourceName();
 
 }

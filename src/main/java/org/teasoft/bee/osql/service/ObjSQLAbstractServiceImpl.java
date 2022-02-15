@@ -90,5 +90,17 @@ public abstract class ObjSQLAbstractServiceImpl implements ObjSQLService {
 		//Add the business logic if need.
 	     getSuid().endSameConnection();
 	}
+
+	@Override
+	public void setDataSourceName(String dsName) {
+		//Add the business logic if need.
+	     getSuid().setDataSourceName(dsName);
+	}
+
+	@Override
+	public String getDataSourceName() {
+		//Add the business logic if need.
+	    return getSuid().getDataSourceName();
+	}
 	
 }
