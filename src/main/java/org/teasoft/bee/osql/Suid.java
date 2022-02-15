@@ -19,6 +19,8 @@ package org.teasoft.bee.osql;
 
 import java.util.List;
 
+import org.teasoft.bee.osql.interccept.InterceptorChain;
+
 /**
  * 数据库操作接口,包括查,改,增,删 Suid (select,update,insert,delete),
  * 默认不处理null和空字符串
@@ -144,5 +146,11 @@ public interface Suid {
 	public void setDataSourceName(String dsName);
 
 	public String getDataSourceName();
+	
+	/**
+	 * 可用于某个生成的Suid对象,需要设置特定拦截器.
+	 * @return InterceptorChain
+	 */
+	public InterceptorChain getInterceptorChain();
 
 }

@@ -21,6 +21,7 @@ import java.util.List;
 
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.interccept.InterceptorChain;
 
 /**
  * 默认抽象通用面向对象SQL服务实现类.Default common abstract object SQLService implement class.
@@ -101,6 +102,12 @@ public abstract class ObjSQLAbstractServiceImpl implements ObjSQLService {
 	public String getDataSourceName() {
 		//Add the business logic if need.
 	    return getSuid().getDataSourceName();
+	}
+
+	@Override
+	public InterceptorChain getInterceptorChain() {
+		//Add the business logic if need.
+	    return getSuid().getInterceptorChain();
 	}
 	
 }

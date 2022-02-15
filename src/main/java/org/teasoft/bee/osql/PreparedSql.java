@@ -20,6 +20,8 @@ package org.teasoft.bee.osql;
 import java.util.List;
 import java.util.Map;
 
+import org.teasoft.bee.osql.interccept.InterceptorChain;
+
 /**
  * 支持带占位符的sql操作.sql语句是DB能识别的SQL,非面向对象的sql
  * <br>Support sql string with placeholder.The sql statement is really DB's grammar,not object oriented type.
@@ -62,7 +64,7 @@ public interface PreparedSql {
 	public <T> List<T> select(String sql,T returnType);
 	
 	/**
-	 * 通过问号的占位语句查询数据.Select record(s) via the placeholder(?) statement.
+	 * 通过问号的占位语句查询数据,其中分页语句部分由Bee生成.Select record(s) via the placeholder(?) statement,paging generate by Bee.
 	 * eg: select * from orders where userid=?
 	 * @param sql 直接用?作为占位符的sql查询语句.
 	 * @param returnType 返回entity的类型.
@@ -86,9 +88,10 @@ public interface PreparedSql {
 	public <T> List<T> select(String sqlStr,T entity,Map<String,Object> parameterMap);
 	
 	/**
-	 * 通过变量的占位语句查询数据.entity和map都可以向参数传递值,map可以作为entity的补充,用于传递范围查询等复杂查询的参数
+	 * 通过变量的占位语句查询数据.entity和map都可以向参数传递值,map可以作为entity的补充,用于传递范围查询等复杂查询的参数,其中分页语句部分由Bee生成
 	 * <br>Select the record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters. <br>
 	 * Map can be used as a supplement of entity to pass parameters of complex queries such as range query.<p>
+	 * paging generate by Bee<p>
 	 * eg:select * from orders where userid=#{userid}
 	 * eg:select * from orders where name like #{name%}
 	 * @param sqlStr 使用#{para}作为占位符的sql查询语句.
@@ -113,8 +116,8 @@ public interface PreparedSql {
 	public <T> List<T> selectSomeField(String sql,T returnType,Object preValues[]);
 	
 	/**
-	 * 通过问号的占位语句查询数据(只查询部分字段)
-	 * <br>Select some column of record(s) via the placeholder(?) statement.<p>
+	 * 通过问号的占位语句查询数据(只查询部分字段),其中分页语句部分由Bee生成
+	 * <br>Select some column of record(s) via the placeholder(?) statement,paging generate by Bee.<p>
 	 * eg: select * from orders where userid=?
 	 * @param sql 直接用?作为占位符的sql查询语句.
 	 * @param returnType 返回entity的类型.
@@ -140,9 +143,10 @@ public interface PreparedSql {
 	public <T> List<T> selectSomeField(String sqlStr,T entity,Map<String,Object> parameterMap);
 	
 	/**
-	 * 通过变量的占位语句查询数据(只查询部分字段).entity和map都可以向参数传递值,map可以作为entity的补充,用于传递范围查询等复杂查询的参数
+	 * 通过变量的占位语句查询数据(只查询部分字段).entity和map都可以向参数传递值,map可以作为entity的补充,用于传递范围查询等复杂查询的参数,其中分页语句部分由Bee生成
 	 * <br>Select some column of the record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters. <br>
 	 * Map can be used as a supplement of entity to pass parameters of complex queries such as range query.<p>
+	 * paging generate by Bee<p>
 	 * eg:select * from orders where userid=#{userid}
 	 * eg:select * from orders where name like #{name%}
 	 * @param sqlStr 使用#{para}作为占位符的sql查询语句.
@@ -194,11 +198,12 @@ public interface PreparedSql {
 	
 	
 	/**
-	 * 查询并将每一行结果转成String数组.Select and transform every record to string array.<p>
+	 * 查询并将每一行结果转成String数组,其中分页语句部分由Bee生成.Select and transform every record to string array.<p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
 	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
 	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
 	 * <br>will be select the record from the default Datasource.
+	 * <br>paging generate by Bee.
 	 * @param sql	SQL select statement
 	 * @param preValues  parameter values for placeholder
 	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
@@ -222,11 +227,12 @@ public interface PreparedSql {
 	public List<String[]> select(String sqlStr,Map<String,Object> map);
 	
 	/**
-	 * 查询并将每一行结果转成String数组.Select and transform every record to string array.<p>
+	 * 查询并将每一行结果转成String数组,其中分页语句部分由Bee生成.Select and transform every record to string array.<p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
 	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
 	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
 	 * <br>will be select the record from the default Datasource.
+	 * <br>paging generate by Bee.
 	 * @param sqlStr	SQL select statement
 	 * @param map  parameter values for placeholder
 	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
@@ -248,11 +254,12 @@ public interface PreparedSql {
 	public String selectJson(String sql,Object preValues[]);
 	
 	/**
-	 * 用可带问号的占位语句查询结果,并以json格式返回.Select and return json format result.<p>
+	 * 用可带问号的占位语句查询结果,并以json格式返回,其中分页语句部分由Bee生成.Select and return json format result.<p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
 	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
 	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
 	 * <br>will be select the record from the default Datasource.
+	 * <br>paging generate by Bee.
 	 * @param sql	SQL select statement
 	 * @param preValues 占位符对应的参数数组.parameter values for placeholder
 	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
@@ -274,11 +281,12 @@ public interface PreparedSql {
 	public String selectJson(String sqlStr,Map<String,Object> map);
 	
 	/**
-	 * 查询结果,并以json格式返回.Select and return json format result.<p>
+	 * 查询结果,并以json格式返回,其中分页语句部分由Bee生成.Select and return json format result.<p>
 	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
 	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
 	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
 	 * <br>will be select the record from the default Datasource.
+	 * <br>paging generate by Bee.
 	 * @param sqlStr SQL select statement
 	 * @param map 占位符对应的参数map.parameter values for placeholder
 	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
@@ -370,7 +378,8 @@ public interface PreparedSql {
 	public List<Map<String, Object>> selectMapList(String sql);
 	
 	/**
-	 * 查询记录并返回元素为Map<String, Object>的List结构数据.Query records and return list structure data whose element is Map<String, Object>.
+	 * 查询记录并返回元素为Map<String, Object>的List结构数据,其中分页语句部分由Bee生成.Query records and return list structure data whose element is Map<String, Object>.
+	 * <br>paging generate by Bee.
 	 * @param sql SQL语句.SQL statement.
 	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
 	 * @param size 结果集大小 大于等于1. fetch result size (>0).
@@ -378,4 +387,18 @@ public interface PreparedSql {
 	 * <br>the multi-line record of List<Map<String, Object>> structure.
 	 */
 	public List<Map<String, Object>> selectMapList(String sql,int start,int size);
+	
+	/**
+	 * 设置数据源名称(对应数据源必须已定义)
+	 * @param dsName dataSource name
+	 */
+	public void setDataSourceName(String dsName);
+
+	public String getDataSourceName();
+	
+	/**
+	 * 可用于某个生成的Suid对象,需要设置特定拦截器.
+	 * @return InterceptorChain
+	 */
+	public InterceptorChain getInterceptorChain();
 }
