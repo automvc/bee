@@ -158,8 +158,8 @@ V1.11.0.2.20(荣耀)
 multi-DS同时使用不同类型DB优化  
 PreparedSql(自定义sql),MapSuid:拦截器，多数据源支持  
 Suid,PreparedSql,MapSuid支持设置数据源名称,获取拦截器链  
-Suid,PreparedSql,MapSuid,MoreTable add method:setDataSourceName,getDataSourceName,getInterceptorChain  
-
+Suid,PreparedSql,MapSuid,MoreTable增加方法:setDataSourceName,getDataSourceName,getInterceptorChain  
+增加:AnnotationHandler,AutoSetString  
 
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  

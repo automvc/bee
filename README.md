@@ -190,6 +190,7 @@ V1.11.0.2.20(Honor)
 Optimize use different Database Type at same time(multi-Ds)  
 PreparedSql,MapSuid support Interceptor  
 Suid,PreparedSql,MapSuid,MoreTable add method:setDataSourceName,getDataSourceName,getInterceptorChain  
+add:AnnotationHandler,AutoSetString  
 
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
