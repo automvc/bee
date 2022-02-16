@@ -30,6 +30,7 @@ public class UpperKey implements SqlKeyWord {
 	private static final String from="FROM"; 
 	private static final String where="WHERE";
 	private static final String insert="INSERT";
+	private static final String replace="REPLACE";
 	private static final String into="INTO";
 	private static final String values="VALUES";
 	private static final String and="AND";
@@ -89,6 +90,11 @@ public class UpperKey implements SqlKeyWord {
 	@Override
 	public String insert() {
 		return insert;
+	}
+	
+	@Override
+	public String replace() {
+		return replace;
 	}
 
 	@Override

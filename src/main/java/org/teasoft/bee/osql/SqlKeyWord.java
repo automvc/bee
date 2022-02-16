@@ -30,6 +30,7 @@ public interface SqlKeyWord {
 	String where();
 	
 	String insert();
+	String replace();
 	String into();
 	String values();
 	String and();

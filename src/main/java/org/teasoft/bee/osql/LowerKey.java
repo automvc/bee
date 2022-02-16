@@ -30,6 +30,7 @@ public class LowerKey implements SqlKeyWord {
 	private static final String from="from"; 
 	private static final String where="where";
 	private static final String insert="insert";
+	private static final String replace="replace";
 	private static final String into="into";
 	private static final String values="values";
 	private static final String and="and";
@@ -88,6 +89,11 @@ public class LowerKey implements SqlKeyWord {
 	@Override
 	public String insert() {
 		return insert;
+	}
+	
+	@Override
+	public String replace() {
+		return replace;
 	}
 
 	@Override
