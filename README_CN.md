@@ -49,7 +49,7 @@ Bee **简化了与DB交互的编码**工作量.连接，事务都可以由Bee框
 * 8.支持**直接返回Json**格式查询结果; 链式编程。  
 * 9.支持**事务**、多个ORM操作使用同一连接、**for update**，支持**批处理**操作，支持原生SQL(**自定义sql**语句)，支持**存储过程**。
 * 10.支持面向对象方式复杂查询、**多表查询**(无n+1问题; 支持：一对一,一对多,多对一,多对多;返回结果根据子表是否使用List有两种呈现结构)。 
-* 11.**一级缓存**，概念简单，功能强大；一级缓存也可以**像JVM一样进行细粒度调优**；**支持可更新的长久缓存列表**，更新配置表，**不需要重启**。  
+* 11.**一级缓存**，概念简单，功能强大；一级缓存也可以**像JVM一样进行细粒度调优**；**支持可更新的长久缓存列表**，更新配置表，**不需要重启**。天生抵御缓存穿透 。 
 * 12.表名与实体名、字段名与属性名映射默认提供多种实现，且支持**自定义映射规则扩展**。  
 * 13.**多种DB**支持轻松扩展(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server等直接可用)。 
 * 14.支持**读写分离**一主多从, 仅**分库**等**多数据源**模式(对以前的代码无需修改,该功能对代码是透明的,即无需额外编码),**可同时使用多种类型数据库**。  
@@ -159,8 +159,14 @@ multi-DS同时使用不同类型DB优化
 PreparedSql(自定义sql),MapSuid:拦截器，多数据源支持  
 Suid,PreparedSql,MapSuid支持设置数据源名称,获取拦截器链  
 Suid,PreparedSql,MapSuid,MoreTable增加方法:setDataSourceName,getDataSourceName,getInterceptorChain  
-增加:AnnotationHandler,AutoSetString  
-
+增加注解:
+AnnotationHandler,AutoSetString自动设置字符值  
+Desensitize,敏感信息模糊处理  
+ReplaceInto,MySQL replace into转换  
+MultiTenancy多租户  
+BeforeReturnAnnotationHandler,AbstractDictI18nDefaultHandler  
+Dict字典转化  
+DictI18n多语言国际化字典转化  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
