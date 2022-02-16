@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql.annotation.customizable;
+package org.teasoft.bee.osql.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
