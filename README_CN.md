@@ -8,6 +8,8 @@ Bee
 https://gitee.com/automvc/bee/issues/I3PIUJ  
 https://github.com/automvc/bee/issues/43  
 
+**完成登记的伙伴,请加QQ群(992650213),找群主领资料!**  
+
 #### 工欲善其事必先利其器！——《论语·卫灵公》  
 #### 为适应互联网时代软件需求量大,需求变更频繁,性能要求高等要求,ORM Bee应运而生!
 
@@ -66,67 +68,8 @@ Bee **简化了与DB交互的编码**工作量.连接，事务都可以由Bee框
 
 ## 最新功能介绍: 
 
-**V1.9**  
-(只是一部分)  
-多表关联查询支持多个关联条件.  
-多个ORM操作使用同一个Connection.  
-支持同时使用不同数据库(多个数据源).  
-支持长度大于0空字符串忽略处理,如"     ".  
-增加Ignore注解，忽略Javabean字段，不进行转换.  
-用模板生成文件支持自定义起止标签.  
-加强代码质量(测试覆盖率达70%以上，关键代码达90%以上).  
-增强链式编程:Select,Update.  
-整合Spring boot,提供bee-spring-boot-starter.  
-支持利用Javabean生成表.  
-修复多表分页查询时,同名字段在部分数据库会混淆的缺陷(oracle).  
-修复缺陷:update默认主键为id时,无id字段或id为null时,异常处理.  
-修复缺陷:jdk 11下,LoggerFactory在配置log4j2时,报错.  
-
-**V1.9.8**(2021中秋节)  
-SuidRich增加4个方法:  
-public <T> int save(T entity);  
-public <T> int update(T oldEntity,T newEntity);  
-public <T> String selectJson(T entity, String selectField);  
-public <T> String selectJson(T entity, String selectField, int start, int size);  
-
-MoreTable(多表查询):  
-支持子表实体字段为List类型的多表关联查询.   
-支持两个子表的join关联查询(inner join,right join, left join);  
-支持一个子表里还有一个子表的关联查询.   
-修复问题:当一个子表的属性都为null时,子表字段直接设置为null.   
-注解 JoinTable添加方法:subClass()用于List类型字段的多表关联查询.   
-Condition新增方法,用于在关联查询时的on表达式达到提前过滤数据:  
-public Condition opOn(String field, Op Op, Object value);  
-
-MapSuid(不用Javabean实体结构操作数据库):    
-新增update,count,查询分页,新增和调整insert and insertAndReturnId.  
-至此，MapSuid的select,update,insert,delete及分页功能已完备.  
-
-PreparedSqlLib新增selectMapList方法.  
-多数据源读写模式,支持不同类型数据源,方便数据库间转移数据.  
-Logger: 两个方法支持有Throwable参数.  
-sql输出日志支持logger不同级别输出设置.  
-增加流的工具类StreamUtil.  
-增强检测字段合法性,包括MapSuid使用的字段.  
-use LinkedHashMap in List&lt;Map> result for selectMapList(String sql).  
-Condition支持condition.set("fieldName", null).  
-selectJson支持通过配置将long转为string.  
-增强autoGenBean ,支持生成Json格式的SQL脚本(SQL Json Script).  
-添加通用查询功能支持(简化后端复杂查询编程).  
-增强多线程支持.  
-可指定bee.properties所在路径.  
-自动生成Javabean(GenBean)支持类型:JSON,TEXT.  
-
-fix bug for ExecutableSql.  
-transfer the the field of 'order by'.  
-fix null bug in create() of ObjectCreatorFactory.  
-fix bug for max column number(excel in bee-ext).  
-fix bug about HoneyContext.  
-fix bug about checkPackageByClass.  
-fix bug about multi-thread safe in ConditionHelper.  
-
 **V1.11**  
-V1.11.0.1.1(2022新年版)  
+V1.11.0.1.1(**2022新年版**)  
 SuidRich增加方法:  
   public <T> long insertAndReturnId(T entity,IncludeType includeType);  
 PreparedSql增加方法:  
@@ -138,23 +81,23 @@ PreparedSql增加方法:
 增强:读写模式配置信息去除空格  
 fix a bug for naming transfer  
 
-V1.11.0.2.1(2022春节版)  
+V1.11.0.2.1(**2022春节版**)  
 拦截器、多租户  
 add Interceptor,InterceptorChain  
 add DefaultInterceptor,CommInterceptorChain,DefaultInterceptorChain  
 
-V1.11.0.2.4(2022北京冬奥会版)  
+V1.11.0.2.4(**2022北京冬奥会版**)  
 二级缓存扩展支持  
 Redis缓存支持  
 add BeeExtCache,DefaultBeeExtCache  
 add BeeExtRedisCache  
 
-V1.11.0.2.15(2022元宵节版)  
+V1.11.0.2.15(**2022元宵节版**)  
 添加注解:Datetime,Createtime,Updatetime;JustFetch  
 添加Jndi数据源支持  
 检测MapSqlKey的值  
 
-V1.11.0.2.20(荣耀)  
+V1.11.0.2.20(**荣耀**)  
 multi-DS同时使用不同类型DB优化  
 PreparedSql(自定义sql),MapSuid:拦截器，多数据源支持  
 Suid,PreparedSql,MapSuid支持设置数据源名称,获取拦截器链  

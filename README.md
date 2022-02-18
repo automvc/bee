@@ -44,122 +44,8 @@ Users/Developer only need to pay attention to the Bee interface.
 
 ......
 
-**V1.8**   
-**Add Distributed Feature:**   
-1.Add multi-DataSource support(Write/Read, only Split Database).  
-add multi-DataSource no need change the Java code.  
-add the route interface of multi-Datasource.  
-add multi-DataSource route.  
-add multi-DataSource config.  
-support refresh multi-DataSource config information.  
-2.Generate global unique id number in distributed environment.  
-3.Generate Serial Unique id number in one workid of distributed environment.  
-Independent clock,workerid can config and easily expand.  
-Implement algorithms:SerialUniqueId,OneTimeSnowflakeId,PearFlowerId.  
-Support GenId Factory,and can config the id generator.  
-4.Gen Serial Unique Id for all Table's Long Id field as primary key.  
-**Enhance Function:**   
-5.The same database sub table support, dynamic table name mapping support.  
-Entity and any table name mapping support.  
-Suid add one method:	
-public Suid setDynamicParameter(String para,String value);  
-add 2 annotation:@Table,@Entity.  
-6.Use 'for update' lock some select record(s).   
-public Condition forUpdate()  
-7.Added support for advanced update set,   
-Complex query and multi table query support only project some fields.   
-Add 5 methods in Condition  
-8.Support show type of data in sql and show ExecutableSql:  
-bee.osql.showSQL.showType=false  
-bee.osql.showSQL.showExecutableSql=false  
-9.Add one method in SuidRich  
-Add three methods in PreparedSql  
-10.Oracle DATE column mapping to Timestamp,fix the problem:miss the hour,minute,second in Oracle DATE column.  
-11.GenFiles support upper case first letter,eg: #{entityName?up1}.  
-**Fix bug:**   
-12.fixed cache bug:genkey;clear cache for batch insert.  
-fixed bug:parse the json has extra comma.	
-fixed null bug about:PreparedSql's method select(String sql,Object preValues[]). 
-
-**v1.8.15**(2020-10-01 3Festivals)  
-1.Enhance support for H2,SQLite,PostgreSQL.  
-2.Enhance page funtion,paging para also use placeholder.  
-3.Can be used in zero configuration.  
-4.Enhance PearFlowerId algorithm that it will produce even number with continuous mantissa of 0 when is often not used (there are no such defect in SerialUniqueId and OneTimeSnowflakeId).  
-5.Enhance Log function.  
-6.Fixed json transform bug.  
-
-**v1.8.99**(2020-10-25 Double Ninth Festival)  
-1.Support lower and upper case option for SQL KeyWord.  
-2.Cache sql key support MD5 string.  
-3.Optimize the way of setting DB information with Honeyconfig.  
-4.Fix bug about checkSelectField.  
-
-**V1.9**  
-(just a part)   
-more table join select support more join condition.  
-same Connection for some ORM operation.  
-support different type muli-Ds at same time.  
-IncludeType support exclude "  ".  
-add Ignore Annotation, ignore the field which do not want to transfer.  
-support define start and end token when generate file by template.  
-enhance DB conn management.  
-enhance code quality(The test coverage is more than 70%, and the key code is more than 90%).  
-enhance chain coding:Select,Update.  
-adjust config information of bee.properties,HoneyConfig.  
-Bee integration with Spring Boot,provide bee-spring-boot-starter.  
-support use Javabean create the DB table.  
-fix the problem that the fields with the same name will be confused in some databases(oracle) when multi table paging query.  
-fixed: update is default by id,but no id field or id is null,will have exception.  
-fixed: cache bug.  
-fixed: about getRangeId(int sizeOfIds) of GenId.  
-fixed: in jdk 11,LoggerFactory use log4j2,have exception.  
-when entity is view(not table), recommend put in bee.osql.cache.never(bee.properties). 
-
-**V1.9.8**(2021 Mid-Autumn Day)  
-SuidRich add 4 method:  
-public <T> int save(T entity);  
-public <T> int update(T oldEntity,T newEntity);  
-public <T> String selectJson(T entity, String selectField);  
-public <T> String selectJson(T entity, String selectField, int start, int size);  
-
-MoreTable(more table select):  
-support List type field for more tables join;  
-support two sub tables join(inner join,right join, left join);  
-support one sub table have another join sub table;  
-if all fields is null, the sub table field will set null;  
-annotation JoinTable add method:subClass() for List type field   
-Condition add method:  
-public Condition opOn(String field, Op Op, Object value);  
-
-MapSuid(the Javabean corresponding to the table is not required):  
-add method update,count,paging select, add and adjust insert and insertAndReturnId.  
-
-PreparedSqlLib support selectMapList method.  
-Read/Write multi-DataSource support different type DataSource.  
-Logger: two method support have parameter Throwable.  
-sql log support config the log level.  
-add class StreamUtil  
-enhance check field  
-use LinkedHashMap in List&lt;Map> result for selectMapList(String sql).  
-Condition support condition.set("fieldName", null).  
-selectJson support config long to string  
-enhance autoGenBean ,support to generate SQL Json Script.  
-Add general search function support (simplify back-end complex query programming).  
-enhance multi-thread support.  
-custom the path of bee.properties.  
-Generate Javabean(GenBean) support type:JSON,TEXT.  
-
-fix bug for ExecutableSql.  
-transfer the the field of 'order by'.  
-fix null bug in create() of ObjectCreatorFactory.  
-fix bug for max column number(excel in bee-ext). 
-fix bug about HoneyContext  
-fix bug about checkPackageByClass  
-fix bug about multi-thread safe in ConditionHelper.  
-
 **V1.11**  
-V1.11.0.1.1(2022 New Year)  
+V1.11.0.1.1(**2022 New Year**)  
 SuidRich add method:  
   public <T> long insertAndReturnId(T entity,IncludeType includeType);  
 PreparedSql add method:  
@@ -170,23 +56,23 @@ BF is shortcut for BeeFactoryHelper
 Enhance:config info add trim() about multi-DataSource Write/Read  
 fix a bug for naming transfer  
 
-V1.11.0.2.1(2022 Spring Festival)  
+V1.11.0.2.1(**2022 Spring Festival**)  
 add function: Interceptor、multi-tenant  
 add Interceptor,InterceptorChain  
 add DefaultInterceptor,CommInterceptorChain,DefaultInterceptorChain  
 
-V1.11.0.2.4(2022 Beijing Winter Olympics)  
+V1.11.0.2.4(**2022 Beijing Winter Olympics**)  
 level tow ext cache support  
 Redis cache support  
 add BeeExtCache,DefaultBeeExtCache  
 add BeeExtRedisCache  
 
-V1.11.0.2.15(2022 the Lantern Festival)  
+V1.11.0.2.15(**2022 the Lantern Festival**)  
 add annotation:Datetime,Createtime,Updatetime;JustFetch  
 add support Jndi DataSource  
 check MapSqlKey value 
  
-V1.11.0.2.20(Honor)  
+V1.11.0.2.20(**Honor**)  
 Optimize use different Database Type at same time(multi-Ds)  
 PreparedSql,MapSuid support Interceptor  
 Suid,PreparedSql,MapSuid,MoreTable add method:setDataSourceName,getDataSourceName,getInterceptorChain  
