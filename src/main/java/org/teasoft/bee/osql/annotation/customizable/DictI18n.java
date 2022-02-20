@@ -32,6 +32,15 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface DictI18n {
 
+	/**
+	 * If true, the rule same as Bee config
+	 * @return
+	 */
 	boolean namingTransform() default false;
+	
+	
 	Class<? extends BeforeReturnAnnotationHandler> handler() default AbstractDictI18nDefaultHandler.class;
+
+	String test() default "init";
+
 }

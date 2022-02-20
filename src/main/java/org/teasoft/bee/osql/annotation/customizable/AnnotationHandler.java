@@ -17,6 +17,8 @@
 
 package org.teasoft.bee.osql.annotation.customizable;
 
+import java.util.Map;
+
 /**
  * 注解处理器接口
  * Annotation Handler Interface.
@@ -26,5 +28,10 @@ package org.teasoft.bee.osql.annotation.customizable;
 public interface AnnotationHandler {
 
 	public String process();
+	
+	public String process(String s);
+	
+	@SuppressWarnings("rawtypes")
+	public String process(Map para);
 
 }
