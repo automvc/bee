@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 the original author.All rights reserved.
+ * Copyright 2016-2022 the original author.All rights reserved.
  * Kingstar(honeysoft@126.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -62,7 +62,7 @@ public interface Condition extends ConditionAssistant {
 	 * @param value 字段对应的值.value of the field.
 	 * @return Condition
 	 */
-	public Condition op(String field, Op Op, Object value);
+	public Condition op(String field, Op op, Object value);
 	
 
 	/**
@@ -74,7 +74,7 @@ public interface Condition extends ConditionAssistant {
 	 * @param value 字段对应的值.value of the field.
 	 * @return Condition
 	 */
-	public Condition opOn(String field, Op Op, Object value);
+	public Condition opOn(String field, Op op, Object value);
 	
 	/**
 	 * 添加一个表达式条件.Add a expression condition.
@@ -86,7 +86,7 @@ public interface Condition extends ConditionAssistant {
 	 * @return Condition
 	 * @since 1.9
 	 */
-	public Condition opWithField(String field1, Op Op, String field2);
+	public Condition opWithField(String field1, Op op, String field2);
 
 	/**
 	 * 默认自动加 'and'.Default will automatically add 'and'.
@@ -158,17 +158,6 @@ public interface Condition extends ConditionAssistant {
 	public Condition groupBy(String field);
 
 	/**
-	 * eg:having("count(*)>5")  --> having count(*)>5
-	 * @param expressionStr 表达式字符串,field不会被转化.
-	 * expression string,if contain field,it will not be translated.
-	 * @return Condition
-	 */
-//	public Condition having(String expressionStr);
-	//closed. because can use:
-//	 .having(FunctionType.COUNT, "*", Op.ge, 1)
-//	 .having(FunctionType.COUNT, "distinct(userid)", Op.ge, 1)
-
-	/**
 	 * having
 	 * eg: having(FunctionType.MIN, "field", Op.ge, 60)-->having min(field)>=60
 	 * @param functionType SQL函数类型
@@ -177,7 +166,7 @@ public interface Condition extends ConditionAssistant {
 	 * @param value 值
 	 * @return Condition
 	 */
-	public Condition having(FunctionType functionType, String field, Op Op, Number value);
+	public Condition having(FunctionType functionType, String field, Op op, Number value);
 
 	/**
 	 * order by

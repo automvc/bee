@@ -24,14 +24,14 @@ package org.teasoft.bee.distribution.sharding;
  */
 public class ShardingStruct {
 
-	public int dsAlgorithm;
-	public String dsRule;
-	public String dsName;
-	public int tabAlgorithm;
-	public String tabRule;
-	public String tabName;
+	private int dsAlgorithm;
+	private String dsRule;
+	private String dsName;
+	private int tabAlgorithm;
+	private String tabRule;
+	private String tabName;
 
-	public Object shardingValue;
+	private Object shardingValue;
 	
 	//还需设置所有库表的
 

@@ -23,54 +23,54 @@ package org.teasoft.bee.osql;
  * @since  1.8.99
  */
 public class LowerKey implements SqlKeyWord {
-	
-	private static final String SPACE=" ";
-	private static final String select="select";
-	private static final String as="as";
-	private static final String from="from"; 
-	private static final String where="where";
-	private static final String insert="insert";
-	private static final String replace="replace";
-	private static final String into="into";
-	private static final String values="values";
-	private static final String and="and";
-	private static final String or="or";
-	private static final String Null="null";
-	private static final String isNull="is null";
-	private static final String isNotNull="is not null";
-	private static final String update="update";
-	private static final String set="set";
-	private static final String delete="delete";
-	private static final String orderBy="order by";
-	private static final String count="count";
-	private static final String asc="asc";
-	private static final String on="on";
-	private static final String limit="limit";
-	private static final String offset="offset";
-	private static final String top="top";
 
-	private static final String groupBy="group by";
-	private static final String having="having";
-	private static final String between="between";
-	private static final String notBetween="not between";
+	private static final String SPACE = " ";
+	private static final String select = "select";
+	private static final String as = "as";
+	private static final String from = "from";
+	private static final String where = "where";
+	private static final String insert = "insert";
+	private static final String replace = "replace";
+	private static final String into = "into";
+	private static final String values = "values";
+	private static final String and = "and";
+	private static final String or = "or";
+	private static final String Null = "null";
+	private static final String isNull = "is null";
+	private static final String isNotNull = "is not null";
+	private static final String update = "update";
+	private static final String set = "set";
+	private static final String delete = "delete";
+	private static final String orderBy = "order by";
+	private static final String count = "count";
+	private static final String asc = "asc";
+	private static final String on = "on";
+	private static final String limit = "limit";
+	private static final String offset = "offset";
+	private static final String top = "top";
 
-	private static final String forUpdate="for update";
-	
-	private static final String distinct="distinct";
-	private static final String join="join";
-	private static final String innerJoin="inner join";
-	private static final String leftJoin="left join";
-	private static final String rightJoin="right join";
-	private static final String in="in";
-	private static final String notIn="not in";
-	private static final String exists="exists";
-	private static final String notExists="not exists";
+	private static final String groupBy = "group by";
+	private static final String having = "having";
+	private static final String between = "between";
+	private static final String notBetween = "not between";
+
+	private static final String forUpdate = "for update";
+
+	private static final String distinct = "distinct";
+	private static final String join = "join";
+	private static final String innerJoin = "inner join";
+	private static final String leftJoin = "left join";
+	private static final String rightJoin = "right join";
+	private static final String in = "in";
+	private static final String notIn = "not in";
+	private static final String exists = "exists";
+	private static final String notExists = "not exists";
 
 	@Override
 	public String select() {
 		return select;
 	}
-	
+
 	@Override
 	public String as() {
 		return as;
@@ -90,7 +90,7 @@ public class LowerKey implements SqlKeyWord {
 	public String insert() {
 		return insert;
 	}
-	
+
 	@Override
 	public String replace() {
 		return replace;
@@ -105,7 +105,7 @@ public class LowerKey implements SqlKeyWord {
 	public String values() {
 		return values;
 	}
-	
+
 	@Override
 	public String and() {
 		return and;
@@ -115,7 +115,7 @@ public class LowerKey implements SqlKeyWord {
 	public String or() {
 		return or;
 	}
-	
+
 	@Override
 	public String Null() {
 		return Null;
@@ -165,7 +165,7 @@ public class LowerKey implements SqlKeyWord {
 	public String asc() {
 		return asc;
 	}
-	
+
 	@Override
 	public String on() {
 		return on;
@@ -235,7 +235,7 @@ public class LowerKey implements SqlKeyWord {
 	public String rightJoin() {
 		return rightJoin;
 	}
-	
+
 	@Override
 	public String in() {
 		return in;
@@ -245,7 +245,7 @@ public class LowerKey implements SqlKeyWord {
 	public String notIn() {
 		return notIn;
 	}
-	
+
 	@Override
 	public String exists() {
 		return exists;

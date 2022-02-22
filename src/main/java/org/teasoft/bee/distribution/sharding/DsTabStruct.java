@@ -18,16 +18,20 @@
 package org.teasoft.bee.distribution.sharding;
 
 /**
+ * DataSource and Table Struct
  * @author Kingstar
  * @since  1.11
  */
 public class DsTabStruct {
 
-	public String dsName;
-	public String tabName;
+	private String dsName;
+	private String tabName;
 	
-	//tabName使用Entity名称转换时,可设置
-	public String tabSuffix;
+	/**
+	 * table name Suffix
+	 * tabName使用Entity名称转换时,可设置
+	 */
+	private String tabSuffix;
 	
 	public String getDsName() {
 		return dsName;
@@ -45,10 +49,18 @@ public class DsTabStruct {
 		this.tabName = tabName;
 	}
 	
+	/**
+	 * return table name Suffix
+	 * @return table name Suffix
+	 */
 	public String getTabSuffix() {
 		return tabSuffix;
 	}
 
+	/**
+	 * table name Suffix
+	 * tabName使用Entity名称转换时,可设置
+	 */
 	public void setTabSuffix(String tabSuffix) {
 		this.tabSuffix = tabSuffix;
 	}

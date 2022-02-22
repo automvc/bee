@@ -40,9 +40,9 @@ public interface Select extends ToSql{
 	 */
 	public Select rParentheses();
 	
-	public Select op(String field, Op Op, String value);
+	public Select op(String field, Op op, String value);
 
-	public Select op(String field, Op Op, Number value);
+	public Select op(String field, Op op, Number value);
 	
 	public Select op(String field, String value);
 

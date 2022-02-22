@@ -23,135 +23,135 @@ package org.teasoft.bee.osql;
  * @since  1.8.99
  */
 public class UpperKey implements SqlKeyWord {
-	
-	private static final String SPACE=" ";
-	private static final String select="SELECT";
-	private static final String as="AS";
-	private static final String from="FROM"; 
-	private static final String where="WHERE";
-	private static final String insert="INSERT";
-	private static final String replace="REPLACE";
-	private static final String into="INTO";
-	private static final String values="VALUES";
-	private static final String and="AND";
-	private static final String or="OR";
-	private static final String Null="NULL";
-	private static final String isNull="IS NULL";
-	private static final String isNotNull="IS NOT NULL";
-	private static final String update="UPDATE";
-	private static final String set="SET";
-	private static final String delete="DELETE";
-	private static final String orderBy="ORDER BY";
-	private static final String count="COUNT";
-	private static final String asc="ASC";
-	private static final String on="ON";
 
-	private static final String limit="LIMIT";
-	private static final String offset="OFFSET";
-	private static final String top="TOP";
+	private static final String SPACE = " ";
+	private static final String SELECT = "SELECT";
+	private static final String AS = "AS";
+	private static final String FROM = "FROM";
+	private static final String WHERE = "WHERE";
+	private static final String INSERT = "INSERT";
+	private static final String REPLACE = "REPLACE";
+	private static final String INTO = "INTO";
+	private static final String VALUES = "VALUES";
+	private static final String AND = "AND";
+	private static final String OR = "OR";
+	private static final String NULL = "NULL";
+	private static final String ISNULL = "IS NULL";
+	private static final String isNotNull = "IS NOT NULL";
+	private static final String UPDATE = "UPDATE";
+	private static final String SET = "SET";
+	private static final String DELETE = "DELETE";
+	private static final String orderBy = "ORDER BY";
+	private static final String COUNT = "COUNT";
+	private static final String ASC = "ASC";
+	private static final String ON = "ON";
 
-	private static final String groupBy="GROUP BY";
-	private static final String having="HAVING";
-	private static final String between="BETWEEN";
-	private static final String notBetween="NOT BETWEEN";
+	private static final String LIMIT = "LIMIT";
+	private static final String OFFSET = "OFFSET";
+	private static final String TOP = "TOP";
 
-	private static final String forUpdate="FOR UPDATE";
-	
-	private static final String distinct="DISTINCT";
-	private static final String join="JOIN";
-	private static final String innerJoin="INNER JOIN";
-	private static final String leftJoin="LEFT JOIN";
-	private static final String rightJoin="RIGHT JOIN";
-	private static final String in="IN";
-	private static final String notIn="NOT IN";
-	private static final String exists="EXISTS";
-	private static final String notExists="NOT EXISTS";
-	
+	private static final String groupBy = "GROUP BY";
+	private static final String HAVING = "HAVING";
+	private static final String BETWEEN = "BETWEEN";
+	private static final String notBetween = "NOT BETWEEN";
+
+	private static final String forUpdate = "FOR UPDATE";
+
+	private static final String DISTINCT = "DISTINCT";
+	private static final String JOIN = "JOIN";
+	private static final String innerJoin = "INNER JOIN";
+	private static final String leftJoin = "LEFT JOIN";
+	private static final String rightJoin = "RIGHT JOIN";
+	private static final String IN = "IN";
+	private static final String notIn = "NOT IN";
+	private static final String EXISTS = "EXISTS";
+	private static final String notExists = "NOT EXISTS";
+
 	@Override
 	public String select() {
-		return select;
+		return SELECT;
 	}
-	
+
 	@Override
 	public String as() {
-		return as;
+		return AS;
 	}
 
 	@Override
 	public String from() {
-		return from;
+		return FROM;
 	}
 
 	@Override
 	public String where() {
-		return where;
+		return WHERE;
 	}
-	
+
 	@Override
 	public String insert() {
-		return insert;
+		return INSERT;
 	}
-	
+
 	@Override
 	public String replace() {
-		return replace;
+		return REPLACE;
 	}
 
 	@Override
 	public String into() {
-		return into;
+		return INTO;
 	}
-	
+
 	@Override
 	public String values() {
-		return values;
+		return VALUES;
 	}
 
 	@Override
 	public String and() {
-		return and;
+		return AND;
 	}
 
 	@Override
 	public String or() {
-		return or;
+		return OR;
 	}
-	
+
 	@Override
 	public String Null() {
-		return Null;
+		return NULL;
 	}
 
 	@Override
 	public String isNull() {
-		return isNull;
+		return ISNULL;
 	}
 
 	@Override
 	public String isNotNull() {
 		return isNotNull;
 	}
-	
+
 	@Override
 	public String space() {
 		return SPACE;
 	}
-	
+
 	@Override
 	public String update() {
-		return update;
+		return UPDATE;
 	}
 
 	@Override
 	public String set() {
-		return set;
+		return SET;
 	}
 
 	@Override
 	public String delete() {
-		return delete;
+		return DELETE;
 	}
-	
+
 	@Override
 	public String orderBy() {
 		return orderBy;
@@ -159,17 +159,17 @@ public class UpperKey implements SqlKeyWord {
 
 	@Override
 	public String count() {
-		return count;
+		return COUNT;
 	}
 
 	@Override
 	public String asc() {
-		return asc;
+		return ASC;
 	}
 
 	@Override
 	public String on() {
-		return on;
+		return ON;
 	}
 
 	@Override
@@ -179,19 +179,19 @@ public class UpperKey implements SqlKeyWord {
 
 	@Override
 	public String limit() {
-		return limit;
+		return LIMIT;
 	}
 
 	@Override
 	public String offset() {
-		return offset;
+		return OFFSET;
 	}
 
 	@Override
 	public String top() {
-		return top;
+		return TOP;
 	}
-	
+
 	@Override
 	public String groupBy() {
 		return groupBy;
@@ -199,27 +199,27 @@ public class UpperKey implements SqlKeyWord {
 
 	@Override
 	public String having() {
-		return having;
+		return HAVING;
 	}
 
 	@Override
 	public String between() {
-		return between;
+		return BETWEEN;
 	}
 
 	@Override
 	public String notBetween() {
 		return notBetween;
 	}
-	
+
 	@Override
 	public String distinct() {
-		return distinct;
+		return DISTINCT;
 	}
 
 	@Override
 	public String join() {
-		return join;
+		return JOIN;
 	}
 
 	@Override
@@ -239,7 +239,7 @@ public class UpperKey implements SqlKeyWord {
 
 	@Override
 	public String in() {
-		return in;
+		return IN;
 	}
 
 	@Override
@@ -249,12 +249,12 @@ public class UpperKey implements SqlKeyWord {
 
 	@Override
 	public String exists() {
-		return exists;
+		return EXISTS;
 	}
 
 	@Override
 	public String notExists() {
 		return notExists;
 	}
-	
+
 }

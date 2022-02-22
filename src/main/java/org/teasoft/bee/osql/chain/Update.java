@@ -43,9 +43,9 @@ public interface Update extends ToSql{
 	 */
 	public Update rParentheses();
 	
-	public Update op(String field, Op Op, String value);
+	public Update op(String field, Op op, String value);
 
-	public Update op(String field, Op Op, Number value);
+	public Update op(String field, Op op, Number value);
 	
 	public Update op(String field, String value);
 

@@ -31,9 +31,11 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface JoinTable {
 
-	JoinType joinType() default JoinType.JOIN; //join type: left join,right join,join (full join)
-	//	String mainEntity();
-	//	String subEntity();
+	/**
+	 * JoinType: left join,right join,join, (full join need DB support)
+	 * @return
+	 */
+	JoinType joinType() default JoinType.JOIN;
 
 	/**
 	 * 主表关联的字段.The join on field of main table.
@@ -60,8 +62,9 @@ public @interface JoinTable {
 	 * replace by subClazz() since 1.11
 	 * @return sub Class name.
 	 * @since 1.9.8
+	 * @deprecated (since="1.11",can use subClazz() replace it.)
 	 */
-	@Deprecated
+	@Deprecated()
 	String subClass() default ""; 
 	
 	/**

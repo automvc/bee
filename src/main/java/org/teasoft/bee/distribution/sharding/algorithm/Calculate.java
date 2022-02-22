@@ -22,10 +22,6 @@ package org.teasoft.bee.distribution.sharding.algorithm;
  * @since  1.11
  */
 public interface Calculate {
-	
-//	Long process(Long id);
-//
-//	String process(String str);
-	
+
 	String process(String rule, String shardingValue);
 }

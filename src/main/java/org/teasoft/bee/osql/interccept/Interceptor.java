@@ -57,6 +57,14 @@ public interface Interceptor {
 	 * @return 一次性临时数据源名称
 	 */
 	public String getOneTimeDataSource();
+	
+	
+	public void setTabNameOneTime(String tabName);
+	public void setTabSuffixOneTime(String tabSuffix);
+	
+	public String getOneTimeTabName();
+	public String getOneTimeTabSuffix();
+	
 
 	/**
 	 * 在完成sql解析后触发

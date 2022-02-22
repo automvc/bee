@@ -28,10 +28,10 @@ public interface MapSql {
 
 	/**
 	 * 设置SQL用到的相关信息,Map的key由MapSqlKey提供.Set the relevant information used by SQL. The key of map is provided by MapSqlKey.
-	 * @param MapSqlKey 设置的MapSqlKey Key
+	 * @param mapSqlKey 设置的MapSqlKey Key
 	 * @param value value
 	 */
-	public void put(MapSqlKey MapSqlKey, String value);
+	public void put(MapSqlKey mapSqlKey, String value);
 
 	/**
 	 * 设置用于SQL select,delete,update中where过虑的字段信息;也可用于SQL insert,设置插入的字段及相应值
@@ -67,10 +67,10 @@ public interface MapSql {
 	
 	/**
 	 * 设置用于过滤或处理规则的配置.Set the configuration for filtering or processing rule.
-	 * @param MapSqlSetting 设置的MapSqlSetting Key
+	 * @param mapSqlSetting 设置的MapSqlSetting Key
 	 * @param value 设置的值
 	 */
-	public void put(MapSqlSetting MapSqlSetting, boolean value);
+	public void put(MapSqlSetting mapSqlSetting, boolean value);
 	
 	/**
 	 * 分页查询时,设置开始页.Set the start page when paging query.
