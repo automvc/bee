@@ -30,11 +30,11 @@ public interface CallableSql {
 	/**
 	 * 使用存储过程查询数据.
 	 * @param callSql procedure sql
-	 * @param entity
+	 * @param returnType
 	 * @param preValues parameter,just support In type; 只支持in类型的参数
 	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
 	 */
-	public <T> List<T> select(String callSql,T entity,Object preValues[]);
+	public <T> List<T> select(String callSql,T returnType,Object preValues[]);
 	
 	/**
 	 * 使用存储过程查询数据.
