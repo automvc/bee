@@ -74,10 +74,18 @@ check MapSqlKey value
  
 V1.11.0.2.20(**Honor**)  
 Optimize use different Database Type at same time(multi-Ds)  
+Support use differnt type Database at the same time(eg:use Mysql,Oracle,SQL Server at same time)  
 PreparedSql,MapSuid support Interceptor  
+Suid,PreparedSql,MapSuid support get DataSource,get InterceptorChain  
 Suid,PreparedSql,MapSuid,MoreTable add method:setDataSourceName,getDataSourceName,getInterceptorChain  
-add:AnnotationHandler,AutoSetString  
-
+add Annotation:  
+AnnotationHandler,AutoSetString  
+Desensitize    
+ReplaceInto,MySQL replace into  
+MultiTenancy  
+BeforeReturnAnnotationHandler,AbstractDictI18nDefaultHandler  
+Dict  
+DictI18n  
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  

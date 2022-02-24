@@ -99,10 +99,11 @@ V1.11.0.2.15(**2022元宵节版**)
 
 V1.11.0.2.20(**荣耀**)  
 multi-DS同时使用不同类型DB优化  
+支持同时使用多种数据库(如同时使用Mysql,Oracle,SQL Server)  
 PreparedSql(自定义sql),MapSuid:拦截器，多数据源支持  
 Suid,PreparedSql,MapSuid支持设置数据源名称,获取拦截器链  
 Suid,PreparedSql,MapSuid,MoreTable增加方法:setDataSourceName,getDataSourceName,getInterceptorChain  
-增加注解:
+增加注解:  
 AnnotationHandler,AutoSetString自动设置字符值  
 Desensitize,敏感信息模糊处理  
 ReplaceInto,MySQL replace into转换  
