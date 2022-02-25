@@ -122,6 +122,8 @@ V1.11.0.2.28  (Special Day)
 增加ShardingStruct为分库分表作准备  
 Column列名与属性名映射扩展支持  
 支持自定义TypeHandler,处理查询的ResultSet结果  
+fixed bug:  
+多表查询同一个实体自我关联查询禁止自我多次循环  
 
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
