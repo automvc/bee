@@ -39,13 +39,14 @@ import java.lang.annotation.Target;
  * 表结构有更改,维护方便,再自动生成一次即可.
  * 保留适当冗余,像创建时间,创建人等字段无需移到父类,<br>
  * 表与Javabean对应即可,无需过多人工干预.可以节省更多时间关注商业逻辑.
- * 
+ * 处理速度更加快.
  * 方案:
  * 1)Suid,SuidRich,MoreTable会自动解析sql;
  * 2)MoreTable还可以处理不同表有重名字段,不同DB分页语法不同等情况.
  * 3)自定义sql, 使用as取别名(select column_name as java_field_name),<br>
  * 可以将查询结果自动解析到给出的Javabean结构.
- * 4)使用JustFetch注解
+ * 4)忽略字段可使用@Ignore
+ * 5)使用JustFetch注解
  * @JustFetch("CONCAT(fisrt_name,last_name)") 
  * private String fullname;
  * -->select CONCAT(fisrt_name,last_name) as fullname
