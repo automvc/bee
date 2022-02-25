@@ -118,6 +118,11 @@ BeforeReturnAnnotationHandler,AbstractDictI18nDefaultHandler
 Dict字典转化  
 DictI18n多语言国际化字典转化  
 
+V1.11.0.2.28  (Special Day)  
+增加ShardingStruct为分库分表作准备  
+Column列名与属性名映射扩展支持  
+
+
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 
