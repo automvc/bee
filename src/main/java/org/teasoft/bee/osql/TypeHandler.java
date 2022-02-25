@@ -7,6 +7,7 @@
 package org.teasoft.bee.osql;
 
 /**
+ * 自定义ResultSet结果处理器.
  * 根据实体的字段类型,选用处理器处理查询返回结果.
  * @author Kingstar
  * @since  1.11
@@ -14,7 +15,7 @@ package org.teasoft.bee.osql;
 public interface TypeHandler<T> {
 
 	/**
-	 * 使用默认处理不能解决时,才会用自定义字段类型处理器.
+	 * 使用自定义字段类型处理器处理查询返回结果.
 	 * @param fieldType Javabean field type.
 	 * @param result get from ResultSet.
 	 * @return processed result.

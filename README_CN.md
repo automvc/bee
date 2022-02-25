@@ -58,7 +58,7 @@ Bee **简化了与DB交互的编码**工作量.连接，事务都可以由Bee框
 * 14.支持**读写分离**一主多从, 仅**分库**等**多数据源**模式(对以前的代码无需修改,该功能对代码是透明的,即无需额外编码),**可同时使用多种类型数据库**;Jndi数据源支持。  
 * 15.**分布式**环境下生成**连续单调递增**(在一个workerid内),**全局唯一**数字**id**；提供自然简单的分布式主键生成方式。  
 * 16.**支持同库分表,动态表名映射**。  
-* 17.**拦截器、多租户**。  
+* 17.**拦截器、多租户,支持自定义TypeHandler,处理查询的ResultSet结果**。  
 * 18.**支持同时使用多种数据库(如同时使用Mysql,Oracle,SQL Server)**。  
 * 19.**Suid,SuidRich,PreparedSql,MapSuid,MoreTable支持设置数据源名称**。  
 * 20.可以不用表对应的Javabean也能操作DB。  
@@ -121,6 +121,7 @@ DictI18n多语言国际化字典转化
 V1.11.0.2.28  (Special Day)  
 增加ShardingStruct为分库分表作准备  
 Column列名与属性名映射扩展支持  
+支持自定义TypeHandler,处理查询的ResultSet结果  
 
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  

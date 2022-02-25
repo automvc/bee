@@ -90,6 +90,7 @@ DictI18n
 V1.11.0.2.28  (Special Day) 
 add ShardingStruct prepare for sharding.  
 add Column annotation support to extend mapping column and Javabean field name.  
+support custom TypeHandler,and process the ResultSet.  
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
