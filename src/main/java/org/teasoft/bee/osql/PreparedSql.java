@@ -389,6 +389,50 @@ public interface PreparedSql {
 	public List<Map<String, Object>> selectMapList(String sql,int start,int size);
 	
 	/**
+	 * 通过无占位符语句查询多表关联数据.Select more table record(s) via no placeholder(?) select statement.
+	 * @param sql sql查询语句(无占位符).
+	 * @param returnType 返回entity的类型.
+	 * @return 返回returnType类型的实体List.
+	 * @since V1.11
+	 */
+	public <T> List<T> moreTableSelect(String sql, T returnType);
+	
+	/**
+	 * 通过变量的占位语句进行多表关联查询数据.entity和map都可以向参数传递值,map可以作为entity的补充,用于传递范围查询等复杂查询的参数
+	 * <br>Select the more table record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters. <br>
+	 * Map can be used as a supplement of entity to pass parameters of complex queries such as range query.<p>
+	 * eg:select * from orders where userid=#{userid}
+	 * eg:select * from orders where name like #{name%}
+	 * 只解析主表的数据作为参数.
+	 * @param sqlStr 使用#{para}作为占位符的sql查询语句.
+	 * @param entity entity中非null的值,会转换成map的元素作为参数,entity的字段会自动转成表的列名;entity也将作用返回结构的类型.
+	 * @param parameterMap map结构的参数,通过map的key与sqlStr中变量名对应.
+	 *            若map有元素的key与从entity转来的一样,会使用map的.
+	 * @return 返回与entity类型一样的实体List.
+	 * @since V1.11
+	 */
+	public <T> List<T> moreTableSelect(String sqlStr,T entity,Map<String,Object> parameterMap);
+	
+	/**
+	 * 通过变量的占位语句进行多表关联查询数据.entity和map都可以向参数传递值,map可以作为entity的补充,用于传递范围查询等复杂查询的参数,其中分页语句部分由Bee生成
+	 * <br>Select the more table record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters. <br>
+	 * Map can be used as a supplement of entity to pass parameters of complex queries such as range query.<p>
+	 * paging generate by Bee<p>
+	 * eg:select * from orders where userid=#{userid}
+	 * eg:select * from orders where name like #{name%}
+	 * 只解析主表的数据作为参数.
+	 * @param sqlStr 使用#{para}作为占位符的sql查询语句.
+	 * @param entity entity中非null的值,会转换成map的元素作为参数,entity的字段会自动转成表的列名;entity也将作用返回结构的类型.
+	 * @param parameterMap map结构的参数,通过map的key与sqlStr中变量名对应.
+	 *            若map有元素的key与从entity转来的一样,会使用map的.
+	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size 结果集大小 大于等于1. fetch result size (>0).           
+	 * @return 返回与entity类型一样的实体List.
+	 * @since V1.11
+	 */
+	public <T> List<T> moreTableSelect(String sqlStr,T entity,Map<String,Object> parameterMap,int start,int size);
+	
+	/**
 	 * 设置数据源名称(对应数据源必须已定义)
 	 * @param dsName dataSource name
 	 */
