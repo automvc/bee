@@ -20,7 +20,7 @@ public interface TypeHandler<T> {
 	 * @param result get from ResultSet.
 	 * @return processed result.
 	 */
-	public T process(Class<T> fieldType, Object result);
+	public T process(final Class<T> fieldType, final Object result);
 
 
 }
