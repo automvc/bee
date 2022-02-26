@@ -4,7 +4,7 @@
  * The license,see the LICENSE file.
  */
 
-package org.teasoft.bee.osql;
+package org.teasoft.bee.osql.type;
 
 /**
  * 自定义ResultSet结果处理器.
