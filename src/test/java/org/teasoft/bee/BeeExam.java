@@ -14,15 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.teasoft.bee;
+//package org.teasoft.bee;
 
-import org.junit.Assert;
-import org.junit.Test;
+//import org.junit.Assert;
+//import org.junit.Test;
 
 /**
  * @author Kingstar
  * @since  1.7.2
  */
+/*
 public class BeeExam {
 	
 	@Test
@@ -63,6 +64,23 @@ public class BeeExam {
 		
 		isFinished=true;
 		Assert.assertEquals(isFinished,true);
+		
+//		V1.11
+//		2022-03-02 (yyyy-MM-dd)
+//		Instructions Counters	
+//		Element	   Coverage
+//		Bee	        95.5%
+//		Honey	    75.1%
+//			
+//		Method Counters	
+//		Element	  Coverage
+//		Bee	       91.4%
+//		Honey	   81.9%
+//			
+//		Type Counters	
+//		Element	  Coverage
+//		Bee	       92.5%
+//		Honey	   96.5%
 		
 		
 //		V1.9.8
@@ -200,5 +218,27 @@ public class BeeExam {
 //		bee-exam(v1.9)2021-05-02 02.54.55.328-normal(Microsoft SQL Server).txt
 //		bee-exam(v1.9)2021-05-02 02.55.16.45-cache(MySQL).txt
 
+//      test for 1.9.8
+//		bee-exam(v1.9.8)2021-10-22 13.28.59.122-normal(MySQL).txt
+//		bee-exam(v1.9.8)2021-10-22 13.29.18.02-normal(Oracle).txt
+//		bee-exam(v1.9.8)2021-10-22 13.29.41.620-normal(SQLite).txt
+//		bee-exam(v1.9.8)2021-10-22 13.30.00.709-normal(H2).txt
+//		bee-exam(v1.9.8)2021-10-22 13.30.07.72-normal(PostgreSQL).txt
+//		bee-exam(v1.9.8)2021-10-22 13.30.26.941-normal(Microsoft SQL Server).txt
+//		bee-exam(v1.9.8)2021-10-22 13.30.36.536-normal(MySQL).txt
+//		bee-exam(v1.9.8)2021-10-22 13.30.58.799-cache(MySQL).txt
+
+//      test for 1.11
+//		bee-exam(v1.11)2022-03-02 11.12.43.273-normal(MySQL).txt
+//		bee-exam(v1.11)2022-03-02 11.13.02.887-normal(Oracle).txt
+//		bee-exam(v1.11)2022-03-02 11.13.31.975-normal(SQLite).txt
+//		bee-exam(v1.11)2022-03-02 11.13.52.112-normal(H2).txt
+//		bee-exam(v1.11)2022-03-02 11.13.58.850-normal(PostgreSQL).txt
+//		bee-exam(v1.11)2022-03-02 11.14.12.619-normal(Microsoft SQL Server).txt
+//		bee-exam(v1.11)2022-03-02 11.14.21.41-normal(MySQL).txt
+//		bee-exam(v1.11)2022-03-02 11.14.45.538-cache(MySQL).txt
+
+
 	}
 }
+*/
