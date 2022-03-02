@@ -7,8 +7,9 @@
 package org.teasoft.bee.osql.type;
 
 /**
- * 自定义ResultSet结果处理器.
+ * 实体字段类型查询结果处理器.
  * 根据实体的字段类型,选用处理器处理查询返回结果.
+ * 若要使用,需要开启openFieldTypeHandler配置.
  * @author Kingstar
  * @since  1.11
  */
