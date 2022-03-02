@@ -34,6 +34,7 @@ public interface BeforeReturnAnnotationHandler {
 	 * @param list 需要处理注解的List
 	 * @return
 	 */
+	@SuppressWarnings("rawtypes")
 	public void process(Field field,List list);
 
 }

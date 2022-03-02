@@ -27,6 +27,9 @@ import java.util.List;
 public abstract class AbstractDictI18nDefaultHandler implements BeforeReturnAnnotationHandler {
 
 	@Override
-	public void process(Field field, List list) {}
+	@SuppressWarnings("rawtypes")
+	public void process(Field field, List list) {
+
+	}
 
 }
