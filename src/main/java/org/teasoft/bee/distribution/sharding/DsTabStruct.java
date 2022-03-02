@@ -24,45 +24,68 @@ package org.teasoft.bee.distribution.sharding;
  */
 public class DsTabStruct {
 
+	/**
+	 * dataSource name
+	 */
 	private String dsName;
+
+	/**
+	 * table name
+	 */
 	private String tabName;
-	
+
 	/**
 	 * table name Suffix
 	 * tabName使用Entity名称转换时,可设置
 	 */
 	private String tabSuffix;
-	
+
+	/**
+	 * get dataSource name
+	 * @return dataSource name
+	 */
 	public String getDsName() {
 		return dsName;
 	}
 
+	/**
+	 * set dataSource name
+	 * @param dsName dataSource name
+	 */
 	public void setDsName(String dsName) {
 		this.dsName = dsName;
 	}
 
+	/**
+	 * get table name
+	 * @return table name
+	 */
 	public String getTabName() {
 		return tabName;
 	}
 
+	/**
+	 * set table name
+	 * @param tabName table name
+	 */
 	public void setTabName(String tabName) {
 		this.tabName = tabName;
 	}
-	
+
 	/**
-	 * return table name Suffix
-	 * @return table name Suffix
+	 * return table name suffix
+	 * @return table name suffix
 	 */
 	public String getTabSuffix() {
 		return tabSuffix;
 	}
 
 	/**
-	 * table name Suffix
+	 * set table name suffix
 	 * tabName使用Entity名称转换时,可设置
 	 */
 	public void setTabSuffix(String tabSuffix) {
 		this.tabSuffix = tabSuffix;
 	}
-	
+
 }

@@ -32,61 +32,115 @@ public class ShardingStruct {
 	private String tabName;
 
 	private Object shardingValue;
-	
-	//还需设置所有库表的
 
+	/**
+	 * get dataSource algorithm
+	 * @return dataSource algorithm
+	 */
 	public int getDsAlgorithm() {
 		return dsAlgorithm;
 	}
 
+	/**
+	 * set dataSource algorithm
+	 * @param dsAlgorithm dataSource algorithm
+	 */
 	public void setDsAlgorithm(int dsAlgorithm) {
 		this.dsAlgorithm = dsAlgorithm;
 	}
 
+	/**
+	 * get dataSource rule
+	 * @return
+	 */
 	public String getDsRule() {
 		return dsRule;
 	}
 
+	/**
+	 * set dataSource rule
+	 * @param dsRule dataSource rule
+	 */
 	public void setDsRule(String dsRule) {
 		this.dsRule = dsRule;
 	}
 
+	/**
+	 * get dataSource name
+	 * @return
+	 */
 	public String getDsName() {
 		return dsName;
 	}
 
+	/**
+	 * set dataSource name
+	 * @param dsName
+	 */
 	public void setDsName(String dsName) {
 		this.dsName = dsName;
 	}
 
+	/**
+	 * get table algorithm
+	 * @return table algorithm
+	 */
 	public int getTabAlgorithm() {
 		return tabAlgorithm;
 	}
 
+	/**
+	 * set table algorithm
+	 * @param tabAlgorithm table algorithm
+	 */
 	public void setTabAlgorithm(int tabAlgorithm) {
 		this.tabAlgorithm = tabAlgorithm;
 	}
 
+	/**
+	 * get table rule
+	 * @return table rule
+	 */
 	public String getTabRule() {
 		return tabRule;
 	}
 
+	/**
+	 * set table rule
+	 * @param tabRule table rule
+	 */
 	public void setTabRule(String tabRule) {
 		this.tabRule = tabRule;
 	}
 
+	/**
+	 * get table name
+	 * @return
+	 */
 	public String getTabName() {
 		return tabName;
 	}
 
+	/**
+	 * set table name
+	 * @param tabName
+	 */
 	public void setTabName(String tabName) {
 		this.tabName = tabName;
 	}
 
+	/**
+	 * get sharding value
+	 * @return sharding value
+	 */
 	public Object getShardingValue() {
 		return shardingValue;
 	}
 
+	/**
+	 * set sharding value
+	 * @param shardingValue sharding value
+	 */
 	public void setShardingValue(Object shardingValue) {
 		this.shardingValue = shardingValue;
 	}
