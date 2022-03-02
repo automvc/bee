@@ -438,6 +438,10 @@ public interface PreparedSql {
 	 */
 	public void setDataSourceName(String dsName);
 
+	/**
+	 * get DataSource name
+	 * @return DataSource name
+	 */
 	public String getDataSourceName();
 	
 	/**
