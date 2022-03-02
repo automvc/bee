@@ -55,6 +55,8 @@ import java.lang.annotation.Target;
  * 	private String name2;
  * -->select name as name2	
  * 
+ * 若要使用@Column,可开启openDefineColumn配置,并实现相关功能.
+ * 
  * @author Kingstar
  * @since  1.11
  */
