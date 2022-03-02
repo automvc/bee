@@ -37,10 +37,7 @@ public @interface DictI18n {
 	 * @return
 	 */
 	boolean namingTransform() default false;
-	
-	
-	Class<? extends BeforeReturnAnnotationHandler> handler() default AbstractDictI18nDefaultHandler.class;
 
-	String test() default "init";
+	Class<? extends BeforeReturnAnnotationHandler> handler() default AbstractDictI18nDefaultHandler.class;
 
 }

@@ -21,6 +21,7 @@ import org.teasoft.bee.distribution.sharding.DsTabStruct;
 import org.teasoft.bee.distribution.sharding.ShardingStruct;
 
 /**
+ * DataSource and Table Handler
  * @author Kingstar
  * @since  1.11
  */
