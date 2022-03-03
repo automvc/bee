@@ -10,6 +10,7 @@ package org.teasoft.bee.osql.type;
  * 实体字段类型查询结果处理器.
  * 根据实体的字段类型,选用处理器处理查询返回结果.
  * 若要使用,需要开启openFieldTypeHandler配置.
+ * The TypeHandler work for handle ResultSet by select.
  * @author Kingstar
  * @since  1.11
  */
