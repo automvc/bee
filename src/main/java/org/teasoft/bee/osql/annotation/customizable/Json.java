@@ -1,5 +1,5 @@
 /*
- * Copyright 2020-2022 the original author.All rights reserved.
+ * Copyright 2016-2022 the original author.All rights reserved.
  * Kingstar(honeysoft@126.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,25 +15,22 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql.type;
+package org.teasoft.bee.osql.annotation.customizable;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
- * 实体字段类型查询结果处理器.
- * 根据实体的字段类型,选用处理器处理查询返回结果.
- * 若要使用,需要开启openFieldTypeHandler配置.
- * The TypeHandler work for handle ResultSet by select.
+ * 
+ * 只在插入值和查询字段时有效,不作为where条件.
+ * update时只能在实体使用,不能用Condition设置.
  * @author Kingstar
  * @since  1.11
  */
-public interface TypeHandler<T> {
-
-	/**
-	 * 使用自定义字段类型处理器处理查询返回结果.
-	 * @param fieldType Javabean field type.
-	 * @param result get from ResultSet.
-	 * @return processed result.
-	 */
-	public T process(final Class<T> fieldType, final Object result);
-
+@Target(ElementType.FIELD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Json {
 
 }
