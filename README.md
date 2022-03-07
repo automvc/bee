@@ -87,13 +87,19 @@ BeforeReturnAnnotationHandler,AbstractDictI18nDefaultHandler
 Dict  
 DictI18n  
 
-V1.11.0.2.28  (Special Day) 
+V1.11.0.2.28  (**Special Day**)  
 add ShardingStruct prepare for sharding.  
 add Column annotation support to extend mapping column and Javabean field name.  
 support custom TypeHandler,and process the ResultSet.  
 PreparedSql custom sql support more table select,and return more table struct Javabean.  
 fixed bug:  
 More table self association query of the same entity forbid multi-self-cycles  
+
+V1.11.0.3.8  (**Lady First**)  
+add SetParaTypeConvert for convert PreparedStatement parameter.  
+Javabean use java.util.Date type for SUID compatibility processing.  
+SQLite get the timestamp result for conversion.  
+The Json field of DB is automatically converted to the attribute marked with Json annotation of Javabean(Javabean structure corresponding to Json). 
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
