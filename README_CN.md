@@ -118,7 +118,7 @@ BeforeReturnAnnotationHandler,AbstractDictI18nDefaultHandler
 Dict字典转化  
 DictI18n多语言国际化字典转化  
 
-V1.11.0.2.28  (Special Day)  
+V1.11.0.2.28  (**Special Day**)  
 增加ShardingStruct为分库分表作准备  
 Column列名与属性名映射扩展支持  
 支持自定义TypeHandler,处理查询的ResultSet结果  
@@ -126,6 +126,11 @@ PreparedSql自定义sql支持多表查询,返回多表关联Javabean结构数据
 fixed bug:  
 多表查询同一个实体自我关联查询禁止自我多次循环  
 
+V1.11.0.3.8  (**Lady First**)  
+add SetParaTypeConvert for convert PreparedStatement parameter  
+Javabean使用java.util.Date类型,进行SUID作兼容处理.  
+SQLite获取Timestamp结果作转化处理.  
+DB的Json字段自动转换为Javabean的标有Json注解的属性(与Json对应的Javabean结构).  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
