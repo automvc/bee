@@ -111,7 +111,6 @@ public interface SuidRich extends Suid {
 	 */
 	public <T> List<String[]> selectString(T entity,String selectFields); 
 	
-	
 	/**
 	 * 不以具体实体结构返回数据,而是用字符数组的List 
 	 * <br>Instead of returning data in a entity structure, it uses a character array in List.
@@ -242,7 +241,7 @@ public interface SuidRich extends Suid {
 	 * <br>Insert record by batch type,and can point out which field(s) don't need to insert.
 	 * @param entity 与表对应的实体对象数组,且不能为空. table's entity array(do not allow null).
 	 * @param excludeFields 声明不用插入的字段列表.fields list that don't need to insert .
-	 *  @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
+	 * @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
 	 */
 	public <T> int insert(T[] entity,String excludeFields);
 	
@@ -259,7 +258,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * 批量插入数据.Insert records by batch type.
 	 * @param entityList 与表对应的实体对象链表,且不能为空. table's entity list(do not allow null).
-	 *  @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
+	 * @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
 	 * @since  1.9
 	 */
 	public <T> int insert(List<T> entityList);
@@ -268,7 +267,7 @@ public interface SuidRich extends Suid {
 	 * 批量插入数据.Insert records by batch type.
 	 * @param entityList 与表对应的实体对象链表,且不能为空. table's entity list(do not allow null).
 	 * @param batchSize 批操作数量大小.batch size.
-	 *  @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
+	 * @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
 	 * @since  1.9
 	 */
 	public <T> int insert(List<T> entityList,int batchSize);
@@ -289,7 +288,7 @@ public interface SuidRich extends Suid {
 	 * @param entityList 与表对应的实体对象链表,且不能为空. table's entity list(do not allow null).
 	 * @param batchSize 批操作数量大小.batch size.
 	 * @param excludeFields 声明不用插入的字段列表.Don't insert fields list.
-	 *  @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
+	 * @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
 	 * @since  1.9
 	 */
 	public <T> int insert(List<T> entityList,int batchSize,String excludeFields);
