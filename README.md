@@ -101,6 +101,10 @@ Javabean use java.util.Date type for SUID compatibility processing.
 SQLite get the timestamp result for conversion.  
 The Json field of DB is automatically converted to the attribute marked with Json annotation of Javabean(Javabean structure corresponding to Json). 
 
+V1.11.0.3.12  (**Tree Planting Day**)  
+Ddl.java使用Javabean创建表,支持追回java与db字段类型映射,支持设置某个DB的java_dbtype类型映射.  
+Ddl.java兼容原生char类型,兼容java.util.Date.  
+
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
 
