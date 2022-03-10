@@ -34,8 +34,10 @@ import org.teasoft.bee.osql.interccept.InterceptorChain;
  * 
  * <br>注意  Notice:
  * <br>PreparedSql没有T参数的方法中,因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+ * <br>从V1.11开始,可以设置数据源名称.
  * <br>PreparedSql method which which no T parameter, is not associated with entity, in the case of 
  * <br> multiple Datasources, will be select the record from the default Datasource.
+ * <br>from V1.11 version, can set the datasource name.
  * 
  * @author Kingstar
  * @since  1.0<p>
@@ -387,6 +389,7 @@ public interface PreparedSql {
 	 * <br>the multi-line record of List<Map<String, Object>> structure.
 	 */
 	public List<Map<String, Object>> selectMapList(String sql,int start,int size);
+//	public List<Map<String, Object>> selectMapList(String sql,Map<String,Object> parameterMap,int start,int size);
 	
 	/**
 	 * 通过无占位符语句查询多表关联数据.Select more table record(s) via no placeholder(?) select statement.
