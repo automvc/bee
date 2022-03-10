@@ -130,7 +130,12 @@ V1.11.0.3.8  (**Lady First**)
 add SetParaTypeConvert for convert PreparedStatement parameter  
 Javabean使用java.util.Date类型,进行SUID作兼容处理.  
 SQLite获取Timestamp结果作转化处理.  
-DB的Json字段自动转换为Javabean的标有Json注解的属性(与Json对应的Javabean结构).  
+实体属性是Javabean与DB表Json类型字段在参数设置与查询结果时自动转换(使用Json注解自定义实现).  
+
+V1.11.0.3.12  (**植树节版**)  
+Ddl.java使用Javabean创建表,支持追回java与db字段类型映射,支持设置某个DB的java_dbtype类型映射.  
+Ddl.java兼容原生char类型,兼容java.util.Date.  
+
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
