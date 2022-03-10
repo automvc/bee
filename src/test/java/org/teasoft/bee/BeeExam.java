@@ -65,6 +65,24 @@ public class BeeExam {
 		isFinished=true;
 		Assert.assertEquals(isFinished,true);
 		
+		
+//		V1.11
+//		2022-03-10 (yyyy-MM-dd)
+//		Instructions Counters	
+//		Element	   Coverage
+//		Bee	        96.1%
+//		Honey	    75.3%
+//			
+//		Method Counters	
+//		Element	  Coverage
+//		Bee	       92.2%
+//		Honey	   83.6%
+//			
+//		Type Counters	
+//		Element	  Coverage
+//		Bee	       92.3%
+//		Honey	   95.9%
+		
 //		V1.11
 //		2022-03-02 (yyyy-MM-dd)
 //		Instructions Counters	
@@ -237,6 +255,16 @@ public class BeeExam {
 //		bee-exam(v1.11)2022-03-02 11.14.12.619-normal(Microsoft SQL Server).txt
 //		bee-exam(v1.11)2022-03-02 11.14.21.41-normal(MySQL).txt
 //		bee-exam(v1.11)2022-03-02 11.14.45.538-cache(MySQL).txt
+
+//		bee-exam(v1.11)2022-03-10 11.43.30.334-cache(MySQL).txt
+//		bee-exam(v1.11)2022-03-10 11.43.12.658-normal(MySQL).txt
+//		bee-exam(v1.11)2022-03-10 11.43.05.81-normal(Microsoft SQL Server).txt
+//		bee-exam(v1.11)2022-03-10 11.42.48.444-normal(PostgreSQL).txt
+//		bee-exam(v1.11)2022-03-10 11.42.41.610-normal(H2).txt
+//		bee-exam(v1.11)2022-03-10 11.42.19.602-normal(SQLite).txt
+//		bee-exam(v1.11)2022-03-10 11.41.53.808-normal(Oracle).txt
+//		bee-exam(v1.11)2022-03-10 11.41.36.406-normal(MySQL).txt
+
 
 
 	}
