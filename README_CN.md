@@ -135,6 +135,9 @@ SQLite获取Timestamp结果作转化处理.
 V1.11.0.3.12  (**植树节版**)  
 Ddl.java使用Javabean创建表,支持追回java与db字段类型映射,支持设置某个DB的java_dbtype类型映射.  
 Ddl.java兼容原生char类型,兼容java.util.Date.  
+PreparedSql自定义sql支持批量插入.  
+支持在Suid等对象设置命名转换器.  
+增加DbFeature注册器,自定义实现不同DB方言更加易用.  
 
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
