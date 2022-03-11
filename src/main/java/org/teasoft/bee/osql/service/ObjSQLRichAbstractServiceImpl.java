@@ -354,6 +354,4 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 		return getSuidRich().insertAndReturnId(entity, includeType);
 	}
 	
-	
-	
 }

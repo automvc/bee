@@ -20,6 +20,7 @@ package org.teasoft.bee.osql.service;
 import java.util.List;
 
 import org.teasoft.bee.osql.Condition;
+import org.teasoft.bee.osql.NameTranslate;
 import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.interccept.InterceptorChain;
 
@@ -108,6 +109,12 @@ public abstract class ObjSQLAbstractServiceImpl implements ObjSQLService {
 	public InterceptorChain getInterceptorChain() {
 		//Add the business logic if need.
 	    return getSuid().getInterceptorChain();
+	}
+	
+	@Override
+	public void setNameTranslate(NameTranslate nameTranslate) {
+		//Add the business logic if need.
+		getSuid().setNameTranslate(nameTranslate);
 	}
 	
 }
