@@ -102,8 +102,11 @@ SQLite get the timestamp result for conversion.
 The Json field of DB is automatically converted to the attribute marked with Json annotation of Javabean(Javabean structure corresponding to Json). 
 
 V1.11.0.3.12  (**Tree Planting Day**)  
-Ddl.java使用Javabean创建表,支持追回java与db字段类型映射,支持设置某个DB的java_dbtype类型映射.  
-Ddl.java兼容原生char类型,兼容java.util.Date.  
+Ddl.java uses Javabean to create tables, supports the mapping between Java and DB field types, and supports the setting java_dbtype mapping.  
+Ddl.java is compatible with raw char type and java.util.Date.  
+PreparedSql support batch insert.  
+Support Suid instance set NameTranslate.  
+Add DbFeature Registry,it is easy for setting custom database dialect.  
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
