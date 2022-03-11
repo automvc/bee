@@ -20,8 +20,6 @@ package org.teasoft.bee.osql;
 import java.util.List;
 import java.util.Map;
 
-import org.teasoft.bee.osql.interccept.InterceptorChain;
-
 /**
  * 使用Map而非Javabean实体的数据库操作接口,默认不处理null和空字符串(与Suid,SuidRich风格兼容)
  * <br>Database operation interface using map instead of specific entity,
@@ -30,7 +28,7 @@ import org.teasoft.bee.osql.interccept.InterceptorChain;
  * @author Kingstar
  * @since  1.9
  */
-public interface MapSuid {
+public interface MapSuid extends CommOperate {
 
 	/**
 	 * 使用MapSql查询数据.Use MapSql to select data.
@@ -108,23 +106,5 @@ public interface MapSuid {
 	 * @since 1.9.8
 	 */
 	public int count(MapSql mapSql);
-	
-	
-	/**
-	 * 设置数据源名称(对应数据源必须已定义)
-	 * @param dsName dataSource name
-	 */
-	public void setDataSourceName(String dsName);
 
-	/**
-	 * get DataSource name
-	 * @return DataSource name
-	 */
-	public String getDataSourceName();
-	
-	/**
-	 * 可用于某个生成的Suid对象,需要设置特定拦截器.
-	 * @return InterceptorChain
-	 */
-	public InterceptorChain getInterceptorChain();
 }

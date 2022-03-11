@@ -20,8 +20,6 @@ package org.teasoft.bee.osql;
 import java.util.List;
 import java.util.Map;
 
-import org.teasoft.bee.osql.interccept.InterceptorChain;
-
 /**
  * 支持带占位符的sql操作.sql语句是DB能识别的SQL,非面向对象的sql
  * <br>Support sql string with placeholder.The sql statement is really DB's grammar,not object oriented type.
@@ -44,7 +42,7 @@ import org.teasoft.bee.osql.interccept.InterceptorChain;
  * 支持如name=#{name},name like #{name%}的map参数形式.<p>
  * @since  1.2
  */
-public interface PreparedSql {
+public interface PreparedSql extends CommOperate {
 
 	/**
 	 * 通过问号的占位符语句查询数据.Select record(s) via the placeholder(?) statement.
@@ -380,16 +378,27 @@ public interface PreparedSql {
 	public List<Map<String, Object>> selectMapList(String sql);
 	
 	/**
+	 * 查询记录并返回元素为Map<String, Object>的List结构数据.Query records and return list structure data whose element is Map<String, Object>.
+	 * @param sql SQL语句.SQL statement.
+	 * @return List<Map<String, Object>>结构的多行记录.
+	 * <br>the multi-line record of List<Map<String, Object>> structure.
+	 * @since V1.11
+	 */
+	public List<Map<String, Object>> selectMapList(String sql,Map<String, Object> map);
+	
+	
+	/**
 	 * 查询记录并返回元素为Map<String, Object>的List结构数据,其中分页语句部分由Bee生成.Query records and return list structure data whose element is Map<String, Object>.
 	 * <br>paging generate by Bee.
 	 * @param sql SQL语句.SQL statement.
+	 * @param parameterMap
 	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
 	 * @param size 结果集大小 大于等于1. fetch result size (>0).
 	 * @return List<Map<String, Object>>结构的多行记录.
 	 * <br>the multi-line record of List<Map<String, Object>> structure.
+	 * @since V1.11
 	 */
-	public List<Map<String, Object>> selectMapList(String sql,int start,int size);
-//	public List<Map<String, Object>> selectMapList(String sql,Map<String,Object> parameterMap,int start,int size);
+	public List<Map<String, Object>> selectMapList(String sql,Map<String,Object> parameterMap,int start,int size);
 	
 	/**
 	 * 通过无占位符语句查询多表关联数据.Select more table record(s) via no placeholder(?) select statement.
@@ -435,21 +444,25 @@ public interface PreparedSql {
 	 */
 	public <T> List<T> moreTableSelect(String sqlStr,T entity,Map<String,Object> parameterMap,int start,int size);
 	
-	/**
-	 * 设置数据源名称(对应数据源必须已定义)
-	 * @param dsName dataSource name
-	 */
-	public void setDataSourceName(String dsName);
+	
+    /**
+	 * 批量插入数据.Insert records by batch type.
+     * @param sql
+     * @param parameterMapList 一行记录为List的一个元素.每个字段的值放在Map里.
+	 * @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
+	 * @since 1.11
+     */
+	public int insert(String sql, List<Map<String, Object>> parameterMapList);
 
 	/**
-	 * get DataSource name
-	 * @return DataSource name
+	 * 
+	 * 批量插入数据.Insert records by batch type.
+     * @param sql
+     * @param parameterMapList
+	 * @param batchSize
+	 * @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
+	 * @since 1.11
 	 */
-	public String getDataSourceName();
+	public int insert(String sql, List<Map<String, Object>> parameterMapList, int batchSize);
 	
-	/**
-	 * 可用于某个生成的Suid对象,需要设置特定拦截器.
-	 * @return InterceptorChain
-	 */
-	public InterceptorChain getInterceptorChain();
 }

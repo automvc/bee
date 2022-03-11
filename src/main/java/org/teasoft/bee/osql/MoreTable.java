@@ -19,8 +19,6 @@ package org.teasoft.bee.osql;
 
 import java.util.List;
 
-import org.teasoft.bee.osql.interccept.InterceptorChain;
-
 /**
  * 多表查询.More table select.
  * <p>
@@ -125,7 +123,7 @@ public class Orders{
  * @author Kingstar
  * @since  1.7
  */
-public interface MoreTable {
+public interface MoreTable extends CommOperate {
 
 	/**
 	 * 根据实体对象entity查询数据
@@ -174,22 +172,4 @@ public interface MoreTable {
 	 */
 	public MoreTable setDynamicParameter(String para,String value);
 	
-	/**
-	 * 设置数据源名称(对应数据源必须已定义)
-	 * @param dsName dataSource name
-	 */
-	public void setDataSourceName(String dsName);
-
-	/**
-	 * get DataSource name
-	 * @return DataSource name
-	 */
-	public String getDataSourceName();
-	
-	/**
-	 * 可用于某个生成的Suid对象,需要设置特定拦截器.
-	 * @return InterceptorChain
-	 */
-	public InterceptorChain getInterceptorChain();
-
 }
