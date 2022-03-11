@@ -384,7 +384,7 @@ A:  Suid的update方法,SuidRich的selectById等方法默认是将id为会字段
 Q:  表名与实体名、字段名与属性名映射默认提供多种实现，且支持自定义映射规则扩展。  请问这个是怎么设置的，谢谢。  
     How to set customized NameTranslate?   
 A:  实现NameTranslate接口, 并在NameTranslateHandle类设置setNameTranslat(NameTranslate nameTranslat)  
-
+    当前对象设置,参考第41.
 30.
 
 Q:  多表关联时,如何在SQL on部分加表达式,过滤数据?  
@@ -593,10 +593,22 @@ A: 因为maven只下载了jar包,没有下载源码文件.
 
 39.
 
-Q:  PreparedSQL 是否支持多数据源?  
+Q:  PreparedSql 是否支持多数据源?  
       
-A: PreparedSQL的方法中带有泛型T的是支持多数据源的; 没带有泛型的，在多数据源场景，会操作默认数据源。	
+A: PreparedSql的方法中带有泛型T的是支持多数据源的; 没带有泛型的，在多数据源场景，会操作默认数据源。	
 
+40.
+
+Q:  自己定义了某种DB的方言,如DB2,如何设置到Bee?  
+      
+A: V1.11可以通过DbFeatureRegistry设置,简单易用。	
+
+41.
+
+Q:  自己定义的命名转换器,如何设置  ?  
+      
+A: 全局NameTranslate设置,参考第29.
+   V1.11支持在Suid等对象使用setNameTranslate方法设置命名转换器。	
 
  
 其它:
