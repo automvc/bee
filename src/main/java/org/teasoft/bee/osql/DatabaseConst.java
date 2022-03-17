@@ -37,5 +37,13 @@ public final class DatabaseConst {
 	public static final String Sybase = "Sybase SQL Server";
 	public static final String Teradata = "Teradata";
 	public static final String TimesTen = "TimesTen";
+	
+	//NoSql
+	public static final String Cassandra = "Cassandra";
+	public static final String Hbase = "Hbase";
+	public static final String Hypertable= "Hypertable";
+	
+	public static final String MongoDB= "MongoDB";
+	public static final String CouchDB = "CouchDB";
 
 }
