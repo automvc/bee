@@ -107,6 +107,7 @@ Ddl.java is compatible with raw char type and java.util.Date.
 PreparedSql support batch insert.  
 Support Suid instance set NameTranslate.  
 Add DbFeature Registry,it is easy for setting custom database dialect.  
+Support Cassandra.  
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
