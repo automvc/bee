@@ -18,7 +18,7 @@
 package org.teasoft.bee.osql.type;
 
 /**
- * Convert the set parameter type.
+ * Convert the set-parameter type.
  * The SetParaTypeConvert work for setting parameter to PreparedStatement.
  * @author Kingstar
  * @since  1.11
