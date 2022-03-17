@@ -127,7 +127,7 @@ fixed bug:
 多表查询同一个实体自我关联查询禁止自我多次循环  
 
 V1.11.0.3.8  (**Lady First**)  
-add SetParaTypeConvert for convert PreparedStatement parameter  
+增加SetParaTypeConvert转化PreparedStatement参数.  
 Javabean使用java.util.Date类型,进行SUID作兼容处理.  
 SQLite获取Timestamp结果作转化处理.  
 实体属性是Javabean与DB表Json类型字段在参数设置与查询结果时自动转换(使用Json注解自定义实现).  
