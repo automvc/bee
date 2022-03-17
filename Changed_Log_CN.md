@@ -262,4 +262,70 @@ fix bug about HoneyContext.
 fix bug about checkPackageByClass.  
 fix bug about multi-thread safe in ConditionHelper.  
 
+**V1.11**  
+V1.11.0.1.1(**2022新年版**)  
+SuidRich增加方法:  
+  public <T> long insertAndReturnId(T entity,IncludeType includeType);  
+PreparedSql增加方法:  
+  public <T> List<T> select(String sql,T returnType);  
+增加声明主键支持:  
+  add annotation PrimaryKey  
+  MapSqlKey support PrimaryKey  
+可用BF代替BeeFactoryHelper加快输入  
+增强:读写模式配置信息去除空格  
+fix a bug for naming transfer  
+
+V1.11.0.2.1(**2022春节版**)  
+拦截器、多租户  
+add Interceptor,InterceptorChain  
+add DefaultInterceptor,CommInterceptorChain,DefaultInterceptorChain  
+
+V1.11.0.2.4(**2022北京冬奥会版**)  
+二级缓存扩展支持  
+Redis缓存支持  
+add BeeExtCache,DefaultBeeExtCache  
+add BeeExtRedisCache  
+
+V1.11.0.2.15(**2022元宵节版**)  
+添加注解:Datetime,Createtime,Updatetime;JustFetch  
+添加Jndi数据源支持  
+检测MapSqlKey的值  
+
+V1.11.0.2.20(**荣耀**)  
+multi-DS同时使用不同类型DB优化  
+支持同时使用多种数据库(如同时使用Mysql,Oracle,SQL Server)  
+PreparedSql(自定义sql),MapSuid:拦截器，多数据源支持  
+Suid,PreparedSql,MapSuid支持设置数据源名称,获取拦截器链  
+Suid,PreparedSql,MapSuid,MoreTable增加方法:setDataSourceName,getDataSourceName,getInterceptorChain  
+增加注解:  
+AnnotationHandler,AutoSetString自动设置字符值  
+Desensitize,敏感信息模糊处理  
+ReplaceInto,MySQL replace into转换  
+MultiTenancy多租户  
+BeforeReturnAnnotationHandler,AbstractDictI18nDefaultHandler  
+Dict字典转化  
+DictI18n多语言国际化字典转化  
+
+V1.11.0.2.28  (**Special Day**)  
+增加ShardingStruct为分库分表作准备  
+Column列名与属性名映射扩展支持  
+支持自定义TypeHandler,处理查询的ResultSet结果  
+PreparedSql自定义sql支持多表查询,返回多表关联Javabean结构数据  
+fixed bug:  
+多表查询同一个实体自我关联查询禁止自我多次循环  
+
+V1.11.0.3.8  (**Lady First**)  
+增加SetParaTypeConvert转化PreparedStatement参数.  
+Javabean使用java.util.Date类型,进行SUID作兼容处理.  
+SQLite获取Timestamp结果作转化处理.  
+实体属性是Javabean与DB表Json类型字段在参数设置与查询结果时自动转换(使用Json注解自定义实现).  
+
+V1.11.0.3.12  (**植树节版**)  
+Ddl.java使用Javabean创建表,支持追加java与db字段类型映射,支持设置某个DB的java_dbtype类型映射.  
+Ddl.java兼容原生char类型,兼容java.util.Date.  
+PreparedSql自定义sql支持批量插入.  
+支持在Suid等对象设置命名转换器.  
+增加DbFeature方言注册器,自定义实现不同DB方言更加易用.  
+支持Cassandra.  
+
 	

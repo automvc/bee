@@ -273,3 +273,68 @@ fix bug for max column number(excel in bee-ext).
 fix bug about HoneyContext  
 fix bug about checkPackageByClass  
 fix bug about multi-thread safe in ConditionHelper.   
+
+**V1.11**  
+V1.11.0.1.1(**2022 New Year**)  
+SuidRich add method:  
+  public <T> long insertAndReturnId(T entity,IncludeType includeType);  
+PreparedSql add method:  
+  public <T> List<T> select(String sql,T returnType);  
+add annotation PrimaryKey  
+MapSqlKey support PrimaryKey  
+BF is shortcut for BeeFactoryHelper  
+Enhance:config info add trim() about multi-DataSource Write/Read  
+fix a bug for naming transfer  
+
+V1.11.0.2.1(**2022 Spring Festival**)  
+add function: Interceptor、multi-tenant  
+add Interceptor,InterceptorChain  
+add DefaultInterceptor,CommInterceptorChain,DefaultInterceptorChain  
+
+V1.11.0.2.4(**2022 Beijing Winter Olympics**)  
+level tow ext cache support  
+Redis cache support  
+add BeeExtCache,DefaultBeeExtCache  
+add BeeExtRedisCache  
+
+V1.11.0.2.15(**2022 the Lantern Festival**)  
+add annotation:Datetime,Createtime,Updatetime;JustFetch  
+add support Jndi DataSource  
+check MapSqlKey value 
+ 
+V1.11.0.2.20(**Honor**)  
+Optimize use different Database Type at same time(multi-Ds)  
+Support use differnt type Database at the same time(eg:use Mysql,Oracle,SQL Server at same time)  
+PreparedSql,MapSuid support Interceptor  
+Suid,PreparedSql,MapSuid support get DataSource,get InterceptorChain  
+Suid,PreparedSql,MapSuid,MoreTable add method:setDataSourceName,getDataSourceName,getInterceptorChain  
+add Annotation:  
+AnnotationHandler,AutoSetString  
+Desensitize    
+ReplaceInto,MySQL replace into  
+MultiTenancy  
+BeforeReturnAnnotationHandler,AbstractDictI18nDefaultHandler  
+Dict  
+DictI18n  
+
+V1.11.0.2.28  (**Special Day**)  
+add ShardingStruct prepare for sharding.  
+add Column annotation support to extend mapping column and Javabean field name.  
+support custom TypeHandler,and process the ResultSet.  
+PreparedSql custom sql support more table select,and return more table struct Javabean.  
+fixed bug:  
+More table self association query of the same entity forbid multi-self-cycles  
+
+V1.11.0.3.8  (**Lady First**)  
+add SetParaTypeConvert for convert PreparedStatement parameter.  
+Javabean use java.util.Date type for SUID compatibility processing.  
+SQLite get the timestamp result for conversion.  
+The Json field of DB is automatically converted to the attribute marked with Json annotation of Javabean(Javabean structure corresponding to Json). 
+
+V1.11.0.3.12  (**Tree Planting Day**)  
+Ddl.java uses Javabean to create tables, supports the mapping between Java and DB field types, and supports the setting java_dbtype mapping.  
+Ddl.java is compatible with raw char type and java.util.Date.  
+PreparedSql support batch insert.  
+Support Suid instance set NameTranslate.  
+Add DbFeature Registry,it is easy for setting custom database dialect.  
+Support Cassandra.  
