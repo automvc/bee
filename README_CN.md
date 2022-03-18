@@ -139,6 +139,10 @@ PreparedSql自定义sql支持批量插入.
 支持在Suid等对象设置命名转换器.  
 增加DbFeature方言注册器,自定义实现不同DB方言更加易用.  
 支持Cassandra.  
+showExecutableSql添加List,Set,Map,UUID支持.  
+
+V1.11.0.3.20  (**春分**)  
+自定义动态SQL标签,@in,@toIsNULL1,@toIsNULL2,<if isNotNull>,<if isNotBlank>.  
 
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
