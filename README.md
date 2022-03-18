@@ -109,6 +109,9 @@ Support Suid instance set NameTranslate.
 Add DbFeature Registry,it is easy for setting custom database dialect.  
 Support Cassandra.  
 
+V1.11.0.3.20  (**Spring Equinox**)  
+add Custom dynamic SQL token,@in,@toIsNULL1,@toIsNULL2,<if isNotNull>,<if isNotBlank>.  
+
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
 
