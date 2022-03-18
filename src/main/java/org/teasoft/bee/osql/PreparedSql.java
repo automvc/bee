@@ -452,7 +452,7 @@ public interface PreparedSql extends CommOperate {
 	 * @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
 	 * @since 1.11
      */
-	public int insert(String sql, List<Map<String, Object>> parameterMapList);
+	public int insertBatch(String sql, List<Map<String, Object>> parameterMapList);
 
 	/**
 	 * 
@@ -463,6 +463,9 @@ public interface PreparedSql extends CommOperate {
 	 * @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
 	 * @since 1.11
 	 */
-	public int insert(String sql, List<Map<String, Object>> parameterMapList, int batchSize);
+	public int insertBatch(String sql, List<Map<String, Object>> parameterMapList, int batchSize);
+
+	//为什么没有List<Entity> ? 假如知道实体结构的,就用面向对象.
+//	public <T> int insert(String sql, List<T> parameterMapList, int batchSize);
 	
 }
