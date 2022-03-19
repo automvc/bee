@@ -9,8 +9,6 @@ Bee
 **Good Feature:**  AI, Timesaving/Tasteful, Easy, Automatic (**AiTeaSoft Style**)   
 **Bee** see:  
 https://github.com/automvc/bee  
-or:  
-https://gitee.com/automvc/bee  
 
 ## [中文介绍](../../../bee/blob/master/README_CN.md)  
 [点击链接可查看中文介绍](../../../bee/blob/master/README_CN.md)  
@@ -20,29 +18,34 @@ jdk1.7+
 
 ## Feature & Function: 
 
-**Support many Database**(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server and so on) and easily extend。 
-**Good performance, close to the speed of JDBC; Small files：Bee V1.8 jar 217k**, **V1.9.5 jar,315k, V1.9.8 jar 310k**。  
+**Support many Database**(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server and so on) and easily extend.  
+**Good performance, close to the speed of JDBC; Small files：Bee V1.8 jar 217k**, **V1.9.5 jar,315k, V1.9.8 jar 310k**.  
 
-**V1.0**  
-Single entity(table) Suid (select,update,insert,delete) object-oriented operation.  
+* 1.Single entity(table) Suid (select,update,insert,delete) object-oriented operation.
 Automatically generate the Javabean via DB table or view.  
-Convention-over-configuration:Javabean no annotation,no xml.  
-Automatically mapping the table column and the Javabean field.  
-Javabean support the raw type:int,double,and so on.  
-PreparedStatement support.  
-Procedure support.  
-Native SQL support.  
-Batch operate support.  
-Transaction support.  
-Automatic filter the null and empty field for default.  
-MAX,MIN,SUM,AVG,COUNT support.  
-Order by,Paging.  
-Select some field.  
-Dynamic & random combination of query conditions,no need to prepare the interface in advance; new query requirements, no need to change the query interface.  
-All Suid(select,update,insert,delete) operation use the same Bee interface,no longer need any new dao interface.  
-Users/Developer only need to pay attention to the Bee interface.  
+* 2.All Suid(select,update,insert,delete) operation use the same Bee interface,no longer need any new dao interface.  
+* 3.Convention-over-configuration:Javabean no annotation,no xml.  
+* 4.Automatic filter the null and empty field for default.  
+* 5.Select some fields easily.  
+* 6.Dynamic & random combination of query conditions,no need to prepare the interface in advance; new query requirements, no need to change the query interface.  
+* 7.Native SQL sort support,native paging support(do not need select all records before).  
+* 8.Support return the JSON format query results directly; Chain programming.  
+* 9.Support:transaction ,same connection,for update，batch insert,procedure.  
+* 10.more tables select oriented object support(has not the n+1 problem,one to one,one to many,many to one,many to many).sub-field type support Javabean or List.  
+* 11.L1 cache, simple in concept and powerful in function; L1 cache can also be fine tuned like the JVM; Support updatable long-term cache list and update configuration table without restart. Inherently resistant to cache penetration. L2 cache extension support; Redis L2 cache support.  
+* 12.support java_db naming translation and support customize,default implement.  
+* 13.Many DB supports easy extension(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Cassandra,etc. are directly available),In theory, can support all DB which support JDBC.  
+* 14.Add multi-DataSource support(Write/Read, only Split Database);support Jndi DataSource.  
+* 15.support use many type database at the same time(eg: use Mysql,Oracle,SQL Server at the same).  
+* 16.support distributed primary key(global unique id,Serial distributed unique id in one workid).  
+* 17.The same database sub table support, dynamic table name mapping support.  
+* 18.support interceptor、multi-tenant,convert PreparedStatement parameter,custom TypeHandler and process the ResultSet.  
+* 19.Suid,SuidRich,PreparedSql,MapSuid,MoreTable support set the dataSource name.  
+* 20.MapSuid:opertate(suid) the database no need Javabean.  
+* 21.No third-party plug-in dependency; It can be used in zero configuration.  
 
-......
+
+## Newest Function
 
 **V1.11**  
 V1.11.0.1.1(**2022 New Year**)  
