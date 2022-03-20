@@ -142,7 +142,7 @@ PreparedSql自定义sql支持批量插入.
 showExecutableSql添加List,Set,Map,UUID支持.  
 
 V1.11.0.3.20  (**春分**)  
-自定义动态SQL标签,@in,@toIsNULL1,@toIsNULL2,<if isNotNull>,<if isNotBlank>.  
+自定义动态SQL标签,@in,@toIsNULL1,@toIsNULL2,&lt;if isNotNull>,&lt;if isNotBlank>.  
 动态sql,将list转为像in (1,2,3)的语句,不需要foreach,批量插入也不需要foreach.  
 
 
