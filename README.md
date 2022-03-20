@@ -43,7 +43,7 @@ jdk1.7+
 * 20.MapSuid:opertate(suid) the database no need Javabean.  
 * 21.No third-party plug-in dependency; It can be used in zero configuration.  
 * 22.**Good performance, close to the speed of JDBC**; Small files：Bee V1.8 jar 217k, **V1.9.5 jar,315k, V1.9.8 jar 310k**.  
-Assist function:  
+**Assist function**:  
 * 23.Automatically generate the Javabean via DB table or view.Automatically create table via the Javabean,JavaWeb back-end code;Can print non placeholder executable SQL statements to facilitate debugging; support generate JSON format SQL scripts.  
 * 24.Support reading excel and importing data from Excel to DB easily.  
 * 25.Stream tool class streamutil.  
@@ -290,10 +290,11 @@ Create the tables and init the data by run the [init-data(user-orders)-mysql.sql
 ## 3. Update the database configuration in bee.properties if need  
 If no the bee.properties file, you can create it by yourself.
 
-//#bee.databaseName=MySQL  
+\#bee.databaseName=MySQL  
 bee.db.dbName=MySQL  
 bee.db.driverName = com.mysql.jdbc.Driver  
-bee.db.url =jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8  
+\#bee.db.url =jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8  
+bee.db.url =jdbc:mysql://127.0.0.1:3306/bee?characterEncoding=UTF-8&useSSL=false  
 bee.db.username = root  
 bee.db.password =  
 

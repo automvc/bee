@@ -64,7 +64,7 @@ Bee **简化了与DB交互的编码**工作量.连接，事务都可以由Bee框
 * 20.可以不用表对应的Javabean也能操作DB。  
 * 21.**无**第三方插件依赖；可零配置使用。  
 * 22.**性能好:接近JDBC的速度；文件小：Bee V1.8 仅217k**, **V1.9.5 仅315k，V1.9.8 仅310k**。  
-辅助功能:  
+**辅助功能**:  
 * 23.支持自动生成表对应的Javabean，根据Javabean创建表，Javaweb**后端代码**根据**模板自动生成**；能打印非占位符的**可执行sql**,方便调试;支持生成Json格式的SQL脚本。  
 * 24.支持**读取Excel**,从Excel导入数据到DB，操作简单。  
 * 25.流的工具类StreamUtil。  
@@ -317,16 +317,17 @@ OrdersService.java
 注:如果还没有bee.properties文件,可以自己新建一个.  
 也可以配置数据源(此处只是一个例子).  
 
-//#bee.databaseName=MySQL  
+\#bee.databaseName=MySQL  
 bee.db.dbName=MySQL  
 bee.db.driverName = com.mysql.jdbc.Driver  
-bee.db.url =jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8  
+\#bee.db.url =jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8  
+bee.db.url =jdbc:mysql://127.0.0.1:3306/bee?characterEncoding=UTF-8&useSSL=false  
 bee.db.username = root  
 bee.db.password =  
 
 ## 4. 生成Javabean Orders可参考:  
 [Orders(Javabean)](../../../bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/entity/Orders.java)  
-[Auto Genernate Javabean](../../../bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/autogen/GenBeanExam.java)  
+[自动生成Javabean](../../../bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/autogen/GenBeanExam.java)  
 
 ## 5. 运行下面的 java代码    
 
