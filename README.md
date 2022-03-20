@@ -18,13 +18,12 @@ jdk1.7+
 
 ## Feature & Function: 
 
-**Support many Database**(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server and so on) and easily extend.  
+**Support many Database**(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Cassandra and so on) and easily extend.  
 **Good performance, close to the speed of JDBC; Small files：Bee V1.8 jar 217k**, **V1.9.5 jar,315k, V1.9.8 jar 310k**.  
 
-* 1.Single entity(table) Suid (select,update,insert,delete) object-oriented operation.
-Automatically generate the Javabean via DB table or view.  
-* 2.All Suid(select,update,insert,delete) operation use the same Bee interface,no longer need any new dao interface.  
-* 3.Convention-over-configuration:Javabean no annotation,no xml.  
+* 1.The interface is simple and easy to use, **Suid (select,update,insert,delete)** object-oriented operation.
+* 2.All Suid(select,update,insert,delete) operation use the same Bee interface,no longer need  new dao interface.  
+* 3.Convention-over-configuration:Javabean can no annotation,no xml.  
 * 4.Automatic filter the null and empty field for default.  
 * 5.Select some fields easily.  
 * 6.Dynamic & random combination of query conditions,no need to prepare the interface in advance; new query requirements, no need to change the query interface.  
@@ -33,17 +32,24 @@ Automatically generate the Javabean via DB table or view.
 * 9.Support:transaction ,same connection,for update，batch insert,procedure.  
 * 10.more tables select oriented object support(has not the n+1 problem,one to one,one to many,many to one,many to many).sub-field type support Javabean or List.  
 * 11.L1 cache, simple in concept and powerful in function; L1 cache can also be fine tuned like the JVM; Support updatable long-term cache list and update configuration table without restart. Inherently resistant to cache penetration. L2 cache extension support; Redis L2 cache support.  
-* 12.support java_db naming translation and support customize,default implement.  
+* 12.Support java_db naming translation and support customize,default implement.  
 * 13.Many DB supports easy extension(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Cassandra,etc. are directly available),In theory, can support all DB which support JDBC.  
 * 14.Add multi-DataSource support(Write/Read, only Split Database);support Jndi DataSource.  
-* 15.support use many type database at the same time(eg: use Mysql,Oracle,SQL Server at the same).  
-* 16.support distributed primary key(global unique id,Serial distributed unique id in one workid).  
+* 15.Support use many type database at the same time(eg: use Mysql,Oracle,SQL Server at the same).  
+* 16.Support distributed primary key(global unique id,Serial distributed unique id in one workid).  
 * 17.The same database sub table support, dynamic table name mapping support.  
-* 18.support interceptor、multi-tenant,convert PreparedStatement parameter,custom TypeHandler and process the ResultSet.  
+* 18.Support interceptor、multi-tenant,convert PreparedStatement parameter,custom TypeHandler and process the ResultSet.  
 * 19.Suid,SuidRich,PreparedSql,MapSuid,MoreTable support set the dataSource name.  
 * 20.MapSuid:opertate(suid) the database no need Javabean.  
 * 21.No third-party plug-in dependency; It can be used in zero configuration.  
-
+* 22.**Good performance, close to the speed of JDBC**; Small files：Bee V1.8 jar 217k, **V1.9.5 jar,315k, V1.9.8 jar 310k**.  
+Assist function:  
+* 23.Automatically generate the Javabean via DB table or view.Automatically create table via the Javabean,JavaWeb back-end code;Can print non placeholder executable SQL statements to facilitate debugging; support generate JSON format SQL scripts.  
+* 24.Support reading excel and importing data from Excel to DB easily.  
+* 25.Stream tool class streamutil.  
+* 26. The front and back ends of complex queries can be automatically parsed.  
+* 27. Annotation support:PrimaryKey,Datetime,Createtime,Updatetime;JustFetch,ReplaceInto(MySQL).  
+* 28. Extensible annotation: multi tenant, fuzzy processing of sensitive information, automatic setting of field values, dictionary conversion, dicti18n multilingual International Dictionary conversion, column  name and field name mapping.  
 
 ## Newest Function
 
@@ -113,7 +119,8 @@ Add DbFeature Registry,it is easy for setting custom database dialect.
 Support Cassandra.  
 
 V1.11.0.3.20  (**Spring Equinox**)  
-add Custom dynamic SQL token,@in,@toIsNULL1,@toIsNULL2,<if isNotNull>,<if isNotBlank>.  
+add Custom dynamic SQL token,@in,@toIsNULL1,@toIsNULL2,&lt;if isNotNull>,&lt;if isNotBlank>.  
+dynamic SQL list transfer list to SQL in eg:in (1,2,3),no need foreach;batch insert also no need foreach.  
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  

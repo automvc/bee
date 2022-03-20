@@ -55,11 +55,11 @@ Bee **简化了与DB交互的编码**工作量.连接，事务都可以由Bee框
     **二级缓存扩展支持;Redis二级缓存支持**。  
 * 12.表名与实体名、字段名与属性名映射默认提供多种实现，且支持**自定义映射规则扩展**。  
 * 13.**多种DB**支持轻松扩展(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,**Cassandra**等直接可用),理论上支持JDBC的DB都可以支持。 
-* 14.支持**读写分离**一主多从, 仅**分库**等**多数据源**模式(对以前的代码无需修改,该功能对代码是透明的,即无需额外编码),**可同时使用多种类型数据库**;Jndi数据源支持。  
-* 15.**分布式**环境下生成**连续单调递增**(在一个workerid内),**全局唯一**数字**id**；提供自然简单的分布式主键生成方式。  
-* 16.**支持同库分表,动态表名映射**。  
-* 17.**拦截器、多租户,支持自定义TypeHandler,处理查询的ResultSet结果**。  
-* 18.**支持同时使用多种数据库(如同时使用Mysql,Oracle,SQL Server)**。  
+* 14.支持**读写分离**一主多从, 仅**分库**等**多数据源**模式(对以前的代码无需修改,该功能对代码是透明的,即无需额外编码);Jndi数据源支持。  
+* 15.**支持同时使用多种数据库(如同时使用Mysql,Oracle,SQL Server)**。
+* 16.提供自然简单的分布式主键生成方案:**分布式**环境下生成**连续单调递增**(在一个workerid内),**全局唯一**数字**id**。  
+* 17.**支持同库分表,动态表名映射**。  
+* 18.**拦截器、多租户,支持自定义TypeHandler,处理查询的ResultSet结果**。    
 * 19.**Suid,SuidRich,PreparedSql,MapSuid,MoreTable支持设置数据源名称**。  
 * 20.可以不用表对应的Javabean也能操作DB。  
 * 21.**无**第三方插件依赖；可零配置使用。  
@@ -143,6 +143,7 @@ showExecutableSql添加List,Set,Map,UUID支持.
 
 V1.11.0.3.20  (**春分**)  
 自定义动态SQL标签,@in,@toIsNULL1,@toIsNULL2,<if isNotNull>,<if isNotBlank>.  
+动态sql,将list转为像in (1,2,3)的语句,不需要foreach,批量插入也不需要foreach.  
 
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  

@@ -384,7 +384,8 @@ A:  Suid的update方法,SuidRich的selectById等方法默认是将id为会字段
 Q:  表名与实体名、字段名与属性名映射默认提供多种实现，且支持自定义映射规则扩展。  请问这个是怎么设置的，谢谢。  
     How to set customized NameTranslate?   
 A:  实现NameTranslate接口, 并在NameTranslateHandle类设置setNameTranslat(NameTranslate nameTranslat)  
-    当前对象设置,参考第41.
+    当前对象设置,参考第41.  
+    
 30.
 
 Q:  多表关联时,如何在SQL on部分加表达式,过滤数据?  
