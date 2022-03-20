@@ -25,7 +25,7 @@ import java.lang.annotation.Target;
 /**
  * 从指定位置开始,将指定数量的字符改为掩码字符
  * eg:
- * 	@Desensitize(start=5, size=2, mask="*")
+ * 	\@Desensitize(start=5, size=2, mask="*")
  * 	private String sequence;
  * 	sequence in the database is: 0123456789
  * 	after process:
@@ -40,21 +40,21 @@ public @interface Desensitize {
 	/**
 	 * 开始位置(从0开始)
 	 * Start position (starting from 0)
-	 * @return
+	 * @return start position
 	 */
 	int start();
 	
 	/**
 	 * 需要替换的字符数量
-	 * Number of characters to replace
-	 * @return
+	 * the number of characters need to replace
+	 * @return the number of characters need to replace
 	 */
 	int size();
 	
 	/**
 	 * 使用的掩码
 	 * Mask used
-	 * @return
+	 * @return mask code
 	 */
 	String mask(); 
 }

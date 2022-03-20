@@ -41,9 +41,9 @@ public interface Interceptor {
 	 * 在解析Entity数组成sql前触发
 	 * @param entity 实体数组
 	 * @param suidType
-	 * @return
+	 * @return 
 	 */
-	public Object beforePasreEntity(Object entityArray[],SuidType suidType); 
+	public Object[] beforePasreEntity(Object entityArray[],SuidType suidType); 
 
 	/**
 	 * 设置一次性临时数据源名称

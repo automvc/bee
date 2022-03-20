@@ -30,8 +30,8 @@ import java.lang.annotation.Target;
  * flag=1
  * flag=0
  * flag=
- * //@Dict(map = "0=No,1=Yes",nullValue="?")
- * @Dict(map = "0=No,1=Yes,=empty,",nullValue="?")
+ * //@Dict(map ="0=No,1=Yes",nullToValue="?")
+ * @Dict(map ="0=No,1=Yes,=empty,",nullToValue="?")
 	private String flag;
  * after process:
  * flag=?
@@ -50,9 +50,9 @@ public @interface Dict {
 	String map();
 
 	/**
-	 * 字段值是null是,替换的目标值
-	 * @return
+	 * 字段值是null时,替换的目标值
+	 * @return value replace for null
 	 */
-	String nullValue() default "@#placeholderStr(default do not process)";
+	String nullToValue() default "@#placeholderStr(default do not process)";
 
 }

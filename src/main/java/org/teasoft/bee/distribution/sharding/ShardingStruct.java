@@ -51,7 +51,7 @@ public class ShardingStruct {
 
 	/**
 	 * get dataSource rule
-	 * @return
+	 * @return dataSource rule
 	 */
 	public String getDsRule() {
 		return dsRule;
@@ -67,7 +67,7 @@ public class ShardingStruct {
 
 	/**
 	 * get dataSource name
-	 * @return
+	 * @return dataSource name
 	 */
 	public String getDsName() {
 		return dsName;
@@ -115,7 +115,7 @@ public class ShardingStruct {
 
 	/**
 	 * get table name
-	 * @return
+	 * @return table name
 	 */
 	public String getTabName() {
 		return tabName;

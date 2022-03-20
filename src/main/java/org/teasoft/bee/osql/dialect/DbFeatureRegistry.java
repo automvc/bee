@@ -41,7 +41,7 @@ public class DbFeatureRegistry {
 	/**
 	 * 通过databaseName获取注册的DbFeature实现类.
 	 * @param databaseName
-	 * @return
+	 * @return instance of DbFeature.
 	 */
 	public static DbFeature getDbFeature(String databaseName) {
 		return dbFeatureMap.get(databaseName);
