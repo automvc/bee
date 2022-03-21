@@ -18,7 +18,7 @@
 package org.teasoft.bee.osql;
 
 /**
- * 对象到SQL的转换(对应SuidRich).Object to SQL string for SuidRich. 
+ * Object to SQL string for SuidRich. 
  * 
  * @author Kingstar
  * @since  1.0

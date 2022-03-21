@@ -20,6 +20,7 @@ package org.teasoft.bee.osql;
 import org.teasoft.bee.osql.interccept.InterceptorChain;
 
 /**
+ * Common operate about Suid.
  * @author Kingstar
  * @since  1.11
  */
@@ -50,7 +51,7 @@ public interface CommOperate {
 	 * 用于设置当前对象使用的命名转换器.使用默认的不需要设置
 	 * set nameTranslat
 	 * Set the NameTranslate for current instance. If use the default settings that are not required.
-	 * @param nameTranslat nameTranslat
+	 * @param nameTranslate nameTranslate
 	 */
 	public void setNameTranslate(NameTranslate nameTranslate);
 }

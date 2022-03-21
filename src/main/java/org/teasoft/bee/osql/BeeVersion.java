@@ -7,6 +7,7 @@
 package org.teasoft.bee.osql;
 
 /**
+ * Bee Version.
  * @author Kingstar
  * @since  1.11
  */

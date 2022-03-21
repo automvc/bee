@@ -58,7 +58,7 @@ public interface Condition extends ConditionAssistant {
 	 * 添加一个表达式条件.Add a expression condition.
 	 * <br>此方法不能用于SQL的update set.
 	 * @param field 字段名.field name
-	 * @param Op 操作符.operator.
+	 * @param op 操作符.operator.
 	 * @param value 字段对应的值.value of the field.
 	 * @return Condition
 	 */
@@ -70,7 +70,7 @@ public interface Condition extends ConditionAssistant {
 	 * eg: opOn("table2.valid",Op.eq,"1")    table1 left join table2 on table1.id=table2.id and table2.valid='1'
 	 * it is different from where part: table1 left join table2  on table1.id=table2.id where valid='1'
 	 * @param field
-	 * @param Op 操作符.operator.
+	 * @param op 操作符.operator.
 	 * @param value 字段对应的值.value of the field.
 	 * @return Condition
 	 */
@@ -81,7 +81,7 @@ public interface Condition extends ConditionAssistant {
 	 * <br>此方法不能用于SQL的update set.
 	 * eg: opWithField(field1,Op.gt,field2)-->where field1>field2
 	 * @param field1 first field
-	 * @param Op 操作符.operator.
+	 * @param op 操作符.operator.
 	 * @param field2 second field
 	 * @return Condition
 	 * @since 1.9
@@ -162,7 +162,7 @@ public interface Condition extends ConditionAssistant {
 	 * eg: having(FunctionType.MIN, "field", Op.ge, 60)-->having min(field)>=60
 	 * @param functionType SQL函数类型
 	 * @param field 实体字段,会被命名转换(如果需要).
-	 * @param Op 操作类型
+	 * @param op 操作类型
 	 * @param value 值
 	 * @return Condition
 	 */

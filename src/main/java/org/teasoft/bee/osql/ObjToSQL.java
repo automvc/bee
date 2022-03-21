@@ -18,9 +18,7 @@
 package org.teasoft.bee.osql;
 
 /**
- * 对象到SQL的转换(对应Suid).Object to SQL string for Suid. <br>
- * 根据entity对象转换成DB能识别的sql语句(包括:select,update,insert,delete),
- * entity 参数不能为null.<br>
+ * Object to SQL string for Suid. <br>
  * Object to SQL string for Suid (select,update,insert,delete),
  * entity must not be null.
  * @author Kingstar
@@ -28,24 +26,47 @@ package org.teasoft.bee.osql;
  */
 public interface ObjToSQL {
 	
+	/**
+	 * Convert to select SQL statement according to entity.
+	 * @param entity table's entity(do not allow null).
+	 * @return the sql string.
+	 */
 	public  <T> String toSelectSQL(T entity) ;
+	
+	/**
+	 * Convert to update SQL statement according to entity.
+	 * @param entity table's entity(do not allow null).
+	 * @return the sql string.
+	 */
 	public  <T> String toUpdateSQL(T entity) ;
+	
+	/**
+	 * Convert to insert SQL statement according to entity.
+	 * @param entity table's entity(do not allow null).
+	 * @return the sql string.
+	 */
 	public  <T> String toInsertSQL(T entity) ;
+	
+	/**
+	 * Convert to delete SQL statement according to entity.
+	 * @param entity table's entity(do not allow null).
+	 * @return the sql string.
+	 */
 	public  <T> String toDeleteSQL(T entity) ;
 	
     /**
-     * 根据entity和Condition转换成sql语句
-     * @param entity
-     * @param condition
+     * Convert to select SQL statement according to entity and condition.
+     * @param entity table's entity(do not allow null).
+     * @param condition instance of Condition.
      * @return the sql string.
      * @since  1.6
      */
 	public  <T> String toSelectSQL(T entity,Condition condition) ;
 
     /**
-     * 根据entity和Condition转换成sql语句
-     * @param entity
-     * @param condition
+     * Convert to delete SQL statement according to entity and condition
+     * @param entity table's entity(do not allow null).
+     * @param condition instance of Condition.
      * @return the sql string.
      * @since  1.7.2
      */

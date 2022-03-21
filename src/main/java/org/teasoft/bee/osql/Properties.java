@@ -18,6 +18,7 @@
 package org.teasoft.bee.osql;
 
 /**
+ * Properties interface.
  * @author Kingstar
  * @since  1.11
  */

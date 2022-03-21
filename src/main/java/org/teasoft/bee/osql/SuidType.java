@@ -18,33 +18,33 @@
 package org.teasoft.bee.osql;
 
 /**
- * 数据库Suid(Select,Update,Insert,Delete)操作类型.Database Suid(Select,Update,Insert,Delete) type.
+ * Database Suid(Select,Update,Insert,Delete) type.
  * @author Kingstar
  * @since  1.4
  */
 public enum SuidType {
 	
 	/**
-	 * 对应SQL的SELECT操作.Select operation corresponding to SQL
+	 * Select operation corresponding to SQL
 	 */
 	SELECT("SELECT"),
 	
 	/**
-	 * 对应SQL的UPDATE操作.UPDATE operation corresponding to SQL
+	 * UPDATE operation corresponding to SQL
 	 */
 	UPDATE("UPDATE"),
 	
 	/**
-	 * 对应SQL的INSERT操作.INSERT operation corresponding to SQL
+	 * INSERT operation corresponding to SQL
 	 */
 	INSERT("INSERT"),
 	
 	/**
-	 * 对应SQL的DELETE操作.DELETE operation corresponding to SQL
+	 * DELETE operation corresponding to SQL
 	 */
 	DELETE("DELETE"),
 	/**
-	 * 对应SQL的UPDATE,INSERT,DELETE操作.UPDATE,INSERT,DELETE operation corresponding to SQL
+	 * UPDATE,INSERT,DELETE operation corresponding to SQL
 	 */
 	MODIFY("MODIFY"),
 	
