@@ -24,7 +24,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 指定或动态表名映射,Table注解不再需要命名转换.Specify or dynamic table name mapping,do not auto translate next.
+ * Specify or dynamic table name mapping,the value do not auto translate any more.
  * @author Kingstar
  * @since  1.8
  */

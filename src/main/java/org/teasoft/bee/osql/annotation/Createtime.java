@@ -23,7 +23,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 在插入记录时自动生成创建时间为当前时间.
+ * Generate creation time(current time) automatically when insert records.
  * @author Kingstar
  * @since  1.11
  */

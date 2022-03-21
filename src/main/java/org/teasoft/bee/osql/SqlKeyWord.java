@@ -18,7 +18,7 @@
 package org.teasoft.bee.osql;
 
 /**
- * SQL关键字.SQL KeyWord.
+ * SQL KeyWord.
  * @author Kingstar
  * @since  1.8.99
  */

@@ -1,7 +1,7 @@
 package org.teasoft.bee.osql;
 
 /**
- * 面向对象SQL非法SQL字段串异常.Object SQL illegal SQL string exception.
+ * Object SQL illegal SQL string exception.
  * @author Kingstar
  * @since  1.0
  */

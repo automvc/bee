@@ -18,27 +18,27 @@
 package org.teasoft.bee.osql.dialect;
 
 /**
- * 为特定DB转换成对应的sql.Translate the sql for really DB.
+ * Translate the sql for really DB.
  * @author Kingstar
  * @since  1.0
  */
 public interface DbFeature {
 	
 	/**
-	 * 为SQL添加分页部分的语句.add the page part for sql.
-	 * @param sql sql语句
-	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
-	 * @param size 结果集大小 大于等于1. fetch result size (>0).
-	 * @return 返回增加分页功能的sql. Return paging sql.
+	 * add the page part for sql.
+	 * @param sql sql statement
+	 * @param start start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size fetch result size (>0).
+	 * @return paging sql.
 	 */
 	public String toPageSql(String sql,int start,int size);
 	
 	/**
-	 * 为SQL添加分页部分的语句,默认从第0或1条记录开始返回.add the page part for sql,default start index,min value is 0 or 1
+	 * add the page part for sql,default start index,min value is 0 or 1
 	 * it is equal: toPageSql(sql,0,size)
-	 * @param sql sql语句
-	 * @param size 结果集大小 大于等于1. fetch result size (>0).
-	 * @return 返回增加分页功能的sql. Return paging sql.
+	 * @param sql sql statement
+	 * @param size fetch result size (>0).
+	 * @return paging sql.
 	 */
 	public String toPageSql(String sql, int size);
 }

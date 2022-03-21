@@ -20,7 +20,7 @@ package org.teasoft.bee.osql.exception;
 import org.teasoft.bee.osql.BeeException;
 
 /**
- * 非法业务异常.Illegal business Exception.
+ * Illegal business Exception.
  * @author Kingstar
  * @since  1.7.2
  */

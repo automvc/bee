@@ -27,30 +27,27 @@ import org.teasoft.bee.osql.interccept.InterceptorChain;
 public interface CommOperate {
 	
 	/**
-	 * 用于设置当前对象使用的数据源名称,使用默认的不需要设置.
-	 * 设置数据源名称(对应数据源必须已定义)
 	 * Set the dataSource for current instance. If use the default settings that are not required.
+	 * Set dataSource name (corresponding data source must be defined).
 	 * @param dsName dataSource name
 	 */
 	public void setDataSourceName(String dsName);
 
 	/**
-	 * 获取当前对象设置的数据源名称.
 	 * get DataSource name which set for current instance.
 	 * @return DataSource name
 	 */
 	public String getDataSourceName();
 	
 	/**
-	 * 获取拦截器栈,可用于某个生成对象,需要设置特定拦截器.
+	 * Get the Interceptor stack, which can be used for a generated object set a specific interceptor.
 	 * @return InterceptorChain
 	 */
 	public InterceptorChain getInterceptorChain();
 	
 	/**
-	 * 用于设置当前对象使用的命名转换器.使用默认的不需要设置
-	 * set nameTranslat
-	 * Set the NameTranslate for current instance. If use the default settings that are not required.
+	 * Set the NameTranslate for current instance. 
+	 * If use the default settings that are not required.
 	 * @param nameTranslate nameTranslate
 	 */
 	public void setNameTranslate(NameTranslate nameTranslate);

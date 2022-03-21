@@ -25,7 +25,7 @@ package org.teasoft.bee.distribution.ds;
 public interface Route {
 	
 	/**
-	 * 返回数据源的名称.Return the name of DataSource.
+	 * Return the name of DataSource.
 	 * @return the name of DataSource.
 	 */
 	public String getDsName();

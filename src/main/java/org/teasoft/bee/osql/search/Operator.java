@@ -18,8 +18,7 @@
 package org.teasoft.bee.osql.search;
 
 /**
- * 较全的操作符
- * More complete operators
+ * More comprehensive operators.
  * @author Kingstar
  * @since  1.9.8
  */

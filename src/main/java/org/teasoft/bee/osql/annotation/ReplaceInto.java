@@ -23,9 +23,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 将插入sql语句的insert [into]换成replace [into].
- * change "insert [into]" to "replace  [into]" the insert sql.
- * insert关键字应该使用全大写或全小写
+ * Change "insert [into]" to "replace  [into]" for insert sql.
+ * In particular, this is generally used for MySQL.
  * @author Kingstar
  * @since  1.11
  */

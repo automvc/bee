@@ -24,7 +24,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Entity注解解析动态命名参数后还需要命名转换.Dynamic named for Javabean.
+ * Dynamic named for Javabean.
  * @author Kingstar
  * @since  1.8
  */

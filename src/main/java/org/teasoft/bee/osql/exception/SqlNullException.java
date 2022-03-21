@@ -20,7 +20,7 @@ package org.teasoft.bee.osql.exception;
 import org.teasoft.bee.osql.BeeException;
 
 /**
- * Sql语句是null的异常.Exception of sql statement string is null.
+ * Exception of sql statement string is null.
  * @author Kingstar
  * @since  1.6
  */

@@ -20,7 +20,7 @@ package org.teasoft.bee.osql.exception;
 import org.teasoft.bee.osql.BeeException;
 
 /**
- * 与java.lang.IllegalAccessException对应的异常.Define for java.lang.IllegalAccessException.
+ * Define for java.lang.IllegalAccessException.
  * @author Kingstar
  * @since  1.4
  */

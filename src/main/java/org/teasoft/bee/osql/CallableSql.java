@@ -21,44 +21,44 @@ import java.sql.CallableStatement;
 import java.util.List;
 
 /**
- * 存储过程方式Sql操作DB的接口.Procedure sql operate the DB.
+ * Procedure sql operate the DB.
  * @author Kingstar
  * @since  1.0
  */
 public interface CallableSql {
 	
 	/**
-	 * 使用存储过程查询数据.
+	 * Use Procedure to query data.
 	 * @param callSql procedure sql
-	 * @param returnType
-	 * @param preValues parameter,just support In type; 只支持in类型的参数
-	 * @return 可包含多个实体(多条记录)的list. list which contains more than one entity.
+	 * @param returnType entity Type,just for return type.
+	 * @param preValues parameter,just support In type.
+	 * @return list which contains more than one entity.
 	 */
 	public <T> List<T> select(String callSql,T returnType,Object preValues[]);
 	
 	/**
-	 * 使用存储过程查询数据.
+	 * Use Procedure to query data.
 	 * @param callSql procedure sql,eg: procedure_name(?)
-	 * @param preValues parameter,just support In type; 只支持in类型的参数
-	 * @return 可包含多个String数组结构的多条记录的list. list can contain more than one record with String array struct.
+	 * @param preValues parameter,just support In type.
+	 * @return list can contain more than one record with String array struct.
 	 */
 	public List<String[]> select(String callSql,Object preValues[]);
 	
 	/**
-	 * 使用存储过程查询数据并返回Json.
+	 * Use Procedure to query data and return Json string.
 	 * @param callSql procedure sql,eg: procedure_name(?)
-	 * @param preValues parameter,just support In type; 只支持in类型的参数
-	 * @return 可包含多个实体(多条记录)的list转换成的json格式的字符串. Json string, it transform from list which can contain more than one entity.
+	 * @param preValues parameter,just support In type.
+	 * @return Json string, it transform from list which can contain more than one entity.
 	 * @since  1.1
 	 */
 	public String selectJson(String callSql,Object preValues[]);
 	
 	
 	/**
-	 * 使用存储过程修改数据.
+	 * Use Procedure to query data.
 	 * @param callSql procedure sql,eg: procedure_name(?)
-	 * @param preValues parameter,just support In type; 只支持in类型的参数
-	 * @return 成功操作的记录行数. the number of affected successfully records.
+	 * @param preValues parameter,just support In type.
+	 * @return the number of affected successfully records.
 	 */
 	public int modify(String callSql,Object preValues[]);
 
@@ -71,8 +71,8 @@ public interface CallableSql {
 	
 	/**
 	 * 对于有out或inout类型的参数,可设置参数后,再调用该方法.
-	 * @param cstmt
-	 * @return 成功操作的记录行数. the number of affected successfully records.
+	 * @param cstmt instance of CallableStatement 
+	 * @return the number of affected successfully records.
 	 */
 	public int modify(CallableStatement cstmt);
 	

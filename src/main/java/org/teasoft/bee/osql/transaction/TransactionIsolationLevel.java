@@ -18,14 +18,14 @@
 package org.teasoft.bee.osql.transaction;
 
 /**
- * 事务隔离级别.Transaction isolation level.
+ * Transaction isolation level.
  * @author Kingstar
  * @since  1.0
  */
 public enum TransactionIsolationLevel
 {
     /**
-     * 指示事务不受支持的常量.A constant indicating that transactions are not supported.
+     * A constant indicating that transactions are not supported.
      */
 	TRANSACTION_NONE(0), 
 	/**
@@ -39,15 +39,14 @@ public enum TransactionIsolationLevel
     TRANSACTION_READ_UNCOMMITTED(1), 
     
     /**
-     * 指示不可以发生脏读的常量；不可重复读和虚读可以发生<br>A constant indicating that
-     * dirty reads are prevented; non-repeatable reads and phantom reads can occur.
-     * This level only prohibits a transaction
-     * from reading a row with uncommitted changes in it.
+     * A constant indicating that dirty reads are prevented; 
+     * <br>non-repeatable reads and phantom reads can occur.
+     * <br>This level only prohibits a transaction
+     * <br>from reading a row with uncommitted changes in it.
      */
     TRANSACTION_READ_COMMITTED(2), 
 
     /**
-     * 指示不可以发生脏读和不可重复读的常量；虚读可以发生<br>
      * A constant indicating that dirty reads and non-repeatable reads are prevented; phantom reads can occur.  
      * This level prohibits a transaction from
      * reading a row with uncommitted changes in it, and it also
@@ -59,8 +58,7 @@ public enum TransactionIsolationLevel
     TRANSACTION_REPEATABLE_READ(4), 
     
     /**
-     * 指示不可以发生脏读、不可重复读和虚读的常量<br>A constant indicating that
-     * dirty reads, non-repeatable reads and phantom reads are prevented.
+     * A constant indicating that dirty reads, non-repeatable reads and phantom reads are prevented.
      * This level includes the prohibitions in
      * <code>TRANSACTION_REPEATABLE_READ</code> and further prohibits the
      * situation where one transaction reads all rows that satisfy
@@ -78,8 +76,8 @@ public enum TransactionIsolationLevel
 	}
 
 	/**
-	 * 获取隔离级别.get the value of TransactionIsolationLevel.
-	 * @return 隔离级别的值.value of TransactionIsolationLevel.
+	 * get the value of TransactionIsolationLevel.
+	 * @return value of TransactionIsolationLevel.
 	 */
 	public int getLevel() {
 		return this.level;

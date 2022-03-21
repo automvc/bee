@@ -18,7 +18,7 @@
 package org.teasoft.bee.logging;
 
 /**
- * 日志接口.Log interface.
+ * Log interface.
  * @author Kingstar
  * @since  1.4
  */
@@ -27,7 +27,7 @@ public interface Log {
     public boolean isTraceEnabled();
 
     /**
-     * 记录一个跟踪级别的消息.Log a message at the TRACE level.
+     * Log a message at the TRACE level.
      *
      * @param msg the message string to be logged
      */
@@ -36,7 +36,7 @@ public interface Log {
     public boolean isDebugEnabled();
 
     /**
-     * 记录一个调试级别的消息.Log a message at the DEBUG level.
+     * Log a message at the DEBUG level.
      *
      * @param msg the message string to be logged
      */
@@ -46,7 +46,7 @@ public interface Log {
     public boolean isInfoEnabled();
 
     /**
-     * 记录一个信息级别的消息.Log a  at the INFO level.
+     * Log a  at the INFO level.
      *
      * @param msg the message string to be logged
      */
@@ -55,7 +55,7 @@ public interface Log {
     public boolean isWarnEnabled();
 
     /**
-     * 记录一个警告级别的消息.Log a message at the  level.
+     * Log a message at the  level.
      *
      * @param msg the message string to be logged
      */
@@ -65,7 +65,7 @@ public interface Log {
     public boolean isErrorEnabled();
 
     /**
-     * 记录一个错误级别的消息.Log a message at the ERROR level.
+     * Log a message at the ERROR level.
      *
      * @param msg the message string to be logged
      */

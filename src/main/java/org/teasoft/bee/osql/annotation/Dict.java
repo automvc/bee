@@ -23,8 +23,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 字典转化注解,用于按规则过滤处理查询返回数据,有没映射则不替换.
- * 1.11版本,暂未提供通用处理实现.
+ * Dictionary conversion annotation is used to filter and process the returned data 
+ * <br>of query according to rules. If there is no mapping, it will not be replaced.
+ * <br>Version 1.11, general processing implementation is not provided yet
 <p>
 <p> data in Databsee:
 <p> flag=null
@@ -50,7 +51,7 @@ public @interface Dict {
 	String map();
 
 	/**
-	 * 字段值是null时,替换的目标值
+	 * The value of the replacement when the field value is null.
 	 * @return value replace for null
 	 */
 	String nullToValue() default "@#placeholderStr(default do not process)";

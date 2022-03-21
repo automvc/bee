@@ -23,10 +23,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 用于查询并获取记录信息,但不作为过滤条件.
+ * It is used to query and obtain record information, 
+ * but not as a filter condition in WHERE part.
  * 
 <p> eg:
-<p> @&nbsp;JustFetch("CONCAT(fisrt_name,last_name)") //多表查询时,若字段会混淆,需要带表名
+<p> @&nbsp;JustFetch("CONCAT(fisrt_name,last_name)") //multiple tables maybe need bring the table name
 <p> private String fullname;
 <p> --> select CONCAT(fisrt_name,last_name) as fullname
   

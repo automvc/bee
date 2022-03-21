@@ -22,7 +22,7 @@ import java.util.List;
 import org.teasoft.bee.osql.SuidType;
 
 /**
- * 拦截器.Interceptor
+ * Interceptor
  * order:1.beforePasreEntity->2.afterCompleteSql->3.beforeReturn
  * @author Kingstar
  * @since  1.11

@@ -20,7 +20,7 @@ package org.teasoft.bee.osql;
 import java.util.List;
 
 /**
- * 多表查询.More table select.
+ * More table select(multi-table query).
  * <p>
  * example1:
 <p>

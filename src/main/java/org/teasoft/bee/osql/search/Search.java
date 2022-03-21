@@ -18,7 +18,7 @@
 package org.teasoft.bee.osql.search;
 
 /**
- * 为了过滤查询记录的结构体.Struct for search the record.
+ * Struct for search the record.
  * <p>
  * eg:
  * new Search("id",Operator.between,"100030","100035","or");

@@ -7,8 +7,6 @@
 package org.teasoft.bee.osql.token;
 
 /**
- * 自定义动态SQL标签
- * 不能用在批量插入操作.
  * Custom auto SQL token.
  * do not effect in batch insert.
  * @author Kingstar

@@ -18,7 +18,7 @@
 package org.teasoft.bee.osql;
 
 /**
- * SQL关键字的小写形式.SQL KeyWord's lower case.
+ * SQL KeyWord's lower case.
  * @author Kingstar
  * @since  1.8.99
  */

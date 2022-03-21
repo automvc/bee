@@ -12,8 +12,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 更新记录时自动填充更新时间为当前时间.
- * 若原来字段有值,默认不覆盖.
+ * When updat records, the update time is automatically filled in as the current time.
+ * If the original field has a value, it will not be override by default.
  * @author Kingstar
  * @since  1.11
  */

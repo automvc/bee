@@ -1,7 +1,7 @@
 package org.teasoft.bee.osql;
 
 /**
- * 包含类型:关于Null和空字符的.Include type about Null and empty string.
+ * Include type about Null and empty string.
  * @author Kingstar
  * @since  1.0
  */
