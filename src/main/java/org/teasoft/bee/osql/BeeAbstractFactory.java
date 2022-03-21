@@ -24,7 +24,7 @@ import javax.sql.DataSource;
 import org.teasoft.bee.osql.transaction.Transaction;
 
 /**
- * 关于数据源和事务的抽象基类.An abstract super class about DataSource and Transaction.
+ * An abstract super class about DataSource and Transaction.
  * @author Kingstar
  * @since  1.0
  */
