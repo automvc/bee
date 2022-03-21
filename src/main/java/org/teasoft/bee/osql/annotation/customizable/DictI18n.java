@@ -34,7 +34,7 @@ public @interface DictI18n {
 
 	/**
 	 * If true, the rule same as Bee config
-	 * @return
+	 * @return flag of namingTransform
 	 */
 	boolean namingTransform() default false;
 

@@ -33,7 +33,7 @@ public @interface JoinTable {
 
 	/**
 	 * JoinType: left join,right join,join, (full join need DB support)
-	 * @return
+	 * @return JoinType
 	 */
 	JoinType joinType() default JoinType.JOIN;
 

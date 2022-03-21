@@ -25,6 +25,7 @@ import java.lang.annotation.Target;
 import org.teasoft.bee.osql.SuidType;
 
 /**
+ * Datetime annotation
  * @author Kingstar
  * @since  1.11
  */

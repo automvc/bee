@@ -39,9 +39,9 @@ public interface Interceptor {
 	
 	/**
 	 * 在解析Entity数组成sql前触发
-	 * @param entity 实体数组
+	 * @param entityArray 实体数组
 	 * @param suidType
-	 * @return 
+	 * @return entityArray
 	 */
 	public Object[] beforePasreEntity(Object entityArray[],SuidType suidType); 
 

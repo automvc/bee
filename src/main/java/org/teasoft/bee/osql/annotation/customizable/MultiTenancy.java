@@ -43,7 +43,7 @@ public @interface MultiTenancy {
 	
 	/**
 	 * 0:求余等能直接计算的运算, 1:自定义,  2:范围???  3:日期等取部分字符串??
-	 * @return
+	 * @return dsAlgorithm
 	 */
     int dsAlgorithm() default 0; 
     int tabAlgorithm() default 0; 
@@ -58,23 +58,25 @@ public @interface MultiTenancy {
 	/**
 	 * dsRule为空,也没设置dsName的值,则不需要带库名
 	 * 默认是dsRule()计算得的值自动作为dsName的后缀.
-	 * 
-	 * @return
+	 * @return dsName
 	 */
 	String dsName() default "";
 	
-	
+	/**
+	 * get tabRule
+	 * @return tabRule
+	 */
 	String tabRule() default "";
 	/**
 	 * 默认是tabRule()计算得的值作为tabName的后缀.
 	 * eg:tab${tabRule}
-	 * @return
+	 * @return tabName
 	 */
 	String tabName() default "";
 	
 	/**
 	 * 要以定义处理器
-	 * @return
+	 * @return class of DsTabHandler type
 	 */
 	Class<? extends DsTabHandler> handler() default DsTabHandler.class;
 

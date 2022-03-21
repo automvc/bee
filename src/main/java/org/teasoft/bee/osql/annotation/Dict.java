@@ -23,23 +23,23 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 字典转化注解,用于按规则过滤处理查询返回数据.
- * 有没映射则不替换
- * data in Databsee:
- * flag=null
- * flag=1
- * flag=0
- * flag=
- * //@Dict(map ="0=No,1=Yes",nullToValue="?")
- * @Dict(map ="0=No,1=Yes,=empty,",nullToValue="?")
-	private String flag;
- * after process:
- * flag=?
- * flag=Yes
- * flag=No
- * flag=empty
- * 
+ * 字典转化注解,用于按规则过滤处理查询返回数据,有没映射则不替换.
  * 1.11版本,暂未提供通用处理实现.
+<p>
+<p> data in Databsee:
+<p> flag=null
+<p> flag=1
+<p> flag=0
+<p> flag=
+<p> @&nbsp;Dict(map="0=No,1=Yes",nullToValue="?")
+<p> @&nbsp;Dict(map="0=No,1=Yes,=empty,",nullToValue="?")
+<p> private String flag;
+<p> after process:
+<p> flag=?
+<p> flag=Yes
+<p> flag=No
+<p> flag=empty
+ 
  * @author Kingstar
  * @since  1.11
  */
