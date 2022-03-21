@@ -63,14 +63,15 @@ public interface CallableSql {
 	public int modify(String callSql,Object preValues[]);
 
 	/**
-	 * 返回CallableStatement对象以便可以设置in,out,inout参数.可方便调用JDBC底层的方法
+	 * Returns the instance of CallableStatement so that the in, out, inout parameters can be set.
+	 * <br>It is convenient to call the underlying methods of JDBC
 	 * @param callSql procedure sql,eg: procedure_name(?)
 	 * @return CallableStatement.
 	 */
 	public CallableStatement getCallableStatement(String callSql);
 	
 	/**
-	 * 对于有out或inout类型的参数,可设置参数后,再调用该方法.
+	 * For parameters with out or inout type, the method can be called after setting the parameters.
 	 * @param cstmt instance of CallableStatement 
 	 * @return the number of affected successfully records.
 	 */

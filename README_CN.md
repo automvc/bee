@@ -144,6 +144,7 @@ showExecutableSql添加List,Set,Map,UUID支持.
 V1.11.0.3.20  (**春分**)  
 自定义动态SQL标签,@in,@toIsNULL1,@toIsNULL2,&lt;if isNotNull>,&lt;if isNotBlank>.  
 动态sql,将list转为像in (1,2,3)的语句,不需要foreach,批量插入也不需要foreach.  
+分离中文API.  
 
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
