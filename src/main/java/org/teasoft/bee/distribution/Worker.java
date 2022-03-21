@@ -18,14 +18,14 @@
 package org.teasoft.bee.distribution;
 
 /**
- * 用于唯一标识在一个运行的ID生成程序.uniquely identify the ID generator running in an application.
+ * uniquely identify the ID generator running in an application.
  * @author Kingstar
  * @since  1.7.2
  */
 public interface Worker {
 	
 	/**
-	 * 获取唯一标识ID生成程序的ID编号.get long number of unique worker ID.
+	 * get long number of unique worker ID.
 	 * @return long number of unique worker ID.
 	 */
 	long getWorkerId();
