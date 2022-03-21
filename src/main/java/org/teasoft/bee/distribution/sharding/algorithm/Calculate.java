@@ -18,10 +18,17 @@
 package org.teasoft.bee.distribution.sharding.algorithm;
 
 /**
+ * sharding algorithm Calculate interface.
  * @author Kingstar
  * @since  1.11
  */
 public interface Calculate {
 
+	/**
+	 * return the value after process.
+	 * @param rule rule
+	 * @param shardingValue sharding value
+	 * @return the value after process.
+	 */
 	String process(String rule, String shardingValue);
 }
