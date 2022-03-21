@@ -36,7 +36,7 @@ public class DsTabStruct {
 
 	/**
 	 * table name Suffix
-	 * tabName使用Entity名称转换时,可设置
+	 * can set when tabName use Entity name transfer
 	 */
 	private String tabSuffix;
 
@@ -82,7 +82,7 @@ public class DsTabStruct {
 
 	/**
 	 * set table name suffix
-	 * tabName使用Entity名称转换时,可设置
+	 * can set when tabName use Entity name transfer
 	 */
 	public void setTabSuffix(String tabSuffix) {
 		this.tabSuffix = tabSuffix;
