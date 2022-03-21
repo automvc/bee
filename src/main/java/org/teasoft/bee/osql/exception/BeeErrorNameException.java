@@ -20,7 +20,7 @@ package org.teasoft.bee.osql.exception;
 import org.teasoft.bee.osql.BeeException;
 
 /**
- * 变量名命名异常.Bee error name exception.
+ * Bee error name exception.
  * @author Kingstar
  * @since  1.9.8
  */

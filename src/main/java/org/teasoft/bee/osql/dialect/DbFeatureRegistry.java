@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * DbFeature Registry
  * @author Kingstar
  * @since  1.11
  */
@@ -28,9 +29,8 @@ public class DbFeatureRegistry {
 	private static final Map<String, DbFeature> dbFeatureMap = new HashMap<>();
 
 	/**
-	 * 注册某种DB的DbFeature实现类.
 	 * register DbFeature for database.
-	 * can ref databaseName DatabaseConst.
+	 * databaseName can use DatabaseConst.
 	 * @param databaseName database name
 	 * @param dbFeature DbFeature的实现类.Implementation class of dbfeature.
 	 */
@@ -39,8 +39,8 @@ public class DbFeatureRegistry {
 	}
 
 	/**
-	 * 通过databaseName获取注册的DbFeature实现类.
-	 * @param databaseName
+	 * get register DbFeature by database name.
+	 * @param databaseName database name
 	 * @return instance of DbFeature.
 	 */
 	public static DbFeature getDbFeature(String databaseName) {

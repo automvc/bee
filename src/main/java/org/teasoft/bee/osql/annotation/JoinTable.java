@@ -23,7 +23,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 用于表连接的注解.Annotation for tables join.
+ * Annotation for tables join.
  * @author Kingstar
  * @since  1.7
  */
@@ -38,25 +38,24 @@ public @interface JoinTable {
 	JoinType joinType() default JoinType.JOIN;
 
 	/**
-	 * 主表关联的字段.The join on field of main table.
+	 * The join on field of main table.
 	 * @return main table's join field name.
 	 */
 	String mainField() default ""; 
 
 	/**
-	 * 从表关联的字段.The join on field of subtable.
+	 * The join on field of subtable.
 	 * @return subtable's join field name.
 	 */
 	String subField() default ""; 
 
 	/**
-	 * 从表别名.Subtable alias.
+	 * Subtable alias.
 	 * @return subtable alias.
 	 */
 	String subAlias() default ""; 
 	
 	/**
-	 * 从表的class类型;与主表实体在同一包下,可以只写类名.(在使用List类型的从表时才有效)
 	 * Subtable class type, if it has same package with main table,the package name can be omitted.
 	 * (effect when using a list type Subtable)
 	 * replace by subClazz() since 1.11
@@ -68,7 +67,6 @@ public @interface JoinTable {
 	String subClass() default ""; 
 	
 	/**
-	 * 从表实体的Class类型.(在使用List类型的从表时才有效)
 	 * Subtable entity Class type.
 	 * (effect when using a list type Subtable)
 	 * @return subClass Class type.

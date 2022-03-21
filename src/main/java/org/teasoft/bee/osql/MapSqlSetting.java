@@ -18,15 +18,14 @@
 package org.teasoft.bee.osql;
 
 /**
- * 用于MapSuid的MapSql配置信息.MapSql configuration information for MapSuid.
+ * MapSql configuration information for MapSuid.
  * @author Kingstar
  * @since  1.9
  */
 public enum MapSqlSetting {
 	
     /**
-     * 是否命名转换.Is naming transfer. value is 'true' or 'false',default is 'false'
-     * 真时,会根据配置的规则(可在bee.properties配置)进行转换;假时不转换.
+     * Is naming transfer. value is 'true' or 'false',default is 'false'
      * if true, will transfer by the rule (eg: bee.properties). if false,do not transfer.
      */
     IsNamingTransfer("IsNamingTransfer") ,

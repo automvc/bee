@@ -20,7 +20,7 @@ package org.teasoft.bee.osql.exception;
 import org.teasoft.bee.osql.BeeException;
 
 /**
- * 没有配置信息异常.No config exception.
+ * No config exception.
  * @author Kingstar
  * @since  1.4
  */

@@ -1,7 +1,7 @@
 package org.teasoft.bee.osql;
 
 /**
- * 数据库名称常量.Database Name Const.
+ * Database Name Const.
  * @author Kingstar
  * @since  1.0
  */

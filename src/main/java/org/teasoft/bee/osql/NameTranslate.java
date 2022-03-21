@@ -18,14 +18,15 @@
 package org.teasoft.bee.osql;
 
 /**
- * 表名与实体名,列名与字段名互转.table name<-->entity name, coloumn name<-->field name.
+ * Table name and entity name, column name and field name are transferred to each other.
+ * table name<-->entity name, coloumn name<-->field name.
  * @author Kingstar
  * @since  1.5
  */
 public interface NameTranslate {
 
 	/**
-	 * 将Java实体名转成DB表名.Entity name to table name.
+	 * Entity name to table name.
 	 * @param entityName
 	 * @return table name.
 	 */
@@ -33,15 +34,15 @@ public interface NameTranslate {
 	
 	
 	/**
-	 * 将Java实体类的字段名转成DB表的列名.Field name to column name.
-	 * @param fieldName field name in Java entity. Java里实体类的字段名
+	 * Field name to column name.
+	 * @param fieldName field name in Java entity.
 	 * @return column name.
 	 */
 	public String toColumnName(String fieldName);
 	
 
 	/**
-	 * 将DB表名转成Java实体名.Table name to entity name.
+	 * Table name to entity name.
 	 * @param tableName
 	 * @return entity name(Javabean name).
 	 */
@@ -49,8 +50,8 @@ public interface NameTranslate {
 	
 	
 	/**
-	 * 将DB表的列名转成Java里实体类的字段名.Column name to field name.
-	 * @param columnName DB table's column name. DB表的列名
+	 * Column name to field name.
+	 * @param columnName DB table's column name.
 	 * @return Javabean's field name.
 	 */
 	public String toFieldName(String columnName);

@@ -18,13 +18,14 @@
 package org.teasoft.bee.osql.interccept;
 
 /**
+ * Interceptor Chain
  * @author Kingstar
  * @since  1.11
  */
 public interface InterceptorChain extends Interceptor {
 
 	/**
-	 * 
+	 * add Interceptor to chain
 	 */
 	public void addInterceptor(Interceptor interceptor);
 

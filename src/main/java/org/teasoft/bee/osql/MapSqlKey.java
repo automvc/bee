@@ -18,46 +18,43 @@
 package org.teasoft.bee.osql;
 
 /**
- * 用于MapSuid的对应SQL功能的MapSql关键字.MapSql keyword for the corresponding SQL function of MapSuid.
+ * MapSql keyword for the corresponding SQL function of MapSuid.
  * @author Kingstar
  * @since  1.9
  */
 public enum MapSqlKey {
 	
     /**
-     * 声明需要操作的表.Declare the table to be operated on.
+     * Declare the table to be operated on.
      */
 	Table("Table"),
 	
 	/**
-	 * 在MapSuid的方法insertAndReturnId(MapSql mapSql),当主键名称不是id时使用.
+	 * In the method insertAndReturnId(MapSql mapSql) of MapSuid, it is used when the primary key name is not 'id'.
 	 * @since 1.11
 	 */
 	PrimaryKey("PrimaryKey"),
 	
 	/**
-	 * 声明需要查询的字段,多个用逗号隔开.Declare the select fields,if more than one,separate with comma.
+	 * Declare the select fields,if more than one,separate with comma.
 	 */
     SelectColumns("SelectColumns"),
     
     /**
-     * 对应SQL的group by.It corresponds to the group by of SQL.
+     * It corresponds to the group by of SQL.
      */
     GroupBy("GroupBy"),
     
     /**
-     * 对应SQL的having.It corresponds to the having of SQL.
+     * It corresponds to the having of SQL.
      */
     Having("Having"),
     
     /**
-     * 对应SQL的order by.It corresponds to the order by of SQL.
+     * It corresponds to the order by of SQL.
      */
     OrderBy("OrderBy")
     
-//	,
-//  Start("Start"),
-//	Size("Size"),
     ;
 	
     String name;

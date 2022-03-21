@@ -20,16 +20,15 @@ package org.teasoft.bee.osql;
 import java.util.Set;
 
 /**
- * Condition的辅助接口.Assistant of Condition.
+ * Assistant of Condition.
  * @author Kingstar
  * @since  1.6
  */
-//用于不需要放在Condition链式编程的方法
 public interface ConditionAssistant {
 	
 	/**
-	 * Condition的whereField已包含的字段,默认情况不再遍历.If the field use in Condition,it would not be processed again in default.
-	 * @return 返回用于where Condition表达式的字段集合.
+	 * If the field use in Condition,it would not be processed again in default.
+	 * @return Returns fields collection for where condition expression.
 	 */
 	public Set<String> getWhereFields();
 	

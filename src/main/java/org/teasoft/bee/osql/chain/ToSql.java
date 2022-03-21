@@ -17,21 +17,21 @@
 package org.teasoft.bee.osql.chain;
 
 /**
- * ToSql接口,用于链式风格写SQL语句.ToSql interface for SQL with chain programming.
+ * ToSql interface for SQL with chain programming.
  * @author Kingstar
  * @since  1.3
  */
 public interface ToSql {
 	/**
-	 * 转成SQL语句. to SQL statement.
-	 * @return sql语句.sql statement.
+	 * to SQL statement.
+	 * @return sql statement.
 	 */
 	public String toSQL();
 	
 	/**
-	 * 转成SQL语句. to SQL statement.
-	 * @param noSemicolon 为true时,不包含分号.true means: no semicolon.
-	 * @return sql语句.sql statement.
+	 * to SQL statement.
+	 * @param noSemicolon true means: no semicolon.
+	 * @return sql statement.
 	 */
 	public String toSQL(boolean noSemicolon);
 }

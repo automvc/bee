@@ -18,17 +18,17 @@
 package org.teasoft.bee.osql.type;
 
 /**
- * 实体字段类型查询结果处理器.
- * 根据实体的字段类型,选用处理器处理查询返回结果.
- * 若要使用,需要开启openFieldTypeHandler配置.
  * The TypeHandler work for handle ResultSet by select.
+ * <br>According to the field type of the entity, the processor is 
+ * <br>selected to process the returned results of the query.
+ * <br>if use, need to open the openFieldTypeHandler configuration
  * @author Kingstar
  * @since  1.11
  */
 public interface TypeHandler<T> {
 
 	/**
-	 * 使用自定义字段类型处理器处理查询返回结果.
+	 * Use the custom field type processor to process the returned results of the query.
 	 * @param fieldType Javabean field type.
 	 * @param result get from ResultSet.
 	 * @return processed result.

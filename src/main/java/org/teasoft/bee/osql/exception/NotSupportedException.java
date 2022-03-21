@@ -20,7 +20,7 @@ package org.teasoft.bee.osql.exception;
 import org.teasoft.bee.osql.BeeException;
 
 /**
- * 不支持功能的异常.Not Supported Exception.
+ * Not Supported Exception.
  * @author Kingstar
  * @since  1.8.15
  */

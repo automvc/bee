@@ -18,7 +18,7 @@
 package org.teasoft.bee.osql.transaction;
 
 /**
- * 事务接口.Transaction interface.
+ * Transaction interface.
  * @author Kingstar
  * @since  1.0
  */

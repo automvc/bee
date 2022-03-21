@@ -23,7 +23,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Bee框架内部使用的注解,用于将properties文件的值设置到类属性.Annotation use in Bee for setting class' field value by properties.
+ * Annotation use in Bee for setting class' field value by properties.
  * @author Kingstar
  * @since  1.4
  */
