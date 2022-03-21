@@ -20,14 +20,14 @@ package org.teasoft.bee.file;
 import java.io.BufferedReader;
 
 /**
- * 用来读取字符文件的便捷类.Easy class of Read file by fullPathAndName.
+ * Easy class of Read file by fullPathAndName.
  * @author Kingstar
  * @since  1.7.2
  */
 public interface FileReader {
 	/**
-	 * 根据路径读取文件.read the file by fullPathAndName.
-	 * @param fullPathAndName 全部路径,包括文件名
+	 * read the file by fullPathAndName.
+	 * @param fullPathAndName All paths, including file names
 	 */
 	public BufferedReader readFile(String fullPathAndName);
 }
