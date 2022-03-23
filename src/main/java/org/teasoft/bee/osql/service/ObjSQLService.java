@@ -20,7 +20,7 @@ package org.teasoft.bee.osql.service;
 import org.teasoft.bee.osql.Suid;
 
 /**
- * 默认通用面向对象SQL服务接口.Default common object SQLService.
+ * Default common object SQLService.
  * @author Kingstar
  * @since  1.0
  */

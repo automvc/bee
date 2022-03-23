@@ -26,7 +26,7 @@ import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.SuidRich;
 
 /**
- * 默认抽象通用丰富的面向对象SQL服务实现类.Default common abstract object rich SQLService implement class.
+ * Default common abstract object rich SQLService implement class.
  * @author Kingstar
  * @since  1.0
  */

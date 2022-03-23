@@ -25,7 +25,7 @@ import org.teasoft.bee.osql.Suid;
 import org.teasoft.bee.osql.interccept.InterceptorChain;
 
 /**
- * 默认抽象通用面向对象SQL服务实现类.Default common abstract object SQLService implement class.
+ * Default common abstract object SQLService implement class.
  * @author Kingstar
  * @since  1.0
  */
