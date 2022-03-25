@@ -28,11 +28,11 @@ import java.util.List;
  * <br>and tries to use the default implementation method for the other. 
  * <br>Therefore, the update method is divided into two parts:
  * <br>update and updateBy.
- * <br>In the update method, the string updateFields parameter (if has) can indicate the fields to be updated,
+ * <br>In the <B>update</B> method, the string updateFields parameter (if has) can indicate the fields to be updated,
  * <br> and other fields may be converted to the where part of the SQL UPDATE statement (by default)
  * <br>Filter null and empty strings, which can be explicitly set through IncludeType)
  * 
- * <br>in the updateBy method, string whereFields (if has) can indicate the field used for WHERE in SQL.
+ * <br>in the <B>updateBy</B> method, string whereFields (if has) can indicate the field used for WHERE in SQL.
  * <br>When whereFields is specified, fields that are not in whereFields will default.
  * <br>Convert to the set part of SQL UPDATE statement (null and empty strings are filtered by default, 
  * <br>which can be explicitly set through IncludeType).
@@ -41,6 +41,10 @@ import java.util.List;
  * <br>However, it can be set by using the set(String fieldName, Number num) and other methods; 
  * <br>The method set,setMultiply,setAdd,setWithField of condition is processed before processing the where field, 
  * <br>so it is not affected by the specified where condition field
+ * 
+ * <br>About the parameter <B>IncludeType</B>:
+ * <br>If IncludeType is not set in condition, null and empty strings are filtered by default (but the fields set in op, between and notBetween methods in condition are not affected by the value of includeType.)
+ * <br>If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition.
  * 
  * <br>The fields set by the Condition of the update and updateBy methods will be parsed, which is not limited by the 
  * <br>IncludeType, nor affected by the updateFields parameter and the whereFields parameter.
@@ -111,9 +115,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * Instead of returning data in a entity structure, it uses a character array in List.
 	 * @param entity table's entity(do not allow null).
-	 * @param condition condition.If IncludeType is not set in condition, null and empty strings are filtered 
-	 * <br>by default (but the fields set in OP, between and notbetween methods in condition are not affected 
-	 * <br>by the value of IncludeType.)
+	 * @param condition Condition as filter the record.
 	 * @return list can contain more than one record with String array struct.
 	 * @since 1.9
 	 */
@@ -151,8 +153,8 @@ public interface SuidRich extends Suid {
 	 * @param entity table's entity(do not allow null).
 	 * @param functionType MAX,MIN,SUM,AVG,COUNT
 	 * @param fieldForFun field for function.
-	 * @param condition condition.若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
-	 * here will ignore the condition's selectFun method.
+	 * @param condition Condition as filter the record.
+	 * <br>here will ignore the condition's selectFun method.
 	 * @return one function result.
 	 * @since 1.9
 	 */
@@ -169,7 +171,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * total number of statistical records.
 	 * @param entity table's entity(do not allow null).
-	 * @param condition condition as filter the record.
+	 * @param condition Condition as filter the record.
 	 * @return total number of records that satisfy the condition.
 	 * @since 1.9
 	 */
@@ -187,7 +189,7 @@ public interface SuidRich extends Suid {
 	 * Select result with order.
 	 * @param entity table's entity(do not allow null).
 	 * @param orderFields order fields,if more than one,separate with comma.
-	 * @param orderTypes 排序类型列表
+	 * @param orderTypes Sort type list.
 	 * @return list which contains more than one entity.
 	 */
 	public <T> List<T> selectOrderBy(T entity,String orderFields,OrderType[] orderTypes);
@@ -195,95 +197,90 @@ public interface SuidRich extends Suid {
 	/**
 	 * Update record, can list update fields. 
 	 * @param entity table's entity(do not allow null).
-	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,
-	 * <br>除了updateFields中声明要更新的字段,其它非空,非null的字段作为过滤条件,转成SQL的where表达式.
+	 * @param updateFields update fields.
 	 * <br>For the list of fields to be updated, multiple fields are separated by commas (those fields will be updated). 
-	 * <br>This attribute cannot be empty. By default, each field will be converted to a set expression of SQL update.
-	 * @return 成功更新的记录数,若失败则返回小于0的整数.the numbers of update record(s) successfully,if fails, return integer less than 0.
+	 * <br>This attribute cannot be empty and is not affected by the includeType parameter; By default, each field will be
+	 * <br> converted to a set expression of SQL update.
+	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 */
 	public <T> int update(T entity,String updateFields);
 	
 	/**
-	 * 根据实体对象entity更新数据,可以指定需要更新的字段.Update record according to entity.
-	 * @param entity 与表对应的实体对象,且不能为空.table's entity(do not allow null).
-	 * id为null不作为过滤条件
-	 * @param updateFields 需要更新的字段列表,多个字段用逗号隔开(列表中有的字段都会更新),该属性不允许为空,且不受includeType参数的影响,默认每个字段会被转化成SQL update的set表达式
+	 * Update record according to entity.
+	 * @param entity table's entity(do not allow null).if id's value is null can not as filter condition.
+	 * @param updateFields update fields.
 	 * <br>For the list of fields to be updated, multiple fields are separated by commas (those fields will be updated). 
-	 * <br>This attribute cannot be empty and is not affected by the includeType parameter. By default, each field will be
+	 * <br>This attribute cannot be empty and is not affected by the includeType parameter; By default, each field will be
 	 * <br> converted to a set expression of SQL update.
-	 * @param includeType 空字符串与null是否作为过滤条件.whether null string and null as a filter conditions.
-	 * @return  成功更新的记录数,若失败则返回小于0的整数.the numbers of update record(s) successfully,if fails, return integer less than 0.
+	 * @param includeType whether null string and null as a filter conditions.
+	 * @return  the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 */
 	public <T> int update(T entity,String updateFields,IncludeType includeType);
 	
 	/**
-	 * 批量插入数据.Insert records by batch type.
-	 * @param entity 与表对应的实体对象数组,且不能为空. table's entity array(do not allow null).
-	 * @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
+	 * Insert records by batch type.
+	 * @param entity table's entity array(do not allow null).
+	 * @return the number of inserted record(s) successfully;if fails, return -1.
 	 */
 	public <T> int insert(T[] entity);
 	
 	/**
-	 * 批量插入数据.Insert records by batch type.
-	 * @param entity 与表对应的实体对象,且不能为空. table's entity array(do not allow null).
-	 * @param batchSize 批操作数量大小.batch size.
-	 *  @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
+	 * Insert records by batch type.
+	 * @param entity table's entity array(do not allow null).
+	 * @param batchSize batch size.
+	 *  @return the number of inserted record(s) successfully;if fails, return -1.
 	 */
 	public <T> int insert(T[] entity,int batchSize);
 	
 	/**
-	 * 批量插入数据,且可以声明不用插入的字段列表 
-	 * <br>Insert record by batch type,and can point out which field(s) don't need to insert.
-	 * @param entity 与表对应的实体对象数组,且不能为空. table's entity array(do not allow null).
-	 * @param excludeFields 声明不用插入的字段列表.fields list that don't need to insert .
-	 * @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
+	 * Insert record by batch type,and can point out which field(s) don't need to insert.
+	 * @param entity table's entity array(do not allow null).
+	 * @param excludeFields fields list that don't need to insert .
+	 * @return the number of inserted record(s) successfully;if fails, return -1.
 	 */
 	public <T> int insert(T[] entity,String excludeFields);
 	
 	/**
-	 * 批量插入数据,且可以指定不用插入的字段列表 
-	 * <br>Insert record by batch type,and can point out which field(s) don't need to insert.
-	 * @param entity 与表对应的实体对象数组,且不能为空. table's entity array(do not allow null).
-	 * @param batchSize 批操作数量大小.batch size.
-	 * @param excludeFields 声明不用插入的字段列表.Don't insert fields list.
-	 *  @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
+	 * Insert record by batch type,and can point out which field(s) don't need to insert.
+	 * @param entity table's entity array(do not allow null).
+	 * @param batchSize batch size.
+	 * @param excludeFields Don't insert fields list.
+	 *  @return the number of inserted record(s) successfully;if fails, return -1.
 	 */
 	public <T> int insert(T[] entity,int batchSize,String excludeFields);
 	
 	/**
-	 * 批量插入数据.Insert records by batch type.
-	 * @param entityList 与表对应的实体对象链表,且不能为空. table's entity list(do not allow null).
-	 * @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
+	 * Insert records by batch type.
+	 * @param entityList table's entity list(do not allow null).
+	 * @return the number of inserted record(s) successfully;if fails, return -1.
 	 * @since  1.9
 	 */
 	public <T> int insert(List<T> entityList);
 	
 	/**
-	 * 批量插入数据.Insert records by batch type.
-	 * @param entityList 与表对应的实体对象链表,且不能为空. table's entity list(do not allow null).
-	 * @param batchSize 批操作数量大小.batch size.
-	 * @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
+	 * Insert records by batch type.
+	 * @param table's entity list(do not allow null).
+	 * @param batchSize batch size.
+	 * @return the number of inserted record(s) successfully;if fails, return -1.
 	 * @since  1.9
 	 */
 	public <T> int insert(List<T> entityList,int batchSize);
 	
 	/**
-	 * 批量插入数据,且可以声明不用插入的字段列表 
-	 * <br>Insert record by batch type,and can point out which field(s) don't need to insert.
-	 * @param entityList 与表对应的实体对象链表,且不能为空. table's entity list(do not allow null).
-	 * @param excludeFields 声明不用插入的字段列表.fields list that don't need to insert .
-	 *  @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
+	 * Insert record by batch type,and can point out which field(s) don't need to insert.
+	 * @param entityList table's entity list(do not allow null).
+	 * @param excludeFieldsfields list that don't need to insert .
+	 *  @return the number of inserted record(s) successfully;if fails, return -1.
 	 * @since  1.9
 	 */
 	public <T> int insert(List<T> entityList,String excludeFields);
 	
 	/**
-	 * 批量插入数据,且可以指定不用插入的字段列表 
-	 * <br>Insert record by batch type,and can point out which field(s) don't need to insert.
-	 * @param entityList 与表对应的实体对象链表,且不能为空. table's entity list(do not allow null).
-	 * @param batchSize 批操作数量大小.batch size.
-	 * @param excludeFields 声明不用插入的字段列表.Don't insert fields list.
-	 * @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
+	 * Insert record by batch type,and can point out which field(s) don't need to insert.
+	 * @param entityList table's entity list(do not allow null).
+	 * @param batchSize batch size.
+	 * @param excludeFields Don't insert fields list.
+	 * @return the number of inserted record(s) successfully;if fails, return -1.
 	 * @since  1.9
 	 */
 	public <T> int insert(List<T> entityList,int batchSize,String excludeFields);
@@ -294,7 +291,7 @@ public interface SuidRich extends Suid {
 	 * <br>entity corresponding to table and can not be null.
 	 * <br>If the field value is not null and not empty field as filter condition, 
 	 * <br>the operator is equal sign.eg:field=value
-	 * @param includeType 空字符串与null是否包含设置
+	 * @param includeType whether null string and null as a filter conditions.
 	 * @return list which contains more than one entity.
 	 */
     public <T> List<T> select(T entity,IncludeType includeType);
@@ -302,7 +299,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * Update record according to entity by primary key.
 	 * @param entity table's entity(do not allow null),The id field in entity cannot be empty as a filtering condition.
-	 * @param includeType 空字符串与null是否包含设置
+	 * @param includeType whether null string and null as a filter conditions.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 */
 	public <T> int update(T entity,IncludeType includeType);
@@ -310,7 +307,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * Insert record according to entity.
 	 * @param entity table's entity(do not allow null).
-	 * @param includeType 空字符串与null是否包含设置
+	 * @param includeType whether null string and null as a filter conditions.
 	 * @return the number of inserted record(s) successfully,if fails, return integer less than 0.
 	 */
 	public <T> int insert(T entity,IncludeType includeType);
@@ -320,7 +317,7 @@ public interface SuidRich extends Suid {
 	 * @param entity table's entity(do not allow null).
 	 * <br>The entity corresponding to table and can not be null. 
 	 * <br>The not null and not empty field will insert to database.
-	 * @param includeType 空字符串与null是否包含设置
+	 * @param includeType whether null string and null as a filter conditions.
 	 * @return If successful, return the id value of the inserted record; if fails, return number less than 0.
 	 * @since V1.11
 	 */
@@ -329,7 +326,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * Delete record according to entity.
 	 * @param entity table's entity(do not allow null).
-	 * @param includeType 空字符串与null是否包含设置
+	 * @param includeType whether null string and null as a filter conditions.
 	 * @return the number of deleted record(s) successfully,if fails, return integer less than 0.
 	 */
 	public <T> int delete(T entity,IncludeType includeType);
@@ -337,7 +334,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * Select and return data in Json format according to entity object.
 	 * @param entity table's entity(do not allow null).
-	 * @param includeType 空字符串与null是否包含设置
+	 * @param includeType whether null string and null as a filter conditions.
 	 * @return Json string, it transform from list which can contain more than one entity.
 	 * @since  1.1
 	 */
@@ -358,7 +355,7 @@ public interface SuidRich extends Suid {
 	 * @param selectFields select fields,if more than one,separate with comma.
 	 * @param start start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
 	 * @param size fetch result size (>0).
-	 * @return 包含多个实体的部分字段的Json字符串
+	 * @return Json string, it transform from list which can contain more than one entity.
 	 * @since 1.9.8
 	 */
 	public <T> String selectJson(T entity, String selectFields, int start, int size);
@@ -432,10 +429,9 @@ public interface SuidRich extends Suid {
 	/**
 	 * Select record according to entity.
 	 * @deprecated {@link Suid#select(Object,Condition)} can set includeType via condition.
-	 * @param entity 与表对应的实体对象,且不能为空,id为null不作为过滤条件.table's entity(do not allow null).if id's value is null can not as filter condition.
-	 * @param includeType 空字符串与null是否包含设置
-	 * @param condition If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition.<br> 
-	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
+	 * @param entity table's entity(do not allow null).if id's value is null can not as filter condition.
+	 * @param includeType whether null string and null as a filter conditions.
+	 * @param condition Condition as filter the record.
 	 * @return list which contains more than one entity.
 	 * @since  1.6
 	 */
@@ -444,11 +440,10 @@ public interface SuidRich extends Suid {
     
 	/**
 	 * Select and return data in Json format according to entity object.
-	 * @deprecated {@link SuidRich#selectJson(Object,Condition)}方法中,可以通过condition设置includeType.can set includeType via condition.
-	 * @param entity 与表对应的实体对象,且不能为空,id为null不作为过滤条件.table's entity(do not allow null).
-	 * @param includeType 空字符串与null是否包含设置
-	 * @param condition If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition. <br>
-	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
+	 * @deprecated {@link SuidRich#selectJson(Object,Condition)} can set includeType via condition.
+	 * @param entity table's entity(do not allow null).if id's value is null can not as filter condition.
+	 * @param includeType whether null string and null as a filter conditions.
+	 * @param condition Condition as filter the record.
 	 * @return Json string, it transform from list which can contain more than one entity.
 	 * @since  1.6
 	 */
@@ -458,8 +453,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * Select and return data in Json format according to entity object.
 	 * @param entity table's entity(do not allow null).
-	 * @param condition If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition. <br>
-	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
+	 * @param condition Condition as filter the record.
 	 * @return Json string, it transform from list which can contain more than one entity.
 	 * @since  1.9
 	 */
@@ -468,9 +462,11 @@ public interface SuidRich extends Suid {
 	/**
 	 * Update record according to whereFields.
 	 * @param entity table's entity(do not allow null).
-	 * 没指定为whereFields的字段,作为set部分,默认只处理非空,非null的字段
-	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
-	 * 指定作为条件的,都转换.id为null不作为过滤条件
+	 * Fields that are not specified as whereFields, as part of the set(only non empty and non null fields 
+	 * <br>are processed by default).
+	 * @param whereFields As a field list of where part in SQL, multiple fields are separated by commas 
+	 * <br>(the fields in the list will be used as where filter)
+	 * <br>But if id's value is null can not as filter.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 * @since  1.6
 	 */
@@ -478,10 +474,12 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * Update record according to whereFields.
-	 * @param entity 与表对应的实体对象,且不能为空
-	 * 没指定为whereFields的字段,作为set部分.
-	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
-	 * 指定作为条件的,都转换.id为null不作为过滤条件
+	 * @param entity table's entity(do not allow null).
+	 * Fields that are not specified as whereFields, as part of the set(only non empty and non null 
+	 * <br>fields are processed by default,can change the default use IncludeType parameter).
+	 * @param whereFields As a field list of where part in SQL, multiple fields are separated by commas 
+	 * <br>(the fields in the list will be used as where filter)
+	 * <br>But if id's value is null can not as filter.
 	 * @param includeType whether null string and null as a filter conditions.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 * @since  1.6
@@ -491,12 +489,13 @@ public interface SuidRich extends Suid {
 	/**
 	 * Update record according to whereFields.
 	 * @param entity table's entity(do not allow null).
-	 * 没指定为whereFields的字段,作为set部分(默认只处理非空,非null的字段)
-	 * @param whereFields 作为SQL中where条件的字段列表,多个字段用逗号隔开(列表中有的字段都会作为条件);
-	 * 指定作为条件的,都转换.id为null不作为过滤条件.
+	 * Fields that are not specified as whereFields, as part of the set(only non empty and non null fields 
+	 * <br>are processed by default).
+	 * @param whereFields As a field list of where part in SQL, multiple fields are separated by commas 
+	 * <br>(the fields in the list will be used as where filter)
+	 * <br>But if id's value is null can not as filter.
 	 * <br>Notice:the method op of condition also maybe converted to the where expression.
-	 * @param condition 用来设置默认情况不能表达的条件.
-	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
+	 * @param condition Condition as filter the record.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 * @since 1.7.2
 	 */
@@ -505,10 +504,10 @@ public interface SuidRich extends Suid {
 	/**
 	 * it is equivalent to updateBy(entity,"id",condition)
 	 * @param entity table's entity(do not allow null).
-	 * entity中除了id字段,作为set部分(默认只处理非空,非null的字段)
-	 * @param condition 用来设置默认情况不能表达的条件.
-	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
-	 * <br>需要注意的是,condition用op设置的条件,也有可能转换为where部分的过滤条件.
+	 * In entity, except for the ID field, other fields are used as the set part (only non empty and non null 
+	 * <br>fields are processed by default)
+	 * @param condition Condition as filter the record.
+	 * <br>It should be noted that the condition set by OP may also be converted to the filter condition of where.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 * @since 1.9
 	 */
@@ -518,13 +517,13 @@ public interface SuidRich extends Suid {
 	 * Update record, can list update fields. 
 	 * @param entity table's entity(do not allow null).
 	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition.<br>
-	 * @param updateFields condition中setMultiply,setAdd,set方法设置的字段不受此限制.The methods setMultiply,setAdd,set in condition are not subject to this restriction. 
+	 * @param updateFields update fields.The methods setMultiply,setAdd,set in condition are not subject to this restriction. 
 	 * <br>For the list of fields to be updated, multiple fields are separated by commas (those fields will be updated). 
-	 * <br>This attribute cannot be empty and is not affected by the includeType parameter. By default, each field will be
-	 * <br> converted to a set expression of SQL update.
-	 * @param condition 
-	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
-	 * 一个字段既在指定的updateFields,也用在了Condition.set(arg1,arg2)等方法设置,entity里相应的字段会按规则转化到where部分.(V1.9.8)
+	 * <br>This attribute cannot be empty and is not affected by the Condition's includeType parameter. By default, each 
+	 * <br>field will be converted to a set expression of SQL update.
+	 * @param condition Condition as filter the record.
+	 * <br>A field is used not only in the specified updateFields, but also in Condition.set(arg1,arg2), 
+	 *<br> and the corresponding fields in entity will be converted to the where part according to the rules (V1.9.8)
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 * @since 1.7.2
 	 */
@@ -535,9 +534,8 @@ public interface SuidRich extends Suid {
 	 * <br>When the set expression of SQL update is defined by Condition, you can no longer specify the field used by set.
 	 * <br>it is equivalent to update(entity,"",condition),updateFields value is "".
 	 * @param entity table's entity(do not allow null).
-	 * If the field of entity is not null or empty, it will be translate to field=value in where part.Other can define with condition.<br>
-	 * @param condition
-	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
+	 * If the field of entity is not null or empty, it will be translate to field=value in where part.Other can define with condition.
+	 * @param condition Condition as filter the record.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 * @since 1.8
 	 */
