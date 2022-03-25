@@ -48,8 +48,8 @@ public interface GenId {
 	public long get();
 	
 	/**
-	 * Get a segment of numbers at a time and return the minimum and maximum available numbers of a batch
-	 * <br>eg: [100000,101000].return the min and max long in this batch.eg: [100000,101000]
+	 * Get a segment of numbers at a time and return the minimum and maximum available numbers of a batch.
+	 * <br>eg: [100000,101000],array[0]=100000,array[1]=101000.
 	 * <br>In some algorithms, such as:PearFlowerId,OneTimeSnowflakeId,
 	 * <br> 1) The parameter sizeOfIds should not be greater than 8192.
 	 * <br> 2) In order to make array[0]=min,array[1]=max in the range of series, it is possible to waste id number;

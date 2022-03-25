@@ -58,7 +58,7 @@ public interface FileCreator extends FileReader{
 	
 	/**
 	 * set charsetName
-	 * @param charsetName
+	 * @param charsetName charset name
 	 * @since 1.8.9
 	 */
 	public void setCharsetName(String charsetName);
