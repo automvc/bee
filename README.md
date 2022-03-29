@@ -47,9 +47,9 @@ jdk1.7+
 * 23.Automatically generate the Javabean via DB table or view.Automatically create table via the Javabean,JavaWeb back-end code;Can print non placeholder executable SQL statements to facilitate debugging; support generate JSON format SQL scripts.  
 * 24.Support reading excel and importing data from Excel to DB easily.  
 * 25.Stream tool class streamutil.  
-* 26. The front and back ends of complex queries can be automatically parsed.  
-* 27. Annotation support:PrimaryKey,Datetime,Createtime,Updatetime;JustFetch,ReplaceInto(MySQL).  
-* 28. Extensible annotation: multi tenant, fuzzy processing of sensitive information, automatic setting of field values, dictionary conversion, dicti18n multilingual International Dictionary conversion, column  name and field name mapping.  
+* 26.The front and back ends of complex queries can be automatically parsed.  
+* 27.Annotation support:PrimaryKey,Datetime,Createtime,Updatetime;JustFetch,ReplaceInto(MySQL).  
+* 28.Extensible annotation: multi tenant, fuzzy processing of sensitive information, automatic setting of field values, dictionary conversion, dicti18n multilingual International Dictionary conversion, column  name and field name mapping.  
 
 ## Newest Function
 

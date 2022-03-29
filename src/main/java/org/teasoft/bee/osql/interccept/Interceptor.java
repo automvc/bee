@@ -30,31 +30,31 @@ import org.teasoft.bee.osql.SuidType;
 public interface Interceptor {
 
 	/**
-	 * 在解析Entity成sql前触发
+	 * call before parsing entity into SQL
 	 * @param entity
 	 * @param suidType
-	 * @return 处理后的Entity
+	 * @return Processed entity
 	 */
 	public Object beforePasreEntity(Object entity,SuidType suidType); 
 	
 	/**
-	 * 在解析Entity数组成sql前触发
-	 * @param entityArray 实体数组
-	 * @param suidType
-	 * @return entityArray
+	 * call before parsing entity array into SQL
+	 * @param entityArray entity array
+	 * @param suidType SuidType
+	 * @return entityArray Processed entity array
 	 */
 	public Object[] beforePasreEntity(Object entityArray[],SuidType suidType); 
 
 	/**
-	 * 设置一次性临时数据源名称
-	 * 在有多个数据源时,指定某个数据源的名称才有效.
-	 * @param ds 一次性临时数据源名称
+	 * set OneTime temporary dataSource name.
+	 * When there are multiple dataSource, specifying the name of a dataSource is effective.
+	 * @param ds OneTime temporary dataSource name
 	 */
 	public void setDataSourceOneTime(String ds);
 
 	/**
-	 * 获取一次性临时数据源名称
-	 * @return 一次性临时数据源名称
+	 * Get OneTime temporary dataSource name
+	 * @return OneTime temporary dataSource name
 	 */
 	public String getOneTimeDataSource();
 	
@@ -67,21 +67,23 @@ public interface Interceptor {
 	
 
 	/**
-	 * 在完成sql解析后触发
+	 * call after finished to SQL 
 	 * @param sql
-	 * @return 处理后的sql语句
+	 * @return Processed sql string
 	 */
 	public String afterCompleteSql(String sql);
 
 	/**
-	 * 在访问DB并得到结构化数据后触发,用于有返回Javabean结构的查询
-	 * @param list 处理后的结果集List
+	 * call after accessing the DB and getting the structured data.
+	 * <br>it is used for the query that returns the Javabean structure.
+	 * @param list query result with List type
 	 */
 	@SuppressWarnings("rawtypes")
 	public void beforeReturn(List list);
 	
 	/**
-	 * 在访问DB并得到处理结果后触发,用于update,insert,delete及没有返回Javabean结构的查询方法
+	 * call after accessing the DB and getting the processing results. 
+	 * <br>it is used for update, insert, delete and query methods that do not return the Javabean structure.
 	 */
 	public void beforeReturn();
 

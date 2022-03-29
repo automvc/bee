@@ -29,13 +29,13 @@ public interface Select extends ToSql{
 	//<==============condition start
 	
 	/**
-	 * 添加左括号.add "("
+	 * add "("
 	 * @return Update
 	 */
 	public Select lParentheses();
 	
 	/**
-	 * 添加右括号.add ")"
+	 * add ")"
 	 * @return Update
 	 */
 	public Select rParentheses();

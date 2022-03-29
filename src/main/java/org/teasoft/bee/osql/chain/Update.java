@@ -32,13 +32,13 @@ public interface Update extends ToSql{
 	//<==============condition
 	
 	/**
-	 * 添加左括号.add "("
+	 * add "("
 	 * @return Update
 	 */
 	public Update lParentheses();
 	
 	/**
-	 * 添加右括号.add ")"
+	 * add ")"
 	 * @return Update
 	 */
 	public Update rParentheses();
@@ -52,7 +52,7 @@ public interface Update extends ToSql{
 	public Update op(String field, Number value);
 
 	/**
-	 * 默认自动加and. Default will automatically add and.
+	 * Default will automatically add and.
 	 * @return Select
 	 */
 	public Update and();
