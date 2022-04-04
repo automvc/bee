@@ -20,12 +20,14 @@ package org.teasoft.bee.osql.dialect;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.teasoft.bee.osql.Registry;
+
 /**
  * DbFeature Registry
  * @author Kingstar
  * @since  1.11
  */
-public class DbFeatureRegistry {
+public class DbFeatureRegistry implements Registry{
 	private static final Map<String, DbFeature> dbFeatureMap = new HashMap<>();
 
 	/**
