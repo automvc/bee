@@ -17,6 +17,8 @@
 
 package org.teasoft.bee.osql;
 
+import java.io.IOException;
+
 /**
  * Serializer.
  * @author Kingstar
@@ -24,8 +26,8 @@ package org.teasoft.bee.osql;
  */
 public interface Serializer {
 
-	public byte[] serialize(Object obj);
+	public byte[] serialize(Object obj) throws IOException;
 
-	public Object unserialize(byte[] bytes);
+	public Object unserialize(byte[] bytes) throws IOException;
 
 }
