@@ -58,7 +58,7 @@ A: bee更接近原生SQL,可用原生语句分页，不需要全部查出来，�
 
 Q: Bee怎么具有AI特性?
 
-A: 通过从手工写sql语句直接用JDBC操作数据库，到简单的DB工具类， 再到像Hibernate的旧版本通过操作对象将操作DB封闭到Dao； 再到后来写dao都觉得累赘，通用操作只写个空接口。 ORM工具的发展，就是一步一提炼，简化操作的历史。 假如用AI学习，演变，那写空接口都会觉得是多余的，&nbsp;每个数据库表不就是表名,以及包含一些列而矣吗??!!!&nbsp;为什么不能用同样的方式去处理呢??!!!&nbsp;而且dao层可以直接去掉放到ORM框架统一处理。 为了实现这些目标,就有了Bee框架。 原来编码复杂度是O(n)的，现在变成是O(1),无论多少个表,你都可以不用另外再写dao代码。 可以用时间复杂度和空间复杂度体会下编码复杂度这种变化。
+A: 通过从手工写sql语句直接用JDBC操作数据库，到简单的DB工具类， 再到像Hibernate的旧版本通过操作对象将操作DB封闭到Dao； 再到后来写dao都觉得累赘，通用操作只写个空接口。 ORM工具的发展，就是一步步提炼，简化操作的历史。 假如用AI学习，演变，那写空接口都会觉得是多余的，&nbsp;每个数据库表不就是表名,以及包含一些列而矣吗??!!!&nbsp;为什么不能用同样的方式去处理呢??!!!&nbsp;而且dao层可以直接去掉放到ORM框架统一处理。 为了实现这些目标,就有了Bee框架。 原来编码复杂度是O(n)的，现在变成是O(1),无论多少个表,你都可以不用另外再写dao代码。 可以用时间复杂度和空间复杂度体会下编码复杂度这种变化。
 
 8.    
     
@@ -179,7 +179,7 @@ Bee是接口, Honey是实现, Bee-ext是涉及第三方的扩展实现(可能会
 
 Q:&nbsp;Bee非常易用,编写代码少,但使用是一方面, 它的性能如何?
 
-A: 性能绝对是过得去的．README给出了详细的表格比较数据．　　详细比较还开启了一个项目，欢迎ＰＫ。  
+A: 性能绝对是过得去的,接近JDBC的性能．README给出了详细的表格比较数据．　　详细比较还开启了一个项目，欢迎ＰＫ。  
 https://gitee.com/automvc/orm-compare  
 
 16.
@@ -194,7 +194,8 @@ A: Bee文件小。bee V1.8 jar files 仅217k. 而且性能也接近JDBC的性能
 Q: 如何自动填日期字段?  
 
 A: Bee默认不解析是null或空的字段；  
-当Javabean的日期是null时，Bee不会解析. 像mysql可以在DB端自动触发填充日期值。  
+当Javabean的日期是null时，Bee不会解析. 像mysql可以在DB端自动触发填充日期值。 
+另外,V1.11增加了相关注解:Datetime,Createtime,Updatetime;
 
 18. 
 
@@ -294,6 +295,8 @@ More SQL Function, more Group by
 		}
 ```
 
+V1.11可以在Javabean字段上使用JustFetch,表示只是用于获取数据.具体参考JustFetch用法。  
+
 22.
 
 Q: Bee为什么没有findAll(),deleteAll()方法?  
@@ -315,7 +318,7 @@ A: 别的ORM框架，将insert与update合为一个save方法，每次操作前�
   但在很多业务场景，insert与update是明确可以区分开的，特别是在互联网应用。  
   要是用save反而会降低系统的性能。  
  
- **V1.9.8 , SuidRich有提供save方法。  
+ **V1.9.8** , SuidRich有提供save方法。  
  如果可以区分开,建议明确调用insert(entity)或者update(entity),这样更加安全和高效。  
 
 24.
@@ -323,6 +326,7 @@ A: 别的ORM框架，将insert与update合为一个save方法，每次操作前�
 Q:  Bee为什么不需要写mapper,dao?  
 A:  这是Bee的一大优势，Bee的编码复杂度是O(1). Bee概念简单，易于使用，编码量少。  
     Bee通过约定优于配置原则,通过封装,已经简化了开发.  
+       可以更简单,省时省力,即可提高开发效率,又可节约开发成本,何乐而不为呢!
  
 25.
 
@@ -345,6 +349,7 @@ https://gitee.com/automvc/bee-exam/blob/master/src/main/java/org/teasoft/exam/be
 Q:  联合主键如何查询或更新记录?  
 A:  Bee通过约定优于配置原则,约定主键名称是id,这样可以使问题变量简单,处理的效率也更高.  
 	对于一些老的系统,有联合主键的,当作一般查询处理即可,即有两个字段作为主键,要用联合主键时,设置两个属性的值,框架就会负责解析(Suid的update方法,SuidRich的selectById等方法默认是id主键则不适用).  
+	V1.11 可以使用PrimaryKey注解.  
 	
 28.
 
@@ -400,7 +405,7 @@ A:  update 不像insert 有批量的接口。  因为用同一条语句可以更
 如 update table_name set field1='abc' where field2='aa' and field3='bb',  
 符合where条件的记录都将被更新.  
 这种只用一条语句就可以更新多条记录,用SuidRich接口相关的update方法就好.  
-要是确实要多个update，可以自己写一个循环， 然后用同一个connection连接，提交效率.  
+要是确实要多个update，可以自己写一个循环， 然后用同一个connection连接，提高效率.  
 beginSameConnection();  
 //多个update语句  
 endSameConnection();  
@@ -515,7 +520,7 @@ A:  分页实例如下(结合springMVC):
 		 @RequestParam(value = "rows", defaultValue = "20", required = false) int rows) {	
 	 Result  result =new Result();
 	  
-	int total = objSQLRichService.count(orderhistory); //可以用上缓存,提交效率
+	int total = objSQLRichService.count(orderhistory); //可以用上缓存,提高效率
 	List<Orderhistory> list=objSQLRichService.select(orderhistory, (page-1)*rows, rows);
 	result.setRows(list);
 	result.setTotal(total);//返回的总数据条数,有些前端框架需要.
