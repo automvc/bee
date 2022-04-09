@@ -146,6 +146,15 @@ V1.11.0.3.20  (**春分**)
 动态sql,将list转为像in (1,2,3)的语句,不需要foreach,批量插入也不需要foreach.  
 分离中文API.  
 
+V1.11.0.4.22 (**世界地球日**)  
+增加Registry空接口；增加NameRegistry.  
+更改Serializer接口抛出异常方式.  
+MapSuid,MapSql支持解析字符串的Boolean类型.  
+GenBean，jdbc还不支持的类型，提醒在哪个文件设置.  
+systemLogger支持设置日志级别，方便开发调度.  
+Logger增加public static void debug(String msg,Throwable t)(方便开发调度).  
+nocache增加日志提示.  
+提高缓存安全.  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  

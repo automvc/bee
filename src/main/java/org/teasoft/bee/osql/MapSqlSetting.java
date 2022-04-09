@@ -37,8 +37,15 @@ public enum MapSqlSetting {
     
     /**
      * include empty string.value is 'true' or 'false',default is 'false'
+     * @since V1.11
      */
-    IsIncludeEmptyString("IsIncludeEmptyString")
+    IsIncludeEmptyString("IsIncludeEmptyString"),
+    
+    /**
+     * "true" and "false" String transfer to Boolean Type.
+     * It will be transfer by default.
+     */
+    IsTransferTrueFalseStringToBooleanType("IsTransferTrueFalseStringToBooleanType")
     ;
 	
     String name;
