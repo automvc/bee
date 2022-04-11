@@ -23,21 +23,14 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 支持国际化的字典转化注解
- * 用于按规则过滤处理查询返回数据.
+ * Support international multi language dictionary conversion annotation, 
+ * which is generally used for global unified setting.
+ * <br>It is used to filter and process the returned data of query according to rules.
  * @author Kingstar
  * @since  1.11
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface DictI18n {
-
-	/**
-	 * If true, the rule same as Bee config
-	 * @return flag of namingTransform
-	 */
-	boolean namingTransform() default false;
-
-	Class<? extends BeforeReturnAnnotationHandler> handler() default AbstractDictI18nDefaultHandler.class;
 
 }
