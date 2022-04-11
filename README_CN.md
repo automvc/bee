@@ -155,6 +155,12 @@ systemLogger支持设置日志级别，方便开发调度.
 Logger增加public static void debug(String msg,Throwable t)(方便开发调度).  
 nocache增加日志提示.  
 提高缓存安全.  
+添加预加载接口PreLoad.  
+添加用于全局的拦截器注册器InterceptorChainRegistry.  
+添加配置项:  
+pagingWithLimitOffset  
+notShowModifyDuplicateException  
+
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
