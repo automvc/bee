@@ -40,7 +40,7 @@ public interface CommOperate {
 	public String getDataSourceName();
 	
 	/**
-	 * Get the Interceptor stack, which can be used for a generated object set a specific interceptor.
+	 * Get the Interceptor chain, which can be used for a generated object set a specific interceptor.
 	 * @return InterceptorChain
 	 */
 	public InterceptorChain getInterceptorChain();
