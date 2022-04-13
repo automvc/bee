@@ -24,8 +24,11 @@ import java.lang.annotation.Target;
 
 /**
  * 多租户.
- * 计算后指定同一库不同表;计算后指定不同库
+ * 计算后指定同一库不同表;计算后指定不同库.
  * 多表时,不支持跨表.从表的DS与主表一致.
+ * Order: 1->2
+ * 1.特指 (配置了特指的,其它不再检测)
+ * 2.通过算法计算(若没有匹配的则用默认)
  * @author Kingstar
  * @since  1.11
  */
@@ -33,19 +36,28 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MultiTenancy {
 	
-//Order: 1->2
-//	1.特指 (配置了特指的,其它不再检测)
-//	2.通过算法计算(若没有匹配的则用默认)
-	
+	/**
+	 * appoint dataSource
+	 * @return  appointed dataSource 
+	 */
 	String appointDS() default "";
 	
+	/**
+	 * appoint table name
+	 * @return appointed table name
+	 */
 	String appointTab() default "";
 	
 	/**
-	 * 0:求余等能直接计算的运算, 1:自定义,  2:范围???  3:日期等取部分字符串??
-	 * @return dsAlgorithm
+	 * 0:求余等能直接计算的运算; 1:日期等取部分字符串; 2:自定义
+	 * @return type of dsAlgorithm
 	 */
     int dsAlgorithm() default 0; 
+    
+    /**
+     * 0:求余等能直接计算的运算; 1:日期等取部分字符串; 2:自定义
+     * @return type of tabAlgorithm
+     */
     int tabAlgorithm() default 0; 
     
 	
@@ -75,7 +87,7 @@ public @interface MultiTenancy {
 	String tabName() default "";
 	
 	/**
-	 * 要以定义处理器
+	 * 用以定义处理器
 	 * @return class of DsTabHandler type
 	 */
 	Class<? extends DsTabHandler> handler() default DsTabHandler.class;

@@ -4,7 +4,7 @@
  * The license,see the LICENSE file.
  */
 
-package org.teasoft.bee.osql;
+package org.teasoft.bee.spi;
 
 /**
  * Interface for Preload relevant basic information in advance.

@@ -158,9 +158,10 @@ nocache增加日志提示.
 添加预加载接口PreLoad.  
 添加用于全局的拦截器注册器InterceptorChainRegistry.  
 添加配置项:  
-pagingWithLimitOffset  
-notShowModifyDuplicateException  
-
+是否是limit offset语法分页 pagingWithLimitOffset  
+是否捕获单条插入时的重复键异常 notCatchModifyDuplicateException
+是否显示单条插入时的重复键异常 notShowModifyDuplicateException  
+fixed bug for type converter
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
