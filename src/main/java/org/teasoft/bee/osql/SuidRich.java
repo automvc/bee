@@ -110,7 +110,7 @@ public interface SuidRich extends Suid {
 	 * @param selectFields Select fields,if more than one,separate with comma.
 	 * @return list can contain more than one record with String array struct.
 	 */
-	public <T> List<String[]> selectString(T entity,String selectFields); 
+	public <T> List<String[]> selectString(T entity,String... selectFields); 
 	
 	/**
 	 * Instead of returning data in a entity structure, it uses a character array in List.

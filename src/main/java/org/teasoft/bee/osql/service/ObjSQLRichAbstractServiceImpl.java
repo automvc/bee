@@ -167,7 +167,7 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 	}
 
 	@Override
-	public <T> List<String[]> selectString(T entity, String selectFields) {
+	public <T> List<String[]> selectString(T entity, String... selectFields) {
 		//Add the business logic if need.
 		return getSuidRich().selectString(entity, selectFields);
 	}

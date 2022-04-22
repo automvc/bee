@@ -27,7 +27,7 @@ public interface ObjToSQLRich extends ObjToSQL {
 
 	public <T> String toSelectSQL(T entity,int size);
 	public <T> String toSelectSQL(T entity,int start,int size);
-	public <T> String toSelectSQL(T entity,String fields);
+	public <T> String toSelectSQL(T entity,String... fields);
 	public <T> String toSelectSQL(T entity,String selectFields,int start,int size);
 	
 	public <T> String toUpdateSQL(T entity,String updateFields);

@@ -270,11 +270,12 @@ public interface Condition extends ConditionAssistant {
 	
 	/**
 	 * 指定需要查询的部分字段(仅用于SQL的select).Specify the partial fields to be queried (only for select of SQL).
-	 * @param fieldList 需要查询的字段,多个用逗号隔开. select fields,if more than one,separate with comma.
+	 * @param fieldList 需要查询的字段,一个参数指定多个字段时用逗号隔开;也可以用变长参数. select fields,if more than one,separate with comma.
 	 * @return Condition
 	 * @since 1.8
+	 * @since 1.11 支持变长参数
 	 */
-	public Condition selectField(String fieldList);
+	public Condition selectField(String... fieldList);
 	
 	/**
 	 * 设置字段fieldName为distinct(fieldName)

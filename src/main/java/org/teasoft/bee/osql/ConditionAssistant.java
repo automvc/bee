@@ -48,7 +48,7 @@ public interface ConditionAssistant {
 	  */
 	 public Set<String> getUpdatefields();
 	 
-	 public String getSelectField();
+	 public String[] getSelectField();
 	 
 	 public Boolean getForUpdate();
 }
