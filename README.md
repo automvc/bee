@@ -124,7 +124,24 @@ dynamic SQL list transfer list to SQL in eg:in (1,2,3),no need foreach;batch ins
 Separate CN and EN API.  
 
 V1.11.0.4.22 (**The World Earth Day**)  
-
+Add registry interface; Add nameregistry.  
+Change serializer throws exceptions type.  
+Mapsuid and mapsql support parsing string to boolean type.  
+Genbean, which does not support JDBC type, reminds you which file to set.  
+SystemLogger supports setting log level to facilitate development and debugging.  
+The logger add method: public static void debug (string MSG, throwable T) (convenient for development and debugging).  
+SuidRich's method selectString support variable-length arguments:  
+ public <T> List<String[]> selectString(T entity,String... selectFields);  
+Nocache add log prompt.  
+Improve cache security.  
+Add preload SPI interface Preload.  
+Add InterceptorChainRegistry, an interceptor registrar for global use.  
+Add configuration item:  
+pagingWithLimitOffset    
+notCatchModifyDuplicateException    
+notShowModifyDuplicateException    
+fixed bug for type converter.  
+fixed bug about @PrimaryKey in Suid update(entity).  
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
@@ -370,6 +387,9 @@ public class SuidExamEN {
 #### [More example/test case](../../../bee-exam/)	
 
 #### [Bee+Spring-boot Demo](../../../bee-starter-demo/)	
+
+### Bee Architecture  
+<img src="Bee-architecture-EN-V1.11.png"  width="520" height="500">  
 
 ### Bee Common Interface  
 <img src="common-interface_en.jpg">  

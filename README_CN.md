@@ -52,7 +52,7 @@ Bee **简化了与DB交互的编码**工作量.连接，事务都可以由Bee框
 * 9.支持**事务**、多个ORM操作使用同一连接、**for update**，支持**批处理**操作，支持原生SQL(**自定义sql**语句)，支持**存储过程**。
 * 10.支持面向对象方式复杂查询、**多表查询**(无n+1问题; 支持：一对一,一对多,多对一,多对多;返回结果根据子表是否使用List有两种呈现结构)。 
 * 11.**一级缓存**，概念简单，功能强大；一级缓存也可以**像JVM一样进行细粒度调优**；**支持可更新的长久缓存列表**，更新配置表，**不需要重启**。天生抵御缓存穿透 。 
-    **二级缓存扩展支持;Redis二级缓存支持**。  
+    **二级缓存扩展支持;内置Redis二级缓存支持**。  
 * 12.表名与实体名、字段名与属性名映射默认提供多种实现，且支持**自定义映射规则扩展**。  
 * 13.**多种DB**支持轻松扩展(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,**Cassandra**等直接可用),理论上支持JDBC的DB都可以支持。 
 * 14.支持**读写分离**一主多从, 仅**分库**等**多数据源**模式(对以前的代码无需修改,该功能对代码是透明的,即无需额外编码);Jndi数据源支持。  
@@ -150,18 +150,21 @@ V1.11.0.4.22 (**世界地球日**)
 增加Registry空接口；增加NameRegistry.  
 更改Serializer接口抛出异常方式.  
 MapSuid,MapSql支持解析字符串的Boolean类型.  
-GenBean，jdbc还不支持的类型，提醒在哪个文件设置.  
-systemLogger支持设置日志级别，方便开发调度.  
-Logger增加public static void debug(String msg,Throwable t)(方便开发调度).  
+GenBean，还不支持的jdbc类型，提醒在哪个文件设置.  
+systemLogger支持设置日志级别，方便开发调试.  
+Logger增加public static void debug(String msg,Throwable t)(方便开发调试).  
+SuidRich的selectString方法支持可变参数:  
+ public <T> List<String[]> selectString(T entity,String... selectFields);  
 nocache增加日志提示.  
 提高缓存安全.  
 添加预加载接口PreLoad.  
 添加用于全局的拦截器注册器InterceptorChainRegistry.  
 添加配置项:  
 是否是limit offset语法分页 pagingWithLimitOffset  
-是否捕获单条插入时的重复键异常 notCatchModifyDuplicateException
+是否捕获单条插入时的重复键异常 notCatchModifyDuplicateException  
 是否显示单条插入时的重复键异常 notShowModifyDuplicateException  
-fixed bug for type converter
+fixed bug for type converter.  
+fixed bug about @PrimaryKey in Suid update(entity).  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
@@ -332,6 +335,7 @@ OrdersService.java
 
 ## 3. 更新数据库的配置信息(在bee.properties)  
 注:如果还没有bee.properties文件,可以自己新建一个.  
+(默认的bee.properties位于Hoeny工程下,对应HoneyConfig.java,列举了Bee所有会用到的配置)   
 也可以配置数据源(此处只是一个例子).  
 
 \#bee.databaseName=MySQL  
@@ -420,7 +424,7 @@ public class SuidExam {
 API-V1.9.8(最新版) 下载代码含有 bee-1.9.8-javadoc.zip  
 
 ### Bee架构介绍  
-<img src="Bee-architecture.png"  width="520" height="500">  
+<img src="Bee-architecture-V1.11.png"  width="520" height="500">  
 
 ### Bee常用接口介绍  
 <img src="common-interface.jpg">  
