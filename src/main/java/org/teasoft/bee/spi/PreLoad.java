@@ -7,7 +7,7 @@
 package org.teasoft.bee.spi;
 
 /**
- * Interface for Preload relevant basic information in advance.
+ * SPI Interface for Preload relevant basic information in advance.
  * @author Kingstar
  * @since  1.11
  */

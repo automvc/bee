@@ -22,8 +22,8 @@ package org.teasoft.bee.osql.search;
  * <p>
  * eg:
  * new Search("id",Operator.between,"100030","100035","or");
- * --> or id between 100030 and 100035
-
+ * <br>--> or id between 100030 and 100035
+ *
  * @author Kingstar
  * @since  1.9.8
  */

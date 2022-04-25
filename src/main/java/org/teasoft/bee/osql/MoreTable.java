@@ -126,44 +126,38 @@ public class Orders{
 public interface MoreTable extends CommOperate {
 
 	/**
-	 * 根据实体对象entity查询数据
 	 * According to entity object select records from database.
-	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).<br>
-	 * entity中非null且非空字符串作为过虑条件,操作符是等号.eg:field=value<br>
+	 * @param entity table's entity(do not allow null).<br>
 	 * entity corresponding to table and can not be null.<br>
 	 * If the field value is not null and not empty string as filter condition, <br>
 	 * the operator is equal sign.eg:field=value
-	 * @return 返回可包含多个实体(多条记录)的list. return list can contain more than one entity
+	 * @return list can contain more than one entity
 	 */
 	public <T> List<T> select(T entity);
 
 	/**
-	 * 根据实体对象entity查询数据
 	 * According to entity object select records from database.
-	 * @param entity 实体类对象,且不能为空. table's entity(do not allow null).<br>
-	 * entity中非null且非空字符串作为过虑条件,操作符是等号.eg:field=value<br>
+	 * @param entity table's entity(do not allow null).<br>
 	 * entity corresponding to table and can not be null.<br>
 	 * If the field value is not null and not empty string as filter condition, <br>
 	 * the operator is equal sign.eg:field=value
-	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
-	 * @param size 结果集大小 大于等于1. fetch result size (>0).
-	 * @return 返回可包含多个实体(多条记录)的list. return list can contain more than one entity
+	 * @param start Start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size Fetch result size (>0).
+	 * @return list can contain more than one entity
 	 */
 	public <T> List<T> select(T entity, int start, int size);
 
 	/**
-	 * 根据实体对象和Condition查询数据.Select the records according to entity and condition.
-	 * @param entity 与表对应的实体对象,且不能为空. table's entity(do not allow null).<br>
-	 * @param condition entity默认有值的字段会转成field=value的形式,其它形式可通过condition指定.<br>
-	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition. <br>
-	 * 若condition没有设置IncludeType,默认过滤NULL和空字符串(但condition中op,between,notBetween方法设置的字段,不受includeType的值影响.)
-	 * @return 返回可包含多个实体(多条记录)的list. return list can contain more than one entity
+	 * Select the records according to entity and condition.
+	 * @param entity table's entity(do not allow null).
+	 * @param condition If the field of entity is not null or empty, 
+	 * <br>it will be translate to field=value.Other can define with condition. 
+	 * @return list can contain more than one entity
 	 */
 	public <T> List<T> select(T entity, Condition condition);
 	
 	/**
-	 * 为动态表名、实体名参数设置值.set dynamic parameter for dynamic table & entity name
-	 * <br>本方法的调用要早于select等方法.
+	 * set dynamic parameter for dynamic table & entity name
 	 * <br>This method is called earlier than the select methods.
 	 * @param para parameter name
 	 * @param value parameter value

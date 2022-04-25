@@ -45,41 +45,40 @@ import java.util.Map;
 public interface PreparedSql extends CommOperate {
 
 	/**
-	 * 通过问号的占位符语句查询数据.Select record(s) via the placeholder(?) statement.
-	 * eg: select * from orders where userid=?
-	 * @param sql 直接用?作为占位符的sql查询语句.
-	 * @param returnType 返回entity的类型.
-	 * @param preValues	按下标顺序给sql的占位符设值的Object数组.
-	 * @return 返回returnType类型的实体List.
+	 * Select record(s) via the placeholder(?) statement.
+	 * <br>eg: select * from orders where userid=?
+	 * @param sql SQL query statement which direct use ? as placeholder
+	 * @param returnType its type same as list element.
+	 * @param preValues An object array that values set for the SQL placeholders in index order.
+	 * @return List which element type is same as returnType.
 	 */
 	public <T> List<T> select(String sql,T returnType,Object preValues[]);
 	
 	/**
-	 * 通过无占位符语句查询数据.Select record(s) via no placeholder(?) select statement.
-	 * @param sql sql查询语句(无占位符).
-	 * @param returnType 返回entity的类型.
-	 * @return 返回returnType类型的实体List.
+	 * Select record(s) via no placeholder(?) select statement.
+	 * @param sql SQL query statement(no placeholder). 
+	 * @param its type same as list element.
+	 * @return List which element type is same as returnType.
 	 * @since V1.11
 	 */
 	public <T> List<T> select(String sql,T returnType);
 	
 	/**
-	 * 通过问号的占位语句查询数据,其中分页语句部分由Bee生成.Select record(s) via the placeholder(?) statement,paging generate by Bee.
-	 * eg: select * from orders where userid=?
-	 * @param sql 直接用?作为占位符的sql查询语句.
-	 * @param returnType 返回entity的类型.
-	 * @param preValues	按下标顺序给sql的占位符设值的Object数组.
-	 * @return 返回returnType类型的实体List.
+	 * Select record(s) via the placeholder(?) statement,paging generate by Bee.
+	 * <br>eg: select * from orders where userid=?
+	 * @param sql SQL query statement(use ? placeholder).
+	 * @param its type same as list element.
+	 * @param preValues An object array that values set for the SQL placeholders in index order.
+	 * @return List which element type is same as returnType.
 	 */
 	public <T> List<T> select(String sql,T returnType,Object preValues[],int start,int size);
 	
 	/**
-	 * 通过变量的占位语句查询数据.entity和map都可以向参数传递值,map可以作为entity的补充,用于传递范围查询等复杂查询的参数
-	 * <br>Select the record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters. <br>
-	 * Map can be used as a supplement of entity to pass parameters of complex queries such as range query.<p>
-	 * eg:select * from orders where userid=#{userid}
-	 * eg:select * from orders where name like #{name%}
-	 * @param sqlStr 使用#{para}作为占位符的sql查询语句.
+	 * <br>Select the record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters. 
+	 * <br>Map can be used as a supplement of entity to pass parameters of complex queries such as range query.
+	 * <br>eg:select * from orders where userid=#{userid}
+	 * <br>eg:select * from orders where name like #{name%}
+	 * @param sqlStr SQL query statement(use #{para} placeholder). 
 	 * @param entity entity中非null的值,会转换成map的元素作为参数,entity的字段会自动转成表的列名;entity也将作用返回结构的类型.
 	 * @param parameterMap map结构的参数,通过map的key与sqlStr中变量名对应.
 	 *            若map有元素的key与从entity转来的一样,会使用map的.
@@ -88,18 +87,17 @@ public interface PreparedSql extends CommOperate {
 	public <T> List<T> select(String sqlStr,T entity,Map<String,Object> parameterMap);
 	
 	/**
-	 * 通过变量的占位语句查询数据.entity和map都可以向参数传递值,map可以作为entity的补充,用于传递范围查询等复杂查询的参数,其中分页语句部分由Bee生成
-	 * <br>Select the record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters. <br>
-	 * Map can be used as a supplement of entity to pass parameters of complex queries such as range query.<p>
-	 * paging generate by Bee<p>
-	 * eg:select * from orders where userid=#{userid}
-	 * eg:select * from orders where name like #{name%}
-	 * @param sqlStr 使用#{para}作为占位符的sql查询语句.
+	 * Select the record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters. 
+	 * <br>Map can be used as a supplement of entity to pass parameters of complex queries such as range query.
+	 * <br>paging generate by Bee
+	 * <br>eg:select * from orders where userid=#{userid}
+	 * <br>eg:select * from orders where name like #{name%}
+	 * @param sqlStr SQL query statement(use #{para} placeholder).
 	 * @param entity entity中非null的值,会转换成map的元素作为参数,entity的字段会自动转成表的列名;entity也将作用返回结构的类型.
 	 * @param parameterMap map结构的参数,通过map的key与sqlStr中变量名对应.
 	 *            若map有元素的key与从entity转来的一样,会使用map的.
-	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
-	 * @param size 结果集大小 大于等于1. fetch result size (>0).           
+	 * @param start Start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size Fetch result size (>0).           
 	 * @return 返回与entity类型一样的实体List.
 	 */
 	public <T> List<T> select(String sqlStr,T entity,Map<String,Object> parameterMap,int start,int size);
@@ -109,9 +107,9 @@ public interface PreparedSql extends CommOperate {
 	 * <br>Select some column of record(s) via the placeholder(?) statement.<p>
 	 * eg: select * from orders where userid=?
 	 * @param sql 直接用?作为占位符的sql查询语句.
-	 * @param returnType 返回entity的类型.
-	 * @param preValues	按下标顺序给sql的占位符设值的Object数组.
-	 * @return 返回returnType类型的实体List.
+	 * @param its type same as list element.
+	 * @param preValues An object array that values set for the SQL placeholders in index order.
+	 * @return List which element type is same as returnType.
 	 */
 	public <T> List<T> selectSomeField(String sql,T returnType,Object preValues[]);
 	
@@ -120,11 +118,11 @@ public interface PreparedSql extends CommOperate {
 	 * <br>Select some column of record(s) via the placeholder(?) statement,paging generate by Bee.<p>
 	 * eg: select * from orders where userid=?
 	 * @param sql 直接用?作为占位符的sql查询语句.
-	 * @param returnType 返回entity的类型.
-	 * @param preValues	按下标顺序给sql的占位符设值的Object数组.
-	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
-	 * @param size 结果集大小 大于等于1. fetch result size (>0).   
-	 * @return 返回returnType类型的实体List.
+	 * @param its type same as list element.
+	 * @param preValues An object array that values set for the SQL placeholders in index order.
+	 * @param start Start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size Fetch result size (>0).   
+	 * @return List which element type is same as returnType.
 	 */
 	public <T> List<T> selectSomeField(String sql,T returnType,Object preValues[],int start,int size);
 	
@@ -134,7 +132,7 @@ public interface PreparedSql extends CommOperate {
 	 * Map can be used as a supplement of entity to pass parameters of complex queries such as range query.<p>
 	 * eg:select * from orders where userid=#{userid}
 	 * eg:select * from orders where name like #{name%}
-	 * @param sqlStr 使用#{para}作为占位符的sql查询语句.
+	 * @param sqlStr SQL query statement(use #{para} placeholder).
 	 * @param entity entity中非null的值,会转换成map的元素作为参数,entity的字段会自动转成表的列名;entity也将作用返回结构的类型.
 	 * @param parameterMap map结构的参数,通过map的key与sqlStr中变量名对应.
 	 *            若map有元素的key与从entity转来的一样,会使用map的.
@@ -149,12 +147,12 @@ public interface PreparedSql extends CommOperate {
 	 * paging generate by Bee<p>
 	 * eg:select * from orders where userid=#{userid}
 	 * eg:select * from orders where name like #{name%}
-	 * @param sqlStr 使用#{para}作为占位符的sql查询语句.
+	 * @param sqlStr SQL query statement(use #{para} placeholder).
 	 * @param entity entity中非null的值,会转换成map的元素作为参数,entity的字段会自动转成表的列名;entity也将作用返回结构的类型.
 	 * @param parameterMap map结构的参数,通过map的key与sqlStr中变量名对应.
 	 *            若map有元素的key与从entity转来的一样,会使用map的.
-	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
-	 * @param size 结果集大小 大于等于1. fetch result size (>0).   
+	 * @param start Start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size Fetch result size (>0).   
 	 * @return 返回与entity类型一样的实体List.
 	 */
 	public <T> List<T> selectSomeField(String sqlStr,T entity,Map<String,Object> parameterMap,int start,int size);
@@ -166,7 +164,7 @@ public interface PreparedSql extends CommOperate {
 	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
 	 * <br>will be select the record from the default Datasource.
 	 * @param sql SQL select statement
-	 * @param preValues	按下标顺序给sql的占位符设值的Object数组.
+	 * @param preValues An object array that values set for the SQL placeholders in index order.
 	 * @return 返回函数统计的值.如果统计的结果集为空,除了count返回0,其它都返回空字符.
 	 */
 	public String selectFun(String sql,Object preValues[]);
@@ -191,131 +189,122 @@ public interface PreparedSql extends CommOperate {
 	 * <br>will be select the record from the default Datasource.
 	 * @param sql	SQL select statement
 	 * @param preValues  parameter values for placeholder
-	 * @return 可包含多个String数组结构的多条记录的list. list can contain more than one record with String array struct.
-	 * List, every element is string array(transform from record).
+	 * @return List can contain more than one record with String array struct.
+	 * <br>List, every element is string array(transform from record).
 	 */
 	public List<String[]> select(String sql,Object preValues[]);
 	
 	
 	/**
-	 * 查询并将每一行结果转成String数组,其中分页语句部分由Bee生成.Select and transform every record to string array.<p>
-	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
-	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * Select and transform every record to string array.
+	 * <br>Notice:can not use the cache because don't relay the entity.
 	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
 	 * <br>will be select the record from the default Datasource.
 	 * <br>paging generate by Bee.
-	 * @param sql	SQL select statement
+	 * @param sql  SQL select statement
 	 * @param preValues  parameter values for placeholder
-	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
-	 * @param size 结果集大小 大于等于1. fetch result size (>0).   
-	 * @return 可包含多个String数组结构的多条记录的list. list can contain more than one record with String array struct.
-	 * List, every element is string array(transform from record).
+	 * @param start Start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size Fetch result size (>0).   
+	 * @return List can contain more than one record with String array struct.
+	 * <br>List, every element is string array(transform from record).
 	 */
-	public List<String[]> select(String sql,Object preValues[],int start,int size);
+	public List<String[]> select(String sql, Object preValues[], int start, int size);
 	
 	/**
-	 * 查询并将每一行结果转成String数组.Select and transform every record to string array.<p>
-	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
-	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * Select and transform every record to string array.
+	 * <br>Notice:can not use the cache because don't relay the entity.
 	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
 	 * <br>will be select the record from the default Datasource.
-	 * @param sqlStr	SQL select statement
+	 * @param sqlStr SQL select statement
 	 * @param map  parameter values for placeholder
-	 * @return 可包含多个String数组结构的多条记录的list. list can contain more than one record with String array struct.
+	 * @return list can contain more than one record with String array struct.
 	 * List, every element is string array(transform from record).
 	 */
 	public List<String[]> select(String sqlStr,Map<String,Object> map);
 	
 	/**
-	 * 查询并将每一行结果转成String数组,其中分页语句部分由Bee生成.Select and transform every record to string array.<p>
-	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
-	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
-	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
-	 * <br>will be select the record from the default Datasource.
-	 * <br>paging generate by Bee.
-	 * @param sqlStr	SQL select statement
-	 * @param map  parameter values for placeholder
-	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
-	 * @param size 结果集大小 大于等于1. fetch result size (>0).   
-	 * @return 可包含多个String数组结构的多条记录的list. list can contain more than one record with String array struct.
-	 * List, every element is string array(transform from record).
-	 */
-	public List<String[]> select(String sqlStr,Map<String,Object> map,int start,int size);
-	/**
-	 * 用可带问号的占位语句查询结果,并以json格式返回.Select and return json format result.<p>
-	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
-	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
-	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
-	 * <br>will be select the record from the default Datasource.
-	 * @param sql	SQL select statement
-	 * @param preValues 占位符对应的参数数组.parameter values for placeholder
-	 * @return 返回json格式结果集.json format result .
-	 */
-	public String selectJson(String sql,Object preValues[]);
-	
-	/**
-	 * 用可带问号的占位语句查询结果,并以json格式返回,其中分页语句部分由Bee生成.Select and return json format result.<p>
-	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
-	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
-	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
-	 * <br>will be select the record from the default Datasource.
-	 * <br>paging generate by Bee.
-	 * @param sql	SQL select statement
-	 * @param preValues 占位符对应的参数数组.parameter values for placeholder
-	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
-	 * @param size 结果集大小 大于等于1. fetch result size (>0).
-	 * @return 返回json格式结果集.json format result .
-	 */
-	public String selectJson(String sql,Object preValues[],int start,int size);
-	
-	/**
-	 * 查询结果,并以json格式返回.Select and return json format result.<p>
-	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
-	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
-	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
-	 * <br>will be select the record from the default Datasource.
-	 * @param sqlStr	SQL select statement
-	 * @param map 占位符对应的参数map.parameter values for placeholder
-	 * @return 返回json格式结果集.json format result .
-	 */
-	public String selectJson(String sqlStr,Map<String,Object> map);
-	
-	/**
-	 * 查询结果,并以json格式返回,其中分页语句部分由Bee生成.Select and return json format result.<p>
-	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
-	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * Select and transform every record to string array.
+	 * <br>Notice:can not use the cache because don't relay the entity.
 	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
 	 * <br>will be select the record from the default Datasource.
 	 * <br>paging generate by Bee.
 	 * @param sqlStr SQL select statement
-	 * @param map 占位符对应的参数map.parameter values for placeholder
-	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
-	 * @param size 结果集大小 大于等于1. fetch result size (>0).
-	 * @return 返回json格式结果集.json format result .
+	 * @param map  parameter values for placeholder
+	 * @param start Start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size Fetch result size (>0).   
+	 * @return list can contain more than one record with String array struct.
+	 * List, every element is string array(transform from record).
+	 */
+	public List<String[]> select(String sqlStr,Map<String,Object> map,int start,int size);
+	/**
+	 * Select and return json format result.
+	 * <br>Notice:can not use the cache because don't relay the entity.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
+	 * @param sql  SQL select statement
+	 * @param preValues parameter values for placeholder
+	 * @return Json format result.
+	 */
+	public String selectJson(String sql,Object preValues[]);
+	
+	/**
+	 * Select and return json format result.
+	 * <br>Notice:can not use the cache because don't relay the entity.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
+	 * <br>paging generate by Bee.
+	 * @param sql  SQL select statement
+	 * @param preValues parameter values for placeholder
+	 * @param start Start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size Fetch result size (>0).
+	 * @return Json format result.
+	 */
+	public String selectJson(String sql,Object preValues[],int start,int size);
+	
+	/**
+	 * Select and return json format result.
+	 * <br>Notice:can not use the cache because don't relay the entity.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
+	 * @param sqlStr SQL select statement
+	 * @param map parameter values for placeholder
+	 * @return Json format result.
+	 */
+	public String selectJson(String sqlStr,Map<String,Object> map);
+	
+	/**
+	 * Select and return json format result.
+	 * <br>Notice:can not use the cache because don't relay the entity.
+	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
+	 * <br>will be select the record from the default Datasource.
+	 * <br>paging generate by Bee.
+	 * @param sqlStr SQL select statement
+	 * @param map parameter values for placeholder
+	 * @param start Start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size Fetch result size (>0).
+	 * @return Json format result.
 	 */
 	public String selectJson(String sqlStr,Map<String,Object> map,int start,int size);
 	
-	
 	/**
-	 * 查询结果,并以json格式返回.Select and return json format result.<p>
-	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
-	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * Select and return json format result.<p>
+	 * <br>Notice:can not use the cache because don't relay the entity.
 	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
 	 * <br>will be select the record from the default Datasource.
-	 * @param sqlStr 无参数的sql查询语句.SQL select statement
-	 * @return 返回json格式结果集.json format result .
+	 * @param sqlStr SQL select statement(no placeholder)
+	 * @return Json format result.
 	 */
 	public String selectJson(String sqlStr);
 	
 	/**
-	 * 通过无参数的sql查询语句数据.Select record(s) via the sql statement.
-	 * 注意:因没有与entity关联,没有应用上缓存. Notice:can not use the cache because don't relay the entity.
-	 * <br>因没有与entity关联,在多数据源情况下,只会从默认数据源中获取数据.
+	 * Select record(s) via the sql statement.
+	 * <br>Notice:can not use the cache because don't relay the entity.
 	 * <br>Because it is not associated with entity, in the case of multiple Datasources, 
 	 * <br>will be select the record from the default Datasource.
 	 * eg: select * from orders where userid=10001
-	 * @param sql 无参数的sql查询语句.SQL select statement
-	 * @return 返回returnType类型的实体List.
+	 * @param sql SQL select statement(no placeholder)
+	 * @return List can contain more than one record with String array struct.
+	 * <br>List, every element is string array(transform from record).
 	 */
 	public List<String[]> select(String sql);
 	
@@ -331,92 +320,85 @@ public interface PreparedSql extends CommOperate {
 	public String selectFun(String sql);
 	
 	/**
-	 * 用操作类型为update,insert,delete的语句更新数据库记录
 	 * Modify database records with update, insert or delete statement.
-	 * @deprecated 不建议使用,因为框架不知道具体是更改了什么表,会影响缓存的正确性,从而产生缓存数据不准确的危险.<br>It is not recommended because 
-	 * the framework does not know what table has been changed, which will affect the correctness of the cache and 
-	 * cause the risk of inaccurate cache data.
-	 * @param sql	SQL语句.SQL statement.
-	 * @param preValues 占位符对应的参数数组.parameter values for placeholder
-	 * @return	返回成功操作的记录行数. the number of successful records.
+	 * @deprecated It is not recommended because 
+	 * <br>the framework does not know what table has been changed, which will affect the correctness 
+	 * <br>of the cache and cause the risk of inaccurate cache data.
+	 * @param sql SQL statement.
+	 * @param preValues parameter values for placeholder
+	 * @return	the number of affected successfully records.
 	 */
 	@Deprecated
 	public int modify(String sql,Object preValues[]);
 	
 	/**
-	 * 用操作类型为update,insert,delete的语句更新数据库记录
 	 * Modify database records with update, insert or delete statement.
-	 * @deprecated 不建议使用,因为框架不知道具体是更改了什么表,会影响缓存的正确性,从而产生缓存数据不准确的危险.<br>It is not recommended because 
+	 * @deprecated It is not recommended because 
 	 * the framework does not know what table has been changed, which will affect the correctness of the cache and 
 	 * cause the risk of inaccurate cache data.
-	 * @param sql	SQL语句.SQL statement.
-	 * @param map 占位符对应的参数map.parameter values for placeholder
-	 * @return	返回成功操作的记录行数. the number of successful records.
+	 * @param sql SQL statement.
+	 * @param map parameter values for placeholder
+	 * @return the number of affected successfully records.
 	 */
 	@Deprecated
 	public int modify(String sql,Map<String,Object> map);
 	
 	/**
-	 * 用操作类型为update,insert,delete的语句更新数据库记录
 	 * Modify database records with update, insert or delete statement.
-	 * @deprecated 不建议使用,因为框架不知道具体是更改了什么表,会影响缓存的正确性,从而产生缓存数据不准确的危险.<br>It is not recommended because 
-	 * the framework does not know what table has been changed, which will affect the correctness of the cache and 
-	 * cause the risk of inaccurate cache data.
-	 * @param sql	SQL语句.SQL statement.
-	 * @return	返回成功操作的记录行数. the number of successful records.
+	 * @deprecated It is not recommended because the framework does not know what table has been changed, 
+	 * <br>which will affect the correctness of the cache and cause the risk of inaccurate cache data.
+	 * @param sql SQL statement.
+	 * @return	the number of affected successfully records.
 	 * @since 1.9
 	 */
 	@Deprecated
 	public int modify(String sql);
 	
 	/**
-	 * 查询记录并返回元素为Map<String, Object>的List结构数据.Query records and return list structure data whose element is Map<String, Object>.
-	 * @param sql SQL语句.SQL statement.
-	 * @return List<Map<String, Object>>结构的多行记录.
-	 * <br>the multi-line record of List<Map<String, Object>> structure.
+	 * Query records and return list structure data whose element is Map<String, Object>.
+	 * @param sql SQL statement.
+	 * @return the multi-line record of List<Map<String, Object>> structure.
 	 */
 	public List<Map<String, Object>> selectMapList(String sql);
 	
 	/**
-	 * 查询记录并返回元素为Map<String, Object>的List结构数据.Query records and return list structure data whose element is Map<String, Object>.
-	 * @param sql SQL语句.SQL statement.
-	 * @return List<Map<String, Object>>结构的多行记录.
-	 * <br>the multi-line record of List<Map<String, Object>> structure.
+	 * Query records and return list structure data whose element is Map<String, Object>.
+	 * @param sql SQL statement.
+	 * @return the multi-line record of List<Map<String, Object>> structure.
 	 * @since V1.11
 	 */
 	public List<Map<String, Object>> selectMapList(String sql,Map<String, Object> map);
 	
 	
 	/**
-	 * 查询记录并返回元素为Map<String, Object>的List结构数据,其中分页语句部分由Bee生成.Query records and return list structure data whose element is Map<String, Object>.
+	 * Query records and return list structure data whose element is Map<String, Object>.
 	 * <br>paging generate by Bee.
-	 * @param sql SQL语句.SQL statement.
+	 * @param sql SQL statement.
 	 * @param parameterMap
-	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
-	 * @param size 结果集大小 大于等于1. fetch result size (>0).
-	 * @return List<Map<String, Object>>结构的多行记录.
-	 * <br>the multi-line record of List<Map<String, Object>> structure.
+	 * @param start Start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size Fetch result size (>0).     
+	 * @return the multi-line record of List<Map<String, Object>> structure.
 	 * @since V1.11
 	 */
 	public List<Map<String, Object>> selectMapList(String sql,Map<String,Object> parameterMap,int start,int size);
 	
 	/**
-	 * 通过无占位符语句查询多表关联数据.Select more table record(s) via no placeholder(?) select statement.
-	 * @param sql sql查询语句(无占位符).
-	 * @param returnType 返回entity的类型.
-	 * @return 返回returnType类型的实体List.
+	 * Select more table record(s) via no placeholder(?) select statement.
+	 * @param sql SQL query statement(no placeholder).
+	 * @param its type same as list element.
+	 * @return List which element type is same as returnType.
 	 * @since V1.11
 	 */
 	public <T> List<T> moreTableSelect(String sql, T returnType);
 	
 	/**
-	 * 通过变量的占位语句进行多表关联查询数据.entity和map都可以向参数传递值,map可以作为entity的补充,用于传递范围查询等复杂查询的参数
-	 * <br>Select the more table record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters. <br>
-	 * Map can be used as a supplement of entity to pass parameters of complex queries such as range query.<p>
-	 * eg:select * from orders where userid=#{userid}
-	 * eg:select * from orders where name like #{name%}
-	 * 只解析主表的数据作为参数.
-	 * @param sqlStr 使用#{para}作为占位符的sql查询语句.
+	 * Select the more table record(s) via the placeholder statement of variable.
+	 * <br>Both entity and map can pass values to parameters.
+	 * <br>Map can be used as a supplement of entity to pass parameters of complex queries such as range query.
+	 * <br>eg:select * from orders where userid=#{userid}
+	 * <br>eg:select * from orders where name like #{name%}
+	 * entity只解析主表的数据作为参数.
+	 * @param sqlStr SQL query statement(use #{para} placeholder).
 	 * @param entity entity中非null的值,会转换成map的元素作为参数,entity的字段会自动转成表的列名;entity也将作用返回结构的类型.
 	 * @param parameterMap map结构的参数,通过map的key与sqlStr中变量名对应.
 	 *            若map有元素的key与从entity转来的一样,会使用map的.
@@ -426,41 +408,40 @@ public interface PreparedSql extends CommOperate {
 	public <T> List<T> moreTableSelect(String sqlStr,T entity,Map<String,Object> parameterMap);
 	
 	/**
-	 * 通过变量的占位语句进行多表关联查询数据.entity和map都可以向参数传递值,map可以作为entity的补充,用于传递范围查询等复杂查询的参数,其中分页语句部分由Bee生成
-	 * <br>Select the more table record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters. <br>
-	 * Map can be used as a supplement of entity to pass parameters of complex queries such as range query.<p>
-	 * paging generate by Bee<p>
+	 * Select the more table record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters.
+	 * Map can be used as a supplement of entity to pass parameters of complex queries such as range query.
+	 * paging generate by Bee
 	 * eg:select * from orders where userid=#{userid}
 	 * eg:select * from orders where name like #{name%}
 	 * 只解析主表的数据作为参数.
-	 * @param sqlStr 使用#{para}作为占位符的sql查询语句.
+	 * @param sqlStr SQL query statement(use #{para} placeholder).
 	 * @param entity entity中非null的值,会转换成map的元素作为参数,entity的字段会自动转成表的列名;entity也将作用返回结构的类型.
 	 * @param parameterMap map结构的参数,通过map的key与sqlStr中变量名对应.
 	 *            若map有元素的key与从entity转来的一样,会使用map的.
-	 * @param start 开始下标(从0或1开始,eg:MySQL是0,Oracle是1).  start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
-	 * @param size 结果集大小 大于等于1. fetch result size (>0).           
-	 * @return 返回与entity类型一样的实体List.
+	 * @param start Start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size Fetch result size (>0).           
+	 * @return Entity List which element type is same as entity.
 	 * @since V1.11
 	 */
 	public <T> List<T> moreTableSelect(String sqlStr,T entity,Map<String,Object> parameterMap,int start,int size);
 	
 	
     /**
-	 * 批量插入数据.Insert records by batch type.
+	 * Insert records by batch type.
      * @param sql
      * @param parameterMapList 一行记录为List的一个元素.每个字段的值放在Map里.
-	 * @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
+	 * @return the number of inserted record(s) successfully;if fails, return -1.
 	 * @since 1.11
      */
 	public int insertBatch(String sql, List<Map<String, Object>> parameterMapList);
 
 	/**
 	 * 
-	 * 批量插入数据.Insert records by batch type.
+	 * Insert records by batch type.
      * @param sql
      * @param parameterMapList
 	 * @param batchSize
-	 * @return 成功插入的记录行数;失败时返回-1. the number of inserted record(s) successfully;if fails, return -1.
+	 * @return the number of inserted record(s) successfully;if fails, return -1.
 	 * @since 1.11
 	 */
 	public int insertBatch(String sql, List<Map<String, Object>> parameterMapList, int batchSize);
