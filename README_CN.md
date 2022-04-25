@@ -151,12 +151,13 @@ V1.11.0.4.22 (**世界地球日**)
 更改Serializer接口抛出异常方式.  
 MapSuid,MapSql支持解析字符串的Boolean类型.  
 GenBean，还不支持的jdbc类型，提醒在哪个文件设置.  
-GenBean增加获取字段支持，使用字段名可以不直接使用字符串.  
 GenBean增加支持是否覆盖原有文件设置.  
-systemLogger支持设置日志级别，方便开发调试.  
-Logger增加public static void debug(String msg,Throwable t)(方便开发调试).  
+GenBean增加获取字段支持，使用字段名可以不直接使用字符串.  
 SuidRich的selectString方法支持可变参数:  
  public <T> List<String[]> selectString(T entity,String... selectFields);  
+CommInterceptorChain增加检测是否添加了相同类型拦截器.  
+systemLogger支持设置日志级别，方便开发调试.  
+Logger增加public static void debug(String msg,Throwable t)(方便开发调试).  
 nocache增加日志提示.  
 提高缓存安全.  
 添加SPI预加载接口PreLoad.  
