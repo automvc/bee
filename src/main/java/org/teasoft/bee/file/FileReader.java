@@ -18,6 +18,7 @@
 package org.teasoft.bee.file;
 
 import java.io.BufferedReader;
+import java.io.File;
 
 /**
  * Easy class of Read file by fullPathAndName.
@@ -25,9 +26,19 @@ import java.io.BufferedReader;
  * @since  1.7.2
  */
 public interface FileReader {
+	
 	/**
 	 * read the file by fullPathAndName.
 	 * @param fullPathAndName All paths, including file names
+	 * @return instance of BufferedReader
 	 */
 	public BufferedReader readFile(String fullPathAndName);
+	
+	/**
+	 * read the file.
+	 * @param file
+	 * @return instance of BufferedReader
+	 * @since 1.11
+	 */
+	public BufferedReader readFile(File file);
 }
