@@ -23,9 +23,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 
- * 只在插入值和查询字段时有效,不作为where条件.
- * update时只能在实体使用,不能用Condition设置.
+ * The entity structure is converted to Jason when inserting values, 
+ * <br>and the Jason string is converted to entity structure when querying.
+ * <br>Only valid when inserting values and query fields, not as a where condition.
+ * <br>When update can only be used in entities and cannot be set with condition.
+ * <br>need register to TypeHandlerRegistry and SetParaTypeConverterRegistry.
  * @author Kingstar
  * @since  1.11
  */

@@ -20,7 +20,6 @@ package org.teasoft.bee.osql.annotation.customizable;
 import java.util.Map;
 
 /**
- * 注解处理器接口
  * Annotation Handler Interface.
  * @author Kingstar
  * @since  1.11

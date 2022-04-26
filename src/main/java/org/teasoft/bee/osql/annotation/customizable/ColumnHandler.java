@@ -18,16 +18,28 @@
 package org.teasoft.bee.osql.annotation.customizable;
 
 /**
- * Column注解处理器接口
- * Column Annotation handler interface
+ * Column Annotation handler interface.
  * @author Kingstar
  * @since  1.11
  */
 @SuppressWarnings("rawtypes")
 public interface ColumnHandler {
 	
+	/**
+	 * translate to Column Name.
+	 * @param fieldName field name
+	 * @param entityClass entity class
+	 * @return
+	 */
 	public String toColumnName(String fieldName, Class entityClass);
 
+	
+	/**
+	 * translate to Field Name.
+	 * @param columnName column name
+	 * @param entityClass entity class
+	 * @return
+	 */
 	public String toFieldName(String columnName, Class entityClass);
 	
 }

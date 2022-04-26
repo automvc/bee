@@ -21,8 +21,7 @@ import java.lang.reflect.Field;
 import java.util.List;
 
 /**
- * BeforeReturn类型注解处理器接口
- * Annotation Handler Interface.
+ * Annotation Handler Interface trigger on before return.
  * @author Kingstar
  * @since  1.11
  */
@@ -30,8 +29,8 @@ public interface BeforeReturnAnnotationHandler {
 
 	/**
 	 * 
-	 * @param field 带有相应注解的Field
-	 * @param list 需要处理注解的List
+	 * @param field Field with corresponding annotation
+	 * @param list List of annotations to be processed
 	 */
 	@SuppressWarnings("rawtypes")
 	public void process(Field field,List list);

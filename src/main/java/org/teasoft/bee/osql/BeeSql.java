@@ -97,6 +97,11 @@ public interface BeeSql {
 	 */
 	public int modify(String sql);
 	
+	/**
+	 * insert and return the value of primary key.
+	 * @param sql SQL statement to execute
+	 * @return the value of primary key.
+	 */
 	public long insertAndReturnId(String sql);
 	
 	/**

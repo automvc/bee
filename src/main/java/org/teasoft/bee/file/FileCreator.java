@@ -26,7 +26,7 @@ public interface FileCreator extends FileReader{
 	/**
 	 * Write content to generated file.
 	 * @param fullPathAndName All paths, including file names
-	 * @param content 文件内容.content
+	 * @param content file of content
 	 */
 	public  void genFile(String fullPathAndName, String content);
 	
@@ -34,7 +34,7 @@ public interface FileCreator extends FileReader{
 	 * Write content to generated file.
 	 * @param fullPath full path
 	 * @param fileName file name
-	 * @param content  content
+	 * @param content  file of content
 	 */
 	public  void genFile(String fullPath, String fileName, String content);
 	
@@ -43,7 +43,7 @@ public interface FileCreator extends FileReader{
 	 * @param basePath base path
 	 * @param packagePath package path
 	 * @param fileName file name
-	 * @param content  content
+	 * @param content  file of content
 	 */
 	public  void genFile(String basePath,String packagePath, String fileName, String content);
 	
@@ -51,7 +51,7 @@ public interface FileCreator extends FileReader{
 	/**
 	 * Append content to the end of the file.
 	 * @param fullPathAndName All paths, including file names
-	 * @param content content of file.
+	 * @param content file of content
 	 * @since  1.7.2
 	 */
 	public void genAppendFile(String fullPathAndName, String content);

@@ -23,13 +23,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 从指定位置开始,将指定数量的字符改为掩码字符
- * eg:
- * 	\@Desensitize(start=5, size=2, mask="*")
- * 	private String sequence;
- * 	sequence in the database is: 0123456789
- * 	after process:
- * 	sequence=01234**789
+ * Starting from the specified position, change the specified size of characters to mask characters.
+ *<br> eg:
+ *<br> 	\@Desensitize(start=5, size=2, mask="*")
+ *<br> 	private String sequence;
+ *<br> 	sequence in the database is: 0123456789
+ *<br> 	after process:
+ *<br> 	sequence=01234**789
  * 
  * @author Kingstar
  * @since  1.11
@@ -38,21 +38,18 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Desensitize {
 	/**
-	 * 开始位置(从0开始)
 	 * Start position (starting from 0)
 	 * @return start position
 	 */
 	int start();
 	
 	/**
-	 * 需要替换的字符数量
 	 * the number of characters need to replace
 	 * @return the number of characters need to replace
 	 */
 	int size();
 	
 	/**
-	 * 使用的掩码
 	 * Mask used
 	 * @return mask code
 	 */

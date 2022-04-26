@@ -20,7 +20,7 @@ package org.teasoft.bee.osql;
 import org.teasoft.bee.osql.interccept.InterceptorChain;
 
 /**
- * Common operate about Suid.
+ * Common operate interface about Suid.
  * @author Kingstar
  * @since  1.11
  */

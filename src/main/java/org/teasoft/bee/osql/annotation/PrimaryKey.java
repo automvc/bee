@@ -12,12 +12,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 标注某个属性为主键<br>
- * 不允许定义一个字段名为id,但却不将它定义为主键.<br>
- * 当主键的字段名不是id时,可用PrimaryKey注解标注为主键.<br>
- * 当字段有Ignore注解时,PrimaryKey注解也会被忽略.<br>
- * 此注解是为兼容旧系统而存在,<br>
- * 强烈建议,新系统定义表时设置一个id列为主键
+ * Mark an property as the Primary Key.<br>
+ * It is not allowed to define a field named ID, but it is not defined as a primary key.<br>
+ * When the field name of the primary key is not "id", it can be marked as the primary <br>
+ * key with the PrimaryKey annotation.<br>
+ * When the field has Ignore annotation, the PrimaryKey annotation will also be ignored.<br>
+ * This annotation exists for compatibility with old systems, <br>
+ * It is strongly recommended to set an "id" column as the primary key when defining table in the new system.
  * @author Kingstar
  * @since  1.11
  */

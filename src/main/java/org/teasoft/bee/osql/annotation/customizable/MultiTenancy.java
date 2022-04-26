@@ -23,12 +23,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 多租户.
- * 计算后指定同一库不同表;计算后指定不同库.
- * 多表时,不支持跨表.从表的DS与主表一致.
- * Order: 1->2
- * 1.特指 (配置了特指的,其它不再检测)
- * 2.通过算法计算(若没有匹配的则用默认)
+ * Multi-tenancy.
+ * <br>Specify different tables in the same database after calculation; Specify different databases after calculation.
+ * <br>When there are multiple tables, cross table is not supported.
+ * <br>The dataSource of the sub table is consistent with the main table.
+ * <br>Order: 1->2
+ * <br>1. Special (if special is configured, others will not be detected)
+ * <br>2. Calculate by algorithm (default if there is no match)
  * @author Kingstar
  * @since  1.11
  */
@@ -49,27 +50,27 @@ public @interface MultiTenancy {
 	String appointTab() default "";
 	
 	/**
-	 * 0:求余等能直接计算的运算; 1:日期等取部分字符串; 2:自定义
-	 * @return type of dsAlgorithm
+	 * 0: operations that can be calculated directly such as remainder; 1: Take part of the string such as date; 2: Custom
+	 * @return value of dsAlgorithm
 	 */
     int dsAlgorithm() default 0; 
     
     /**
-     * 0:求余等能直接计算的运算; 1:日期等取部分字符串; 2:自定义
-     * @return type of tabAlgorithm
+     * 0: operations that can be calculated directly such as remainder; 1: Take part of the string such as date; 2: Custom
+     * @return value of tabAlgorithm
      */
     int tabAlgorithm() default 0; 
-    
 	
-	/**
-	 * dsRule不设置,即使用默认的空值,则表示,不用管库名
-	 * eg: "id%dsSize
-	 */
+    /**
+     * If dsRule is not set, that is, the default empty value is used, it means that is not to consider the database name.
+	 * <br>eg: "id%dsSize
+     * @return value of dsRule
+     */
 	String dsRule() default "";
 	
 	/**
-	 * dsRule为空,也没设置dsName的值,则不需要带库名
-	 * 默认是dsRule()计算得的值自动作为dsName的后缀.
+	 * If dsRule is empty and the value of dsName is not set, the database name is not required.
+	 * <br>By default, the value calculated by dsRule() will be automatically used as the suffix of dsName.
 	 * @return dsName
 	 */
 	String dsName() default "";
@@ -80,14 +81,15 @@ public @interface MultiTenancy {
 	 */
 	String tabRule() default "";
 	/**
-	 * 默认是tabRule()计算得的值作为tabName的后缀.
-	 * eg:tab${tabRule}
+	 * get tabName.
+	 * <br>The default is the value calculated by tabRule() as the suffix of tabName.
+	 * <br>eg:tab${tabRule}
 	 * @return tabName
 	 */
 	String tabName() default "";
 	
 	/**
-	 * 用以定义处理器
+	 * use for define DsTabHandler.
 	 * @return class of DsTabHandler type
 	 */
 	Class<? extends DsTabHandler> handler() default DsTabHandler.class;

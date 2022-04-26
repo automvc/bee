@@ -7,7 +7,6 @@ package org.teasoft.bee.osql;
  */
 public enum IncludeType {
 
-	// -1  for both exclude 留用
 	/**
 	 * exclude: NULL and ""
 	 */

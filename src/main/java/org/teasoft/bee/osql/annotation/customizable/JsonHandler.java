@@ -7,6 +7,7 @@
 package org.teasoft.bee.osql.annotation.customizable;
 
 /**
+ * Json annotation Handler,is not necessary.
  * @author Kingstar
  * @since  1.11
  */

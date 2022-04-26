@@ -21,6 +21,7 @@ import java.lang.reflect.Field;
 import java.util.List;
 
 /**
+ * Abstract DictI18n Default Handler.
  * @author Kingstar
  * @since  1.11
  */

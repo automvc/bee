@@ -63,8 +63,8 @@ public interface MapSql {
 	
 	/**
 	 * Set the configuration for filtering or processing rule.
-	 * @param mapSqlSetting 设置的MapSqlSetting Key
-	 * @param value 设置的值
+	 * @param mapSqlSetting Key of MapSqlSetting 
+	 * @param value setting value
 	 */
 	public void put(MapSqlSetting mapSqlSetting, boolean value);
 	

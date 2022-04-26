@@ -25,9 +25,9 @@ import java.lang.annotation.Target;
 import org.teasoft.bee.osql.SuidType;
 
 /**
- * 自动填充AutoSetValue标识的字段.
- * 填充的值由handler指定的类提供.
- * 字段的类型,需要是java.lang.String.
+ * Automatically setting the fields remark by AutoSetValue annotation.
+ * <br>The setting value is provided by the class specified by the handler.
+ * <br>The field type needs to be java.lang.String.
  * @author Kingstar
  * @since  1.11
  */
