@@ -52,7 +52,7 @@ public interface PreparedSql extends CommOperate {
 	/**
 	 * Select record(s) via no placeholder(?) select statement.
 	 * @param sql SQL select statement(no placeholder). 
-	 * @param its type same as list element.
+	 * @param returnType its type same as list element.
 	 * @return List which element type is same as returnType.
 	 * @since V1.11
 	 */
@@ -62,8 +62,10 @@ public interface PreparedSql extends CommOperate {
 	 * Select record(s) via the placeholder(?) statement,paging generate by Bee.
 	 * <br>eg: select * from orders where userid=?
 	 * @param sql SQL select statement(use ? placeholder).
-	 * @param its type same as list element.
+	 * @param returnType its type same as list element.
 	 * @param preValues An object array that values set for the SQL placeholders in index order.
+	 * @param start Start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * @param size Fetch result size (>0).  
 	 * @return List which element type is same as returnType.
 	 */
 	public <T> List<T> select(String sql,T returnType,Object preValues[],int start,int size);
@@ -105,7 +107,7 @@ public interface PreparedSql extends CommOperate {
 	 * Select some column of record(s) via the placeholder(?) statement.<br>
 	 * eg: select * from orders where userid=?
 	 * @param sql SQL select statement(use ? placeholder).
-	 * @param its type same as list element.
+	 * @param returnType its type same as list element.
 	 * @param preValues An object array that values set for the SQL placeholders in index order.
 	 * @return List which element type is same as returnType.
 	 */
@@ -115,7 +117,7 @@ public interface PreparedSql extends CommOperate {
 	 * Select some column of record(s) via the placeholder(?) statement,paging generate by Bee.<p>
 	 * eg: select * from orders where userid=?
 	 * @param sql SQL select statement(use ? placeholder).
-	 * @param its type same as list element.
+	 * @param returnType its type same as list element.
 	 * @param preValues An object array that values set for the SQL placeholders in index order.
 	 * @param start Start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
 	 * @param size Fetch result size (>0).   
@@ -391,7 +393,7 @@ public interface PreparedSql extends CommOperate {
 	/**
 	 * Select more table record(s) via no placeholder(?) select statement.
 	 * @param sql SQL select statement(no placeholder).
-	 * @param its type same as list element.
+	 * @param returnType its type same as list element.
 	 * @return List which element type is same as returnType.
 	 * @since V1.11
 	 */

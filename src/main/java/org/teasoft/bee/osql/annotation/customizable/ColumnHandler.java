@@ -29,7 +29,7 @@ public interface ColumnHandler {
 	 * translate to Column Name.
 	 * @param fieldName field name
 	 * @param entityClass entity class
-	 * @return
+	 * @return column name.
 	 */
 	public String toColumnName(String fieldName, Class entityClass);
 
@@ -38,7 +38,7 @@ public interface ColumnHandler {
 	 * translate to Field Name.
 	 * @param columnName column name
 	 * @param entityClass entity class
-	 * @return
+	 * @return field name.
 	 */
 	public String toFieldName(String columnName, Class entityClass);
 	

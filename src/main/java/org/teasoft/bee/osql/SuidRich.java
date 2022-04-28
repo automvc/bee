@@ -259,7 +259,7 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * Insert records by batch type.
-	 * @param table's entity list(do not allow null).
+	 * @param entityList table's entity list(do not allow null).
 	 * @param batchSize batch size.
 	 * @return the number of inserted record(s) successfully;if fails, return -1.
 	 * @since  1.9
@@ -269,8 +269,8 @@ public interface SuidRich extends Suid {
 	/**
 	 * Insert record by batch type,and can point out which field(s) don't need to insert.
 	 * @param entityList table's entity list(do not allow null).
-	 * @param excludeFieldsfields list that don't need to insert .
-	 *  @return the number of inserted record(s) successfully;if fails, return -1.
+	 * @param excludeFields fields list that don't need to insert.
+	 * @return the number of inserted record(s) successfully;if fails, return -1.
 	 * @since  1.9
 	 */
 	public <T> int insert(List<T> entityList,String excludeFields);
@@ -462,7 +462,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * Update record according to whereFields.
 	 * @param entity table's entity(do not allow null).
-	 * Fields that are not specified as whereFields, as part of the set(only non empty and non null fields 
+	 * <br>Fields that are not specified as whereFields, as part of the set(only non empty and non null fields 
 	 * <br>are processed by default).
 	 * @param whereFields As a field list of where part in SQL, multiple fields are separated by commas 
 	 * <br>(the fields in the list will be used as where filter)
@@ -475,7 +475,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * Update record according to whereFields.
 	 * @param entity table's entity(do not allow null).
-	 * Fields that are not specified as whereFields, as part of the set(only non empty and non null 
+	 * <br>Fields that are not specified as whereFields, as part of the set(only non empty and non null 
 	 * <br>fields are processed by default,can change the default use IncludeType parameter).
 	 * @param whereFields As a field list of where part in SQL, multiple fields are separated by commas 
 	 * <br>(the fields in the list will be used as where filter)
@@ -489,7 +489,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * Update record according to whereFields.
 	 * @param entity table's entity(do not allow null).
-	 * Fields that are not specified as whereFields, as part of the set(only non empty and non null fields 
+	 * <br>Fields that are not specified as whereFields, as part of the set(only non empty and non null fields 
 	 * <br>are processed by default).
 	 * @param whereFields As a field list of where part in SQL, multiple fields are separated by commas 
 	 * <br>(the fields in the list will be used as where filter)
@@ -504,8 +504,8 @@ public interface SuidRich extends Suid {
 	/**
 	 * it is equivalent to updateBy(entity,"id",condition)
 	 * @param entity table's entity(do not allow null).
-	 * In entity, except for the ID field, other fields are used as the set part (only non empty and non null 
-	 * <br>fields are processed by default)
+	 * <br>In entity, except for the ID field, other fields are used as the set part (only non empty and non null 
+	 * fields are processed by default)
 	 * @param condition Condition as filter the record.
 	 * <br>It should be noted that the condition set by OP may also be converted to the filter condition of where.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
@@ -516,7 +516,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * Update record, can list update fields. 
 	 * @param entity table's entity(do not allow null).
-	 * If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition.<br>
+	 * <br>If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition.
 	 * @param updateFields update fields.The methods setMultiply,setAdd,set in condition are not subject to this restriction. 
 	 * <br>For the list of fields to be updated, multiple fields are separated by commas (those fields will be updated). 
 	 * <br>This attribute cannot be empty and is not affected by the Condition's includeType parameter. By default, each 
@@ -534,7 +534,7 @@ public interface SuidRich extends Suid {
 	 * <br>When the set expression of SQL update is defined by Condition, you can no longer specify the field used by set.
 	 * <br>it is equivalent to update(entity,"",condition),updateFields value is "".
 	 * @param entity table's entity(do not allow null).
-	 * If the field of entity is not null or empty, it will be translate to field=value in where part.Other can define with condition.
+	 * <br>If the field of entity is not null or empty, it will be translate to field=value in where part.Other can define with condition.
 	 * @param condition Condition as filter the record.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 * @since 1.8
@@ -545,8 +545,10 @@ public interface SuidRich extends Suid {
 	 * Update the entity. The non null and non empty attributes of oldEntity are taken as 
 	 * <br>the filtering conditions; The non null and non empty properties of newEntity are 
 	 * <br>used as the corresponding values of the properties to be updated
-	 * Old and new entities must be of the same type.
-	 * oldEntity is converted to Where part of SQL, and newEntity is converted to Set part.
+	 * <br>Old and new entities must be of the same type.
+	 * <br>oldEntity is converted to Where part of SQL, and newEntity is converted to Set part.
+	 * <br>The object-oriented Interceptor only processes the newEntity; 
+	 * <br>The oldEntity as conditions is not processed in the Interceptor. 
 	 * @param oldEntity Entity with old value field.
 	 * @param newEntity Entity with new value field.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
@@ -575,7 +577,7 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * save one entity(one record).
-	 * If it can be distinguished, it is recommended to explicitly call insert (entity) 
+	 * <br>If it can be distinguished, it is recommended to explicitly call insert (entity) 
 	 * <br>or update (entity), which is more secure and efficient.
 	 * @param entity
 	 * @return the numbers of effect record(s),if fails, return integer less than 0.
