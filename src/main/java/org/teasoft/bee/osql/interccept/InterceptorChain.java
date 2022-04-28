@@ -26,6 +26,7 @@ public interface InterceptorChain extends Interceptor {
 
 	/**
 	 * add Interceptor to chain
+	 * @param interceptor Interceptor
 	 */
 	public void addInterceptor(Interceptor interceptor);
 
