@@ -146,6 +146,10 @@ notShowModifyDuplicateException
 fixed bug for type converter.  
 fixed bug about @PrimaryKey in Suid update(entity).  
 
+V1.11.0.4.29
+The configuration file supports multi-environment differentiated configuration.  
+SuidRich,public <T> int update(T oldEntity, T newEntity) Interceptors only handle newEntity.  
+
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
 
@@ -288,18 +292,18 @@ Quick Start:
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<version>1.9.8</version>
+			<version>1.11</version>
 		</dependency>
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<version>1.9.8</version>
+			<version>1.11</version>
 		</dependency>
 		<!--for log framework,Excel(poi) -->
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee-ext</artifactId>
-			<version>1.9.8</version>
+			<version>1.11</version>
 		</dependency>
 ```
 
