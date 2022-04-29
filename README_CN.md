@@ -169,6 +169,10 @@ nocache增加日志提示.
 fixed bug for type converter.  
 fixed bug about @PrimaryKey in Suid update(entity).  
 
+V1.11.0.4.29
+配置文件支持多环境差异化配置.  
+SuidRich,public <T> int update(T oldEntity, T newEntity)拦截器只处理新实体newEntity.  
+
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 
@@ -313,18 +317,18 @@ OrdersService.java
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<version>1.9.8</version>
+			<version>1.11</version>
 		</dependency>
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<version>1.9.8</version>
+			<version>1.11</version>
 		</dependency>
 		<!--for log framework,Excel(poi) -->
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee-ext</artifactId>
-			<version>1.9.8</version>
+			<version>1.11</version>
 		</dependency>
 ```
 
@@ -422,9 +426,9 @@ public class SuidExam {
 #### [Bee+Spring-boot Demo](../../../bee-starter-demo/)	
 
 ### API-DOC  
-[API-V1.9.5](https://gitee.com/automvc/bee/attach_files/692020/download)
+API-V1.9.8 下载代码含有 bee-1.9.8-javadoc.zip  
+API-V1.11(最新版) 下载代码含有 bee-1.11中文和英文版API,bee-1.11中文版源码  
 
-API-V1.9.8(最新版) 下载代码含有 bee-1.9.8-javadoc.zip  
 
 ### Bee架构介绍  
 <img src="Bee-architecture-V1.11.png"  width="520" height="500">  
