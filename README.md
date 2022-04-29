@@ -146,7 +146,7 @@ notShowModifyDuplicateException
 fixed bug for type converter.  
 fixed bug about @PrimaryKey in Suid update(entity).  
 
-V1.11.0.4.29
+V1.11.0.4.29  
 The configuration file supports multi-environment differentiated configuration.  
 SuidRich,public <T> int update(T oldEntity, T newEntity) Interceptors only handle newEntity.  
 

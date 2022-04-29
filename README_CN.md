@@ -74,42 +74,25 @@ Bee **简化了与DB交互的编码**工作量.连接，事务都可以由Bee框
 
 ## 最新功能介绍: 
 
-**V1.11**  
-V1.11.0.1.1(**2022新年版**)  
-SuidRich增加方法:  
-  public <T> long insertAndReturnId(T entity,IncludeType includeType);  
-PreparedSql增加方法:  
-  public <T> List<T> select(String sql,T returnType);  
-增加声明主键支持:  
-  add annotation PrimaryKey  
-  MapSqlKey support PrimaryKey  
-可用BF代替BeeFactoryHelper加快输入  
-增强:读写模式配置信息去除空格  
-fix a bug for naming transfer  
-
-V1.11.0.2.1(**2022春节版**)  
-拦截器、多租户  
-add Interceptor,InterceptorChain  
-add DefaultInterceptor,CommInterceptorChain,DefaultInterceptorChain  
-
-V1.11.0.2.4(**2022北京冬奥会版**)  
-二级缓存扩展支持  
+V1.11 (**International Labour Day**)
+1)拦截器、多租户  
+2)增加ShardingStruct为分库分表作准备  
+3)二级缓存扩展支持  
 Redis缓存支持  
-add BeeExtCache,DefaultBeeExtCache  
-add BeeExtRedisCache  
-
-V1.11.0.2.15(**2022元宵节版**)  
-添加注解:Datetime,Createtime,Updatetime;JustFetch  
-添加Jndi数据源支持  
-检测MapSqlKey的值  
-
-V1.11.0.2.20(**荣耀**)  
-multi-DS同时使用不同类型DB优化  
-支持同时使用多种数据库(如同时使用Mysql,Oracle,SQL Server)  
-PreparedSql(自定义sql),MapSuid:拦截器，多数据源支持  
-Suid,PreparedSql,MapSuid支持设置数据源名称,获取拦截器链  
-Suid,PreparedSql,MapSuid,MoreTable增加方法:setDataSourceName,getDataSourceName,getInterceptorChain  
-增加注解:  
+3)支持自定义TypeHandler,处理查询的ResultSet结果  
+4)add SetParaTypeConvert for convert PreparedStatement parameter  
+5)支持在Suid等对象设置命名转换器.  
+增加DbFeature方言注册器,自定义实现不同DB方言更加易用.  
+6)支持Cassandra.  
+7)添加Jndi数据源支持  
+8)Ddl.java使用Javabean创建表,支持追加java与db字段类型映射,支持设置某个DB的java_dbtype类型映射.  
+9)PreparedSql自定义sql支持批量插入.  
+PreparedSql自定义sql支持多表查询,返回多表关联Javabean结构数据  
+10)自定义动态SQL标签,@in,@toIsNULL1,@toIsNULL2,<if isNotNull>,<if isNotBlank>.  
+动态sql,将list转为像in (1,2,3)的语句,不需要foreach,批量插入也不需要foreach.  
+  
+添加注解:  
+PrimaryKey,Datetime,Createtime,Updatetime;JustFetch  
 AnnotationHandler,AutoSetString自动设置字符值  
 Desensitize,敏感信息模糊处理  
 ReplaceInto,MySQL replace into转换  
@@ -117,36 +100,18 @@ MultiTenancy多租户
 BeforeReturnAnnotationHandler,AbstractDictI18nDefaultHandler  
 Dict字典转化  
 DictI18n多语言国际化字典转化  
-
-V1.11.0.2.28  (**Special Day**)  
-增加ShardingStruct为分库分表作准备  
 Column列名与属性名映射扩展支持  
-支持自定义TypeHandler,处理查询的ResultSet结果  
-PreparedSql自定义sql支持多表查询,返回多表关联Javabean结构数据  
-fixed bug:  
-多表查询同一个实体自我关联查询禁止自我多次循环  
-
-V1.11.0.3.8  (**Lady First**)  
-增加SetParaTypeConvert转化PreparedStatement参数.  
+  
+增强:  
+multi-DS同时使用不同类型DB优化  
+ (比如,同时使用Mysql,Oracle,SQL Server)  
+可用BF代替BeeFactoryHelper加快输入  
 Javabean使用java.util.Date类型,进行SUID作兼容处理.  
+Ddl.java兼容原生char类型,兼容java.util.Date.
 SQLite获取Timestamp结果作转化处理.  
-实体属性是Javabean与DB表Json类型字段在参数设置与查询结果时自动转换(使用Json注解自定义实现).  
-
-V1.11.0.3.12  (**植树节版**)  
-Ddl.java使用Javabean创建表,支持追加java与db字段类型映射,支持设置某个DB的java_dbtype类型映射.  
-Ddl.java兼容原生char类型,兼容java.util.Date.  
-PreparedSql自定义sql支持批量插入.  
-支持在Suid等对象设置命名转换器.  
-增加DbFeature方言注册器,自定义实现不同DB方言更加易用.  
-支持Cassandra.  
-showExecutableSql添加List,Set,Map,UUID支持.  
-
-V1.11.0.3.20  (**春分**)  
-自定义动态SQL标签,@in,@toIsNULL1,@toIsNULL2,&lt;if isNotNull>,&lt;if isNotBlank>.  
-动态sql,将list转为像in (1,2,3)的语句,不需要foreach,批量插入也不需要foreach.  
-分离中文API.  
-
-V1.11.0.4.22 (**世界地球日**)  
+实体属性是Javabean与DB表Json类型字段在参数设置与查询结果时自动转换(使用Json注解自定义实现).
+读写模式配置信息去除空格  
+检测MapSqlKey的值  
 增加Registry空接口；增加NameRegistry.  
 更改Serializer接口抛出异常方式.  
 MapSuid,MapSql支持解析字符串的Boolean类型.  
@@ -154,24 +119,15 @@ GenBean，还不支持的jdbc类型，提醒在哪个文件设置.
 GenBean增加支持是否覆盖原有文件设置.  
 GenBean增加获取字段支持，使用字段名可以不直接使用字符串.  
 SuidRich的selectString方法支持可变参数:  
- public <T> List<String[]> selectString(T entity,String... selectFields);  
+public List<String[]> selectString(T entity,String... selectFields);  
 CommInterceptorChain增加检测是否添加了相同类型拦截器.  
-systemLogger支持设置日志级别，方便开发调试.  
-Logger增加public static void debug(String msg,Throwable t)(方便开发调试).  
-nocache增加日志提示.  
 提高缓存安全.  
 添加SPI预加载接口PreLoad.  
 添加用于全局的拦截器注册器InterceptorChainRegistry.  
-添加配置项:  
-是否是limit offset语法分页 pagingWithLimitOffset  
-是否捕获单条插入时的重复键异常 notCatchModifyDuplicateException  
-是否显示单条插入时的重复键异常 notShowModifyDuplicateException  
-fixed bug for type converter.  
-fixed bug about @PrimaryKey in Suid update(entity).  
 
-V1.11.0.4.29
-配置文件支持多环境差异化配置.  
-SuidRich,public <T> int update(T oldEntity, T newEntity)拦截器只处理新实体newEntity.  
+fixed bug:  
+naming transfer  
+多表查询同一个实体自我关联查询禁止自我多次循环  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  

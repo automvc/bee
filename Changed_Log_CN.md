@@ -263,6 +263,9 @@ fix bug about checkPackageByClass.
 fix bug about multi-thread safe in ConditionHelper.  
 
 **V1.11**  
+V1.11(**劳动节版**) 五一前更新到Maven  
+各细分版本添加功能如下:  
+  
 V1.11.0.1.1(**2022新年版**)  
 SuidRich增加方法:  
   public <T> long insertAndReturnId(T entity,IncludeType includeType);  
@@ -327,5 +330,40 @@ PreparedSql自定义sql支持批量插入.
 支持在Suid等对象设置命名转换器.  
 增加DbFeature方言注册器,自定义实现不同DB方言更加易用.  
 支持Cassandra.  
+showExecutableSql添加List,Set,Map,UUID支持.  
 
+V1.11.0.3.20  (**春分**)  
+自定义动态SQL标签,@in,@toIsNULL1,@toIsNULL2,&lt;if isNotNull>,&lt;if isNotBlank>.  
+动态sql,将list转为像in (1,2,3)的语句,不需要foreach,批量插入也不需要foreach.  
+分离中文API.  
+
+V1.11.0.4.22 (**世界地球日**)  
+增加Registry空接口；增加NameRegistry.  
+更改Serializer接口抛出异常方式.  
+MapSuid,MapSql支持解析字符串的Boolean类型.  
+GenBean，还不支持的jdbc类型，提醒在哪个文件设置.  
+GenBean增加支持是否覆盖原有文件设置.  
+GenBean增加获取字段支持，使用字段名可以不直接使用字符串.  
+SuidRich的selectString方法支持可变参数:  
+ public <T> List<String[]> selectString(T entity,String... selectFields);  
+CommInterceptorChain增加检测是否添加了相同类型拦截器.  
+systemLogger支持设置日志级别，方便开发调试.  
+Logger增加public static void debug(String msg,Throwable t)(方便开发调试).  
+nocache增加日志提示.  
+提高缓存安全.  
+添加SPI预加载接口PreLoad.  
+添加用于全局的拦截器注册器InterceptorChainRegistry.  
+添加配置项:  
+是否是limit offset语法分页 pagingWithLimitOffset  
+是否捕获单条插入时的重复键异常 notCatchModifyDuplicateException  
+是否显示单条插入时的重复键异常 notShowModifyDuplicateException  
+fixed bug for type converter.  
+fixed bug about @PrimaryKey in Suid update(entity).  
+
+V1.11.0.4.29  
+配置文件支持多环境差异化配置.  
+SuidRich,public <T> int update(T oldEntity, T newEntity)拦截器只处理新实体newEntity.  
+
+	
+	
 	
