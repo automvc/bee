@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.teasoft</groupId>
 	<artifactId>bee</artifactId>
-	<version>1.11.0.4.22-SNAPSHOT</version>
+	<version>1.11</version>
 	<packaging>jar</packaging>
 	
 	<properties>
@@ -20,7 +20,7 @@
 				<version>3.0.0</version>
 			</plugin>
 			
-			<!--配置生成源码包 -->
+			<!-- Source -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
@@ -34,6 +34,28 @@
 					</execution>
 				</executions>
 			</plugin>
+						
+			<!-- Javadoc -->
+            <!-- <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <configuration>
+                    <charset>UTF-8</charset>
+                    <encoding>UTF-8</encoding>
+                    <docencoding>UTF-8</docencoding>
+                    <locale>en_US</locale>
+                    <additionalparam>-Xdoclint:none</additionalparam>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin> -->
 
 		</plugins>
 	</build>
