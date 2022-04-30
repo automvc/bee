@@ -98,6 +98,8 @@ InterceptorChainRegistry,拦截器链注册器
 NameRegistry,命名转换注册器  
 SetParaTypeConverterRegistry, PreparedStatement参数类型转换注册器  
 TypeHandlerRegistry 查询结果转换注册器  
+12)配置文件支持多环境差异化配置.  
+
   
 添加注解:  
 PrimaryKey,Datetime,Createtime,Updatetime;JustFetch  
@@ -132,6 +134,7 @@ CommInterceptorChain增加检测是否添加了相同类型拦截器.
 提高缓存安全.  
 添加SPI预加载接口PreLoad.  
 添加用于全局的拦截器注册器InterceptorChainRegistry.  
+SuidRich,public <T> int update(T oldEntity, T newEntity)拦截器只处理新实体newEntity.  
 
 fixed bug:  
 naming transfer  
