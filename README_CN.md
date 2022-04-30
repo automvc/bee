@@ -99,7 +99,6 @@ NameRegistry,命名转换注册器
 SetParaTypeConverterRegistry, PreparedStatement参数类型转换注册器  
 TypeHandlerRegistry 查询结果转换注册器  
 12)配置文件支持多环境差异化配置.  
-
   
 添加注解:  
 PrimaryKey,Datetime,Createtime,Updatetime;JustFetch  
