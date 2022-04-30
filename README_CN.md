@@ -66,11 +66,12 @@ Bee **简化了与DB交互的编码**工作量.连接，事务都可以由Bee框
 * 22.**性能好:接近JDBC的速度；文件小：Bee V1.8 仅217k**, **V1.9.5 仅315k，V1.9.8 仅310k**。  
 **辅助功能**:  
 * 23.支持自动生成表对应的Javabean，根据Javabean创建表，Javaweb**后端代码**根据**模板自动生成**；能打印非占位符的**可执行sql**,方便调试;支持生成Json格式的SQL脚本。  
-* 24.支持**读取Excel**,从Excel导入数据到DB，操作简单。  
+* 24.支持**读取Excel**,从Excel导入数据到DB，操作简单;支持从Excel获取配置生成数据库表。  
 * 25.流的工具类StreamUtil。  
 * 26.复杂查询前后端可自动解析。  
 * 27.注解支持:PrimaryKey,Datetime,Createtime,Updatetime;JustFetch,ReplaceInto(MySQL)。  
 * 28.可扩展注解:多租户,敏感信息模糊处理,自动设置字段值,Dict字典转化,DictI18n多语言国际化字典转化,Column列名与属性名映射。  
+* 29.使用实体名_F引用实体字段名。  
 
 ## 最新功能介绍: 
 
@@ -90,6 +91,13 @@ Redis缓存支持
 PreparedSql自定义sql支持多表查询,返回多表关联Javabean结构数据  
 10)自定义动态SQL标签,@in,@toIsNULL1,@toIsNULL2,<if isNotNull>,<if isNotBlank>.  
 动态sql,将list转为像in (1,2,3)的语句,不需要foreach,批量插入也不需要foreach.  
+11)注册器:  
+CalculateRegistry,计算分版算法注册器  
+DbFeatureRegistry,DB方言特性注册器  
+InterceptorChainRegistry,拦截器链注册器  
+NameRegistry,命名转换注册器  
+SetParaTypeConverterRegistry, PreparedStatement参数类型转换注册器  
+TypeHandlerRegistry 查询结果转换注册器  
   
 添加注解:  
 PrimaryKey,Datetime,Createtime,Updatetime;JustFetch  
