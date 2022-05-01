@@ -446,6 +446,9 @@ USD 199.00
 **Personal** users:  
 USD 49.00  
 
+### Expiration Dates
+**Permanent use after purchase,Get upgrades for free**  
+
 ### Technical Support
 **The use of Enterprise Edition, professional technical support and solution consultation are provided by the following companies:**  
 **Shenzhen Caifeng software**  
