@@ -391,11 +391,6 @@ public class SuidExam {
 
 #### [Bee+Spring-boot Demo](../../../bee-starter-demo/)	
 
-### API-DOC  
-API-V1.9.8 下载代码含有 bee-1.9.8-javadoc.zip  
-API-V1.11(最新版) 下载代码含有 bee-1.11中文和英文版API,bee-1.11中文版源码  
-
-
 ### Bee架构介绍  
 <img src="Bee-architecture-V1.11.png"  width="520" height="500">  
 
@@ -422,6 +417,11 @@ API-V1.11(最新版) 下载代码含有 bee-1.11中文和英文版API,bee-1.11�
 
 其它学习资料:
 =========	
+### API-DOC  
+API-V1.9.8 下载代码含有 bee-1.9.8-javadoc.zip  
+API-V1.11(最新版) 下载代码含有 bee-1.11中文和英文版API,bee-1.11中文版源码  
+
+### 使用文档
 [wiki 文档](../../../bee/wikis)  
 
 [CSDN: ORM Bee资料大全](https://blog.csdn.net/abckingaa/article/details/121664398)
