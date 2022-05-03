@@ -412,6 +412,9 @@ Rapid application development:
 **Faster development of new combinations for Spring Cloud microservices：**  
 [Bee + Spring Boot](../../../bee-springboot)  
 
+### KmCoding
+[Rapid Application Code Generation Platform](http://www.kmcoding.com)--AiTea Soft made in China!  
+
 ...  
 
 Other Document:
@@ -451,7 +454,7 @@ USD 49.00
 
 ### Technical Support
 **The use of Enterprise Edition, professional technical support and solution consultation are provided by the following companies:**  
-**Shenzhen Caifeng software**  
+**[Shenzhen Caifeng software](http://www.aiteasoft.com)**  
 (Enterprises willing to join in, please contact us!)  
 
 ### Discount(2022)
