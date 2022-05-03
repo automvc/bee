@@ -410,6 +410,9 @@ public class SuidExam {
 **更快的开发Spring Cloud微服务的新组合：**  
 [Bee + Spring Boot](../../../bee-springboot)  
 
+### 快码加编
+[快码加编——代码生成神器](http://www.kmcoding.com)  
+
 ......  
 
 ## [FAQ常见问题](../../../bee/blob/master/FAQ_CN.md)  
@@ -460,7 +463,7 @@ API-V1.11(最新版) 下载代码含有 bee-1.11中文和英文版API,bee-1.11�
 
 ### 技术支持
 **企业版使用，专业技术支持，解决方案咨询，由以下单位提供:**  
-**深圳彩凤软件**  
+**[深圳彩凤软件](http://www.aiteasoft.com)**  
 (有意愿加入的企业,请联系我们!)  
   
 联系与欢迎:
