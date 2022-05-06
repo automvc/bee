@@ -75,13 +75,13 @@ Bee **简化了与DB交互的编码**工作量.连接，事务都可以由Bee框
 
 ## 最新功能介绍: 
 
-V1.11 (**International Labour Day**)
+V1.11 (**International Labour Day**)  
 1)拦截器、多租户  
 2)增加ShardingStruct为分库分表作准备  
 3)二级缓存扩展支持  
 Redis缓存支持  
-3)支持自定义TypeHandler,处理查询的ResultSet结果  
-4)add SetParaTypeConvert for convert PreparedStatement parameter  
+4)支持自定义TypeHandler,处理查询的ResultSet结果  
+     添加转换器SetParaTypeConvert转换PreparedStatement参数的类型  
 5)支持在Suid等对象设置命名转换器.  
 增加DbFeature方言注册器,自定义实现不同DB方言更加易用.  
 6)支持Cassandra.  
@@ -92,7 +92,7 @@ PreparedSql自定义sql支持多表查询,返回多表关联Javabean结构数据
 10)自定义动态SQL标签,@in,@toIsNULL1,@toIsNULL2,<if isNotNull>,<if isNotBlank>.  
 动态sql,将list转为像in (1,2,3)的语句,不需要foreach,批量插入也不需要foreach.  
 11)注册器:  
-CalculateRegistry,计算分版算法注册器  
+CalculateRegistry,计算分片算法注册器  
 DbFeatureRegistry,DB方言特性注册器  
 InterceptorChainRegistry,拦截器链注册器  
 NameRegistry,命名转换注册器  
