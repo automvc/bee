@@ -30,7 +30,9 @@ Bee是一种更接近SQL语言思维的ORM框架，
 **Bee** 网址:  
 https://github.com/automvc/bee  
 **Bee在gitee** 的网址:  
-https://gitee.com/automvc/bee
+https://gitee.com/automvc/bee  
+bee-ext:  
+https://github.com/automvc/bee-ext  
 
 ## 环境要求  
 jdk1.7+
@@ -97,7 +99,7 @@ DbFeatureRegistry,DB方言特性注册器
 InterceptorChainRegistry,拦截器链注册器  
 NameRegistry,命名转换注册器  
 SetParaTypeConverterRegistry, PreparedStatement参数类型转换注册器  
-TypeHandlerRegistry 查询结果转换注册器  
+TypeHandlerRegistry 查询结果转换处理注册器  
 12)配置文件支持多环境差异化配置.  
   
 添加注解:  
@@ -412,7 +414,13 @@ public class SuidExam {
 
 ### 快码加编
 [快码加编——代码生成神器](http://www.kmcoding.com)  
-
+* 1.一键生成整个工程  
+* 2.自动生成增删改查等常用功能  
+* 3.生成的工程可以直接运行,不再是只能看不能跑的demo  
+* 4.快速响应变化,与客户边聊边改，立即可以看到更改后的效果  
+* 5.基础功能无需人工测试、接口联调，简化整个开发流程  
+* 6.设计的软件易维护、易扩展，利于二次开发、增加新功能！  
+* 7.既可以**节约开发成本**，也可以**提高开发效率**！  
 ......  
 
 ## [FAQ常见问题](../../../bee/blob/master/FAQ_CN.md)  
@@ -443,7 +451,9 @@ API-V1.11(最新版) 下载代码含有 bee-1.11中文和英文版API,bee-1.11�
 * 6.@MultiTenancy多租户  
 * 7.@Column实现Javabean属性与表列名不一致时,定义映射关系(新系统不建议使用,主要是为了兼容旧系统)  
 * 8.@Json实体属性是Javabean与DB表Json类型字段在参数设置与查询结果时自动转换  
+    支持List结构实体Json解析(V1.11.0.5.6)  
 * 9.支持EDI XML电子报文自动生成	
+* 10.Sql Server支持start,size两个参数分页(V1.11.0.5.8)  
 
 ### 价格
 **企业**用户:  
