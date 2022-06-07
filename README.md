@@ -9,6 +9,8 @@ Bee
 **Good Feature:**  AI, Timesaving/Tasteful, Easy, Automatic (**AiTeaSoft Style**)   
 **Bee** see:  
 https://github.com/automvc/bee  
+bee-ext:  
+https://github.com/automvc/bee-ext  
 
 ## [中文介绍](../../../bee/blob/master/README_CN.md)  
 [点击链接可查看中文介绍](../../../bee/blob/master/README_CN.md)  
