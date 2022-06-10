@@ -19,6 +19,7 @@ package org.teasoft.bee.osql.transaction;
 
 /**
  * Transaction interface.
+ * Many suid operations will use same dataSource in one Transaction by default.
  * @author Kingstar
  * @since  1.0
  */

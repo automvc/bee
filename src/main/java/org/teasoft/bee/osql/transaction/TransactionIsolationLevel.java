@@ -24,7 +24,13 @@ package org.teasoft.bee.osql.transaction;
  */
 public enum TransactionIsolationLevel
 {
-    /**
+  
+	/**
+	 * ignore, and use by default.
+	 */
+	DEFAULT(-1), 
+	
+	/**
      * A constant indicating that transactions are not supported.
      */
 	TRANSACTION_NONE(0), 

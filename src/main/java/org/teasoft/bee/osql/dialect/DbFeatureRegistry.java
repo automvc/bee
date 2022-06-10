@@ -29,6 +29,8 @@ import org.teasoft.bee.osql.Registry;
  */
 public class DbFeatureRegistry implements Registry{
 	private static final Map<String, DbFeature> dbFeatureMap = new HashMap<>();
+	
+	private DbFeatureRegistry() {}
 
 	/**
 	 * register DbFeature for database.
