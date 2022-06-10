@@ -13,8 +13,8 @@ package org.teasoft.bee.osql;
  */
 public final class BeeVersion {
 
-	public static final String version = "V1.11";
-	public static final String buildId = "V1.11.0.4.22";
+	public static final String version = "V1.17";
+	public static final String buildId = "V1.17.0.6.10";
 
 	private BeeVersion() {}
 
