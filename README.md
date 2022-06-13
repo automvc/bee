@@ -55,6 +55,11 @@ jdk1.7+
 
 ## Newest Function
 
+**V1.17**  
+V1.17.0.5
+1)Sql Server support (start,size) paging  
+2)@Tran transaction annotation  
+
 **V1.11**(**International Labour Day**)  
 **Detail:**  
 V1.11.0.1.1(**2022 New Year**)  
