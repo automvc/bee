@@ -77,7 +77,12 @@ Bee **简化了与DB交互的编码**工作量.连接，事务都可以由Bee框
 
 ## 最新功能介绍: 
 
-V1.11 (**International Labour Day**)  
+**V1.17**  
+V1.17.0.5
+1)SqlServer支持start,size两个参数分页  
+2)事务注解Tran  
+
+**V1.11** (**International Labour Day**)  
 1)拦截器、多租户  
 2)增加ShardingStruct为分库分表作准备  
 3)二级缓存扩展支持  
