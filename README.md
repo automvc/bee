@@ -57,7 +57,7 @@ jdk1.7+
 
 **V1.17**  
 **V1.17.0.6**  
-1)**add support Android ORM function,you can use Bee for SQLite DB in android environment.**  
+1)**add support Android ORM function,you can use Bee for SQLite DB in Android environment.**  
 2)support android.util.Log  
 3)Ddl: optimize process if the table is exist  
 4)add log tip the dsName(dataSource name) when multi-dataSource  
