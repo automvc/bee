@@ -56,7 +56,14 @@ jdk1.7+
 ## Newest Function
 
 **V1.17**  
-V1.17.0.5
+**V1.17.0.6**  
+1)**add support Android ORM function,you can use Bee for SQLite DB in android environment.**
+2)support android.util.Log  
+3)Ddl: optimize process if the table is exist  
+4)add log tip the dsName(dataSource name) when multi-dataSource  
+5)when paging , the size is 0, return emptyList  
+
+V1.17.0.5  
 1)Sql Server support (start,size) paging  
 2)@Tran transaction annotation  
 
