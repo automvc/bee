@@ -2,13 +2,7 @@
 Bee
 =========
 #### 好消息:
-**2022年5月1日**(劳动节)前登记的企业用户，可获得专业的生产环境使用帮助,为你的系统保驾护航、提高性能；  
-个人用户登记后入群，可获得个性化的使用咨询!  
-登记地址：  
-https://gitee.com/automvc/bee/issues/I3PIUJ  
-https://github.com/automvc/bee/issues/43  
-
-完成**登记的伙伴**,请加QQ群(**992650213**),找群主领资料! 
+**Bee可用于Android环境访问SQLite数据库,专门对此作了优化(V1.17)**
 
 #### 工欲善其事必先利其器！——《论语·卫灵公》  
 #### 为适应互联网时代软件需求量大,需求变更频繁,性能要求高等要求,ORM Bee应运而生!
@@ -47,6 +41,7 @@ Bee **简化了与DB交互的编码**工作量.连接，事务都可以由Bee框
 * 3.**约定优于配置**:Javabean没有注解,也不需要xml映射文件,只是纯的Javabean即可,甚至get,set方法不用也可以。  
 * 4.**智能化自动过滤**null和空字符串，不再需要写判断非空的代码。  
 * 5.支持**只查询一部分字段**。   
+**Bee可用于Android环境访问SQLite数据库,专门对此作了优化(V1.17)**
 #### 自动,功强强大
 * 6.**动态/任意组合**查询条件,不需要提前准备dao接口,有新的查询需求也不用修改或添加接口。  
 * 7.支持原生SQL排序, **原生语句分页**(不需要将全部数据查出来)。  
@@ -78,7 +73,14 @@ Bee **简化了与DB交互的编码**工作量.连接，事务都可以由Bee框
 ## 最新功能介绍: 
 
 **V1.17**  
-V1.17.0.5
+**V1.17.0.6**  
+1)**支持Android(安卓)系统直接使用Bee访问SQLite数据库;Bee增加Android ORM功能.**  
+2)支持Android日志:android.util.Log  
+3)Ddl: 优化创建表流程  
+4)多数据源环境下,增加日志提示当前使用的是哪个数据源名称  
+5)分页查询,当获取一页的数据量size为0时,直接返回emptyList  
+
+V1.17.0.5  
 1)SqlServer支持start,size两个参数分页  
 2)事务注解Tran  
 
@@ -394,6 +396,108 @@ public class SuidExam {
 
 ```
 
+Android环境使用Bee    
+1.bee.properties    
+
+```properties
+bee.db.isAndroid=true
+bee.db.androidDbName=account.db
+bee.db.androidDbVersion=1
+bee.osql.loggerType=androidLog
+\#开启查询结果字段类型转换,将支持更多类型
+bee.osql.openFieldTypeHandler=true
+
+\#如果允许删除和更新整张表,需要开启
+#bee.osql.notDeleteWholeRecords=false
+#bee.osql.notUpdateWholeRecords=false
+bee.osql.openFieldTypeHandler=true
+```
+
+2.实现app安装及升级需要创建和更新的表	
+
+```java
+public class YourAppCreateAndUpgrade implements CreateAndUpgrade{
+	@Override
+	public void onCreate() {
+//		可以使用面向对象方式创建表
+		Ddl.createTable(new Orders(), false);
+		Ddl.createTable(new TestUser(), false);
+	}
+
+	@Override
+	public void onUpgrade(int oldVersion, int newVersion) {
+		if(newVersion==2) {
+			Ddl.createTable(new LeafAlloc(), true);
+			Log.i("onUpgrade", "你在没有卸载的情况下，在线更新到版本:"+newVersion);
+		}
+	}
+}
+
+
+```
+3.将YourAppCreateAndUpgrade和Android上下文注册到Bee	
+并在AndroidManifest.xml,配置android:name为BeeApplication 
+
+```java
+package com.aiteasoft.util;
+
+import org.teasoft.bee.android.CreateAndUpgradeRegistry;
+import org.teasoft.beex.android.ApplicationRegistry;
+
+public class BeeApplication extends Application {
+    private static Context context;
+    @Override
+    public void onCreate() {
+       ApplicationRegistry.register(this);//注册上下文
+       CreateAndUpgradeRegistry.register(YourAppCreateAndUpgrade.class);
+    }
+ }
+ 
+// 并在AndroidManifest.xml,配置android:name为BeeApplication 
+ <application
+        android:icon="@drawable/appicon"
+        android:label="@string/app_name"
+         android:name="com.aiteasoft.util.BeeApplication"
+       >
+```
+
+4.Java操作SQLite数据库与JavaWeb类似	
+
+```java
+Suid suid=BF.getSuid();
+List<Orders> list = suid.select(new Orders()); 
+```
+
+5.Bee性能对比数据	
+<table cellspacing="0" cellpadding="0">
+  <col width="62" />
+  <col width="69" />
+  <col width="64" />
+  <col width="69" span="2" />
+  <col width="96" />
+  <tr height="19">
+    <td colspan="4" height="19" width="429"><div align="center">操作1w条数据 (单位: ms)</div></td>
+  </tr>
+  <tr height="19">
+    <td height="19">　</td>
+    <td align="right">insert</td>
+    <td align="right">query</td>
+    <td align="right">delete</td>
+  </tr>
+  <tr height="19">
+    <td height="19">greenDao</td>
+    <td align="right">104666</td>
+    <td align="right">600 </td>
+    <td align="right">47 </td>
+  </tr>
+  <tr height="19">
+    <td height="19">Bee</td>
+    <td align="right">747</td>
+    <td align="right">184</td>
+    <td align="right">25 </td>
+  </tr>
+</table>
+
 #### [更多例子/测试用例](../../../bee-exam/)	
 
 #### [Bee+Spring-boot Demo](../../../bee-starter-demo/)	
@@ -487,6 +591,11 @@ API-V1.11(最新版) 下载代码含有 bee-1.11中文和英文版API,bee-1.11�
 #### 如有任何相关建议,欢迎给作者发邮件,不胜感激!  
 #### 更多设计思想,请关注微信公众号: 软件设计活跃区  
 <img src="weixin.jpg" width="200" heigh="200">
+
+为了我们能够相互了解,更好的为你服务,你可以到以下地址登录使用情况.
+https://github.com/automvc/bee/issues/43  
+https://gitee.com/automvc/bee/issues/I3PIUJ  
+完成**登记的伙伴**,请加QQ群(**992650213**),可找群主领资料! 
 
 #### 为了能及时解答大家的疑问，可以加入Bee的技术QQ群：992650213
 
