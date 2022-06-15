@@ -396,24 +396,24 @@ public class SuidExam {
 
 ```
 
-Android环境使用Bee    
-1.bee.properties    
+## Android环境使用Bee    
+### 1.bee.properties    
 
 ```properties
 bee.db.isAndroid=true
 bee.db.androidDbName=account.db
 bee.db.androidDbVersion=1
 bee.osql.loggerType=androidLog
-\#开启查询结果字段类型转换,将支持更多类型
+#开启查询结果字段类型转换,将支持更多类型
 bee.osql.openFieldTypeHandler=true
 
-\#如果允许删除和更新整张表,需要开启
+#如果允许删除和更新整张表,需要开启
 #bee.osql.notDeleteWholeRecords=false
 #bee.osql.notUpdateWholeRecords=false
 bee.osql.openFieldTypeHandler=true
 ```
 
-2.实现app安装及升级需要创建和更新的表	
+### 2.实现app安装及升级需要创建和更新的表	
 
 ```java
 public class YourAppCreateAndUpgrade implements CreateAndUpgrade{
@@ -435,7 +435,7 @@ public class YourAppCreateAndUpgrade implements CreateAndUpgrade{
 
 
 ```
-3.将YourAppCreateAndUpgrade和Android上下文注册到Bee	
+### 3.将YourAppCreateAndUpgrade和Android上下文注册到Bee	
 并在AndroidManifest.xml,配置android:name为BeeApplication 
 
 ```java
@@ -461,14 +461,15 @@ public class BeeApplication extends Application {
        >
 ```
 
-4.Java操作SQLite数据库与JavaWeb类似	
+### 4.Java操作SQLite数据库与JavaWeb类似	
 
 ```java
 Suid suid=BF.getSuid();
 List<Orders> list = suid.select(new Orders()); 
 ```
 
-5.Bee性能对比数据	
+### 5.Bee性能对比数据	
+	
 <table cellspacing="0" cellpadding="0">
   <col width="62" />
   <col width="69" />
