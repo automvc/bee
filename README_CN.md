@@ -407,10 +407,9 @@ bee.osql.loggerType=androidLog
 #开启查询结果字段类型转换,将支持更多类型
 bee.osql.openFieldTypeHandler=true
 
-#如果允许删除和更新整张表,需要开启
+#如果允许删除和更新整张表,需要去掉注释
 #bee.osql.notDeleteWholeRecords=false
 #bee.osql.notUpdateWholeRecords=false
-bee.osql.openFieldTypeHandler=true
 ```
 
 ### 2.实现app安装及升级需要创建和更新的表	
@@ -469,12 +468,12 @@ List<Orders> list = suid.select(new Orders());
 ```
 
 ### 5.Bee性能对比数据	
-	
+操作1万条数据	,使用时间对比如下.
+
 <table cellspacing="0" cellpadding="0">
   <col width="62" />
   <col width="69" />
   <col width="64" />
-  <col width="69" span="2" />
   <col width="96" />
   <tr height="19">
     <td colspan="4" height="19" width="429"><div align="center">操作1w条数据 (单位: ms)</div></td>
