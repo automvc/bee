@@ -72,7 +72,12 @@ Bee **简化了与DB交互的编码**工作量.连接，事务都可以由Bee框
 
 ## 最新功能介绍: 
 
-**V1.17**  
+**V1.17** 
+ 
+**V1.17.0.7** 
+1)**支持HarmonyOS(鸿蒙)直接使用Bee访问SQLite数据库;**  
+2)使用Bee,在**Harmony和Android两个环境**,可以用**同一套访问DB的代码**,提高代码重用,节省人力物力!  
+
 **V1.17.0.6**  
 1)**支持Android(安卓)系统直接使用Bee访问SQLite数据库;Bee增加Android ORM功能.**  
 2)支持Android日志:android.util.Log  
