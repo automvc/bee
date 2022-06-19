@@ -56,6 +56,11 @@ jdk1.7+
 ## Newest Function
 
 **V1.17**  
+
+**V1.17.0.7**  
+1)**add support HarmonyOS ORM function**  
+2)In **HarmonyOS and Android** environment can use the same ORM code with Bee  
+
 **V1.17.0.6**  
 1)**add support Android ORM function,you can use Bee for SQLite DB in Android environment.**  
 2)support android.util.Log  
