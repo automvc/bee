@@ -15,18 +15,18 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.android;
+package org.teasoft.bee.app;
 
 import java.util.List;
 import java.util.Map;
 
 /**
- * 操作Android环境SQLite数据库的接口.
+ * 操作App(Android,Harmony等)环境SQLite数据库的接口.
  * 通常不直接使用这个接口,而是通过Suid,SuidRich,MoreTable,MapSuid,PreparedSql间接使用.
  * @author Kingstar
  * @since 1.17
  */
-public interface BeeSqlForAndroid {
+public interface BeeSqlForApp {
 
 	public <T> List<T> select(String sql, T entity, String[] selectionArgs);
 
@@ -56,7 +56,7 @@ public interface BeeSqlForAndroid {
 	
 	
 //	public <T> List<T> moreTableSelect(String sql,T entity ,String[] selectionArgs);
-	public long insertAndReturnId(String sql, Object[] bindArgs); //SQLite支持返回id,   查下android如何返回
+	public long insertAndReturnId(String sql, Object[] bindArgs); //SQLite支持返回id,
 	//Bee也提供生成id的      要加多一种短的int类型id生成.
 	
 	public int batchInsert(String sql0,List<Object[]> listBindArgs);    

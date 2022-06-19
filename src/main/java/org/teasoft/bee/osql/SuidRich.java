@@ -145,6 +145,7 @@ public interface SuidRich extends Suid {
 	 * @param functionType MAX,MIN,SUM,AVG,COUNT
 	 * @param fieldForFun field for function.
 	 * @return one function result.
+	 * <br>If the result set of statistics is empty,the count return 0,the other return empty string.
 	 */
 	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun);
 	
@@ -156,6 +157,7 @@ public interface SuidRich extends Suid {
 	 * @param condition Condition as filter the record.
 	 * <br>here will ignore the condition's selectFun method.
 	 * @return one function result.
+	 * <br>If the result set of statistics is empty,the count return 0,the other return empty string.
 	 * @since 1.9
 	 */
 	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun, Condition condition); //selectOneFun
