@@ -35,7 +35,7 @@ jdk1.7+
 ## Bee主要功能特点介绍：  
 **Bee概念简单**(10分钟即可入门)、功能强大。  
 Bee **简化了与DB交互的编码**工作量.连接，事务都可以由Bee框架负责管理。  
-简单易用,文件小,性能好;同时支持**JDBC,Harmony和Android**。  
+简单易用,文件小,性能好;同时支持**JDBC(比如JavaWeb),Android和Harmony**。  
 ### 省时,开发速度快
 #### 简单易用
 * 1.**接口简单，使用方便**。Suid接口中对应SQL语言的select,update,insert,delete操作提供**4个同名方法**。  
