@@ -7,6 +7,11 @@ Bee
 **Coding Complexity is O(1),it means that Bee will do the Dao for you**.  
 **You don't need to write the Dao by yourself anymore**.Help you to focus more on the development of business logic.  
 **Good Feature:**  AI, Timesaving/Tasteful, Easy, Automatic (**AiTeaSoft Style**)   
+
+**Good News:**  
+1)**V1.17 add support Android and HarmonyOS ORM function**  
+2)In **Android and HarmonyOS** environment can use the **same ORM code with Bee**  
+
 **Bee** see:  
 https://github.com/automvc/bee  
 bee-ext:  
@@ -22,6 +27,7 @@ jdk1.7+
 
 **Support many Database**(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Cassandra and so on) and easily extend.  
 **Good performance, close to the speed of JDBC; Small files：Bee V1.8 jar 217k**, **V1.9.5 jar,315k, V1.9.8 jar 310k**.  
+In addition to **JDBC, Android and HarmonyOS** are also supported.  
 
 * 1.The interface is simple and easy to use, **Suid (select,update,insert,delete)** object-oriented operation.
 * 2.All Suid(select,update,insert,delete) operation use the same Bee interface,no longer need  new dao interface.  

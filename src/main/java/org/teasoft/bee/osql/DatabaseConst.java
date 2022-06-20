@@ -16,6 +16,8 @@ public final class DatabaseConst {
 
 	public static final String H2 = "H2";
 	public static final String SQLite = "SQLite";
+//	public static final String AndroidSQLite = "AndroidSQLite";
+//	public static final String HarmonySQLite = "HarmonySQLite";
 	public static final String PostgreSQL = "PostgreSQL";
 
 	public static final String Cubrid = "Cubrid";
