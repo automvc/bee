@@ -528,6 +528,9 @@ List<Orders> list = suid.select(new Orders());
 **更快的开发Spring Cloud微服务的新组合：**  
 [Bee + Spring Boot](../../../bee-springboot)  
 
+**HarmonyOS使用Bee开发App实例：**  
+[Bee+Spring+SpringMVC](../../../../aiteasoft/HarmonyOS-ORM-Bee-Demo)  
+
 ### 快码加编
 [快码加编——代码生成神器](http://www.kmcoding.com)  
 * 1.一键生成整个工程  
