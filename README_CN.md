@@ -529,7 +529,7 @@ List<Orders> list = suid.select(new Orders());
 [Bee + Spring Boot](../../../bee-springboot)  
 
 **HarmonyOS使用Bee开发App实例：**  
-[Bee+Spring+SpringMVC](../../../../aiteasoft/HarmonyOS-ORM-Bee-Demo)  
+[Bee + HarmonyOS](../../../../aiteasoft/HarmonyOS-ORM-Bee-Demo)  
 
 ### 快码加编
 [快码加编——代码生成神器](http://www.kmcoding.com)  
