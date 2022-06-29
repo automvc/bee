@@ -544,7 +544,7 @@ List<Orders> list = suid.select(new Orders());
 ......  
 
 ## [FAQ常见问题](../../../bee/blob/master/FAQ_CN.md)  
-[点击链接可查看  FAQ常见问题](../../../bee/blob/master/FAQ_CN.md)  
+[点击链接可查看(资料)  FAQ常见问题](../../../bee/blob/master/FAQ_CN.md)  
 
 其它学习资料:
 =========	
