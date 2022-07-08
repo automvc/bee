@@ -413,6 +413,9 @@ public class SuidExam {
 
 ```
 
+## [Harmony环境使用Bee](Quick-start-for-Harmony_CN.md) 
+
+
 ## Android环境使用Bee    
 ### 1.bee.properties    
 
