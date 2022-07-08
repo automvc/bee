@@ -1,4 +1,4 @@
-Harmony环境使用Bee入门向导  导
+Harmony环境使用Bee入门向导  
 ​
 一、添加jar包  
 
@@ -31,7 +31,7 @@ public class UserDataAbility extends Ability {
 }
 ```
 
-若有自定义的配置在bee.properties，将该文件放在entry\src\main\resources\rawfile目录下。如下图所示（整个代码结构，也可参考）。
+若有自定义的配置在bee.properties，将该文件放在entry\src\main\resources\rawfile目录下。
 
 
 三、定义安装app时，创建表和更新表的类  
