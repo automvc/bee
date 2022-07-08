@@ -1,13 +1,14 @@
 Harmony环境使用Bee入门向导  
-​
-一、添加jar包  
+​=========
+
+## 一、添加jar包  
 
 将bee相关的3个jar包复制到entry包下的libs目录，右击jar包，  
 
 选择：Add as Libray...  ,  在跳出的对话框中选择ok.  
 
 
-二、将相关配置注册到Bee  
+## 二、将相关配置注册到Bee  
 
 在启动的Ability ，添加相应的配置和注册信息。 若有自定义的配置在bee.properties则需要;则需要使  用：BeeConfigInit.init();   
 
@@ -34,7 +35,7 @@ public class UserDataAbility extends Ability {
 若有自定义的配置在bee.properties，将该文件放在entry\src\main\resources\rawfile目录下。
 
 
-三、定义安装app时，创建表和更新表的类  
+## 三、定义安装app时，创建表和更新表的类  
 
 ```java
 
@@ -90,7 +91,7 @@ public class MyRdbOpenCallback extends RdbOpenCallback {
 ```
  
 
-四，可以在其它AbilitySlice中使用Bee操作数据库了  
+## 四，可以在其它AbilitySlice中使用Bee操作数据库了  
 
 以下是select,update,insert,delete操作的例子。  
 
