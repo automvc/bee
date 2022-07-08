@@ -75,7 +75,15 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 ## 最新功能介绍: 
 
 **V1.17** 
- 
+
+**V1.17.0.8**  
+1)主键支持名称不叫"id",类型除了Long,可以是Integer或String  
+2)支持用注解定义主键自动生成,主键值生成注解:GenId,GenUUID  
+3)@Column support default implement(Strongly recommend: do not use this Annotation in new system)  
+4)@Table,@Column,@PrimaryKey(@Id) compatible with JPA(interface AnnoAdapter)  
+5)分布式id生成器,支持设置起始年份:bee.distribution.genid.startYear  
+6)链式编程SelectImpl,UpdateImpl调整字段检测.  
+
 **V1.17.0.7**  
 1)**支持HarmonyOS(鸿蒙)直接使用Bee访问SQLite数据库;**  
 2)在**Harmony和Android两个环境**,可以用**同一套Bee代码访问DB**,提高代码重用,节省人力物力!  
@@ -360,6 +368,7 @@ public class SuidExam {
 	public static void main(String[] args) {
 
 		Suid suid=BeeFactoryHelper.getSuid();
+//	    Suid suid=BF.getSuid();//从1.9.8开始,可以加快输入
 		
 		//需要先生成相应的Javabean
 		Orders orders1=new Orders();

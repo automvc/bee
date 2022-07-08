@@ -45,7 +45,17 @@ public enum MapSqlSetting {
      * "true" and "false" String transfer to Boolean Type.
      * It will be transfer by default.
      */
-    IsTransferTrueFalseStringToBooleanType("IsTransferTrueFalseStringToBooleanType")
+    IsTransferTrueFalseStringToBooleanType("IsTransferTrueFalseStringToBooleanType"),
+    
+	/**
+	 * if IsGenId is true, will override the old value.
+	 */
+	IsGenId("IsGenId"),
+    
+    /**
+     * 默认使用Long类型id,是Integer要设置
+     */
+    IsUseIntegerId("IsUseIntegerId")
     ;
 	
     String name;
