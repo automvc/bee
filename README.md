@@ -443,6 +443,12 @@ Rapid application development:
 
 ...  
 
+App Demo:
+=========	
+### **HarmonyOS application Demo with ORM Bee：**  
+[Bee + HarmonyOS](../../../../aiteasoft/HarmonyOS-ORM-Bee-Demo)  
+
+
 Other Document:
 =========	
 ### API-DOC  
