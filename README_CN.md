@@ -30,7 +30,7 @@ bee-ext:
 https://github.com/automvc/bee-ext  
 
 ## 环境要求  
-jdk1.7+
+#### jdk1.7+
 
 ## Bee主要功能特点介绍：  
 **Bee概念简单**(10分钟即可入门)、功能强大。  
@@ -70,7 +70,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 * 26.复杂查询前后端可自动解析。  
 * 27.注解支持:PrimaryKey,Datetime,Createtime,Updatetime;JustFetch,ReplaceInto(MySQL)。  
 * 28.可扩展注解:多租户,敏感信息模糊处理,自动设置字段值,Dict字典转化,DictI18n多语言国际化字典转化,Column列名与属性名映射。  
-* 29.使用实体名_F引用实体字段名。  
+* 29.使用实体名_F(自动生成)引用实体字段名。  
 
 ## 最新功能介绍: 
 
@@ -168,6 +168,7 @@ naming transfer
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 
 ## ORM比较	
+### 应用于JDBC方面的比较	
 
 [ORM-Compare (More Detail)](../../../orm-compare)  
 
@@ -298,6 +299,46 @@ Orders.java
 OrdersService.java  
 
 **用Bee无需用户再写Dao代码，一个表少三个Dao文件，100个表就少300个Dao文件.**	
+
+### Bee应用于APP方面的比较
+
+**Bee应用于APP开发性能对比数据**	
+操作1万条数据	,使用时间对比如下.	
+
+<table cellpadding="0" cellspacing="0">
+  <col width="50" />
+  <col width="90" />
+  <col width="74" />
+  <col width="76" />
+  <tr height="19">
+    <td height="19" colspan="4" ><div align="center">操作1w条数据 (单位: ms)</div></td>
+  </tr>
+  <tr height="19">
+    <td height="19" >　</td>
+    <td align="right">insert</td>
+    <td align="right">query</td>
+    <td align="right">delete</td>
+  </tr>
+  <tr height="19">
+    <td height="19">greenDao(Android)</td>
+    <td align="right">104666</td>
+    <td align="right">600 </td>
+    <td align="right">47 </td>
+  </tr>
+  <tr height="19">
+    <td height="19">Bee(Android 8.1)</td>
+    <td align="right">747</td>
+    <td align="right">184</td>
+    <td align="right">25 </td>
+  </tr>
+  <tr height="19">
+    <td height="19">Bee(HarmonyOS P40 Pro模拟器)</td>
+    <td align="right">339</td>
+    <td align="right">143</td>
+    <td align="right">2 </td>
+  </tr>
+</table>
+
 	
 快速开始:
 =========	
@@ -525,15 +566,15 @@ List<Orders> list = suid.select(new Orders());
 </table>	
 
 
-#### [更多例子/测试用例](../../../bee-exam/)	
+### [更多例子/测试用例](../../../bee-exam/)	
 
-#### [Bee+Spring-boot Demo](../../../bee-starter-demo/)	
+### [Bee+Spring-boot Demo](../../../bee-starter-demo/)	
 
-### Bee架构介绍
+## Bee架构介绍
 **V1.17**  
-<img src="Bee-architecture-V1.17.png"  width="520" height="600">  
+<img src="Bee-architecture-V1.17.png"  width="520" height="640">  
 
-### Bee常用接口介绍  
+## Bee常用接口介绍  
 <img src="common-interface.jpg">  
 
 综合应用:
