@@ -79,8 +79,8 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 **V1.17.0.8**  
 1)主键支持名称不叫"id",类型除了Long,可以是Integer或String  
 2)支持用注解定义主键自动生成,主键值生成注解:GenId,GenUUID  
-3)@Column support default implement(Strongly recommend: do not use this Annotation in new system)  
-4)@Table,@Column,@PrimaryKey(@Id) compatible with JPA(interface AnnoAdapter)  
+3)@Column添加默认实现(强烈建议:在新系统中不要使用该注解)  
+4)@Table,@Column,@PrimaryKey(@Id)可以兼容JPA相应注解(在AnnoAdapter接口定义)  
 5)分布式id生成器,支持设置起始年份:bee.distribution.genid.startYear  
 6)链式编程SelectImpl,UpdateImpl调整字段检测.  
 
