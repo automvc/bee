@@ -488,35 +488,42 @@ List<Orders> list = suid.select(new Orders());
 ```
 
 ### 5.Bee性能对比数据	
-操作1万条数据	,使用时间对比如下.
+操作1万条数据	,使用时间对比如下.	
 
-<table cellspacing="0" cellpadding="0">
-  <col width="62" />
-  <col width="69" />
-  <col width="64" />
-  <col width="96" />
+<table border="1" cellpadding="0" cellspacing="0" bordercolor="#0000FF">
+  <col width="50" />
+  <col width="89" />
+  <col width="74" />
+  <col width="76" />
   <tr height="19">
-    <td colspan="4" height="19" width="429"><div align="center">操作1w条数据 (单位: ms)</div></td>
+    <td width="429" height="19" colspan="4" bordercolor="#0000FF" class="STYLE1"><div align="center" class="STYLE2">操作1w条数据 (单位: ms)</div></td>
   </tr>
   <tr height="19">
-    <td height="19">　</td>
-    <td align="right">insert</td>
-    <td align="right">query</td>
-    <td align="right">delete</td>
+    <td height="19" bordercolor="#0000FF">　</td>
+    <td align="right" bordercolor="#0000FF">insert</td>
+    <td align="right" bordercolor="#0000FF">query</td>
+    <td align="right" bordercolor="#0000FF">delete</td>
   </tr>
   <tr height="19">
-    <td height="19">greenDao</td>
-    <td align="right">104666</td>
-    <td align="right">600 </td>
-    <td align="right">47 </td>
+    <td height="19" bordercolor="#0000FF">greenDao(Android)</td>
+    <td align="right" bordercolor="#0000FF">104666</td>
+    <td align="right" bordercolor="#0000FF">600 </td>
+    <td align="right" bordercolor="#0000FF">47 </td>
   </tr>
   <tr height="19">
-    <td height="19">Bee</td>
-    <td align="right">747</td>
-    <td align="right">184</td>
-    <td align="right">25 </td>
+    <td height="19" bordercolor="#0000FF">Bee(Android 8.1)</td>
+    <td align="right" bordercolor="#0000FF">747</td>
+    <td align="right" bordercolor="#0000FF">184</td>
+    <td align="right" bordercolor="#0000FF">25 </td>
   </tr>
-</table>
+    <tr height="19">
+    <td height="19" bordercolor="#0000FF">Bee(HarmonyOS P40 Pro模拟器)</td>
+    <td align="right" bordercolor="#0000FF">339</td>
+    <td align="right" bordercolor="#0000FF">143</td>
+    <td align="right" bordercolor="#0000FF">2 </td>
+  </tr>
+</table>	
+
 
 #### [更多例子/测试用例](../../../bee-exam/)	
 
