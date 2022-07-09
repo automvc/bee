@@ -492,11 +492,11 @@ List<Orders> list = suid.select(new Orders());
 
 <table border="1" cellpadding="0" cellspacing="0" bordercolor="#0000FF">
   <col width="50" />
-  <col width="89" />
+  <col width="90" />
   <col width="74" />
   <col width="76" />
   <tr height="19">
-    <td width="429" height="19" colspan="4" bordercolor="#0000FF" class="STYLE1"><div align="center" class="STYLE2">操作1w条数据 (单位: ms)</div></td>
+    <td height="19" colspan="4" bordercolor="#0000FF" class="STYLE1"><div align="center" class="STYLE2">操作1w条数据 (单位: ms)</div></td>
   </tr>
   <tr height="19">
     <td height="19" bordercolor="#0000FF">　</td>
