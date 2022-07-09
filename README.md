@@ -423,7 +423,8 @@ public class SuidExamEN {
 #### [Bee+Spring-boot Demo](../../../bee-starter-demo/)	
 
 ### Bee Architecture  
-<img src="Bee-architecture-EN-V1.11.png"  width="520" height="500">  
+**V1.17**  
+<img src="Bee-architecture-EN-V1.17.png"  width="520" height="500">  
 
 ### Bee Common Interface  
 <img src="common-interface_en.jpg">  

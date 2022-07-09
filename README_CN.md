@@ -529,8 +529,9 @@ List<Orders> list = suid.select(new Orders());
 
 #### [Bee+Spring-boot Demo](../../../bee-starter-demo/)	
 
-### Bee架构介绍  
-<img src="Bee-architecture-V1.11.png"  width="520" height="500">  
+### Bee架构介绍
+**V1.17**  
+<img src="Bee-architecture-V1.17.png"  width="520" height="500">  
 
 ### Bee常用接口介绍  
 <img src="common-interface.jpg">  
