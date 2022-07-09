@@ -1,7 +1,7 @@
 
 Bee
 =========
-#### 好消息:
+## 好消息:
 **Bee可用于Android、HarmonyOS环境访问SQLite数据库,专门对两套环境作了优化(V1.17)**  
 在**Android和Harmony两个环境**,可以用**同一套Bee代码访问DB**  
 
@@ -74,7 +74,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 
 ## 最新功能介绍: 
 
-**V1.17** 
+### **V1.17** 
 
 **V1.17.0.8**  
 1)主键支持名称不叫"id",类型除了Long,可以是Integer或String  
@@ -302,8 +302,8 @@ OrdersService.java
 
 ### Bee应用于APP方面的比较
 
-**Bee应用于APP开发性能对比数据**	
-操作1万条数据	,使用时间对比如下.	
+**Bee应用于APP开发性能对比数据**  
+操作1万条数据	,使用时间对比如下.  
 
 <table cellpadding="0" cellspacing="0">
   <col width="50" />
@@ -595,7 +595,7 @@ List<Orders> list = suid.select(new Orders());
 
 ### 快码加编
 [快码加编——代码生成神器](http://www.kmcoding.com)  
-* 1.一键生成整个工程  
+* 1.一键生成整个工程(无需再搭建系统框架)  
 * 2.自动生成增删改查等常用功能  
 * 3.生成的工程可以直接运行,不再是只能看不能跑的demo  
 * 4.快速响应变化,与客户边聊边改，立即可以看到更改后的效果  

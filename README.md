@@ -8,7 +8,7 @@ Bee
 **You don't need to write the Dao by yourself anymore**.Help you to focus more on the development of business logic.  
 **Good Feature:**  AI, Timesaving/Tasteful, Easy, Automatic (**AiTeaSoft Style**)   
 
-**Good News:**  
+## **Good News:**  
 1)**V1.17 add support Android and HarmonyOS ORM function**  
 2)In **Android and HarmonyOS** environment can use the **same ORM code with Bee**  
 
@@ -62,7 +62,7 @@ In addition to **JDBC, Android and HarmonyOS** are also supported.
 
 ## Newest Function
 
-**V1.17**  
+### **V1.17**  
 
 **V1.17.0.8**  
 1)Primary key support the field is not "id",except the Long, the type can be Integer or String    
@@ -320,10 +320,10 @@ common,Javabean and Service interface:
 Orders.java  
 OrdersService.java  
 
-### Bee application in App Compare
+### Bee application in App Compare  
 
-**Performance comparison data of Bee application in app development**	
-Operate 10000 records, and the use time comparison is as follows.	
+**Performance comparison data of Bee application in app development**  
+Operate 10000 records, and the use time comparison is as follows.  
 
 <table cellpadding="0" cellspacing="0">
   <col width="50" />
@@ -545,8 +545,8 @@ List<Orders> list = suid.select(new Orders());
 ```
 
 ### 5.Bee application in App Compare	
-**Performance comparison data of Bee application in app development**	
-Operate 10000 records, and the use time comparison is as follows.	
+**Performance comparison data of Bee application in app development**  
+Operate 10000 records, and the use time comparison is as follows.  
 
 <table cellpadding="0" cellspacing="0">
   <col width="50" />
