@@ -469,9 +469,9 @@ public class SuidExamEN {
 ```
 
 
-## [Quick start for: Bee + Harmony](Quick-start-for-Harmony.md) 
+## [Quick Start : Bee + Harmony](Quick-start-for-Harmony.md) 
 
-## [Quick start for: Bee + Android](Quick-start-for-Android.md) 
+## [Quick Start : Bee + Android](Quick-start-for-Android.md) 
 
 ## Use Bee in Android Environment    
 ### 1.bee.properties    
