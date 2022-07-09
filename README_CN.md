@@ -531,7 +531,7 @@ List<Orders> list = suid.select(new Orders());
 
 ### Bee架构介绍
 **V1.17**  
-<img src="Bee-architecture-V1.17.png"  width="520" height="500">  
+<img src="Bee-architecture-V1.17.png"  width="520" height="600">  
 
 ### Bee常用接口介绍  
 <img src="common-interface.jpg">  

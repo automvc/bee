@@ -424,7 +424,7 @@ public class SuidExamEN {
 
 ### Bee Architecture  
 **V1.17**  
-<img src="Bee-architecture-EN-V1.17.png"  width="520" height="500">  
+<img src="Bee-architecture-EN-V1.17.png"  width="520" height="600">  
 
 ### Bee Common Interface  
 <img src="common-interface_en.jpg">  
