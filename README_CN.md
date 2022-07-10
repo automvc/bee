@@ -76,7 +76,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 
 ### **V1.17** 
 
-**V1.17.0.8**  
+**V1.17.0.8(海纳百川)**  
 1)主键支持名称不叫"id",类型除了Long,可以是Integer或String  
 2)支持用注解定义主键自动生成,主键值生成注解:GenId,GenUUID  
 3)@Column添加默认实现(强烈建议:在新系统中不要使用该注解)  
@@ -84,12 +84,12 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 5)分布式id生成器,支持设置起始年份:bee.distribution.genid.startYear  
 6)链式编程SelectImpl,UpdateImpl调整字段检测.  
 
-**V1.17.0.7**  
+**V1.17.0.7(有为)**  
 1)**支持HarmonyOS(鸿蒙)直接使用Bee访问SQLite数据库;**  
 2)在**Harmony和Android两个环境**,可以用**同一套Bee代码访问DB**,提高代码重用,节省人力物力!  
 3)支持HarmonyOS日志:ohos.hiviewdfx.HiLog  
 
-**V1.17.0.6**  
+**V1.17.0.6(奋斗)**  
 1)**支持Android(安卓)系统直接使用Bee访问SQLite数据库;Bee增加Android ORM功能.**  
 2)支持Android日志:android.util.Log  
 3)Ddl: 优化创建表流程  
