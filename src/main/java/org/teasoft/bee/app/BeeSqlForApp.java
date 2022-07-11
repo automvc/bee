@@ -21,19 +21,43 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 操作App(Android,Harmony等)环境SQLite数据库的接口.
- * 通常不直接使用这个接口,而是通过Suid,SuidRich,MoreTable,MapSuid,PreparedSql间接使用.
+ * Operate the SQLite database interface of app (Android, harmony, etc.) environment
+ * Usually, this interface is not used directly, but indirectly through Suid,SuidRich,MoreTable,MapSuid,PreparedSql.
  * @author Kingstar
  * @since 1.17
  */
 public interface BeeSqlForApp {
 
+	/**
+	 * 
+	 * @param sql
+	 * @param entity
+	 * @param selectionArgs
+	 * @return
+	 */
 	public <T> List<T> select(String sql, T entity, String[] selectionArgs);
 
+	/**
+	 * @param sql
+	 * @param selectionArgs
+	 * @return
+	 */
 	public String selectFun(String sql, String[] selectionArgs);
 
+	/**
+	 * 
+	 * @param sql
+	 * @param bindArgs
+	 * @return
+	 */
 	public int modify(String sql, Object[] bindArgs);
 
+	/**
+	 * 
+	 * @param sql
+	 * @param selectionArgs
+	 * @return
+	 */
 	public List<String[]> select(String sql, String[] selectionArgs);
 
 	/**
@@ -44,8 +68,15 @@ public interface BeeSqlForApp {
 	 */
 	public List<Map<String, Object>> selectMapList(String sql, String[] selectionArgs);
 	
-	//内部使用
+	/**
+	 * select maplist with column name.
+	 * this method just use internally.
+	 * @param sql
+	 * @param selectionArgs
+	 * @return
+	 */
 	public List<Map<String, String>> selectMapListWithColumnName(String sql, String[] selectionArgs);
+	
 	/**
 	 * Select and return json format result.
 	 * 
@@ -54,12 +85,20 @@ public interface BeeSqlForApp {
 	 */
 	public String selectJson(String sql, String[] selectionArgs, Class entityClass);
 	
+	/**
+	 * 
+	 * @param sql
+	 * @param bindArgs
+	 * @return
+	 */
+	public long insertAndReturnId(String sql, Object[] bindArgs); 
 	
-//	public <T> List<T> moreTableSelect(String sql,T entity ,String[] selectionArgs);
-	public long insertAndReturnId(String sql, Object[] bindArgs); //SQLite支持返回id,
-	//Bee也提供生成id的      要加多一种短的int类型id生成.
-	
-	public int batchInsert(String sql0,List<Object[]> listBindArgs);    
-//	public int batch(String sqls,List<Object[]> listBindArgs,int batchSize);
+	/**
+	 * 
+	 * @param sql
+	 * @param listBindArgs
+	 * @return
+	 */
+	public int batchInsert(String sql,List<Object[]> listBindArgs);    
 
 }

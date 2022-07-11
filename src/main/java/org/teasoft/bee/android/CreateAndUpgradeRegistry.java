@@ -26,10 +26,18 @@ public class CreateAndUpgradeRegistry {
 
 	private static Class<? extends CreateAndUpgrade> clazz;
 
+	/**
+	 * 
+	 * @param c registry class
+	 */
 	public static void register(Class<? extends CreateAndUpgrade> c) {
 		clazz = c;
 	}
 
+	/**
+	 * return the registry class
+	 * @return
+	 */
 	public static Class<? extends CreateAndUpgrade> getCreateAndUpgrade() {
 		return clazz;
 	}

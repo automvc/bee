@@ -23,8 +23,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 用于插入数据时,生成主键id值.
- * 统一配置,可使用bee.properties里,bee.distribution.genid.开头的配置.
+ * Used to generate the primary key ID value when inserting data.
+ * Unified configuration, you can use config items start with "bee.distribution.genid." in bee.properties.
  * @author Kingstar
  * @since  1.17
  */
@@ -33,7 +33,7 @@ import java.lang.annotation.Target;
 public @interface GenId {
 
 	/**
-	 * whether override the OldId
+	 * whether override the old Id
 	 * @return
 	 */
 	boolean override() default false;

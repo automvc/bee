@@ -22,19 +22,28 @@ package org.teasoft.bee.android;
  * @since  1.17
  */
 public interface CreateAndUpgrade {
-	
-	/**
-	 * 创建数据库,在安装app时执行; 升级版本也不执行
-	 * @param db
-	 */
-	public void onCreate();
-	
 
 	/**
-	 * 数据库版本升级时运行. (降版本会报异常)
-	 * @param db
-	 * @param oldVersion
-	 * @param newVersion
+	 * Called when the database is created for the first time. This is where the
+	 * creation of tables and the initial population of the tables should happen.
+	 */
+	public void onCreate();
+
+	/**
+	 * Called when the database needs to be upgraded. The implementation
+	 * should use this method to drop tables, add tables, or do anything else it
+	 * needs to upgrade to the new schema version.
+	 *
+	 * <p>If you add new columns you can use ALTER TABLE to insert them into a live table. 
+	 * If you rename or remove columns you can use ALTER TABLE to rename the old table, 
+	 * then create the new table and then populate the new table with the contents of the old table.
+	 * </p><p>
+	 * This method executes within a transaction.  If an exception is thrown, all changes
+	 * will automatically be rolled back.
+	 * </p>
+	 *
+	 * @param oldVersion The old database version.
+	 * @param newVersion The new database version.
 	 */
 	public void onUpgrade(int oldVersion, int newVersion);
 

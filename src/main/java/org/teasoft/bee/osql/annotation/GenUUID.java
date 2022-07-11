@@ -23,9 +23,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 用于插入数据时,生成主键id值(UUID生成),字段类型要求是String.
- * 建议使用Long类型的id主键,如@GenId,具体分布式全局唯一特性,效率也高.
- * 统一配置方式,可使用bee.properties里,bee.distribution.genid.开头的配置.
+ * Used to generate the primary key ID value (generate by UUID) when inserting data. 
+ * The field type is required to be string.
+ * It is recommended to use a Long type ID primary key, such as @GenId, which is globally unique and efficient.
+ * Unified configuration, you can use config items start with "bee.distribution.genid." in bee.properties.
  * @author Kingstar
  * @since  1.17
  */

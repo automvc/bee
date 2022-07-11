@@ -53,7 +53,7 @@ public enum MapSqlSetting {
 	IsGenId("IsGenId"),
     
     /**
-     * 默认使用Long类型id,是Integer要设置
+     * id type default is Long,if use Integer need setting.
      */
     IsUseIntegerId("IsUseIntegerId")
     ;
