@@ -48,9 +48,10 @@ public class AnnoAdapterBeeDefault implements AnnoAdapter {
 	public String getValue(Field field) {
 
 		if (field.isAnnotationPresent(Column.class)) {
-			Column column = field.getAnnotation(Column.class);
-			String defineColumn = column.value();
-			return defineColumn;
+//			Column column = field.getAnnotation(Column.class);
+//			String defineColumn = column.value();
+//			return defineColumn;
+			return field.getAnnotation(Column.class).value();
 		}
 
 		return "";
@@ -60,8 +61,9 @@ public class AnnoAdapterBeeDefault implements AnnoAdapter {
 	public String getValue(Class<?> clazz) {
 
 		if (clazz.isAnnotationPresent(Table.class)) {
-			Table tab = (Table) clazz.getAnnotation(Table.class);
-			return tab.value();
+//			Table tab = (Table) clazz.getAnnotation(Table.class);
+//			return tab.value();
+			return clazz.getAnnotation(Table.class).value();
 		}
 
 		return "";

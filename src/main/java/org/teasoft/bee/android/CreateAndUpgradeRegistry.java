@@ -25,6 +25,8 @@ package org.teasoft.bee.android;
 public class CreateAndUpgradeRegistry {
 
 	private static Class<? extends CreateAndUpgrade> clazz;
+	
+	private CreateAndUpgradeRegistry() {}
 
 	/**
 	 * 

@@ -14,6 +14,8 @@ package org.teasoft.bee.osql.token;
  */
 public final class CustomAutoSqlToken {
 	
+	private CustomAutoSqlToken() {}
+	
 	/**
 	 * the para is not null,will transfer.
 	 * eg:
