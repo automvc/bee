@@ -198,7 +198,7 @@ Test Evn : Local windows.
 DB: MySQL (Version 5.6.24).  
 Test point: Batch Insert;Paging Select; Transaction(update and select).  
 
-<img src="batch-insert-compare.png">  
+<img src="illustration/batch-insert-compare.png">  
 
 <table cellspacing="0" cellpadding="0">
   <col width="62" />
@@ -469,9 +469,9 @@ public class SuidExamEN {
 ```
 
 
-## [Quick Start : Bee + Harmony](Quick-start-for-Harmony.md) 
+## [Quick Start : Bee + Harmony](guide/Quick-start-for-Harmony.md) 
 
-## [Quick Start : Bee + Android](Quick-start-for-Android.md) 
+## [Quick Start : Bee + Android](guide/Quick-start-for-Android.md) 
 
 ## Use Bee in Android Environment    
 ### 1.bee.properties    
@@ -589,10 +589,10 @@ Operate 10000 records, and the use time comparison is as follows.
 
 ## Bee Architecture  
 **V1.17**  
-<img src="Bee-architecture-EN-V1.17.png"  width="520" height="640">  
+<img src="illustration/Bee-architecture-EN-V1.17.png"  width="520" height="640">  
 
 ## Bee Common Interface  
-<img src="common-interface_en.jpg">  
+<img src="illustration/common-interface_en.jpg">  
 
 Rapid application development:
 =========	
@@ -614,7 +614,7 @@ App Demo:
 ### **HarmonyOS application Demo with ORM Bee：**  
 [Bee + HarmonyOS](../../../../aiteasoft/HarmonyOS-ORM-Bee-Demo)  
 
-[Bee + Android](Quick-start-for-Android.md)  
+[Bee + Android](guide/Quick-start-for-Android.md)  
 
 Other Document:
 =========	

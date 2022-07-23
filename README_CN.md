@@ -585,7 +585,7 @@ List<Orders> list = suid.select(new Orders());
 <img src="illustration/Bee-architecture-V1.17.png"  width="520" height="640">  
 
 ## Bee常用接口介绍  
-<img src="common-interface.jpg">  
+<img src="illustration/common-interface.jpg">  
 
 综合应用:
 =========	
