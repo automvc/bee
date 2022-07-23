@@ -17,7 +17,7 @@ Bee
 
 #### 磨刀不误砍柴工！    Bee连磨刀的时间都帮你省了。  
 **Bee** 是一个具有人工智能(**AI**)特性，**省时/优雅、简易、自动**( **AiTea:** Timesaving/Tasteful, Easy, Automatic) 的ORM软件框架(AiTeaSoft)(IT-->AiTea 的思维转变!)。
-<img src="AiTea-meaning.png"  width="620" height="270">  
+<img src="illustration/AiTea-meaning.png"  width="620" height="270">  
 Bee是一种更接近SQL语言思维的ORM框架，  
 一种开发速度和开发成本都不比Php,Ruby on Rail差的Java ORM框架，  
 而且它的编码复杂度是O(1)，即用了Bee，**无论多少个表**,你都可以不用另外再写dao代码；**让你可以更专注业务逻辑的开发**。  
@@ -77,8 +77,12 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 ### **V1.17** 
 
 **V1.17.0.9()**  
-1)字段名称引用类(默认格式:实体名_F(自动生成))增加ALL_NAMES属性,可一次获取实体的所有字段值。
-2)Ddl.java support create index(normal,unique),combine Primary key
+1)字段名称引用类(默认格式:实体名_F(自动生成))增加ALL_NAMES属性,可一次获取实体的所有字段值  
+2)Ddl.java support create index(normal,unique),combine Primary key  
+3)condition.op(fieldName, Op.in, Value)增加支持List,Set,Number Array,单个Number元素  
+4)condition.opOn(fieldName, Op.in, Value) Value限定只支持Number和String  
+5)增强:ExcelReader数据列数目动态计算  
+
 
 **V1.17.0.8(海纳百川)**  
 1)主键支持名称不叫"id",类型除了Long,可以是Integer或String  
@@ -182,7 +186,7 @@ naming transfer
 数据库: MySQL (Version 5.6.24).  
 测试点: 批量插入;分页查询;事务(update and select).  
 
-<img src="batch-insert-compare.png">  
+<img src="illustration/batch-insert-compare.png">  
 
 <table cellspacing="0" cellpadding="0">
   <col width="62" />
@@ -460,7 +464,7 @@ public class SuidExam {
 
 ```
 
-## [快速开始:Harmony环境使用Bee](Quick-start-for-Harmony_CN.md) 
+## [快速开始:Harmony环境使用Bee](guide/Quick-start-for-Harmony_CN.md) 
 
 
 ## 快速开始:Android环境使用Bee    
@@ -578,7 +582,7 @@ List<Orders> list = suid.select(new Orders());
 
 ## Bee架构介绍
 **V1.17**  
-<img src="Bee-architecture-V1.17.png"  width="520" height="640">  
+<img src="illustration/Bee-architecture-V1.17.png"  width="520" height="640">  
 
 ## Bee常用接口介绍  
 <img src="common-interface.jpg">  
@@ -621,6 +625,8 @@ API-V1.11(最新版) 下载代码含有 bee-1.11中文和英文版API,bee-1.11�
 
 ### 使用文档
 [wiki 文档](../../../bee/wikis)  
+
+[Bee常用大全](/guide/Frequently-Used-Guide.md)  
 
 [CSDN: ORM Bee资料大全](https://blog.csdn.net/abckingaa/article/details/121664398)
   
