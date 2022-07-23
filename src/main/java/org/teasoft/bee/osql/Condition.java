@@ -64,6 +64,8 @@ public interface Condition extends ConditionAssistant {
 	 * @return Condition
 	 */
 	public Condition op(String field, Op op, Object value);
+////	- The type Number is not an interface; it cannot be specified as a bounded parameter
+//	public <T extends String & List & Set & Number[] & Number> Condition op(String field, Op op, T value);
 	
 
 	/**
@@ -72,10 +74,23 @@ public interface Condition extends ConditionAssistant {
 	 * <br>it is different from where part: table1 left join table2  on table1.id=table2.id where valid='1'
 	 * @param field Field name
 	 * @param op operator
-	 * @param value Value of the field.
+	 * @param value Value of the field. Since 1.17 the type change from Object to String,Number.
 	 * @return Condition
 	 */
-	public Condition opOn(String field, Op op, Object value);
+	public Condition opOn(String field, Op op, String value);
+//	public Condition opOn(String field, Op op, Object value);
+	
+	
+	/**
+	 * The expression will correspond to: table1 JoinType table2 on field Op value
+	 * <br>eg: opOn("table2.valid",Op.eq,1)    table1 left join table2 on table1.id=table2.id and table2.valid=1
+	 * <br>it is different from where part: table1 left join table2  on table1.id=table2.id where valid=1
+	 * @param field Field name
+	 * @param op operator
+	 * @param value Value of the field. Since 1.17 the type change from Object to String,Number.
+	 * @return Condition
+	 */
+	public Condition opOn(String field, Op op, Number value);
 	
 	/**
 	 * Add a expression condition.

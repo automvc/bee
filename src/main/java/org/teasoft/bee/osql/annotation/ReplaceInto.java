@@ -24,6 +24,7 @@ import java.lang.annotation.Target;
 
 /**
  * Change "insert [into]" to "replace  [into]" for insert sql.
+ * It will affect when use in entity Javabean.
  * In particular, this is generally used for MySQL.
  * @author Kingstar
  * @since  1.11

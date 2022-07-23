@@ -31,8 +31,6 @@ public interface AnnoAdapter {
 	public boolean isTable(Class<?> clazz);
 
 	public boolean isColumn(Field field);
-	// Index
-	// Unique
 
 	public String getValue(Field field);
 
