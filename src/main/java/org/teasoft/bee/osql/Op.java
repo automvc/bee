@@ -38,8 +38,52 @@ public enum Op {
 	 */
 	le("<="),
 	
+	/**
+	 * like.
+	 * the user need escape the '%' and '_' in the parameter value.
+	 */
 	like(" like "),
+	
+	/**
+	 * not like.
+	 * the user need escape the '%' and '_' in the parameter value.
+	 * column_name not like 'aaaaaa' 将会查出所有column_name不是aaaaaa的记录.有受攻击的危险.
+	 */
+	@Deprecated
 	notLike(" not like "),
+	
+	/**
+	 * like ,and add '%' on the left of parameter.
+	 */
+	likeLeft(" like "),
+	
+	/**
+	 * like ,and add '%' on the right of parameter.
+	 */
+	likeRight(" like "),
+	
+	/**
+	 * like ,and add '%' on the left and right of parameter.
+	 */
+	likeLeftRight(" like "),
+	
+	
+//	/**
+//	 * not like ,and add '%' on the left of parameter.
+//	 */
+//	@Deprecated
+//	notLikeLeft(" not like "),
+//	/**
+//	 * not like ,and add '%' on the right of parameter.
+//	 */
+//	@Deprecated
+//	notLikeRight(" not like "),
+//	
+//	/**
+//	 * not like ,and add '%' on the left and right of parameter.
+//	 */
+//	@Deprecated
+//	notLikeLeftRight(" not like "),
 	
 	in(" in"),
 	notIn(" not in"),
