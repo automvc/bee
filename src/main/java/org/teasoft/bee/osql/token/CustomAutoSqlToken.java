@@ -17,22 +17,23 @@ public final class CustomAutoSqlToken {
 	private CustomAutoSqlToken() {}
 	
 	/**
-	 * the para is not null,will transfer.
-	 * eg:
+	 * the parameter is not null,will transfer.
+	 * eg:<br>
 	 * <if isNotNull>userid in #{userid@in}</if>
 	 * if value of userid is not null, will parse "userid in #{userid@in}"
 	 */
 	public static final String isNotNull = "<if isNotNull>";
 	
 	/**
-	 * if value of para is not null and not empty string,will transfer.
+	 * if value of parameter is not null and not empty string,will transfer.
 	 */
 	public static final String isNotBlank = "<if isNotBlank>";
 	
 	public static final String endIf = "</if>";
 	
 	/**
-	 * support list and set, transfer to: in (1,2) or in ('a','b')
+	 * support list and set, transfer as : in (1,2) or in ('a','b')
+	 * eg:<br>
 	 * userid in #{userid @in}
 	 * userid in #{userid@in}
 	 */
