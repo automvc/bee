@@ -82,6 +82,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 3)condition.op(fieldName, Op.in, Value)增加支持List,Set,Number Array,单个Number元素  
 4)condition.opOn(fieldName, Op.in, Value) Value限定只支持Number和String  
 5)增强:ExcelReader数据列数目动态计算  
+6)增强like,Op添加likeLeft,likeRight,likeLeftRight(参数值由框架负责转义)  
 
 
 **V1.17.0.8(海纳百川)**  

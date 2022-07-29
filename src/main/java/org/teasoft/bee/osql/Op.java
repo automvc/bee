@@ -54,16 +54,19 @@ public enum Op {
 	
 	/**
 	 * like ,and add '%' on the left of parameter.
+	 * <br>the value of parameter will be escaped.
 	 */
 	likeLeft(" like "),
 	
 	/**
 	 * like ,and add '%' on the right of parameter.
+	 * <br>the value of parameter will be escaped.
 	 */
 	likeRight(" like "),
 	
 	/**
 	 * like ,and add '%' on the left and right of parameter.
+	 * <br>the value of parameter will be escaped.
 	 */
 	likeLeftRight(" like "),
 	
