@@ -39,34 +39,45 @@ public enum Op {
 	le("<="),
 	
 	/**
-	 * like.
-	 * the user need escape the '%' and '_' in the parameter value.
+	 * Like, the matching character is not limited to the left or right; Suitable for complex fuzzy queries.
+	 * <br> it is necessary to judge whether the final character only contains matching characters ('%'and' _'); 
+	 * <br> since from 1.17, the framework will do this kind of inspection;
+	 * <br> since from 1.17, if can confirm whether the matching character is on the left or right, 
+	 * <br> and can preferentially use likeLeft,likeRight,likeLeftRight.
 	 */
 	like(" like "),
 	
 	/**
 	 * not like.
-	 * the user need escape the '%' and '_' in the parameter value.
-	 * column_name not like 'aaaaaa' 将会查出所有column_name不是aaaaaa的记录.有受攻击的危险.
+	 * <br>the user need escape the '%' and '_' in the parameter value.
+	 * <br>column_name not like'aaaaaa'will find all column_name is not a record of 'aaaaaa'.
+	 * <br>In the where condition, it is not recommended to use only the not like filter condition; 
+	 * <br>It can be used in conjunction with other filtering conditions to prevent malicious SQL attacks.
 	 */
 	@Deprecated
 	notLike(" not like "),
 	
 	/**
-	 * like ,and add '%' on the left of parameter.
-	 * <br>the value of parameter will be escaped.
+	 * Like left match, and the framework adds '%' to the left of the parameter value.
+	 * <br> the value of the parameter will be escaped by the framework.
+	 * <br> the value of the parameter cannot be empty.
+	 * @since 1.17
 	 */
 	likeLeft(" like "),
 	
 	/**
-	 * like ,and add '%' on the right of parameter.
-	 * <br>the value of parameter will be escaped.
+	 * Like right match, and the framework adds '%' to the right of the parameter value.
+	 * <br> the value of the parameter will be escaped by the framework.
+	 * <br> the value of the parameter cannot be empty.
+	 * @since 1.17
 	 */
 	likeRight(" like "),
 	
 	/**
-	 * like ,and add '%' on the left and right of parameter.
-	 * <br>the value of parameter will be escaped.
+	 * Like right match, and the framework adds '%' to the right of the parameter value.
+	 * <br> the value of the parameter will be escaped by the framework.
+	 * <br> the value of the parameter cannot be empty.
+	 * @since 1.17
 	 */
 	likeLeftRight(" like "),
 	
@@ -88,7 +99,14 @@ public enum Op {
 //	@Deprecated
 //	notLikeLeftRight(" not like "),
 	
+	/**
+	 * in
+	 */
 	in(" in"),
+	
+	/**
+	 * not in
+	 */
 	notIn(" not in"),
 	
 	
