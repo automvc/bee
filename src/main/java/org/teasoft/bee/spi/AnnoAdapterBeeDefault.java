@@ -20,6 +20,7 @@ package org.teasoft.bee.spi;
 import java.lang.reflect.Field;
 
 import org.teasoft.bee.osql.annotation.Column;
+import org.teasoft.bee.osql.annotation.Ignore;
 import org.teasoft.bee.osql.annotation.PrimaryKey;
 import org.teasoft.bee.osql.annotation.Table;
 
@@ -42,6 +43,11 @@ public class AnnoAdapterBeeDefault implements AnnoAdapter {
 	@Override
 	public boolean isColumn(Field field) {
 		return field.isAnnotationPresent(Column.class);
+	}
+	
+	@Override
+	public boolean isIgnore(Field field) {
+		return field.isAnnotationPresent(Ignore.class);
 	}
 
 	@Override

@@ -26,14 +26,50 @@ import java.lang.reflect.Field;
  */
 public interface AnnoAdapter {
 
+	/**
+	 * Check the property or field whether is Primary Key annotation.
+	 * The annotation is used to annotate a property or field of an entity class.
+	 * @param field annotated field
+	 * @return boolean value
+	 */
 	public boolean isPrimaryKey(Field field);
 
+	/**
+	 * Check the class whether is Table annotation.
+	 * The annotation is used to annotate an entity class.
+	 * @param clazz
+	 * @return boolean value
+	 */
 	public boolean isTable(Class<?> clazz);
 
+	/**
+	 * Check the property or field whether is Column annotation.
+	 * The annotation is used to annotate a property or field of an entity class.
+	 * @param field annotated field
+	 * @return boolean value
+	 */
 	public boolean isColumn(Field field);
+	
+	/**
+	 * Check the property or field whether is Ignore or Transient annotation.
+	 * The annotation is used to annotate a property or field of an entity class.
+	 * @param field annotated field
+	 * @return boolean value
+	 */
+	public boolean isIgnore(Field field);
 
+	/**
+	 * get the value of annotation which use on the field.
+	 * @param field annotated field
+	 * @return the value of annotation which use on the field.
+	 */
 	public String getValue(Field field);
 
+	/**
+	 * get the value of annotation which use on the class.
+	 * @param clazz  annotated class
+	 * @return the value of annotation which use on the class.
+	 */
 	public String getValue(Class<?> clazz);
 
 }
