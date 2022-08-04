@@ -76,7 +76,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 
 ### **V1.17** 
 
-**V1.17.0.9(精益求精)**  
+**V1.17.0.9(精益求精·七夕)**  
 1)字段名称引用类(默认格式:实体名_F(自动生成))增加ALL_NAMES属性,可一次获取实体的所有字段值  
 2)Ddl.java support create index(normal,unique),combine Primary key  
 3)condition.op(fieldName, Op.in, Value)增加支持List,Set,Number Array,单个Number元素  
@@ -88,7 +88,8 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 9)命名转换增加种类4:数据库使用大写字母，Java使用小写字母;忽略大小写,使用的字符是一样的  
 10)多种命名时,缓存添加TranslateType部分  
 11)事务注解@Tran,支持在类级别使用  
-
+12)@Ignore(@Transient)可以兼容JPA相应注解(在AnnoAdapter接口定义)  
+13)fixed bug:level 2 cache
 
 **V1.17.0.8(海纳百川)**  
 1)主键支持名称不叫"id",类型除了Long,可以是Integer或String  
