@@ -2,3 +2,6 @@
 /target
 /.classpath
 /.project
+/pom.xml-maven
+/pom.xml-maven1.9.8提交用
+/.gitignore
