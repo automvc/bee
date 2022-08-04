@@ -89,7 +89,8 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 10)多种命名时,缓存添加TranslateType部分  
 11)事务注解@Tran,支持在类级别使用  
 12)@Ignore(@Transient)可以兼容JPA相应注解(在AnnoAdapter接口定义)  
-13)fixed bug:level 2 cache
+13)fixed bug:level 2 cache  
+14)enhance SQLite date type support  
 
 **V1.17.0.8(海纳百川)**  
 1)主键支持名称不叫"id",类型除了Long,可以是Integer或String  
