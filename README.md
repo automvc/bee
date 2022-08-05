@@ -65,20 +65,21 @@ In addition to **JDBC, Android and HarmonyOS** are also supported.
 ### **V1.17**  
 
 **V1.17.0.9(精益求精·七夕)**  
-1)字段名称引用类(默认格式:实体名_F(自动生成))增加ALL_NAMES属性,可一次获取实体的所有字段值  
-2)Ddl.java support create index(normal,unique),combine Primary key  
-3)condition.op(fieldName, Op.in, Value)增加支持List,Set,Number Array,单个Number元素  
-4)condition.opOn(fieldName, Op.in, Value) Value限定只支持Number和String  
-5)增强:ExcelReader数据列数目动态计算  
-6)增强:like,Op添加likeLeft,likeRight,likeLeftRight(参数值由框架负责转义)  
-7)增强:GenBean生成Javabean,当id是BigDecimal时,重置为Long型  
-8)动态获取JdbcToJavaType  
-9)命名转换增加种类4(DbUpperAndJavaLower):数据库使用大写字母，Java使用小写字母;忽略大小写,使用的字符是一样的  
-10)多种命名时,缓存添加TranslateType部分  
-11)事务注解@Tran,支持在类级别使用  
-12)@Ignore(@Transient)可以兼容JPA相应注解(在AnnoAdapter接口定义)  
-13)fixed bug:level 2 cache;TypeHandler return value  
-14)enhance SQLite date type support  
+1)Transaction annotation @tran, which can be used at the class level  
+2)the ref field class {Entity}_F,add ALL_NAMES field,can get the field list of the Entity  
+3)Ddl.java support create index(normal,unique),combine Primary key  
+4)auto get JdbcToJavaType  
+5)bee.osql.naming.translateType add type 4(DbUpperAndJavaLower):Db Upper And Java Lower,ignore case,the name is same.  
+6)When multiple DB naming are used, the translatetype part is added to the cache  
+7)@Ignore(@Transient) compatible with JPA(interface AnnoAdapter)  
+8)condition.op(fieldName, Op.in, Value) add support List,Set,Number Array,one Number element  
+9)condition.opOn(fieldName, Op.in, Value) Value can just use Number and String  
+10)Enhance:like;Op add likeLeft,likeRight,likeLeftRight(the value of the parameter will be escaped by the framework)  
+11)Enhance:dynamic calculation of the number of ExcelReader data columns  
+12)Enhance: SQLite date type transfer support  
+13)Enhance:GenBean generate Javabean,when id type is BigDecimal,will be set to Long  
+14)fixed bug:level 2 cache;TypeHandlerRegistry return value  
+
 
 **V1.17.0.8**  
 1)Primary key support the field is not "id",except the Long, the type can be Integer or String    
