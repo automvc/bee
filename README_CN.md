@@ -77,20 +77,20 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 ### **V1.17** 
 
 **V1.17.0.9(精益求精·七夕)**  
-1)字段名称引用类(默认格式:实体名_F(自动生成))增加ALL_NAMES属性,可一次获取实体的所有字段值  
-2)Ddl.java支持创建索引(normal,unique),联合主键  
-3)condition.op(fieldName, Op.in, Value)增加支持List,Set,Number Array,单个Number元素  
-4)condition.opOn(fieldName, Op.in, Value) Value限定只支持Number和String  
-5)增强:ExcelReader数据列数目动态计算  
-6)增强:like;Op添加likeLeft,likeRight,likeLeftRight(参数值由框架负责转义);打印SQL日志作相应转义  
-7)增强:GenBean生成Javabean,当id是BigDecimal时,重置为Long型  
-8)动态获取JdbcToJavaType  
-9)命名转换增加种类4(DbUpperAndJavaLower):数据库使用大写字母，Java使用小写字母;忽略大小写,使用的字符是一样的  
-10)多种命名时,缓存添加TranslateType部分  
-11)事务注解@Tran,支持在类级别使用  
-12)@Ignore(@Transient)可以兼容JPA相应注解(在AnnoAdapter接口定义)  
-13)fixed bug:level 2缓存判断;TypeHandler返回值类型转换  
-14)增加:SQLite日期类型(date)支持  
+1)事务注解@Tran,支持在类级别使用  
+2)字段名称引用类(默认格式:实体名_F(自动生成))增加ALL_NAMES属性,可一次获取实体的所有字段值  
+3)Ddl.java支持创建索引(normal,unique),联合主键  
+4)动态获取JdbcToJavaType  
+5)命名转换增加种类4(DbUpperAndJavaLower):数据库使用大写字母，Java使用小写字母;忽略大小写,使用的字符是一样的  
+6)多种命名时,缓存添加TranslateType部分  
+7)@Ignore(@Transient)可以兼容JPA相应注解(在AnnoAdapter接口定义)  
+8)condition.op(fieldName, Op.in, Value)增加支持List,Set,Number Array,单个Number元素  
+9)condition.opOn(fieldName, Op.in, Value) Value限定只支持Number和String  
+10)增强:like;Op添加likeLeft,likeRight,likeLeftRight(参数值由框架负责转义);打印SQL日志作相应转义  
+11)增强:ExcelReader数据列数目动态计算  
+12)增强:SQLite日期类型 (date) 匹配转换支持  
+13)增强:GenBean生成Javabean,当id是BigDecimal时,重置为Long型  	
+14)fixed bug:level 2缓存判断;TypeHandlerRegistry返回值类型转换   
 
 **V1.17.0.8(海纳百川)**  
 1)主键支持名称不叫"id",类型除了Long,可以是Integer或String  
