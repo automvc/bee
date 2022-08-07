@@ -68,8 +68,8 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 * 24.支持**读取Excel**,从Excel导入数据到DB，操作简单;支持从Excel获取配置生成数据库表。  
 * 25.流的工具类StreamUtil。  
 * 26.复杂查询前后端可自动解析。  
-* 27.注解支持:PrimaryKey,Datetime,Createtime,Updatetime;JustFetch,ReplaceInto(MySQL)。  
-* 28.可扩展注解:多租户,敏感信息模糊处理,自动设置字段值,Dict字典转化,DictI18n多语言国际化字典转化,Column列名与属性名映射。  
+* 27.注解支持:PrimaryKey,Column,Datetime,Createtime,Updatetime;JustFetch,ReplaceInto(MySQL)。  
+* 28.可扩展注解:多租户,敏感信息模糊处理,自动设置字段值,Dict字典转化,DictI18n多语言国际化字典转化。  
 * 29.使用实体名_F(自动生成)引用实体字段名。  
 
 ## 最新功能介绍: 
