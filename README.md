@@ -58,7 +58,7 @@ In addition to **JDBC, Android and HarmonyOS** are also supported.
 * 26.The front and back ends of complex queries can be automatically parsed.  
 * 27.Annotation support:PrimaryKey,Column,Datetime,Createtime,Updatetime;JustFetch,ReplaceInto(MySQL).  
 * 28.Extensible annotation: multi tenant, fuzzy processing of sensitive information, automatic setting of field values, dictionary conversion, dicti18n multilingual International Dictionary conversion.  
-* 29.can automatically generate entity_F for referenced to the entity field name.
+* 29.can automatically generate entity_F for referenced to the entity field name.  
 
 ## Newest Function
 
