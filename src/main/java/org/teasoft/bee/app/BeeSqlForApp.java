@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Operate the SQLite database interface of app (Android, harmony, etc.) environment
+ * Operate the SQLite database interface of app (Android, Harmony, etc.) environment
  * Usually, this interface is not used directly, but indirectly through Suid,SuidRich,MoreTable,MapSuid,PreparedSql.
  * @author Kingstar
  * @since 1.17
