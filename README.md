@@ -64,6 +64,9 @@ In addition to **JDBC, Android and HarmonyOS** are also supported.
 
 ### **V1.17**  
 
+**V1.17.0.10**  
+fixed bug:prototype InterceptorChain  
+
 **V1.17.0.9(Good,Better·Seventh Evening)**  
 1)Transaction annotation @tran, which can be used at the class level  
 2)the ref field class {Entity}_F,add ALL_NAMES field,can get the field list of the Entity  
