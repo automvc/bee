@@ -17,6 +17,7 @@
 
 package org.teasoft.bee.osql.interccept;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.teasoft.bee.osql.SuidType;
@@ -27,7 +28,7 @@ import org.teasoft.bee.osql.SuidType;
  * @author Kingstar
  * @since  1.11
  */
-public interface Interceptor {
+public interface Interceptor extends Serializable{
 
 	/**
 	 * call before parsing entity into SQL
