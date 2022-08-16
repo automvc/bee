@@ -38,7 +38,7 @@ public class CreateAndUpgradeRegistry {
 
 	/**
 	 * return the registry class
-	 * @return
+	 * @return the registry class implement CreateAndUpgrade
 	 */
 	public static Class<? extends CreateAndUpgrade> getCreateAndUpgrade() {
 		return clazz;
