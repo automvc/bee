@@ -42,7 +42,7 @@ public @interface GenUUID {
 	
 	/**
 	 * whether need the separator("-"),default is false.
-	 * @return
+	 * @return the boolean value of useSeparator
 	 */
 	boolean useSeparator() default false;
 

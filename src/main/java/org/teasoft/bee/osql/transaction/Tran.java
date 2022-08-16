@@ -36,7 +36,7 @@ public @interface Tran {
 
 	/**
 	 * value is "true" or "false"
-	 * @return
+	 * @return the boolean value of whether readOnly
 	 */
 	String readOnly() default "";
 

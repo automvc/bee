@@ -34,7 +34,7 @@ public @interface GenId {
 
 	/**
 	 * whether override the old Id
-	 * @return
+	 * @return the boolean value of whether override
 	 */
 	boolean override() default false;
 
