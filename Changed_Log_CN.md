@@ -429,6 +429,45 @@ fixed bug:
 naming transfer  
 多表查询同一个实体自我关联查询禁止自我多次循环  
 
+**V1.17(秋天)**  
+**新增功能**:  
+1)SqlServer支持start,size两个参数分页  
+2)事务注解Tran及提供与AOP协调的默认实现;支持在类级别使用  
+3)**支持Android(安卓)直接使用Bee访问SQLite数据库;Bee增加Android ORM功能.**  
+4)**支持HarmonyOS(鸿蒙)直接使用Bee访问SQLite数据库;Bee增加HarmonyOS ORM功能.** 
+在**Harmony和Android两个环境**,可以用**同一套Bee代码访问DB**,提高代码重用,节省人力物力!  
+5)支持Android日志:android.util.Log  
+6)支持HarmonyOS日志:ohos.hiviewdfx.HiLog  
+
+7)主键支持名称不叫"id",类型除了Long,可以是Integer或String  
+8)支持用注解定义主键自动生成,主键值生成注解:GenId,GenUUID  
+9)@Column添加默认实现(强烈建议:在新系统中不要使用该注解)  
+10)@Table,@Column,@PrimaryKey(@Id),@Ignore(@Transient)可以兼容JPA相应注解(在AnnoAdapter接口定义)  
+11)字段名称引用类(默认格式:实体名_F(自动生成))增加ALL_NAMES属性,可一次获取实体的所有字段值  
+12)Ddl.java支持创建索引(normal,unique),联合主键  
+13)动态获取JdbcToJavaType  
+14)命名转换增加种类4(DbUpperAndJavaLower):数据库使用大写字母，Java使用小写字母;忽略大小写,使用的字符是一样的  
+15)多种命名时,缓存添加TranslateType部分  
+16)分布式id生成器,支持设置起始年份:bee.distribution.genid.startYear  
+
+**优化与增强:**  
+1)增强:GenBean生成Javabean,当id是BigDecimal时,重置为Long型  	
+2)优化GenBean,支持都使用默认配置  
+3)Ddl: 优化创建表流程  
+4)多数据源环境下,增加日志提示当前使用的是哪个数据源名称  
+5)分页查询,当获取一页的数据量size为0时,直接返回emptyList  
+6)增强:SQLite日期类型 (date) 匹配转换支持  
+7)优化缓存  
+8)condition.op(fieldName, Op.in, Value)增加支持List,Set,Number Array,单个Number元素  
+9)condition.opOn(fieldName, Op.in, Value) Value限定只支持Number和String  
+10)增强:like;Op添加likeLeft,likeRight,likeLeftRight(参数值由框架负责转义);打印SQL日志作相应转义  
+11)增强:ExcelReader数据列数目动态计算  
+12)增强:SQLite日期类型 (date) 匹配转换支持  
+13)链式编程SelectImpl,UpdateImpl调整字段检测.  
+
+fixed bug:
+1)level 2缓存判断;TypeHandlerRegistry返回值类型转换   
+2)拦截器对象不使用原型模式产生脏数据,改为原型模式   
 
 **V1.17.0.10(查漏补缺)**  
 fixed bug:
