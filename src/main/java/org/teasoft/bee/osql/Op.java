@@ -74,7 +74,7 @@ public enum Op {
 	likeRight(" like "),
 	
 	/**
-	 * Like right match, and the framework adds '%' to the right of the parameter value.
+	 * Like left & right match, and the framework adds '%' to the left & right of the parameter value.
 	 * <br> the value of the parameter will be escaped by the framework.
 	 * <br> the value of the parameter cannot be empty.
 	 * @since 1.17
