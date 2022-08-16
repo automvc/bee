@@ -65,7 +65,9 @@ In addition to **JDBC, Android and HarmonyOS** are also supported.
 ### **V1.17**  
 
 **V1.17.0.10**  
-fixed bug:prototype InterceptorChain  
+fixed bug:
+1)prototype InterceptorChain  
+2)if Android SQLiteDatabase instance is not open,get a new one  
 
 **V1.17.0.9(Good,Better·Seventh Evening)**  
 1)Transaction annotation @tran, which can be used at the class level  
