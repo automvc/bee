@@ -364,6 +364,119 @@ V1.11.0.4.29
 配置文件支持多环境差异化配置.  
 SuidRich,public <T> int update(T oldEntity, T newEntity)拦截器只处理新实体newEntity.  
 
-	
+**V1.11** (**International Labour Day**)  
+功能汇总列表:  
+1)拦截器、多租户  
+2)增加ShardingStruct为分库分表作准备  
+3)二级缓存扩展支持  
+Redis缓存支持  
+4)支持自定义TypeHandler,处理查询的ResultSet结果  
+     添加转换器SetParaTypeConvert转换PreparedStatement参数的类型  
+5)支持在Suid等对象设置命名转换器.  
+增加DbFeature方言注册器,自定义实现不同DB方言更加易用.  
+6)支持Cassandra.  
+7)添加Jndi数据源支持  
+8)Ddl.java使用Javabean创建表,支持追加java与db字段类型映射,支持设置某个DB的java_dbtype类型映射.  
+9)PreparedSql自定义sql支持批量插入.  
+PreparedSql自定义sql支持多表查询,返回多表关联Javabean结构数据  
+10)自定义动态SQL标签,@in,@toIsNULL1,@toIsNULL2,<if isNotNull>,<if isNotBlank>.  
+动态sql,将list转为像in (1,2,3)的语句,不需要foreach,批量插入也不需要foreach.  
+11)注册器:  
+CalculateRegistry,计算分片算法注册器  
+DbFeatureRegistry,DB方言特性注册器  
+InterceptorChainRegistry,拦截器链注册器  
+NameRegistry,命名转换注册器  
+SetParaTypeConverterRegistry, PreparedStatement参数类型转换注册器  
+TypeHandlerRegistry 查询结果转换处理注册器  
+12)配置文件支持多环境差异化配置.  
+  
+添加注解:  
+PrimaryKey,Datetime,Createtime,Updatetime;JustFetch  
+AnnotationHandler,AutoSetString自动设置字符值  
+Desensitize,敏感信息模糊处理  
+ReplaceInto,MySQL replace into转换  
+MultiTenancy多租户  
+BeforeReturnAnnotationHandler,AbstractDictI18nDefaultHandler  
+Dict字典转化  
+DictI18n多语言国际化字典转化  
+Column列名与属性名映射扩展支持  
+  
+增强:  
+multi-DS同时使用不同类型DB优化  
+ (比如,同时使用Mysql,Oracle,SQL Server)  
+可用BF代替BeeFactoryHelper加快输入  
+Javabean使用java.util.Date类型,进行SUID作兼容处理.  
+Ddl.java兼容原生char类型,兼容java.util.Date.
+SQLite获取Timestamp结果作转化处理.  
+实体属性是Javabean与DB表Json类型字段在参数设置与查询结果时自动转换(使用Json注解自定义实现).
+读写模式配置信息去除空格  
+检测MapSqlKey的值  
+增加Registry空接口；增加NameRegistry.  
+更改Serializer接口抛出异常方式.  
+MapSuid,MapSql支持解析字符串的Boolean类型.  
+GenBean，还不支持的jdbc类型，提醒在哪个文件设置.  
+GenBean增加支持是否覆盖原有文件设置.  
+GenBean增加获取字段支持，使用字段名可以不直接使用字符串.  
+SuidRich的selectString方法支持可变参数:  
+public List<String[]> selectString(T entity,String... selectFields);  
+CommInterceptorChain增加检测是否添加了相同类型拦截器.  
+提高缓存安全.  
+添加SPI预加载接口PreLoad.  
+添加用于全局的拦截器注册器InterceptorChainRegistry.  
+SuidRich,public <T> int update(T oldEntity, T newEntity)拦截器只处理新实体newEntity.  
+
+fixed bug:  
+naming transfer  
+多表查询同一个实体自我关联查询禁止自我多次循环  
+
+
+**V1.17.0.10(查漏补缺)**  
+fixed bug:
+1)拦截器对象不使用原型模式产生脏数据,改为原型模式  
+2)Android获取连接对象是已关闭的,要重新获取  
+
+**V1.17.0.9(精益求精·七夕)**  
+1)事务注解@Tran,支持在类级别使用  
+2)字段名称引用类(默认格式:实体名_F(自动生成))增加ALL_NAMES属性,可一次获取实体的所有字段值  
+3)Ddl.java支持创建索引(normal,unique),联合主键  
+4)动态获取JdbcToJavaType  
+5)命名转换增加种类4(DbUpperAndJavaLower):数据库使用大写字母，Java使用小写字母;忽略大小写,使用的字符是一样的  
+6)多种命名时,缓存添加TranslateType部分  
+7)@Ignore(@Transient)可以兼容JPA相应注解(在AnnoAdapter接口定义)  
+8)condition.op(fieldName, Op.in, Value)增加支持List,Set,Number Array,单个Number元素  
+9)condition.opOn(fieldName, Op.in, Value) Value限定只支持Number和String  
+10)增强:like;Op添加likeLeft,likeRight,likeLeftRight(参数值由框架负责转义);打印SQL日志作相应转义  
+11)增强:ExcelReader数据列数目动态计算  
+12)增强:SQLite日期类型 (date) 匹配转换支持  
+13)增强:GenBean生成Javabean,当id是BigDecimal时,重置为Long型  	
+14)fixed bug:level 2缓存判断;TypeHandlerRegistry返回值类型转换   
+
+**V1.17.0.8(海纳百川)**  
+1)主键支持名称不叫"id",类型除了Long,可以是Integer或String  
+2)支持用注解定义主键自动生成,主键值生成注解:GenId,GenUUID  
+3)@Column添加默认实现(强烈建议:在新系统中不要使用该注解)  
+4)@Table,@Column,@PrimaryKey(@Id)可以兼容JPA相应注解(在AnnoAdapter接口定义)  
+5)分布式id生成器,支持设置起始年份:bee.distribution.genid.startYear  
+6)链式编程SelectImpl,UpdateImpl调整字段检测.  
+
+**V1.17.0.7(有为)**  
+1)**支持HarmonyOS(鸿蒙)直接使用Bee访问SQLite数据库;**  
+2)在**Harmony和Android两个环境**,可以用**同一套Bee代码访问DB**,提高代码重用,节省人力物力!  
+3)支持HarmonyOS日志:ohos.hiviewdfx.HiLog  
+
+**V1.17.0.6(奋斗)**  
+1)**支持Android(安卓)系统直接使用Bee访问SQLite数据库;Bee增加Android ORM功能.**  
+2)支持Android日志:android.util.Log  
+3)Ddl: 优化创建表流程  
+4)多数据源环境下,增加日志提示当前使用的是哪个数据源名称  
+5)分页查询,当获取一页的数据量size为0时,直接返回emptyList  
+6)优化GenBean,支持都使用默认配置  
+7)优化缓存  
+
+**V1.17.0.5(日臻完善)**  
+1)SqlServer支持start,size两个参数分页  
+2)事务注解Tran  
+
+
 	
 	

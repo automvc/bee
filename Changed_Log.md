@@ -371,3 +371,49 @@ V1.11.0.4.29
 The configuration file supports multi-environment differentiated configuration.  
 SuidRich,public <T> int update(T oldEntity, T newEntity) Interceptors only handle newEntity.  
 
+
+**V1.17.0.10**  
+fixed bug:
+1)prototype InterceptorChain  
+2)if Android SQLiteDatabase instance is not open,get a new one  
+
+**V1.17.0.9(Good,Better·Seventh Evening)**  
+1)Transaction annotation @tran, which can be used at the class level  
+2)the ref field class {Entity}_F,add ALL_NAMES field,can get the field list of the Entity  
+3)Ddl.java support create index(normal,unique),combine Primary key  
+4)auto get JdbcToJavaType  
+5)bee.osql.naming.translateType add type 4(DbUpperAndJavaLower):Db Upper And Java Lower,ignore case,the name is same.  
+6)When multiple DB naming are used, the translatetype part is added to the cache  
+7)@Ignore(@Transient) compatible with JPA(interface AnnoAdapter)  
+8)condition.op(fieldName, Op.in, Value) add support List,Set,Number Array,one Number element  
+9)condition.opOn(fieldName, Op.in, Value) Value can just use Number and String  
+10)Enhance:like;Op add likeLeft,likeRight,likeLeftRight(the value of the parameter will be escaped by the framework)  
+11)Enhance:dynamic calculation of the number of ExcelReader data columns  
+12)Enhance: SQLite date type transfer support  
+13)Enhance:GenBean generate Javabean,when id type is BigDecimal,will be set to Long  
+14)fixed bug:level 2 cache;TypeHandlerRegistry return value  
+
+
+**V1.17.0.8**  
+1)Primary key support the field is not "id",except the Long, the type can be Integer or String    
+2)Support the automatic generation of the primary key by annotation(GenId,GenUUID)  
+3)@Column support default implement(Strongly recommend: do not use this Annotation in new system)  
+4)@Table,@Column,@PrimaryKey(@Id) compatible with JPA(interface AnnoAdapter)  
+5)Distributed id generator supports setting the starting year:bee.distribution.genid.startYear  
+6)Chain programming SelectImpl,UpdateImpl adjust check rule for field  
+
+**V1.17.0.7**  
+1)**add support HarmonyOS ORM function**  
+2)In **HarmonyOS and Android** environment can use the same ORM code with Bee  
+3)support HarmonyOS Log:ohos.hiviewdfx.HiLog  
+
+**V1.17.0.6**  
+1)**add support Android ORM function,you can use Bee for SQLite DB in Android environment.**  
+2)support android.util.Log  
+3)Ddl: optimize process if the table is exist  
+4)add log tip the dsName(dataSource name) when multi-dataSource  
+5)when paging , the size is 0, return emptyList  
+
+V1.17.0.5  
+1)Sql Server support (start,size) paging  
+2)@Tran transaction annotation  
