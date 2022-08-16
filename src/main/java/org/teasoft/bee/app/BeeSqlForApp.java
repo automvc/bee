@@ -33,14 +33,15 @@ public interface BeeSqlForApp {
 	 * @param sql
 	 * @param entity
 	 * @param selectionArgs
-	 * @return
+	 * @return list which contains more than one entity.
 	 */
 	public <T> List<T> select(String sql, T entity, String[] selectionArgs);
 
 	/**
 	 * @param sql
 	 * @param selectionArgs
-	 * @return
+	 * @return The value of function statistics. 
+	 * <br>If the result set of statistics is empty,the count return 0,the other return empty string.
 	 */
 	public String selectFun(String sql, String[] selectionArgs);
 
@@ -48,7 +49,7 @@ public interface BeeSqlForApp {
 	 * 
 	 * @param sql
 	 * @param bindArgs
-	 * @return
+	 * @return the number of affected successfully records.
 	 */
 	public int modify(String sql, Object[] bindArgs);
 
@@ -56,7 +57,7 @@ public interface BeeSqlForApp {
 	 * 
 	 * @param sql
 	 * @param selectionArgs
-	 * @return
+	 * @return  List, every element is string array(transform from record).
 	 */
 	public List<String[]> select(String sql, String[] selectionArgs);
 
@@ -73,7 +74,7 @@ public interface BeeSqlForApp {
 	 * this method just use internally.
 	 * @param sql
 	 * @param selectionArgs
-	 * @return
+	 * @return List, every element is a Map<String,Object>(transform from record,and the map key use ColumnName).
 	 */
 	public List<Map<String, String>> selectMapListWithColumnName(String sql, String[] selectionArgs);
 	
@@ -89,7 +90,7 @@ public interface BeeSqlForApp {
 	 * 
 	 * @param sql
 	 * @param bindArgs
-	 * @return
+	 * @return the value of primary key.
 	 */
 	public long insertAndReturnId(String sql, Object[] bindArgs); 
 	
@@ -97,7 +98,7 @@ public interface BeeSqlForApp {
 	 * 
 	 * @param sql
 	 * @param listBindArgs
-	 * @return
+	 * @return Affected rows.
 	 */
 	public int batchInsert(String sql,List<Object[]> listBindArgs);    
 
