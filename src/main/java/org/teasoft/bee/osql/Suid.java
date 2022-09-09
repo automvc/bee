@@ -27,7 +27,7 @@ import java.util.List;
  * @since  1.0
  *
  */
-public interface Suid extends CommOperate{
+public interface Suid extends CommOperate {
 	
 	/**
 	 * According to entity object select records from database.
@@ -86,7 +86,7 @@ public interface Suid extends CommOperate{
 	 * @return list which contains more than one entity.
 	 * @since  1.6
 	 */
-	public <T> List<T> select(T entity,Condition condition);
+	public <T> List<T> select(T entity, Condition condition);
 
 	/**
 	 * Delete the records according to entity and condition.<br>
@@ -95,7 +95,7 @@ public interface Suid extends CommOperate{
 	 * @return the number of deleted record(s) successfully, if fails,return integer less than 0.
 	 * @since 1.7.2
 	 */
-	public <T> int delete(T entity,Condition condition);
+	public <T> int delete(T entity, Condition condition);
 	
 	/**
 	 * set dynamic parameter for dynamic table & entity name
@@ -105,7 +105,7 @@ public interface Suid extends CommOperate{
 	 * @return Suid
 	 * @since  1.8
 	 */
-	public Suid setDynamicParameter(String para,String value);
+	public Suid setDynamicParameter(String para, String value);
 	
 	/**
 	 * declare begin Same Connection for some ORM operation.

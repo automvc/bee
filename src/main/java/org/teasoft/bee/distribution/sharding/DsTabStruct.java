@@ -18,7 +18,9 @@
 package org.teasoft.bee.distribution.sharding;
 
 /**
- * DataSource and Table Struct
+ * DataSource and Table Struct.
+ * tabName,tabSuffix will not be set at the same time; 
+ * <br>When only the tabSuffix is set, the basic name of the table is converted from the Entity name.
  * @author Kingstar
  * @since  1.11
  */
