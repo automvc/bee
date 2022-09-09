@@ -40,6 +40,9 @@ public final class DatabaseConst {
 	public static final String Teradata = "Teradata";
 	public static final String TimesTen = "TimesTen";
 	
+	public static final String DM ="DM DBMS";
+	public static final String Kingbase ="KingbaseES";
+	
 	//NoSql
 	public static final String Cassandra = "Cassandra";
 	public static final String Hbase = "Hbase";
