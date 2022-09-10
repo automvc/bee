@@ -372,6 +372,8 @@ The configuration file supports multi-environment differentiated configuration.
 SuidRich,public <T> int update(T oldEntity, T newEntity) Interceptors only handle newEntity.  
 
 
+**V1.17(2022·Mid-Autumn Day)**  
+
 **V1.17.0.10**  
 fixed bug:
 1)prototype InterceptorChain  

@@ -62,7 +62,7 @@ In addition to **JDBC, Android and HarmonyOS** are also supported.
 
 ## Newest Function
 
-### **V1.17**  
+### **V1.17(2022·Mid-Autumn Day)**  
 
 **V1.17.0.10**  
 fixed bug:
