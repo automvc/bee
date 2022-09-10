@@ -75,7 +75,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 ## 最新功能介绍: 
 
 ### **V1.17** 
-**V1.17(秋天)**  
+**V1.17(2022·中秋)**  
 **新增功能**:  
 1)SqlServer支持start,size两个参数分页  
 2)事务注解Tran及提供与AOP协调的默认实现;支持在类级别使用  
@@ -152,33 +152,7 @@ Dict字典转化
 DictI18n多语言国际化字典转化  
 Column列名与属性名映射扩展支持  
   
-增强:  
-multi-DS同时使用不同类型DB优化  
- (比如,同时使用Mysql,Oracle,SQL Server)  
-可用BF代替BeeFactoryHelper加快输入  
-Javabean使用java.util.Date类型,进行SUID作兼容处理.  
-Ddl.java兼容原生char类型,兼容java.util.Date.
-SQLite获取Timestamp结果作转化处理.  
-实体属性是Javabean与DB表Json类型字段在参数设置与查询结果时自动转换(使用Json注解自定义实现).
-读写模式配置信息去除空格  
-检测MapSqlKey的值  
-增加Registry空接口；增加NameRegistry.  
-更改Serializer接口抛出异常方式.  
-MapSuid,MapSql支持解析字符串的Boolean类型.  
-GenBean，还不支持的jdbc类型，提醒在哪个文件设置.  
-GenBean增加支持是否覆盖原有文件设置.  
-GenBean增加获取字段支持，使用字段名可以不直接使用字符串.  
-SuidRich的selectString方法支持可变参数:  
-public List<String[]> selectString(T entity,String... selectFields);  
-CommInterceptorChain增加检测是否添加了相同类型拦截器.  
-提高缓存安全.  
-添加SPI预加载接口PreLoad.  
-添加用于全局的拦截器注册器InterceptorChainRegistry.  
-SuidRich,public <T> int update(T oldEntity, T newEntity)拦截器只处理新实体newEntity.  
-
-fixed bug:  
-naming transfer  
-多表查询同一个实体自我关联查询禁止自我多次循环  
+...
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
