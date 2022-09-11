@@ -40,6 +40,10 @@ public abstract class BeeAbstractFactory {
 		return dataSource;
 	}
 
+	/**
+	 * set dataSource. if is reset, need tell the context setConfigRefresh
+	 * @param dataSource dataSource
+	 */
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
