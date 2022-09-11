@@ -451,7 +451,7 @@ naming transfer
 16)分布式id生成器,支持设置起始年份:bee.distribution.genid.startYear  
 
 **优化与增强:**  
-1)增强:GenBean生成Javabean,当id是BigDecimal时,重置为Long型  	
+1)增强:GenBean生成Javabean,当id是BigDecimal时,重置为Long型  
 2)优化GenBean,支持都使用默认配置  
 3)Ddl: 优化创建表流程  
 4)多数据源环境下,增加日志提示当前使用的是哪个数据源名称  
