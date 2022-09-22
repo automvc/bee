@@ -339,18 +339,18 @@ OrdersService.java
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<version>1.11</version>
+			<version>1.17</version>
 		</dependency>
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<version>1.11</version>
+			<version>1.17</version>
 		</dependency>
-		<!--for log framework,Excel(poi) -->
+		<!--for log framework,Excel(poi),Redis cache,Android,HarmonyOS,Json,Tran Annotation -->
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee-ext</artifactId>
-			<version>1.11</version>
+			<version>1.17</version>
 		</dependency>
 ```
 
@@ -600,8 +600,7 @@ List<Orders> list = suid.select(new Orders());
 其它学习资料:
 =========	
 ### API-DOC  
-API-V1.9.8 下载代码含有 bee-1.9.8-javadoc.zip  
-API-V1.11(最新版) 下载代码含有 bee-1.11中文和英文版API,bee-1.11中文版源码  
+API-V1.17(最新版) 下载代码含有 bee-1.17中文和英文版API,bee-1.17中文版源码  
 
 ### 使用文档
 [wiki 文档](../../../bee/wikis)  
