@@ -15,18 +15,18 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql;
+package org.teasoft.bee.spi;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.teasoft.bee.spi.entity.SortStruct;
 
 /**
- * Bee Version.
- * @author Kingstar
- * @since  1.11
+ * @author AiTeaSoft
+ * @since  2.0
  */
-public final class BeeVersion {
+public interface BeanSort extends Serializable{
 
-	public static final String version = "2.0";
-	public static final String buildId = "2.0.0.1";
-
-	private BeeVersion() {}
-
+	public void sort(List<?> entityList, List<SortStruct> sortStructList);
 }

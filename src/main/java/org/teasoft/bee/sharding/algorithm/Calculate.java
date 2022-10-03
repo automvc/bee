@@ -15,18 +15,20 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql;
+package org.teasoft.bee.sharding.algorithm;
 
 /**
- * Bee Version.
+ * sharding algorithm Calculate interface.
  * @author Kingstar
  * @since  1.11
  */
-public final class BeeVersion {
+public interface Calculate {
 
-	public static final String version = "2.0";
-	public static final String buildId = "2.0.0.1";
-
-	private BeeVersion() {}
-
+	/**
+	 * return the value after process.
+	 * @param rule rule
+	 * @param shardingValue sharding value
+	 * @return the value after process.
+	 */
+	String process(String rule, String shardingValue);
 }

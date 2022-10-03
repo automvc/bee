@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.distribution.sharding.algorithm;
+package org.teasoft.bee.sharding.algorithm;
 
 import java.util.HashMap;
 import java.util.Map;

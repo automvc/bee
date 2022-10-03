@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.spi;
+package org.teasoft.bee.spi.defaultimpl;
 
 import java.lang.reflect.Field;
 
@@ -23,6 +23,7 @@ import org.teasoft.bee.osql.annotation.Column;
 import org.teasoft.bee.osql.annotation.Ignore;
 import org.teasoft.bee.osql.annotation.PrimaryKey;
 import org.teasoft.bee.osql.annotation.Table;
+import org.teasoft.bee.spi.AnnoAdapter;
 
 /**
  * @author Kingstar
@@ -67,8 +68,6 @@ public class AnnoAdapterBeeDefault implements AnnoAdapter {
 	public String getValue(Class<?> clazz) {
 
 		if (clazz.isAnnotationPresent(Table.class)) {
-//			Table tab = (Table) clazz.getAnnotation(Table.class);
-//			return tab.value();
 			return clazz.getAnnotation(Table.class).value();
 		}
 

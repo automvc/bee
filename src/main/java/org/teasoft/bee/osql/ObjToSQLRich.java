@@ -25,7 +25,7 @@ package org.teasoft.bee.osql;
  */
 public interface ObjToSQLRich extends ObjToSQL {
 
-	public <T> String toSelectSQL(T entity,int size);
+//	public <T> String toSelectSQL(T entity,int size);
 	public <T> String toSelectSQL(T entity,int start,int size);
 	public <T> String toSelectSQL(T entity,String... fields);
 	public <T> String toSelectSQL(T entity,String selectFields,int start,int size);
@@ -43,8 +43,8 @@ public interface ObjToSQLRich extends ObjToSQL {
 	public  <T> String toInsertSQL(T entity, IncludeType includeType);
 	public  <T> String toUpdateSQL(T entity, IncludeType includeType);
 	
-	public  <T> String[] toInsertSQL(T[] entity);
-	public  <T> String[] toInsertSQL(T[] entity,String excludeFields);
+//	public  <T> String[] toInsertSQL(T[] entity);
+//	public  <T> String[] toInsertSQL(T[] entity,String excludeFields);
 	public  <T> String[] toInsertSQL(T[] entity,int batchSize,String excludeFields);
 	
 	public  String toDeleteByIdSQL(Class c, Integer id);

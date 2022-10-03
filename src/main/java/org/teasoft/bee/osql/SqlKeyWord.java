@@ -69,4 +69,7 @@ public interface SqlKeyWord {
 	String notIn();
 	String exists();
 	String notExists();
+	
+	String union();//2.0
+	String unionAll();//2.0
 }
