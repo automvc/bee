@@ -391,18 +391,18 @@ Quick Start:
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<version>1.11</version>
+			<version>1.17</version>
 		</dependency>
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<version>1.11</version>
+			<version>1.17</version>
 		</dependency>
-		<!--for log framework,Excel(poi) -->
+		<!--for log framework,Excel(poi),Redis cache,Android,HarmonyOS,Json,Tran Annotation -->
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee-ext</artifactId>
-			<version>1.11</version>
+			<version>1.17</version>
 		</dependency>
 ```
 
@@ -641,8 +641,7 @@ App Demo:
 Other Document:
 =========	
 ### API-DOC  
-API-V1.9.8 SourceCode contain bee-1.9.8-javadoc.zip  
-API-V1.11(Newest) SourceCode contain bee-1.11 CN & EN API,bee-1.11 CN SourceCode  
+API-V1.17(Newest) SourceCode contain bee-1.17 CN & EN API,bee-1.17 CN SourceCode  
 
 [wiki Document](../../../bee/wikis)  
 
