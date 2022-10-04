@@ -2,8 +2,8 @@
 Bee
 =========
 ## 好消息:
-**Bee可用于Android、HarmonyOS环境访问SQLite数据库,专门对两套环境作了优化(V1.17)**  
-在**Android和Harmony两个环境**,可以用**同一套Bee代码访问DB**  
+**Bee 2.0 Sharding分片 功能,登场了。自此，Bee有了完整了分库分表功能。**
+[请查看2.0-sharding-dev 分支](../../../bee/tree/2.0-sharding-dev)  
 
 #### 工欲善其事必先利其器！——《论语·卫灵公》  
 #### 为适应互联网时代软件需求量大,需求变更频繁,性能要求高等要求,ORM Bee应运而生!

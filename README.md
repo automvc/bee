@@ -3,7 +3,7 @@ Bee
 =========
 **Easy for Stronger.**   
 **Bee** is an ORM framework.   
-**Bee** is an easy and high efficiency ORM framework.    
+**Bee** is an easy and high efficiency ORM framework.  
 **Coding Complexity is O(1),it means that Bee will do the Dao for you**.  
 **You don't need to write the Dao by yourself anymore**.Help you to focus more on the development of business logic.  
 **Good Feature:**  AI, Timesaving/Tasteful, Easy, Automatic (**AiTeaSoft Style**)   
