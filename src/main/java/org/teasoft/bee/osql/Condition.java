@@ -119,13 +119,13 @@ public interface Condition extends ConditionAssistant {
 	public Condition or();
 
 	/**
-	 * Add left parentheses.
+	 * Add left parentheses '('.
 	 * @return Condition
 	 */
 	public Condition lParentheses();
 
 	/**
-	 * Add right parentheses.
+	 * Add right parentheses ')'.
 	 * @return Condition
 	 */
 	public Condition rParentheses();

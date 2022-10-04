@@ -15,20 +15,19 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.distribution.sharding.algorithm;
+package org.teasoft.bee.spi;
+
+import java.io.Serializable;
 
 /**
- * sharding algorithm Calculate interface.
- * @author Kingstar
- * @since  1.11
+ * @author AiTeaSoft
+ * @since  2.0
  */
-public interface Calculate {
+public interface JsonTransform extends Serializable{
+	
+	public <T> T toEntity(String json, Class<T> clazz);
 
-	/**
-	 * return the value after process.
-	 * @param rule rule
-	 * @param shardingValue sharding value
-	 * @return the value after process.
-	 */
-	String process(String rule, String shardingValue);
+	public String toJson(Object obj);
+
+	public <T> T toEntity(String json, Class<T> clazz, Class elementClass);
 }

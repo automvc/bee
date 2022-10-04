@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.distribution.sharding;
+package org.teasoft.bee.sharding;
 
 /**
- * ShardingStruct
+ * Sharding Simple Struct
  * @author Kingstar
  * @since  1.11
  */
-public class ShardingStruct {
+public class ShardingSimpleStruct {
 
 	private int dsAlgorithm;
 	private String dsRule;
@@ -31,7 +31,8 @@ public class ShardingStruct {
 	private String tabRule;
 	private String tabName;
 
-	private Object shardingValue;
+	private Object dsShardingValue; //2.0
+	private Object tabShardingValue;//2.0
 
 	/**
 	 * get dataSource algorithm
@@ -129,20 +130,51 @@ public class ShardingStruct {
 		this.tabName = tabName;
 	}
 
+//	/**
+//	 * get sharding value
+//	 * @return sharding value
+//	 */
+//	public Object getShardingValue() {
+//		return shardingValue;
+//	}
+//
+//	/**
+//	 * set sharding value
+//	 * @param shardingValue sharding value
+//	 */
+//	public void setShardingValue(Object shardingValue) {
+//		this.shardingValue = shardingValue;
+//	}
+
 	/**
-	 * get sharding value
-	 * @return sharding value
+	 * get dataSource sharding value
+	 * @return dataSource sharding value
 	 */
-	public Object getShardingValue() {
-		return shardingValue;
+	public Object getDsShardingValue() {
+		return dsShardingValue;
 	}
 
 	/**
-	 * set sharding value
-	 * @param shardingValue sharding value
+	 * set dataSource sharding value
+	 * @param dsShardingValue  dataSource sharding value
 	 */
-	public void setShardingValue(Object shardingValue) {
-		this.shardingValue = shardingValue;
+	public void setDsShardingValue(Object dsShardingValue) {
+		this.dsShardingValue = dsShardingValue;
 	}
 
+	/**
+	 * get table name Sharding Value
+	 * @return table name Sharding Value
+	 */
+	public Object getTabShardingValue() {
+		return tabShardingValue;
+	}
+
+	/**
+	 * set table name Sharding Value
+	 * @param tabShardingValue table name Sharding Value
+	 */
+	public void setTabShardingValue(Object tabShardingValue) {
+		this.tabShardingValue = tabShardingValue;
+	}
 }

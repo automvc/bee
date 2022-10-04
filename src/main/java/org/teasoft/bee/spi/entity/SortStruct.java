@@ -15,18 +15,37 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql;
+package org.teasoft.bee.spi.entity;
 
 /**
- * Bee Version.
- * @author Kingstar
- * @since  1.11
+ * @author AiTeaSoft
+ * @since  2.0
  */
-public final class BeeVersion {
+public class SortStruct {
+	
+	private String fieldName;
+	private boolean isReverse; //降序,默认是false;  即默认是升序
+	
+	public SortStruct(String fieldName) {
+		this.fieldName=fieldName;
+	}
+	
+	public SortStruct(String fieldName, boolean isReverse) {
+		this.fieldName = fieldName;
+		this.isReverse = isReverse;
+	}
 
-	public static final String version = "2.0";
-	public static final String buildId = "2.0.0.1";
-
-	private BeeVersion() {}
+	public String getFieldName() {
+		return fieldName;
+	}
+	public void setFieldName(String fieldName) {
+		this.fieldName = fieldName;
+	}
+	public boolean isReverse() {
+		return isReverse;
+	}
+	public void setReverse(boolean isReverse) {
+		this.isReverse = isReverse;
+	}
 
 }

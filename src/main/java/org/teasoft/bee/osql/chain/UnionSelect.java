@@ -30,4 +30,6 @@ public interface UnionSelect extends ToSql{
 	public UnionSelect unionAll(Select subSelect1,Select subSelect2);
 	
 	public UnionSelect unionAll(String subSelect1,String subSelect2);
+	
+	public UnionSelect unionAll(String[] subSelects);
 }

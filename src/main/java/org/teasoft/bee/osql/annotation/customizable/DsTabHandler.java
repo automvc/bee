@@ -17,8 +17,8 @@
 
 package org.teasoft.bee.osql.annotation.customizable;
 
-import org.teasoft.bee.distribution.sharding.DsTabStruct;
-import org.teasoft.bee.distribution.sharding.ShardingStruct;
+import org.teasoft.bee.sharding.DsTabStruct;
+import org.teasoft.bee.sharding.ShardingSimpleStruct;
 
 /**
  * DataSource and Table Handler
@@ -27,6 +27,6 @@ import org.teasoft.bee.distribution.sharding.ShardingStruct;
  */
 public interface DsTabHandler {
 
-	public DsTabStruct process(ShardingStruct shardingStruct);
+	public DsTabStruct process(ShardingSimpleStruct shardingSimpleStruct);
 
 }

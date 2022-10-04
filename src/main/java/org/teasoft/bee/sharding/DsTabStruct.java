@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.distribution.sharding;
+package org.teasoft.bee.sharding;
 
 /**
  * DataSource and Table Struct.

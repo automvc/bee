@@ -39,17 +39,6 @@ public interface BeeSql {
 	 */
 	public <T> List<T> select(String sql,T entity );
 	
-	
-	/**
-	 * According to SQL query more table data, data type is consistent with entity type.
-	 * @param sql	SQL select statement
-	 * @param entity The entity corresponding to table and can not be null.
-	 * @return List can contain more than one entity.
-	 * @since 1.7
-	 */
-	public <T> List<T> moreTableSelect(String sql,T entity );
-	
-	
 	/**
 	 * Select some field.
 	 * @param sql	SQL select statement
@@ -74,14 +63,6 @@ public interface BeeSql {
 	 * @return List, every element is string array(transform from record).
 	 */
 	public List<String[]> select(String sql);
-	
-	/**
-	 * Select and transform every record to Map<String,Object>.
-	 * @param sql SQL select statement
-	 * @return List, every element is a Map<String,Object>(transform from record).
-	 * @since 1.9
-	 */
-	public List<Map<String,Object>> selectMapList(String sql);
 	
 	/**
 	 * Select and return json format result.
@@ -118,4 +99,21 @@ public interface BeeSql {
 	 * @return Affected rows.
 	 */
 	public int batch(String []sqls,int batchSize);
+	
+	/**
+	 * According to SQL query more table data, data type is consistent with entity type.
+	 * @param sql  SQL select statement
+	 * @param entity The entity corresponding to table and can not be null.
+	 * @return List can contain more than one entity.
+	 * @since 1.7
+	 */
+	public <T> List<T> moreTableSelect(String sql,T entity );
+	
+	/**
+	 * Select and transform every record to Map<String,Object>.
+	 * @param sql SQL select statement
+	 * @return List, every element is a Map<String,Object>(transform from record).
+	 * @since 1.9
+	 */
+	public List<Map<String,Object>> selectMapList(String sql);
 }

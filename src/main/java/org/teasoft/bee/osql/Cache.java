@@ -17,13 +17,15 @@
 
 package org.teasoft.bee.osql;
 
+import java.io.Serializable;
+
 /**
  * Cache interface.
  * <br>Gen the key via sql string, then operate the cache by the key.
  * @author Kingstar
  * @since  1.4
  */
-public interface Cache {
+public interface Cache extends Serializable{
 	
 	/**
 	 * Get the cache result by sql. 
