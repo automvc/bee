@@ -30,16 +30,16 @@ public class ShardingBean extends ShardingSimpleStruct {
 
 	private Class<? extends Calculate> dsAlgorithmClass = Calculate.class;
 	private Class<? extends Calculate> tabAlgorithmClass = Calculate.class;
-	private String actualDataNodes;
+	private String fullNodes;
 
 	private int tabAssignType; // 0: order; 1: polling
 
 	public ShardingBean() {}
 
-	public ShardingBean(String actualDataNodes, String tabField) {
+	public ShardingBean(String fullNodes, String tabField) {
 		super();
 		this.tabField = tabField;
-		this.actualDataNodes = actualDataNodes;
+		this.fullNodes = fullNodes;
 	}
 
 	public ShardingBean(ShardingSimpleStruct shardingSimpleStruct) {
@@ -85,12 +85,12 @@ public class ShardingBean extends ShardingSimpleStruct {
 		this.tabAlgorithmClass = tabAlgorithmClass;
 	}
 
-	public String getActualDataNodes() {
-		return actualDataNodes;
+	public String getFullNodes() {
+		return fullNodes;
 	}
 
-	public void setActualDataNodes(String actualDataNodes) {
-		this.actualDataNodes = actualDataNodes;
+	public void setFullNodes(String fullNodes) {
+		this.fullNodes = fullNodes;
 	}
 
 	public int getTabAssignType() {
