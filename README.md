@@ -13,7 +13,8 @@ Bee
 [2.0-sharding-dev branch](../../../bee/tree/2.0-sharding-dev)  
 
 Sharding target: It is mainly transparent to business development and coding, with only a little sharding config.  
-## [Quick Start:Shardign better example](guide/Quick-start-Sharding.md) 
+#### [Quick Start:Shardign better example](guide/Quick-start-Sharding.md) 
+
 
 **Bee** see:  
 https://github.com/automvc/bee  
