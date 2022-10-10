@@ -62,6 +62,21 @@ In addition to **JDBC, Android and HarmonyOS** are also supported.
 
 ## Newest Function
 
+### **V2.0 Sharding** 
+**V2.0.0.1001(2022·National Day) **  
+Add Sharding Function  
+1)object-oriented Sharding  
+2)Suid,SuidRich,select,modify Sharding  
+3)MoreTable select Sharding  
+4)batch insert Sharding  
+5)MAX,MIN,COUNT,SUM,AVG select Sharding  
+6)paging/sort select Sharding  
+7)support Sharding type:Separate databases and tables,separate databases only,separate tables only  
+8)support route Sharding type:One database and one table, one database and multiple tables, multiple databases and multiple tables, all databases and all tables, only specifying tables, only specifying databases  
+9)Forcibly specify the partition route for the current operation through Hint(appoint ds and table)  
+10)Sharding broadcast table support  
+11)easy Sharding config support   
+
 ### **V1.17(2022·Mid-Autumn Day)**  
 
 **V1.17.0.10**  
