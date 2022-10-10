@@ -5,7 +5,8 @@ Bee
 **Bee 2.0 Sharding分片 功能,登场了。自此，Bee有了完整了分库分表功能。**  
 [请查看2.0-sharding-dev 分支](../../../bee/tree/2.0-sharding-dev)  
 
-Sharding分片目标:主要提供对业务开发透明,编码透明,只加少量分片配置即可.
+Sharding分片目标:主要提供对业务开发透明,编码透明,只加少量分片配置即可.  
+## [快速开始:Shardign最佳实践参考实例](guide/Quick-start-Sharding_CN.md) 
 
 #### 工欲善其事必先利其器！——《论语·卫灵公》  
 #### 为适应互联网时代软件需求量大,需求变更频繁,性能要求高等要求,ORM Bee应运而生!

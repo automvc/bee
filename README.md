@@ -9,8 +9,11 @@ Bee
 **Good Feature:**  AI, Timesaving/Tasteful, Easy, Automatic (**AiTeaSoft Style**)   
 
 ## **Good News:**  
-1)**V1.17 add support Android and HarmonyOS ORM function**  
-2)In **Android and HarmonyOS** environment can use the **same ORM code with Bee**  
+**Bee V2.0 Sharding is coming !**  
+[2.0-sharding-dev branch](../../../bee/tree/2.0-sharding-dev)  
+
+Sharding target: It is mainly transparent to business development and coding, with only a little sharding config.  
+## [Quick Start:Shardign better example](guide/Quick-start-Sharding.md) 
 
 **Bee** see:  
 https://github.com/automvc/bee  
