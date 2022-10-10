@@ -3,7 +3,7 @@ Bee
 =========
 **Easy for Stronger.**   
 **Bee** is an ORM framework.   
-**Bee** is an easy and high efficiency ORM framework.    
+**Bee** is an easy and high efficiency ORM framework.  
 **Coding Complexity is O(1),it means that Bee will do the Dao for you**.  
 **You don't need to write the Dao by yourself anymore**.Help you to focus more on the development of business logic.  
 **Good Feature:**  AI, Timesaving/Tasteful, Easy, Automatic (**AiTeaSoft Style**)   
@@ -61,6 +61,21 @@ In addition to **JDBC, Android and HarmonyOS** are also supported.
 * 29.can automatically generate entity_F for referenced to the entity field name.  
 
 ## Newest Function
+
+### **V2.0 Sharding** 
+**V2.0.0.1001(2022·National Day) **  
+Add Sharding Function  
+1)object-oriented Sharding  
+2)Suid,SuidRich,select,modify Sharding  
+3)MoreTable select Sharding  
+4)batch insert Sharding  
+5)MAX,MIN,COUNT,SUM,AVG select Sharding  
+6)paging/sort select Sharding  
+7)support Sharding type:Separate databases and tables,separate databases only,separate tables only  
+8)support route Sharding type:One database and one table, one database and multiple tables, multiple databases and multiple tables, all databases and all tables, only specifying tables, only specifying databases  
+9)Forcibly specify the partition route for the current operation through Hint(appoint ds and table)  
+10)Sharding broadcast table support  
+11)easy Sharding config support   
 
 ### **V1.17(2022·Mid-Autumn Day)**  
 
