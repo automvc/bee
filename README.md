@@ -9,7 +9,7 @@ Bee
 **Good Feature:**  AI, Timesaving/Tasteful, Easy, Automatic (**AiTeaSoft Style**)   
 
 ## **Good News:**  
-**Bee 2.0 Sharding is coming !**  
+**Bee V2.0 Sharding is coming !**  
 [2.0-sharding-dev branch](../../../bee/tree/2.0-sharding-dev)  
 
 Sharding target: It is mainly transparent to business development and coding, with only a little sharding config.  
