@@ -33,15 +33,15 @@ import org.teasoft.bee.osql.OrderType;
  */
 public class ShardingSortStruct {
 
-	private String orderSql;
+	private String orderSql;  //改写成union all时用.
 	private String orderFields[];
 	private OrderType orderTypes[];
 
 //	以下5个属性用于处理:
 //	public List<String[]> select(String sql)
 
-	// 排序顺序与orderFields[]对应.
-	private String type[];
+	// 排列顺序与orderFields[]对应.
+	private String type[]; //Number,String...
 	private boolean nullFirst[];
 	private boolean caseSensitive[];
 	// the field value in the select column index
