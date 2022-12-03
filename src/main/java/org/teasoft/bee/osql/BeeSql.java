@@ -17,6 +17,7 @@
 
 package org.teasoft.bee.osql;
 
+import java.sql.ResultSet;
 import java.util.List;
 import java.util.Map;
 
@@ -116,4 +117,12 @@ public interface BeeSql {
 	 * @since 1.9
 	 */
 	public List<Map<String,Object>> selectMapList(String sql);
+	
+	/**
+	 * 
+	 * 使用完返回的ResultSet结果后,要调用HoneyContext.clearConnForSelectRs()关闭连接.
+	 * @param sql
+	 * @return
+	 */
+	public ResultSet selectRs(String sql);
 }
