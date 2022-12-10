@@ -15,7 +15,7 @@ Sharding分片目标:对业务开发透明,编码透明,只加少量分片配置
 **Bee**，一个简单，易用，功能强大(编码少、开发速度快，运行快）的 JAVA ORM 框架。  
 **Bee简单易用**：单表操作、多表关联操作，可以不用写sql,极少语句就可以完成SQL操作；**概念简单**,10分钟即可入门。  
 **Bee功能强大**：复杂查询也支持向对象方式，分页查询性能更高，一级缓存即可支持个性化优化；具有分布式特性。高级要求，还可以方便自定义SQL语句。运行速度接近直接用JDBC的速度。  
-**Bee功能丰富**：同时支持JDBC(比如JavaWeb),Android和Harmony；支持Sharding分片；支持多种关系型数据库(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Access等)，还支持NoSQL的Cassandra,Mongodb等
+**Bee功能丰富**：同时支持JDBC(比如JavaWeb),Android和Harmony；支持Sharding分片；支持多种关系型数据库(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Access等)，还支持NoSQL的Cassandra,Mongodb等  
 **如果说Mybatis在Hibernate之后不是重复造轮子,那Bee在Hibernate和Mybatis之后也不会是重复造轮子!**  
 择其优点，避其缺点，此外，还加有自己的优点！  
 
