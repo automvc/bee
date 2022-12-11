@@ -17,6 +17,7 @@
 
 package org.teasoft.bee.osql;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -51,4 +52,18 @@ public interface ConditionAssistant {
 	 public String[] getSelectField();
 	 
 	 public Boolean getForUpdate();
+	 
+	/**
+	 * the Boolean value whether has GroupBy
+	 * @return the Boolean value whether has GroupBy
+	 * @since 2.0
+	 */
+	public Boolean hasGroupBy(); //for mongodb
+	
+	/**
+	 * get GroupByfields
+	 * @return the list of GroupByfields
+	 * @since 2.0
+	 */
+	public List<String> getGroupByFields(); //for mongodb
 }

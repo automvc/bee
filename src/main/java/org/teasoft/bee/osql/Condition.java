@@ -211,6 +211,68 @@ public interface Condition extends ConditionAssistant {
 	 */
 	public Condition orderBy(FunctionType functionType, String field, OrderType orderType);
 	
+
+	/**
+	 * Specify the partial fields to be queried (only for select of SQL).
+	 * @param fieldList select fields,if more than one,separate with comma or use variable-length arguments.
+	 * @return Condition
+	 * @since 1.8
+	 * @since 1.11 support variable-length arguments
+	 */
+	public Condition selectField(String... fieldList);
+	
+	/**
+	 * set fieldName for distinct(fieldName)
+	 * <br>eg: selectDistinctField(fieldName) --> distinct(fieldName)
+	 * @param fieldName Field name
+	 * @return Condition
+	 * @since 1.9
+	 */
+	public Condition selectDistinctField(String fieldName);
+
+	/**
+	 * set fieldName for distinct(fieldName)
+	 * eg: selectDistinctField(fieldName,alias) --> distinct(fieldName) as alias
+	 * @param fieldName Field name
+	 * @param alias Name of alias
+	 * @return Condition
+	 * @since 1.9
+	 */
+	public Condition selectDistinctField(String fieldName, String alias);
+	
+	/**
+	 * set for select result with function.
+	 * <br>eg: condition.selectFun(FunctionType.COUNT, "*");-->count(*)
+	 * @param functionType Function type of SQL.
+	 * @param fieldForFun Field name for function.
+	 * @return Condition
+	 * @since 1.9
+	 */
+	public Condition selectFun(FunctionType functionType, String fieldForFun);
+	
+	/**
+	 * set for select result with function.
+	 * <br>eg:selectFun(FunctionType.MAX, "score","maxScore")-->max(score) as maxScore
+	 * @param functionType Function type of SQL.
+	 * @param fieldForFun field name for function.
+	 * @param alias Name of alias for the function result.
+	 * @return Condition
+	 * @since 1.9
+	 */
+	public Condition selectFun(FunctionType functionType, String fieldForFun, String alias);
+	
+	/**
+	 * lock the select record with 'for update'.
+	 * <br>There is no restriction on writing order.
+	 * @return Condition
+     * @since 1.8
+	 */
+	public Condition forUpdate();
+	
+	
+	
+	////////////////////////////////-------just use in update-------------start-
+	
 	/**
 	 * Set the fields to be updated (for only update of SQL),and the field change on itself.
 	 * <br>eg: setAdd("price",2.0)--> price=price+2.0
@@ -275,6 +337,14 @@ public interface Condition extends ConditionAssistant {
 	
 	
 	/**
+	 * Set the fields with null value (only for update of SQL); 
+	 * @param fieldName
+	 * @return Condition
+	 * @since 2.0
+	 */
+	public Condition setNull(String fieldName);
+	
+	/**
 	 * set one field with other field value
 	 * <br>eg: setWithField(field1,field2)--> set field1=field2
 	 * @param field1 first field name
@@ -284,61 +354,8 @@ public interface Condition extends ConditionAssistant {
 	 */
 	public Condition setWithField(String field1, String field2);
 	
-	/**
-	 * Specify the partial fields to be queried (only for select of SQL).
-	 * @param fieldList select fields,if more than one,separate with comma or use variable-length arguments.
-	 * @return Condition
-	 * @since 1.8
-	 * @since 1.11 support variable-length arguments
-	 */
-	public Condition selectField(String... fieldList);
+	////////////////////////////////-------just use in update-------------end-
 	
-	/**
-	 * set fieldName for distinct(fieldName)
-	 * <br>eg: selectDistinctField(fieldName) --> distinct(fieldName)
-	 * @param fieldName Field name
-	 * @return Condition
-	 * @since 1.9
-	 */
-	public Condition selectDistinctField(String fieldName);
 
-	/**
-	 * set fieldName for distinct(fieldName)
-	 * eg: selectDistinctField(fieldName,alias) --> distinct(fieldName) as alias
-	 * @param fieldName Field name
-	 * @param alias Name of alias
-	 * @return Condition
-	 * @since 1.9
-	 */
-	public Condition selectDistinctField(String fieldName, String alias);
-	
-	/**
-	 * set for select result with function.
-	 * <br>eg: condition.selectFun(FunctionType.COUNT, "*");-->count(*)
-	 * @param functionType Function type of SQL.
-	 * @param fieldForFun Field name for function.
-	 * @return Condition
-	 * @since 1.9
-	 */
-	public Condition selectFun(FunctionType functionType, String fieldForFun);
-	
-	/**
-	 * set for select result with function.
-	 * <br>eg:selectFun(FunctionType.MAX, "score","maxScore")-->max(score) as maxScore
-	 * @param functionType Function type of SQL.
-	 * @param fieldForFun field name for function.
-	 * @param alias Name of alias for the function result.
-	 * @return Condition
-	 * @since 1.9
-	 */
-	public Condition selectFun(FunctionType functionType, String fieldForFun, String alias);
-	
-	/**
-	 * lock the select record with 'for update'.
-	 * <br>There is no restriction on writing order.
-	 * @return Condition
-     * @since 1.8
-	 */
-	public Condition forUpdate();
 
 }
