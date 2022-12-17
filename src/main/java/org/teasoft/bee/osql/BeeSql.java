@@ -35,18 +35,20 @@ public interface BeeSql {
 	/**
 	 * According to SQL query data, data type is consistent with entity type.
 	 * @param sql	SQL select statement
-	 * @param entity The entity corresponding to table and can not be null.
+	 * @param entityClass The entity class corresponding to table and can not be null. (update in v2.0)
 	 * @return List can contain more than one entity.
 	 */
-	public <T> List<T> select(String sql,T entity );
+//	public <T> List<T> select(String sql,T entity );
+	public <T> List<T> select(String sql, Class<T> entityClass);
 	
 	/**
 	 * Select some field.
 	 * @param sql	SQL select statement
-	 * @param entity The entity corresponding to table and can not be null.
+	 * @param entityClass The entity class corresponding to table and can not be null. (update in v2.0)
 	 * @return List entity which just has some field.
 	 */
-	public <T> List<T> selectSomeField(String sql,T entity ); 
+//	public <T> List<T> selectSomeField(String sql,T entity ); 
+	public <T> List<T> selectSomeField(String sql, Class<T> entityClass);
 	
 	/**
 	 * Select result with function. SQL function: max,min,avg,sum,count. 

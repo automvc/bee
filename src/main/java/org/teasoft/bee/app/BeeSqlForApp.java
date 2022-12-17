@@ -35,7 +35,7 @@ public interface BeeSqlForApp {
 	 * @param selectionArgs
 	 * @return list which contains more than one entity.
 	 */
-	public <T> List<T> select(String sql, T entity, String[] selectionArgs);
+	public <T> List<T> select(String sql, Class<T> entityClass, String[] selectionArgs);
 
 	/**
 	 * @param sql
