@@ -26,46 +26,58 @@ package org.teasoft.bee.osql;
 public interface ObjToSQLRich extends ObjToSQL {
 
 //	public <T> String toSelectSQL(T entity,int size);
-	public <T> String toSelectSQL(T entity,int start,int size);
-	public <T> String toSelectSQL(T entity,String... fields);
-	public <T> String toSelectSQL(T entity,String selectFields,int start,int size);
-	
-	public <T> String toUpdateSQL(T entity,String updateFields);
-	public <T> String toUpdateSQL(T entity,String updateFields,IncludeType includeType);
-	
-	public <T> String toSelectFunSQL(T entity,FunctionType functionType, String fieldForFun,Condition condition);
-	
-	public <T> String toSelectOrderBySQL(T entity, String orderFields);
-	public <T> String toSelectOrderBySQL(T entity, String orderFields,OrderType[] orderTypes);
+	public <T> String toSelectSQL(T entity, int start, int size);
 
-	public  <T> String toSelectSQL(T entity, IncludeType includeType);
-	public  <T> String toDeleteSQL(T entity, IncludeType includeType);
-	public  <T> String toInsertSQL(T entity, IncludeType includeType);
-	public  <T> String toUpdateSQL(T entity, IncludeType includeType);
-	
-//	public  <T> String[] toInsertSQL(T[] entity);
-//	public  <T> String[] toInsertSQL(T[] entity,String excludeFields);
-	public  <T> String[] toInsertSQL(T[] entity,int batchSize,String excludeFields);
-	
-	public  String toDeleteByIdSQL(Class c, Integer id);
-	public  String toDeleteByIdSQL(Class c, Long id);
-	public  String toDeleteByIdSQL(Class c, String ids);
+	public <T> String toSelectSQL(T entity, String... fields);
+
+	public <T> String toSelectSQL(T entity, String selectFields, int start, int size);
+
+	public <T> String toUpdateSQL(T entity, String updateFields);
+
+	public <T> String toUpdateSQL(T entity, String updateFields, IncludeType includeType);
+
+	public <T> String toSelectFunSQL(T entity, FunctionType functionType, String fieldForFun,
+			Condition condition);
+
+	public <T> String toSelectOrderBySQL(T entity, String orderFields);
+
+	public <T> String toSelectOrderBySQL(T entity, String orderFields, OrderType[] orderTypes);
+
+	public <T> String toSelectSQL(T entity, IncludeType includeType);
+
+	public <T> String toDeleteSQL(T entity, IncludeType includeType);
+
+	public <T> String toInsertSQL(T entity, IncludeType includeType);
+
+	public <T> String toUpdateSQL(T entity, IncludeType includeType);
+
+	public <T> String[] toInsertSQL(T[] entity, int batchSize, String excludeFields);
+
+	public String toDeleteByIdSQL(Class<?> c, Integer id);
+
+	public String toDeleteByIdSQL(Class<?> c, Long id);
+
+	public String toDeleteByIdSQL(Class<?> c, String ids);
 
 	public <T> String toSelectByIdSQL(Class<T> entityClazz, Integer id);
+
 	public <T> String toSelectByIdSQL(Class<T> entityClazz, Long id);
+
 	public <T> String toSelectByIdSQL(Class<T> entityClazz, String ids);
-	
-    /**
-     * @param entity
-     * @param includeType
-     * @param condition
-     * @return the sql string.
-     * @since  1.6
-     */
-	public  <T> String toSelectSQL(T entity, IncludeType includeType, Condition condition);
-	public <T> String toUpdateBySQL(T entity,String whereFields);
-	public <T> String toUpdateBySQL(T entity,String whereFields,IncludeType includeType);
-	
+
+	/**
+	 * @param entity
+	 * @param includeType
+	 * @param condition
+	 * @return the sql string.
+	 * @since  1.6
+	 */
+	public <T> String toSelectSQL(T entity, IncludeType includeType, Condition condition);
+
+	public <T> String toUpdateBySQL(T entity, String whereFields);
+
+	public <T> String toUpdateBySQL(T entity, String whereFields, IncludeType includeType);
+
 	/**
 	 * 
 	 * @param entity
@@ -86,5 +98,4 @@ public interface ObjToSQLRich extends ObjToSQL {
 	 */
 	public <T> String toUpdateSQL(T entity, String updateFields, Condition condition);
 
-	
 }
