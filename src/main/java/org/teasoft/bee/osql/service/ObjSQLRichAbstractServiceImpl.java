@@ -185,27 +185,27 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 	}
 
 	@Override
-	public <T> T selectById(T entity, Integer id) {
+	public <T> T selectById(Class<T> entityClass, Integer id) {
 		//Add the business logic if need.
-		return  getSuidRich().selectById(entity, id);
+		return  getSuidRich().selectById(entityClass, id);
 	}
 
 	@Override
-	public <T> T selectById(T entity, Long id) {
+	public <T> T selectById(Class<T> entityClass, Long id) {
 		//Add the business logic if need.
-		return  getSuidRich().selectById(entity, id);
+		return  getSuidRich().selectById(entityClass, id);
 	}
 	
 	@Override
-	public <T> T selectById(T entity, String id) {
+	public <T> T selectById(Class<T> entityClass, String id) {
 		//Add the business logic if need.
-		return  getSuidRich().selectById(entity, id);
+		return  getSuidRich().selectById(entityClass, id);
 	}
 
 	@Override
-	public <T> List<T> selectByIds(T entity, String ids) {
+	public <T> List<T> selectByIds(Class<T> entityClass, String ids) {
 		//Add the business logic if need.
-		return  getSuidRich().selectByIds(entity, ids);
+		return  getSuidRich().selectByIds(entityClass, ids);
 	}
 
 	@Override

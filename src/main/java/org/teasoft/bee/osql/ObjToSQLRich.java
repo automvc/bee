@@ -51,9 +51,9 @@ public interface ObjToSQLRich extends ObjToSQL {
 	public  String toDeleteByIdSQL(Class c, Long id);
 	public  String toDeleteByIdSQL(Class c, String ids);
 
-	public  <T> String toSelectByIdSQL(T entity, Integer id);
-	public  <T> String toSelectByIdSQL(T entity, Long id);
-	public  <T> String toSelectByIdSQL(T entity, String ids);
+	public <T> String toSelectByIdSQL(Class<T> entityClazz, Integer id);
+	public <T> String toSelectByIdSQL(Class<T> entityClazz, Long id);
+	public <T> String toSelectByIdSQL(Class<T> entityClazz, String ids);
 	
     /**
      * @param entity

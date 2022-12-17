@@ -118,7 +118,7 @@ public interface MongodbBeeSql {
 	public <T> int insert(T entity[], int batchSize, String excludeFields);
 	
 	
-	public <T> List<T> selectById(T entity, Object id);
+	public <T> List<T> selectById(Class<T> entityClass, Object id);
 	public int deleteById(Class c, Object id);
 	
 	public <T> int count(T entity, Condition condition);

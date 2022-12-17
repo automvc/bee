@@ -364,42 +364,43 @@ public interface SuidRich extends Suid {
 	
 	/**
 	 * Select record by id.
-	 * @param returnType table's entity(do not allow null).
+	 * @param entityClass table's entity class(do not allow null).
 	 * @param id value of entity's id field. 
 	 * @return return one entity which owns this id.
 	 * @since  1.9
 	 */
-	public <T> T selectById(T returnType,Integer id);
+	public <T> T selectById(Class<T> entityClass,Integer id);
 	
 	/**
 	 * Select record by id.
-	 * @param returnType table's entity(do not allow null).
+	 * @param entityClazz table's entity class(do not allow null).
 	 * <br> The property value of returnType will not be parsed.
 	 * @param id value of entity's id field.
 	 * @return return one entity which owns this id.
 	 * @since  1.9
 	 */
-	public <T> T selectById(T returnType,Long id);
+//	public <T> T selectById(T returnType,Long id);
+	public <T> T selectById(Class<T> entityClazz, Long id);
 	
 	/**
 	 * Select record by id.
-	 * @param returnType table's entity(do not allow null).
+	 * @param entityClass table's entity class(do not allow null).
 	 * <br> The property value of returnType will not be parsed.
 	 * @param id value of entity's id field.
 	 * @return return one entity which owns this id.
 	 * @since  1.9
 	 */
-	public <T> T selectById(T returnType,String id);
+	public <T> T selectById(Class<T> entityClass,String id);
 	
 	/**
 	 * Select record by id.
-	 * @param returnType table's entity(do not allow null).
+	 * @param entityClass table's entity class(do not allow null).
 	 * <br> The property value of returnType will not be parsed.
 	 * @param ids values of entity's id field,if more than one,separate with comma.
 	 * @return list which contains more than one entity.
 	 * @since  1.9
 	 */
-	public <T> List<T> selectByIds(T returnType,String ids);
+	public <T> List<T> selectByIds(Class<T> entityClass,String ids);
 	
 	/**
 	 * Delete record by id.
