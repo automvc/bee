@@ -214,12 +214,12 @@ public interface Condition extends ConditionAssistant {
 
 	/**
 	 * Specify the partial fields to be queried (only for select of SQL).
-	 * @param fieldList select fields,if more than one,separate with comma or use variable-length arguments.
+	 * @param fields select fields,if more than one,separate with comma or use variable-length arguments.
 	 * @return Condition
 	 * @since 1.8
 	 * @since 1.11 support variable-length arguments
 	 */
-	public Condition selectField(String... fieldList);
+	public Condition selectField(String... fields);
 	
 	/**
 	 * set fieldName for distinct(fieldName)
