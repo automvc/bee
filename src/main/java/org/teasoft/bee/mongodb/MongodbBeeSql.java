@@ -126,4 +126,6 @@ public interface MongodbBeeSql {
 	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun, Condition condition); //selectOneFun
 
 	public <T> List<String[]> selectString(T entity, Condition condition);
+	
+	public <T> List<T> select(MongoSqlStruct struct, Class<T> entityClass);
 }
