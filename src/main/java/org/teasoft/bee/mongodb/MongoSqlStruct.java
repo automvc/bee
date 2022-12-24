@@ -6,6 +6,8 @@
 
 package org.teasoft.bee.mongodb;
 
+import java.io.Serializable;
+
 //import org.bson.conversions.Bson;
 
 /**
@@ -13,8 +15,10 @@ package org.teasoft.bee.mongodb;
  * @author Kingstar
  * @since  2.0
  */
-public class MongoSqlStruct {
-
+public class MongoSqlStruct implements Serializable{
+	
+	private static final long serialVersionUID = 1592803913614L;
+	
 	public String returnType;
 
 	public String tableName;
@@ -80,6 +84,11 @@ public class MongoSqlStruct {
 		strBuf.append(returnType);
 
 		return strBuf.toString();
+	}
+	
+	
+	public MongoSqlStruct copy() {
+		return  new MongoSqlStruct(this.returnType, this.tableName, this.filter, this.sortBson, this.start, this.size, this.selectFields, this.hasId);
 	}
 
 }
