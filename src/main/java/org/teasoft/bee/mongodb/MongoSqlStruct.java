@@ -155,6 +155,5 @@ public class MongoSqlStruct implements Serializable{
 	public Object getUpdateSet() {
 		return updateSet;
 	}
-	
 
 }

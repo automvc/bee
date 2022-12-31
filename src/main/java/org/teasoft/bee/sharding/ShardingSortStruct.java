@@ -47,7 +47,7 @@ public class ShardingSortStruct {
 	// the field value in the select column index
 	// 字段值在结果中的列索引
 	private int index[];
-	public volatile boolean regFlag = false;
+	private volatile boolean regFlag = false;
 
 	public ShardingSortStruct() {}
 
@@ -124,4 +124,12 @@ public class ShardingSortStruct {
 		this.caseSensitive = caseSensitive;
 	}
 
+	public boolean isRegFlag() {
+		return regFlag;
+	}
+
+	public void setRegFlag(boolean regFlag) {
+		this.regFlag = regFlag;
+	}
+	
 }

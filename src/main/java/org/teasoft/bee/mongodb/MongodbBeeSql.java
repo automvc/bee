@@ -32,7 +32,7 @@ import org.teasoft.bee.osql.SuidRich;
  * @since  2.0
  */
 public interface MongodbBeeSql {
-	
+
 	/**
 	 * According to entity object select records from database.
 	 * @param entity table's entity(do not allow null).<br>
@@ -42,7 +42,7 @@ public interface MongodbBeeSql {
 	 * @return list which contains more than one entity.
 	 */
 	public <T> List<T> select(T entity);
-	
+
 	/**
 	 * According to entity object update record.This method just has id field to SQL where expression.
 	 * table's entity(do not allow null);id is where condition,do not allow null.<br>
@@ -53,7 +53,7 @@ public interface MongodbBeeSql {
 	 * @see SuidRich#update(Object,java.lang.String)
 	 */
 	public <T> int update(T entity);
-	
+
 	/**
 	 * According to entity object insert record. 
 	 * @param entity table's entity(do not allow null).<br>
@@ -62,17 +62,17 @@ public interface MongodbBeeSql {
 	 * @return the numbers of insert records successfully, if fails,return integer less than 0.
 	 */
 	public <T> int insert(T entity);
-	
+
 	/**
 	 * According to entity object insert record and return id value. 
 	 * @param entity table's entity(do not allow null).<br>
 	 * The entity corresponding to table and can not be null. <br>
 	 * The not null and not empty field will insert to database.
+	 * @param includeType
 	 * @return If successful, return the id value of the inserted record; if fails, return number less than 0.
 	 */
-//	public <T> long insertAndReturnId(T entity);
 	public <T> long insertAndReturnId(T entity, IncludeType includeType);
-	
+
 	/**
 	 * According to entity object delete record. 
 	 * @param entity table's entity(do not allow null).<br>
@@ -82,7 +82,7 @@ public interface MongodbBeeSql {
 	 * @return the numbers of delete records successfully, if fails,return integer less than 0.
 	 */
 	public <T> int delete(T entity);
-	
+
 	/**
 	 * Select the records according to entity and condition.<br>
 	 * @param entity table's entity(do not allow null).
@@ -98,39 +98,37 @@ public interface MongodbBeeSql {
 	 * @return the number of deleted record(s) successfully, if fails,return integer less than 0.
 	 */
 	public <T> int delete(T entity, Condition condition);
-	
-	
-//	public <T> int count(T entity, Condition condition);
-	
+
 	public <T> String selectJson(T entity, Condition condition);
-	
+
 	public <T> int update(T oldEntity, T newEntity);
-	
+
 	public <T> int update(T entity, String setFields, Condition condition);
 
 	public <T> int updateBy(T entity, String whereFields, Condition condition);
-	
-//	public <T> List<T> select(T entity, int start, int size) ;
-	public <T> List<T> selectOrderBy(T entity,String orderFields,OrderType[] orderTypes);
-	
-//	public <T> List<T> select(T entity,String selectFields,int start,int size);
-	
+
+	public <T> List<T> selectOrderBy(T entity, String orderFields, OrderType[] orderTypes);
+
 	public <T> int insert(T entity[], int batchSize, String excludeFields);
-	
-	
+
 	public <T> List<T> selectById(Class<T> entityClass, Object id);
+
 	public int deleteById(Class c, Object id);
-	
+
 	public <T> int count(T entity, Condition condition);
-	
-	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun, Condition condition); //selectOneFun
+
+	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun,
+			Condition condition); // selectOneFun
 
 	public <T> List<String[]> selectString(T entity, Condition condition);
-	
+
 	public <T> List<T> select(MongoSqlStruct struct, Class<T> entityClass);
+
 	public <T> List<String[]> selectString(MongoSqlStruct struct, Class<T> entityClass);
+
 	public <T> String selectJson(MongoSqlStruct struct, Class<T> entityClass);
-	
+
 	public <T> String selectWithFun(MongoSqlStruct struct, Class<T> entityClass);
+
 	public <T> String count(MongoSqlStruct struct, Class<T> entityClass);
 }

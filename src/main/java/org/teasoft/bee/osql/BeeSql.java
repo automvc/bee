@@ -38,7 +38,6 @@ public interface BeeSql {
 	 * @param entityClass The entity class corresponding to table and can not be null. (update in v2.0)
 	 * @return List can contain more than one entity.
 	 */
-//	public <T> List<T> select(String sql,T entity );
 	public <T> List<T> select(String sql, Class<T> entityClass);
 	
 	/**
@@ -47,7 +46,6 @@ public interface BeeSql {
 	 * @param entityClass The entity class corresponding to table and can not be null. (update in v2.0)
 	 * @return List entity which just has some field.
 	 */
-//	public <T> List<T> selectSomeField(String sql,T entity ); 
 	public <T> List<T> selectSomeField(String sql, Class<T> entityClass);
 	
 	/**
@@ -121,10 +119,9 @@ public interface BeeSql {
 	public List<Map<String,Object>> selectMapList(String sql);
 	
 	/**
-	 * 
-	 * 使用完返回的ResultSet结果后,要调用HoneyContext.clearConnForSelectRs()关闭连接.
-	 * @param sql
-	 * @return
+	 * select ResultSet.After using the returned ResultSet results, call HoneyContext.clearConnForSelectRs() to close the connection.
+	 * @param sql SQL select statement
+	 * @return ResultSet
 	 */
 	public ResultSet selectRs(String sql);
 }
