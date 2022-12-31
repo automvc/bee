@@ -93,6 +93,12 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 		//Add the business logic if need.
 		return getSuidRich().selectOne(entity);
 	}
+	
+	@Override
+	public <T> T selectFirst(T entity, Condition condition) {
+		//Add the business logic if need.
+		return getSuidRich().selectFirst(entity, condition);
+	}
 
 	@Override
 	public <T> String selectWithFun(T entity,FunctionType functionType, String fieldForFun) {

@@ -133,11 +133,18 @@ public interface SuidRich extends Suid {
 	public <T> String selectJson(T entity);
 	
 	/**
-	 * Select one record.  
+	 * Select one record,if the size do not equal one, return null.  
 	 * @param entity table's entity(do not allow null).
 	 * @return return one record,if the size do not equal one, return null.
 	 */
 	public <T> T selectOne(T entity);
+	
+	/**
+	 * select the first record.
+	 * @param entity table's entity(do not allow null).
+	 * @return return the first record
+	 */
+	public <T> T selectFirst(T entity, Condition condition);
 	
 	/**
 	 * Select result with one function,Just select one function.
