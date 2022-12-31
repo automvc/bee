@@ -26,8 +26,8 @@ import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.SuidRich;
 
 /**
- * 
- * 用于mongodb查询的底层接口,用户一般不直接使用.
+ * The underlying interface for mongodb queries is not used directly by users(can use Suid,SuidRich).
+ * 用于mongodb查询的底层接口,用户一般不直接使用(一般使用Suid,SuidRich).
  * @author AiTeaSoft
  * @since  2.0
  */
