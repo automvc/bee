@@ -17,27 +17,30 @@ public class MongoSqlStruct implements Serializable{
 	
 	private static final long serialVersionUID = 1592803913614L;
 	
-	public String returnType;
+	private String returnType;
+	private Class entityClass;
 
-	public String tableName;
+	private String tableName;
 //	Document filter;
 //	Bson filter;
-	public Object filter;
+	private Object filter;
 
 //	String group;
 //	Bson sortBson; // orderyBy
-	public Object sortBson; // orderyBy
+	private Object sortBson; // orderyBy
 
-	public Integer start;
-	public Integer size;
+	private Integer start;
+	private Integer size;
 
-	public String[] selectFields;
-	public boolean hasId;
+	private String[] selectFields;
+	private boolean hasId;
+	
+	private Object updateSet;  //for UPDATE
 
 	private String sql;
 
 	public MongoSqlStruct(String returnType, String tableName, Object filter, Object sortBson,
-			Integer start, Integer size, String[] selectFields, boolean hasId) {
+			Integer start, Integer size, String[] selectFields, boolean hasId,Class entityClass) {
 		super();
 		this.returnType = returnType;
 		this.tableName = tableName;
@@ -47,6 +50,16 @@ public class MongoSqlStruct implements Serializable{
 		this.size = size;
 		this.selectFields = selectFields;
 		this.hasId = hasId;
+		this.entityClass=entityClass;
+	}
+	
+	public MongoSqlStruct(String returnType, String tableName, Object filter, Object sortBson,
+			Integer start, Integer size, String[] selectFields, boolean hasId,
+			Class entityClass, Object updateSet) {
+
+		this(returnType, tableName, filter, sortBson, start, size, selectFields, hasId,
+				entityClass);
+		this.updateSet = updateSet;
 	}
 
 	public String getSql() { // just for cache
@@ -80,13 +93,68 @@ public class MongoSqlStruct implements Serializable{
 		}
 		strBuf.append(" , [returnType]: ");
 		strBuf.append(returnType);
+		strBuf.append(" , [entityClass]: ");
+		if(entityClass!=null)
+			strBuf.append(entityClass.getName());
+		
+		if(updateSet!=null) {
+			strBuf.append(" , [updateSet/insert/fun]: ");
+			strBuf.append(updateSet.toString());
+		}
 
 		return strBuf.toString();
 	}
 	
-	
 	public MongoSqlStruct copy() {
-		return  new MongoSqlStruct(this.returnType, this.tableName, this.filter, this.sortBson, this.start, this.size, this.selectFields, this.hasId);
+		return new MongoSqlStruct(this.returnType, this.tableName, this.filter, this.sortBson,
+				this.start, this.size, this.selectFields, this.hasId, this.entityClass,
+				this.updateSet);
 	}
+
+	
+	public String getReturnType() {
+		return returnType;
+	}
+
+	public Class getEntityClass() {
+		return entityClass;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+	}
+
+	public String getTableName() {
+		return tableName;
+	}
+
+	public Object getFilter() {
+		return filter;
+	}
+
+	public Object getSortBson() {
+		return sortBson;
+	}
+
+	public Integer getStart() {
+		return start;
+	}
+
+	public Integer getSize() {
+		return size;
+	}
+
+	public String[] getSelectFields() {
+		return selectFields;
+	}
+
+	public boolean isHasId() {
+		return hasId;
+	}
+
+	public Object getUpdateSet() {
+		return updateSet;
+	}
+	
 
 }

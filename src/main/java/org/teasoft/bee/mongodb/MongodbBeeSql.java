@@ -128,4 +128,9 @@ public interface MongodbBeeSql {
 	public <T> List<String[]> selectString(T entity, Condition condition);
 	
 	public <T> List<T> select(MongoSqlStruct struct, Class<T> entityClass);
+	public <T> List<String[]> selectString(MongoSqlStruct struct, Class<T> entityClass);
+	public <T> String selectJson(MongoSqlStruct struct, Class<T> entityClass);
+	
+	public <T> String selectWithFun(MongoSqlStruct struct, Class<T> entityClass);
+	public <T> String count(MongoSqlStruct struct, Class<T> entityClass);
 }

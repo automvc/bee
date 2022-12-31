@@ -24,7 +24,7 @@ import org.teasoft.bee.osql.BeeException;
  * @author Kingstar
  * @since  1.8.15
  */
-public class NotSupportedException  extends BeeException {
+public class NotSupportedException extends BeeException {
 	
 	static final long serialVersionUID = -875516993124222233L;
 
