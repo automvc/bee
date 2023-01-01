@@ -103,9 +103,9 @@ public interface MongodbBeeSql {
 
 	public <T> int update(T oldEntity, T newEntity);
 
-	public <T> int update(T entity, String setFields, Condition condition);
+	public <T> int update(T entity, Condition condition, String... setFields);
 
-	public <T> int updateBy(T entity, String whereFields, Condition condition);
+	public <T> int updateBy(T entity, Condition condition, String... whereFields);
 
 	public <T> List<T> selectOrderBy(T entity, String orderFields, OrderType[] orderTypes);
 
