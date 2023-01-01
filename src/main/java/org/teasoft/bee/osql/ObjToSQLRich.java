@@ -30,11 +30,11 @@ public interface ObjToSQLRich extends ObjToSQL {
 
 	public <T> String toSelectSQL(T entity, String... fields);
 
-	public <T> String toSelectSQL(T entity, String selectFields, int start, int size);
+	public <T> String toSelectSQL(T entity, int start, int size, String... selectFields);
 
-	public <T> String toUpdateSQL(T entity, String updateFields);
+	public <T> String toUpdateSQL(T entity, String... updateFields);
 
-	public <T> String toUpdateSQL(T entity, String updateFields, IncludeType includeType);
+	public <T> String toUpdateSQL(T entity, IncludeType includeType, String... updateFields);
 
 	public <T> String toSelectFunSQL(T entity, FunctionType functionType, String fieldForFun,
 			Condition condition);
@@ -74,9 +74,9 @@ public interface ObjToSQLRich extends ObjToSQL {
 	 */
 	public <T> String toSelectSQL(T entity, IncludeType includeType, Condition condition);
 
-	public <T> String toUpdateBySQL(T entity, String whereFields);
+	public <T> String toUpdateBySQL(T entity, String... whereFields);
 
-	public <T> String toUpdateBySQL(T entity, String whereFields, IncludeType includeType);
+	public <T> String toUpdateBySQL(T entity, IncludeType includeType, String... whereFields);
 
 	/**
 	 * 
@@ -86,7 +86,7 @@ public interface ObjToSQLRich extends ObjToSQL {
 	 * @return the sql string.
 	 * @since 1.7.2
 	 */
-	public <T> String toUpdateBySQL(T entity, String whereFields, Condition condition);
+	public <T> String toUpdateBySQL(T entity, Condition condition, String... whereFields);
 
 	/**
 	 * 
@@ -96,6 +96,6 @@ public interface ObjToSQLRich extends ObjToSQL {
 	 * @return the sql string.
 	 * @since 1.7.2
 	 */
-	public <T> String toUpdateSQL(T entity, String updateFields, Condition condition);
+	public <T> String toUpdateSQL(T entity, Condition condition, String... updateFields);
 
 }
