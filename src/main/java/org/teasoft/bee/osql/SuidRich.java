@@ -76,7 +76,7 @@ public interface SuidRich extends Suid {
 	 * @param size fetch result size (>0).
 	 * @return list can contain more than one entity
 	 */
-	public <T> List<T> select(T entity,int start,int size);
+	public <T> List<T> select(T entity, int start, int size);
 	
 	/**
 	 * Just select some fields.
@@ -84,7 +84,7 @@ public interface SuidRich extends Suid {
 	 * @param selectFields select fields,if more than one,separate with comma.
 	 * @return list which contains more than one entity.
 	 */
-	public <T> List<T> select(T entity,String selectFields);
+	public <T> List<T> select(T entity, String... selectFields);
 	
 	/**
 	 * Just select some fields,and can specify page information.
@@ -95,7 +95,7 @@ public interface SuidRich extends Suid {
 	 * @return list which contains more than one entity.
 	 * @since 1.4.3
 	 */
-	public <T> List<T> select(T entity,String selectFields,int start,int size);
+	public <T> List<T> select(T entity, int start, int size, String... selectFields);
 	
 	/**
 	 * Select entity,every field will return the string type.
@@ -110,7 +110,7 @@ public interface SuidRich extends Suid {
 	 * @param selectFields Select fields,if more than one,separate with comma.
 	 * @return list can contain more than one record with String array struct.
 	 */
-	public <T> List<String[]> selectString(T entity,String... selectFields); 
+	public <T> List<String[]> selectString(T entity, String... selectFields);
 	
 	/**
 	 * Instead of returning data in a entity structure, it uses a character array in List.
@@ -212,19 +212,20 @@ public interface SuidRich extends Suid {
 	 * <br> converted to a set expression of SQL update.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 */
-	public <T> int update(T entity,String updateFields);
+	public <T> int update(T entity, String... updateFields);
 	
 	/**
 	 * Update record according to entity.
 	 * @param entity table's entity(do not allow null).if id's value is null can not as filter condition.
+	 * @param includeType whether null string and null as a filter conditions.
 	 * @param updateFields update fields.
 	 * <br>For the list of fields to be updated, multiple fields are separated by commas (those fields will be updated). 
 	 * <br>This attribute cannot be empty and is not affected by the includeType parameter; By default, each field will be
 	 * <br> converted to a set expression of SQL update.
-	 * @param includeType whether null string and null as a filter conditions.
 	 * @return  the numbers of update record(s) successfully,if fails, return integer less than 0.
+	 * @since 2.0
 	 */
-	public <T> int update(T entity,String updateFields,IncludeType includeType);
+	public <T> int update(T entity, IncludeType includeType, String... updateFields);
 	
 	/**
 	 * Insert records by batch type.
@@ -356,7 +357,7 @@ public interface SuidRich extends Suid {
 	 * @return Json string, it transform from list which can contain more than one entity.
 	 * @since 1.9.8
 	 */
-	public <T> String selectJson(T entity, String selectFields);
+	public <T> String selectJson(T entity, String... selectFields);
 	
 	/**
 	 * Just select some fields,and can specify page information.
@@ -367,7 +368,7 @@ public interface SuidRich extends Suid {
 	 * @return Json string, it transform from list which can contain more than one entity.
 	 * @since 1.9.8
 	 */
-	public <T> String selectJson(T entity, String selectFields, int start, int size);
+	public <T> String selectJson(T entity, int start, int size, String... selectFields);
 	
 	/**
 	 * Select record by id.
@@ -416,7 +417,7 @@ public interface SuidRich extends Suid {
 	 * @return the number of deleted record(s) successfully,if fails, return integer less than 0.
 	 * @since  1.4
 	 */
-	public int deleteById(Class c,Integer id);
+	public int deleteById(Class c, Integer id);
 	
 	/**
 	 * Delete record by id.
@@ -425,7 +426,7 @@ public interface SuidRich extends Suid {
 	 * @return the number of deleted record(s) successfully,if fails, return integer less than 0.
 	 * @since  1.4
 	 */
-	public int deleteById(Class c,Long id);
+	public int deleteById(Class c, Long id);
 	
 	/**
 	 * Delete record by id.
@@ -434,7 +435,7 @@ public interface SuidRich extends Suid {
 	 * @return the number of deleted record(s) successfully,if fails, return integer less than 0.
 	 * @since  1.4
 	 */
-	public int deleteById(Class c,String ids);
+	public int deleteById(Class c, String ids);
 	
 	/**
 	 * Select record according to entity.
@@ -446,7 +447,7 @@ public interface SuidRich extends Suid {
 	 * @since  1.6
 	 */
 	@Deprecated
-    public <T> List<T> select(T entity,IncludeType includeType,Condition condition);
+	public <T> List<T> select(T entity, IncludeType includeType, Condition condition);
     
 	/**
 	 * Select and return data in Json format according to entity object.
@@ -458,7 +459,7 @@ public interface SuidRich extends Suid {
 	 * @since  1.6
 	 */
 	@Deprecated
-	public <T> String selectJson(T entity,IncludeType includeType,Condition condition);
+	public <T> String selectJson(T entity, IncludeType includeType, Condition condition);
 	
 	/**
 	 * Select and return data in Json format according to entity object.
@@ -467,7 +468,7 @@ public interface SuidRich extends Suid {
 	 * @return Json string, it transform from list which can contain more than one entity.
 	 * @since  1.9
 	 */
-	public <T> String selectJson(T entity,Condition condition);
+	public <T> String selectJson(T entity, Condition condition);
 	
 	/**
 	 * Update record according to whereFields.
@@ -480,36 +481,36 @@ public interface SuidRich extends Suid {
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 * @since  1.6
 	 */
-	public <T> int updateBy(T entity,String whereFields);
+	public <T> int updateBy(T entity, String... whereFields);
 	
 	/**
 	 * Update record according to whereFields.
 	 * @param entity table's entity(do not allow null).
 	 * <br>Fields that are not specified as whereFields, as part of the set(only non empty and non null 
 	 * <br>fields are processed by default,can change the default use IncludeType parameter).
+	 * @param includeType whether null string and null as a filter conditions.
 	 * @param whereFields As a field list of where part in SQL, multiple fields are separated by commas 
 	 * <br>(the fields in the list will be used as where filter)
 	 * <br>But if id's value is null can not as filter.
-	 * @param includeType whether null string and null as a filter conditions.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
-	 * @since  1.6
+	 * @since  2.0
 	 */
-	public <T> int updateBy(T entity,String whereFields,IncludeType includeType);
+	public <T> int updateBy(T entity, IncludeType includeType, String... whereFields);
 	
 	/**
 	 * Update record according to whereFields.
 	 * @param entity table's entity(do not allow null).
 	 * <br>Fields that are not specified as whereFields, as part of the set(only non empty and non null fields 
 	 * <br>are processed by default).
+	 * @param condition Condition as filter the record.
 	 * @param whereFields As a field list of where part in SQL, multiple fields are separated by commas 
 	 * <br>(the fields in the list will be used as where filter)
 	 * <br>But if id's value is null can not as filter.
 	 * <br>Notice:the method op of condition also maybe converted to the where expression.
-	 * @param condition Condition as filter the record.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
-	 * @since 1.7.2
+	 * @since 2.0
 	 */
-	public <T> int updateBy(T entity,String whereFields,Condition condition);
+	public <T> int updateBy(T entity, Condition condition, String... whereFields);
 	
 	/**
 	 * it is equivalent to updateBy(entity,"id",condition)
@@ -521,23 +522,23 @@ public interface SuidRich extends Suid {
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 * @since 1.9
 	 */
-	public <T> int updateById(T entity,Condition condition);
+	public <T> int updateById(T entity, Condition condition);
 	
 	/**
 	 * Update record, can list update fields. 
 	 * @param entity table's entity(do not allow null).
 	 * <br>If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition.
+	 * @param condition Condition as filter the record.
+	 * <br>A field is used not only in the specified updateFields, but also in Condition.set(arg1,arg2), 
+	 *<br> and the corresponding fields in entity will be converted to the where part according to the rules (V1.9.8)
 	 * @param updateFields update fields.The methods setMultiply,setAdd,set in condition are not subject to this restriction. 
 	 * <br>For the list of fields to be updated, multiple fields are separated by commas (those fields will be updated). 
 	 * <br>This attribute cannot be empty and is not affected by the Condition's includeType parameter. By default, each 
 	 * <br>field will be converted to a set expression of SQL update.
-	 * @param condition Condition as filter the record.
-	 * <br>A field is used not only in the specified updateFields, but also in Condition.set(arg1,arg2), 
-	 *<br> and the corresponding fields in entity will be converted to the where part according to the rules (V1.9.8)
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
-	 * @since 1.7.2
+	 * @since 2.0
 	 */
-	public <T> int update(T entity,String updateFields,Condition condition);
+	public <T> int update(T entity, Condition condition, String... updateFields);
 	
 	/**
 	 * Update record,and can help with Condition.
@@ -549,7 +550,7 @@ public interface SuidRich extends Suid {
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 * @since 1.8
 	 */
-	public <T> int update(T entity,Condition condition);
+	public <T> int update(T entity, Condition condition);
 	
 	/**
 	 * Update the entity. The non null and non empty attributes of oldEntity are taken as 
@@ -563,7 +564,7 @@ public interface SuidRich extends Suid {
 	 * @param newEntity Entity with new value field.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 */
-	public <T> int update(T oldEntity,T newEntity);
+	public <T> int update(T oldEntity, T newEntity);
 	
 	/**
 	 * set dynamic parameter for dynamic table & entity name
