@@ -80,6 +80,9 @@ Add Sharding Function
 9)Forcibly specify the partition route for the current operation through Hint(appoint ds and table)  
 10)Sharding broadcast table support  
 11)easy Sharding config support   
+12)stream select,reduce query memory usage  
+13)**mongodb ORM function**  
+14)**mongodb Sharding function**  
 
 ### **V1.17(2022·Mid-Autumn Day)**  
 
