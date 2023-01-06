@@ -29,7 +29,7 @@ https://github.com/automvc/bee-ext
 
 ## Feature & Function: 
 
-**Support many Database**(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Cassandra and so on) and easily extend.  
+**Support many Database**(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Access,Cassandra,Mongodb and so on) and easily extend.  
 **Good performance, close to the speed of JDBC; Small files：Bee V1.8 jar 217k**, **V1.9.5 jar,315k, V1.9.8 jar 310k**.  
 In addition to **JDBC, Android and HarmonyOS** are also supported.  
 
@@ -45,7 +45,7 @@ In addition to **JDBC, Android and HarmonyOS** are also supported.
 * 10.more tables select oriented object support(has not the n+1 problem,one to one,one to many,many to one,many to many).sub-field type support Javabean or List.  
 * 11.L1 cache, simple in concept and powerful in function; L1 cache can also be fine tuned like the JVM; Support updatable long-term cache list and update configuration table without restart. Inherently resistant to cache penetration. L2 cache extension support; Redis L2 cache support.  
 * 12.Support java_db naming translation and support customize,default implement.  
-* 13.Many DB supports easy extension(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Cassandra,etc. are directly available),In theory, can support all DB which support JDBC.  
+* 13.Many DB supports easy extension(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Access,Cassandra,Mongodb,etc. are directly available),In theory, can support all DB which support JDBC.  
 * 14.Add multi-DataSource support(Write/Read, only Split Database);support Jndi DataSource.  
 * 15.Support use many type database at the same time(eg: use Mysql,Oracle,SQL Server at the same).  
 * 16.Support distributed primary key(global unique id,Serial distributed unique id in one workid).  
