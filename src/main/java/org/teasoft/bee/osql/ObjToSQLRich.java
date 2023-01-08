@@ -72,7 +72,7 @@ public interface ObjToSQLRich extends ObjToSQL {
 	 * @return the sql string.
 	 * @since  1.6
 	 */
-	public <T> String toSelectSQL(T entity, IncludeType includeType, Condition condition);
+//	public <T> String toSelectSQL(T entity, IncludeType includeType, Condition condition);
 
 	public <T> String toUpdateBySQL(T entity, String... whereFields);
 

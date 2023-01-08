@@ -18,6 +18,7 @@
 package org.teasoft.bee.osql;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -52,6 +53,13 @@ public interface ConditionAssistant {
 	 public String[] getSelectField();
 	 
 	 public Boolean getForUpdate();
+	 
+	 /**
+	  * get the map of OrderBy
+	  * @return the map of OrderBy
+	  * @since 2.0
+	  */
+	 public Map<String, String> getOrderBy();
 	 
 	/**
 	 * the Boolean value whether has GroupBy
