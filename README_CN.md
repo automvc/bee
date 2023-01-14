@@ -95,10 +95,11 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 **V2.0.1.1(2023·元旦)**  
 13)**mongodb ORM功能**  
 14)**mongodb Sharding分片功能**  
-15)增加分组类型的分片(包括JDBC,Mongodb)  
-16)增加支持MS Access  
-17)SuidRich接口中,调整部分方法中指定查询字段的参数位置,并更改为变长参数  
-18)SuidRich接口添加查询首条记录的方法:selectFirst(T entity, Condition condition)  
+15)SuidRich接口中,调整部分方法中指定查询字段的参数位置,并更改为变长参数  
+16)SuidRich接口添加查询首条记录的方法:selectFirst(T entity, Condition condition)  
+
+17)增加分组类型的分片(包括JDBC,Mongodb)  
+18)增加支持MS Access  
 
 ### **V1.17** 
 **V1.17(2022·中秋)**  
