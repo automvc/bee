@@ -81,8 +81,16 @@ Add Sharding Function
 10)Sharding broadcast table support  
 11)easy Sharding config support   
 12)stream select,reduce query memory usage  
+
+**V2.0.1.1(2023·New Year)**  
 13)**mongodb ORM function**  
 14)**mongodb Sharding function**  
+15)SuidRich,adjust the parameter position of the specified query field in some methods and change it to a variable-length parameter  
+16)SuidRich add method select first record:selectFirst(T entity, Condition condition)  
+
+17)add support sharding for groupBy(including JDBC,Mongodb)  
+18)add support MS Access  
+
 
 ### **V1.17(2022·Mid-Autumn Day)**  
 
