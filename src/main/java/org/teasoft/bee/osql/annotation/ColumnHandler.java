@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql.annotation.customizable;
+package org.teasoft.bee.osql.annotation;
 
 /**
  * Column Annotation handler interface.

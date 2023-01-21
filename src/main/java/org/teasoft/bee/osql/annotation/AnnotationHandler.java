@@ -15,18 +15,22 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql.annotation.customizable;
+package org.teasoft.bee.osql.annotation;
 
-import org.teasoft.bee.sharding.DsTabStruct;
-import org.teasoft.bee.sharding.ShardingSimpleStruct;
+import java.util.Map;
 
 /**
- * DataSource and Table Handler
+ * Annotation Handler Interface.
  * @author Kingstar
  * @since  1.11
  */
-public interface DsTabHandler {
+public interface AnnotationHandler {
 
-	public DsTabStruct process(ShardingSimpleStruct shardingSimpleStruct);
+	public String process();
+	
+	public String process(String s);
+	
+	@SuppressWarnings("rawtypes")
+	public String process(Map para);
 
 }

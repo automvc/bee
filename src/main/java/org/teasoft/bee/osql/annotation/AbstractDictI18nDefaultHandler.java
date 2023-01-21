@@ -15,24 +15,22 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql.annotation.customizable;
+package org.teasoft.bee.osql.annotation;
 
 import java.lang.reflect.Field;
 import java.util.List;
 
 /**
- * Annotation Handler Interface trigger on before return.
+ * Abstract DictI18n Default Handler.
  * @author Kingstar
  * @since  1.11
  */
-public interface BeforeReturnAnnotationHandler {
+public abstract class AbstractDictI18nDefaultHandler implements BeforeReturnAnnotationHandler {
 
-	/**
-	 * 
-	 * @param field Field with corresponding annotation
-	 * @param list List of annotations to be processed
-	 */
+	@Override
 	@SuppressWarnings("rawtypes")
-	public void process(Field field,List list);
+	public void process(Field field, List list) {
+
+	}
 
 }

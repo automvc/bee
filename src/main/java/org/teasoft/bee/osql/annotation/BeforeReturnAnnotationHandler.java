@@ -15,22 +15,24 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql.annotation.customizable;
+package org.teasoft.bee.osql.annotation;
 
-import java.util.Map;
+import java.lang.reflect.Field;
+import java.util.List;
 
 /**
- * Annotation Handler Interface.
+ * Annotation Handler Interface trigger on before return.
  * @author Kingstar
  * @since  1.11
  */
-public interface AnnotationHandler {
+public interface BeforeReturnAnnotationHandler {
 
-	public String process();
-	
-	public String process(String s);
-	
+	/**
+	 * 
+	 * @param field Field with corresponding annotation
+	 * @param list List of annotations to be processed
+	 */
 	@SuppressWarnings("rawtypes")
-	public String process(Map para);
+	public void process(Field field,List list);
 
 }

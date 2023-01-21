@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql.annotation.customizable;
+package org.teasoft.bee.osql.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -23,14 +23,35 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Support international multi language dictionary conversion annotation, 
- * which is generally used for global unified setting.
- * <br>It is used to filter and process the returned data of query according to rules.
+ * Starting from the specified position, change the specified size of characters to mask characters.
+ *<br> eg:
+ *<br> 	\@Desensitize(start=5, size=2, mask="*")
+ *<br> 	private String sequence;
+ *<br> 	sequence in the database is: 0123456789
+ *<br> 	after process:
+ *<br> 	sequence=01234**789
+ * 
  * @author Kingstar
  * @since  1.11
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface DictI18n {
-
+public @interface Desensitize {
+	/**
+	 * Start position (starting from 0)
+	 * @return start position
+	 */
+	int start();
+	
+	/**
+	 * the number of characters need to replace
+	 * @return the number of characters need to replace
+	 */
+	int size();
+	
+	/**
+	 * Mask used
+	 * @return mask code
+	 */
+	String mask(); 
 }

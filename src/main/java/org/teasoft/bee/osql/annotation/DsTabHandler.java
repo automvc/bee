@@ -15,22 +15,18 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql.annotation.customizable;
+package org.teasoft.bee.osql.annotation;
 
-import java.lang.reflect.Field;
-import java.util.List;
+import org.teasoft.bee.sharding.DsTabStruct;
+import org.teasoft.bee.sharding.ShardingSimpleStruct;
 
 /**
- * Abstract DictI18n Default Handler.
+ * DataSource and Table Handler
  * @author Kingstar
  * @since  1.11
  */
-public abstract class AbstractDictI18nDefaultHandler implements BeforeReturnAnnotationHandler {
+public interface DsTabHandler {
 
-	@Override
-	@SuppressWarnings("rawtypes")
-	public void process(Field field, List list) {
-
-	}
+	public DsTabStruct process(ShardingSimpleStruct shardingSimpleStruct);
 
 }

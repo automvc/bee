@@ -22,8 +22,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import org.teasoft.bee.osql.annotation.customizable.DsTabHandler;
-
 /**
  * Sharding.
  * <br>Specify different tables in the same database after calculation; Specify different databases after calculation.

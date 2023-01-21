@@ -43,5 +43,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface JustFetch {
-	String value();
+	String value() default "";
 }
