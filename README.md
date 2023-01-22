@@ -88,6 +88,7 @@ Add Sharding Function
 15)SuidRich,adjust the parameter position of the specified query field in some methods and change it to a variable-length parameter  
 16)SuidRich add method select first record:selectFirst(T entity, Condition condition)  
 
+**V2.0.1.22(2023·Spring Festival)**  
 17)add support sharding for groupBy(including JDBC,Mongodb)  
 18)add support MS Access  
 
