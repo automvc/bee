@@ -98,6 +98,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 15)SuidRich接口中,调整部分方法中指定查询字段的参数位置,并更改为变长参数  
 16)SuidRich接口添加查询首条记录的方法:selectFirst(T entity, Condition condition)  
 
+**V2.0.1.22(2023·春节)**  
 17)增加分组类型的分片(包括JDBC,Mongodb)  
 18)增加支持MS Access  
 
