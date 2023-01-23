@@ -48,7 +48,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Dict {
 
-	String map();
+	String map() default "";
 
 	/**
 	 * The value of the replacement when the field value is null.
