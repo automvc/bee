@@ -101,7 +101,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 **V2.0.1.22(2023·春节)**  
 17)增加分组类型的分片(包括JDBC,Mongodb)  
 18)增加支持MS Access  
-19)支持Mongodb生成Javabean,支持多层嵌入式文档结构生成Javabean  
+19)支持Mongodb生成Javabean,也支持多层嵌入式文档结构生成Javabean  
 
 ### **V1.17** 
 **V1.17(2022·中秋)**  

@@ -91,6 +91,7 @@ Add Sharding Function
 **V2.0.1.22(2023·Spring Festival)**  
 17)add support sharding for groupBy(including JDBC,Mongodb)  
 18)add support MS Access  
+19)support Mongodb generate Javabean,including multi-layer embedded document structure  
 
 ### **V1.17(2022·Mid-Autumn Day)**  
 
