@@ -102,6 +102,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 17)增加分组类型的分片(包括JDBC,Mongodb)  
 18)增加支持MS Access  
 19)支持Mongodb生成Javabean,也支持多层嵌入式文档结构生成Javabean  
+20)增加SuidRichExt,支持非硬编码指定实体字段  
 
 ### **V1.17** 
 **V1.17(2022·中秋)**  

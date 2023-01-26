@@ -92,6 +92,7 @@ Add Sharding Function
 17)add support sharding for groupBy(including JDBC,Mongodb)  
 18)add support MS Access  
 19)support Mongodb generate Javabean,including multi-layer embedded document structure  
+20)add SuidRichExt,support non-hardcode point out the entity field  
 
 ### **V1.17(2022·Mid-Autumn Day)**  
 
