@@ -35,6 +35,11 @@ public class ShardingBean extends ShardingSimpleStruct {
 	private int tabAssignType; // 0: order; 1: polling
 
 	public ShardingBean() {}
+	
+	public ShardingBean(String fullNodes) {
+		super();
+		this.fullNodes = fullNodes;
+	}
 
 	public ShardingBean(String fullNodes, String tabField) {
 		super();
