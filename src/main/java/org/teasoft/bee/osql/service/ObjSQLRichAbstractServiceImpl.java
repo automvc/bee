@@ -359,4 +359,16 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 		return getSuidRich().insertAndReturnId(entity, includeType);
 	}
 
+	@Override
+	public <T> boolean createTable(Class<T> entityClass) {
+		// Add the business logic if need.
+		return getSuidRich().createTable(entityClass);
+	}
+
+	@Override
+	public <T> boolean createTable(Class<T> entityClass, boolean isDropExistTable) {
+		// Add the business logic if need.
+		return getSuidRich().createTable(entityClass, isDropExistTable);
+	}
+	
 }

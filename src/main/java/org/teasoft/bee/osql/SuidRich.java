@@ -595,4 +595,8 @@ public interface SuidRich extends Suid {
 	 * @since 1.9.8
 	 */
 	public <T> int save(T entity);
+	
+	public <T> boolean createTable(Class<T> entityClass);
+
+	public <T> boolean createTable(Class<T> entityClass, boolean isDropExistTable);
 }
