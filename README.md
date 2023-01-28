@@ -93,6 +93,8 @@ Add Sharding Function
 18)add support MS Access  
 19)support Mongodb generate Javabean,including multi-layer embedded document structure  
 20)add SuidRichExt,support non-hardcode point out the entity field  
+21)broadcast table query (randomly selected one dataSource), broadcast table modify (executed in all nodes)  
+22)DDL:createTable for sharding  
 
 ### **V1.17(2022·Mid-Autumn Day)**  
 
