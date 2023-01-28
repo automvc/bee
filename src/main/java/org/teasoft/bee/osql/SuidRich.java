@@ -596,7 +596,17 @@ public interface SuidRich extends Suid {
 	 */
 	public <T> int save(T entity);
 	
-	public <T> boolean createTable(Class<T> entityClass);
+//	public <T> boolean createTable(Class<T> entityClass);
 
 	public <T> boolean createTable(Class<T> entityClass, boolean isDropExistTable);
+
+//	public <T> void indexNormal(Class<T> entityClass, String fields);
+
+	public <T> void indexNormal(Class<T> entityClass, String fields, String indexName);
+
+//	public <T> void unique(Class<T> entityClass, String fields);
+
+	public <T> void unique(Class<T> entityClass, String fields, String indexName);
+	
+	public <T> void primaryKey(Class<T> entityClass, String fields, String keyName);
 }
