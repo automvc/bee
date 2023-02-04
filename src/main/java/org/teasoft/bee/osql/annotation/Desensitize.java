@@ -30,7 +30,9 @@ import java.lang.annotation.Target;
  *<br> 	sequence in the database is: 0123456789
  *<br> 	after process:
  *<br> 	sequence=01234**789
- * 
+ *<br> 	V2.0
+ *<br> 	\@Desensitize(start=0, size=-1, mask="*")  //replace all
+ *<br> 	\@Desensitize(start=2, size=-1, mask="*")  //replace from 2 to end
  * @author Kingstar
  * @since  1.11
  */
@@ -44,7 +46,8 @@ public @interface Desensitize {
 	int start();
 	
 	/**
-	 * the number of characters need to replace
+	 * the number of characters need to replace;
+	 * if it is - 1, replace it until the end(V2.0).
 	 * @return the number of characters need to replace
 	 */
 	int size();
