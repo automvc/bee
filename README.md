@@ -721,12 +721,6 @@ USD 49.00
 **[Shenzhen Caifeng software](http://www.aiteasoft.com)**  
 (Enterprises willing to join in, please contact us!)  
 
-### Discount(2022)
-Before June:    40% discount  
-Before July:    30% discount  
-Before August:  20% discount  
-Before October: 10% discount  
-
 Contact & Welcome:
 =========	
 #### Author's email:    honeysoft@126.com  
