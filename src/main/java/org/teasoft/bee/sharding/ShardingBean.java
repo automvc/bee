@@ -43,8 +43,15 @@ public class ShardingBean extends ShardingSimpleStruct {
 
 	public ShardingBean(String fullNodes, String tabField) {
 		super();
-		this.tabField = tabField;
 		this.fullNodes = fullNodes;
+		this.tabField = tabField;
+	}
+	
+	public ShardingBean(String fullNodes, String tabField, String dsField) {
+		super();
+		this.fullNodes = fullNodes;
+		this.tabField = tabField;
+		this.dsField = dsField;
 	}
 
 	public ShardingBean(ShardingSimpleStruct shardingSimpleStruct) {
