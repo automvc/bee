@@ -96,6 +96,16 @@ Add Sharding Function
 21)broadcast table query (randomly selected one dataSource), broadcast table modify (executed in all nodes)  
 22)DDL:createTable for sharding  
 
+**V2.0.2.5(2023·the Lantern Festival)**  
+23)update(T,T) change internal implementation  
+24)Desensitize support does not need to know the end position @Desensitize(start=0, size=-1, mask="*")  
+   0123456789 -> *********  
+25)Partitioning support:=, in, between; Where in supports Number, List and Set  
+Do not participate in fragmentation: not in, not between,>=,<=.  
+26)To improve HintManager, only dataSourceName or tableName can be specified  
+It is recommended to specify both or at least tableName  
+27)HintManager can use the shortcut HM  
+
 ### **V1.17(2022·Mid-Autumn Day)**  
 
 **V1.17.0.10**  
