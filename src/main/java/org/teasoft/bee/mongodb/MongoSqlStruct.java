@@ -9,7 +9,7 @@ package org.teasoft.bee.mongodb;
 import java.io.Serializable;
 
 /**
- * use in Mongodb select cache
+ * MongoSql Struct
  * @author Kingstar
  * @since  2.0
  */
