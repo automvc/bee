@@ -119,10 +119,10 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 建议两者都指定,或至少指定tableName  
 27)HintManager可使用简称HM  
 
-**V2.0.2.14(2023·情人节)** 
-完善:  
-Mongodb ORM日志功能  
-不同包的实体即使指定同一个表也不能共享缓存  
+**V2.0.2.14(2023·情人节)**  
+完善:Mongodb ORM日志功能  
+完善:不同包的实体即使指定同一个表也不能共享缓存  
+完善:Json String类型查询结果转换增强  
 fixed bug:PreparedSql接口的批量插入insertBatch空指针和占位符  
 
 
