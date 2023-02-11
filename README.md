@@ -65,8 +65,7 @@ In addition to **JDBC, Android and HarmonyOS** are also supported.
 * 29.can automatically generate entity_F for referenced to the entity field name.  
 
 ## Newest Function
-
-### **V2.0 Sharding** 
+### **V2.0 Sharding(Mother Love)** 
 **V2.0.0.1001(2022·National Day) **  
 Add Sharding Function  
 1)object-oriented Sharding  
@@ -105,6 +104,11 @@ Do not participate in fragmentation: not in, not between,>=,<=.
 26)To improve HintManager, only dataSourceName or tableName can be specified  
 It is recommended to specify both or at least tableName  
 27)HintManager can use the shortcut HM  
+
+**V2.0.2.14(2023·Valentine's Day)** 
+enhance Mongodb ORM log  
+fixed bug about insertBatch in PreparedSql  
+
 
 ### **V1.17(2022·Mid-Autumn Day)**  
 
@@ -435,18 +439,18 @@ Quick Start:
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<version>1.17</version>
+			<version>2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<version>1.17</version>
+			<version>2.0</version>
 		</dependency>
 		<!--for log framework,Excel(poi),Redis cache,Android,HarmonyOS,Json,Tran Annotation -->
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee-ext</artifactId>
-			<version>1.17</version>
+			<version>2.0</version>
 		</dependency>
 ```
 
