@@ -31,7 +31,7 @@ public interface BeeSqlForApp {
 	/**
 	 * 
 	 * @param sql
-	 * @param entity
+	 * @param entityClass
 	 * @param selectionArgs
 	 * @return list which contains more than one entity.
 	 */

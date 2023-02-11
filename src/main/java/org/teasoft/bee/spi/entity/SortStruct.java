@@ -24,7 +24,7 @@ package org.teasoft.bee.spi.entity;
 public class SortStruct {
 	
 	private String fieldName;
-	private boolean isReverse; //降序,默认是false;  即默认是升序
+	private boolean isReverse; //In descending order, the default is false; That is, the default is ascending
 	
 	public SortStruct(String fieldName) {
 		this.fieldName=fieldName;

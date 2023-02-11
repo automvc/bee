@@ -65,15 +65,6 @@ public interface ObjToSQLRich extends ObjToSQL {
 
 	public <T> String toSelectByIdSQL(Class<T> entityClazz, String ids);
 
-	/**
-	 * @param entity
-	 * @param includeType
-	 * @param condition
-	 * @return the sql string.
-	 * @since  1.6
-	 */
-//	public <T> String toSelectSQL(T entity, IncludeType includeType, Condition condition);
-
 	public <T> String toUpdateBySQL(T entity, String... whereFields);
 
 	public <T> String toUpdateBySQL(T entity, IncludeType includeType, String... whereFields);

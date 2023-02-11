@@ -46,7 +46,7 @@ public interface Suid extends CommOperate {
 	 * The ID field of entity cannot be null and as filter condition. <br>
 	 * The not null and not empty field will update to database except ID.
 	 * @return the numbers of update records successfully, if fails,return integer less than 0.
-	 * @see SuidRich#update(Object,java.lang.String)
+	 * @see SuidRich#update(Object,java.lang.String...)
 	 */
 	public <T> int update(T entity);
 	

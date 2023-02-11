@@ -33,7 +33,7 @@ public class GroupFunStruct {
 	
 	private boolean needGroupWhenNoFun;
 	
-	//有avg的才需要以下属性  　或 String[]
+	//has avg or String[] type need following
 	private boolean hasAvg;
 	private String columnNames;
 	

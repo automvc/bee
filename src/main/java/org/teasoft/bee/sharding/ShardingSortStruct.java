@@ -21,7 +21,7 @@ import org.teasoft.bee.osql.OrderType;
 
 /**
  * 
- * the array element 's order corresponds to orderFields[] except index[]. 除了index[]外,其它数组元素的排序顺序与orderFields[]对应.
+ * the array element 's order corresponds to orderFields[] except index[]. 
  * 
  * select id,name,age from student order by age desc,name asc; struct: orderFields[]{age,name} new OrderType[]
  * {OrderType.DESC,OrderType.ASC} struct.setType(new String[] { "Integer", "String"}); struct.setIndex(new int[] { 2,1});
@@ -33,19 +33,18 @@ import org.teasoft.bee.osql.OrderType;
  */
 public class ShardingSortStruct {
 
-	private String orderSql;  //改写成union all时用.
+	private String orderSql;  //need when rewrite to union all.
 	private String orderFields[];
 	private OrderType orderTypes[];
 
-//	以下5个属性用于处理:
+//	the following 5 field for:
 //	public List<String[]> select(String sql)
 
-	// 排列顺序与orderFields[]对应.
+	//The element order corresponds to orderFields []
 	private String type[]; //Number,String...
 	private boolean nullFirst[];
 	private boolean caseSensitive[];
 	// the field value in the select column index
-	// 字段值在结果中的列索引
 	private int index[];
 	private volatile boolean regFlag = false;
 
@@ -83,16 +82,15 @@ public class ShardingSortStruct {
 	}
 
 	/**
-	 * 字段值在结果中的列索引 the field value in the select column index
-	 * 
-	 * @return
+	 * the field value in the select column index
+	 * @return index array
 	 */
 	public int[] getIndex() {
 		return index;
 	}
 
 	/**
-	 * 字段值在结果中的列索引 the field value in the select column index
+	 * the field value in the select column index
 	 * 
 	 * @param index
 	 */

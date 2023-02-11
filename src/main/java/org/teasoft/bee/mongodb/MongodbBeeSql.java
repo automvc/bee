@@ -27,7 +27,6 @@ import org.teasoft.bee.osql.SuidRich;
 
 /**
  * The underlying interface for mongodb queries is not used directly by users(can use Suid,SuidRich).
- * 用于mongodb查询的底层接口,用户一般不直接使用(一般使用Suid,SuidRich).
  * @author AiTeaSoft
  * @since  2.0
  */
@@ -50,7 +49,7 @@ public interface MongodbBeeSql {
 	 * The ID field of entity cannot be null and as filter condition. <br>
 	 * The not null and not empty field will update to database except ID.
 	 * @return the numbers of update records successfully, if fails,return integer less than 0.
-	 * @see SuidRich#update(Object,java.lang.String)
+	 * @see SuidRich#update(Object,java.lang.String...)
 	 */
 	public <T> int update(T entity);
 
