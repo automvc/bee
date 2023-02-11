@@ -77,6 +77,8 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 * 29.使用实体名_F(自动生成)引用实体字段名。  
 
 ## 最新功能介绍: 
+**V2.0(母爱)**  
+**使用分库分表像使用单库一样方便;使用MongoDB像使用MySQL一样容易.**
 ### **V2.0 Sharding分片功能** 
 **V2.0.0.1001(2022·国庆节)**  
 1)面向对象分片  
@@ -105,7 +107,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 19)支持Mongodb生成Javabean,也支持多层嵌入式文档结构生成Javabean  
 20)增加SuidRichExt,支持非硬编码指定实体字段  
 21)广播表查询(随机选定数据源),广播表更新(全部节点都执行)  
-22)DDL:sharding分库分表创建表  
+22)DDL:sharding分库分表创建表;创建表传递Class类型参数  
 
 **V2.0.2.5(2023·元宵节)**  
 23)update(T,T)更新内部实现  
@@ -116,6 +118,13 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 26)完善HintManager,可只指定dataSourceName,或可只指定tableName  
 建议两者都指定,或至少指定tableName  
 27)HintManager可使用简称HM  
+
+**V2.0.2.14(2023·情人节)** 
+完善:  
+Mongodb ORM日志功能  
+不同包的实体即使指定同一个表也不能共享缓存  
+fixed bug:PreparedSql接口的批量插入insertBatch空指针和占位符  
+
 
 ### **V1.17** 
 **V1.17(2022·中秋)**  
@@ -382,18 +391,18 @@ OrdersService.java
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<version>1.17</version>
+			<version>2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<version>1.17</version>
+			<version>2.0</version>
 		</dependency>
 		<!--for log framework,Excel(poi),Redis cache,Android,HarmonyOS,Json,Tran Annotation -->
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee-ext</artifactId>
-			<version>1.17</version>
+			<version>2.0</version>
 		</dependency>
 ```
 
