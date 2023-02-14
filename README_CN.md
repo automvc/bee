@@ -34,7 +34,8 @@ bee-ext:
 https://github.com/automvc/bee-ext  
 
 ## 环境要求  
-#### jdk1.7+
+#### Bee jdk1.7+
+#### Bee-Ext(V2.0) jdk1.8+
 
 ## Bee主要功能特点介绍：  
 **Bee概念简单**(10分钟即可入门)、功能强大。  
