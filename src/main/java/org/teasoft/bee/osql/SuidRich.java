@@ -54,7 +54,7 @@ import java.util.List;
  * @since  1.0
  */
 public interface SuidRich extends Suid {
-	
+
 	/**
 	 * Select record(s) according to entity object,and can specify page information.
 	 * @param entity table's entity(do not allow null).
@@ -64,8 +64,8 @@ public interface SuidRich extends Suid {
 	 * @param size fetch result size (>0).
 	 * @return list which contains more than one entity.
 	 */
-	public <T> List<T> select(T entity,int size);
-	
+	public <T> List<T> select(T entity, int size);
+
 	/**
 	 * Select record(s) according to entity object,and can specify page information.
 	 * @param entity table's entity(do not allow null).
@@ -77,7 +77,7 @@ public interface SuidRich extends Suid {
 	 * @return list can contain more than one entity
 	 */
 	public <T> List<T> select(T entity, int start, int size);
-	
+
 	/**
 	 * Just select some fields.
 	 * @param entity table's entity(do not allow null).
@@ -85,7 +85,7 @@ public interface SuidRich extends Suid {
 	 * @return list which contains more than one entity.
 	 */
 	public <T> List<T> select(T entity, String... selectFields);
-	
+
 	/**
 	 * Just select some fields,and can specify page information.
 	 * @param entity table's entity(do not allow null).
@@ -96,14 +96,14 @@ public interface SuidRich extends Suid {
 	 * @since 1.4.3
 	 */
 	public <T> List<T> select(T entity, int start, int size, String... selectFields);
-	
+
 	/**
 	 * Select entity,every field will return the string type.
 	 * @param entity table's entity(do not allow null).
 	 * @return list can contain more than one record with String array struct.
 	 */
-	public <T> List<String[]> selectString(T entity); 
-	
+	public <T> List<String[]> selectString(T entity);
+
 	/**
 	 * Select some field, every field will return the string type. 
 	 * @param entity table's entity(do not allow null).
@@ -111,7 +111,7 @@ public interface SuidRich extends Suid {
 	 * @return list can contain more than one record with String array struct.
 	 */
 	public <T> List<String[]> selectString(T entity, String... selectFields);
-	
+
 	/**
 	 * Instead of returning data in a entity structure, it uses a character array in List.
 	 * @param entity table's entity(do not allow null).
@@ -119,8 +119,8 @@ public interface SuidRich extends Suid {
 	 * @return list can contain more than one record with String array struct.
 	 * @since 1.9
 	 */
-	public <T> List<String[]> selectString(T entity,Condition condition); 
-	
+	public <T> List<String[]> selectString(T entity, Condition condition);
+
 	/**
 	 * Select and return data in Json format according to entity object.
 	 * @param entity table's entity(do not allow null).
@@ -131,21 +131,21 @@ public interface SuidRich extends Suid {
 	 * @since  1.1
 	 */
 	public <T> String selectJson(T entity);
-	
+
 	/**
 	 * Select one record,if the size do not equal one, return null.  
 	 * @param entity table's entity(do not allow null).
 	 * @return return one record,if the size do not equal one, return null.
 	 */
 	public <T> T selectOne(T entity);
-	
+
 	/**
 	 * select the first record.
 	 * @param entity table's entity(do not allow null).
 	 * @return return the first record
 	 */
 	public <T> T selectFirst(T entity, Condition condition);
-	
+
 	/**
 	 * Select result with one function,Just select one function.
 	 * @param entity table's entity(do not allow null).
@@ -155,7 +155,7 @@ public interface SuidRich extends Suid {
 	 * <br>If the result set of statistics is empty,the count return 0,the other return empty string.
 	 */
 	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun);
-	
+
 	/**
 	 * Select result with one function,just select one function at a time.
 	 * @param entity table's entity(do not allow null).
@@ -167,9 +167,10 @@ public interface SuidRich extends Suid {
 	 * <br>If the result set of statistics is empty,the count return 0,the other return empty string.
 	 * @since 1.9
 	 */
-	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun, Condition condition); //selectOneFun
-	
-    /**
+	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun,
+			Condition condition); // selectOneFun
+
+	/**
 	 * total number of statistical records.
 	 * @param entity  table's entity(do not allow null).
 	 * @return total number of records that satisfy the condition.
@@ -185,15 +186,15 @@ public interface SuidRich extends Suid {
 	 * @since 1.9
 	 */
 	public <T> int count(T entity, Condition condition);
-	
+
 	/**
 	 * Select result with order,order type default is:asc
 	 * @param entity table's entity(do not allow null).
 	 * @param orderFields order fields,if more than one,separate with comma.
 	 * @return list which contains more than one entity.
 	 */
-	public <T> List<T> selectOrderBy(T entity,String orderFields);
-	
+	public <T> List<T> selectOrderBy(T entity, String orderFields);
+
 	/**
 	 * Select result with order.
 	 * @param entity table's entity(do not allow null).
@@ -201,8 +202,8 @@ public interface SuidRich extends Suid {
 	 * @param orderTypes Sort type list.
 	 * @return list which contains more than one entity.
 	 */
-	public <T> List<T> selectOrderBy(T entity,String orderFields,OrderType[] orderTypes);
-	
+	public <T> List<T> selectOrderBy(T entity, String orderFields, OrderType[] orderTypes);
+
 	/**
 	 * Update record, can list update fields. 
 	 * @param entity table's entity(do not allow null).
@@ -213,7 +214,7 @@ public interface SuidRich extends Suid {
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 */
 	public <T> int update(T entity, String... updateFields);
-	
+
 	/**
 	 * Update record according to entity.
 	 * @param entity table's entity(do not allow null).if id's value is null can not as filter condition.
@@ -226,30 +227,30 @@ public interface SuidRich extends Suid {
 	 * @since 2.0
 	 */
 	public <T> int update(T entity, IncludeType includeType, String... updateFields);
-	
+
 	/**
 	 * Insert records by batch type.
 	 * @param entity table's entity array(do not allow null).
 	 * @return the number of inserted record(s) successfully;if fails, return -1.
 	 */
 	public <T> int insert(T[] entity);
-	
+
 	/**
 	 * Insert records by batch type.
 	 * @param entity table's entity array(do not allow null).
 	 * @param batchSize batch size.
 	 *  @return the number of inserted record(s) successfully;if fails, return -1.
 	 */
-	public <T> int insert(T[] entity,int batchSize);
-	
+	public <T> int insert(T[] entity, int batchSize);
+
 	/**
 	 * Insert record by batch type,and can point out which field(s) don't need to insert.
 	 * @param entity table's entity array(do not allow null).
 	 * @param excludeFields fields list that don't need to insert .
 	 * @return the number of inserted record(s) successfully;if fails, return -1.
 	 */
-	public <T> int insert(T[] entity,String excludeFields);
-	
+	public <T> int insert(T[] entity, String excludeFields);
+
 	/**
 	 * Insert record by batch type,and can point out which field(s) don't need to insert.
 	 * @param entity table's entity array(do not allow null).
@@ -257,8 +258,8 @@ public interface SuidRich extends Suid {
 	 * @param excludeFields Don't insert fields list.
 	 *  @return the number of inserted record(s) successfully;if fails, return -1.
 	 */
-	public <T> int insert(T[] entity,int batchSize,String excludeFields);
-	
+	public <T> int insert(T[] entity, int batchSize, String excludeFields);
+
 	/**
 	 * Insert records by batch type.
 	 * @param entityList table's entity list(do not allow null).
@@ -266,7 +267,7 @@ public interface SuidRich extends Suid {
 	 * @since  1.9
 	 */
 	public <T> int insert(List<T> entityList);
-	
+
 	/**
 	 * Insert records by batch type.
 	 * @param entityList table's entity list(do not allow null).
@@ -274,8 +275,8 @@ public interface SuidRich extends Suid {
 	 * @return the number of inserted record(s) successfully;if fails, return -1.
 	 * @since  1.9
 	 */
-	public <T> int insert(List<T> entityList,int batchSize);
-	
+	public <T> int insert(List<T> entityList, int batchSize);
+
 	/**
 	 * Insert record by batch type,and can point out which field(s) don't need to insert.
 	 * @param entityList table's entity list(do not allow null).
@@ -283,8 +284,8 @@ public interface SuidRich extends Suid {
 	 * @return the number of inserted record(s) successfully;if fails, return -1.
 	 * @since  1.9
 	 */
-	public <T> int insert(List<T> entityList,String excludeFields);
-	
+	public <T> int insert(List<T> entityList, String excludeFields);
+
 	/**
 	 * Insert record by batch type,and can point out which field(s) don't need to insert.
 	 * @param entityList table's entity list(do not allow null).
@@ -293,8 +294,8 @@ public interface SuidRich extends Suid {
 	 * @return the number of inserted record(s) successfully;if fails, return -1.
 	 * @since  1.9
 	 */
-	public <T> int insert(List<T> entityList,int batchSize,String excludeFields);
-	
+	public <T> int insert(List<T> entityList, int batchSize, String excludeFields);
+
 	/**
 	 * Select record according to entity.
 	 * @param entity table's entity(do not allow null).
@@ -304,24 +305,24 @@ public interface SuidRich extends Suid {
 	 * @param includeType whether null string and null as a filter conditions.
 	 * @return list which contains more than one entity.
 	 */
-    public <T> List<T> select(T entity,IncludeType includeType);
-	
+	public <T> List<T> select(T entity, IncludeType includeType);
+
 	/**
 	 * Update record according to entity by primary key.
 	 * @param entity table's entity(do not allow null),The id field in entity cannot be empty as a filtering condition.
 	 * @param includeType whether null string and null as a filter conditions.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 */
-	public <T> int update(T entity,IncludeType includeType);
-	
+	public <T> int update(T entity, IncludeType includeType);
+
 	/**
 	 * Insert record according to entity.
 	 * @param entity table's entity(do not allow null).
 	 * @param includeType whether null string and null as a filter conditions.
 	 * @return the number of inserted record(s) successfully,if fails, return integer less than 0.
 	 */
-	public <T> int insert(T entity,IncludeType includeType);
-	
+	public <T> int insert(T entity, IncludeType includeType);
+
 	/**
 	 * According to entity object insert record and return id value. 
 	 * @param entity table's entity(do not allow null).
@@ -331,16 +332,16 @@ public interface SuidRich extends Suid {
 	 * @return If successful, return the id value of the inserted record; if fails, return number less than 0.
 	 * @since V1.11
 	 */
-	public <T> long insertAndReturnId(T entity,IncludeType includeType);
-	
+	public <T> long insertAndReturnId(T entity, IncludeType includeType);
+
 	/**
 	 * Delete record according to entity.
 	 * @param entity table's entity(do not allow null).
 	 * @param includeType whether null string and null as a filter conditions.
 	 * @return the number of deleted record(s) successfully,if fails, return integer less than 0.
 	 */
-	public <T> int delete(T entity,IncludeType includeType);
-	
+	public <T> int delete(T entity, IncludeType includeType);
+
 	/**
 	 * Select and return data in Json format according to entity object.
 	 * @param entity table's entity(do not allow null).
@@ -348,8 +349,8 @@ public interface SuidRich extends Suid {
 	 * @return Json string, it transform from list which can contain more than one entity.
 	 * @since  1.1
 	 */
-	public <T> String selectJson(T entity,IncludeType includeType);
-	
+	public <T> String selectJson(T entity, IncludeType includeType);
+
 	/**
 	 * Just select some fields,and return Json string.
 	 * @param entity table's entity(do not allow null).
@@ -358,7 +359,7 @@ public interface SuidRich extends Suid {
 	 * @since 1.9.8
 	 */
 	public <T> String selectJson(T entity, String... selectFields);
-	
+
 	/**
 	 * Just select some fields,and can specify page information.
 	 * @param entity table's entity(do not allow null).
@@ -369,7 +370,7 @@ public interface SuidRich extends Suid {
 	 * @since 1.9.8
 	 */
 	public <T> String selectJson(T entity, int start, int size, String... selectFields);
-	
+
 	/**
 	 * Select record by id.
 	 * @param entityClass table's entity class(do not allow null).
@@ -377,8 +378,8 @@ public interface SuidRich extends Suid {
 	 * @return return one entity which owns this id.
 	 * @since  1.9
 	 */
-	public <T> T selectById(Class<T> entityClass,Integer id);
-	
+	public <T> T selectById(Class<T> entityClass, Integer id);
+
 	/**
 	 * Select record by id.
 	 * @param entityClazz table's entity class(do not allow null).
@@ -389,7 +390,7 @@ public interface SuidRich extends Suid {
 	 */
 //	public <T> T selectById(T returnType,Long id);
 	public <T> T selectById(Class<T> entityClazz, Long id);
-	
+
 	/**
 	 * Select record by id.
 	 * @param entityClass table's entity class(do not allow null).
@@ -398,8 +399,8 @@ public interface SuidRich extends Suid {
 	 * @return return one entity which owns this id.
 	 * @since  1.9
 	 */
-	public <T> T selectById(Class<T> entityClass,String id);
-	
+	public <T> T selectById(Class<T> entityClass, String id);
+
 	/**
 	 * Select record by id.
 	 * @param entityClass table's entity class(do not allow null).
@@ -408,8 +409,8 @@ public interface SuidRich extends Suid {
 	 * @return list which contains more than one entity.
 	 * @since  1.9
 	 */
-	public <T> List<T> selectByIds(Class<T> entityClass,String ids);
-	
+	public <T> List<T> selectByIds(Class<T> entityClass, String ids);
+
 	/**
 	 * Delete record by id.
 	 * @param c table's entity class(do not allow null).
@@ -418,7 +419,7 @@ public interface SuidRich extends Suid {
 	 * @since  1.4
 	 */
 	public int deleteById(Class c, Integer id);
-	
+
 	/**
 	 * Delete record by id.
 	 * @param c table's entity class(do not allow null).
@@ -427,7 +428,7 @@ public interface SuidRich extends Suid {
 	 * @since  1.4
 	 */
 	public int deleteById(Class c, Long id);
-	
+
 	/**
 	 * Delete record by id.
 	 * @param c table's entity class(do not allow null).
@@ -436,7 +437,7 @@ public interface SuidRich extends Suid {
 	 * @since  1.4
 	 */
 	public int deleteById(Class c, String ids);
-	
+
 	/**
 	 * Select record according to entity.
 	 * @deprecated {@link Suid#select(Object,Condition)} can set includeType via condition.
@@ -448,7 +449,7 @@ public interface SuidRich extends Suid {
 	 */
 	@Deprecated
 	public <T> List<T> select(T entity, IncludeType includeType, Condition condition);
-    
+
 	/**
 	 * Select and return data in Json format according to entity object.
 	 * @deprecated {@link SuidRich#selectJson(Object,Condition)} can set includeType via condition.
@@ -460,7 +461,7 @@ public interface SuidRich extends Suid {
 	 */
 	@Deprecated
 	public <T> String selectJson(T entity, IncludeType includeType, Condition condition);
-	
+
 	/**
 	 * Select and return data in Json format according to entity object.
 	 * @param entity table's entity(do not allow null).
@@ -469,7 +470,7 @@ public interface SuidRich extends Suid {
 	 * @since  1.9
 	 */
 	public <T> String selectJson(T entity, Condition condition);
-	
+
 	/**
 	 * Update record according to whereFields.
 	 * @param entity table's entity(do not allow null).
@@ -482,7 +483,7 @@ public interface SuidRich extends Suid {
 	 * @since  1.6
 	 */
 	public <T> int updateBy(T entity, String... whereFields);
-	
+
 	/**
 	 * Update record according to whereFields.
 	 * @param entity table's entity(do not allow null).
@@ -496,7 +497,7 @@ public interface SuidRich extends Suid {
 	 * @since  2.0
 	 */
 	public <T> int updateBy(T entity, IncludeType includeType, String... whereFields);
-	
+
 	/**
 	 * Update record according to whereFields.
 	 * @param entity table's entity(do not allow null).
@@ -511,7 +512,7 @@ public interface SuidRich extends Suid {
 	 * @since 2.0
 	 */
 	public <T> int updateBy(T entity, Condition condition, String... whereFields);
-	
+
 	/**
 	 * it is equivalent to updateBy(entity,"id",condition)
 	 * @param entity table's entity(do not allow null).
@@ -523,7 +524,7 @@ public interface SuidRich extends Suid {
 	 * @since 1.9
 	 */
 	public <T> int updateById(T entity, Condition condition);
-	
+
 	/**
 	 * Update record, can list update fields. 
 	 * @param entity table's entity(do not allow null).
@@ -539,7 +540,7 @@ public interface SuidRich extends Suid {
 	 * @since 2.0
 	 */
 	public <T> int update(T entity, Condition condition, String... updateFields);
-	
+
 	/**
 	 * Update record,and can help with Condition.
 	 * <br>When the set expression of SQL update is defined by Condition, you can no longer specify the field used by set.
@@ -551,7 +552,7 @@ public interface SuidRich extends Suid {
 	 * @since 1.8
 	 */
 	public <T> int update(T entity, Condition condition);
-	
+
 	/**
 	 * Update the entity. The non null and non empty attributes of oldEntity are taken as 
 	 * <br>the filtering conditions; The non null and non empty properties of newEntity are 
@@ -565,7 +566,7 @@ public interface SuidRich extends Suid {
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 */
 	public <T> int update(T oldEntity, T newEntity);
-	
+
 	/**
 	 * set dynamic parameter for dynamic table & entity name
 	 * <br>This method is called earlier than the select, update, insert, delete methods.
@@ -577,7 +578,7 @@ public interface SuidRich extends Suid {
 	 * @since  1.9
 	 */
 	public SuidRich setDynamicParameter(String para, String value);
-	
+
 	/**
 	 * Check whether the entity corresponding record exist
 	 * @param entity table's entity(do not allow null).
@@ -585,7 +586,7 @@ public interface SuidRich extends Suid {
 	 * @since 1.9
 	 */
 	public <T> boolean exist(T entity);
-	
+
 	/**
 	 * save one entity(one record).
 	 * <br>If it can be distinguished, it is recommended to explicitly call insert (entity) 
@@ -595,18 +596,20 @@ public interface SuidRich extends Suid {
 	 * @since 1.9.8
 	 */
 	public <T> int save(T entity);
-	
-//	public <T> boolean createTable(Class<T> entityClass);
 
+	/**
+	 * According to the database table generated by JavaBean, JavaBean does not need to configure 
+	 * <br>too much field information. This method only considers the general situation, and is not 
+	 * <br>recommended if there are detailed requirements.
+	 * @param entityClass table's entityClass(do not allow null).
+	 * @param isDropExistTable whether drop the exist table before create
+	 * @return flag whether create successfully.
+	 */
 	public <T> boolean createTable(Class<T> entityClass, boolean isDropExistTable);
-
-//	public <T> void indexNormal(Class<T> entityClass, String fields);
 
 	public <T> void indexNormal(Class<T> entityClass, String fields, String indexName);
 
-//	public <T> void unique(Class<T> entityClass, String fields);
-
 	public <T> void unique(Class<T> entityClass, String fields, String indexName);
-	
+
 	public <T> void primaryKey(Class<T> entityClass, String fields, String keyName);
 }
