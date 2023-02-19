@@ -105,8 +105,9 @@ Do not participate in fragmentation: not in, not between,>=,<=.
 It is recommended to specify both or at least tableName  
 27)HintManager can use the shortcut HM  
 
-**V2.0.2.14(2023·Valentine's Day)** 
+**V2.0.2.14(2023·Valentine's Day)**  
 enhance Mongodb ORM log  
+enhance Json String result transfer  
 fixed bug about insertBatch in PreparedSql  
 
 

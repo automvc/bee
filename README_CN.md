@@ -34,7 +34,8 @@ bee-ext:
 https://github.com/automvc/bee-ext  
 
 ## 环境要求  
-#### jdk1.7+
+#### Bee jdk1.7+
+#### Bee-Ext(V2.0) jdk1.8+
 
 ## Bee主要功能特点介绍：  
 **Bee概念简单**(10分钟即可入门)、功能强大。  
@@ -77,8 +78,19 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 * 29.使用实体名_F(自动生成)引用实体字段名。  
 
 ## 最新功能介绍: 
-**V2.0(母爱)**  
-**使用分库分表像使用单库一样方便;使用MongoDB像使用MySQL一样容易.**
+### **V2.0(母爱)**  
+**使用分库分表像使用单库一样方便;使用MongoDB像使用MySQL一样容易.**  
+1)新增分库分表支持:面向对象分片,JDBC分片  
+2)新增Mongodb ORM功能支持(使用类似JDBC用法)  
+3)新增Mongodb分片功能  
+4)新增MS Access支持  
+5)新增注解默认处理实现(org.teasoft.bee.osql.annotation)  
+完善:不同包的实体即使指定同一个表也不能共享缓存  
+完善:Json String类型查询结果转换增强  
+fixed bug:PreparedSql接口的批量插入insertBatch空指针和占位符  
+
+**各V2.0.x.x版本更新详细请看以下列表.**  
+
 ### **V2.0 Sharding分片功能** 
 **V2.0.0.1001(2022·国庆节)**  
 1)面向对象分片  
@@ -119,10 +131,10 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 建议两者都指定,或至少指定tableName  
 27)HintManager可使用简称HM  
 
-**V2.0.2.14(2023·情人节)** 
-完善:  
-Mongodb ORM日志功能  
-不同包的实体即使指定同一个表也不能共享缓存  
+**V2.0.2.14(2023·情人节)**  
+完善:Mongodb ORM日志功能  
+完善:不同包的实体即使指定同一个表也不能共享缓存  
+完善:Json String类型查询结果转换增强  
 fixed bug:PreparedSql接口的批量插入insertBatch空指针和占位符  
 
 
