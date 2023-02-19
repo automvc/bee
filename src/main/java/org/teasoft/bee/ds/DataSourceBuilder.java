@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2022 the original author.All rights reserved.
+ * Copyright 2016-2023 the original author.All rights reserved.
  * Kingstar(honeysoft@126.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,18 +15,18 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql;
+package org.teasoft.bee.ds;
+
+import java.util.Map;
+
+import javax.sql.DataSource;
 
 /**
- * Bee Version.
  * @author Kingstar
- * @since  1.11
+ * @since  2.1
  */
-public final class BeeVersion {
-
-	public static final String version = "2.0";
-	public static final String buildId = "2.0.2.21";
-
-	private BeeVersion() {}
+public interface DataSourceBuilder {
+	
+	public DataSource build(Map<String,String> properties);
 
 }
