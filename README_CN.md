@@ -81,11 +81,29 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 **V2.1**  
 
 **V2.1.0.2.21(Dragon Fly)**  
-1)配置文件方式,支持多数据源简易配置  
+1)配置文件方式,支持多数据源简易配置(spring boot配置)  
 2)屏蔽不使用mongodb时,提示没有添加mongodb相关依赖的信息  
 3)修复ObjSQLRichService与Spring整合的多产生一个实例的bug  
 4)屏蔽检查日志框架的异常  
 5)Search表达式多余括号兼容  
+
+**V2.1.0.2.28(Eleven)**  
+6)bee.properties支持配置多数据源(此方式,无需xml或java代码配置)  
+7)fixed bug:批量插入不能设置数据源名称  
+8)Mongodb查询结果日期类型转换  
+9)多数据但都是Mongodb,可以设置bee.dosql.multiDS.justMongodb=true  
+则BF.getSuid()会返回Mongodb类型的Suid实现类  
+10)支持spring方式生成Mongodb对应的实现类对象  
+//  Mongodb使用  
+//	@Resource(name = "mongodbObjSQLRichService")  
+//	ObjSQLRichService objSQLRichService;  
+//  使用mongodb  type1  
+//	@Autowired  
+//	@Qualifier(value = "mongoSuidRich")  
+//	SuidRich suidRich; // 可以  
+//	//使用mongodb  type2  
+//	@Resource(name = "mongoSuidRich")  
+//	SuidRich suidRich; // 可以  
 
 ### **V2.0(母爱)**  
 **使用分库分表像使用单库一样方便;使用MongoDB像使用MySQL一样容易.**  

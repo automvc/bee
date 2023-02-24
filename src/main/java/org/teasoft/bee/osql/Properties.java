@@ -17,6 +17,8 @@
 
 package org.teasoft.bee.osql;
 
+import java.util.Set;
+
 /**
  * Properties interface.
  * @author Kingstar
@@ -27,5 +29,7 @@ public interface Properties {
 	public String getProp(String key);
 
 	public String getPropText(String key);
+	
+	public Set<String> getKeys();
 
 }
