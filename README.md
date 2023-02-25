@@ -78,7 +78,7 @@ enhance:Json String type query result conversion enhance
 
 **V2.0.x.x detail as below.**  
 
-**V2.0.0.1001(2022·National Day) **  
+**V2.0.0.1001(2022·National Day)**  
 Add Sharding Function  
 1)object-oriented Sharding  
 2)Suid,SuidRich,select,modify Sharding  
