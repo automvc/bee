@@ -66,6 +66,18 @@ In addition to **JDBC, Android and HarmonyOS** are also supported.
 
 ## Newest Function
 ### **V2.0 Sharding(Mother Love)** 
+**The use of more dataSources is as convenient as the use of single database; Using MongoDB is as easy as using MySQL**  
+1)add support object-oriented Sharding,JDBC Sharding  
+2)add support Mongodb ORM(use like JDBC)  
+3)add Mongodb Sharding  
+4)add support MS Access  
+5)add annotation default implementation(org.teasoft.bee.osql.annotation)  
+6)enhance:entities of different packages cannot share the cache even if the same table is specified  
+enhance:Json String type query result conversion enhance  
+7)fixed bug:PreparedSql interface's method insertBatch null pointer and placeholder bug 
+
+**V2.0.x.x detail as below.**  
+
 **V2.0.0.1001(2022·National Day) **  
 Add Sharding Function  
 1)object-oriented Sharding  
