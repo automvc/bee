@@ -95,9 +95,9 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 3)新增Mongodb分片功能  
 4)新增MS Access支持  
 5)新增注解默认处理实现(org.teasoft.bee.osql.annotation)  
-完善:不同包的实体即使指定同一个表也不能共享缓存  
+6)完善:不同包的实体即使指定同一个表也不能共享缓存  
 完善:Json String类型查询结果转换增强  
-fixed bug:PreparedSql接口的批量插入insertBatch空指针和占位符  
+7)fixed bug:PreparedSql接口的批量插入insertBatch空指针和占位符  
 
 **各V2.0.x.x版本更新详细请看以下列表.**  
 
