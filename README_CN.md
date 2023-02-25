@@ -712,7 +712,7 @@ API-V1.17(最新版) 下载代码含有 bee-1.17中文和英文版API,bee-1.17�
 #### 更多设计思想,请关注微信公众号: 软件设计活跃区  
 <img src="weixin.jpg" width="200" heigh="200">
 
-为了我们能够相互了解,更好的为你服务,你可以到以下地址登录使用情况.
+为了我们能够相互了解,更好的为你服务,你可以到以下地址登录使用情况. 
 https://github.com/automvc/bee/issues/43  
 https://gitee.com/automvc/bee/issues/I3PIUJ  
 完成**登记的伙伴**,请加QQ群(**992650213**),可找群主领资料! 
