@@ -17,7 +17,9 @@
 
 package org.teasoft.bee.mongodb;
 
+import java.io.InputStream;
 import java.util.List;
+import java.util.Map;
 
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.FunctionType;
@@ -132,4 +134,15 @@ public interface MongodbBeeSql {
 	public <T> String count(MongoSqlStruct struct, Class<T> entityClass);
 	
 	public <T> boolean createTable(Class<T> entityClass, boolean isDropExistTable);
+	
+	//GridFS
+	public String uploadFromStream(String filename, InputStream source);
+
+	public String uploadFile(String filename, InputStream fileStream,Map<String, Object> metadataMap);
+
+	public byte[] downLoadFile(String fileId);
+
+	public void renameFile(String fileId, String newName);
+
+	public void deleteFile(String fileId);
 }
