@@ -25,7 +25,8 @@ https://github.com/automvc/bee-ext
 [点击链接可查看中文介绍](../../../bee/blob/master/README_CN.md)  
 
 ## Requirement  
-#### jdk1.7+
+#### Bee jdk1.7+
+#### Bee-Ext(V2.0) jdk1.8+
 
 ## Feature & Function: 
 
