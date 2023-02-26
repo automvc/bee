@@ -136,13 +136,14 @@ public interface MongodbBeeSql {
 	public <T> boolean createTable(Class<T> entityClass, boolean isDropExistTable);
 	
 	//GridFS
-	public String uploadFromStream(String filename, InputStream source);
-
+	public String uploadFile(String filename, InputStream fileStream);
 	public String uploadFile(String filename, InputStream fileStream,Map<String, Object> metadataMap);
+	
+	public List<GridFsFile> selectFiles(GridFsFile gridFsFile, Condition condition);
 
-	public byte[] downLoadFile(String fileId);
+	public byte[] getFileByName(String fileName);
+	public byte[] getFileById(String fileId);
 
 	public void renameFile(String fileId, String newName);
-
 	public void deleteFile(String fileId);
 }
