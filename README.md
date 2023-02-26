@@ -672,8 +672,8 @@ Operate 10000 records, and the use time comparison is as follows.
 ### [Bee+Spring-boot Demo](../../../bee-starter-demo/)	
 
 ## Bee Architecture  
-**V1.17**  
-<img src="illustration/Bee-architecture-EN-V1.17.png"  width="520" height="640">  
+**V2.0**  
+<img src="illustration/Bee-architecture-EN-V2.0.png"  width="520" height="640">  
 
 ## Bee Common Interface  
 <img src="illustration/common-interface_en.jpg">  
