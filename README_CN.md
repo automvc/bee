@@ -92,7 +92,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 6)bee.properties支持配置多数据源(此方式,无需xml或java代码配置)  
 7)fixed bug:批量插入不能设置数据源名称  
 8)Mongodb查询结果日期类型转换  
-9)多数据但都是Mongodb,可以设置bee.dosql.multiDS.justMongodb=true  
+9)多数据源但都是Mongodb,可以设置bee.dosql.multiDS.justMongodb=true  
 则BF.getSuid()会返回Mongodb类型的Suid实现类  
 10)支持spring方式生成Mongodb对应的实现类对象  
 //  Mongodb使用  
