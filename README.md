@@ -25,7 +25,8 @@ https://github.com/automvc/bee-ext
 [点击链接可查看中文介绍](../../../bee/blob/master/README_CN.md)  
 
 ## Requirement  
-#### jdk1.7+
+#### Bee jdk1.7+
+#### Bee-Ext(V2.0) jdk1.8+
 
 ## Feature & Function: 
 
@@ -65,7 +66,47 @@ In addition to **JDBC, Android and HarmonyOS** are also supported.
 * 29.can automatically generate entity_F for referenced to the entity field name.  
 
 ## Newest Function
+### **V2.1**  
+
+**V2.1.2.21(Dragon Fly)**  
+1)Bee+SpringBoot support application file config multi-dataSource  
+2)when do not use Mongodb,no need the dependency  
+3)fixed bug:ObjSQLRichService+Spring generate more one error instance  
+4)suppress the check Log implement msg  
+5)Search expression redundant bracket compatibility
+
+### **V2.1.2.28(Eleven)**  
+6)bee.properties support config multi-dataSource(this type no need xml,java code config)  
+7)fixed bug:Batch insert cannot set data source name  
+8)Mongodb query result date type conversion  
+9)multi dataSource is only Mongodb,can set bee.dosql.multiDS.justMongodb=true  
+then BF.getSuid() can return Mongodb type Suid instance  
+10)Support spring generation of Mongodb corresponding implementation class objects  
+//  Mongodb  
+//	@Resource(name = "mongodbObjSQLRichService")  
+//	ObjSQLRichService objSQLRichService;  
+//  use mongodb  type1  
+//	@Autowired  
+//	@Qualifier(value = "mongoSuidRich")  
+//	SuidRich suidRich; // ok  
+//	use mongodb  type2  
+//	@Resource(name = "mongoSuidRich")  
+//	SuidRich suidRich; // ok  
+11)Mongodb GridFS file store  
+
 ### **V2.0 Sharding(Mother Love)** 
+**The use of more dataSources is as convenient as the use of single database; Using MongoDB is as easy as using MySQL**  
+1)add support object-oriented Sharding,JDBC Sharding  
+2)add support Mongodb ORM(use like JDBC)  
+3)add Mongodb Sharding  
+4)add support MS Access  
+5)add annotation default implementation(org.teasoft.bee.osql.annotation)  
+6)enhance:entities of different packages cannot share the cache even if the same table is specified  
+enhance:Json String type query result conversion enhance  
+7)fixed bug:PreparedSql interface's method insertBatch null pointer and placeholder bug 
+
+**V2.0.x.x detail as below.**  
+
 **V2.0.0.1001(2022·National Day) **  
 Add Sharding Function  
 1)object-oriented Sharding  
