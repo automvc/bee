@@ -1,7 +1,8 @@
 
 Bee
 =========
-## 好消息:
+## 好消息:  
+[请查看2.1分支](../../../bee/tree/2.1)  
 **Bee 2.0 Sharding分片 功能,登场了。自此，Bee有了完整的分库分表功能。**  
 [请查看2.0-sharding-dev 分支](../../../bee/tree/2.0-sharding-dev)  
 
@@ -78,7 +79,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 * 29.使用实体名_F(自动生成)引用实体字段名。  
 
 ## 最新功能介绍: 
-**V2.1**  
+### **V2.1**  
 
 **V2.1.2.21(Dragon Fly)**  
 1)配置文件方式,支持多数据源简易配置(spring boot配置)  
@@ -106,20 +107,21 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 //	SuidRich suidRich; // 可以  
 11)Mongodb GridFS文件存储  
 
-### **V2.0(母爱)**  
+### **V2.0**  
+**V2.0(母爱)**  
 **使用分库分表像使用单库一样方便;使用MongoDB像使用MySQL一样容易.**  
 1)新增分库分表支持:面向对象分片,JDBC分片  
 2)新增Mongodb ORM功能支持(使用类似JDBC用法)  
 3)新增Mongodb分片功能  
 4)新增MS Access支持  
 5)新增注解默认处理实现(org.teasoft.bee.osql.annotation)  
-完善:不同包的实体即使指定同一个表也不能共享缓存  
+6)完善:不同包的实体即使指定同一个表也不能共享缓存  
 完善:Json String类型查询结果转换增强  
-fixed bug:PreparedSql接口的批量插入insertBatch空指针和占位符  
+7)fixed bug:PreparedSql接口的批量插入insertBatch空指针和占位符  
 
 **各V2.0.x.x版本更新详细请看以下列表.**  
 
-### **V2.0 Sharding分片功能** 
+**V2.0 Sharding分片功能** 
 **V2.0.0.1001(2022·国庆节)**  
 1)面向对象分片  
 2)Suid,SuidRich,查询,更新分片  
