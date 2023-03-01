@@ -79,16 +79,36 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 * 29.使用实体名_F(自动生成)引用实体字段名。  
 
 ## 最新功能介绍: 
-**V2.1**  
+### **V2.1**  
 
-**V2.1.0.2.21(Dragon Fly)**  
-1)配置文件方式,支持多数据源简易配置  
+**V2.1.2.21(Dragon Fly)**  
+1)配置文件方式,支持多数据源简易配置(spring boot配置)  
 2)屏蔽不使用mongodb时,提示没有添加mongodb相关依赖的信息  
 3)修复ObjSQLRichService与Spring整合的多产生一个实例的bug  
 4)屏蔽检查日志框架的异常  
 5)Search表达式多余括号兼容  
 
-### **V2.0(母爱)**  
+### **V2.1.2.28(Eleven)**  
+6)bee.properties支持配置多数据源(此方式,无需xml或java代码配置)  
+7)fixed bug:批量插入不能设置数据源名称  
+8)Mongodb查询结果日期类型转换  
+9)多数据但都是Mongodb,可以设置bee.dosql.multiDS.justMongodb=true  
+则BF.getSuid()会返回Mongodb类型的Suid实现类  
+10)支持spring方式生成Mongodb对应的实现类对象  
+//  Mongodb使用  
+//	@Resource(name = "mongodbObjSQLRichService")  
+//	ObjSQLRichService objSQLRichService;  
+//  使用mongodb  type1  
+//	@Autowired  
+//	@Qualifier(value = "mongoSuidRich")  
+//	SuidRich suidRich; // 可以  
+//	//使用mongodb  type2  
+//	@Resource(name = "mongoSuidRich")  
+//	SuidRich suidRich; // 可以  
+11)Mongodb GridFS文件存储  
+
+### **V2.0**  
+**V2.0(母爱)**  
 **使用分库分表像使用单库一样方便;使用MongoDB像使用MySQL一样容易.**  
 1)新增分库分表支持:面向对象分片,JDBC分片  
 2)新增Mongodb ORM功能支持(使用类似JDBC用法)  
@@ -101,7 +121,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 
 **各V2.0.x.x版本更新详细请看以下列表.**  
 
-### **V2.0 Sharding分片功能** 
+**V2.0 Sharding分片功能**  
 **V2.0.0.1001(2022·国庆节)**  
 1)面向对象分片  
 2)Suid,SuidRich,查询,更新分片  
@@ -635,7 +655,7 @@ List<Orders> list = suid.select(new Orders());
 ### [Bee+Spring-boot Demo](../../../bee-starter-demo/)	
 
 ## Bee架构介绍
-**V2.0**  
+**V2.1**  
 <img src="illustration/Bee-architecture-V2.0.png"  width="520" height="640">  
 
 ## Bee常用接口介绍  
