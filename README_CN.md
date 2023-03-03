@@ -2,9 +2,9 @@
 Bee
 =========
 ## 好消息:  
-[请查看2.1分支](../../../bee/tree/2.1)  
-**Bee 2.0 Sharding分片 功能,登场了。自此，Bee有了完整的分库分表功能。**  
-[请查看2.0-sharding-dev 分支](../../../bee/tree/2.0-sharding-dev)  
+请查看  
+[2.0-sharding-dev 分支 ](../../../bee/tree/2.0-sharding-dev)  
+[2.1分支   JDBC Sharding+MongoDB](../../../bee/tree/2.1)  
 
 Sharding分片目标:对业务开发透明,编码透明,只加少量分片配置即可实现分片功能.  
 #### [快速开始:Shardign最佳实践参考实例](guide/Quick-start-Sharding_CN.md) 
