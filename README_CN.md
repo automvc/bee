@@ -2,6 +2,8 @@
 Bee
 =========
 ## 好消息:  
+**Bee 2.0 Sharding分片 功能,登场了。自此，Bee有了完整的分库分表功能。**  
+**Bee 2.0 起,还支持MongoDB,MS Access。**  
 请查看  
 [2.0-sharding-dev 分支 ](../../../bee/tree/2.0-sharding-dev)  
 [2.1分支   JDBC Sharding+MongoDB](../../../bee/tree/2.1)  
