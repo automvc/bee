@@ -494,6 +494,14 @@ Quick Start:
 			<artifactId>bee-ext</artifactId>
 			<version>2.0</version>
 		</dependency>
+		
+		<!-- Mysql config.You need change it to the real database config. -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.47</version>
+			<scope>runtime</scope>
+		</dependency>
 ```
 
 #### 1.2  Of course, can download the jar file directly  
@@ -514,6 +522,14 @@ bee.db.driverName = com.mysql.jdbc.Driver
 bee.db.url =jdbc:mysql://127.0.0.1:3306/bee?characterEncoding=UTF-8&useSSL=false  
 bee.db.username = root  
 bee.db.password =  
+
+\#print log  
+bee.osql.showSQL=true  
+bee.osql.showSql.showType=true  
+bee.osql.showSql.showExecutableSql=true  
+
+\#log4j>slf4j>log4j2>androidLog>harmonyLog>systemLogger>fileLogger>noLogging>jdkLog>commonsLog  
+bee.osql.loggerType=systemLogger  
 
 ## 4. The Javabean Orders reference as below:  
 [Orders(Javabean)](../../../bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/entity/Orders.java)  
