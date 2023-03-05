@@ -508,6 +508,8 @@ public class SuidExam {
 
 ```
 
+<img src="guide/bee-quick-start-2.0.gif"  width="520" height="640">  
+
 ## [快速开始:Harmony环境使用Bee](guide/Quick-start-for-Harmony_CN.md) 
 
 
