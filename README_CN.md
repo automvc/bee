@@ -90,7 +90,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 4)屏蔽检查日志框架的异常  
 5)Search表达式多余括号兼容  
 
-### **V2.1.2.28(Eleven)**  
+**V2.1.2.28(Eleven)**  
 6)bee.properties支持配置多数据源(此方式,无需xml或java代码配置)  
 7)fixed bug:批量插入不能设置数据源名称  
 8)Mongodb查询结果日期类型转换  
@@ -108,6 +108,12 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 //	@Resource(name = "mongoSuidRich")  
 //	SuidRich suidRich; // 可以  
 11)Mongodb GridFS文件存储  
+
+### **V2.1.3.6(惊蛰)**  
+12)GridFs annotation为存储文件到MongoDB后,将文件id存入指定字段  
+13)fixed bug: OneTimeSnowflakeId.getRangeId批量取号,遇边界值跳号问题;  
+   sequence & segment达到最大值,要重置segment为0  
+14)fixed bug: PearFlowerId.getRangeId批量取号,遇边界值跳号问题  
 
 ### **V2.0**  
 **V2.0(母爱)**  
