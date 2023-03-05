@@ -75,7 +75,7 @@ In addition to **JDBC, Android and HarmonyOS** are also supported.
 4)suppress the check Log implement msg  
 5)Search expression redundant bracket compatibility
 
-### **V2.1.2.28(Eleven)**  
+**V2.1.2.28(Eleven)**  
 6)bee.properties support config multi-dataSource(this type no need xml,java code config)  
 7)fixed bug:Batch insert cannot set data source name  
 8)Mongodb query result date type conversion  
@@ -93,6 +93,12 @@ then BF.getSuid() can return Mongodb type Suid instance
 //	@Resource(name = "mongoSuidRich")  
 //	SuidRich suidRich; // ok  
 11)Mongodb GridFS file store  
+
+### **V2.1.3.6(Awakening & Growing)**  
+12)GridFs annotation for MongoDB register the file id.  
+13)fixed bug: OneTimeSnowflakeId.getRangeId boundary value jumping;  
+   sequence & segment is max, need reset segment to 0  
+14)fixed bug: PearFlowerId.getRangeId boundary value jumping  
 
 ### **V2.0 Sharding(Mother Love)** 
 **The use of more dataSources is as convenient as the use of single database; Using MongoDB is as easy as using MySQL**  
