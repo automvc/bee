@@ -479,7 +479,7 @@ bee.db.url =jdbc:mysql://127.0.0.1:3306/bee?characterEncoding=UTF-8&useSSL=false
 bee.db.username = root  
 bee.db.password =  
 
-\#输出日志
+\#输出日志  
 bee.osql.showSQL=true  
 bee.osql.showSql.showType=true  
 bee.osql.showSql.showExecutableSql=true  
