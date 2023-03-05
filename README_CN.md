@@ -480,13 +480,13 @@ bee.db.username = root
 bee.db.password =  
 
 \#输出日志
-bee.osql.showSQL=true
-bee.osql.showSql.showType=true
-bee.osql.showSql.showExecutableSql=true
+bee.osql.showSQL=true  
+bee.osql.showSql.showType=true  
+bee.osql.showSql.showExecutableSql=true  
 
-\#log4j>slf4j>log4j2>androidLog>harmonyLog>systemLogger>fileLogger>noLogging>jdkLog>commonsLog
-\#fileLogger 输出到文件; systemLogger 控制台输出
-bee.osql.loggerType=systemLogger
+\#log4j>slf4j>log4j2>androidLog>harmonyLog>systemLogger>fileLogger>noLogging>jdkLog>commonsLog  
+\#fileLogger 输出到文件; systemLogger 控制台输出  
+bee.osql.loggerType=systemLogger  
 
 ## 4. 生成Javabean Orders可参考:  
 [Orders(Javabean)](../../../bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/entity/Orders.java)  
