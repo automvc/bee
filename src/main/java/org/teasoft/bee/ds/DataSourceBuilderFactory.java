@@ -17,8 +17,8 @@
 
 package org.teasoft.bee.ds;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.teasoft.bee.osql.Registry;
 
@@ -32,13 +32,14 @@ public class DataSourceBuilderFactory implements Registry {
 	private DataSourceBuilderFactory() {}
 
 	public static void register(String dataSourceToolType, DataSourceBuilder builder) {
-		System.out.println("==============register=================");
-		if (map == null) map = new HashMap<>();
+//		System.out.println("==============register=================");
+//		if (map == null) map = new HashMap<>();
+		if (map == null) map = new ConcurrentHashMap<>();
 		map.put(dataSourceToolType.toLowerCase(), builder);
 	}
 
 	public static DataSourceBuilder getDataSourceBuilder(String dataSourceToolType) {
-		System.out.println("==============getDataSourceBuilder=================");
+//		System.out.println("==============getDataSourceBuilder=================");
 		return map == null ? null : map.get(dataSourceToolType.toLowerCase());
 	}
 

@@ -22,4 +22,6 @@ public @interface GridFs {
 	
 	//用于Mongodb声明, 保存文件到数据库后,会将文件id保存到fileIdName声明的字段(默认是:fileid).
 	String fileIdName() default "fileid";
+//	文件名对应的字段名
+	String fileName() default "filename";
 }

@@ -35,7 +35,7 @@ public class MongoSqlStruct implements Serializable{
 	private String[] selectFields;
 	private boolean hasId;
 	
-	private Object updateSet;  //for UPDATE
+	private Object updateSet;  //for UPDATE,insert,fun
 
 	private String sql;
 

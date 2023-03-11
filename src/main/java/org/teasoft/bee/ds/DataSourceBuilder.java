@@ -27,6 +27,6 @@ import javax.sql.DataSource;
  */
 public interface DataSourceBuilder {
 	
-	public DataSource build(Map<String,String> properties);
+	public DataSource build(Map<String,String> propertiesMap);
 
 }
