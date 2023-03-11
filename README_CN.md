@@ -109,11 +109,18 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 //	SuidRich suidRich; // 可以  
 11)Mongodb GridFS文件存储  
 
-### **V2.1.3.6(惊蛰)**  
+**V2.1.3.6(惊蛰)**  
 12)GridFs annotation为存储文件到MongoDB后,将文件id存入指定字段  
 13)fixed bug: OneTimeSnowflakeId.getRangeId批量取号,遇边界值跳号问题;  
    sequence & segment达到最大值,要重置segment为0  
 14)fixed bug: PearFlowerId.getRangeId批量取号,遇边界值跳号问题  
+
+### **V2.1.3.12(植树节)**  
+15)支持更多数据库一行代码生成整个库所有表对应的Javabean  
+new GenBean().genAllBeanFile();  
+16)数据源连接池，多数据源配置，内置支持 增加 Dbcp2，Tomcat, C3P0  
+17)完善GridFs注解保存文件，保存文件名，元数据等  
+18)修改Cache tableNameList的结构为Vector  
 
 ### **V2.0**  
 **V2.0(母爱)**  
