@@ -122,6 +122,7 @@ new GenBean().genAllBeanFile();
 16)数据源连接池，多数据源配置，内置支持 增加 Dbcp2，Tomcat, C3P0  
 17)完善GridFs注解保存文件，保存文件名，元数据等  
 18)修改Cache tableNameList的结构为Vector  
+19)GenBean支持Lombok注解:@Setter,@Getter,@Data  
 
 ### **V2.0**  
 **V2.0(母爱)**  
