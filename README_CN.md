@@ -116,7 +116,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
    sequence & segment达到最大值,要重置segment为0  
 14)fixed bug: PearFlowerId.getRangeId批量取号,遇边界值跳号问题  
 
-### **V2.1.3.12(植树节)**  
+### **V2.1.3.12(2023·植树节)**  
 15)支持更多数据库一行代码生成整个库所有表对应的Javabean  
 new GenBean().genAllBeanFile();  
 16)数据源连接池，多数据源配置，内置支持 增加 Dbcp2，Tomcat, C3P0  

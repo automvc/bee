@@ -94,11 +94,19 @@ then BF.getSuid() can return Mongodb type Suid instance
 //	SuidRich suidRich; // ok  
 11)Mongodb GridFS file store  
 
-### **V2.1.3.6(Awakening & Growing)**  
+**V2.1.3.6(Awakening & Growing)**  
 12)GridFs annotation for MongoDB register the file id.  
 13)fixed bug: OneTimeSnowflakeId.getRangeId boundary value jumping;  
    sequence & segment is max, need reset segment to 0  
 14)fixed bug: PearFlowerId.getRangeId boundary value jumping  
+
+### **V2.1.3.12(2023·Tree Planting Day)**  
+15)支持更多数据库一行代码生成整个库所有表对应的Javabean  
+new GenBean().genAllBeanFile();  
+16)数据源连接池，多数据源配置，内置支持 增加 Dbcp2，Tomcat, C3P0  
+17)完善GridFs注解保存文件，保存文件名，元数据等  
+18)change Cache tableNameList struct to Vector  
+19)GenBean support Lombok annotation:@Setter,@Getter,@Data  
 
 ### **V2.0 Sharding(Mother Love)** 
 **The use of more dataSources is as convenient as the use of single database; Using MongoDB is as easy as using MySQL**  
