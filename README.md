@@ -94,11 +94,19 @@ then BF.getSuid() can return Mongodb type Suid instance
 //	SuidRich suidRich; // ok  
 11)Mongodb GridFS file store  
 
-### **V2.1.3.6(Awakening & Growing)**  
+**V2.1.3.6(Awakening & Growing)**  
 12)GridFs annotation for MongoDB register the file id.  
 13)fixed bug: OneTimeSnowflakeId.getRangeId boundary value jumping;  
    sequence & segment is max, need reset segment to 0  
 14)fixed bug: PearFlowerId.getRangeId boundary value jumping  
+
+### **V2.1.3.12(2023·Tree Planting Day)**  
+15)Support more database one-line code generation of Javabean corresponding to all tables of the entire database  
+new GenBean().genAllBeanFile();  
+16)DataSource connection pool，multi-dataSource config，increased support  Dbcp2，Tomcat, C3P0  
+17)Improve GridFs annotation to save files, file names, metadata, etc  
+18)change Cache tableNameList struct to Vector  
+19)GenBean support Lombok annotation:@Setter,@Getter,@Data  
 
 ### **V2.0 Sharding(Mother Love)** 
 **The use of more dataSources is as convenient as the use of single database; Using MongoDB is as easy as using MySQL**  
