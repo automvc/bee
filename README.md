@@ -101,10 +101,10 @@ then BF.getSuid() can return Mongodb type Suid instance
 14)fixed bug: PearFlowerId.getRangeId boundary value jumping  
 
 ### **V2.1.3.12(2023·Tree Planting Day)**  
-15)支持更多数据库一行代码生成整个库所有表对应的Javabean  
+15)Support more database one-line code generation of Javabean corresponding to all tables of the entire database  
 new GenBean().genAllBeanFile();  
-16)数据源连接池，多数据源配置，内置支持 增加 Dbcp2，Tomcat, C3P0  
-17)完善GridFs注解保存文件，保存文件名，元数据等  
+16)DataSource connection pool，multi-dataSource config，increased support  Dbcp2，Tomcat, C3P0  
+17)Improve GridFs annotation to save files, file names, metadata, etc  
 18)change Cache tableNameList struct to Vector  
 19)GenBean support Lombok annotation:@Setter,@Getter,@Data  
 
