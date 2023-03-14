@@ -30,7 +30,7 @@ https://github.com/automvc/bee-ext
 
 ## Feature & Function: 
 
-**Support many Database**(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Access,Cassandra,Mongodb and so on) and easily extend.  
+**Support many Database**(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Access,KingbaseES,DM,Cassandra,Mongodb and so on) and easily extend.  
 **Good performance, close to the speed of JDBC; Small files：Bee V1.8 jar 217k**, **V1.9.5 jar,315k, V1.9.8 jar 310k**.  
 In addition to **JDBC, Android and HarmonyOS** are also supported.  
 
