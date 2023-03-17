@@ -27,20 +27,40 @@ import org.teasoft.bee.osql.Registry;
  * @since  2.1
  */
 public class DataSourceBuilderFactory implements Registry {
+	
+//	private static volatile Map<String, DataSourceBuilder> map = null; //sonar
 	private static Map<String, DataSourceBuilder> map = null;
+//	private static byte[] lock=new byte[0];
 
 	private DataSourceBuilderFactory() {}
 
 	public static void register(String dataSourceToolType, DataSourceBuilder builder) {
-//		System.out.println("==============register=================");
-//		if (map == null) map = new HashMap<>();
-		if (map == null) map = new ConcurrentHashMap<>();
+		if (map == null) initMap();
 		map.put(dataSourceToolType.toLowerCase(), builder);
 	}
+	
+	private synchronized static void initMap() {
+		map = new ConcurrentHashMap<>();
+	}
+	
+//	public static void register(String dataSourceToolType, DataSourceBuilder builder) {
+//		if (map == null) {  //find Bugs
+//			synchronized (lock) {
+//				map = new ConcurrentHashMap<>();
+//			}
+//		}
+//		map.put(dataSourceToolType.toLowerCase(), builder);
+//	}
 
 	public static DataSourceBuilder getDataSourceBuilder(String dataSourceToolType) {
-//		System.out.println("==============getDataSourceBuilder=================");
 		return map == null ? null : map.get(dataSourceToolType.toLowerCase());
 	}
 
 }
+
+//find Bugs
+//Bug: Incorrect lazy initialization of static field org.teasoft.bee.ds.DataSourceBuilderFactory.map in org.teasoft.bee.ds.DataSourceBuilderFactory.register(String, DataSourceBuilder)
+//This method contains an unsynchronized lazy initialization of a non-volatile static field. Because the compiler or processor may reorder instructions, threads are not guaranteed to see a completely initialized object, if the method can be called by multiple threads. You can make the field volatile to correct the problem. For more information, see the Java Memory Model web site. 
+
+//sonar
+//This can be salvaged with arrays by using the relevant AtomicArray class, such as AtomicIntegerArray, instead. For mutable objects, the volatile should be removed, and some other method should be used to ensure thread-safety, such as synchronization, or ThreadLocal storage.

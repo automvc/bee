@@ -20,20 +20,26 @@ package org.teasoft.bee.mongodb;
 import java.util.Date;
 import java.util.Map;
 
+import org.teasoft.bee.osql.annotation.Column;
+
 /**
  * @author Kingstar
  * @since  2.1
  */
 public class GridFsFile {
 
-	private final String id;
-	private final String filename;
-	private final long length;
-	private final int chunkSize;
-	private final Date uploadDate;
+	private  String id;
+	private  String filename;
+	private  Long length;
+	@Column("chunkSize")
+	private  Integer chunkSize;
+	@Column("uploadDate")
+	private  Date uploadDate;
 	
     // Optional values
-    private final Map<String,Object> metadata;
+    private Map<String,Object> metadata;
+    
+    public GridFsFile(){}
 
 	public GridFsFile(String id, String filename, long length, int chunkSize, Date uploadDate,final Map<String,Object> metadata) {
 		super();
@@ -45,6 +51,35 @@ public class GridFsFile {
 		this.metadata = metadata != null && metadata.isEmpty() ? null : metadata;
 	}
 
+	public Map<String, Object> getMetadata() {
+		return metadata;
+	}
+
+	public void setMetadata(Map<String, Object> metadata) {
+		this.metadata = metadata;
+	}
+
+	 //不支持。  一般使用这个类查询，就是为了拿文件id
+//	public void setId(String id) {
+//		this.id = id;
+//	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
+	public void setLength(Long length) {
+		this.length = length;
+	}
+
+	public void setChunkSize(Integer chunkSize) {
+		this.chunkSize = chunkSize;
+	}
+
+	public void setUploadDate(Date uploadDate) {
+		this.uploadDate = uploadDate;
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -53,11 +88,11 @@ public class GridFsFile {
 		return filename;
 	}
 
-	public long getLength() {
+	public Long getLength() {
 		return length;
 	}
 
-	public int getChunkSize() {
+	public Integer getChunkSize() {
 		return chunkSize;
 	}
 
@@ -67,14 +102,20 @@ public class GridFsFile {
 	
 	  @Override
 	    public String toString() {
-	        return "GridFSFile{"
-	                + "id=" + id
-	                + ", filename='" + filename + '\''
-	                + ", length=" + length
+	          String str=   "GridFSFile{"
+	                + "id=" + id;
+	               if(filename==null)
+	            	   str += ", filename=" + filename ;
+	               else 
+	            	   str += ", filename='" + filename + '\'';
+	                
+	               str  += ", length=" + length
 	                + ", chunkSize=" + chunkSize
 	                + ", uploadDate=" + uploadDate
 	                + ", metadata=" + metadata
 	                + '}';
+	               
+	               return str;
 	    }
 
 }
