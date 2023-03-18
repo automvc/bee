@@ -1,7 +1,9 @@
 Mongodb ORM(Bee)
 =========
 Mongodb ORM 是Bee提供众多ORM功能的一部分;  
-Bee，互联网新时代的Java ORM框架，同时支持JDBC(比如JavaWeb),Android和Harmony；支持Sharding分片;  
+Bee，互联网新时代的Java ORM框架，
+同时支持JDBC(比如JavaWeb),Android和Harmony;  
+支持Sharding分片;  
 支持多种关系型数据库(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Access,金仓,达梦等),  
 还支持NoSQL的Cassandra,Mongodb等.  
 
