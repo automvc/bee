@@ -8,9 +8,9 @@ Bee，互联网新时代的Java ORM框架,
 还支持NoSQL的Cassandra,Mongodb等.  
 
 
-## Mongodb-Function-List
+## Mongodb ORM-Function-List
 **Bee 2.0 起,开始支持MongoDB和分片.**  
-#### Mongodb支持功能  
+#### Mongodb ORM(Bee)支持功能  
 Bee使用ORM面向对象方式操作Mongodb支持接口:  
 Suid  
 SuidRich  
@@ -29,7 +29,7 @@ sharding分片查询:
 直接使用Mongodb shell命令操作DB. (V2.1开发中)  
 
 
-#### Mongodb(V2.0,V2.1)未支持功能:  
+#### Mongodb ORM(Bee)(V2.0,V2.1)未支持功能:  
 多表查询MoreTable,PreparedSql.  
 广播表的更改;(可以自行多次设置库名并调用更改方法)  
 sharding分组  

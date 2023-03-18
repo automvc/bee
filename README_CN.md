@@ -129,7 +129,7 @@ new GenBean().genAllBeanFile();
 21)完善Mongodb文件元数据GridFsFile查询  
 
 
-#### [Mongodb ORM(Bee)详细功能列表](Mongodb-Function-List.md) 
+#### [Mongodb ORM(Bee)详细功能列表](MongodbORM-Function-List.md) 
 
 ### **V2.0**  
 **V2.0(母爱)**  
