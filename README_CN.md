@@ -128,6 +128,9 @@ new GenBean().genAllBeanFile();
 20)提供两个扩展接口SuidRichExt,MongoSuidRichExt及快捷输入类BFX  
 21)完善Mongodb文件元数据GridFsFile查询  
 
+
+#### [Mongodb ORM(Bee)详细功能列表](Mongodb-Function-List.md) 
+
 ### **V2.0**  
 **V2.0(母爱)**  
 **使用分库分表像使用单库一样方便;使用MongoDB像使用MySQL一样容易.**  
