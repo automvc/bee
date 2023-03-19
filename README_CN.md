@@ -92,6 +92,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 
 **V2.1.2.28(Eleven)**  
 6)bee.properties支持配置多数据源(此方式,无需xml或java代码配置)  
+数据源连接池，多数据源配置，内置支持Hikari,Druid  
 7)fixed bug:批量插入不能设置数据源名称  
 8)Mongodb查询结果日期类型转换  
 9)多数据源但都是Mongodb,可以设置bee.dosql.multiDS.justMongodb=true  
@@ -115,20 +116,20 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
    sequence & segment达到最大值,要重置segment为0  
 14)fixed bug: PearFlowerId.getRangeId批量取号,遇边界值跳号问题  
 
-**V2.1.3.12(植树节)**  
-15)支持更多数据库一行代码生成整个库所有表对应的Javabean  
-new GenBean().genAllBeanFile();  
-16)数据源连接池，多数据源配置，内置支持 增加 Dbcp2，Tomcat, C3P0  
-17)完善GridFs注解保存文件，保存文件名，元数据等  
-18)修改Cache tableNameList的结构为Vector  
-
-### **V2.1.3.12(2023·植树节)**  
+**V2.1.3.12(2023·植树节)**  
 15)支持更多数据库一行代码生成整个库所有表对应的Javabean  
 new GenBean().genAllBeanFile();  
 16)数据源连接池，多数据源配置，内置支持 增加 Dbcp2，Tomcat, C3P0  
 17)完善GridFs注解保存文件，保存文件名，元数据等  
 18)修改Cache tableNameList的结构为Vector  
 19)GenBean支持Lombok注解:@Setter,@Getter,@Data  
+
+### **V2.1.3.21(2023·春分)**  
+20)提供两个扩展接口SuidRichExt,MongoSuidRichExt及快捷输入类BFX  
+21)完善Mongodb文件元数据GridFsFile查询  
+22)fixed bug: DDL创建表; 流式分片时,排序字段转换  
+
+#### [Mongodb ORM(Bee)详细功能列表](MongodbORM-Function-List.md) 
 
 ### **V2.0**  
 **V2.0(母爱)**  
