@@ -18,7 +18,8 @@ SuidRichExt/MongodbSuidRichExt
 非分片情况下,以上四个接口的方法都适合在Mongodb使用.  
 兼容支持JDBC数据源(Mongodb JDBC)  
 分片支持:  
-DDL创建表
+DDL创建集合Collection(表)  
+生成集合(表)对应的Javabean(可一行代码生成整个库的表)  
 sharding分片查询:  
   查询聚合函数的分片  
   查询操作返回结果是List<T>类型的分片(分片的select操作)  
@@ -39,6 +40,11 @@ sharding分组
 sharding分片更改操作中:单条插入,更新,删除的分片操作(可以自行多次设置库名并调用更改方法) 
 事务  
 
-
+#### 常识:  
+ -------------------------------
+ Mongodb             关系型数据库
+ -------------------------------
+集合(Collectioin)     表(Table)
+文档(Documnet)        记录(一行记录)
 
 
