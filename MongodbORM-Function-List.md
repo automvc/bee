@@ -42,11 +42,11 @@ sharding分片更改操作中:单条插入,更新,删除的分片操作(可以�
 
 #### 常识:  
 **Mongodb与RDB的概念对应关系**  
-<table width="405" border="0">
+<table width="399" border="0">
   <tr>
     <td width="145" height="43"><strong>Mongodb</strong></td>
     <td width="42">&nbsp;</td>
-    <td width="204"><strong>关系型数据库 </strong></td>
+    <td width="198"><strong>关系型数据库 </strong></td>
   </tr>
   <tr>
     <td height="43">集合(Collectioin)</td>
