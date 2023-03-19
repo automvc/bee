@@ -95,7 +95,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 数据源连接池，多数据源配置，内置支持Hikari,Druid  
 7)fixed bug:批量插入不能设置数据源名称  
 8)Mongodb查询结果日期类型转换  
-9)多数据但都是Mongodb,可以设置bee.dosql.multiDS.justMongodb=true  
+9)多数据源但都是Mongodb,可以设置bee.dosql.multiDS.justMongodb=true  
 则BF.getSuid()会返回Mongodb类型的Suid实现类  
 10)支持spring方式生成Mongodb对应的实现类对象  
 //  Mongodb使用  
@@ -470,6 +470,14 @@ OrdersService.java
 			<artifactId>bee-ext</artifactId>
 			<version>2.0</version>
 		</dependency>
+		
+	    <!-- Mysql config.You need change it to the real database config. -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.47</version>
+			<scope>runtime</scope>
+		</dependency>
 ```
 
 #### 1.2  也可以直接下载jar文件  	
@@ -492,6 +500,15 @@ bee.db.driverName = com.mysql.jdbc.Driver
 bee.db.url =jdbc:mysql://127.0.0.1:3306/bee?characterEncoding=UTF-8&useSSL=false  
 bee.db.username = root  
 bee.db.password =  
+
+\#输出日志  
+bee.osql.showSQL=true  
+bee.osql.showSql.showType=true  
+bee.osql.showSql.showExecutableSql=true  
+
+\#log4j>slf4j>log4j2>androidLog>harmonyLog>systemLogger>fileLogger>noLogging>jdkLog>commonsLog  
+\#fileLogger 输出到文件; systemLogger 控制台输出  
+bee.osql.loggerType=systemLogger  
 
 ## 4. 生成Javabean Orders可参考:  
 [Orders(Javabean)](../../../bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/entity/Orders.java)  
@@ -561,6 +578,11 @@ public class SuidExam {
 //更加应用参考,请查看: 更多例子   和    综合应用 .
 
 ```
+
+## 6.操作视频:    
+<img src="guide/bee-quick-start-2.0.gif"  width="840" height="420">  
+
+------------------------------------------------------------------------
 
 ## [快速开始:Harmony环境使用Bee](guide/Quick-start-for-Harmony_CN.md) 
 
