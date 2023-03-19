@@ -56,7 +56,7 @@ sharding分片更改操作中:单条插入,更新,删除的分片操作(可以�
   <tr>
     <td height="36">文档(Documnet) </td>
     <td>&nbsp;</td>
-    <td>记录(一行记录)</td>
+    <td>记录/一行记录(Record)</td>
   </tr>
 </table>
 
