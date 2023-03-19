@@ -127,7 +127,7 @@ new GenBean().genAllBeanFile();
 ### **V2.1.3.21(2023·春分)**  
 20)提供两个扩展接口SuidRichExt,MongoSuidRichExt及快捷输入类BFX  
 21)完善Mongodb文件元数据GridFsFile查询  
-22)fixed bug: DDL创建表; 流式分片时,排序字段转换  
+22)fixed bug: DDL创建表(Sharding); 流式分片查询时,排序字段转换  
 
 #### [Mongodb ORM(Bee)详细功能列表](MongodbORM-Function-List.md) 
 

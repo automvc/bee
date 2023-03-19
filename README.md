@@ -100,13 +100,18 @@ then BF.getSuid() can return Mongodb type Suid instance
    sequence & segment is max, need reset segment to 0  
 14)fixed bug: PearFlowerId.getRangeId boundary value jumping  
 
-### **V2.1.3.12(2023·Tree Planting Day)**  
+**V2.1.3.12(2023·Tree Planting Day)**  
 15)Support more database one-line code generation of Javabean corresponding to all tables of the entire database  
 new GenBean().genAllBeanFile();  
 16)DataSource connection pool，multi-dataSource config，increased support  Dbcp2，Tomcat, C3P0  
 17)Improve GridFs annotation to save files, file names, metadata, etc  
 18)change Cache tableNameList struct to Vector  
 19)GenBean support Lombok annotation:@Setter,@Getter,@Data  
+
+### **V2.1.3.21(2023·Spring Equinox)**  
+20)Provide two extension interfaces: SuidRichExt, MongoSuidRichExt, and shortcut input class BFX  
+21)Improve Mongodb file metadata GridFsFile query  
+22)fixed bug: DDL create table(Sharding); Sort field conversion during stream sharding select  
 
 ### **V2.0 Sharding(Mother Love)** 
 **The use of more dataSources is as convenient as the use of single database; Using MongoDB is as easy as using MySQL**  
@@ -508,6 +513,14 @@ Quick Start:
 			<artifactId>bee-ext</artifactId>
 			<version>2.0</version>
 		</dependency>
+		
+		<!-- Mysql config.You need change it to the real database config. -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.47</version>
+			<scope>runtime</scope>
+		</dependency>
 ```
 
 #### 1.2  Of course, can download the jar file directly  
@@ -528,6 +541,14 @@ bee.db.driverName = com.mysql.jdbc.Driver
 bee.db.url =jdbc:mysql://127.0.0.1:3306/bee?characterEncoding=UTF-8&useSSL=false  
 bee.db.username = root  
 bee.db.password =  
+
+\#print log  
+bee.osql.showSQL=true  
+bee.osql.showSql.showType=true  
+bee.osql.showSql.showExecutableSql=true  
+
+\#log4j>slf4j>log4j2>androidLog>harmonyLog>systemLogger>fileLogger>noLogging>jdkLog>commonsLog  
+bee.osql.loggerType=systemLogger  
 
 ## 4. The Javabean Orders reference as below:  
 [Orders(Javabean)](../../../bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/entity/Orders.java)  
