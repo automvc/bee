@@ -16,6 +16,7 @@ Suid
 SuidRich  
 SuidRichExt/MongodbSuidRichExt  
 非分片情况下,以上四个接口的方法都适合在Mongodb使用.  
+兼容支持JDBC数据源(Mongodb JDBC)  
 分片支持:  
 DDL创建表
 sharding分片查询:  
@@ -29,6 +30,7 @@ sharding分片查询:
     注意不参与分片:not in, not between,>=,<=  
 直接使用Mongodb shell命令操作DB (V2.1开发中)  
 创建索引 (V2.1开发中)  
+
 
 #### Mongodb ORM(Bee)(V2.0,V2.1)未支持功能:  
 多表查询MoreTable,PreparedSql.  
