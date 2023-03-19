@@ -17,6 +17,7 @@ SuidRich
 SuidRichExt/MongodbSuidRichExt  
 非分片情况下,以上四个接口的方法都适合在Mongodb使用.  
 兼容支持JDBC数据源(Mongodb JDBC)  
+支持数字ID(Long,Int),支持全局唯一的数字ID  
 分片支持:  
 DDL创建集合Collection(表)  
 生成集合(表)对应的Javabean(可一行代码生成整个库的表)  
