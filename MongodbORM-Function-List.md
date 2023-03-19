@@ -41,10 +41,23 @@ sharding分片更改操作中:单条插入,更新,删除的分片操作(可以�
 事务  
 
 #### 常识:  
- -------------------------------  
- Mongodb             关系型数据库  
- -------------------------------  
-集合(Collectioin)     表(Table)  
-文档(Documnet)        记录(一行记录)  
+**Mongodb与RDB的概念对应关系**  
+<table width="373" border="0">
+  <tr>
+    <td width="149" height="43"><strong>Mongodb</strong></td>
+    <td width="30">&nbsp;</td>
+    <td width="172"><strong>关系型数据库 </strong></td>
+  </tr>
+  <tr>
+    <td height="35">集合(Collectioin)</td>
+    <td>&nbsp;</td>
+    <td>表(Table)</td>
+  </tr>
+  <tr>
+    <td height="36">文档(Documnet) </td>
+    <td>&nbsp;</td>
+    <td>记录(一行记录)</td>
+  </tr>
+</table>
 
 
