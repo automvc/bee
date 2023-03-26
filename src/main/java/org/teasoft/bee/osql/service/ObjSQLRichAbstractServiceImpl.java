@@ -382,5 +382,11 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 		// Add the business logic if need.
 		getSuidRich().primaryKey(entityClass, fields, keyName);
 	}
+
+	@Override
+	public <T> void dropIndex(Class<T> entityClass, String fields, String indexName) {
+		// Add the business logic if need.
+		getSuidRich().dropIndex(entityClass, fields, indexName);
+	}
 	
 }
