@@ -108,10 +108,14 @@ new GenBean().genAllBeanFile();
 18)change Cache tableNameList struct to Vector  
 19)GenBean support Lombok annotation:@Setter,@Getter,@Data  
 
-### **V2.1.3.21(2023·Spring Equinox)**  
+**V2.1.3.21(2023·Spring Equinox)**  
 20)Provide two extension interfaces: SuidRichExt, MongoSuidRichExt, and shortcut input class BFX  
 21)Improve Mongodb file metadata GridFsFile query  
 22)fixed bug: DDL create table(Sharding); Sort field conversion during stream sharding select  
+
+### **V2.1.3.31()**  
+23)Mongodb support Geo query (including Sharding)  
+24)Mongodb support create index  
 
 ### **V2.0 Sharding(Mother Love)** 
 **The use of more dataSources is as convenient as the use of single database; Using MongoDB is as easy as using MySQL**  
