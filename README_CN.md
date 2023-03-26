@@ -124,7 +124,7 @@ new GenBean().genAllBeanFile();
 18)修改Cache tableNameList的结构为Vector  
 19)GenBean支持Lombok注解:@Setter,@Getter,@Data  
 
-### **V2.1.3.21(2023·春分)**  
+**V2.1.3.21(2023·春分)**  
 20)提供两个扩展接口SuidRichExt,MongoSuidRichExt及快捷输入类BFX  
 21)完善Mongodb文件元数据GridFsFile查询  
 22)fixed bug: DDL创建表(Sharding); 流式分片查询时,排序字段转换  
