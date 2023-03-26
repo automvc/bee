@@ -612,4 +612,6 @@ public interface SuidRich extends Suid {
 	public <T> void unique(Class<T> entityClass, String fields, String indexName);
 
 	public <T> void primaryKey(Class<T> entityClass, String fields, String keyName);
+	
+	public <T> void dropIndex(Class<T> entityClass, String fields, String indexName);
 }
