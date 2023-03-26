@@ -156,4 +156,9 @@ public class MongoSqlStruct implements Serializable{
 		return updateSet;
 	}
 
+	//2.1 for Mongodb geo
+	public void setFilter(Object filter) {
+		this.filter = filter;
+	}
+
 }

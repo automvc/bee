@@ -30,7 +30,7 @@ import org.teasoft.bee.osql.SuidRich;
  * @author AiTeaSoft
  * @since  2.0
  */
-public interface MongodbBeeSql extends SuidFile {
+public interface MongodbBeeSql extends SuidFile, Geo {
 
 	/**
 	 * According to entity object select records from database.
