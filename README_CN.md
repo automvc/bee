@@ -130,7 +130,7 @@ new GenBean().genAllBeanFile();
 22)fixed bug: DDL创建表(Sharding); 流式分片查询时,排序字段转换  
 
 ### **V2.1.3.31()**  
-23)Mongodb地理信息查询,包括分片  
+23)Mongodb地理信息插入、查询,包括分片  
 24)Mongodb创建索引  
 
 
