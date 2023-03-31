@@ -7,6 +7,7 @@
 package org.teasoft.bee.sharding;
 
 /**
+ * Struct for SQL function in Sharding.
  * @author Kingstar
  * @since  2.0
  */

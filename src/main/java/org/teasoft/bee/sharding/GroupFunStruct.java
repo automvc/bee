@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * Struct for SQL group & function in Sharding.
  * @author Kingstar
  * @since  2.0
  */

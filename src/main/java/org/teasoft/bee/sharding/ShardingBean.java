@@ -20,6 +20,7 @@ package org.teasoft.bee.sharding;
 import org.teasoft.bee.sharding.algorithm.Calculate;
 
 /**
+ * Bean for Sharding.
  * @author AiTeaSoft
  * @since 2.0
  */

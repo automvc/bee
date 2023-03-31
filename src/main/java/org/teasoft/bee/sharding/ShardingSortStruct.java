@@ -20,12 +20,10 @@ package org.teasoft.bee.sharding;
 import org.teasoft.bee.osql.OrderType;
 
 /**
- * 
+ * Sort Struct for Sharding.
  * the array element 's order corresponds to orderFields[] except index[]. 
- * 
  * select id,name,age from student order by age desc,name asc; struct: orderFields[]{age,name} new OrderType[]
  * {OrderType.DESC,OrderType.ASC} struct.setType(new String[] { "Integer", "String"}); struct.setIndex(new int[] { 2,1});
- * 
  * result: c0 c1 c2 id,name,age
  * 
  * @author AiTeaSoft

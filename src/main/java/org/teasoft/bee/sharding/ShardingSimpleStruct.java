@@ -18,7 +18,7 @@
 package org.teasoft.bee.sharding;
 
 /**
- * Sharding Simple Struct
+ * Sharding Simple Struct.
  * @author Kingstar
  * @since  1.11
  */
