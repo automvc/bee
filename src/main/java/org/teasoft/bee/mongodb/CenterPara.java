@@ -18,6 +18,7 @@
 package org.teasoft.bee.mongodb;
 
 /**
+ * Center parameter struct for Mongodb Geo.
  * @author Kingstar
  * @since  2.1
  */

@@ -18,6 +18,7 @@
 package org.teasoft.bee.mongodb;
 
 /**
+ * Box Parameter struct for Mongodb Geo.
  * @author Kingstar
  * @since  2.1
  */

@@ -22,6 +22,7 @@ import java.util.List;
 import org.teasoft.bee.osql.Condition;
 
 /**
+ * Interface for Mongodb Geo.
  * @author Kingstar
  * @since  2.1
  */

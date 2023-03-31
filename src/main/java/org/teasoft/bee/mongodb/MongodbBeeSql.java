@@ -26,7 +26,7 @@ import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.SuidRich;
 
 /**
- * The underlying interface for mongodb queries is not used directly by users(can use Suid,SuidRich).
+ * The underlying interface for Mongodb queries is not used directly by users(can use Suid,SuidRich).
  * @author AiTeaSoft
  * @since  2.0
  */

@@ -20,6 +20,7 @@ package org.teasoft.bee.mongodb;
 import org.teasoft.bee.osql.exception.BeeIllegalBusinessException;
 
 /**
+ * Near parameter struct for Mongodb Geo.
  * @author Kingstar
  * @since  2.1
  */
