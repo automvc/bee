@@ -18,6 +18,7 @@
 package org.teasoft.bee.spi.entity;
 
 /**
+ * Struct for sort bean.
  * @author AiTeaSoft
  * @since  2.0
  */
@@ -41,9 +42,18 @@ public class SortStruct {
 	public void setFieldName(String fieldName) {
 		this.fieldName = fieldName;
 	}
+	/**
+	 * In descending order, the default is false; That is, the default is ascending.
+	 * @return boolean value
+	 */
 	public boolean isReverse() {
 		return isReverse;
 	}
+	
+	/**
+	 * In descending order, the default is false; That is, the default is ascending.
+	 * @param isReverse
+	 */
 	public void setReverse(boolean isReverse) {
 		this.isReverse = isReverse;
 	}

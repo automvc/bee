@@ -20,7 +20,7 @@ package org.teasoft.bee.spi;
 import java.lang.reflect.Field;
 
 /**
- * annotation adapter interface.
+ * Annotation adapter interface.
  * @author Kingstar
  * @since  1.17
  */

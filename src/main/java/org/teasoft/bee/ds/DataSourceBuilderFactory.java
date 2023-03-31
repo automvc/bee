@@ -23,6 +23,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.teasoft.bee.osql.Registry;
 
 /**
+ * DataSource Builder Factory.
  * @author Kingstar
  * @since  2.1
  */

@@ -22,6 +22,7 @@ import java.util.Map;
 import javax.sql.DataSource;
 
 /**
+ * DataSource Builder.
  * @author Kingstar
  * @since  2.1
  */

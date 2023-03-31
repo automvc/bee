@@ -23,6 +23,7 @@ import java.util.List;
 import org.teasoft.bee.spi.entity.SortStruct;
 
 /**
+ * Sort for the Bean.
  * @author AiTeaSoft
  * @since  2.0
  */

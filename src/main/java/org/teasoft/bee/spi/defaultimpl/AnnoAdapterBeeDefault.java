@@ -26,6 +26,7 @@ import org.teasoft.bee.osql.annotation.Table;
 import org.teasoft.bee.spi.AnnoAdapter;
 
 /**
+ * Annotation Adapter Bee Default.
  * @author Kingstar
  * @since  1.17
  */
@@ -52,6 +53,7 @@ public class AnnoAdapterBeeDefault implements AnnoAdapter {
 	}
 
 	@Override
+	@SuppressWarnings("deprecation")
 	public String getValue(Field field) {
 
 		if (field.isAnnotationPresent(Column.class)) {

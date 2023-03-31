@@ -20,6 +20,7 @@ package org.teasoft.bee.spi;
 import java.io.Serializable;
 
 /**
+ * Json Transform interface.
  * @author AiTeaSoft
  * @since  2.0
  */

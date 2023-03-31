@@ -18,6 +18,7 @@
 package org.teasoft.bee.android;
 
 /**
+ * Create and Upgrade.
  * @author Kingstar
  * @since  1.17
  */
