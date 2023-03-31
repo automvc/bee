@@ -23,7 +23,7 @@ import java.util.Map;
 import org.teasoft.bee.osql.annotation.Column;
 
 /**
- * GridFs File Struct for Mongodb.
+ * GridFs File struct for Mongodb.
  * @author Kingstar
  * @since  2.1
  */

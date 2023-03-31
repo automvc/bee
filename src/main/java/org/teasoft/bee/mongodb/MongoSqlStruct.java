@@ -9,7 +9,7 @@ package org.teasoft.bee.mongodb;
 import java.io.Serializable;
 
 /**
- * MongoSql Struct for Mongodb SUID operate.
+ * MongoSql struct for Mongodb SUID operate.
  * @author Kingstar
  * @since  2.0
  */

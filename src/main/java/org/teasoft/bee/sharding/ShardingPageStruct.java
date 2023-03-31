@@ -18,6 +18,7 @@
 package org.teasoft.bee.sharding;
 
 /**
+ * Page struct for Sharding.
  * @author AiTeaSoft
  * @since 2.0
  */

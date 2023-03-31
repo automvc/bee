@@ -13,7 +13,7 @@ import java.util.Map;
 import org.teasoft.bee.osql.Condition;
 
 /**
- * Do Suid operate for Mongodb GridFs File.
+ * Do SUID operate for Mongodb GridFs File.
  * @author Kingstar
  * @since  2.1
  */
