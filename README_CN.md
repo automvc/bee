@@ -129,9 +129,10 @@ new GenBean().genAllBeanFile();
 21)完善Mongodb文件元数据GridFsFile查询  
 22)fixed bug: DDL创建表(Sharding); 流式分片查询时,排序字段转换  
 
-### **V2.1.3.31()**  
-23)Mongodb地理信息查询,包括分片  
-24)Mongodb创建索引  
+### **V2.1.4.5(2023·荣耀)**  
+23)支持Mongodb地理信息插入、查询,包括分片  
+24)支持Mongodb创建索引  
+25)支持Mongodb事务  
 
 #### [Mongodb ORM(Bee)详细功能列表](MongodbORM-Function-List.md) 
 
