@@ -15,6 +15,7 @@ Bee使用ORM面向对象方式操作Mongodb支持接口:
 Suid  
 SuidRich  
 SuidRichExt/MongodbSuidRichExt  
+PreparedSql  
 非分片情况下,以上四个接口的方法都适合在Mongodb使用.  
 兼容支持JDBC数据源(Mongodb JDBC)  
 支持数字ID(Long,Int),支持全局唯一的数字ID  
@@ -30,16 +31,18 @@ sharding分片查询:
 分片键分片支持的运算符  
 =,in,between;其中in支持Number,List,Set  
     注意不参与分片:not in, not between,>=,<=  
-直接使用Mongodb shell命令操作DB (V2.1开发中)  
-创建索引 (V2.1开发中)  
-
+直接使用原生Mongodb shell命令操作DB(PreparedSql)  
+事务  
+创建索引  
+支持查询嵌入式文档  
+地理信息插入、查询  
 
 #### Mongodb ORM(Bee)(V2.0,V2.1)未支持功能:  
-多表查询MoreTable,PreparedSql.  
+多表查询MoreTable(使用单表查询嵌入式文档即可).  
 广播表的更改;(可以自行多次设置库名并调用更改方法)  
-sharding分组  
+sharding分组汇总查询  
 sharding分片更改操作中:单条插入,更新,删除的分片操作(可以自行多次设置库名并调用更改方法) 
-事务  
+
 
 #### 常识:  
 **Mongodb与RDB的概念对应关系**  
