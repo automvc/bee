@@ -111,9 +111,9 @@ new GenBean().genAllBeanFile();
 **V2.1.3.21(2023·Spring Equinox)**  
 20)Provide two extension interfaces: SuidRichExt, MongoSuidRichExt, and shortcut input class BFX  
 21)Improve Mongodb file metadata GridFsFile query  
-22)fixed bug: DDL create table(Sharding); Sort field conversion during stream sharding select 
+22)fixed bug: DDL create table(Sharding); Sort field conversion during stream sharding select  
 
-### **V2.1.4.2(2023·Honor)**  
+### **V2.1.4.5(2023·Honor)**  
 23)Mongodb support Geo insert,query (including Sharding)  
 24)Mongodb support create index  
 25)Mongodb support transaction  
