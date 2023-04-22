@@ -18,6 +18,7 @@
 package org.teasoft.bee.mongodb;
 
 import java.util.List;
+import java.util.Map;
 
 import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.FunctionType;
@@ -133,6 +134,10 @@ public interface MongodbBeeSql extends SuidFile, Geo {
 	
 	public <T> boolean createTable(Class<T> entityClass, boolean isDropExistTable);
 	
+	public int modify(String commandStr);
+	public String selectJson(String commandStr);
+	public List<Map<String, Object>> selectMapList(String commandStr);
+	public <T> List<T> select(String commandStr, Class<T> returnTypeClass);
 	
 //	考虑独立出来.  其它的可以方便通过suid,suidRich;  这些不方便
 	
