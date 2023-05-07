@@ -25,6 +25,7 @@ import java.lang.annotation.Target;
 /**
  * Table column names and Javabean field names mapping annotation,
  * To use @column, open the openDefineColumn configuration and realize the mapping function.
+ * 从2.1开始默认放开，若不使用，为了提高效率，可以手动配置关闭。
 <p><br>
 <p>Where will detect this annotation:
 <p>Object oriented way: Suid,SuidRich,MoreTable will detect.
@@ -66,6 +67,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Column {
-	@Deprecated
+//	@Deprecated  从2.1开始默认放开，若不使用，为了提高效率，可以手动配置关闭。
 	String value();
 }
