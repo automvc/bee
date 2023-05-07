@@ -134,8 +134,16 @@ new GenBean().genAllBeanFile();
 24)支持Mongodb创建索引  
 25)支持Mongodb事务  
 
-### **V2.1.4.20(2023·谷雨)**  
+**V2.1.4.20(2023·谷雨)**  
 26)mongodb bean定义为插拔组件  
+
+### **V2.1.5.1(2023·劳动节)**  
+27)Mongodb面向对象操作打印原生语句日志  
+28)可直接执行原生语句(MongodbRawSql)  
+29)广播表批量插入  
+30)更多数据库分页默认支持:MsAccess,Cubrid,HSQL,Derby,Firebird等  
+31)BeeMongodbSimpleDataSource支持配置文件使用更多属性设置  
+32)内置Json工具fastjson实现支持  
 
 #### [Mongodb ORM(Bee)详细功能列表](MongodbORM-Function-List.md) 
 
