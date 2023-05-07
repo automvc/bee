@@ -144,6 +144,7 @@ new GenBean().genAllBeanFile();
 30)更多数据库分页默认支持:MsAccess,Cubrid,HSQL,Derby,Firebird等  
 31)BeeMongodbSimpleDataSource支持配置文件使用更多属性设置  
 32)内置Json工具fastjson实现支持  
+33)fixed bug:批量插入不能自动生成主键值,已修复  
 
 #### [Mongodb ORM(Bee)详细功能列表](MongodbORM-Function-List.md) 
 
