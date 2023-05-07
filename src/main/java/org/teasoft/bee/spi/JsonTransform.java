@@ -18,6 +18,7 @@
 package org.teasoft.bee.spi;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Json Transform interface.
@@ -30,5 +31,7 @@ public interface JsonTransform extends Serializable{
 
 	public String toJson(Object obj);
 
-	public <T> T toEntity(String json, Class<T> clazz, Class elementClass);
+	public <T> T toEntity(String json, Class<T> clazz, Class<?> elementClass);
+	
+	public <T> List<T> toEntityList(String json, Class<T> elementClass);
 }
