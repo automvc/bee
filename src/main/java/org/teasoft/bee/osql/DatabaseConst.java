@@ -30,6 +30,7 @@ public final class DatabaseConst {
 	public static final String FrontBase = "FrontBase";
 
 	public static final String HSQL = "HSQL Database Engine";
+	public static final String HSQLDB = "HSQL Database";
 	public static final String Informix = "Informix Dynamic Server";
 	public static final String Ingres = "Ingres";
 	public static final String JDataStore = "JDataStore";
