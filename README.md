@@ -118,7 +118,10 @@ new GenBean().genAllBeanFile();
 24)Mongodb support create index  
 25)Mongodb support transaction  
 
-### **V2.1.4.5(2023·International Labour Day)**  
+**V2.1.4.20(2023·Honor)**  
+26)mongodb bean define plugin  
+
+### **V2.1.5.1(2023·International Labour Day)**  
 27)Mongodb ORM support print raw command shell  log  
 28)MongodbRawSql can run raw command shell  
 29)broadcast table(sharding model) batch insert  
