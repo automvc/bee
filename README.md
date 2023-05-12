@@ -113,10 +113,22 @@ new GenBean().genAllBeanFile();
 21)Improve Mongodb file metadata GridFsFile query  
 22)fixed bug: DDL create table(Sharding); Sort field conversion during stream sharding select  
 
-### **V2.1.4.5(2023·Honor)**  
+**V2.1.4.5(2023·Honor)**  
 23)Mongodb support Geo insert,query (including Sharding)  
 24)Mongodb support create index  
 25)Mongodb support transaction  
+
+**V2.1.4.20(2023·Grain Rain)**  
+26)mongodb bean define plugin  
+
+### **V2.1.5.1(2023·International Labour Day)**  
+27)Mongodb ORM support print raw command shell  log  
+28)MongodbRawSql can run raw command shell  
+29)broadcast table(sharding model) batch insert  
+30)support more database default paging implements, including Cubrid,HSQL,Derby,Firebird and so on  
+31)BeeMongodbSimpleDataSource support define more item property  
+32)support fastjson Json tool  
+33)fixed bug:batch insert can not generate ID  
 
 ### **V2.0 Sharding(Mother Love)** 
 **The use of more dataSources is as convenient as the use of single database; Using MongoDB is as easy as using MySQL**  
