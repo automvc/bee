@@ -35,7 +35,7 @@ public class MongoSqlStruct implements Serializable{
 	private String[] selectFields;
 	private boolean hasId;
 	
-	private Object updateSet;  //for UPDATE,insert,fun
+	private Object updateSetOrInsertOrFunOrOther;  //for UPDATE,insert,fun,or other
 
 	private String sql;
 
@@ -55,11 +55,11 @@ public class MongoSqlStruct implements Serializable{
 	
 	public MongoSqlStruct(String returnType, String tableName, Object filter, Object sortBson,
 			Integer start, Integer size, String[] selectFields, boolean hasId,
-			Class entityClass, Object updateSet) {
+			Class entityClass, Object updateSetOrInsertOrFunOrOther) {
 
 		this(returnType, tableName, filter, sortBson, start, size, selectFields, hasId,
 				entityClass);
-		this.updateSet = updateSet;
+		this.updateSetOrInsertOrFunOrOther = updateSetOrInsertOrFunOrOther;
 	}
 
 	public String getSql() { // just for cache
@@ -97,9 +97,9 @@ public class MongoSqlStruct implements Serializable{
 		if(entityClass!=null)
 			strBuf.append(entityClass.getName());
 		
-		if(updateSet!=null) {
+		if(updateSetOrInsertOrFunOrOther!=null) {
 			strBuf.append(" , [updateSet/insert/fun]: ");
-			strBuf.append(updateSet.toString());
+			strBuf.append(updateSetOrInsertOrFunOrOther.toString());
 		}
 
 		return strBuf.toString();
@@ -108,7 +108,7 @@ public class MongoSqlStruct implements Serializable{
 	public MongoSqlStruct copy() {
 		return new MongoSqlStruct(this.returnType, this.tableName, this.filter, this.sortBson,
 				this.start, this.size, this.selectFields, this.hasId, this.entityClass,
-				this.updateSet);
+				this.updateSetOrInsertOrFunOrOther);
 	}
 
 	
@@ -151,9 +151,9 @@ public class MongoSqlStruct implements Serializable{
 	public boolean isHasId() {
 		return hasId;
 	}
-
-	public Object getUpdateSet() {
-		return updateSet;
+	
+	public Object getUpdateSetOrInsertOrFunOrOther() {
+		return updateSetOrInsertOrFunOrOther;
 	}
 
 	//2.1 for Mongodb geo

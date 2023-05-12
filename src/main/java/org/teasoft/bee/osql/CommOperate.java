@@ -29,6 +29,7 @@ public interface CommOperate {
 	/**
 	 * Set the dataSource for current instance. If use the default settings that are not required.
 	 * Set dataSource name (corresponding data source must be defined).
+	 * If want to use it only once, you should call setDataSourceName(null) after finish.
 	 * @param dsName dataSource name
 	 */
 	public void setDataSourceName(String dsName);
@@ -47,6 +48,7 @@ public interface CommOperate {
 	
 	/**
 	 * Set the NameTranslate for current instance. 
+	 * Since 2.1 only effective once.
 	 * If use the default settings that are not required.
 	 * @param nameTranslate nameTranslate
 	 */

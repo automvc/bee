@@ -98,7 +98,7 @@ public interface Suid extends CommOperate {
 	public <T> int delete(T entity, Condition condition);
 	
 	/**
-	 * set dynamic parameter for dynamic table & entity name
+	 * set dynamic parameter for dynamic table & entity name,only effective once
 	 * <br>This method is called earlier than the select, update, insert, delete methods.
 	 * @param para parameter name
 	 * @param value parameter value
