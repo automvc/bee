@@ -53,7 +53,7 @@ public class AnnoAdapterBeeDefault implements AnnoAdapter {
 	}
 
 	@Override
-	@SuppressWarnings("deprecation")
+//	@SuppressWarnings("deprecation")
 	public String getValue(Field field) {
 
 		if (field.isAnnotationPresent(Column.class)) {
