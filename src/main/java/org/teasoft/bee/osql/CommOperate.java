@@ -52,5 +52,5 @@ public interface CommOperate {
 	 * If use the default settings that are not required.
 	 * @param nameTranslate nameTranslate
 	 */
-	public void setNameTranslate(NameTranslate nameTranslate);
+	public void setNameTranslateOneTime(NameTranslate nameTranslate);
 }

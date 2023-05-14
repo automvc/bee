@@ -112,9 +112,9 @@ public abstract class ObjSQLAbstractServiceImpl implements ObjSQLService {
 	}
 	
 	@Override
-	public void setNameTranslate(NameTranslate nameTranslate) {
+	public void setNameTranslateOneTime(NameTranslate nameTranslate) {
 		//Add the business logic if need.
-		getSuid().setNameTranslate(nameTranslate);
+		getSuid().setNameTranslateOneTime(nameTranslate);
 	}
 	
 }
