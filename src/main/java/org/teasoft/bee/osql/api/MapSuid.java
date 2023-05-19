@@ -15,10 +15,12 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql;
+package org.teasoft.bee.osql.api;
 
 import java.util.List;
 import java.util.Map;
+
+import org.teasoft.bee.osql.CommOperate;
 
 /**
  * Database operation interface using map instead of specific entity,

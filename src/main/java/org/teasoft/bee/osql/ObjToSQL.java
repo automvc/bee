@@ -17,6 +17,8 @@
 
 package org.teasoft.bee.osql;
 
+import org.teasoft.bee.osql.api.Condition;
+
 /**
  * Object to SQL string for Suid. <br>
  * Object to SQL string for Suid (select,update,insert,delete),

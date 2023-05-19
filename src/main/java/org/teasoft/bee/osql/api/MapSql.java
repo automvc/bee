@@ -15,9 +15,12 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql;
+package org.teasoft.bee.osql.api;
 
 import java.util.Map;
+
+import org.teasoft.bee.osql.MapSqlKey;
+import org.teasoft.bee.osql.MapSqlSetting;
 
 /**
  * Record SQL information with map.

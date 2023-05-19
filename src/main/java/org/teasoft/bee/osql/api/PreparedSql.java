@@ -15,10 +15,12 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql;
+package org.teasoft.bee.osql.api;
 
 import java.util.List;
 import java.util.Map;
+
+import org.teasoft.bee.osql.CommOperate;
 
 /**
  * Support sql string with placeholder.The sql statement is really DB's grammar,not object oriented type.

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql;
+package org.teasoft.bee.osql.api;
 
 import java.sql.CallableStatement;
 import java.util.List;

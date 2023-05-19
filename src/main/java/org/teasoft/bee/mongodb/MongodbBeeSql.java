@@ -20,18 +20,18 @@ package org.teasoft.bee.mongodb;
 import java.util.List;
 import java.util.Map;
 
-import org.teasoft.bee.osql.Condition;
 import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.IncludeType;
 import org.teasoft.bee.osql.OrderType;
-import org.teasoft.bee.osql.SuidRich;
+import org.teasoft.bee.osql.api.Condition;
+import org.teasoft.bee.osql.api.SuidRich;
 
 /**
  * The underlying interface for Mongodb queries is not used directly by users(can use Suid,SuidRich).
  * @author AiTeaSoft
  * @since  2.0
  */
-public interface MongodbBeeSql extends SuidFile, Geo {
+public interface MongodbBeeSql extends SuidFile {
 
 	/**
 	 * According to entity object select records from database.
@@ -139,20 +139,4 @@ public interface MongodbBeeSql extends SuidFile, Geo {
 	public List<Map<String, Object>> selectMapList(String commandStr);
 	public <T> List<T> select(String commandStr, Class<T> returnTypeClass);
 	
-//	考虑独立出来.  其它的可以方便通过suid,suidRich;  这些不方便
-	
-//	//GridFS
-//	public String uploadFile(String filename, InputStream fileStream);
-//	public String uploadFile(String filename, InputStream fileStream,Map<String, Object> metadataMap);
-//	
-//	public List<GridFsFile> selectFiles(GridFsFile gridFsFile, Condition condition);
-//
-//	public byte[] getFileByName(String fileName);
-//	public byte[] getFileById(String fileId);
-//	
-////	public OutputStream getOutputStreamByName(String fileName);
-////	public OutputStream getOutputStreamById(String fileId);
-//
-//	public void renameFile(String fileId, String newName);
-//	public void deleteFile(String fileId);
 }

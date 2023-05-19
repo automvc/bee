@@ -10,7 +10,7 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
-import org.teasoft.bee.osql.Condition;
+import org.teasoft.bee.osql.api.Condition;
 
 /**
  * Do SUID operate for Mongodb GridFs File.

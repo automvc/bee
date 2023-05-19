@@ -15,7 +15,13 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql;
+package org.teasoft.bee.osql.api;
+
+import org.teasoft.bee.osql.ConditionAssistant;
+import org.teasoft.bee.osql.FunctionType;
+import org.teasoft.bee.osql.IncludeType;
+import org.teasoft.bee.osql.Op;
+import org.teasoft.bee.osql.OrderType;
 
 /**
  * Condition for operate DB with Object Oriented Programming way.

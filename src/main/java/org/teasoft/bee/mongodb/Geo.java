@@ -19,7 +19,7 @@ package org.teasoft.bee.mongodb;
 
 import java.util.List;
 
-import org.teasoft.bee.osql.Condition;
+import org.teasoft.bee.osql.api.Condition;
 
 /**
  * Interface for Mongodb Geo.

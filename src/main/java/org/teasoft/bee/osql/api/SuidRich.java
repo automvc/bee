@@ -15,9 +15,13 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql;
+package org.teasoft.bee.osql.api;
 
 import java.util.List;
+
+import org.teasoft.bee.osql.FunctionType;
+import org.teasoft.bee.osql.IncludeType;
+import org.teasoft.bee.osql.OrderType;
 
 /**
  * Database operation: Suid (select,update,insert,delete),

@@ -30,7 +30,7 @@ import org.teasoft.bee.osql.CommOperate;
 public interface MongodbRawSql extends CommOperate {
 
 	/**
-	 * Select record(s) via find command.
+	 * Select document(s)/record(s) via find/findOne command.
 	 * @param sql find command. 
 	 * @param returnTypeClass its type same as list element.
 	 * @return List which element type is same as returnTypeClass.
@@ -38,26 +38,27 @@ public interface MongodbRawSql extends CommOperate {
 	public <T> List<T> select(String sql, Class<T> returnTypeClass);
 	
 	/**
-	 * Select record(s) via find command and return json format result.<p>
+	 * Select document(s)/record(s) via find/findOne command and return json format result.
 	 * @param sql find command. 
 	 * @return Json format result.
 	 */
 	public String selectJson(String sql);
 	
 	/**
-	 * Modify database records with update, insert or delete command.
-	 * @param sql find command. 
-	 * @return	the number of affected successfully records.
-	 */
-	public int modify(String sql);
-	
-	/**
-	 * Select record(s) via find command and return list structure data whose element is Map<String, Object>.
+	 * Select document(s)/record(s) via find/findOne command and return list structure data whose element is Map<String, Object>.
 	 * @param sql find command. 
 	 * @return the multi-line record of List<Map<String, Object>> structure.
 	 */
 	public List<Map<String, Object>> selectMapList(String sql);
 	
 //	public String selectFun(String sql);
+	
+	
+	/**
+	 * Modify database document(s)/record(s) with update, insert or delete type command.
+	 * @param sql find command. 
+	 * @return	the number of affected successfully document(s)/record(s).
+	 */
+	public int modify(String sql);
 	
 }

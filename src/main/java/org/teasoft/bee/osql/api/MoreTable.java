@@ -15,9 +15,11 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql;
+package org.teasoft.bee.osql.api;
 
 import java.util.List;
+
+import org.teasoft.bee.osql.CommOperate;
 
 /**
  * More table select(multi-table query).
