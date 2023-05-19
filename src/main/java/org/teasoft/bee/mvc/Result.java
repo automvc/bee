@@ -45,6 +45,7 @@ public class Result {
 
 	/**
 	 * all match records,not a page, is include all pages.
+	 * The number of records on the current page can be obtained from rows.length/rows.size(). 
 	 * @return the number of all match records.
 	 */
 	public int getTotal() {
