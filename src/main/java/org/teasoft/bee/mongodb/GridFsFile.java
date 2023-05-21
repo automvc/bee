@@ -60,7 +60,7 @@ public class GridFsFile {
 		this.metadata = metadata;
 	}
 
-	 //不支持。  一般使用这个类查询，就是为了拿文件id
+	 //Not support. Usually, this type of query is used to retrieve the file ID
 //	public void setId(String id) {
 //		this.id = id;
 //	}

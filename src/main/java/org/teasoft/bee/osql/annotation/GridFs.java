@@ -33,9 +33,16 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface GridFs {
 
-	// 用于Mongodb声明, 保存文件到数据库后,会将文件id保存到fileIdName声明的字段(默认是:fileid).
+	/**
+	 * Used for Mongodb declaration. After saving the file to the database, 
+	 * the file ID will be saved to the field of the fileIdName declaration (default: fileid)
+	 * @return fileId name
+	 */
 	String fileIdName() default "fileid";
 
-//	文件名对应的字段名
+    /**
+     * The field name corresponding to the file name
+     * @return file name
+     */
 	String fileName() default "filename";
 }
