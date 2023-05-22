@@ -15,7 +15,8 @@ Bee使用ORM面向对象方式操作Mongodb支持接口:
 Suid  
 SuidRich  
 SuidRichExt/MongodbSuidRichExt  
-PreparedSql  
+支持打印可执行的原生语句日志  
+
 非分片情况下,以上四个接口的方法都适合在Mongodb使用.  
 兼容支持JDBC数据源(Mongodb JDBC)  
 支持数字ID(Long,Int),支持全局唯一的数字ID  
@@ -28,12 +29,13 @@ sharding分片查询:
   查询操作返回结果是List<String[]>类型的分片  
   查询操作返回结果是Json字符串类型的分片(selectJson的分片)  
 批量插入分片  
+广播表批量插入所有库  
 分片键分片支持的运算符  
 =,in,between;其中in支持Number,List,Set  
     注意不参与分片:not in, not between,>=,<=  
-直接使用原生Mongodb shell命令操作DB(PreparedSql)  
+使用MongodbRawSql接口可直接执行原生语句(Mongodb shell命令)  
 事务  
-创建索引  
+创建索引,删除索引  
 支持查询嵌入式文档  
 地理信息插入、查询  
 
