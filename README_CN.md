@@ -137,7 +137,7 @@ new GenBean().genAllBeanFile();
 **V2.1.4.20(2023·谷雨)**  
 26)mongodb bean定义为插拔组件  
 
-### **V2.1.5.1(2023·劳动节)**  
+**V2.1.5.1(2023·劳动节)**  
 27)Mongodb面向对象操作打印原生语句日志  
 28)可直接执行原生语句(MongodbRawSql)  
 29)广播表批量插入  
@@ -145,6 +145,17 @@ new GenBean().genAllBeanFile();
 31)BeeMongodbSimpleDataSource支持配置文件使用更多属性设置  
 32)内置Json工具fastjson实现支持  
 33)fixed bug:批量插入不能自动生成主键值,已修复  
+
+### **V2.1.5.20(2023·千言万语)**  
+34)Suid,SuidRich,MoreTable,PreparedSql,MapSuid等主要的常用的接口移到org.teasoft.bee.osql.api包  
+35)增加org.teasoft.bee.mvc,org.teasoft.bee.mvc.service包,更好支持MVC编程和spring rest编程  
+36)增强转化成表名时,类型判断提示  
+37)PreparedSql将Class转化成表名时的bug  
+38)兼容形如orders_1带下划线的表命名,推荐使用如orders1格式的命名  
+39)修复关于批量分片插入时一次性参数的bug  
+40)当前对象设置命名转化器NameTranslate,只一次即失效,以便更好兼容spring bean  
+41)更新dropIndex方法  
+42)新增地理信息方法查询(使用mongodb驱动包的类型参数)  
 
 #### [Mongodb ORM(Bee)详细功能列表](MongodbORM-Function-List.md) 
 
