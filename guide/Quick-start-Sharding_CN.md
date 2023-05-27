@@ -1,8 +1,8 @@
-分库分表 Sharding: 6. Sharing 最佳实践实例
+分库分表 Sharding: 6. Sharing 最佳实践参考实例
 
 
 
-1.Sharing 最佳实践实例
+1.Sharing 最佳实践参考实例
 
 ```java
 
