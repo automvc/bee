@@ -81,7 +81,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 * 29.使用实体名_F(自动生成)引用实体字段名。  
 
 ## 最新功能介绍: 
-### **V2.1(LTS版)**主要功能  
+### **V2.1(LTS版)主要功能**  
 1.Suid,SuidRich,MoreTable,PreparedSql,MapSuid等主要的常用的接口移到org.teasoft.bee.osql.api包  
 2.更好支持MVC编程和Spring RestFul编程  
 3.bee.properties支持配置多数据源(此方式,无需xml或java代码配置) 
