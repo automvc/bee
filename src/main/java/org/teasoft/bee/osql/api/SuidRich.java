@@ -93,11 +93,12 @@ public interface SuidRich extends Suid {
 	/**
 	 * Just select some fields,and can specify page information.
 	 * @param entity table's entity(do not allow null).
-	 * @param selectFields select fields,if more than one,separate with comma.
 	 * @param start start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
 	 * @param size fetch result size (>0).
+	 * @param selectFields select fields,if more than one,separate with comma.
 	 * @return list which contains more than one entity.
 	 * @since 1.4.3
+	 * @since 2.0
 	 */
 	public <T> List<T> select(T entity, int start, int size, String... selectFields);
 
@@ -367,11 +368,12 @@ public interface SuidRich extends Suid {
 	/**
 	 * Just select some fields,and can specify page information.
 	 * @param entity table's entity(do not allow null).
-	 * @param selectFields select fields,if more than one,separate with comma.
 	 * @param start start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
 	 * @param size fetch result size (>0).
+	 * @param selectFields select fields,if more than one,separate with comma.
 	 * @return Json string, it transform from list which can contain more than one entity.
 	 * @since 1.9.8
+	 * @since 2.0
 	 */
 	public <T> String selectJson(T entity, int start, int size, String... selectFields);
 
@@ -608,14 +610,42 @@ public interface SuidRich extends Suid {
 	 * @param entityClass table's entityClass(do not allow null).
 	 * @param isDropExistTable whether drop the exist table before create
 	 * @return flag whether create successfully.
+	 * @since 2.1
 	 */
 	public <T> boolean createTable(Class<T> entityClass, boolean isDropExistTable);
 
+	/**
+	 * create normal index 
+	 * @param entityClass
+	 * @param fields
+	 * @param indexName
+	 * @since 2.1
+	 */
 	public <T> void indexNormal(Class<T> entityClass, String fields, String indexName);
 
+	/**
+	 * create unique index 
+	 * @param entityClass
+	 * @param fields
+	 * @param indexName
+	 * @since 2.1
+	 */
 	public <T> void unique(Class<T> entityClass, String fields, String indexName);
 
+	/**
+	 * create primaryKey index 
+	 * @param entityClass
+	 * @param fields
+	 * @param keyName
+	 * @since 2.1
+	 */
 	public <T> void primaryKey(Class<T> entityClass, String fields, String keyName);
 	
+	/**
+	 * drop index
+	 * @param entityClass
+	 * @param indexName
+	 * @since 2.1
+	 */
 	public <T> void dropIndex(Class<T> entityClass, String indexName);
 }
