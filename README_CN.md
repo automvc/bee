@@ -70,7 +70,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 * 19.**Suid,SuidRich,PreparedSql,MapSuid,MoreTable支持设置数据源名称**。  
 * 20.可以不用表对应的Javabean也能操作DB。  
 * 21.**无**第三方插件依赖；可零配置使用。  
-* 22.**性能好:接近JDBC的速度；文件小：Bee V1.8 仅217k**, **V1.9.5 仅315k，V1.9.8 仅310k**。  
+* 22.**性能好:接近JDBC的速度；文件小：Bee V1.17 仅502k**, **V2.1 仅827k**。  
 **辅助功能**:  
 * 23.支持自动生成表对应的Javabean，根据Javabean创建表，Javaweb**后端代码**根据**模板自动生成**；能打印非占位符的**可执行sql**,方便调试;支持生成Json格式的SQL脚本。  
 * 24.支持**读取Excel**,从Excel导入数据到DB，操作简单;支持从Excel获取配置生成数据库表。  
@@ -81,8 +81,28 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 * 29.使用实体名_F(自动生成)引用实体字段名。  
 
 ## 最新功能介绍: 
-### **V2.1**  
+### **V2.1(LTS版)**主要功能  
+1.Suid,SuidRich,MoreTable,PreparedSql,MapSuid等主要的常用的接口移到org.teasoft.bee.osql.api包  
+2.更好支持MVC编程和Spring RestFul编程  
+3.bee.properties支持配置多数据源(此方式,无需xml或java代码配置) 
+4.GenBean支持Lombok注解:@Setter,@Getter,@Data  
+5.内置Json工具fastjson实现支持,支持自定义配置使用的Json工具  
+6支持更多数据库一行代码生成整个库所有表对应的Javabean  
+new GenBean().genAllBeanFile();  
+7.广播表批量插入    
+8.完善分片Sharding功能  
+9.Mongodb ORM功能全面支持  
+9.1支持Mongodb地理信息插入,查询(可分片查询)等  
+9.2GridFs文件各种操作,支持注解    
+9.3可直接执行原生语句(MongodbRawSql)  
+9.4Mongodb面向对象操作打印原生语句日志     
+9.5支持Mongodb事务  
+9.6支持Mongodb创建索引,删除索引    
+9.7mongodb bean定义为插拔组件  
+10.更多数据库分页默认支持:MsAccess,Cubrid,HSQL,Derby,Firebird等  
 
+
+### **V2.1各版本详细功能**  
 **V2.1.2.21(Dragon Fly)**  
 1)配置文件方式,支持多数据源简易配置(spring boot配置)  
 2)屏蔽不使用mongodb时,提示没有添加mongodb相关依赖的信息  
@@ -148,7 +168,7 @@ new GenBean().genAllBeanFile();
 
 ### **V2.1.5.20(2023·千言万语)**  
 34)Suid,SuidRich,MoreTable,PreparedSql,MapSuid等主要的常用的接口移到org.teasoft.bee.osql.api包  
-35)增加org.teasoft.bee.mvc,org.teasoft.bee.mvc.service包,更好支持MVC编程和spring rest编程  
+35)增加org.teasoft.bee.mvc,org.teasoft.bee.mvc.service包,更好支持MVC编程和Spring RestFul编程  
 36)增强转化成表名时,类型判断提示  
 37)PreparedSql将Class转化成表名时的bug  
 38)兼容形如orders_1带下划线的表命名,推荐使用如orders1格式的命名  
