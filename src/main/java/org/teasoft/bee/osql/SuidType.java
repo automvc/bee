@@ -52,7 +52,13 @@ public enum SuidType {
 	 * SELECT,UPDATE,INSERT,DELETE
 	 * @since 1.11
 	 */
-	SUID("SUID"); 
+	SUID("SUID"),
+	
+	/**
+	 * @since 2.0
+	 */
+	DDL("DDL")
+	; 
 	
 	private String type;
 	

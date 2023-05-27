@@ -17,6 +17,7 @@
 
 package org.teasoft.bee.osql;
 
+import java.sql.ResultSet;
 import java.util.List;
 import java.util.Map;
 
@@ -34,29 +35,18 @@ public interface BeeSql {
 	/**
 	 * According to SQL query data, data type is consistent with entity type.
 	 * @param sql	SQL select statement
-	 * @param entity The entity corresponding to table and can not be null.
+	 * @param entityClass The entity class corresponding to table and can not be null. (update in v2.0)
 	 * @return List can contain more than one entity.
 	 */
-	public <T> List<T> select(String sql,T entity );
-	
-	
-	/**
-	 * According to SQL query more table data, data type is consistent with entity type.
-	 * @param sql	SQL select statement
-	 * @param entity The entity corresponding to table and can not be null.
-	 * @return List can contain more than one entity.
-	 * @since 1.7
-	 */
-	public <T> List<T> moreTableSelect(String sql,T entity );
-	
+	public <T> List<T> select(String sql, Class<T> entityClass);
 	
 	/**
 	 * Select some field.
 	 * @param sql	SQL select statement
-	 * @param entity The entity corresponding to table and can not be null.
+	 * @param entityClass The entity class corresponding to table and can not be null. (update in v2.0)
 	 * @return List entity which just has some field.
 	 */
-	public <T> List<T> selectSomeField(String sql,T entity ); 
+	public <T> List<T> selectSomeField(String sql, Class<T> entityClass);
 	
 	/**
 	 * Select result with function. SQL function: max,min,avg,sum,count. 
@@ -74,14 +64,6 @@ public interface BeeSql {
 	 * @return List, every element is string array(transform from record).
 	 */
 	public List<String[]> select(String sql);
-	
-	/**
-	 * Select and transform every record to Map<String,Object>.
-	 * @param sql SQL select statement
-	 * @return List, every element is a Map<String,Object>(transform from record).
-	 * @since 1.9
-	 */
-	public List<Map<String,Object>> selectMapList(String sql);
 	
 	/**
 	 * Select and return json format result.
@@ -118,4 +100,28 @@ public interface BeeSql {
 	 * @return Affected rows.
 	 */
 	public int batch(String []sqls,int batchSize);
+	
+	/**
+	 * According to SQL query more table data, data type is consistent with entity type.
+	 * @param sql  SQL select statement
+	 * @param entity The entity corresponding to table and can not be null.
+	 * @return List can contain more than one entity.
+	 * @since 1.7
+	 */
+	public <T> List<T> moreTableSelect(String sql,T entity );
+	
+	/**
+	 * Select and transform every record to Map<String,Object>.
+	 * @param sql SQL select statement
+	 * @return List, every element is a Map<String,Object>(transform from record).
+	 * @since 1.9
+	 */
+	public List<Map<String,Object>> selectMapList(String sql);
+	
+	/**
+	 * select ResultSet.After using the returned ResultSet results, call HoneyContext.clearConnForSelectRs() to close the connection.
+	 * @param sql SQL select statement
+	 * @return ResultSet
+	 */
+	public ResultSet selectRs(String sql);
 }

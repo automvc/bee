@@ -23,8 +23,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Table column names and Javabean field names mapping annotation,
- * To use @column, open the openDefineColumn configuration and realize the mapping function.
+ * Table column names and Javabean field names mapping annotation.
+ * 
+ * Before 2.0, to use @column, open the openDefineColumn configuration and realize the mapping function.
+ * Since 2.1, it will be open by default. If not used, in order to improve efficiency, it can be manually configured to be closed.
 <p><br>
 <p>Where will detect this annotation:
 <p>Object oriented way: Suid,SuidRich,MoreTable will detect.
@@ -66,6 +68,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Column {
-	@Deprecated
 	String value();
 }

@@ -17,6 +17,8 @@
 
 package org.teasoft.bee.osql;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -25,30 +27,51 @@ import java.util.Set;
  * @since  1.6
  */
 public interface ConditionAssistant {
-	
+
 	/**
 	 * If the field use in Condition,it would not be processed again in default.
 	 * @return Returns fields collection for where condition expression.
 	 */
 	public Set<String> getWhereFields();
-	
+
 	void setSuidType(SuidType suidType);
-	 
-	 /**
-	  * 
-	  * @return  return IncludeType
-	  * @since  1.7
-	  */
-	 public IncludeType getIncludeType();
-	 
-	 /**
-	  * return the fields use in method of setAdd and setMultiply.
-	  * @return set of fields
-	  * @since 1.7.2
-	  */
-	 public Set<String> getUpdatefields();
-	 
-	 public String[] getSelectField();
-	 
-	 public Boolean getForUpdate();
+
+	/**
+	 * 
+	 * @return  return IncludeType
+	 * @since  1.7
+	 */
+	public IncludeType getIncludeType();
+
+	/**
+	 * return the fields use in method of setAdd and setMultiply.
+	 * @return set of fields
+	 * @since 1.7.2
+	 */
+	public Set<String> getUpdatefields();
+
+	public String[] getSelectField();
+
+	public Boolean getForUpdate();
+
+	/**
+	 * get the map of OrderBy
+	 * @return the map of OrderBy
+	 * @since 2.0
+	 */
+	public Map<String, String> getOrderBy();
+
+	/**
+	 * the Boolean value whether has GroupBy
+	 * @return the Boolean value whether has GroupBy
+	 * @since 2.0
+	 */
+	public Boolean hasGroupBy(); // for mongodb
+
+	/**
+	 * get GroupByfields
+	 * @return the list of GroupByfields
+	 * @since 2.0
+	 */
+	public List<String> getGroupByFields(); // for mongodb
 }

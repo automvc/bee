@@ -66,6 +66,10 @@ public class UpperKey implements SqlKeyWord {
 	private static final String notIn = "NOT IN";
 	private static final String EXISTS = "EXISTS";
 	private static final String notExists = "NOT EXISTS";
+	
+	//2.0
+	public static final String union="UNION";
+	public static final String unionAll="UNION ALL";
 
 	@Override
 	public String select() {
@@ -255,6 +259,16 @@ public class UpperKey implements SqlKeyWord {
 	@Override
 	public String notExists() {
 		return notExists;
+	}
+	
+	@Override
+	public String union() {
+		return union;
+	}
+	
+	@Override
+	public String unionAll() {
+		return unionAll;
 	}
 
 }

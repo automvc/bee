@@ -13,6 +13,8 @@ public final class DatabaseConst {
 	public static final String MariaDB = "MariaDB";
 	public static final String ORACLE = "Oracle";
 	public static final String SQLSERVER = "Microsoft SQL Server";
+	public static final String MsAccess = "Microsoft Access"; //Microsoft Access
+	
 
 	public static final String H2 = "H2";
 	public static final String SQLite = "SQLite";
@@ -28,6 +30,7 @@ public final class DatabaseConst {
 	public static final String FrontBase = "FrontBase";
 
 	public static final String HSQL = "HSQL Database Engine";
+	public static final String HSQLDB = "HSQL Database";
 	public static final String Informix = "Informix Dynamic Server";
 	public static final String Ingres = "Ingres";
 	public static final String JDataStore = "JDataStore";

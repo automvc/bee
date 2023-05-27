@@ -17,6 +17,8 @@
 
 package org.teasoft.bee.osql;
 
+import org.teasoft.bee.osql.api.Condition;
+
 /**
  * Select of More Objects to SQL.
  * @author Kingstar

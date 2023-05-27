@@ -25,6 +25,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * Tran is transaction annotation for aspectj way.
  * @author Kingstar
  * @since 1.17
  */
