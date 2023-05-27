@@ -84,7 +84,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 ### **V2.1(LTS版)主要功能**  
 1.Suid,SuidRich,MoreTable,PreparedSql,MapSuid等主要的常用的接口移到org.teasoft.bee.osql.api包  
 2.更好支持MVC编程和Spring RestFul编程  
-3.bee.properties支持配置多数据源(此方式,无需xml或java代码配置) 
+3.bee.properties支持配置多数据源(此方式,无需xml或java代码配置)  
 4.GenBean支持Lombok注解:@Setter,@Getter,@Data  
 5.内置Json工具fastjson实现支持,支持自定义配置使用的Json工具  
 6支持更多数据库一行代码生成整个库所有表对应的Javabean  
@@ -502,22 +502,11 @@ OrdersService.java
 #### 1.1 maven工程,添加如下依赖  
 
 ```xml
-		<dependency>
-			<groupId>org.teasoft</groupId>
-			<artifactId>bee</artifactId>
-			<version>2.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.teasoft</groupId>
-			<artifactId>honey</artifactId>
-			<version>2.0</version>
-		</dependency>
-		<!--for log framework,Excel(poi),Redis cache,Android,HarmonyOS,Json,Tran Annotation -->
-		<dependency>
-			<groupId>org.teasoft</groupId>
-			<artifactId>bee-ext</artifactId>
-			<version>2.0</version>
-		</dependency>
+       <dependency>
+	      <groupId>org.teasoft</groupId>
+	      <artifactId>bee-all</artifactId>
+	      <version>2.1</version>
+        </dependency>
 		
 	    <!-- Mysql config.You need change it to the real database config. -->
 		<dependency>
@@ -569,13 +558,13 @@ bee.osql.loggerType=systemLogger
 import java.math.BigDecimal;
 import java.util.List;
 
-import org.teasoft.bee.osql.Suid;
+import org.teasoft.bee.osql.api.Suid;
 import org.teasoft.honey.osql.core.BeeFactoryHelper;
 
 /**
  * 查,改,增,删 Suid (select,update,insert,delete)实例
  * @author Kingstar
- * @since  1.0
+ * @since  2.1
  */
 public class SuidExam {
 	
