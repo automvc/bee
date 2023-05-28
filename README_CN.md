@@ -48,7 +48,7 @@ Sharding分片目标:对业务开发透明,编码透明,只加少量分片配置
 * 15.**注册器、拦截器、多租户,支持自定义TypeHandler,处理查询的ResultSet结果**;  
                  转换器SetParaTypeConvert转换PreparedStatement参数的类型。    
 * 16.自定义动态SQL标签,@in,@toIsNULL1,@toIsNULL2,&lt;if isNotNull>,&lt;if isNotBlank>;  
-动态sql,将list转为像in (1,2,3)的语句,不需要foreach,批量插入也不需要foreach。      
+     动态sql,将list转为像in (1,2,3)的语句,不需要foreach,批量插入也不需要foreach。      
 * 17.复杂查询前后端可自动解析。  
 * 18.**一级缓存**，概念简单，功能强大；一级缓存也可以**像JVM一样进行细粒度调优**；**支持可更新的长久缓存列表**，更新配置表，**不需要重启**。天生抵御缓存穿透 。 
     **二级缓存扩展支持;内置Redis二级缓存支持**。  
