@@ -36,7 +36,7 @@ Sharding分片目标:对业务开发透明,编码透明,只加少量分片配置
 * 5.可轻松实现**只查询一部分字段**，轻松实现**原生语句分页**。   
 * 6.支持**直接返回Json**格式查询结果; 链式编程。  
 * 7.**Sharding分片**,分库分表;只分库;只分表;读写分离;(对以前的代码无需修改,该功能对代码是透明的,即无需额外编码)。 
-* 8.**多种DB**支持轻松扩展(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Access,金仓,达梦等,NoSQL:**Cassandra,Mongodb**等直接可用),理论上支持JDBC的DB都可以支持,此外还支持Android和Harmony; 
+* 8.**多种DB**支持轻松扩展(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Access,金仓,达梦等,NoSQL:**Cassandra,Mongodb**等直接可用),理论上支持JDBC的DB都可以支持,此外还支持**Android和Harmony**; 
 * 9.更多数据库分页默认支持:MsAccess,Cubrid,HSQL,Derby,Firebird等  
 * 10.**多种数据库可同时使用(如同时使用Mysql,Oracle,SQL Server)**。  
 
@@ -47,7 +47,7 @@ Sharding分片目标:对业务开发透明,编码透明,只加少量分片配置
 * 14.Mongodb ORM,Mongodb分库分表。  
 * 15.**注册器、拦截器、多租户,支持自定义TypeHandler,处理查询的ResultSet结果**;  
                  转换器SetParaTypeConvert转换PreparedStatement参数的类型。    
-* 16.自定义动态SQL标签,@in,@toIsNULL1,@toIsNULL2,<if isNotNull>,<if isNotBlank>;  
+* 16.自定义动态SQL标签,@in,@toIsNULL1,@toIsNULL2,&lt;if isNotNull>,&lt;if isNotBlank>;  
 动态sql,将list转为像in (1,2,3)的语句,不需要foreach,批量插入也不需要foreach。      
 * 17.复杂查询前后端可自动解析。  
 * 18.**一级缓存**，概念简单，功能强大；一级缓存也可以**像JVM一样进行细粒度调优**；**支持可更新的长久缓存列表**，更新配置表，**不需要重启**。天生抵御缓存穿透 。 
