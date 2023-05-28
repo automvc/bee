@@ -517,5 +517,167 @@ fixed bug:
 2)事务注解Tran  
 
 
-	
-	
+### **V2.0**  
+**V2.0(母爱)**  
+**使用分库分表像使用单库一样方便;使用MongoDB像使用MySQL一样容易.**  
+1.新增分库分表支持:面向对象分片,JDBC分片  
+1.1面向对象分片  
+1.2Suid,SuidRich,查询,更新分片  
+1.3MoreTable多表查询分片  
+1.4批量插入分片  
+1.5MAX,MIN,COUNT,SUM,AVG分片查询分片  
+1.6分页/排序分片  
+1.7分片种类支持:分库分表,仅分库,仅分表  
+1.8分片路由种类支持:一库一表,一库多表,多库多表,全库全表,只指定表,只指定库  
+1.9通过Hint强制指定当次操作的分片路由(指定ds和table)  
+1.10分片的广播表  
+1.11Sharding分片配置支持  
+1.12流式查询,降低查询内存使用(JDBC)  
+1.13分片支持:=,in,between;其中in支持Number,List,Set  
+        不参与分片:not in, not between,>=,<=。 
+2新增Mongodb ORM功能支持(使用类似JDBC用法)  
+3新增Mongodb分片功能  
+4新增MS Access支持  
+
+**各V2.0.x.x版本更新详细请看以下列表.**  
+
+**V2.0 Sharding分片功能**  
+**V2.0.0.1001(2022·国庆节)**  
+1)面向对象分片  
+2)Suid,SuidRich,查询,更新分片  
+3)MoreTable多表查询分片  
+4)批量插入分片  
+5)MAX,MIN,COUNT,SUM,AVG分片查询分片  
+6)分页/排序分片  
+7)分片种类支持:分库分表,仅分库,仅分表  
+8)分片路由种类支持:一库一表,一库多表,多库多表,全库全表,只指定表,只指定库  
+9)通过Hint强制指定当次操作的分片路由(指定ds和table)  
+10)分片的广播表  
+11)Sharding分片配置支持  
+12)流式查询,降低查询内存使用(JDBC)  
+
+**V2.0.1.1(2023·元旦)**  
+13)**mongodb ORM功能**  
+14)**mongodb Sharding分片功能**  
+15)SuidRich接口中,调整部分方法中指定查询字段的参数位置,并更改为变长参数  
+16)SuidRich接口添加查询首条记录的方法:selectFirst(T entity, Condition condition)  
+
+**V2.0.1.22(2023·春节)**  
+17)增加聚合(非分组)的分片(JDBC,Mongodb);增加分组聚合的分片(JDBC)  
+   Mongodb分组聚合,可添加条件限制在一个组内使用非分组聚合  
+18)增加支持MS Access  
+19)支持Mongodb生成Javabean,也支持多层嵌入式文档结构生成Javabean  
+20)增加SuidRichExt,支持非硬编码指定实体字段  
+21)广播表查询(随机选定数据源),广播表更新(全部节点都执行)  
+22)DDL:sharding分库分表创建表;创建表传递Class类型参数  
+
+**V2.0.2.5(2023·元宵节)**  
+23)update(T,T)更新内部实现  
+24)Desensitize 支持不用知道结束位置 @Desensitize(start=0, size=-1, mask="*")  
+   0123456789 -> *********  
+25)分片支持:=,in,between;其中in支持Number,List,Set  
+        不参与分片:not in, not between,>=,<=。  
+26)完善HintManager,可只指定dataSourceName,或可只指定tableName  
+建议两者都指定,或至少指定tableName  
+27)HintManager可使用简称HM  
+
+**V2.0.2.14(2023·情人节)**  
+完善:Mongodb ORM日志功能  
+完善:不同包的实体即使指定同一个表也不能共享缓存  
+完善:Json String类型查询结果转换增强  
+fixed bug:PreparedSql接口的批量插入insertBatch空指针和占位符  
+
+### **V2.1(LTS版)主要功能**  
+1.Suid,SuidRich,MoreTable,PreparedSql,MapSuid等主要的常用的接口移到org.teasoft.bee.osql.api包  
+2.更好支持MVC编程和Spring RestFul编程  
+3.bee.properties支持配置多数据源(此方式,无需xml或java代码配置)  
+4.GenBean支持Lombok注解:@Setter,@Getter,@Data  
+5.内置Json工具fastjson实现支持,支持自定义配置使用的Json工具  
+6支持更多数据库一行代码生成整个库所有表对应的Javabean  
+new GenBean().genAllBeanFile();  
+7.广播表批量插入    
+8.完善分片Sharding功能  
+9.Mongodb ORM功能全面支持  
+9.1支持Mongodb地理信息插入,查询(可分片查询)等  
+9.2GridFs文件各种操作,支持注解    
+9.3可直接执行原生语句(MongodbRawSql)  
+9.4Mongodb面向对象操作打印原生语句日志     
+9.5支持Mongodb事务  
+9.6支持Mongodb创建索引,删除索引    
+9.7mongodb bean定义为插拔组件  
+10.更多数据库分页默认支持:MsAccess,Cubrid,HSQL,Derby,Firebird等  
+
+### **V2.1各版本详细功能**  
+**V2.1.2.21(Dragon Fly)**  
+1)配置文件方式,支持多数据源简易配置(spring boot配置)  
+2)屏蔽不使用mongodb时,提示没有添加mongodb相关依赖的信息  
+3)修复ObjSQLRichService与Spring整合的多产生一个实例的bug  
+4)屏蔽检查日志框架的异常  
+5)Search表达式多余括号兼容  
+
+**V2.1.2.28(Eleven)**  
+6)bee.properties支持配置多数据源(此方式,无需xml或java代码配置)  
+数据源连接池，多数据源配置，内置支持Hikari,Druid  
+7)fixed bug:批量插入不能设置数据源名称  
+8)Mongodb查询结果日期类型转换  
+9)多数据源但都是Mongodb,可以设置bee.dosql.multiDS.justMongodb=true  
+则BF.getSuid()会返回Mongodb类型的Suid实现类  
+10)支持spring方式生成Mongodb对应的实现类对象  
+//  Mongodb使用  
+//	@Resource(name = "mongodbObjSQLRichService")  
+//	ObjSQLRichService objSQLRichService;  
+//  使用mongodb  type1  
+//	@Autowired  
+//	@Qualifier(value = "mongoSuidRich")  
+//	SuidRich suidRich; // 可以  
+//	//使用mongodb  type2  
+//	@Resource(name = "mongoSuidRich")  
+//	SuidRich suidRich; // 可以  
+11)Mongodb GridFS文件存储  
+
+**V2.1.3.6(惊蛰)**  
+12)GridFs annotation为存储文件到MongoDB后,将文件id存入指定字段  
+13)fixed bug: OneTimeSnowflakeId.getRangeId批量取号,遇边界值跳号问题;  
+   sequence & segment达到最大值,要重置segment为0  
+14)fixed bug: PearFlowerId.getRangeId批量取号,遇边界值跳号问题  
+
+**V2.1.3.12(2023·植树节)**  
+15)支持更多数据库一行代码生成整个库所有表对应的Javabean  
+new GenBean().genAllBeanFile();  
+16)数据源连接池，多数据源配置，内置支持 增加 Dbcp2，Tomcat, C3P0  
+17)完善GridFs注解保存文件，保存文件名，元数据等  
+18)修改Cache tableNameList的结构为Vector  
+19)GenBean支持Lombok注解:@Setter,@Getter,@Data  
+
+**V2.1.3.21(2023·春分)**  
+20)提供两个扩展接口SuidRichExt,MongoSuidRichExt及快捷输入类BFX  
+21)完善Mongodb文件元数据GridFsFile查询  
+22)fixed bug: DDL创建表(Sharding); 流式分片查询时,排序字段转换  
+
+**V2.1.4.5(2023·荣耀)**  
+23)支持Mongodb地理信息插入、查询,包括分片  
+24)支持Mongodb创建索引  
+25)支持Mongodb事务  
+
+**V2.1.4.20(2023·谷雨)**  
+26)mongodb bean定义为插拔组件  
+
+**V2.1.5.1(2023·劳动节)**  
+27)Mongodb面向对象操作打印原生语句日志  
+28)可直接执行原生语句(MongodbRawSql)  
+29)广播表批量插入  
+30)更多数据库分页默认支持:MsAccess,Cubrid,HSQL,Derby,Firebird等  
+31)BeeMongodbSimpleDataSource支持配置文件使用更多属性设置  
+32)内置Json工具fastjson实现支持  
+33)fixed bug:批量插入不能自动生成主键值,已修复  
+
+### **V2.1.5.20(2023·千言万语)**  
+34)Suid,SuidRich,MoreTable,PreparedSql,MapSuid等主要的常用的接口移到org.teasoft.bee.osql.api包  
+35)增加org.teasoft.bee.mvc,org.teasoft.bee.mvc.service包,更好支持MVC编程和Spring RestFul编程  
+36)增强转化成表名时,类型判断提示  
+37)PreparedSql将Class转化成表名时的bug  
+38)兼容形如orders_1带下划线的表命名,推荐使用如orders1格式的命名  
+39)修复关于批量分片插入时一次性参数的bug  
+40)当前对象设置命名转化器NameTranslate,只一次即失效,以便更好兼容spring bean  
+41)更新dropIndex方法  
+42)新增地理信息方法查询(使用mongodb驱动包的类型参数)  
