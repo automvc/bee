@@ -388,4 +388,4 @@ https://gitee.com/automvc/bee
 搜索:  
 综合应用  
 ### 2.11.4 API DOC  
-API-V1.11(最新版) 下载代码含有 bee-1.11中文和英文版API,bee-1.11中文版源码  
+API-V1.11 下载代码含有 bee-1.11中文和英文版API,bee-1.11中文版源码  
