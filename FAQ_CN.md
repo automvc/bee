@@ -9,7 +9,7 @@ https://github.com/automvc/bee
 
 Q: Bee支持几种数据库?  
 
-A: 多种DB支持轻松扩展(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Access,金仓,达梦等,NoSQL:Cassandra,Mongodb等直接可用),  
+A: 多种DB支持轻松扩展(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Access,金仓,达梦等,  NoSQL:Cassandra,Mongodb等直接可用),  
 理论上支持JDBC的DB都可以支持,此外还支持Android和Harmony;  
 更多数据库分页默认支持:MsAccess,Cubrid,HSQL,Derby,Firebird等。  
 多种数据库可同时使用(如同时使用Mysql,Oracle,SQL Server)。  
@@ -187,7 +187,7 @@ updateById(T entity,Condition condition);
 
 A: ORM Bee框架是采用接口与实现分离的设计方式.Bee是接口,而Honey则是Bee的实现.	
 
-14-2. Q: Bee开源的代码都是接口定义吗 没有实现吗？ 
+14 (2). Q: Bee开源的代码都是接口定义吗 没有实现吗？ 
 
 A: 接口与实现分离. 使用API可只关注接口.  
 Bee是接口, Honey是实现, Bee-ext是涉及第三方的扩展实现(可能会用到) 
@@ -651,6 +651,16 @@ A: 全局NameTranslate设置,参考第29.
    V1.11支持在Suid等对象使用setNameTranslate方法设置命名转换器。	
    从V1.17.21或V2.1开始，继承CommOperate的接口，都可以使用setNameTranslateOneTime方法，设置只有效一次的命名转换器。	
    对于临时要用其它转换器的场景很实用。	
+   
+42.
+
+Q:  Bee自定义参数类型转换器与查询结果处理器  ?   
+SetParaTypeConvert接口用于定义在为PreparedStatement设置参数时,转换Javabean的属性类型.  
+TypeHandler 处理查询的ResultSet结果,使其与Javabean的匹配.  
+
+A: 参考:   
+[https://blog.csdn.net/abckingaa/article/details/123586290](https://blog.csdn.net/abckingaa/article/details/123586290)
+ 
  
 其它:
 
@@ -676,3 +686,7 @@ gitee wiki:&nbsp;[https://gitee.com/automvc/bee/wikis](https://gitee.com/automvc
 github issue:&nbsp;[https://github.com/automvc/bee/issues](https://github.com/automvc/bee/issues)&nbsp;
 
 github wiki:&nbsp;[https://github.com/automvc/bee/wiki](https://github.com/automvc/bee/wiki)
+
+[Bee常用大全](/guide/Frequently-Used-Guide.md)  
+
+[CSDN: ORM Bee资料大全](https://blog.csdn.net/abckingaa/article/details/121664398)
