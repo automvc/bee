@@ -1,30 +1,21 @@
-Bee常见疑问收集:  
-(已同步到最新版本的V2.1 LTS版 2023-05)  
-Bee源码首页：  
-https://gitee.com/automvc/bee  
-或：  
-https://github.com/automvc/bee  
+Bee常见疑问收集:
 
 1.
 
 Q: Bee支持几种数据库?  
 
-A: 多种DB支持轻松扩展(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Access,金仓,达梦等,NoSQL:Cassandra,Mongodb等直接可用),  
-理论上支持JDBC的DB都可以支持,此外还支持Android和Harmony;  
-更多数据库分页默认支持:MsAccess,Cubrid,HSQL,Derby,Firebird等。  
-多种数据库可同时使用(如同时使用Mysql,Oracle,SQL Server)。  
+A: MySQL,MariaDB,Oracle,SQL Server,H2,SQLite,PostgreSQL等等都是支持的,只要该DB支持JDBC,Bee就可以轻松支持它!
 
 2.
 
 Q:&nbsp;表与实体Javabean可以自动映射吗?
 
-A: Bee采用约定优于配置的方式,可以自动映射。默认实现有4种方式, 且支持自定义映射规则扩展.  
+A: Bee采用约定优于配置的方式,默认实现有三种方式, 且支持自定义映射规则扩展.  
 在bee.properties作相关配置即可切换默认实现方式.
 
 ```properties
 #since 1.7.2
-#default implement translate type. 1 : order_no<-->orderNo(DB<-->Java), 2: ORDER_NO<-->orderNo(DB<-->Java), 
-# 3: original,  4 : DbUpperAndJavaLower(since 1.17), ORDER_NO<-->order_no(DB<-->Java)
+#default implement translate type. 1 : order_no<-->orderNo(DB<-->Java), 2: ORDER_NO<-->orderNo(DB<-->Java), 3: original
 #if want to use other naming rule, you can define a new class implements NameTranslate
 #default value is :1
 bee.osql.naming.translateType=1
@@ -36,8 +27,7 @@ bee.osql.naming.translateType=1
 Q:&nbsp;Bee支持读写分离,支持多数据源吗?
 
 A: V1.8支持读写分离一主多从, 仅分库等多数据源模式。  
-分布式环境下生成连续单调递增(在一个workerid内),全局唯一数字id。  
-从2.0开始，Bee支持完善的Sharding分库分表功能：分库分表，只分库，同库只分表，读写分离。  
+分布式环境下生成连续单调递增(在一个workerid内),全局唯一数字id。
 
 4.    
     
@@ -54,9 +44,7 @@ A:&nbsp;V1.8支持同库分表,动态表名映射.&nbsp;
 
 Q: Bee有说明文档吗?有测试用例吗?这么好用的orm竟然没文档??!!!
 
-A: 请参考Bee源码网站wiki,或: JavaWeb开发的利器 系统文章，请关注微信公众号: 软件设计活跃区. 测试用例,请查看:[https://gitee.com/automvc/bee-exam](https://gitee.com/automvc/bee-exam)  
-
-另外，还可参考本文写在最后的：其它相关资源  
+A: 请参考Bee源码网站wiki,或: JavaWeb开发的利器 系统文章，请关注微信公众号: 软件设计活跃区. 测试用例,请查看:[https://gitee.com/automvc/bee-exam](https://gitee.com/automvc/bee-exam)
 
 6.    
     
@@ -72,7 +60,6 @@ Q: Bee怎么具有AI特性?
 
 A: 通过从手工写sql语句直接用JDBC操作数据库，到简单的DB工具类， 再到像Hibernate的旧版本通过操作对象将操作DB封闭到Dao； 再到后来写dao都觉得累赘，通用操作只写个空接口。 ORM工具的发展，就是一步步提炼，简化操作的历史。 假如用AI学习，演变，那写空接口都会觉得是多余的，&nbsp;每个数据库表不就是表名,以及包含一些列而矣吗??!!!&nbsp;为什么不能用同样的方式去处理呢??!!!&nbsp;而且dao层可以直接去掉放到ORM框架统一处理。 为了实现这些目标,就有了Bee框架。 原来编码复杂度是O(n)的，现在变成是O(1),无论多少个表,你都可以不用另外再写dao代码。 可以用时间复杂度和空间复杂度体会下编码复杂度这种变化。
 
-
 8.    
     
 
@@ -85,11 +72,7 @@ A: 都是可以的.参考Bee的org.teasoft.bee.distribution.GenId接口的三种
 
 Q:&nbsp;与传统ORM工具的比较?
 
-A: Hibernate的概念太复杂，学习成本高，更新会先查询再更新，n+1问题。Mybatis即使进行单表的Suid操作也需要人工写sql或生成sql文件，需要维护的sql太多;若是整合第三方插件简化单表操作，成本太高。 更多比较,参考:&nbsp;[https://blog.csdn.net/abckingaa/article/details/84557336](https://blog.csdn.net/abckingaa/article/details/84557336)
-
-Hibernate/MyBatis+ plus +Sharding JDBC + Jpa+ Spring data+ GraphQL+ App ORM (Android, 鸿蒙)= Bee  
-要整合一堆的工具，还不如只用一个小巧又功能强大的工具。犹如 JAVA 界的数据源连接池 Hikari， 文件虽小，功能却不赖！  
-Bee 2.1 LTS版 完善的Sharding分片功能, 完善的MongoDB ORM功能。  
+A: Hibernate的概念太复杂，学习成本高，更新会先查询再更新，n+1问题。Mybatis即使进行单表的Suid操作也需要人工写sql或生成sql文件，需要维护的sql太多。 更多比较,参考:&nbsp;[https://blog.csdn.net/abckingaa/article/details/84557336](https://blog.csdn.net/abckingaa/article/details/84557336)
 
 10.    
     
@@ -135,7 +118,7 @@ bee.osql.cache.fullClearRate=0.2
 #只有更改时才会清除缓存,以便同步新的值到缓存. 表名不区分大小写
 #bee.osql.cache.modifySyn=para
 
-# since v1.7.2. default value is: false (use cache)。为true时，可关闭缓存
+# since v1.7.2. default value is: false (use cache)
 #bee.osql.cache.nocache=false
 
 #since 1.8.99
@@ -198,17 +181,12 @@ Q:&nbsp;Bee非常易用,编写代码少,但使用是一方面, 它的性能如�
 
 A: 性能绝对是过得去的,接近JDBC的性能．README给出了详细的表格比较数据．　　详细比较还开启了一个项目，欢迎ＰＫ。  
 https://gitee.com/automvc/orm-compare  
-手机开发ORM对比，可参考，[Android](https://gitee.com/automvc/bee/blob/master/guide/Quick-start-for-Android_CN.md)  
-[鸿蒙Harmony](https://gitee.com/automvc/bee/blob/master/guide/Quick-start-for-Harmony_CN.md)
 
 16.
 
 Q:&nbsp;Bee适合手机开发领域吗?
 
 A: Bee文件小。bee V1.8 jar files 仅217k. 而且性能也接近JDBC的性能.还专门对H2,SQLite作了优化.
-从1.17开始，内置增加Android(安卓)ORM功能，增加HarmonyOS(鸿蒙)ORM功能。
-文件小：Bee V1.17 仅502k, V2.1 仅827k。
-性能好:接近JDBC的速度；手机环境专门性能对比，可参考第15点或源码首页对比数据。
 
 17.    
     
@@ -348,8 +326,7 @@ A: 别的ORM框架，将insert与update合为一个save方法，每次操作前�
 Q:  Bee为什么不需要写mapper,dao?  
 A:  这是Bee的一大优势，Bee的编码复杂度是O(1). Bee概念简单，易于使用，编码量少。  
     Bee通过约定优于配置原则,通过封装,已经简化了开发.  
-       可以更简单,省时省力,即可提高开发效率,又可节约开发成本,何乐而不为呢!  
-    编码复杂度的重要性不亚于时间复杂度和空间复杂度；编码复杂度低的软件还有助于优化时间复杂度和空间复杂度。   
+       可以更简单,省时省力,即可提高开发效率,又可节约开发成本,何乐而不为呢!
  
 25.
 
@@ -372,7 +349,7 @@ https://gitee.com/automvc/bee-exam/blob/master/src/main/java/org/teasoft/exam/be
 Q:  联合主键如何查询或更新记录?  
 A:  Bee通过约定优于配置原则,约定主键名称是id,这样可以使问题变量简单,处理的效率也更高.  
 	对于一些老的系统,有联合主键的,当作一般查询处理即可,即有两个字段作为主键,要用联合主键时,设置两个属性的值,框架就会负责解析(Suid的update方法,SuidRich的selectById等方法默认是id主键则不适用).  
-	从V1.11开始， 可以使用PrimaryKey注解.  
+	V1.11 可以使用PrimaryKey注解.  
 	
 28.
 
@@ -406,8 +383,6 @@ A:  Suid的update方法,SuidRich的selectById等方法默认是将id为会字段
 		Printer.printList(list2);
 	}
  ```
- 从V1.11开始， 可以使用PrimaryKey注解.  
- 从1.17开始，也可以使用JAP的Id注解.  
  
 29.
 
@@ -425,7 +400,7 @@ A:  使用Condition接口的opOn方法.
     
 31.
 
-Q:  请问Bee中,批量更新是怎么处理的呢    
+Q:  请问下Bee中批量更新是怎么处理的呢    
 A:  update 不像insert 有批量的接口。  因为用同一条语句可以更新多条记录.  
 如 update table_name set field1='abc' where field2='aa' and field3='bb',  
 符合where条件的记录都将被更新.  
@@ -464,8 +439,8 @@ A:  参考:https://blog.csdn.net/abckingaa/article/details/119859192　　
 	private Columns columns; 
 //	private List<Columns> list;
 
-//注解里subClass属性,当两个实体在同一个包,包名,是可以省略的.  
-//从V1.11开始，建议使用subClazz；subClass属性已弃用.  
+//注解里subClass属性,当两个实体在同一个包,包名,是可以省略的.
+
 
 34.
 
@@ -485,11 +460,10 @@ A:  //单笔操作,默认自动提交事务
 
            transaction.commit();//提交事务,事务结束
 
-    } catch (BeeException e) {
+ } catch (BeeException e) {
       Logger.error(e.getMessage());
-    }finally {
       transaction.rollback();
-	}
+    }
  ```
  
 具体例子如下：
@@ -527,13 +501,9 @@ Transaction transaction=SessionFactory.getTransaction();
     } catch (BeeException e) {
      // e.printStackTrace();
       Logger.error(e.getMessage());
-    }finally {
       transaction.rollback();
-	}
+    }
  ```
- 
-除了声明式事务，也可以使用事务注解@Tran(从1.17)。  
-事务注解实现依赖于aspectj，不需要spring；需要加入bee-ext注解。  
 
 35.
 
@@ -541,24 +511,24 @@ Q:  Java ORM框架Bee分页实例
       
 A:  分页实例如下(结合springMVC):  
 
-分页相关的,只需要传页码page和一页的数据条数size;处理后返回一页的数据.  
+分页相关的,只需要传页码和一页的数据条数;返回就返回一页的数据.  
 
  ```java 
 	@RequestMapping("/list")
 	public Result list(Orderhistory orderhistory,
 	     @RequestParam(value = "page", defaultValue = "1", required = false) int page, 
-		 @RequestParam(value = "size", defaultValue = "20", required = false) int size) {	
+		 @RequestParam(value = "rows", defaultValue = "20", required = false) int rows) {	
 	 Result  result =new Result();
 	  
 	int total = objSQLRichService.count(orderhistory); //可以用上缓存,提高效率
-	List<Orderhistory> list=objSQLRichService.select(orderhistory, (page-1)*size, size);
+	List<Orderhistory> list=objSQLRichService.select(orderhistory, (page-1)*rows, rows);
 	result.setRows(list);
 	result.setTotal(total);//返回的总数据条数,有些前端框架需要.
 		
 	 return result;
     }
  ```
-自2.1开始，默认提供Result返回结构体的定义(org.teasoft.bee.mvc.Result)。  
+
 
 36.
 
@@ -574,8 +544,7 @@ jdbcTypeToFieldType-Oracle.properties
 文件里,配置:  
 DATE=Timestamp
 可以将DATE指定转换为:Timestamp  
-Honey工程下,预设了部分文件(从1.17开始,jar不带这些文件,但可以从Honey源码首页下载源码,源码里会带有)  
-用户也可以新建相关的文件.
+Honey工程下,预设了部分文件  
 jdbcTypeToFieldType-Oracle.properties  
 jdbcTypeToFieldType-H2.properties  
 jdbcTypeToFieldType-MySQL.properties  
@@ -626,16 +595,13 @@ Q:  在Maven工程,使用Bee,编程时没有提示javadoc API信息.如何设置
 A: 因为maven只下载了jar包,没有下载源码文件.  
 在IDE里,下载即可.  
 如Eclipse里, 工程右击, Maven-->Download Sources.  
-可在本地maven仓库验证,是否多了一个文件:bee-2.1-sources.jar  
+可在本地maven仓库验证,是否多了一个文件:bee-1.9.8-sources.jar  
 
 39.
 
 Q:  PreparedSql 是否支持多数据源?  
       
 A: PreparedSql的方法中带有泛型T的是支持多数据源的; 没带有泛型的，在多数据源场景，会操作默认数据源。	
-
-自V1.17开始，可以使用方法：
-setDataSourceName("设置的ds名称")，设置当前对象的数据源。
 
 40.
 
@@ -649,8 +615,7 @@ Q:  自己定义的命名转换器,如何设置  ?
       
 A: 全局NameTranslate设置,参考第29.
    V1.11支持在Suid等对象使用setNameTranslate方法设置命名转换器。	
-   从V1.17.21或V2.1开始，继承CommOperate的接口，都可以使用setNameTranslateOneTime方法，设置只有效一次的命名转换器。	
-   对于临时要用其它转换器的场景很实用。	
+
  
 其它:
 
@@ -669,10 +634,10 @@ https://gitee.com/automvc/bee-starter-demo
 
 **其它相关资源:**
 
-gitee issue:&nbsp;[https://gitee.com/automvc/bee/issues](https://gitee.com/automvc/bee/issues)&nbsp;
+gitee issue:&nbsp;[https://gitee.com/automvc/bee/issues?assignee\_id=&amp;author\_id=&amp;branch=&amp;issue\_search=&amp;label\_name=&amp;milestone\_id=&amp;program\_id=&amp;scope=&amp;sort=&amp;state=closed](https://gitee.com/automvc/bee/issues?assignee_id=&amp;author_id=&amp;branch=&amp;issue_search=&amp;label_name=&amp;milestone_id=&amp;program_id=&amp;scope=&amp;sort=&amp;state=closed)&nbsp;
 
 gitee wiki:&nbsp;[https://gitee.com/automvc/bee/wikis](https://gitee.com/automvc/bee/wikis)
 
-github issue:&nbsp;[https://github.com/automvc/bee/issues](https://github.com/automvc/bee/issues)&nbsp;
+github issue:&nbsp;[https://github.com/automvc/bee/issues?q=is%3Aissue+is%3Aclosed](https://github.com/automvc/bee/issues?q=is%3Aissue+is%3Aclosed)&nbsp;
 
 github wiki:&nbsp;[https://github.com/automvc/bee/wiki](https://github.com/automvc/bee/wiki)
