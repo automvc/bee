@@ -65,6 +65,19 @@ public class BeeExam {
 		isFinished=true;
 		Assert.assertEquals(isFinished,true);
 		
+//		V2.1
+//		2023-06-13 (yyyy-MM-dd)
+//		Instructions Counters	
+//		Element	   Coverage
+//		Bee	        93.2%
+//		Honey	    71.7%	
+	
+//		Type Counters	
+//		Element	  Coverage
+//		Bee	       100.0%
+//		Honey	   94.1%
+
+		
 //		V1.17
 //		2022-08-04 (yyyy-MM-dd)
 //		Instructions Counters	
@@ -334,6 +347,18 @@ public class BeeExam {
 //		bee-exam(v1.17)2022-08-04 11.38.16.618-normal(SQLite).txt
 //		bee-exam(v1.17)2022-08-04 11.37.35.953-normal(Oracle).txt
 //		bee-exam(v1.17)2022-08-04 11.37.14.384-normal(MySQL).txt
+
+
+//		bee-exam(v2.1)2023-06-13 23.57.30.177-cache(MySQL).txt
+//		bee-exam(v2.1)2023-06-13 23.56.56.71-normal(MySQL).txt
+//		bee-exam(v2.1)2023-06-13 23.56.31.297-normal(MySQL).txt
+//		bee-exam(v2.1)2023-06-13 23.56.00.371-normal(PostgreSQL).txt
+//		bee-exam(v2.1)2023-06-13 23.55.50.59-normal(H2).txt
+//		bee-exam(v2.1)2023-06-13 23.55.02.288-normal(Oracle).txt
+//		bee-exam(v2.1)2023-06-13 23.54.51.219-normal(Microsoft SQL Server).txt
+//		bee-exam(v2.1)2023-06-13 23.54.19.39-normal(SQLite).txt
+//		bee-exam(v2.1)2023-06-13 23.53.26.232-normal(MongoDB).txt
+//		bee-exam(v2.1)2023-06-13 23.53.23.176-Sharding(MySQL).txt
 
 	}
 }
