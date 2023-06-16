@@ -419,3 +419,122 @@ fixed bug:
 V1.17.0.5  
 1)Sql Server support (start,size) paging  
 2)@Tran transaction annotation  
+
+### **V2.0 Sharding(Mother Love)** 
+**The use of more dataSources is as convenient as the use of single database; Using MongoDB is as easy as using MySQL**  
+1)add support object-oriented Sharding,JDBC Sharding  
+2)add support Mongodb ORM(use like JDBC)  
+3)add Mongodb Sharding  
+4)add support MS Access  
+5)add annotation default implementation(org.teasoft.bee.osql.annotation)  
+6)enhance:entities of different packages cannot share the cache even if the same table is specified  
+enhance:Json String type query result conversion enhance  
+7)fixed bug:PreparedSql interface's method insertBatch null pointer and placeholder bug 
+
+**V2.0.0.1001(2022·National Day) **  
+Add Sharding Function  
+1)object-oriented Sharding  
+2)Suid,SuidRich,select,modify Sharding  
+3)MoreTable select Sharding  
+4)batch insert Sharding  
+5)MAX,MIN,COUNT,SUM,AVG select Sharding  
+6)paging/sort select Sharding  
+7)support Sharding type:Separate databases and tables,separate databases only,separate tables only  
+8)support route Sharding type:One database and one table, one database and multiple tables, multiple databases and multiple tables, all databases and all tables, only specifying tables, only specifying databases  
+9)Forcibly specify the partition route for the current operation through Hint(appoint ds and table)  
+10)Sharding broadcast table support  
+11)easy Sharding config support   
+12)stream select,reduce query memory usage  
+
+**V2.0.1.1(2023·New Year)**  
+13)**mongodb ORM function**  
+14)**mongodb Sharding function**  
+15)SuidRich,adjust the parameter position of the specified query field in some methods and change it to a variable-length parameter  
+16)SuidRich add method select first record:selectFirst(T entity, Condition condition)  
+
+**V2.0.1.22(2023·Spring Festival)**  
+17)add support sharding for groupBy(including JDBC,Mongodb)  
+18)add support MS Access  
+19)support Mongodb generate Javabean,including multi-layer embedded document structure  
+20)add SuidRichExt,support non-hardcode point out the entity field  
+21)broadcast table query (randomly selected one dataSource), broadcast table modify (executed in all nodes)  
+22)DDL:createTable for sharding  
+
+**V2.0.2.5(2023·the Lantern Festival)**  
+23)update(T,T) change internal implementation  
+24)Desensitize support does not need to know the end position @Desensitize(start=0, size=-1, mask="*")  
+   0123456789 -> *********  
+25)Partitioning support:=, in, between; Where in supports Number, List and Set  
+Do not participate in fragmentation: not in, not between,>=,<=.  
+26)To improve HintManager, only dataSourceName or tableName can be specified  
+It is recommended to specify both or at least tableName  
+27)HintManager can use the shortcut HM  
+
+**V2.0.2.14(2023·Valentine's Day)**  
+enhance Mongodb ORM log  
+enhance Json String result transfer  
+fixed bug about insertBatch in PreparedSql  
+
+
+### **V2.1**  
+**V2.1.2.21(Dragon Fly)**  
+1)Bee+SpringBoot support application file config multi-dataSource  
+2)when do not use Mongodb,no need the dependency  
+3)fixed bug:ObjSQLRichService+Spring generate more one error instance  
+4)suppress the check Log implement msg  
+5)Search expression redundant bracket compatibility
+
+**V2.1.2.28(Eleven)**  
+6)bee.properties support config multi-dataSource(this type no need xml,java code config)  
+7)fixed bug:Batch insert cannot set data source name  
+8)Mongodb query result date type conversion  
+9)multi dataSource is only Mongodb,can set bee.dosql.multiDS.justMongodb=true  
+then BF.getSuid() can return Mongodb type Suid instance  
+10)Support spring generation of Mongodb corresponding implementation class objects  
+//  Mongodb  
+//	@Resource(name = "mongodbObjSQLRichService")  
+//	ObjSQLRichService objSQLRichService;  
+//  use mongodb  type1  
+//	@Autowired  
+//	@Qualifier(value = "mongoSuidRich")  
+//	SuidRich suidRich; // ok  
+//	use mongodb  type2  
+//	@Resource(name = "mongoSuidRich")  
+//	SuidRich suidRich; // ok  
+11)Mongodb GridFS file store  
+
+**V2.1.3.6(Awakening & Growing)**  
+12)GridFs annotation for MongoDB register the file id.  
+13)fixed bug: OneTimeSnowflakeId.getRangeId boundary value jumping;  
+   sequence & segment is max, need reset segment to 0  
+14)fixed bug: PearFlowerId.getRangeId boundary value jumping  
+
+**V2.1.3.12(2023·Tree Planting Day)**  
+15)Support more database one-line code generation of Javabean corresponding to all tables of the entire database  
+new GenBean().genAllBeanFile();  
+16)DataSource connection pool，multi-dataSource config，increased support  Dbcp2，Tomcat, C3P0  
+17)Improve GridFs annotation to save files, file names, metadata, etc  
+18)change Cache tableNameList struct to Vector  
+19)GenBean support Lombok annotation:@Setter,@Getter,@Data  
+
+**V2.1.3.21(2023·Spring Equinox)**  
+20)Provide two extension interfaces: SuidRichExt, MongoSuidRichExt, and shortcut input class BFX  
+21)Improve Mongodb file metadata GridFsFile query  
+22)fixed bug: DDL create table(Sharding); Sort field conversion during stream sharding select  
+
+**V2.1.4.5(2023·Honor)**  
+23)Mongodb support Geo insert,query (including Sharding)  
+24)Mongodb support create index  
+25)Mongodb support transaction  
+
+**V2.1.4.20(2023·Grain Rain)**  
+26)mongodb bean define plugin  
+
+### **V2.1.5.1(2023·International Labour Day)**  
+27)Mongodb ORM support print raw command shell  log  
+28)MongodbRawSql can run raw command shell  
+29)broadcast table(sharding model) batch insert  
+30)support more database default paging implements, including Cubrid,HSQL,Derby,Firebird and so on  
+31)BeeMongodbSimpleDataSource support define more item property  
+32)support fastjson Json tool  
+33)fixed bug:batch insert can not generate ID  
