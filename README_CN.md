@@ -64,7 +64,7 @@ Sharding分片目标:对业务开发透明,编码透明,只加少量分片配置
 * 26.使用实体名_F(自动生成)引用实体字段名Users_F.name或在SuidRichExt接口中使用格式如Users::getName。  
 
 
-## 最新功能介绍: 
+## 最新功能简介: 
 ### **V2.1(2023.05.20·LTS版)主要功能**  
 1.Suid,SuidRich,MoreTable,PreparedSql,MapSuid等主要的常用的接口移到org.teasoft.bee.osql.api包  
 2.更好支持MVC编程和Spring RestFul编程  
