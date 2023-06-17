@@ -160,3 +160,26 @@ bee-exam(v1.17)2022-08-04 11.38.43.510-normal(H2).txt
 bee-exam(v1.17)2022-08-04 11.38.16.618-normal(SQLite).txt
 bee-exam(v1.17)2022-08-04 11.37.35.953-normal(Oracle).txt
 bee-exam(v1.17)2022-08-04 11.37.14.384-normal(MySQL).txt
+
+//2.1   2.1.x  LTS版
+bee-exam(v2.1)2023-06-13 23.57.30.177-cache(MySQL).txt
+bee-exam(v2.1)2023-06-13 23.56.56.71-normal(MySQL).txt
+bee-exam(v2.1)2023-06-13 23.56.31.297-normal(MySQL).txt
+bee-exam(v2.1)2023-06-13 23.56.00.371-normal(PostgreSQL).txt
+bee-exam(v2.1)2023-06-13 23.55.50.59-normal(H2).txt
+bee-exam(v2.1)2023-06-13 23.55.02.288-normal(Oracle).txt
+bee-exam(v2.1)2023-06-13 23.54.51.219-normal(Microsoft SQL Server).txt
+bee-exam(v2.1)2023-06-13 23.54.19.39-normal(SQLite).txt
+bee-exam(v2.1)2023-06-13 23.53.26.232-normal(MongoDB).txt
+bee-exam(v2.1)2023-06-13 23.53.23.176-Sharding(MySQL).txt
+
+
+//1.17.21  1.17.x  LTS版
+bee-exam(v1.17.21)2023-06-18 00.28.57.529-cache(MySQL).txt
+bee-exam(v1.17.21)2023-06-18 00.28.33.893-normal(MySQL).txt
+bee-exam(v1.17.21)2023-06-18 00.28.13.619-normal(MySQL).txt
+bee-exam(v1.17.21)2023-06-18 00.27.50.861 -normal(PostgreSQL).txt
+bee-exam(v1.17.21)2023-06-18 00.27.42.259-normal(H2).txt
+bee-exam(v1.17.21)2023-06-18 00.26.51.887-normal(Oracle).txt
+bee-exam(v1.17.21)2023-06-18 00.26.42.308-normal(Microsoft SQL Server).txt
+bee-exam(v1.17.21)2023-06-18 00.26.17.689-normal(SQLite).txt
