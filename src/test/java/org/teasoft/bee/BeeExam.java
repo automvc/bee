@@ -77,6 +77,18 @@ public class BeeExam {
 //		Bee	       100.0%
 //		Honey	   94.1%
 
+
+//		1.17.21
+//		2023-06-18 (yyyy-MM-dd)
+//		Instructions Counters	
+//		Element	   Coverage
+//		Bee	        98.4%
+//		Honey	    71.4%	
+	
+//		Type Counters	
+//		Element	  Coverage
+//		Bee	       98.1%
+//		Honey	   83.2%
 		
 //		V1.17
 //		2022-08-04 (yyyy-MM-dd)
