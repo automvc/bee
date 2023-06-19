@@ -24,8 +24,7 @@ Sharding分片目标:对业务开发透明,编码透明,只加少量分片配置
 [IT->AiTea](What-is-AiTea.md) 
 
 ## 环境要求  
-#### Bee jdk1.7+
-#### Bee-Ext(V2.0) jdk1.8+
+#### Bee jdk1.8+
 
 ## Bee主要功能特点介绍：  
 #### 简单易用
@@ -107,6 +106,9 @@ new GenBean().genAllBeanFile();
 2.新增Mongodb ORM功能支持(使用类似JDBC用法)  
 3.新增Mongodb分片功能  
 4.新增MS Access支持  
+
+### **V1.17.21(2023.06.18  1.17.x LTS版)**  
+同步V2.0，V2.1发现的bug,完善相关问题.  
 
 ### **V1.17** 
 **V1.17(2022·中秋)**  
