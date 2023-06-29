@@ -63,13 +63,13 @@ https://github.com/automvc/bee-ext
 
 ## Newest main Function
 ### **V2.1.6** 
-1.add switch closeDefaultParaResultRegistry 
-2.support JAP new API package jakarta.persistence.* 
-3.catchModifyDuplicateException for batch insert 
-4.close UtilDotDateTypeConvert because it miss HH:mm:ss 
-5.fixed bug update the defalut value for cofig item 
-  fixed bug NullPointerException for PreparedSql preparedValue 
-  fixed bug for StringUtils 
+1.add switch closeDefaultParaResultRegistry  
+2.support JAP new API package jakarta.persistence.*  
+3.catchModifyDuplicateException for batch insert  
+4.close UtilDotDateTypeConvert because it miss HH:mm:ss  
+5.fixed bug update the defalut value for cofig item  
+  fixed bug NullPointerException for PreparedSql preparedValue  
+  fixed bug for StringUtils  
 
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
