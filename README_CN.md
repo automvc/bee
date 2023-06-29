@@ -66,13 +66,13 @@ Sharding分片目标:对业务开发透明,编码透明,只加少量分片配置
 ## 最新功能简介: 
 
 ### **V2.1.6(2023.06.18·LTS版)**  
-1.添加开关closeDefaultParaResultRegistry,控制是否需要默认加载参数类型转换器和查询结果类型转换器 
-2.支持JAP新的API包jakarta.persistence.* 
-3.批量插入支持配置是否由框架捕获主键等异常catchModifyDuplicateException,默认不捕获 
-4.关闭UtilDotDateTypeConvert因少了 HH:mm:ss 
-5.fixed bug 更新配置的默认值 
-  fixed bug NullPointerException for PreparedSql preparedValue 
-  fixed bug for StringUtils 
+1.添加开关closeDefaultParaResultRegistry,控制是否需要默认加载参数类型转换器和查询结果类型转换器  
+2.支持JAP新的API包jakarta.persistence.*  
+3.批量插入支持配置是否由框架捕获主键等异常catchModifyDuplicateException,默认不捕获  
+4.关闭UtilDotDateTypeConvert因少了 HH:mm:ss  
+5.fixed bug 更新配置的默认值  
+  fixed bug NullPointerException for PreparedSql preparedValue  
+  fixed bug for StringUtils  
 
 ### **V2.1(2023.05.20·LTS版)主要功能**  
 1.Suid,SuidRich,MoreTable,PreparedSql,MapSuid等主要的常用的接口移到org.teasoft.bee.osql.api包  
