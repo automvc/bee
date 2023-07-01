@@ -671,7 +671,7 @@ new GenBean().genAllBeanFile();
 32)内置Json工具fastjson实现支持  
 33)fixed bug:批量插入不能自动生成主键值,已修复  
 
-### **V2.1.5.20(2023·千言万语)**  
+**V2.1.5.20(2023·千言万语)**  
 34)Suid,SuidRich,MoreTable,PreparedSql,MapSuid等主要的常用的接口移到org.teasoft.bee.osql.api包  
 35)增加org.teasoft.bee.mvc,org.teasoft.bee.mvc.service包,更好支持MVC编程和Spring RestFul编程  
 36)增强转化成表名时,类型判断提示  
