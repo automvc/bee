@@ -54,7 +54,11 @@ public class BeeApplication extends Application {
        CreateAndUpgradeRegistry.register(YourAppCreateAndUpgrade.class);
     }
  }
+```
  
+AndroidManifest.xml
+
+```xml
 // 并在AndroidManifest.xml,配置android:name为BeeApplication 
  <application
         android:icon="@drawable/appicon"
