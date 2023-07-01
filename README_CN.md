@@ -64,6 +64,8 @@ Sharding分片目标:对业务开发透明,编码透明,只加少量分片配置
 
 
 ## 最新功能简介: 
+### **V2.1.7(2023.07.01·LTS版)**  
+1.增加可运行sql格式化(需要配置:bee.osql.showSql.sqlFormat=true)  
 
 ### **V2.1.6(2023.06.18·LTS版)**  
 1.添加开关closeDefaultParaResultRegistry,控制是否需要默认加载参数类型转换器和查询结果类型转换器  
@@ -127,7 +129,7 @@ new GenBean().genAllBeanFile();
 3)增加HarmonyOS(鸿蒙)ORM功能  
 4)命名转换增加种类4(DbUpperAndJavaLower)  
 
-**V1.11** (**2022·劳动节**)  
+### **V1.11** (**2022·劳动节**)  
 1)新增拦截器、多租户,注册器功能  
 2)二级缓存扩展支持  
 Redis缓存支持  
