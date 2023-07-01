@@ -62,6 +62,10 @@ https://github.com/automvc/bee-ext
 * 26.Use entity name _F (automatically generated) to reference entity field names, e.g., Users_F.name or in SuidRichExt interface using the format Users::getName.  
 
 ## Newest main Function
+### **V2.1.7** 
+1.support showExecutableSql sql format  
+
+
 ### **V2.1.6** 
 1.add switch closeDefaultParaResultRegistry  
 2.support JAP new API package jakarta.persistence.*  
