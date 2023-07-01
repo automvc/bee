@@ -30,7 +30,7 @@ https://github.com/automvc/bee-ext
 
 ## Feature & Function: 
 
-** Easy to use**:  
+**Easy to use**:  
 * 1.Simple interface, convenient to use. The Suid interface provides four object-oriented methods corresponding to the SQL language's select, update, insert, and delete operations.  
 * 2.By using Bee, you no longer need to write separate DAO code. You can directly call Bee's API to perform operations on the database.  
 * 3.Convention-over-configuration: Javabean can no annotation, no xml.  
@@ -65,8 +65,7 @@ https://github.com/automvc/bee-ext
 ### **V2.1.7** 
 1.support showExecutableSql sql format  
 
-
-### **V2.1.6** 
+**V2.1.6** 
 1.add switch closeDefaultParaResultRegistry  
 2.support JAP new API package jakarta.persistence.*  
 3.catchModifyDuplicateException for batch insert  
@@ -74,7 +73,26 @@ https://github.com/automvc/bee-ext
 5.fixed bug update the defalut value for cofig item  
   fixed bug NullPointerException for PreparedSql preparedValue  
   fixed bug for StringUtils  
-
+  
+### **V2.1(2023.05.20·LTS)** main features:  
+1. Move major commonly used interfaces such as Suid, SuidRich, MoreTable, PreparedSql, MapSuid, etc. to the org.teasoft.bee.osql.api package.  
+2. Better support for MVC programming and Spring RestFul programming.  
+3. Support configuration of multiple data sources in bee.properties (no need for XML or Java code configuration).  
+4. GenBean supports Lombok annotations: @Setter, @Getter, @Data.  
+5. Built-in json tool fastjson support, with the option to use a custom JSON tool.  
+6. Generate all Java bean files for the entire database with a single line of code: new GenBean().genAllBeanFile();  
+7. Bulk insert for broadcast table.  
+8. Improved sharding functionality.  
+9. Full support for MongoDB ORM.  
+9.1. Support for insertion and querying of geospatial information in MongoDB (including sharded queries).  
+9.2. Various operations on GridFs files, with support for annotations.  
+9.3. Direct execution of native statements (MongodbRawSql).  
+9.4. Logging of native statements for object-oriented operations in MongoDB.  
+9.5. Support for MongoDB transactions.  
+9.6. Support for creating and deleting indexes in MongoDB.  
+9.7. MongoDB beans defined as pluggable components.  
+10. Default support for pagination in more databases: MsAccess, Cubrid, HSQL, Derby, Firebird, etc.  
+  
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  

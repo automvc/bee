@@ -538,3 +538,7 @@ new GenBean().genAllBeanFile();
 31)BeeMongodbSimpleDataSource support define more item property  
 32)support fastjson Json tool  
 33)fixed bug:batch insert can not generate ID  
+
+### **V2.1.5.20(2023·千言万语)**  
+
+V1.17.21(2023.06.18  1.17.x LTS版)  

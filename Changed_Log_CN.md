@@ -682,29 +682,34 @@ new GenBean().genAllBeanFile();
 41)更新dropIndex方法  
 42)新增地理信息方法查询(使用mongodb驱动包的类型参数)  
 
-V1.17.21(2023.06.18  1.17.x LTS版)
-从V2.0，V2.1同步来的:
-增强转化成表名时,类型判断提示
-批量插入不能自动生成主键值
-修改Cache tableNameList的结构为Vector
-fixed bug: OneTimeSnowflakeId.getRangeId批量取号,遇边界值跳号问题;
-sequence & segment达到最大值,要重置segment为0
-fixed bug: PearFlowerId.getRangeId批量取号,遇边界值跳号问题
-修复ObjSQLRichService与Spring整合的多产生一个实例的bug
-完善:Json String类型查询结果转换增强
-fixed bug:PreparedSql接口的批量插入insertBatch空指针和占位符
-同步GenBean到V2.1(但不包括MongoDB功能)
-完善:不同包的实体即使指定同一个表也不能共享缓存
-屏蔽检查日志框架的异常
-//#从1.17.21开始，默认抛出异常；防止在事务时，不正确
-public boolean notCatchModifyDuplicateException=true; 
-默认打开处理Column注解:
-openDefineColumn=true;
-默认打开查询结果的字段类型转换:
-openFieldTypeHandler=true;
+### V1.17.21(2023.06.18  1.17.x LTS版)  
+从V2.0，V2.1同步来的:  
+增强转化成表名时,类型判断提示  
+批量插入不能自动生成主键值  
+修改Cache tableNameList的结构为Vector  
+fixed bug: OneTimeSnowflakeId.getRangeId批量取号,遇边界值跳号问题;  
+sequence & segment达到最大值,要重置segment为0  
+fixed bug: PearFlowerId.getRangeId批量取号,遇边界值跳号问题  
+修复ObjSQLRichService与Spring整合的多产生一个实例的bug  
+完善:Json String类型查询结果转换增强  
+fixed bug:PreparedSql接口的批量插入insertBatch空指针和占位符  
+同步GenBean到V2.1(但不包括MongoDB功能)  
+完善:不同包的实体即使指定同一个表也不能共享缓存  
+屏蔽检查日志框架的异常  
+//#从1.17.21开始，默认抛出异常；防止在事务时，不正确  
+public boolean notCatchModifyDuplicateException=true;   
+默认打开处理Column注解:  
+openDefineColumn=true;  
+默认打开查询结果的字段类型转换:  
+openFieldTypeHandler=true;  
+setNameTranslate改为:  
+setNameTranslateOneTime  
+设置中在一次操作数据库中有效。  
+用于临时使用不同的命名规则；通过的命名规则应该写在配置文件中.  
+SuidRich查询/更新有指定字段的，若改为动态参数，需要将字段字符串放在最后。  
 
-与V2.1.6类似:
-//V1.17.21 若设置了关闭,则不再进行SetParaTypeConverterRegistry，TypeHandlerRegistry默认设置
-closeDefaultParaResultRegistry;
-JPA处理新的包:
-jakarta.persistence.*；
+与V2.1.6类似:  
+//V1.17.21 若设置了关闭,则不再进行SetParaTypeConverterRegistry，TypeHandlerRegistry默认设置  
+closeDefaultParaResultRegistry;  
+JPA处理新的包:  
+jakarta.persistence.*;  
