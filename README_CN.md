@@ -67,6 +67,9 @@ Sharding分片目标:对业务开发透明,编码透明,只加少量分片配置
 ### **V2.1.7(2023.07.01·LTS版)**  
 1.增加可运行sql格式化(需要配置:bee.osql.showSql.sqlFormat=true)  
 2.二级缓存支持过期时间随机设置, 解决缓存雪崩问题  
+3.DdlViaExcel.createTable通过excel里的信息创建数据库表,可只创建部分  
+4.支持Spring boot 3.0,动态配置  
+5.完善Sharding ThreadPool  
 
 ### **V2.1.6(2023.06.18·LTS版)**  
 1.添加开关closeDefaultParaResultRegistry,控制是否需要默认加载参数类型转换器和查询结果类型转换器  
