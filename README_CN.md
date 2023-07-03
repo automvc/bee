@@ -56,7 +56,7 @@ Sharding分片目标:对业务开发透明,编码透明,只加少量分片配置
 
 **辅助功能**:  
 * 21.提供自然简单的分布式主键生成方案:**分布式**环境下生成**连续单调递增**(在一个workerid内),**全局唯一**数字**id**。  
-* 22.支持自动生成表对应的Javabean，根据Javabean创建表，Javaweb**后端代码**根据**模板自动生成**；能打印非占位符的**可执行sql**,方便调试;支持生成Json格式的SQL脚本。  
+* 22.支持自动生成表对应的Javabean，根据Javabean创建表，Javaweb**后端代码**根据**模板自动生成**；能打印非占位符的**可执行sql(支持sql格式化)**,方便调试;支持生成Json格式的SQL脚本。  
 * 23.支持**读取Excel**,从Excel导入数据到DB，操作简单;支持从Excel获取配置生成数据库表。  
 * 24.流的工具类StreamUtil。  
 * 25.丰富的注解支持:PrimaryKey,Column,Datetime,Createtime,Updatetime;JustFetch,ReplaceInto(MySQL),Dict,DictI18n等。  
