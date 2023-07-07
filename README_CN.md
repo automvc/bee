@@ -3,7 +3,7 @@ Bee
 =========
 ## 好消息:  
 **Bee 2.1 完善的Sharding分片功能, 完善的MongoDB ORM功能。**  
-**当前最新版本为:V2.1 LTS版**  
+**当前最新版本为:V2.1.7 LTS版**  
 
 Sharding分片目标:对业务开发透明,编码透明,只加少量分片配置即可实现分片功能.  
 #### [快速开始:Shardign最佳实践参考实例](guide/Quick-start-Sharding_CN.md) 
