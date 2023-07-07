@@ -37,7 +37,7 @@ Sharding分片目标:对业务开发透明,编码透明,只加少量分片配置
 * 7.**Sharding分片**,分库分表;只分库;只分表;读写分离;(对以前的代码无需修改,该功能对代码是透明的,即无需额外编码)。 
 * 8.**多种DB**支持轻松扩展(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Access,金仓,达梦等,NoSQL:**Cassandra,Mongodb**等直接可用),理论上支持JDBC的DB都可以支持,此外还支持**Android和Harmony**; 
 * 9.更多数据库分页默认支持:MsAccess,Cubrid,HSQL,Derby,Firebird等  
-* 10.**多种数据库可同时使用(如同时使用Mysql,Oracle,SQL Server)**。  
+* 10.**多种数据库可同时使用(如同时使用Mysql,Oracle,MongoDB)**。  
 
 #### 自动,功强强大
 * 11.**动态/任意组合**查询条件,不需要提前准备dao接口,有新的查询需求也不用修改或添加接口。  
@@ -72,7 +72,7 @@ Sharding分片目标:对业务开发透明,编码透明,只加少量分片配置
 5.完善Sharding ThreadPool,可以自定义配置Sharding操作执行线程数的大小  
 6.完善Android多线程操作获取SQLiteDatabase的问题  
 
-### **V2.1.6(2023.06.18·LTS版)**  
+### **V2.1.6(2023.06.18·父亲节版)**  
 1.添加开关closeDefaultParaResultRegistry,控制是否需要默认加载参数类型转换器和查询结果类型转换器  
 2.支持JAP新的API包jakarta.persistence.*  
 3.批量插入支持配置是否由框架捕获主键等异常catchModifyDuplicateException,默认不捕获  
@@ -127,8 +127,7 @@ new GenBean().genAllBeanFile();
 ### **V1.17.21(2023.06.18  1.17.x LTS版)**  
 同步V2.0，V2.1发现的bug,完善相关问题.  
 
-### **V1.17** 
-**V1.17(2022·中秋)**  
+### **V1.17(2022·中秋)**  
 1)完善SqlServer分页  
 2)增加Android(安卓)ORM功能  
 3)增加HarmonyOS(鸿蒙)ORM功能  
@@ -334,7 +333,7 @@ OrdersService.java
        <dependency>
 	      <groupId>org.teasoft</groupId>
 	      <artifactId>bee-all</artifactId>
-	      <version>2.1</version>
+	      <version>2.1.7</version>
         </dependency>
 		
 	    <!-- Mysql config.You need change it to the real database config. -->
@@ -371,6 +370,8 @@ bee.db.password =
 bee.osql.showSQL=true  
 bee.osql.showSql.showType=true  
 bee.osql.showSql.showExecutableSql=true  
+\# since 2.1.7 =true时,可格式化sql
+bee.osql.showSql.sqlFormat=false
 
 \#log4j>slf4j>log4j2>androidLog>harmonyLog>systemLogger>fileLogger>noLogging>jdkLog>commonsLog  
 \#fileLogger 输出到文件; systemLogger 控制台输出  
