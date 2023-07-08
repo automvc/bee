@@ -3,7 +3,7 @@ Bee
 =========
 ## 好消息:  
 **Bee 2.1 完善的Sharding分片功能, 完善的MongoDB ORM功能。**  
-**当前最新版本为:V2.1.7 LTS版**  
+当前**最新**版本为:**V2.1.7 LTS版**  
 
 Sharding分片目标:对业务开发透明,编码透明,只加少量分片配置即可实现分片功能.  
 #### [快速开始:Shardign最佳实践参考实例](guide/Quick-start-Sharding_CN.md) 
@@ -24,7 +24,8 @@ Sharding分片目标:对业务开发透明,编码透明,只加少量分片配置
 [IT->AiTea](What-is-AiTea.md) 
 
 ## 环境要求  
-#### Bee jdk1.8+
+#### Bee jdk1.8+   
+Bee2.1.7 + Spring boot3.0.8对应版本**2.1.7.boot3.0.8 需要JDK17**   
 
 ## Bee主要功能特点介绍：  
 #### 简单易用
@@ -458,6 +459,7 @@ public class SuidExam {
 ### [更多例子/测试用例](../../../bee-exam/)	
 
 ### [Bee+Spring-boot Demo](../../../bee-starter-demo/)	
+**2.1.7.boot3.0.8需要JDK17**	
 
 ## Bee架构介绍
 **V2.1**  
