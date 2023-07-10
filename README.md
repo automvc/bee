@@ -9,8 +9,7 @@ Bee
 **Good Feature:**  AI, Timesaving/Tasteful, Easy, Automatic (**AiTeaSoft Style**)   
 
 ## **Good News:**  
-**Bee V2.0 Sharding is coming !**  
-[2.0-sharding-dev branch](../../../bee/tree/2.0-sharding-dev)  
+Newest version is:**Bee V2.1.7 LTS**  
 
 Sharding target: It is mainly transparent to business development and coding, with only a little sharding config.  
 #### [Quick Start:Shardign better example](guide/Quick-start-Sharding.md) 
@@ -25,8 +24,7 @@ https://github.com/automvc/bee-ext
 [点击链接可查看中文介绍](../../../bee/blob/master/README_CN.md)  
 
 ## Requirement  
-#### Bee jdk1.7+
-#### Bee-Ext(V2.0) jdk1.8+
+#### Bee jdk1.8+
 
 ## Feature & Function: 
 
@@ -62,7 +60,7 @@ https://github.com/automvc/bee-ext
 * 26.Use entity name _F (automatically generated) to reference entity field names, e.g., Users_F.name or in SuidRichExt interface using the format Users::getName.  
 
 ## Newest main Function
-### **V2.1.7** 
+### **V2.1.7 LTS** 
 1.support showExecutableSql sql format  
 
 **V2.1.6** 
@@ -74,7 +72,7 @@ https://github.com/automvc/bee-ext
   fixed bug NullPointerException for PreparedSql preparedValue  
   fixed bug for StringUtils  
   
-### **V2.1(2023.05.20·LTS)** main features:  
+### **V2.1(2023.05.20)** main features:  
 1. Move major commonly used interfaces such as Suid, SuidRich, MoreTable, PreparedSql, MapSuid, etc. to the org.teasoft.bee.osql.api package.  
 2. Better support for MVC programming and Spring RestFul programming.  
 3. Support configuration of multiple data sources in bee.properties (no need for XML or Java code configuration).  
@@ -274,24 +272,13 @@ Quick Start:
 #### 1.1 if it is a maven project,add the following dependency  
 
 ```xml
-		<dependency>
-			<groupId>org.teasoft</groupId>
-			<artifactId>bee</artifactId>
-			<version>2.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.teasoft</groupId>
-			<artifactId>honey</artifactId>
-			<version>2.0</version>
-		</dependency>
-		<!--for log framework,Excel(poi),Redis cache,Android,HarmonyOS,Json,Tran Annotation -->
-		<dependency>
-			<groupId>org.teasoft</groupId>
-			<artifactId>bee-ext</artifactId>
-			<version>2.0</version>
-		</dependency>
+       <dependency>
+	      <groupId>org.teasoft</groupId>
+	      <artifactId>bee-all</artifactId>
+	      <version>2.1.7</version>
+        </dependency>
 		
-		<!-- Mysql config.You need change it to the real database config. -->
+	    <!-- Mysql config.You need change it to the real database config. -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -323,6 +310,8 @@ bee.db.password =
 bee.osql.showSQL=true  
 bee.osql.showSql.showType=true  
 bee.osql.showSql.showExecutableSql=true  
+\# since 2.1.7 sqlFormat=true,will format the executable sql
+bee.osql.showSql.sqlFormat=false
 
 \#log4j>slf4j>log4j2>androidLog>harmonyLog>systemLogger>fileLogger>noLogging>jdkLog>commonsLog  
 bee.osql.loggerType=systemLogger  
