@@ -553,6 +553,7 @@ Automatically insert values for tenants
 * 7.@Column when Javabean attribute is inconsistent with the table column name, define the mapping relationship (not recommended for new system, mainly for compatibility with old system)  
 * 8.@Json Entity properties are Javabean and the JSON type column of DB table are converted automatically during parameter setting and query results  
 * 9.Support the automatic generation of EDI XML electronic message  
+**Cheer** !  Except for 1, 5, and 9, other items has been added to the V2.1 LTS version
 
 ### Price
 **Enterprise** users:  
