@@ -374,10 +374,10 @@ public class SuidExamEN {
 			Logger.info("delete record:" + deleteNum);
 		} catch (BeeException e) {
 			Logger.error("In SuidExamEN (BeeException):" + e.getMessage());
-			e.printStackTrace();
+			//e.printStackTrace();
 		} catch (Exception e) {
 			Logger.error("In SuidExamEN (Exception):" + e.getMessage());
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 
