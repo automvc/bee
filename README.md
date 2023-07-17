@@ -61,7 +61,12 @@ https://github.com/automvc/bee-ext
 
 ## Newest main Function
 ### **V2.1.7 LTS** 
-1.support showExecutableSql sql format  
+1.support showExecutableSql sql format(requires configuration: bee.osql.showSql.sqlFormat=true)  
+2. Support random expiration time for second-level cache to solve cache avalanche issue.  
+3. DdlViaExcel.createTable allows creating database tables using information from an Excel file, with the option to create only specific tables.  
+4. Support for Spring Boot 3.0.8  
+5. Enhance Sharding ThreadPool to allow custom configuration of the size of threads for Sharding operations.  
+6. Improve handling of multi-threaded operations for obtaining SQLiteDatabase in Android.  
 
 **V2.1.6** 
 1.add switch closeDefaultParaResultRegistry  
