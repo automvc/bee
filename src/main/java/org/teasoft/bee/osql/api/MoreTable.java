@@ -168,4 +168,13 @@ public interface MoreTable extends CommOperate {
 	 */
 	public MoreTable setDynamicParameter(String para,String value);
 	
+	
+	/**
+	 * insert entity. support oneToOne/oneToMany.
+	 * @param entity table's entity(do not allow null).
+	 * @return 
+	 * @since 2.1.8
+	 */
+	public <T> int insert(T entity);
+	
 }

@@ -65,6 +65,15 @@ Bee2.1.7 + Spring boot3.0.8对应版本**2.1.7.boot3.0.8 需要JDK17**
 
 
 ## 最新功能简介: 
+
+### **V2.1.8(2023.08·LTS版)**  
+1.DateUtil增加判断日期格式,计算年龄  
+2.兼容spring boot命令行active选择环境,兼容spring boot数据源配置  
+3.多表关联插入  
+4.CurrencyArithmetic变量bug  
+5.CacheSuidStruct表名不区分大小写  
+
+
 ### **V2.1.7(2023.07.01·LTS版)**  
 1.增加可运行sql格式化(需要配置:bee.osql.showSql.sqlFormat=true)  
 2.二级缓存支持过期时间随机设置, 解决缓存雪崩问题  
