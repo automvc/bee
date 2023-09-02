@@ -35,7 +35,8 @@ public class DataSourceBuilderFactory implements Registry {
 
 	public static void register(String dataSourceToolType, DataSourceBuilder builder) {
 		if (map == null) initMap();
-		map.put(dataSourceToolType.toLowerCase(), builder);
+		if (dataSourceToolType != null) dataSourceToolType = dataSourceToolType.toLowerCase();
+		if (map != null) map.put(dataSourceToolType, builder);
 	}
 
 	private synchronized static void initMap() {

@@ -95,16 +95,18 @@ public class GroupFunStruct {
 
 	public void setColumnNames(String columnNames) {
 		this.columnNames = columnNames;
-		
-		String columns[]=columnNames.split(",");
+
+		String columns[] = columnNames.split(",");
 		String t;
-		int index;
+		int index = -1;
 		for (int i = 0; i < columns.length; i++) {
-			t=columns[i].trim();
-			t=t.toLowerCase();
-			index=t.indexOf(" as ");
-			if(index>0) t=t.substring(index+4);
-			columnIndexMap.put(t, i);
+			t = columns[i].trim();
+			if (t != null) {
+				t = t.toLowerCase();
+				index = t.indexOf(" as ");
+				if (index > 0) t = t.substring(index + 4);
+				columnIndexMap.put(t, i);
+			}
 		}
 	}
 	
