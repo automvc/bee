@@ -171,10 +171,45 @@ public interface MoreTable extends CommOperate {
 	
 	/**
 	 * insert entity. support oneToOne/oneToMany.
+	 * 若主表的主键用于从表的外键,则会自动填入.
 	 * @param entity table's entity(do not allow null).
 	 * @return 
 	 * @since 2.1.8
 	 */
 	public <T> int insert(T entity);
+	
+	
+	/**
+	 * 更新符合条件的主实体(主表)和子实体(子表);
+	 * 此方法以主键作为过滤条件确定实体,所以主键字段不能为空.
+	 * 主表,设置所有的外键对应字段时,从表会自动关联更新;
+	 * 主表没有设置所有的外键对应字段时,若从表设置了所有的外键值，从表也会自动关联更新;否则不更新
+	 * @param entity
+	 * @return 返回主表被更新的记录条数
+	 * @since 2.1.8
+	 */
+	public <T> int update(T entity);
+	
+//	/**
+//	 * 更新符合条件的主实体(主表)和子实体(子表);
+//	 * 主表,设置所有的外键对应字段时,从表会自动关联更新;
+//	 * 主表没有设置所有的外键对应字段时,若从表设置了所有的外键值，从表也会自动关联更新;否则不更新
+//	 * @param entity
+//	 * @param condition
+//	 * @return
+//	 */
+//	public <T> int update(T entity,Condition condition);
+    //暂不支持;还要考虑	Condition如何区分哪些是主从表的条件.
+
+	
+	/**
+	 * 删除符合条件的主实体(主表)和子实体(子表);
+	 * 主表,设置所有的外键对应字段时,从表会自动关联更新;
+	 * 主表没有设置所有的外键对应字段时,若从表设置了所有的外键值，从表也会自动关联更新;否则不更新
+	 * @param entity
+	 * @return 返回主表被删除的记录条数
+	 * @since 2.1.8
+	 */
+	public <T> int delete(T entity);
 	
 }
