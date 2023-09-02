@@ -34,7 +34,7 @@ public interface ConditionAssistant {
 	 */
 	public Set<String> getWhereFields();
 
-	void setSuidType(SuidType suidType);
+	public void setSuidType(SuidType suidType);
 
 	/**
 	 * 
