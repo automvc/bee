@@ -82,7 +82,7 @@ Bee2.1.7 + Spring boot3.0.8对应版本**2.1.7.boot3.0.8 需要JDK17**
 不使用Spring boot,单独使用Bee时,DataSourceBuilderFactory 也能自启动。  
 9.Javabean支持生成Swagger注解  
 10.Mongodb打印日志，查询所有字段时，默认不显示要查询的字段；可以通过bee.osql.showMongoSelectAllFields配置控制是否显示  
-11.GridFs支持SELECT查询类型,当查询实体时,可以自动关联查出相应的文件(MongoDB)  
+11.GridFs注解支持SELECT查询类型,当查询实体时,可以自动关联查出相应的文件(MongoDB),GridFs文件类型支持byte[]  
 
 **V2.1.7(2023.07.01)**  
 1.增加可运行sql格式化(需要配置:bee.osql.showSql.sqlFormat=true)  
