@@ -25,7 +25,8 @@ import java.lang.annotation.Target;
 /**
  * Store the file for Mongodb and register the file id to the field which define in fileIdName.
  * The filename from the field which define in fileName.
- * The file type is InputStream.
+ * The file type is InputStream;
+ * Just support INSERT type, SELECT(since 2.1.8) type.
  * @author Kingstar
  * @since  2.1
  */
