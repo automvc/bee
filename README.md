@@ -60,7 +60,24 @@ https://github.com/automvc/bee-ext
 * 26.Use entity name _F (automatically generated) to reference entity field names, e.g., Users_F.name or in SuidRichExt interface using the format Users::getName.  
 
 ## Newest main Function
-### **V2.1.7 LTS** 
+
+### **V2.1.8(2023.08·LTS)**  
+1.  
+1.1 Make the spring boot command line compatible with active profile selection, for example: java -jar springbootDemo.jar --spring.profiles.active=dev, which will trigger bee-dev.properties.  
+1.2 Make the spring boot data source configuration compatible, such as spring.datasource.url.  
+1.3 When not starting the application directly running the main method, if bee.properties does not have a data source configuration, it should be able to use the single data source configuration in application.properties of spring boot.  
+2. Perform insert, update, and delete operations on multiple table associations.  
+3. Add date format validation and calculate age in DateUtil.  
+4. Fix the bug in the CurrencyArithmetic variable.  
+5. Make the table name in CacheSuidStruct case-insensitive.  
+6. Improve the interceptor and context information management in MongodbObjSQLRichExt.  
+7. Support creating tables through Excel for more Database.  
+8. In Mongodb logging, when querying all fields, by default, the fields to be queried are not displayed. This can be controlled by the bee.osql.showMongoSelectAllFields configuration.  
+9. Provide a default BeeSimpleDataSource that supports configuring multiple data sources in bee.properties (even without using spring boot). When using Bee alone, the DataSourceBuilderFactory can also start automatically.  
+10. Support generating Swagger annotations for Javabean.  
+11. GridFs support select type for MongoDB 
+
+**V2.1.7** 
 1.support showExecutableSql sql format(requires configuration: bee.osql.showSql.sqlFormat=true)  
 2. Support random expiration time for second-level cache to solve cache avalanche issue.  
 3. DdlViaExcel.createTable allows creating database tables using information from an Excel file, with the option to create only specific tables.  
