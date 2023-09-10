@@ -24,6 +24,7 @@ import java.lang.annotation.Target;
 
 /**
  * Mongodb GridFs Metadata just support type is Map<String,Object>.
+ * Just support INSERT type; can not transfer to filter part when SELECT type.
  * @author Kingstar
  * @since  2.1
  */
