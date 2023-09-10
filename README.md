@@ -75,7 +75,7 @@ https://github.com/automvc/bee-ext
 8. In Mongodb logging, when querying all fields, by default, the fields to be queried are not displayed. This can be controlled by the bee.osql.showMongoSelectAllFields configuration.  
 9. Provide a default BeeSimpleDataSource that supports configuring multiple data sources in bee.properties (even without using spring boot). When using Bee alone, the DataSourceBuilderFactory can also start automatically.  
 10. Support generating Swagger annotations for Javabean.  
-11. GridFs support select type for MongoDB 
+11. GridFs annotation support select type for MongoDB, GridFs file type support byte[] 
 
 **V2.1.7** 
 1.support showExecutableSql sql format(requires configuration: bee.osql.showSql.sqlFormat=true)  
