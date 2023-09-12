@@ -542,6 +542,8 @@ Rapid application development:
 ## KmCoding
 [Rapid Application Code Generation Platform](http://www.kmcoding.com)--AiTea Soft made in China!  
 
+[Generate code automatically](../../../gencode)  
+
 ...  
 
 App Demo:
