@@ -503,6 +503,9 @@ public class SuidExam {
 **HarmonyOS使用Bee开发App实例：**  
 [Bee + HarmonyOS](../../../../aiteasoft/HarmonyOS-ORM-Bee-Demo)  
 
+**自动生成代码**  
+[Generate code automatically](../../../gencode)  
+
 ### 快码加编
 [快码加编——代码生成神器](http://www.kmcoding.com)  
 * 1.一键生成整个工程(无需再搭建系统框架)  
