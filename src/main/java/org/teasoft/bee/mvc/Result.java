@@ -40,7 +40,7 @@ public class Result {
 
 	public Result(String errorMsg) {
 		this.errorMsg = errorMsg;
-		rows = new ArrayList<>(1); // prevent front end null exception; 预防前端页面null异常
+		rows = new ArrayList<>(1); // prevent front end null exception; 
 	}
 
 	/**
