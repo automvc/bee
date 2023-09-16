@@ -23,6 +23,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * Geo2dsphere annotation for MongoDB.
  * @author Kingstar
  * @since  2.1
  */
