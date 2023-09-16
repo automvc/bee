@@ -23,6 +23,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * Foreign Key annotation,use for UPDATE,INSERT,DELETE.
  * @author Kingstar
  * @since  2.1.8
  */
@@ -30,43 +31,22 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface FK {
 
-//	String foreignKey() default "";
-	
-//	要判断，主表的关联字段是否是主键；不是的话，直接获取关联字段的值设置；
-//	要多设置一个属性，当从表的关联字段有值时，是否覆盖。
-	
 	/**
 	 * foreign key
 	 * @return foreign key.
 	 */
 	 String[] value();
-//	 String value(); // 必填属性
 	
 	/**
 	 * Field referenced by foreign key.
 	 * @return Field referenced by foreign key.
 	 */
-//	String refBy() default "id"; 
 	String[] refBy() default "id"; 
 	
-	/**
-	 * whether override the old foreignKey value when it has not blank value.
-	 * @return the boolean value of whether override
-	 */
-	boolean override() default true;
-	
-	
-//	caccade
-//	主要的id对应的name修改，从表的也可以通过级联同步修改。
-	
-	
-
 //	/**
-//	 * foreign key.与value()同义，可以只填其中一个。
-//	 * @return foreign key.
+//	 * whether override the old foreignKey value when it has not blank value.
+//	 * @return the boolean value of whether override
 //	 */
-//	String foreignKey() default ""; 
+//	boolean override() default true;
 	
-	
-
 }
