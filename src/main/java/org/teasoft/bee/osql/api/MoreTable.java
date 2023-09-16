@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 the original author.All rights reserved.
+ * Copyright 2016-2023 the original author.All rights reserved.
  * Kingstar(honeysoft@126.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -171,43 +171,38 @@ public interface MoreTable extends CommOperate {
 	
 	/**
 	 * insert entity. support oneToOne/oneToMany.
-	 * 若主表的主键用于从表的外键,则会自动填入.
+	 * If the primary key of the main table is used for the foreign key of the sub table, it will be automatically filled in.
 	 * @param entity table's entity(do not allow null).
-	 * @return 
+	 * @return returns the number of affected records in the main table.
 	 * @since 2.1.8
 	 */
 	public <T> int insert(T entity);
 	
 	
 	/**
-	 * 更新符合条件的主实体(主表)和子实体(子表);
-	 * 此方法以主键作为过滤条件确定实体,所以主键字段不能为空.
-	 * 主表,设置所有的外键对应字段时,从表会自动关联更新;
-	 * 主表没有设置所有的外键对应字段时,若从表设置了所有的外键值，从表也会自动关联更新;否则不更新
+	 * Update the main entity (main table) and the sub-entity (sub table) that meet the conditions.
+	 * This method uses the primary key as the filtering condition to determine the entity, 
+	 * so the primary key field of the entity must not be empty.
+	 * When all the foreign key corresponding fields are set in the main table, the sub table will be automatically 
+	 * updated in association.
+	 * If not all the foreign key corresponding fields are set in the main table, the sub table will also be automatically 
+	 * updated in association if all the foreign key values are set in the sub table; otherwise, it will not be updated.
 	 * @param entity
-	 * @return 返回主表被更新的记录条数
+	 * @return returns the number of affected records in the main table.
 	 * @since 2.1.8
 	 */
 	public <T> int update(T entity);
-	
-//	/**
-//	 * 更新符合条件的主实体(主表)和子实体(子表);
-//	 * 主表,设置所有的外键对应字段时,从表会自动关联更新;
-//	 * 主表没有设置所有的外键对应字段时,若从表设置了所有的外键值，从表也会自动关联更新;否则不更新
-//	 * @param entity
-//	 * @param condition
-//	 * @return
-//	 */
-//	public <T> int update(T entity,Condition condition);
-    //暂不支持;还要考虑	Condition如何区分哪些是主从表的条件.
+
 
 	
 	/**
-	 * 删除符合条件的主实体(主表)和子实体(子表);
-	 * 主表,设置所有的外键对应字段时,从表会自动关联更新;
-	 * 主表没有设置所有的外键对应字段时,若从表设置了所有的外键值，从表也会自动关联更新;否则不更新
+	 * Delete the main entity (main table) and the sub-entity (sub table) that meet the conditions.
+	 * When all the foreign key corresponding fields are set in the main table, the sub table will be automatically updated 
+	 * in association.
+	 * If not all the foreign key corresponding fields are set in the main table, the sub table will also be automatically 
+	 * updated in association if all the foreign key values are set in the sub table; otherwise, it will not be updated.
 	 * @param entity
-	 * @return 返回主表被删除的记录条数
+	 * @return returns the number of affected records in the main table.
 	 * @since 2.1.8
 	 */
 	public <T> int delete(T entity);

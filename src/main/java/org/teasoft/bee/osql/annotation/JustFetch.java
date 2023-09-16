@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2022 the original author.All rights reserved.
+ * Copyright 2016-2023 the original author.All rights reserved.
  * Kingstar(honeysoft@126.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,11 +37,28 @@ import java.lang.annotation.Target;
 <p> 	private String name2;
 <p> -->select name as name2	
 
+<p> eg:(since 2.1.8)
+<p>     TestUser.java
+<p> 	@JustFetch() //Only obtain values, do not transfer fields to select/where.
+<p>     private String count1;
+<p> 
+<p> 	Condition condition=BF.getCondition();
+<p> 	condition.selectFun(FunctionType.COUNT, "*", "count1");
+<p> 	condition.selectField("lastName");
+<p> 	condition.groupBy("lastName");
+<p> 	List<TestUser> list =suid.select(testUser,condition);  //select
+<p> 
+
  * @author Kingstar
  * @since  1.11
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface JustFetch {
-	String value() default "";
+	
+	/**
+	 *  Since V2.1.8,when value is empty, the corresponding field is parsed and only used to receive the result value
+	 * @return
+	 */
+	String value() default "";  
 }
