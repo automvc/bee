@@ -68,8 +68,8 @@ public class UpperKey implements SqlKeyWord {
 	private static final String notExists = "NOT EXISTS";
 	
 	//2.0
-	public static final String union="UNION";
-	public static final String unionAll="UNION ALL";
+	private static final String union="UNION";
+	private static final String unionAll="UNION ALL";
 
 	@Override
 	public String select() {

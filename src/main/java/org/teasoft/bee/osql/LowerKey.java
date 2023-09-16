@@ -67,8 +67,8 @@ public class LowerKey implements SqlKeyWord {
 	private static final String notExists = "not exists";
 	
 	//2.0
-	public static final String union="union";
-	public static final String unionAll="union all";
+	private static final String union="union";
+	private static final String unionAll="union all";
 
 	@Override
 	public String select() {
