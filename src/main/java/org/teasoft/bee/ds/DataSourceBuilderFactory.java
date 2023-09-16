@@ -39,7 +39,7 @@ public class DataSourceBuilderFactory implements Registry {
 		if (map != null) map.put(dataSourceToolType, builder);
 	}
 
-	private synchronized static void initMap() {
+	private static synchronized void initMap() {
 		map = new ConcurrentHashMap<>();
 	}
 
