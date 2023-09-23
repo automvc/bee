@@ -43,7 +43,7 @@ Bee2.1.7 + Spring boot3.0.8对应版本**2.1.7.boot3.0.8 需要JDK17**
 #### 自动,功强强大
 * 11.**动态/任意组合**查询条件,不需要提前准备dao接口,有新的查询需求也不用修改或添加接口。  
 * 12.支持**事务**、多个ORM操作使用同一连接、**for update**，支持**批处理**操作，支持原生SQL(**自定义sql**语句)，支持**存储过程**。
-* 13.支持面向对象方式复杂查询、**多表查询**(无n+1问题; 支持：一对一,一对多,多对一,多对多;返回结果根据子表是否使用List有两种呈现结构)。 
+* 13.支持面向对象方式复杂查询、**多表查询**(无n+1问题; 支持：一对一,一对多,多对一,多对多;返回结果根据子表是否使用List有两种呈现结构);多表关联改插删(2.1.8)。 
 * 14.Mongodb ORM,Mongodb分库分表。  
 * 15.**注册器、拦截器、多租户,支持自定义TypeHandler,处理查询的ResultSet结果**;  
                  转换器SetParaTypeConvert转换PreparedStatement参数的类型。    
@@ -57,10 +57,10 @@ Bee2.1.7 + Spring boot3.0.8对应版本**2.1.7.boot3.0.8 需要JDK17**
 
 **辅助功能**:  
 * 21.提供自然简单的分布式主键生成方案:**分布式**环境下生成**连续单调递增**(在一个workerid内),**全局唯一**数字**id**。  
-* 22.支持自动生成表对应的Javabean，根据Javabean创建表，Javaweb**后端代码**根据**模板自动生成**；能打印非占位符的**可执行sql(支持sql格式化)**,方便调试;支持生成Json格式的SQL脚本。  
+* 22.支持自动生成表对应的Javabean(支持Swagger)，根据Javabean创建表，Javaweb**后端代码**根据**模板自动生成**；能打印非占位符的**可执行sql(支持sql格式化)**,方便调试;支持生成Json格式的SQL脚本。  
 * 23.支持**读取Excel**,从Excel导入数据到DB，操作简单;支持从Excel获取配置生成数据库表。  
-* 24.流的工具类StreamUtil。  
-* 25.丰富的注解支持:PrimaryKey,Column,Datetime,Createtime,Updatetime;JustFetch,ReplaceInto(MySQL),Dict,DictI18n等。  
+* 24.流的工具类StreamUtil,DateUtil日期转换,判断日期格式,计算年龄。  
+* 25.丰富的注解支持:PrimaryKey,Column,Datetime,Createtime,Updatetime;JustFetch,ReplaceInto(MySQL),Dict,DictI18n,GridFs等。  
 * 26.使用实体名_F(自动生成)引用实体字段名Users_F.name或在SuidRichExt接口中使用格式如Users::getName。  
 
 
