@@ -3,7 +3,7 @@ Bee
 =========
 ## 好消息:  
 **Bee 2.1 完善的Sharding分片功能, 完善的MongoDB ORM功能。**  
-当前**最新**版本为:**V2.1.7 LTS版**  
+当前**最新**版本为:**V2.1.8 LTS版**  
 
 Sharding分片目标:对业务开发透明,编码透明,只加少量分片配置即可实现分片功能.  
 #### [快速开始:Shardign最佳实践参考实例](guide/Quick-start-Sharding_CN.md) 
@@ -74,15 +74,19 @@ Bee2.1.7 + Spring boot3.0.8对应版本**2.1.7.boot3.0.8 需要JDK17**
 1.3 不启动应用,直接运行main方法,bee.properties没有配置数据源时,也可以使用application.properties的spring boot单数据源配置  
 2.多表关联插入,更新,删除  
 3.DateUtil增加判断日期格式,计算年龄  
-4.CurrencyArithmetic变量bug  
-5.CacheSuidStruct表名不区分大小写  
-6.MongodbObjSQLRichExt完善拦截器及上下文信息管理  
-7.通过Excel创建表，支持更多数据库  
-8.提供默认的BeeSimpleDataSource，支持在bee.properties里配置多数据源(不使用spring boot时,也可以),  
+4.通过Excel创建表，支持更多数据库  
+5.提供默认的BeeSimpleDataSource，支持在bee.properties里配置多数据源(不使用spring boot时,也可以),  
 不使用Spring boot,单独使用Bee时,DataSourceBuilderFactory 也能自启动。  
-9.Javabean支持生成Swagger注解  
-10.Mongodb打印日志，查询所有字段时，默认不显示要查询的字段；可以通过bee.osql.showMongoSelectAllFields配置控制是否显示  
-11.GridFs注解支持SELECT查询类型,当查询实体时,可以自动关联查出相应的文件(MongoDB),GridFs文件类型支持byte[]  
+6.Javabean支持生成Swagger注解  
+7.MongodbObjSQLRichExt完善拦截器及上下文信息管理  
+8.Mongodb打印日志，查询所有字段时，默认不显示要查询的字段；可以通过bee.osql.showMongoSelectAllFields配置控制是否显示  
+9.GridFs注解支持SELECT查询类型,当查询实体时,可以自动关联查出相应的文件(MongoDB),GridFs文件类型支持byte[]  
+10.修复 bug: 
+CurrencyArithmetic变量bug,  
+CacheSuidStruct表名不区分大小写,  
+SQLite AS 语法少了空格,  
+多表查询使用函数时，不能填充到对应字段,  
+
 
 **V2.1.7(2023.07.01)**  
 1.增加可运行sql格式化(需要配置:bee.osql.showSql.sqlFormat=true)  
@@ -353,7 +357,7 @@ OrdersService.java
        <dependency>
 	      <groupId>org.teasoft</groupId>
 	      <artifactId>bee-all</artifactId>
-	      <version>2.1.7</version>
+	      <version>2.1.8</version>
         </dependency>
 		
 	    <!-- Mysql config.You need change it to the real database config. -->

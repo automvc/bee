@@ -9,7 +9,7 @@ Bee
 **Good Feature:**  AI, Timesaving/Tasteful, Easy, Automatic (**AiTeaSoft Style**)   
 
 ## **Good News:**  
-Newest version is:**Bee V2.1.7 LTS**  
+Newest version is:**Bee V2.1.8 LTS**  
 
 Sharding target: It is mainly transparent to business development and coding, with only a little sharding config.  
 #### [Quick Start:Shardign better example](guide/Quick-start-Sharding.md) 
@@ -297,7 +297,7 @@ Quick Start:
        <dependency>
 	      <groupId>org.teasoft</groupId>
 	      <artifactId>bee-all</artifactId>
-	      <version>2.1.7</version>
+	      <version>2.1.8</version>
         </dependency>
 		
 	    <!-- Mysql config.You need change it to the real database config. -->
