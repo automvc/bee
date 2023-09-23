@@ -43,7 +43,7 @@ https://github.com/automvc/bee-ext
 **Automatic, powerful**:  
 * 11.Dynamic/arbitrary combination of query conditions without the need to prepare DAO interfaces in advance. New query requirements can be handled without modifying or adding interfaces.  
 * 12.Supports transactions, using the same connection for multiple ORM operations, FOR UPDATE, batch processing, executing native SQL statements, and stored procedures.  
-* 13.Supports object-oriented complex queries, multi-table queries (no N+1 problem), and supports one-to-one, one-to-many, many-to-one, and many-to-many relationships. The result structure can differ based on whether the sub-table uses List.  
+* 13.Supports object-oriented complex queries, multi-table queries (no N+1 problem), and supports one-to-one, one-to-many, many-to-one, and many-to-many relationships. The result structure can differ based on whether the sub-table uses List;multi-table association update, insert, and delete(2.1.8).  
 * 14.MongoDB ORM and support for MongoDB Sharding.  
 * 15.Supports register, interceptor, multi-tenancy, and custom TypeHandlers for handling ResultSet results in queries. SetParaTypeConvert converts PreparedStatement parameter types.  
 * 16.Custom dynamic SQL tags, such as @in, @toIsNULL1, @toIsNULL2, <if isNotNull>, <if isNotBlank>. Allows dynamic SQL, converting lists into statements like in (1,2,3) without requiring foreach loops. Batch insertion also does not require foreach.  
@@ -53,10 +53,10 @@ https://github.com/automvc/bee-ext
 * 20.High performance: close to the speed of JDBC; small file size: Bee V1.17 is only 502k, V2.1 is only 827k.  
 **Assist function**:  
 * 21.Additional features: 21. Provides a naturally simple solution for generating distributed primary keys: generates globally unique, monotonically increasing (within a worker ID) numeric IDs in a distributed environment.  
-* 22.Supports automatic generation of Javabean corresponding to tables, creating tables based on Javabean, and automatically generating backend Javaweb code based on templates. Can print executable SQL statements without placeholders for easy debugging. Supports generating SQL scripts in JSON format.  
+* 22.Supports automatic generation of Javabean corresponding to tables(support Swagger), creating tables based on Javabean, and automatically generating backend Javaweb code based on templates. Can print executable SQL statements without placeholders for easy debugging. Supports generating SQL scripts in JSON format.  
 * 23.Supports reading Excel files and importing data into the database; simple operations. Supports generating database tables from Excel configurations.  
-* 24.Stream tool class StreamUtil.  
-* 25.Rich annotation support: PrimaryKey, Column, Datetime, Createtime, Updatetime; JustFetch, ReplaceInto (MySQL), Dict, DictI18n, etc.  
+* 24.Stream tool class StreamUtil;DateUtil date conversion, judge date format, calculate age.  
+* 25.Rich annotation support: PrimaryKey, Column, Datetime, Createtime, Updatetime; JustFetch, ReplaceInto (MySQL), Dict, DictI18n,GridFs, etc.  
 * 26.Use entity name _F (automatically generated) to reference entity field names, e.g., Users_F.name or in SuidRichExt interface using the format Users::getName.  
 
 ## Newest main Function
