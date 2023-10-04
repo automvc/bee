@@ -35,6 +35,13 @@ public interface SqlKeyWord {
 	String values();
 	String and();
 	String or();
+	/**
+	 * add "!"
+	 * @return "!" is mean "not"
+	 * since 2.1.10
+	 */
+	String not();
+	
 	String Null();
 	String isNull();
 	String isNotNull();
