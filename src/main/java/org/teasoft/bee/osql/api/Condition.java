@@ -123,6 +123,13 @@ public interface Condition extends ConditionAssistant {
 	 * @return Condition
 	 */
 	public Condition or();
+	
+	/**
+	 * add "!"
+	 * @return "!" is mean "not"
+	 * since 2.1.10
+	 */
+	public Condition not();
 
 	/**
 	 * Add left parentheses '('.
