@@ -46,6 +46,8 @@ public final class DatabaseConst {
 	public static final String DM ="DM DBMS";
 	public static final String Kingbase ="KingbaseES";
 	
+	public static final String OceanBase="OceanBase";
+	
 	//NoSql
 	public static final String Cassandra = "Cassandra";
 	public static final String Hbase = "Hbase";
