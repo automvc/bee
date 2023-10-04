@@ -35,6 +35,7 @@ public class LowerKey implements SqlKeyWord {
 	private static final String values = "values";
 	private static final String and = "and";
 	private static final String or = "or";
+	private static final String not = "!";  //V2.1.10
 	private static final String Null = "null";
 	private static final String isNull = "is null";
 	private static final String isNotNull = "is not null";
@@ -118,6 +119,11 @@ public class LowerKey implements SqlKeyWord {
 	@Override
 	public String or() {
 		return or;
+	}
+	
+	@Override
+	public String not() {
+		return not;
 	}
 
 	@Override
