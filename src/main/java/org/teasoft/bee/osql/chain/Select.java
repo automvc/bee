@@ -56,6 +56,13 @@ public interface Select extends ToSql{
 
 	public Select or();
 	
+	/**
+	 * add "!"
+	 * @return "!" is mean "not"
+	 * since 2.1.10
+	 */
+	public Select not();
+	
 	
 	public Select where();
 
