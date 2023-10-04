@@ -35,6 +35,7 @@ public class UpperKey implements SqlKeyWord {
 	private static final String VALUES = "VALUES";
 	private static final String AND = "AND";
 	private static final String OR = "OR";
+	private static final String NOT = "!"; //2.1.10
 	private static final String NULL = "NULL";
 	private static final String ISNULL = "IS NULL";
 	private static final String isNotNull = "IS NOT NULL";
@@ -119,6 +120,11 @@ public class UpperKey implements SqlKeyWord {
 	@Override
 	public String or() {
 		return OR;
+	}
+	
+	@Override
+	public String not() {
+		return NOT;
 	}
 
 	@Override
