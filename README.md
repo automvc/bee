@@ -61,7 +61,12 @@ https://github.com/automvc/bee-ext
 
 ## Newest main Function
 
-### **V2.1.8(2023.08·LTS)**  
+### **V2.1.10(2023.10·LTS)**  
+1.support SQL not ("!")  
+2.support OceanBase  
+3.doBeforeReturn with finally  
+
+**V2.1.8(2023.中秋国庆)**  
 1.  
 1.1 Make the spring boot command line compatible with active profile selection, for example: java -jar springbootDemo.jar --spring.profiles.active=dev, which will trigger bee-dev.properties.  
 1.2 Make the spring boot data source configuration compatible, such as spring.datasource.url.  

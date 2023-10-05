@@ -65,8 +65,12 @@ Bee2.1.7 + Spring boot3.0.8对应版本**2.1.7.boot3.0.8 需要JDK17**
 
 
 ## 最新功能简介: 
+### **V2.1.10(2023.10·LTS)**  
+1.支持SQL取反运算NOT("!")  
+2.支持OceanBase数据库  
+3.doBeforeReturn使用finally  
 
-### **V2.1.8(2023.08·LTS版)**  
+**V2.1.8(2023·中秋国庆)**  
 1.  
 1.1 兼容spring boot命令行active选择环境,  
 如:java -jar springbootDemo.jar --spring.profiles.active=dev,会觖发bee-dev.properties  
