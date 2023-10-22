@@ -69,6 +69,8 @@ Bee2.1.7 + Spring boot3.0.8对应版本**2.1.7.boot3.0.8 需要JDK17**
 1.支持SQL取反运算NOT("!")  
 2.支持OceanBase数据库  
 3.doBeforeReturn使用finally  
+4.多数据源配置,dbs支持多环境覆盖配置  
+5.fixed bug:有两个配置项(notSupportUnionQuery,executorSize)没有加前缀sharding_  
 
 **V2.1.8(2023·中秋国庆)**  
 1.  
