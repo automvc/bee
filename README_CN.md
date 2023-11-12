@@ -5,7 +5,7 @@ Bee
 **Bee 2.1 完善的Sharding分片功能, 完善的MongoDB ORM功能。**  
 当前**最新**版本为:**V2.1.8 LTS版**  
 
-Sharding分片目标:对业务开发透明,编码透明,只加少量分片配置即可实现分片功能.  
+Sharding分片:对业务开发透明,编码透明,只加少量分片配置即可实现分片功能.  
 #### [快速开始:Shardign最佳实践参考实例](guide/Quick-start-Sharding_CN.md) 
 
 #### 工欲善其事必先利其器！——《论语》  
@@ -70,7 +70,9 @@ Bee2.1.7 + Spring boot3.0.8对应版本**2.1.7.boot3.0.8 需要JDK17**
 2.支持OceanBase数据库  
 3.doBeforeReturn使用finally  
 4.多数据源配置,dbs支持多环境覆盖配置  
-5.fixed bug:有两个配置项(notSupportUnionQuery,executorSize)没有加前缀sharding_  
+5.支持在main方法中直接运行可以读取springboot的application.properties连接数据库的bee.db.url等信息  
+6.更新dataSource时,清空缓存  
+7.fixed bug:有两个配置项(notSupportUnionQuery,executorSize)没有加前缀sharding_  
 
 **V2.1.8(2023·中秋国庆)**  
 1.  
