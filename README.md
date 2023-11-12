@@ -65,6 +65,10 @@ https://github.com/automvc/bee-ext
 1.support SQL not ("!")  
 2.support OceanBase  
 3.doBeforeReturn with finally  
+4.clear cache when change dataSource map  
+5.multiple data source configurations, dbs supports multiple environment coverage configurations  
+6.support read bee.db.url and other information from application.properties of springboot when use in main method  
+7.fixed bug:two properties item(notSupportUnionQuery,executorSize)have not prefix sharding_  
 
 **V2.1.8(2023.中秋国庆)**  
 1.  
