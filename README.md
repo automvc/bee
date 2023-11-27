@@ -70,7 +70,7 @@ https://github.com/automvc/bee-ext
 6.support read bee.db.url and other information from application.properties of springboot when use in main method  
 7.fixed bug:two properties item(notSupportUnionQuery,executorSize)have not prefix "sharding_"  
 
-**V2.1.8(2023.中秋国庆)**  
+**V2.1.8(2023.Mid-Autumn Festival & National Day)**  
 1.  
 1.1 Make the spring boot command line compatible with active profile selection, for example: java -jar springbootDemo.jar --spring.profiles.active=dev, which will trigger bee-dev.properties.  
 1.2 Make the spring boot data source configuration compatible, such as spring.datasource.url.  
