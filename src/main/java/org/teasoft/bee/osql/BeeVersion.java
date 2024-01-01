@@ -24,8 +24,8 @@ package org.teasoft.bee.osql;
  */
 public final class BeeVersion {
 
-	public static final String version = "2.1.8";
-	public static final String buildId = version + ".916"; //09-16 International Ozone Layer Protection Day
+	public static final String version = "2.2";
+	public static final String buildId = version + ".0.1";
 
 	private BeeVersion() {}
 

@@ -30,13 +30,13 @@ public interface Select extends ToSql{
 	
 	/**
 	 * add "("
-	 * @return Update
+	 * @return Select
 	 */
 	public Select lParentheses();
 	
 	/**
 	 * add ")"
-	 * @return Update
+	 * @return Select
 	 */
 	public Select rParentheses();
 	
