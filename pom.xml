@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.teasoft</groupId>
 	<artifactId>bee</artifactId>
-	<version>2.1.10</version>
+	<version>2.2</version>
 	<packaging>jar</packaging>
 	
 	<properties>
