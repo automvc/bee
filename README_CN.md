@@ -3,7 +3,7 @@ Bee
 =========
 ## 好消息:  
 **Bee 2.1 完善的Sharding分片功能, 完善的MongoDB ORM功能。**  
-当前**最新**版本为:**V2.1.8 LTS版**  
+当前**最新**版本为:**V2.2 LTS版**  
 
 Sharding分片:对业务开发透明,编码透明,只加少量分片配置即可实现分片功能.  
 #### [快速开始:Shardign最佳实践参考实例](guide/Quick-start-Sharding_CN.md) 
@@ -65,7 +65,11 @@ Bee2.1.7 + Spring boot3.0.8对应版本**2.1.7.boot3.0.8 需要JDK17**
 
 
 ## 最新功能简介: 
-### **V2.1.10(2023.10·LTS)**  
+### **V2.2(2024.1.1)**  
+1.Javabean实体支持继承  
+2.fixed bug:分片批量删除上下文相关的bug  
+
+**V2.1.10(2023.10·LTS)**  
 1.支持SQL取反运算NOT("!")  
 2.支持OceanBase数据库  
 3.doBeforeReturn使用finally  
