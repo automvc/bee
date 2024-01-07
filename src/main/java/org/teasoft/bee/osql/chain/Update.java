@@ -16,65 +16,25 @@
  */
 package org.teasoft.bee.osql.chain;
 
-import org.teasoft.bee.osql.Op;
-
 /**
  * Update interface for SQL with chain programming.
  * @author Kingstar
  * @since  1.3
+ * @since  2.4.0
  */
-public interface Update extends ToSql{
+public interface Update extends ToSql, Where<Update> {
 
 	public Update update(String table) ;
 	public Update set(String field, String value);
 	public Update set(String field, Number value);
 	
-	//<==============condition
+	public Update setAdd(String field,Number num);
+	public Update setMultiply(String field,Number num);
+	public Update setAdd(String field, String otherFieldName);
+	public Update setMultiply(String field, String otherFieldName);
 	
-	/**
-	 * add "("
-	 * @return Update
-	 */
-	public Update lParentheses();
+	public Update setWithField(String field1, String field2);
 	
-	/**
-	 * add ")"
-	 * @return Update
-	 */
-	public Update rParentheses();
+	public Update setNull(String fieldName);
 	
-	public Update op(String field, Op op, String value);
-
-	public Update op(String field, Op op, Number value);
-	
-	public Update op(String field, String value);
-
-	public Update op(String field, Number value);
-
-	/**
-	 * Default will automatically add and.
-	 * @return Select
-	 */
-	public Update and();
-
-	public Update or();
-	
-	
-	public Update where();
-
-	public Update where(String expression) ;
-	
-	public Update between(String field, Number low, Number high);
-	public Update notBetween(String field, Number low, Number high);
-
-	public Update isNull(String field);
-	public Update isNotNull(String field);
-
-	public Update in(String field, Number... valueList);
-	public Update notIn(String field, Number... valueList);
-	
-	public Update in(String field, String valueList);
-	public Update notIn(String field, String valueList);
-	
-	//=============>
 }

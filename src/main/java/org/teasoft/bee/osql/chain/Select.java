@@ -16,77 +16,22 @@
  */
 package org.teasoft.bee.osql.chain;
 
-import org.teasoft.bee.osql.Op;
 import org.teasoft.bee.osql.OrderType;
 
 /**
  * Select interface for SQL with chain programming.
  * @author Kingstar
  * @since  1.3
+ * @since  2.4.0
  */
-public interface Select extends ToSql{
-	
-	//<==============condition start
-	
-	/**
-	 * add "("
-	 * @return Select
-	 */
-	public Select lParentheses();
-	
-	/**
-	 * add ")"
-	 * @return Select
-	 */
-	public Select rParentheses();
-	
-	public Select op(String field, Op op, String value);
-
-	public Select op(String field, Op op, Number value);
-	
-	public Select op(String field, String value);
-
-	public Select op(String field, Number value);
-
-	/**
-	 * Default will automatically add and.
-	 * @return Select
-	 */
-	public Select and();
-
-	public Select or();
-	
-	/**
-	 * add "!"
-	 * @return "!" is mean "not"
-	 * since 2.1.10
-	 */
-	public Select not();
-	
-	
-	public Select where();
-
-	public Select where(String expression) ;
-	
-	public Select between(String field, Number low, Number high);
-	public Select notBetween(String field, Number low, Number high);
-
-	public Select isNull(String field);
-	public Select isNotNull(String field);
-
-	public Select in(String field, Number... valueList);
-	public Select notIn(String field, Number... valueList);
-	
-	public Select in(String field, String valueList);
-	public Select notIn(String field, String valueList);
-	
-	//==============condition end>
+public interface Select extends ToSql, Where<Select> {
 	
 	public Select select() ;
 
 	public Select select(String column);
 
 	public Select distinct(String field) ;
+	public Select distinct(String fieldName, String alias); //2.x
 
 	public Select from(String table);
 
@@ -119,4 +64,14 @@ public interface Select extends ToSql{
 	
 	public Select in(String field, Select subSelect);
 	public Select notIn(String field, Select subSelect);
+	
+	public Select forUpdate();
+	
+//	public Condition selectFun(FunctionType functionType, String fieldForFun);
+//	public Condition selectFun(FunctionType functionType, String fieldForFun, String alias);
+	
+	
+//	public Select selectFun(FunctionType functionType, String fieldForFun);
+//	public Select selectFun(FunctionType functionType, String fieldForFun, String alias);
+//	public Select forUpdate();
 }
