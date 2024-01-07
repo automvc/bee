@@ -79,4 +79,10 @@ public interface SqlKeyWord {
 	
 	String union();//2.0
 	String unionAll();//2.0
+	
+	//2.4.0
+	String truncate();
+	String table();
+	String drop();
+	String If();
 }
