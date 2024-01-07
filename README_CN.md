@@ -65,7 +65,7 @@ Bee2.1.7 + Spring boot3.0.8对应版本**2.1.7.boot3.0.8 需要JDK17**
 
 
 ## 最新功能简介: 
-### **V2.2(2024.1.1)**  
+### **V2.2(2024.1.1·LTS版)**  
 1.Javabean实体支持继承(配置bee.osql.openEntityCanExtend=true)  
 2.增强批量插入与事务的关联  
   2.2之前,调用批量插入在每个批都会提交commit,但在2.2改为只调用一次且在事务中,在批量插入的方法内容不再提交,而由事务控制.  
@@ -77,7 +77,7 @@ Bee2.1.7 + Spring boot3.0.8对应版本**2.1.7.boot3.0.8 需要JDK17**
   5).InheritableThreadLocal与parallelStream()不兼容的bug,当不是分片模式时,可以用parallelStream(),而分片时则不建议使用parallelStream()  
 
 
-**V2.1.10(2023.10·LTS)**  
+**V2.1.10(2023.10)**  
 1.支持SQL取反运算NOT("!")  
 2.支持OceanBase数据库  
 3.doBeforeReturn使用finally  
@@ -125,7 +125,7 @@ SQLite AS 语法少了空格,
   fixed bug NullPointerException for PreparedSql preparedValue  
   fixed bug for StringUtils  
 
-### **V2.1(2023.05.20·LTS版)主要功能**  
+### **V2.1(2023.05.20版)主要功能**  
 1.Suid,SuidRich,MoreTable,PreparedSql,MapSuid等主要的常用的接口移到org.teasoft.bee.osql.api包  
 2.更好支持MVC编程和Spring RestFul编程  
 3.bee.properties支持配置多数据源(此方式,无需xml或java代码配置)  
@@ -575,7 +575,7 @@ API-V2.1(最新版) 下载代码含有 bee-2.1英文版API
     支持List结构实体Json解析(V1.11.0.5.6)  
 * 9.支持EDI XML电子报文自动生成	
 * 10.Sql Server支持start,size两个参数分页(V1.11.0.5.8)  
-注: 除1、5、9外,其它已添加到V2.1 LTS版  
+注: 除1、5、9外,其它已添加到V2.1版  
 
 ### 价格(企业版)
 **企业**用户:  

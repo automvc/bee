@@ -9,7 +9,7 @@ Bee
 **Good Feature:**  AI, Timesaving/Tasteful, Easy, Automatic (**AiTeaSoft Style**)   
 
 ## **Good News:**  
-Newest version is:**Bee V2.1.8 LTS**  
+Newest version is:**Bee V2.2 LTS**  
 
 Sharding target: It is mainly transparent to business development and coding, with only a little sharding config.  
 #### [Quick Start:Shardign better example](guide/Quick-start-Sharding.md) 
@@ -61,7 +61,18 @@ https://github.com/automvc/bee-ext
 
 ## Newest main Function
 
-### **V2.1.10(2023.10·LTS)**  
+### **V2.2(2024.1.1·LTS)**  
+1. Javabean entity supports inheritance (configure bee.osql.openEntityCanExtend=true).  
+2. Enhanced the association between batch insert and transaction.  
+   2.2 Before version 2.2, calling batch insertion would commit on each batch, but in version 2.2, it is changed to only call once within a transaction. The content of the batch insertion method is no longer committed, but is controlled by the transaction.  
+3. Fixed bugs:  
+   1) When Condition uses Op.in and the parameter is null, an exception is thrown.  
+   2) Context-related bug in sharding batch insert.  
+   3) Resolved context issues when only sharding databases.  
+   4) When sharding, the context of the main thread needs to be cleared.  
+   5) Bug with InheritableThreadLocal and parallelStream() being incompatible.In 2.2, when not in sharding mode, parallelStream() can be used, but it is not recommended to use parallelStream() when sharding.  
+
+**V2.1.10(2023.10)**  
 1.support SQL not ("!")  
 2.support OceanBase  
 3.doBeforeReturn with finally  
