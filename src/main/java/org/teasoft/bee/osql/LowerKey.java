@@ -70,6 +70,13 @@ public class LowerKey implements SqlKeyWord {
 	//2.0
 	private static final String union="union";
 	private static final String unionAll="union all";
+	
+    //2.4.0	
+	private static final String truncate="truncate";
+	private static final String table="table";
+	private static final String drop="drop";
+	private static final String If="if";
+	
 
 	@Override
 	public String select() {
@@ -274,6 +281,26 @@ public class LowerKey implements SqlKeyWord {
 	@Override
 	public String unionAll() {
 		return unionAll;
+	}
+	
+	@Override
+	public String truncate() {
+		return truncate;
+	}
+
+	@Override
+	public String table() {
+		return table;
+	}
+
+	@Override
+	public String drop() {
+		return drop;
+	}
+
+	@Override
+	public String If() {
+		return If;
 	}
 
 }
