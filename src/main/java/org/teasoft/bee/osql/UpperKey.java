@@ -71,6 +71,13 @@ public class UpperKey implements SqlKeyWord {
 	//2.0
 	private static final String union="UNION";
 	private static final String unionAll="UNION ALL";
+	
+	
+    //2.4.0	
+	private static final String truncate="TRUNCATE";
+	private static final String table="TABLE";
+	private static final String drop="DROP";
+	private static final String If="IF";
 
 	@Override
 	public String select() {
@@ -275,6 +282,26 @@ public class UpperKey implements SqlKeyWord {
 	@Override
 	public String unionAll() {
 		return unionAll;
+	}
+
+	@Override
+	public String truncate() {
+		return truncate;
+	}
+
+	@Override
+	public String table() {
+		return table;
+	}
+
+	@Override
+	public String drop() {
+		return drop;
+	}
+
+	@Override
+	public String If() {
+		return If;
 	}
 
 }
