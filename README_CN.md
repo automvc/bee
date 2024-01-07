@@ -67,10 +67,15 @@ Bee2.1.7 + Spring boot3.0.8对应版本**2.1.7.boot3.0.8 需要JDK17**
 ## 最新功能简介: 
 ### **V2.2(2024.1.1)**  
 1.Javabean实体支持继承(配置bee.osql.openEntityCanExtend=true)  
-2.fixed bug:分片批量插入上下文相关的bug  
-3.增强批量插入与事务的关联  
-2.2之前,调用批量插入在每个批都会提交commit,但在2.2改为只调用一次且在事务中,在批量插入的方法内容不再提交,而由事务控制.  
-3.InheritableThreadLocal与parallelStream()的bug,当不是分片模式时,可以用parallelStream().
+2.增强批量插入与事务的关联  
+  2.2之前,调用批量插入在每个批都会提交commit,但在2.2改为只调用一次且在事务中,在批量插入的方法内容不再提交,而由事务控制.  
+3.fixed bug:  
+  1)Condition使用Op.in时,参数为null时会报异常  
+  2)分片批量插入上下文相关的bug  
+  3)仅分库时,解决上下文问题  
+  4)分片时,主线程的上下文要清除  
+  5).InheritableThreadLocal与parallelStream()不兼容的bug,当不是分片模式时,可以用parallelStream(),而分片时则不建议使用parallelStream()  
+
 
 **V2.1.10(2023.10·LTS)**  
 1.支持SQL取反运算NOT("!")  
