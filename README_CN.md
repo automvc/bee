@@ -25,7 +25,8 @@ Sharding分片:对业务开发透明,编码透明,只加少量分片配置即可
 
 ## 环境要求  
 #### Bee jdk1.8+   
-Bee2.1.7 + Spring boot3.0.8对应版本**2.1.7.boot3.0.8 需要JDK17**   
+Bee2.1.8 + Spring boot3.0.8对应版本**2.1.8.boot3.0.8 需要JDK17**   
+Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**  
 
 ## Bee主要功能特点介绍：  
 #### 简单易用
@@ -65,7 +66,14 @@ Bee2.1.7 + Spring boot3.0.8对应版本**2.1.7.boot3.0.8 需要JDK17**
 
 
 ## 最新功能简介: 
-### **V2.2(2024.1.1·LTS版)**  
+### **V2.4.0**  
+1.chaing SQL编程支持占位符预编译,防止注入攻击  
+2.没有指定表名则不放缓存 
+3.添加Calculate默认日期分片实现，添加自定义分片实现样例 
+4.支持ElasticSearch(7.x) ORM 查询  
+
+
+**V2.2(2024.1.1·LTS版)**  
 1.Javabean实体支持继承(配置bee.osql.openEntityCanExtend=true)  
 2.增强批量插入与事务的关联  
   2.2之前,调用批量插入在每个批都会提交commit,但在2.2改为只调用一次且在事务中,在批量插入的方法内容不再提交,而由事务控制.  
@@ -377,7 +385,7 @@ OrdersService.java
        <dependency>
 	      <groupId>org.teasoft</groupId>
 	      <artifactId>bee-all</artifactId>
-	      <version>2.1.8</version>
+	      <version>2.2</version>
         </dependency>
 		
 	    <!-- Mysql config.You need change it to the real database config. -->
@@ -387,6 +395,14 @@ OrdersService.java
 			<version>5.1.47</version>
 			<scope>runtime</scope>
 		</dependency>
+```
+
+Gradle
+
+```xml
+implementation group: 'org.teasoft', name: 'bee-all', version: '2.2'
+//Gradle(Short)
+implementation 'org.teasoft:bee-all:2.2'
 ```
 
 #### 1.2  也可以直接下载jar文件  	
