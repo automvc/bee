@@ -64,7 +64,7 @@ https://github.com/automvc/bee-ext
 1. Chaing SQL programming supports placeholder precompilation to prevent injection attacks  
 2. Do not cache if no table name is specified  
 3. Add a default date sharding implementation for Calculate, and add a custom sharding implementation example  
-4. Support ElasticSearch (7.x) ORM query  
+4. Support ElasticSearch(7.x) ORM query  
 
 **V2.2(2024.1.1·LTS)**  
 1. Javabean entity supports inheritance (configure bee.osql.openEntityCanExtend=true).  
