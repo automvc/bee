@@ -323,14 +323,14 @@ public interface PreparedSql extends CommOperate {
 	
 	/**
 	 * Modify database records with update, insert or delete statement.
-	 * @deprecated It is not recommended because 
+	 * @Deprecated It is not recommended because 
 	 * <br>the framework does not know what table has been changed, which will affect the correctness 
 	 * <br>of the cache and cause the risk of inaccurate cache data.
 	 * @param sql SQL select statement(use ? placeholder).
 	 * @param preValues parameter values for placeholder
 	 * @return	the number of affected successfully records.
 	 */
-	@Deprecated
+//	@Deprecated
 	public int modify(String sql,Object preValues[]);
 	
 	/**
@@ -347,13 +347,13 @@ public interface PreparedSql extends CommOperate {
 	
 	/**
 	 * Modify database records with update, insert or delete statement.
-	 * @deprecated It is not recommended because the framework does not know what table has been changed, 
+	 * @Deprecated It is not recommended because the framework does not know what table has been changed, 
 	 * <br>which will affect the correctness of the cache and cause the risk of inaccurate cache data.
 	 * @param sql SQL statement.
 	 * @return	the number of affected successfully records.
 	 * @since 1.9
 	 */
-	@Deprecated
+//	@Deprecated
 	public int modify(String sql);
 	
 	/**
@@ -462,5 +462,20 @@ public interface PreparedSql extends CommOperate {
 
 	//why has not List<Entity> ? If you know the entity structure, use object-oriented way.
 //	public <T> int insertBatch(String sql, List<T> parameterMapList, int batchSize);
+	
+	/**
+	 * 设置sql关联的表;方法带有T的将忽略这个方法;  
+	 * 设置只一次有效,getRelativeTableOneTime()被调用后,即被清除.
+	 * @param table  数据库里的表名
+	 * @since 2.4.0
+	 */
+	public void setRelativeTableOneTime(String... table);
+
+	/**
+	 * 获取用户在setRelativeTableOneTime设置的表,获取一次后即清除.一般只在Bee框架内部使用
+	 * @since 2.4.0
+	 * @return table name
+	 */
+	public String getRelativeTableOneTime();
 	
 }
