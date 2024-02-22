@@ -445,30 +445,6 @@ public interface SuidRich extends Suid {
 	public int deleteById(Class c, String ids);
 
 	/**
-	 * Select record according to entity.
-	 * @deprecated {@link Suid#select(Object,Condition)} can set includeType via condition.
-	 * @param entity table's entity(do not allow null).if id's value is null can not as filter condition.
-	 * @param includeType whether null string and null as a filter conditions.
-	 * @param condition Condition as filter the record.
-	 * @return list which contains more than one entity.
-	 * @since  1.6
-	 */
-	@Deprecated
-	public <T> List<T> select(T entity, IncludeType includeType, Condition condition);
-
-	/**
-	 * Select and return data in Json format according to entity object.
-	 * @deprecated {@link SuidRich#selectJson(Object,Condition)} can set includeType via condition.
-	 * @param entity table's entity(do not allow null).if id's value is null can not as filter condition.
-	 * @param includeType whether null string and null as a filter conditions.
-	 * @param condition Condition as filter the record.
-	 * @return Json string, it transform from list which can contain more than one entity.
-	 * @since  1.6
-	 */
-	@Deprecated
-	public <T> String selectJson(T entity, IncludeType includeType, Condition condition);
-
-	/**
 	 * Select and return data in Json format according to entity object.
 	 * @param entity table's entity(do not allow null).
 	 * @param condition Condition as filter the record.
