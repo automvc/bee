@@ -234,20 +234,6 @@ public abstract class ObjSQLRichAbstractServiceImpl extends ObjSQLAbstractServic
 	}
 
 	@Override
-	@SuppressWarnings("deprecation")
-	public <T> List<T> select(T entity, IncludeType includeType, Condition condition) {
-		// Add the business logic if need.
-		return getSuidRich().select(entity, includeType, condition);
-	}
-
-	@Override
-	@SuppressWarnings("deprecation")
-	public <T> String selectJson(T entity, IncludeType includeType, Condition condition) {
-		// Add the business logic if need.
-		return getSuidRich().selectJson(entity, includeType, condition);
-	}
-
-	@Override
 	public <T> String selectJson(T entity, Condition condition) {
 		// Add the business logic if need.
 		return getSuidRich().selectJson(entity, condition);
