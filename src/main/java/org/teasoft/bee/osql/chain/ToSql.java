@@ -39,9 +39,17 @@ public interface ToSql {
 	
 	
 	/**
-	 * 
-	 * @return
+	 * Pv List
+	 * @return Pv List
 	 * @since 2.4.0
 	 */
 	public List<?> getPvList();
+	
+	
+	/**
+	 * get table name
+	 * @return table name
+	 * @since 2.4.0
+	 */
+	public String getTable();
 }
