@@ -39,6 +39,7 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 3.添加Calculate默认日期分片实现，添加自定义分片实现样例  
 4.支持ElasticSearch(7.x) ORM 查询  
 5.自定义sql(PreparedSql)增加关联表名的方法,让自定义sql中,方法没带实体T的,也能纳入缓存管理  
+6.MongoDB根据表生成Javabean,支持生成默认注解  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
