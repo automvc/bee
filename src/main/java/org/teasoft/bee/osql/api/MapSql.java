@@ -37,14 +37,14 @@ public interface MapSql {
 	public void put(MapSqlKey mapSqlKey, String value);
 
 	/**
-	 * Set the field information used for where filtering in SQL select,delete, also can use in SQL insert.
+	 * Set the field information used for where filtering , also can use in SQL insert.
 	 * @param fieldName field name
 	 * @param value value
 	 */
 	public void put(String fieldName, Object value);
 	
 	/**
-	 * Set the field information used for where filtering in SQL select,delete, also can use in SQL insert.
+	 * Set the field information used for where filtering , also can use in SQL insert.
 	 * @param map map instance consist by key and value.
 	 */
 	public void put(Map<String, ? extends Object> map);

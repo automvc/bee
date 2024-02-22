@@ -100,7 +100,7 @@ public interface Condition extends ConditionAssistant {
 	public Condition opOn(String field, Op op, Number value);
 	
 	/**
-	 * Add a expression condition.
+	 * Add a expression in where part.
 	 * <br>This method cannot be used for SQL update set part.
 	 * <br>eg: opWithField(field1,Op.gt,field2)-->where field1>field2
 	 * @param field1 first field name
