@@ -41,6 +41,11 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 5.自定义sql(PreparedSql)增加关联表名的方法,让自定义sql中,方法没带实体T的,也能纳入缓存管理  
 6.MongoDB根据表生成Javabean,支持生成默认注解  
 
+7.Sharding模板方法类使用finally处理上下文回收  
+8.MapSql(MapSuid)支持使用Condition实现更加复杂的where条件  
+MapSql增加方法:public void where(Condition condition);  
+
+
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 
@@ -359,14 +364,14 @@ public class SuidExam {
 ### [更多例子/测试用例](../../../bee-exam/)	
 
 ### [Bee+Spring-boot Demo](../../../bee-starter-demo/)	
-**2.1.7.boot3.0.8需要JDK17**	
+**2.2.boot3.0.13需要JDK17**	
 
 ## Bee架构介绍
 **V2.1**  
 <img src="illustration/Bee-architecture-V2.0.png"  width="520" height="640">  
 
 ## Bee常用接口介绍  
-<img src="illustration/common-interface.jpg">  
+<img src="illustration/common-interface-2.4.png">  
 
 综合应用:
 =========	

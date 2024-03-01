@@ -65,6 +65,8 @@ https://github.com/automvc/bee-ext
 2. Do not cache if no table name is specified  
 3. Add a default date sharding implementation for Calculate, and add a custom sharding implementation example  
 4. Support ElasticSearch(7.x) ORM query  
+5. PreparedSql support set table name for enhance relative cache  
+6. MongoDB gen Javabean support gen comment  
 
 **V2.2(2024.1.1·LTS)**  
 1. Javabean entity supports inheritance (configure bee.osql.openEntityCanExtend=true).  
@@ -560,7 +562,7 @@ Operate 10000 records, and the use time comparison is as follows.
 <img src="illustration/Bee-architecture-EN-V2.0.png"  width="520" height="640">  
 
 ## Bee Common Interface  
-<img src="illustration/common-interface_en.jpg">  
+<img src="illustration/common-interface-2.4_en.png">  
 
 Rapid application development:
 =========	
