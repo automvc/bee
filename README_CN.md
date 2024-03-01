@@ -288,6 +288,16 @@ bee.osql.loggerType=systemLogger
 [自动生成Javabean](../../../bee-exam/blob/master/src/main/java/org/teasoft/exam/bee/osql/autogen/GenBeanExam.java)  
 
 ## 5. 运行下面的 java代码    
+关键代码    
+
+```java
+List<Orders> list1 =suid.select(orders1);  //select
+int updateNum=suid.update(orders1);   //update
+int insertNum=suid.insert(orders2); //insert 
+int deleteNum=suid.delete(orders2);   //delete
+```
+
+详细实例    
 
 ```java
 		
