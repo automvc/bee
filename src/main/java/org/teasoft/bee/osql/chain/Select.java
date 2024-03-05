@@ -24,7 +24,7 @@ import org.teasoft.bee.osql.OrderType;
  * @since  1.3
  * @since  2.4.0
  */
-public interface Select extends ToSql, Where<Select> {
+public interface Select extends Where<Select>, ToSql {
 	
 	public Select select() ;
 

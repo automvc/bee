@@ -22,7 +22,7 @@ package org.teasoft.bee.osql.chain;
  * @since  1.3
  * @since  2.4.0
  */
-public interface Update extends ToSql, Where<Update> {
+public interface Update extends Where<Update>, ToSql {
 
 	public Update update(String table) ;
 	public Update set(String field, String value);

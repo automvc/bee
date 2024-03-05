@@ -85,5 +85,19 @@ public interface MapSql {
 	 * @since 1.9.8
 	 */
 	public void size(Integer size);
+	
+	/**
+	 * add condition for filter(use in SQL where part).
+	 * @param condition instance of Condition
+	 * @since 2.4.0
+	 */
+	public void where(Condition condition);
+	
+	/**
+	 * add condition for update set(use in SQL update set part).
+	 * @param condition instance of Condition
+	 * @since 2.4.0
+	 */
+	public void updateSet(Condition condition);
 
 }

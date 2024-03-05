@@ -37,8 +37,20 @@ public interface Where<T> {
 		 */
 		public T rParentheses();
 		
+		/**
+		 * will transfer to field='value' or field=? 
+		 * @param field
+		 * @param value
+		 * @return
+		 */
 		public T op(String field, String value);
 
+		/**
+		 * will transfer to field=value or field=? 
+		 * @param field
+		 * @param value
+		 * @return
+		 */
 		public T op(String field, Number value);
 		
 		/**
