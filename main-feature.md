@@ -10,7 +10,7 @@ Bee **简化了与DB交互的编码**工作量。连接，事务都可以由Bee�
 * 5.可轻松实现**只查询一部分字段**，轻松实现**原生语句分页**。   
 * 6.支持**直接返回Json**格式查询结果; 链式编程。  
 * 7.**Sharding分片**,分库分表;只分库;只分表;读写分离;(对以前的代码无需修改,该功能对代码是透明的,即无需额外编码)。 
-* 8.**多种DB**支持轻松扩展(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Access,金仓,达梦等,NoSQL:**Cassandra,Mongodb**等直接可用),理论上支持JDBC的DB都可以支持,此外还支持**Android和Harmony**; 
+* 8.**多种DB**支持轻松扩展(MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Access,金仓,达梦等,NoSQL:**Cassandra,Mongodb**等直接可用),理论上支持JDBC的DB都可以支持,此外还支持**Android和Harmony**,支持ElasticSearch(7.x) ORM 查询; 
 * 9.更多数据库分页默认支持:MsAccess,Cubrid,HSQL,Derby,Firebird等  
 * 10.**多种数据库可同时使用(如同时使用Mysql,Oracle,MongoDB)**。  
 
