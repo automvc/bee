@@ -31,6 +31,7 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 
 ## Bee主要功能特点介绍：  
 <img src="illustration/ORM Bee Outline.png">  
+[主要功能介绍](../../../bee/blob/master/main-feature.md)  
 
 ## 最新功能简介: 
 ### **V2.4.0**  
@@ -42,9 +43,9 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 6.MongoDB根据表生成Javabean,支持生成默认注解  
 
 7.Sharding模板方法类使用finally处理上下文回收  
-8.MapSql(MapSuid)支持使用Condition实现更加复杂的where条件  
-MapSql增加方法:public void where(Condition condition);  
-
+8.MapSql(MapSuid)支持使用Condition实现更加复杂的where条件,updateSet设值  
+MapSql增加方法: public void where(Condition condition);  
+               public void updateSet(Condition condition);  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
@@ -399,7 +400,7 @@ public class SuidExam {
 **HarmonyOS使用Bee开发App实例：**  
 [Bee + HarmonyOS](../../../../aiteasoft/HarmonyOS-ORM-Bee-Demo)  
 
-**自动生成代码**  
+**自动生成代码GenCode**  
 [Generate code automatically](../../../gencode)  
 
 ### 快码加编
