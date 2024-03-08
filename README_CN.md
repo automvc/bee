@@ -31,6 +31,7 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 
 ## Bee主要功能特点介绍：  
 <img src="illustration/ORM Bee Outline.png">  
+
 [主要功能介绍](../../../bee/blob/master/main-feature.md)  
 
 ## 最新功能简介: 
