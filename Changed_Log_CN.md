@@ -738,7 +738,7 @@ jakarta.persistence.*;
 如:java -jar springbootDemo.jar --spring.profiles.active=dev,会觖发bee-dev.properties  
 1.2 兼容spring boot数据源配置,如spring.datasource.url  
 1.3 不启动应用,直接运行main方法,bee.properties没有配置数据源时,也可以使用application.properties的spring boot单数据源配置  
-2.多表关联插入,更新,删除  
+2.MoreTable多表关联插入,更新,删除  
 3.DateUtil增加判断日期格式,计算年龄  
 4.通过Excel创建表，支持更多数据库  
 5.提供默认的BeeSimpleDataSource，支持在bee.properties里配置多数据源(不使用spring boot时,也可以),  

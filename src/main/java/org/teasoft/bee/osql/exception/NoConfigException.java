@@ -26,7 +26,7 @@ import org.teasoft.bee.osql.BeeException;
  */
 public class NoConfigException extends BeeException {
 	
-	static final long serialVersionUID = -875516993124222233L;
+	static final long serialVersionUID = -875516993124222237L;
 
 
 	public NoConfigException() {

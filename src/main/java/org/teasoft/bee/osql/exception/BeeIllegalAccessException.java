@@ -26,7 +26,7 @@ import org.teasoft.bee.osql.BeeException;
  */
 public class BeeIllegalAccessException extends BeeException {
 
-	static final long serialVersionUID = -875516993124222230L;
+	static final long serialVersionUID = -875516993124222234L;
 
 	public BeeIllegalAccessException() {
 		super();
