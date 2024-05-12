@@ -73,7 +73,7 @@ NOSQL:
 15.ElasticSearch  
 16.Cassandra  
 
-手机环境(的数据库): 
+手机环境(的数据库):  
 17.Android  
 18.Harmony  
 
