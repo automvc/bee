@@ -104,7 +104,7 @@ new GenBean().genAllBeanFile();
 1.11.Sharding分片配置支持  
 1.12.流式查询,降低查询内存使用(JDBC)  
 1.13.分片支持:=,in,between;其中in支持Number,List,Set  
-        不参与分片:not in, not between,>=,<=。 
+        不参与分片:not in, not between,>=,<=。   
 2.新增Mongodb ORM功能支持(使用类似JDBC用法)  
 3.新增Mongodb分片功能  
 4.新增MS Access支持  

@@ -42,7 +42,7 @@ public interface Suid extends CommOperate {
 	public <T> List<T> select(T entity);
 	
 	/**
-	 * According to entity object update record.This method just has id field to SQL where expression.
+	 * According to entity object update record(update record by id).This method just has id field to SQL where expression.
 	 * table's entity(do not allow null);id is where condition,do not allow null.<br>
 	 * The entity corresponding to table and can not be null. <br>
 	 * The ID field of entity cannot be null and as filter condition. <br>

@@ -542,3 +542,47 @@ new GenBean().genAllBeanFile();
 ### **V2.1.5.20(2023·千言万语)**  
 
 V1.17.21(2023.06.18  1.17.x LTS版)  
+
+
+**V2.1.6** 
+1.add switch closeDefaultParaResultRegistry  
+2.support JAP new API package jakarta.persistence.*  
+3.catchModifyDuplicateException for batch insert  
+4.close UtilDotDateTypeConvert because it miss HH:mm:ss  
+5.fixed bug update the defalut value for cofig item  
+  fixed bug NullPointerException for PreparedSql preparedValue  
+  fixed bug for StringUtils  
+  
+**V2.1.7** 
+1.support showExecutableSql sql format(requires configuration: bee.osql.showSql.sqlFormat=true)  
+2. Support random expiration time for second-level cache to solve cache avalanche issue.  
+3. DdlViaExcel.createTable allows creating database tables using information from an Excel file, with the option to create only specific tables.  
+4. Support for Spring Boot 3.0.8  
+5. Enhance Sharding ThreadPool to allow custom configuration of the size of threads for Sharding operations.  
+6. Improve handling of multi-threaded operations for obtaining SQLiteDatabase in Android.  
+
+
+**V2.1.8(2023.Mid-Autumn Festival & National Day)**  
+1.  
+1.1 Make the spring boot command line compatible with active profile selection, for example: java -jar springbootDemo.jar --spring.profiles.active=dev, which will trigger bee-dev.properties.  
+1.2 Make the spring boot data source configuration compatible, such as spring.datasource.url.  
+1.3 When not starting the application directly running the main method, if bee.properties does not have a data source configuration, it should be able to use the single data source configuration in application.properties of spring boot.  
+2. Perform insert, update, and delete operations on multiple table associations.  
+3. Add date format validation and calculate age in DateUtil.  
+4. Fix the bug in the CurrencyArithmetic variable.  
+5. Make the table name in CacheSuidStruct case-insensitive.  
+6. Improve the interceptor and context information management in MongodbObjSQLRichExt.  
+7. Support creating tables through Excel for more Database.  
+8. In Mongodb logging, when querying all fields, by default, the fields to be queried are not displayed. This can be controlled by the bee.osql.showMongoSelectAllFields configuration.  
+9. Provide a default BeeSimpleDataSource that supports configuring multiple data sources in bee.properties (even without using spring boot). When using Bee alone, the DataSourceBuilderFactory can also start automatically.  
+10. Support generating Swagger annotations for Javabean.  
+11. GridFs annotation support select type for MongoDB, GridFs file type support byte[] 
+
+**V2.1.10(2023.10)**  
+1.support SQL not ("!")  
+2.support OceanBase  
+3.doBeforeReturn with finally  
+4.clear cache when change dataSource map  
+5.multiple data source configurations, dbs supports multiple environment coverage configurations  
+6.support read bee.db.url and other information from application.properties of springboot when use in main method  
+7.fixed bug:two properties item(notSupportUnionQuery,executorSize)have not prefix "sharding_"  
