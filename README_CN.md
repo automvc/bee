@@ -48,10 +48,35 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 MapSql增加方法: public void where(Condition condition);  
                public void updateSet(Condition condition);  
 9.添加ConditionExt支持使用entity::getName形式引用属性名  
-10.添加链式编程工厂引用类ChainSqlFactory  
+10.添加链式编程工厂引用类ChainSqlFactory及帮助类ChainSqlFactoryHelper/CSF  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
+
+## Bee支持的数据库	
+1.MySQL  
+2.Oracle  
+3.SQL Server  
+4.MariaDB  
+5.H2  
+6.SQLite  
+7.PostgreSQL  
+8.MS Access  
+9.金仓  
+10.达梦  
+11.OceanBase  
+12.Cubrid,HSQL,Derby,Firebird  
+13.其它支持JDBC的DB  
+
+NOSQL:  
+14.Mongodb  
+15.ElasticSearch  
+16.Cassandra  
+
+手机环境(的数据库): 
+17.Android  
+18.Harmony  
+
 
 ## ORM比较	
 ### 应用于JDBC方面的比较	
@@ -407,7 +432,7 @@ public class SuidExam {
 [Generate code automatically](../../../gencode)  
 
 ### 快码加编
-[快码加编——代码生成神器](http://www.kmcoding.com)  
+[快码加编——代码生成神器](https://www.kmcoding.com)  
 * 1.一键生成整个工程(无需再搭建系统框架)  
 * 2.自动生成增删改查等常用功能  
 * 3.生成的工程可以直接运行,不再是只能看不能跑的demo  
@@ -464,7 +489,7 @@ API-V2.1(最新版) 下载代码含有 bee-2.1英文版API
 
 ### 技术支持
 **企业版使用，专业技术支持，解决方案咨询，由以下单位提供:**  
-**[深圳彩凤软件](http://www.aiteasoft.com)**  
+**[深圳彩凤软件](https://www.aiteasoft.com)**  
 (有意愿加入的企业,请联系我们!)  
 
 
