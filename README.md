@@ -48,7 +48,7 @@ https://github.com/automvc/bee-ext
 * 15.Supports register, interceptor, multi-tenancy, and custom TypeHandlers for handling ResultSet results in queries. SetParaTypeConvert converts PreparedStatement parameter types.  
 * 16.Custom dynamic SQL tags, such as @in, @toIsNULL1, @toIsNULL2, <if isNotNull>, <if isNotBlank>. Allows dynamic SQL, converting lists into statements like in (1,2,3) without requiring foreach loops. Batch insertion also does not require foreach.  
 * 17.Complex query can be automatically parsed by the frontend and backend.  
-* 18. L1 cache, simple in concept and powerful in function; L1 cache can also be fine tuned like the JVM; Support updatable long-term cache list and update configuration table without restart. Inherently resistant to cache penetration. L2 cache extension support; Redis L2 cache support.  
+* 18.L1 cache, simple in concept and powerful in function; L1 cache can also be fine tuned like the JVM; Support updatable long-term cache list and update configuration table without restart. Inherently resistant to cache penetration. L2 cache extension support; Redis L2 cache support.  
 * 19.No third-party plugin dependencies; can be used with zero configuration.  
 * 20.High performance: close to the speed of JDBC; small file size: Bee V1.17 is only 502k, V2.1 is only 827k.  
 **Assist function**:  
@@ -75,7 +75,6 @@ MapSql add methods: public void where(Condition condition);
 9.add ConditionExt to support the use of entity::getName to reference property  
 10.add ChainSqlFactory  
 
-
 **V2.2(2024.1.1·LTS)**  
 1. Javabean entity supports inheritance (configure bee.osql.openEntityCanExtend=true).  
 2. Enhanced the association between batch insert and transaction.  
@@ -86,48 +85,6 @@ MapSql add methods: public void where(Condition condition);
    3) Resolved context issues when only sharding databases.  
    4) When sharding, the context of the main thread needs to be cleared.  
    5) Bug with InheritableThreadLocal and parallelStream() being incompatible.In 2.2, when not in sharding mode, parallelStream() can be used, but it is not recommended to use parallelStream() when sharding.  
-
-**V2.1.10(2023.10)**  
-1.support SQL not ("!")  
-2.support OceanBase  
-3.doBeforeReturn with finally  
-4.clear cache when change dataSource map  
-5.multiple data source configurations, dbs supports multiple environment coverage configurations  
-6.support read bee.db.url and other information from application.properties of springboot when use in main method  
-7.fixed bug:two properties item(notSupportUnionQuery,executorSize)have not prefix "sharding_"  
-
-**V2.1.8(2023.Mid-Autumn Festival & National Day)**  
-1.  
-1.1 Make the spring boot command line compatible with active profile selection, for example: java -jar springbootDemo.jar --spring.profiles.active=dev, which will trigger bee-dev.properties.  
-1.2 Make the spring boot data source configuration compatible, such as spring.datasource.url.  
-1.3 When not starting the application directly running the main method, if bee.properties does not have a data source configuration, it should be able to use the single data source configuration in application.properties of spring boot.  
-2. Perform insert, update, and delete operations on multiple table associations.  
-3. Add date format validation and calculate age in DateUtil.  
-4. Fix the bug in the CurrencyArithmetic variable.  
-5. Make the table name in CacheSuidStruct case-insensitive.  
-6. Improve the interceptor and context information management in MongodbObjSQLRichExt.  
-7. Support creating tables through Excel for more Database.  
-8. In Mongodb logging, when querying all fields, by default, the fields to be queried are not displayed. This can be controlled by the bee.osql.showMongoSelectAllFields configuration.  
-9. Provide a default BeeSimpleDataSource that supports configuring multiple data sources in bee.properties (even without using spring boot). When using Bee alone, the DataSourceBuilderFactory can also start automatically.  
-10. Support generating Swagger annotations for Javabean.  
-11. GridFs annotation support select type for MongoDB, GridFs file type support byte[] 
-
-**V2.1.7** 
-1.support showExecutableSql sql format(requires configuration: bee.osql.showSql.sqlFormat=true)  
-2. Support random expiration time for second-level cache to solve cache avalanche issue.  
-3. DdlViaExcel.createTable allows creating database tables using information from an Excel file, with the option to create only specific tables.  
-4. Support for Spring Boot 3.0.8  
-5. Enhance Sharding ThreadPool to allow custom configuration of the size of threads for Sharding operations.  
-6. Improve handling of multi-threaded operations for obtaining SQLiteDatabase in Android.  
-
-**V2.1.6** 
-1.add switch closeDefaultParaResultRegistry  
-2.support JAP new API package jakarta.persistence.*  
-3.catchModifyDuplicateException for batch insert  
-4.close UtilDotDateTypeConvert because it miss HH:mm:ss  
-5.fixed bug update the defalut value for cofig item  
-  fixed bug NullPointerException for PreparedSql preparedValue  
-  fixed bug for StringUtils  
   
 ### **V2.1(2023.05.20)** main features:  
 1. Move major commonly used interfaces such as Suid, SuidRich, MoreTable, PreparedSql, MapSuid, etc. to the org.teasoft.bee.osql.api package.  
@@ -151,6 +108,30 @@ MapSql add methods: public void where(Condition condition);
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
+
+## Bee Support Database list:	
+1.MySQL  
+2.Oracle  
+3.SQL Server  
+4.MariaDB  
+5.H2  
+6.SQLite  
+7.PostgreSQL  
+8.MS Access  
+9.Kingbase  
+10.DM  
+11.OceanBase  
+12.Cubrid,HSQL,Derby,Firebird  
+13.Other DB that support JDBC  
+
+NOSQL:  
+14.Mongodb  
+15.ElasticSearch  
+16.Cassandra  
+
+Mobile environment (database): 
+17.Android  
+18.Harmony  
 
 ## ORM Compare	
 ### Compare in JDBC	
@@ -583,7 +564,7 @@ Rapid application development:
 [Bee + Spring Boot](../../../bee-springboot)  
 
 ## KmCoding
-[Rapid Application Code Generation Platform](http://www.kmcoding.com)--AiTea Soft made in China!  
+[Rapid Application Code Generation Platform](https://www.kmcoding.com)--AiTea Soft made in China!  
 
 [Generate code automatically](../../../gencode)  
 
@@ -633,7 +614,7 @@ USD 49.00
 
 ### Technical Support
 **The use of Enterprise Edition, professional technical support and solution consultation are provided by the following companies:**  
-**[Shenzhen Caifeng software](http://www.aiteasoft.com)**  
+**[Shenzhen Caifeng software](https://www.aiteasoft.com)**  
 (Enterprises willing to join in, please contact us!)  
 
 Contact & Welcome:
