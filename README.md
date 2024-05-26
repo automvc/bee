@@ -74,6 +74,7 @@ MapSql add methods: public void where(Condition condition);
                     public void updateSet(Condition condition);  
 9.add ConditionExt to support the use of entity::getName to reference property  
 10.add ChainSqlFactory  
+11.add select Result Assembler  
 
 **V2.2(2024.1.1·LTS)**  
 1. Javabean entity supports inheritance (configure bee.osql.openEntityCanExtend=true).  
