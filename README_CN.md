@@ -49,6 +49,7 @@ MapSql增加方法: public void where(Condition condition);
                public void updateSet(Condition condition);  
 9.添加ConditionExt支持使用entity::getName形式引用属性名  
 10.添加链式编程工厂引用类ChainSqlFactory及帮助类ChainSqlFactoryHelper/CSF  
+11.添加查询结果自定义组装器ResultAssembler  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
