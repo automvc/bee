@@ -68,13 +68,15 @@ https://github.com/automvc/bee-ext
 5. PreparedSql support set table name for enhance relative cache  
 6. MongoDB gen Javabean support gen comment  
 
-7.the Sharding template method class uses finally to handle context recycling
+7.the Sharding template method class uses finally to handle context recycling  
 8.MapSql(MapSuid)supports using Condition to implement more complex where conditions, with updateSet set values  
 MapSql add methods: public void where(Condition condition);  
                     public void updateSet(Condition condition);  
 9.add ConditionExt to support the use of entity::getName to reference property  
 10.add ChainSqlFactory  
+
 11.add select Result Assembler  
+12.MoreTable add methods:selectWithFun,count  
 
 **V2.2(2024.1.1·LTS)**  
 1. Javabean entity supports inheritance (configure bee.osql.openEntityCanExtend=true).  
