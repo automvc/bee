@@ -207,4 +207,34 @@ public interface MoreTable extends CommOperate {
 	 */
 	public <T> int delete(T entity);
 	
+	/**
+	 * Select result with one function,just select one function.
+	 * eg select max users id:
+	 * String maxUsersId= moreTable.selectWithFun(new Users(),BF.getCondition().selectFun(FunctionType.MAX, "users.id"));
+	 * @param entity table's entity(do not allow null). 
+	 * @param condition Condition instance.
+	 * <br>here will ignore the condition's selectFun method.
+	 * @return one function result.
+	 * <br>If the result set of statistics is empty,the count return 0,the other return empty string.
+	 * @since 2.4.0
+	 */
+	public <T> String selectWithFun(T entity, Condition condition);
+
+	/**
+	 * total number of statistical records.
+	 * @param entity  table's entity(do not allow null).
+	 * @return total number of records that satisfy the condition.
+	 * @since 2.4.0
+	 */
+	public <T> int count(T entity);
+
+	/**
+	 * total number of statistical records.
+	 * @param entity table's entity(do not allow null).
+	 * @param condition Condition as filter the record.
+	 * @return total number of records that satisfy the condition.
+	 * @since 2.4.0
+	 */
+	public <T> int count(T entity, Condition condition);
+	
 }
