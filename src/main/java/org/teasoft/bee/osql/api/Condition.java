@@ -218,7 +218,7 @@ public interface Condition extends ConditionAssistant {
 	/**
 	 * order by
 	 * <br>eg: orderBy(FunctionType.MAX, "total", OrderType.DESC)-->order by max(total) desc
-	 * @param functionType Function type of SQL.
+	 * @param functionType FunctionType of SQL.
 	 * @param field Field name.
 	 * @param orderType order type(asc or desc)
 	 * @return Condition
@@ -257,7 +257,7 @@ public interface Condition extends ConditionAssistant {
 	/**
 	 * set for select result with function.
 	 * <br>eg: condition.selectFun(FunctionType.COUNT, "*");-->count(*)
-	 * @param functionType Function type of SQL.
+	 * @param functionType FunctionType of SQL.
 	 * @param fieldForFun Field name for function.
 	 * @return Condition
 	 * @since 1.9
@@ -267,7 +267,7 @@ public interface Condition extends ConditionAssistant {
 	/**
 	 * set for select result with function.
 	 * <br>eg:selectFun(FunctionType.MAX, "score","maxScore")-->max(score) as maxScore
-	 * @param functionType Function type of SQL.
+	 * @param functionType FunctionType of SQL.
 	 * @param fieldForFun field name for function.
 	 * @param alias Name of alias for the function result.
 	 * @return Condition
