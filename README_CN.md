@@ -48,6 +48,7 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 MapSql增加方法: public void where(Condition condition);  
                public void updateSet(Condition condition);  
 9.添加ConditionExt支持使用entity::getName形式引用属性名  
+  ConditionExt帮助Condition可以不用写死字段名  
 10.添加链式编程工厂引用类ChainSqlFactory及帮助类ChainSqlFactoryHelper/CSF  
 
 11.添加查询结果自定义组装器ResultAssembler  
