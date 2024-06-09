@@ -73,6 +73,7 @@ https://github.com/automvc/bee-ext
 MapSql add methods: public void where(Condition condition);  
                     public void updateSet(Condition condition);  
 9.add ConditionExt to support the use of entity::getName to reference property  
+  ConditionExt support Condition no need hard code the field name  
 10.add ChainSqlFactory  
 
 11.add select Result Assembler  
