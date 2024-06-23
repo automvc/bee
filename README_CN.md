@@ -53,6 +53,8 @@ MapSql增加方法: public void where(Condition condition);
 
 11.添加查询结果自定义组装器ResultAssembler  
 12.MoreTable添加方法:selectWithFun,count  
+13.MoreTable添加方法List<String[]> selectString(T entity, Condition condition)  
+14.MoreTable多表关联update方法增强  
 
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  

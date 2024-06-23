@@ -78,6 +78,8 @@ MapSql add methods: public void where(Condition condition);
 
 11.add select Result Assembler  
 12.MoreTable add methods:selectWithFun,count  
+13.MoreTable add method List<String[]> selectString(T entity, Condition condition)  
+14.enhance MoreTable update  
 
 **V2.2(2024.1.1·LTS)**  
 1. Javabean entity supports inheritance (configure bee.osql.openEntityCanExtend=true).  
