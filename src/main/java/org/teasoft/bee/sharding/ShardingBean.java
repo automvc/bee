@@ -17,6 +17,8 @@
 
 package org.teasoft.bee.sharding;
 
+import java.util.Map;
+
 import org.teasoft.bee.sharding.algorithm.Calculate;
 
 /**
@@ -112,5 +114,32 @@ public class ShardingBean extends ShardingSimpleStruct {
 
 	public void setTabAssignType(int tabAssignType) {
 		this.tabAssignType = tabAssignType;
+	}
+	
+	
+	/**
+	 * create ShardingBean by map
+	 * @param map include ShardingBean field value
+	 * @since 2.4.0
+	 */
+	public ShardingBean(Map<String,String> map) {
+		super();
+		if(map==null || map.size()==0) return ;
+		for (Map.Entry<String, String> entry : map.entrySet()) {
+			if("fullNodes".equals(entry.getKey())) setFullNodes(entry.getValue());
+			else if("dsField".equals(entry.getKey())) setDsField(entry.getValue());
+			else if("tabField".equals(entry.getKey())) setTabField(entry.getValue());
+			else if("tabAssignType".equals(entry.getKey())) setTabAssignType(Integer.parseInt(entry.getValue()));
+			else if("dsAlgorithm".equals(entry.getKey())) setDsAlgorithm(Integer.parseInt(entry.getValue()));
+			else if("tabAlgorithm".equals(entry.getKey())) setTabAlgorithm(Integer.parseInt(entry.getValue()));
+			else if("dsRule".equals(entry.getKey())) setDsRule(entry.getValue());
+			else if("dsName".equals(entry.getKey())) setDsName(entry.getValue());
+			else if("tabRule".equals(entry.getKey())) setTabRule(entry.getValue());
+			else if("dsShardingValue".equals(entry.getKey())) setDsShardingValue(entry.getValue());
+			else if("tabShardingValue".equals(entry.getKey())) setTabShardingValue(entry.getValue());
+			
+//			dsAlgorithmClass or tabAlgorithmClass,pls use Java style
+		}
+		
 	}
 }
