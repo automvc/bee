@@ -56,6 +56,9 @@ MapSql增加方法: public void where(Condition condition);
 13.MoreTable添加方法List<String[]> selectString(T entity, Condition condition)  
 14.MoreTable多表关联update方法增强  
 
+15.支持property风格sharding config  
+16.MoreTable多表查询支持selectJson  
+
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
