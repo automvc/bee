@@ -81,6 +81,9 @@ MapSql add methods: public void where(Condition condition);
 13.MoreTable add method List<String[]> selectString(T entity, Condition condition)  
 14.enhance MoreTable update  
 
+15.support property style sharding config  
+16.MoreTable support selectJson  
+
 **V2.2(2024.1.1·LTS)**  
 1. Javabean entity supports inheritance (configure bee.osql.openEntityCanExtend=true).  
 2. Enhanced the association between batch insert and transaction.  
