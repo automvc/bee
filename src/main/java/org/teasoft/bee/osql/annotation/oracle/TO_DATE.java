@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2022 the original author.All rights reserved.
+ * Copyright 2022-2024 the original author.All rights reserved.
  * Kingstar(honeysoft@126.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,18 +15,13 @@
  * limitations under the License.
  */
 
-package org.teasoft.bee.osql;
+package org.teasoft.bee.osql.annotation.oracle;
 
 /**
- * Bee Version.
+ * for Oracle filter the record in SQL where part.
  * @author Kingstar
- * @since  1.11
+ * @since  2.4.0
  */
-public final class BeeVersion {
-
-	public static final String version = "2.4.0";
-	public static final String buildId = version + ".7";
-
-	private BeeVersion() {}
-
+public @interface TO_DATE {
+	String formatter() default "";
 }
