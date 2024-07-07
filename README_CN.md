@@ -58,7 +58,10 @@ MapSql增加方法: public void where(Condition condition);
 
 15.支持property风格sharding config  
 16.MoreTable多表查询支持selectJson  
-
+17.GenBean支持java.time.LocalDateTime类型  
+18.fixed bug: GenConfig baseDir属性默认值支持Linux环境  
+19.Suid支持java.time.LocalDateTime类型  
+20.添加注解TO_DATE用于Oracle在where条件中过滤记录  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
