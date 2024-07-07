@@ -83,6 +83,11 @@ MapSql add methods: public void where(Condition condition);
 
 15.support property style sharding config  
 16.MoreTable support selectJson  
+17.GenBean support java.time.LocalDateTime  
+18.fixed bug: GenConfig baseDir default value support Linux env  
+19.Suid support java.time.LocalDateTime type  
+20.TO_DATE for Oracle filter the record in SQL where part  
+
 
 **V2.2(2024.1.1·LTS)**  
 1. Javabean entity supports inheritance (configure bee.osql.openEntityCanExtend=true).  
