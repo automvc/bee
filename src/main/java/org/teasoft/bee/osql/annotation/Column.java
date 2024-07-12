@@ -27,41 +27,14 @@ import java.lang.annotation.Target;
  * 
  * Before 2.0, to use @column, open the openDefineColumn configuration and realize the mapping function.
  * Since 2.1, it will be open by default. If not used, in order to improve efficiency, it can be manually configured to be closed.
-<p><br>
-<p>Where will detect this annotation:
-<p>Object oriented way: Suid,SuidRich,MoreTable will detect.
-<p>The create SQL command (Ddl.java) generated according to the Javabean will detect.
-<p>Where will not detect this annotation:
-<p>Entities in PreparedSql are used as return types, and column annotations are not detected for entities.
-<p>Mapsuid will not detect
-<p>JustFetch annotated fields should not be annotated with Column.
-<p><br>
-<p>Notice: the mapping implementation needs to be developed by the user(implement the ColumnHandler interface,
-<p>and use NameTranslateHandle.setColumnHandler(columnHandler) to set).
-<p>The use of Column annotation is not officially recommended base the bellow reason.
-<p><br>
-<p><b>Benefits of not using Column annotation:</b>
-<p>Convention-over-configuration, automatic naming mapping can be used, and the rules are simple.
-<p>You can use the Bee framework to automatically generate the Javabean corresponding to the table.
-<p>The table structure is changed and easy to maintain. It can be automatically generated again.
-<p>Keep appropriate redundancy. Fields such as creation time and creator do not need to be moved to the parent class, <br>
-<p>the table can correspond to the Javabean without too much manual intervention. It can save more time to focus on business logic.
-<p>The processing speed is faster.
-<p> <br>
-<p> <b>Solution:</b>
-<p> 1)Suid,SuidRich,MoreTable will parse entity to sql automatically;
-<p> 2)Moretable can also handle the situation that different tables have duplicate name fields and different DB paging syntax.
-<p> 3)Custom SQL, alias with "as"(select column_name as java_field_name),<br>
-<p> The query results can be automatically parsed to the given Javabean structure.
-<p> 4)Ignore field can use @Ignore 
-<p> 5)Using JustFetch annotation
-<p> @&nbsp;JustFetch("CONCAT(fisrt_name,last_name)") 
-<p> private String fullname;
-<p> -->select CONCAT(fisrt_name,last_name) as fullname
-<p>  @&nbsp;JustFetch("name")
-<p> 	private String name2;
-<p> -->select name as name2	
-
+ * <p><br>
+ * <p>Where will detect this annotation:
+ * <p>Object oriented way: Suid,SuidRich,MoreTable will detect.
+ * <p>The create SQL command (Ddl.java) generated according to the Javabean will detect.
+ * <p>Where will not detect this annotation:
+ * <p>Entities in PreparedSql are used as return types, and column annotations are not detected for entities.
+ * <p>Mapsuid will not detect
+ * <p>JustFetch annotated fields should not be annotated with Column.
  * @author Kingstar
  * @since  1.11
  */

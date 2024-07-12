@@ -130,22 +130,6 @@ public class ShardingSimpleStruct {
 		this.tabName = tabName;
 	}
 
-//	/**
-//	 * get sharding value
-//	 * @return sharding value
-//	 */
-//	public Object getShardingValue() {
-//		return shardingValue;
-//	}
-//
-//	/**
-//	 * set sharding value
-//	 * @param shardingValue sharding value
-//	 */
-//	public void setShardingValue(Object shardingValue) {
-//		this.shardingValue = shardingValue;
-//	}
-
 	/**
 	 * get dataSource sharding value
 	 * @return dataSource sharding value

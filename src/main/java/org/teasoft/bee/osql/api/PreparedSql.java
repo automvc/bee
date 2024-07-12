@@ -464,17 +464,18 @@ public interface PreparedSql extends CommOperate {
 //	public <T> int insertBatch(String sql, List<T> parameterMapList, int batchSize);
 	
 	/**
-	 * 设置sql关联的表;方法带有T的将忽略这个方法;  
-	 * 设置只一次有效,getRelativeTableOneTime()被调用后,即被清除.
-	 * @param table  数据库里的表名
+	 * Set sql associated tables; Methods with T will be ignored; 
+	 * The setting is only valid once, and it is cleared after call getRelativeTableOneTime().
+	 * @param table  table names in the database
 	 * @since 2.4.0
 	 */
 	public void setRelativeTableOneTime(String... table);
 
 	/**
-	 * 获取用户在setRelativeTableOneTime设置的表,获取一次后即清除.一般只在Bee框架内部使用
+	 * Get the table names by user set with setRelativeTableOneTime. The setting is only valid once,
+	 * and generally only used within the Bee framework.
 	 * @since 2.4.0
-	 * @return table name
+	 * @return table names
 	 */
 	public String getRelativeTableOneTime();
 	
