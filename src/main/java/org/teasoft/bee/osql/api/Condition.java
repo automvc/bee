@@ -65,6 +65,12 @@ public interface Condition extends ConditionAssistant {
 	 * Add a expression condition.
 	 * <br>This method cannot be used for SQL update set part.
 	 * <br>When Op type is Op.in/Op.notIn,Object type can be List,Set,Number,Number[],String.
+	 * 
+	 * <br>can use TO_DATE for Oracle since @2.4.0
+	 * <br>eg:condition.op("mydatetime", Op.ge, new TO_DATE("2024-07-08", "YYYY-MM-DD"));
+	 * <br>->  
+	 * <br>where mydatetime>=TO_DATE('2024-07-08', 'YYYY-MM-DD') ;
+	 * 
 	 * @param field Field name
 	 * @param op operator
 	 * @param value Value of the field.
