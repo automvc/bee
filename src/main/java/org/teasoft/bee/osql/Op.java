@@ -140,7 +140,7 @@ public enum Op {
 	 */
 	lessEqual("<=");
 	
-//	not("!");   //????
+//	not("!");   //????     pls use:  public Condition not()
 	
 	private String operator;
 	
