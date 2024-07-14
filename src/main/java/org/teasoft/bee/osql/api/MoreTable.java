@@ -23,6 +23,9 @@ import org.teasoft.bee.osql.CommOperate;
 
 /**
  * More table select(multi-table query).
+ * 
+ * Multi table Select/Update/Insert/Delete
+ * @since 2.4.0
  * <p>
  * example1:
 <p>
