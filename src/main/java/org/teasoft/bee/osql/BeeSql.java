@@ -75,21 +75,21 @@ public interface BeeSql {
 	/**
 	 * Operate update,insert,delete. corresponding to Jdbc executeUpdate method.
 	 * @param sql  SQL statement to execute
-	 * @return the number of affected successfully records.
+	 * @return the number of affected successfully records.If fails, return -1.
 	 */
 	public int modify(String sql);
 	
 	/**
 	 * insert and return the value of primary key.
 	 * @param sql SQL statement to execute
-	 * @return the value of primary key.
+	 * @return the value of primary key.If fails, return -1.
 	 */
 	public long insertAndReturnId(String sql);
 	
 	/**
 	 * Submits a batch of commands to the database.
 	 * @param sqls Array of SQL statements to execute
-	 * @return Affected rows.
+	 * @return Affected rows.If fails, return -1.
 	 */
 	public int batch(String sqls[]);
 	
@@ -97,7 +97,7 @@ public interface BeeSql {
 	 * Submits a batch of commands to the database.
 	 * @param sqls Array of SQL statements to execute
 	 * @param batchSize the size of commands in a batch
-	 * @return Affected rows.
+	 * @return Affected rows.If fails, return -1.
 	 */
 	public int batch(String []sqls,int batchSize);
 	
