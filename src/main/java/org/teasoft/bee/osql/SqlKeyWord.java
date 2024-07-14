@@ -85,4 +85,5 @@ public interface SqlKeyWord {
 	String table();
 	String drop();
 	String If();
+	String to_date();
 }

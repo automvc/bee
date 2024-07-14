@@ -78,6 +78,7 @@ public class UpperKey implements SqlKeyWord {
 	private static final String table="TABLE";
 	private static final String drop="DROP";
 	private static final String If="IF";
+	private static final String to_date="TO_DATE";
 
 	@Override
 	public String select() {
@@ -302,6 +303,11 @@ public class UpperKey implements SqlKeyWord {
 	@Override
 	public String If() {
 		return If;
+	}
+
+	@Override
+	public String to_date() {
+		return to_date;
 	}
 
 }

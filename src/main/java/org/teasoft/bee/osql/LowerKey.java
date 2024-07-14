@@ -76,6 +76,7 @@ public class LowerKey implements SqlKeyWord {
 	private static final String table="table";
 	private static final String drop="drop";
 	private static final String If="if";
+	private static final String to_date="to_date";
 	
 
 	@Override
@@ -301,6 +302,11 @@ public class LowerKey implements SqlKeyWord {
 	@Override
 	public String If() {
 		return If;
+	}
+	
+	@Override
+	public String to_date() {
+		return to_date;
 	}
 
 }
