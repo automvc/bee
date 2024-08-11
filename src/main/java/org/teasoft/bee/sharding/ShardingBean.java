@@ -39,17 +39,32 @@ public class ShardingBean extends ShardingSimpleStruct {
 
 	public ShardingBean() {}
 	
+	/**
+	 * 
+	 * @param fullNodes
+	 */
 	public ShardingBean(String fullNodes) {
 		super();
 		this.fullNodes = fullNodes;
 	}
 
+	/**
+	 * 
+	 * @param fullNodes
+	 * @param tabField
+	 */
 	public ShardingBean(String fullNodes, String tabField) {
 		super();
 		this.fullNodes = fullNodes;
 		this.tabField = tabField;
 	}
 	
+	/**
+	 * 
+	 * @param fullNodes
+	 * @param tabField
+	 * @param dsField
+	 */
 	public ShardingBean(String fullNodes, String tabField, String dsField) {
 		super();
 		this.fullNodes = fullNodes;
@@ -68,18 +83,34 @@ public class ShardingBean extends ShardingSimpleStruct {
 		super.setTabShardingValue(shardingSimpleStruct.getTabShardingValue());
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getDsField() {
 		return dsField;
 	}
 
+	/**
+	 * 
+	 * @param dsField
+	 */
 	public void setDsField(String dsField) {
 		this.dsField = dsField;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getTabField() {
 		return tabField;
 	}
 
+	/**
+	 * 
+	 * @param tabField
+	 */
 	public void setTabField(String tabField) {
 		this.tabField = tabField;
 	}
@@ -88,6 +119,10 @@ public class ShardingBean extends ShardingSimpleStruct {
 		return dsAlgorithmClass;
 	}
 
+	/**
+	 * 
+	 * @param dsAlgorithmClass
+	 */
 	public void setDsAlgorithmClass(Class<? extends Calculate> dsAlgorithmClass) {
 		this.dsAlgorithmClass = dsAlgorithmClass;
 	}
@@ -96,22 +131,42 @@ public class ShardingBean extends ShardingSimpleStruct {
 		return tabAlgorithmClass;
 	}
 
+	/**
+	 * 
+	 * @param tabAlgorithmClass
+	 */
 	public void setTabAlgorithmClass(Class<? extends Calculate> tabAlgorithmClass) {
 		this.tabAlgorithmClass = tabAlgorithmClass;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getFullNodes() {
 		return fullNodes;
 	}
 
+	/**
+	 * 
+	 * @param fullNodes
+	 */
 	public void setFullNodes(String fullNodes) {
 		this.fullNodes = fullNodes;
 	}
 
+	/**
+	 * 0: order; 1: polling
+	 * @return tabAssignType
+	 */
 	public int getTabAssignType() {
 		return tabAssignType;
 	}
 
+	/**
+	 * 0: order; 1: polling
+	 * @param tabAssignType
+	 */
 	public void setTabAssignType(int tabAssignType) {
 		this.tabAssignType = tabAssignType;
 	}

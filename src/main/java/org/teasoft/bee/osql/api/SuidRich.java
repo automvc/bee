@@ -85,7 +85,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * Just select some fields.
 	 * @param entity table's entity(do not allow null).
-	 * @param selectFields select fields,if more than one,separate with comma.
+	 * @param selectFields select fields,if more than one,separate with comma in one selectField parameter or use variable parameter.
 	 * @return list which contains more than one entity.
 	 */
 	public <T> List<T> select(T entity, String... selectFields);
@@ -95,7 +95,7 @@ public interface SuidRich extends Suid {
 	 * @param entity table's entity(do not allow null).
 	 * @param start start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
 	 * @param size fetch result size (>0).
-	 * @param selectFields select fields,if more than one,separate with comma.
+	 * @param selectFields select fields,if more than one,separate with comma in one selectField parameter or use variable parameter.
 	 * @return list which contains more than one entity.
 	 * @since 1.4.3
 	 * @since 2.0
@@ -112,7 +112,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * Select some field, every field will return the string type. 
 	 * @param entity table's entity(do not allow null).
-	 * @param selectFields Select fields,if more than one,separate with comma.
+	 * @param selectFields Select fields,if more than one,separate with comma in one selectField parameter or use variable parameter.
 	 * @return list can contain more than one record with String array struct.
 	 */
 	public <T> List<String[]> selectString(T entity, String... selectFields);
@@ -213,7 +213,8 @@ public interface SuidRich extends Suid {
 	 * Update record, can list update fields. 
 	 * @param entity table's entity(do not allow null).
 	 * @param updateFields update fields.
-	 * <br>For the list of fields to be updated, multiple fields are separated by commas (those fields will be updated). 
+	 * <br>For the list of fields to be updated, multiple fields can separated by commas in one updateField parameter 
+	 * <br>or use variable parameter (those fields will be updated). 
 	 * <br>This attribute cannot be empty and is not affected by the includeType parameter; By default, each field will be
 	 * <br> converted to a set expression of SQL update.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
@@ -225,7 +226,8 @@ public interface SuidRich extends Suid {
 	 * @param entity table's entity(do not allow null).if id's value is null can not as filter condition.
 	 * @param includeType whether null string and null as a filter conditions.
 	 * @param updateFields update fields.
-	 * <br>For the list of fields to be updated, multiple fields are separated by commas (those fields will be updated). 
+	 * <br>For the list of fields to be updated, multiple fields can separated by commas in one updateField parameter or 
+	 * <br>use variable parameter (those fields will be updated). 
 	 * <br>This attribute cannot be empty and is not affected by the includeType parameter; By default, each field will be
 	 * <br> converted to a set expression of SQL update.
 	 * @return  the numbers of update record(s) successfully,if fails, return integer less than 0.
@@ -359,7 +361,7 @@ public interface SuidRich extends Suid {
 	/**
 	 * Just select some fields,and return Json string.
 	 * @param entity table's entity(do not allow null).
-	 * @param selectFields select fields,if more than one,separate with comma.
+	 * @param selectFields select fields,if more than one,separate with comma in one selectField parameter or use variable parameter.
 	 * @return Json string, it transform from list which can contain more than one entity.
 	 * @since 1.9.8
 	 */
@@ -370,7 +372,7 @@ public interface SuidRich extends Suid {
 	 * @param entity table's entity(do not allow null).
 	 * @param start start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
 	 * @param size fetch result size (>0).
-	 * @param selectFields select fields,if more than one,separate with comma.
+	 * @param selectFields select fields,if more than one,separate with comma in one selectField parameter or use variable parameter.
 	 * @return Json string, it transform from list which can contain more than one entity.
 	 * @since 1.9.8
 	 * @since 2.0
@@ -458,8 +460,8 @@ public interface SuidRich extends Suid {
 	 * @param entity table's entity(do not allow null).
 	 * <br>Fields that are not specified as whereFields, as part of the set(only non empty and non null fields 
 	 * <br>are processed by default).
-	 * @param whereFields As a field list of where part in SQL, multiple fields are separated by commas 
-	 * <br>(the fields in the list will be used as where filter)
+	 * @param whereFields As a field list of where part in SQL, multiple fields can separated by commas in one 
+	 * <br>whereField parameter or use variable parameter (the fields in the list will be used as where filter)
 	 * <br>But if id's value is null can not as filter.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 * @since  1.6
@@ -472,8 +474,8 @@ public interface SuidRich extends Suid {
 	 * <br>Fields that are not specified as whereFields, as part of the set(only non empty and non null 
 	 * <br>fields are processed by default,can change the default use IncludeType parameter).
 	 * @param includeType whether null string and null as a filter conditions.
-	 * @param whereFields As a field list of where part in SQL, multiple fields are separated by commas 
-	 * <br>(the fields in the list will be used as where filter)
+	 * @param whereFields As a field list of where part in SQL, multiple fields can separated by commas in one 
+	 * <br>whereField parameter or use variable parameter (the fields in the list will be used as where filter)
 	 * <br>But if id's value is null can not as filter.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 * @since  2.0
@@ -486,8 +488,8 @@ public interface SuidRich extends Suid {
 	 * <br>Fields that are not specified as whereFields, as part of the set(only non empty and non null fields 
 	 * <br>are processed by default).
 	 * @param condition Condition as filter the record.
-	 * @param whereFields As a field list of where part in SQL, multiple fields are separated by commas 
-	 * <br>(the fields in the list will be used as where filter)
+	 * @param whereFields As a field list of where part in SQL, multiple fields can separated by commas in one 
+	 * <br>whereField parameter or use variable parameter (the fields in the list will be used as where filter)
 	 * <br>But if id's value is null can not as filter.
 	 * <br>Notice:the method op of condition also maybe converted to the where expression.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
@@ -515,7 +517,8 @@ public interface SuidRich extends Suid {
 	 * <br>A field is used not only in the specified updateFields, but also in Condition.set(arg1,arg2), 
 	 *<br> and the corresponding fields in entity will be converted to the where part according to the rules (V1.9.8)
 	 * @param updateFields update fields.The methods setMultiply,setAdd,set in condition are not subject to this restriction. 
-	 * <br>For the list of fields to be updated, multiple fields are separated by commas (those fields will be updated). 
+	 * <br>For the list of fields to be updated, multiple fields can separated by commas in one updateField parameter or use 
+	 * <br>variable parameter (those fields will be updated). 
 	 * <br>This attribute cannot be empty and is not affected by the Condition's includeType parameter. By default, each 
 	 * <br>field will be converted to a set expression of SQL update.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.

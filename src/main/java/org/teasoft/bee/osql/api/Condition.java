@@ -91,8 +91,6 @@ public interface Condition extends ConditionAssistant {
 	 * @return Condition
 	 */
 	public Condition opOn(String field, Op op, String value);
-//	public Condition opOn(String field, Op op, Object value);
-	
 	
 	/**
 	 * The expression will correspond to: table1 JoinType table2 on field Op value
