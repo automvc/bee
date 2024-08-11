@@ -6,15 +6,15 @@ package org.teasoft.bee.osql;
  * @since  1.0
  */
 public final class DatabaseConst {
-	
+
 	private DatabaseConst() {}
 
 	public static final String MYSQL = "MySQL";
 	public static final String MariaDB = "MariaDB";
 	public static final String ORACLE = "Oracle";
 	public static final String SQLSERVER = "Microsoft SQL Server";
-	public static final String MsAccess = "Microsoft Access"; //Microsoft Access
-	
+	public static final String MsAccess = "Microsoft Access"; // Microsoft Access
+	public static final String AzureSQL = SQLSERVER;
 
 	public static final String H2 = "H2";
 	public static final String SQLite = "SQLite";
@@ -24,7 +24,7 @@ public final class DatabaseConst {
 
 	public static final String Cubrid = "Cubrid";
 	public static final String DB2400 = "DB2 UDB for AS/400";
-	public static final String DB2 = "DB2"; //todo
+	public static final String DB2 = "DB2"; // todo
 	public static final String Derby = "Apache Derby";
 	public static final String Firebird = "Firebird";
 	public static final String FrontBase = "FrontBase";
@@ -42,18 +42,20 @@ public final class DatabaseConst {
 	public static final String Sybase = "Sybase SQL Server";
 	public static final String Teradata = "Teradata";
 	public static final String TimesTen = "TimesTen";
-	
-	public static final String DM ="DM DBMS";
-	public static final String Kingbase ="KingbaseES";
-	
-	public static final String OceanBase="OceanBase";
-	
-	//NoSql
+
+	public static final String DM = "DM DBMS";
+	public static final String Kingbase = "KingbaseES";
+	public static final String GaussDB = "GaussDB";
+
+	public static final String OceanBase = "OceanBase";
+
+	// NoSql
 	public static final String Cassandra = "Cassandra";
 	public static final String Hbase = "Hbase";
-	public static final String Hypertable= "Hypertable";
-	
-	public static final String MongoDB= "MongoDB";
+	public static final String Hypertable = "Hypertable";
+	public static final String DynamoDB = "DynamoDB";
+
+	public static final String MongoDB = "MongoDB";
 	public static final String CouchDB = "CouchDB";
 
 }
