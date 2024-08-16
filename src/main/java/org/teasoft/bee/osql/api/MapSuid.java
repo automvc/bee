@@ -60,7 +60,7 @@ public interface MapSuid extends CommOperate {
 	 * @return returns a row of data wrapped in a map.
 	 */
 	public Map<String, Object> selectOne(MapSql mapSql);
-	
+
 	/**
 	 * Update the record and return the number of rows affected.
 	 * @param mapSql MapSql instance
@@ -79,21 +79,21 @@ public interface MapSuid extends CommOperate {
 	 * @return If successful, return the id value of the inserted record; if fails, return number less than 0.
 	 */
 	public long insertAndReturnId(MapSql mapSql);
-	
+
 	/**
 	 * Inserts record and returns the number of the record successfully inserted.
 	 * @param mapSql MapSql instance
 	 * @return the numbers of insert records successfully,if fails, return integer less than 0.
 	 */
 	public int insert(MapSql mapSql);
-	
+
 	/**
 	 * Use MapSql to delete record.
 	 * @param mapSql MapSql instance
 	 * @return the numbers of delete records successfully,if fails, return integer less than 0. 
 	 */
 	public int delete(MapSql mapSql);
-	
+
 	/**
 	 * count the number of qualified record.
 	 * @param mapSql MapSql instance

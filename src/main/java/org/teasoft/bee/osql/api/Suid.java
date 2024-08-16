@@ -30,7 +30,7 @@ import org.teasoft.bee.osql.CommOperate;
  *
  */
 public interface Suid extends CommOperate {
-	
+
 	/**
 	 * According to entity object select records from database.
 	 * @param entity table's entity(do not allow null).<br>
@@ -40,7 +40,7 @@ public interface Suid extends CommOperate {
 	 * @return list which contains more than one entity.
 	 */
 	public <T> List<T> select(T entity);
-	
+
 	/**
 	 * According to entity object update record(update record by id).This method just has id field to SQL where expression.
 	 * table's entity(do not allow null);id is where condition,do not allow null.<br>
@@ -51,7 +51,7 @@ public interface Suid extends CommOperate {
 	 * @see SuidRich#update(Object,java.lang.String...)
 	 */
 	public <T> int update(T entity);
-	
+
 	/**
 	 * According to entity object insert record. 
 	 * @param entity table's entity(do not allow null).<br>
@@ -60,7 +60,7 @@ public interface Suid extends CommOperate {
 	 * @return the numbers of insert records successfully, if fails,return integer less than 0.
 	 */
 	public <T> int insert(T entity);
-	
+
 	/**
 	 * According to entity object insert record and return id value. 
 	 * @param entity table's entity(do not allow null).<br>
@@ -70,7 +70,7 @@ public interface Suid extends CommOperate {
 	 * @since 1.9
 	 */
 	public <T> long insertAndReturnId(T entity);
-	
+
 	/**
 	 * According to entity object delete record. 
 	 * @param entity table's entity(do not allow null).<br>
@@ -80,7 +80,7 @@ public interface Suid extends CommOperate {
 	 * @return the numbers of delete records successfully, if fails,return integer less than 0.
 	 */
 	public <T> int delete(T entity);
-	
+
 	/**
 	 * Select the records according to entity and condition.<br>
 	 * @param entity table's entity(do not allow null).
@@ -98,7 +98,7 @@ public interface Suid extends CommOperate {
 	 * @since 1.7.2
 	 */
 	public <T> int delete(T entity, Condition condition);
-	
+
 	/**
 	 * set dynamic parameter for dynamic table & entity name,only effective once
 	 * <br>This method is called earlier than the select, update, insert, delete methods.
@@ -108,13 +108,13 @@ public interface Suid extends CommOperate {
 	 * @since  1.8
 	 */
 	public Suid setDynamicParameter(String para, String value);
-	
+
 	/**
 	 * declare begin Same Connection for some ORM operation.
 	 * @since 1.9
 	 */
 	public void beginSameConnection();
-	
+
 	/**
 	 * declare end Same Connection for some ORM operation.
 	 * @since 1.9

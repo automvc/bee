@@ -160,7 +160,7 @@ public interface MoreTable extends CommOperate {
 	 * @return list can contain more than one entity
 	 */
 	public <T> List<T> select(T entity, Condition condition);
-	
+
 	/**
 	 * set dynamic parameter for dynamic table & entity name
 	 * <br>This method is called earlier than the select methods.
@@ -169,9 +169,8 @@ public interface MoreTable extends CommOperate {
 	 * @return MoreTable
 	 * @since 1.9
 	 */
-	public MoreTable setDynamicParameter(String para,String value);
-	
-	
+	public MoreTable setDynamicParameter(String para, String value);
+
 	/**
 	 * insert entity. support oneToOne/oneToMany.
 	 * If the primary key of the main table is used for the foreign key of the sub table, it will be automatically filled in.
@@ -180,8 +179,7 @@ public interface MoreTable extends CommOperate {
 	 * @since 2.1.8
 	 */
 	public <T> int insert(T entity);
-	
-	
+
 	/**
 	 * Update the main entity (main table) and the sub-entity (sub table) that meet the conditions.
 	 * This method uses the primary key as the filtering condition to determine the entity, 
@@ -196,8 +194,6 @@ public interface MoreTable extends CommOperate {
 	 */
 	public <T> int update(T entity);
 
-
-	
 	/**
 	 * Delete the main entity (main table) and the sub-entity (sub table) that meet the conditions.
 	 * When all the foreign key corresponding fields are set in the main table, the sub table will be automatically updated 
@@ -209,7 +205,7 @@ public interface MoreTable extends CommOperate {
 	 * @since 2.1.8
 	 */
 	public <T> int delete(T entity);
-	
+
 	/**
 	 * Select result with one function,just select one function.
 	 * eg select max users id:
@@ -239,7 +235,7 @@ public interface MoreTable extends CommOperate {
 	 * @since 2.4.0
 	 */
 	public <T> int count(T entity, Condition condition);
-	
+
 	/**
 	 * Instead of returning data in a entity structure, it uses a character array in List.
 	 * @param entity table's entity(do not allow null).
@@ -247,9 +243,8 @@ public interface MoreTable extends CommOperate {
 	 * @return list can contain more than one record with String array struct.
 	 * @since 2.4.0
 	 */
-	 public <T> List<String[]> selectString(T entity, Condition condition);
-	
-	 
+	public <T> List<String[]> selectString(T entity, Condition condition);
+
 	/**
 	 * Select and return data in Json format according to entity object.
 	 * @param entity table's entity(do not allow null).
@@ -258,6 +253,5 @@ public interface MoreTable extends CommOperate {
 	 * @since 2.4.0
 	 */
 	public <T> String selectJson(T entity, Condition condition);
-	 
-	 
+
 }

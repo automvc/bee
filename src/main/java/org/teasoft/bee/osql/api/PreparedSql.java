@@ -59,7 +59,7 @@ public interface PreparedSql extends CommOperate {
 	 * @since V1.11
 	 */
 	public <T> List<T> select(String sql, Class<T> entityClass);
-	
+
 	/**
 	 * Select record(s) via the placeholder(?) statement,paging generate by Bee.
 	 * <br>eg: select * from orders where userid=?
@@ -70,8 +70,8 @@ public interface PreparedSql extends CommOperate {
 	 * @param size Fetch result size (>0).  
 	 * @return List which element type is same as returnType.
 	 */
-	public <T> List<T> select(String sql,Class<T> entityClass,Object preValues[],int start,int size);
-	
+	public <T> List<T> select(String sql, Class<T> entityClass, Object preValues[], int start, int size);
+
 	/**
 	 * <br>Select the record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters. 
 	 * <br>Map can be used as a supplement of entity to pass parameters of complex queries such as range query.
@@ -85,8 +85,8 @@ public interface PreparedSql extends CommOperate {
 	 * <br>If the key of the map element is the same as that transferred from the entity, the key of the map will be used.
 	 * @return Entity List which element type is same as entity.
 	 */
-	public <T> List<T> select(String sqlStr,T entity,Map<String,Object> parameterMap);
-	
+	public <T> List<T> select(String sqlStr, T entity, Map<String, Object> parameterMap);
+
 	/**
 	 * Select the record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters. 
 	 * <br>Map can be used as a supplement of entity to pass parameters of complex queries such as range query.
@@ -103,8 +103,8 @@ public interface PreparedSql extends CommOperate {
 	 * @param size Fetch result size (>0).           
 	 * @return Entity List which element type is same as entity.
 	 */
-	public <T> List<T> select(String sqlStr,T entity,Map<String,Object> parameterMap,int start,int size);
-	
+	public <T> List<T> select(String sqlStr, T entity, Map<String, Object> parameterMap, int start, int size);
+
 	/**
 	 * Select some column of record(s) via the placeholder(?) statement.<br>
 	 * eg: select * from orders where userid=?
@@ -113,8 +113,8 @@ public interface PreparedSql extends CommOperate {
 	 * @param preValues An object array that values set for the SQL placeholders in index order.
 	 * @return List which element type is same as returnType.
 	 */
-	public <T> List<T> selectSomeField(String sql,T returnType,Object preValues[]);
-	
+	public <T> List<T> selectSomeField(String sql, T returnType, Object preValues[]);
+
 	/**
 	 * Select some column of record(s) via the placeholder(?) statement,paging generate by Bee.<p>
 	 * eg: select * from orders where userid=?
@@ -125,8 +125,8 @@ public interface PreparedSql extends CommOperate {
 	 * @param size Fetch result size (>0).   
 	 * @return List which element type is same as returnType.
 	 */
-	public <T> List<T> selectSomeField(String sql,T returnType,Object preValues[],int start,int size);
-	
+	public <T> List<T> selectSomeField(String sql, T returnType, Object preValues[], int start, int size);
+
 	/**
 	 * Select some column of the record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters. <br>
 	 * Map can be used as a supplement of entity to pass parameters of complex queries such as range query.
@@ -140,8 +140,8 @@ public interface PreparedSql extends CommOperate {
 	 * <br>If the key of the map element is the same as that transferred from the entity, the key of the map will be used.
 	 * @return Entity List which element type is same as entity.
 	 */
-	public <T> List<T> selectSomeField(String sqlStr,T entity,Map<String,Object> parameterMap);
-	
+	public <T> List<T> selectSomeField(String sqlStr, T entity, Map<String, Object> parameterMap);
+
 	/**
 	 * Select some column of the record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters. <br>
 	 * Map can be used as a supplement of entity to pass parameters of complex queries such as range query.<p>
@@ -158,8 +158,8 @@ public interface PreparedSql extends CommOperate {
 	 * @param size Fetch result size (>0).   
 	 * @return Entity List which element type is same as entity.
 	 */
-	public <T> List<T> selectSomeField(String sqlStr,T entity,Map<String,Object> parameterMap,int start,int size);
-	
+	public <T> List<T> selectSomeField(String sqlStr, T entity, Map<String, Object> parameterMap, int start, int size);
+
 	/**
 	 * Select result with function. SQL function: max,min,avg,sum,count. <p>
 	 * Notice:can not use the cache because don't relay the entity.
@@ -170,8 +170,8 @@ public interface PreparedSql extends CommOperate {
 	 * @return The value of function statistics. 
 	 * <br>If the result set of statistics is empty,the count return 0,the other return empty string.
 	 */
-	public String selectFun(String sql,Object preValues[]);
-	
+	public String selectFun(String sql, Object preValues[]);
+
 	/**
 	 * Select result with function. SQL function: max,min,avg,sum,count. <p>
 	 * Notice:can not use the cache because don't relay the entity.
@@ -194,9 +194,8 @@ public interface PreparedSql extends CommOperate {
 	 * @return List can contain more than one record with String array struct.
 	 * <br>List, every element is string array(transform from record).
 	 */
-	public List<String[]> select(String sql,Object preValues[]);
-	
-	
+	public List<String[]> select(String sql, Object preValues[]);
+
 	/**
 	 * Select and transform every record to string array.
 	 * <br>Notice:can not use the cache because don't relay the entity.
@@ -211,7 +210,7 @@ public interface PreparedSql extends CommOperate {
 	 * <br>List, every element is string array(transform from record).
 	 */
 	public List<String[]> select(String sql, Object preValues[], int start, int size);
-	
+
 	/**
 	 * Select and transform every record to string array.
 	 * <br>Notice:can not use the cache because don't relay the entity.
@@ -222,8 +221,8 @@ public interface PreparedSql extends CommOperate {
 	 * @return list can contain more than one record with String array struct.
 	 * List, every element is string array(transform from record).
 	 */
-	public List<String[]> select(String sqlStr,Map<String,Object> map);
-	
+	public List<String[]> select(String sqlStr, Map<String, Object> map);
+
 	/**
 	 * Select and transform every record to string array.
 	 * <br>Notice:can not use the cache because don't relay the entity.
@@ -237,7 +236,8 @@ public interface PreparedSql extends CommOperate {
 	 * @return list can contain more than one record with String array struct.
 	 * List, every element is string array(transform from record).
 	 */
-	public List<String[]> select(String sqlStr,Map<String,Object> map,int start,int size);
+	public List<String[]> select(String sqlStr, Map<String, Object> map, int start, int size);
+
 	/**
 	 * Select and return json format result.
 	 * <br>Notice:can not use the cache because don't relay the entity.
@@ -247,8 +247,8 @@ public interface PreparedSql extends CommOperate {
 	 * @param preValues parameter values for placeholder
 	 * @return Json format result.
 	 */
-	public String selectJson(String sql,Object preValues[]);
-	
+	public String selectJson(String sql, Object preValues[]);
+
 	/**
 	 * Select and return json format result.
 	 * <br>Notice:can not use the cache because don't relay the entity.
@@ -261,8 +261,8 @@ public interface PreparedSql extends CommOperate {
 	 * @param size Fetch result size (>0).
 	 * @return Json format result.
 	 */
-	public String selectJson(String sql,Object preValues[],int start,int size);
-	
+	public String selectJson(String sql, Object preValues[], int start, int size);
+
 	/**
 	 * Select and return json format result.
 	 * <br>Notice:can not use the cache because don't relay the entity.
@@ -272,8 +272,8 @@ public interface PreparedSql extends CommOperate {
 	 * @param map parameter values for placeholder
 	 * @return Json format result.
 	 */
-	public String selectJson(String sqlStr,Map<String,Object> map);
-	
+	public String selectJson(String sqlStr, Map<String, Object> map);
+
 	/**
 	 * Select and return json format result.
 	 * <br>Notice:can not use the cache because don't relay the entity.
@@ -286,8 +286,8 @@ public interface PreparedSql extends CommOperate {
 	 * @param size Fetch result size (>0).
 	 * @return Json format result.
 	 */
-	public String selectJson(String sqlStr,Map<String,Object> map,int start,int size);
-	
+	public String selectJson(String sqlStr, Map<String, Object> map, int start, int size);
+
 	/**
 	 * Select and return json format result.<p>
 	 * <br>Notice:can not use the cache because don't relay the entity.
@@ -297,7 +297,7 @@ public interface PreparedSql extends CommOperate {
 	 * @return Json format result.
 	 */
 	public String selectJson(String sqlStr);
-	
+
 	/**
 	 * Select record(s) via the sql statement.
 	 * <br>Notice:can not use the cache because don't relay the entity.
@@ -309,7 +309,7 @@ public interface PreparedSql extends CommOperate {
 	 * <br>List, every element is string array(transform from record).
 	 */
 	public List<String[]> select(String sql);
-	
+
 	/**
 	 * Select result with function. SQL function: max,min,avg,sum,count. <p>
 	 * Notice:can not use the cache because don't relay the entity.
@@ -320,56 +320,54 @@ public interface PreparedSql extends CommOperate {
 	 * <br>If the result set of statistics is empty,the count return 0,the other return empty string.
 	 */
 	public String selectFun(String sql);
-	
+
 	/**
 	 * Modify database records with update, insert or delete statement.
-	 * @Deprecated It is not recommended because 
-	 * <br>the framework does not know what table has been changed, which will affect the correctness 
-	 * <br>of the cache and cause the risk of inaccurate cache data.
+	 * It is not recommended because the framework does not know what table has been changed, 
+	 * <br>which will affect the correctness of the cache and cause the risk of inaccurate cache data (before V2.4.0).
+	 * <br>But it can set sql associated tables with setRelativeTableOneTime method since V2.4.0.
 	 * @param sql SQL select statement(use ? placeholder).
 	 * @param preValues parameter values for placeholder
 	 * @return	the number of affected successfully records.
 	 */
-//	@Deprecated
-	public int modify(String sql,Object preValues[]);
-	
+	public int modify(String sql, Object preValues[]);
+
 	/**
 	 * Modify database records with update, insert or delete statement.
-	 * @deprecated It is not recommended because 
-	 * the framework does not know what table has been changed, which will affect the correctness of the cache and 
-	 * cause the risk of inaccurate cache data.
+	 * It is not recommended because the framework does not know what table has been changed, 
+	 * <br>which will affect the correctness of the cache and cause the risk of inaccurate cache data (before V2.4.0).
+	 * <br>But it can set sql associated tables with setRelativeTableOneTime method since V2.4.0.
 	 * @param sql SQL statement.
 	 * @param map parameter values for placeholder
 	 * @return the number of affected successfully records.
 	 */
-	@Deprecated
-	public int modify(String sql,Map<String,Object> map);
-	
+	public int modify(String sql, Map<String, Object> map);
+
 	/**
 	 * Modify database records with update, insert or delete statement.
-	 * @Deprecated It is not recommended because the framework does not know what table has been changed, 
-	 * <br>which will affect the correctness of the cache and cause the risk of inaccurate cache data.
+	 * It is not recommended because the framework does not know what table has been changed, 
+	 * <br>which will affect the correctness of the cache and cause the risk of inaccurate cache data (before V2.4.0).
+	 * <br>But it can set sql associated tables with setRelativeTableOneTime method since V2.4.0.
 	 * @param sql SQL statement.
 	 * @return	the number of affected successfully records.
 	 * @since 1.9
 	 */
-//	@Deprecated
 	public int modify(String sql);
-	
+
 	/**
 	 * Query records and return list structure data whose element is Map<String, Object>.
 	 * @param sql SQL statement(do not contain placeholder).
 	 * @return the multi-line record of List<Map<String, Object>> structure.
 	 */
 	public List<Map<String, Object>> selectMapList(String sql);
-	
+
 	/**
 	 * Query records and return list structure data whose element is Map<String, Object>.
 	 * @param sql SQL statement.
 	 * @return the multi-line record of List<Map<String, Object>> structure.
 	 * @since V1.11
 	 */
-	
+
 	/**
 	 * Query records and return list structure data whose element is Map<String, Object>.
 	 * @param sqlStr SQL statement.
@@ -377,9 +375,8 @@ public interface PreparedSql extends CommOperate {
 	 * @return the multi-line record of List<Map<String, Object>> structure.
 	 * @since V1.11
 	 */
-	public List<Map<String, Object>> selectMapList(String sqlStr,Map<String, Object> parameterMap);
-	
-	
+	public List<Map<String, Object>> selectMapList(String sqlStr, Map<String, Object> parameterMap);
+
 	/**
 	 * Query records and return list structure data whose element is Map<String, Object>.
 	 * <br>paging generate by Bee.
@@ -390,8 +387,8 @@ public interface PreparedSql extends CommOperate {
 	 * @return the multi-line record of List<Map<String, Object>> structure.
 	 * @since V1.11
 	 */
-	public List<Map<String, Object>> selectMapList(String sql,Map<String,Object> parameterMap,int start,int size);
-	
+	public List<Map<String, Object>> selectMapList(String sql, Map<String, Object> parameterMap, int start, int size);
+
 	/**
 	 * Select more table record(s) via no placeholder(?) select statement.
 	 * @param sql SQL select statement(no placeholder).
@@ -400,7 +397,7 @@ public interface PreparedSql extends CommOperate {
 	 * @since V1.11
 	 */
 	public <T> List<T> moreTableSelect(String sql, T returnType);
-	
+
 	/**
 	 * Select the more table record(s) via the placeholder statement of variable.
 	 * <br>Both entity and map can pass values to parameters.
@@ -417,8 +414,8 @@ public interface PreparedSql extends CommOperate {
 	 * @return Entity List which element type is same as entity.
 	 * @since V1.11
 	 */
-	public <T> List<T> moreTableSelect(String sqlStr,T entity,Map<String,Object> parameterMap);
-	
+	public <T> List<T> moreTableSelect(String sqlStr, T entity, Map<String, Object> parameterMap);
+
 	/**
 	 * Select the more table record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters.
 	 * <br>Map can be used as a supplement of entity to pass parameters of complex queries such as range query.
@@ -437,32 +434,31 @@ public interface PreparedSql extends CommOperate {
 	 * @return Entity List which element type is same as entity.
 	 * @since V1.11
 	 */
-	public <T> List<T> moreTableSelect(String sqlStr,T entity,Map<String,Object> parameterMap,int start,int size);
-	
-	
-    /**
+	public <T> List<T> moreTableSelect(String sqlStr, T entity, Map<String, Object> parameterMap, int start, int size);
+
+	/**
 	 * Insert records by batch type.
-     * @param sql
-     * @param parameterMapList every element of List is a map corresponds to one record, every field add in map struct.
+	 * @param sql
+	 * @param parameterMapList every element of List is a map corresponds to one record, every field add in map struct.
 	 * @return the number of inserted record(s) successfully;if fails, return -1.
 	 * @since 1.11
-     */
+	 */
 	public int insertBatch(String sql, List<Map<String, Object>> parameterMapList);
 
 	/**
 	 * 
 	 * Insert records by batch type and batchSize.
-     * @param sql
-     * @param parameterMapList every element of List is a map corresponds to one record, every field add in map struct.
+	 * @param sql
+	 * @param parameterMapList every element of List is a map corresponds to one record, every field add in map struct.
 	 * @param batchSize
 	 * @return the number of inserted record(s) successfully;if fails, return -1.
 	 * @since 1.11
 	 */
 	public int insertBatch(String sql, List<Map<String, Object>> parameterMapList, int batchSize);
 
-	//why has not List<Entity> ? If you know the entity structure, use object-oriented way.
+	// why has not List<Entity> ? If you know the entity structure, use object-oriented way.
 //	public <T> int insertBatch(String sql, List<T> parameterMapList, int batchSize);
-	
+
 	/**
 	 * Set sql associated tables; Methods with T will be ignored; 
 	 * The setting is only valid once, and it is cleared after call getRelativeTableOneTime().
@@ -478,5 +474,5 @@ public interface PreparedSql extends CommOperate {
 	 * @return table names
 	 */
 	public String getRelativeTableOneTime();
-	
+
 }

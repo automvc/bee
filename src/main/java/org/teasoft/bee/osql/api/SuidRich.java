@@ -619,7 +619,7 @@ public interface SuidRich extends Suid {
 	 * @since 2.1
 	 */
 	public <T> void primaryKey(Class<T> entityClass, String fields, String keyName);
-	
+
 	/**
 	 * drop index
 	 * @param entityClass

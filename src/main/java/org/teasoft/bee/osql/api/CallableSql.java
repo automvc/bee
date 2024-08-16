@@ -26,7 +26,7 @@ import java.util.List;
  * @since  1.0
  */
 public interface CallableSql {
-	
+
 	/**
 	 * Use Procedure to query data.
 	 * @param callSql procedure sql
@@ -34,16 +34,16 @@ public interface CallableSql {
 	 * @param preValues parameter,just support In type.
 	 * @return list which contains more than one entity.
 	 */
-	public <T> List<T> select(String callSql,T returnType,Object preValues[]);
-	
+	public <T> List<T> select(String callSql, T returnType, Object preValues[]);
+
 	/**
 	 * Use Procedure to query data.
 	 * @param callSql procedure sql,eg: procedure_name(?)
 	 * @param preValues parameter,just support In type.
 	 * @return list can contain more than one record with String array struct.
 	 */
-	public List<String[]> select(String callSql,Object preValues[]);
-	
+	public List<String[]> select(String callSql, Object preValues[]);
+
 	/**
 	 * Use Procedure to query data and return Json string.
 	 * @param callSql procedure sql,eg: procedure_name(?)
@@ -51,16 +51,15 @@ public interface CallableSql {
 	 * @return Json string, it transform from list which can contain more than one entity.
 	 * @since  1.1
 	 */
-	public String selectJson(String callSql,Object preValues[]);
-	
-	
+	public String selectJson(String callSql, Object preValues[]);
+
 	/**
 	 * Use Procedure to query data.
 	 * @param callSql procedure sql,eg: procedure_name(?)
 	 * @param preValues parameter,just support In type.
 	 * @return the number of affected successfully records.
 	 */
-	public int modify(String callSql,Object preValues[]);
+	public int modify(String callSql, Object preValues[]);
 
 	/**
 	 * Returns the instance of CallableStatement so that the in, out, inout parameters can be set.
@@ -69,12 +68,12 @@ public interface CallableSql {
 	 * @return CallableStatement.
 	 */
 	public CallableStatement getCallableStatement(String callSql);
-	
+
 	/**
 	 * For parameters with out or inout type, the method can be called after setting the parameters.
 	 * @param cstmt instance of CallableStatement 
 	 * @return the number of affected successfully records.
 	 */
 	public int modify(CallableStatement cstmt);
-	
+
 }

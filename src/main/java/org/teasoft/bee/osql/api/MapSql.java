@@ -42,13 +42,13 @@ public interface MapSql {
 	 * @param value value
 	 */
 	public void put(String fieldName, Object value);
-	
+
 	/**
 	 * Set the field information used for where filtering , also can use in SQL insert.
 	 * @param map map instance consist by key and value.
 	 */
 	public void put(Map<String, ? extends Object> map);
-	
+
 	/**
 	 * Set the fields and values that need to be updated for the set part of SQL update
 	 * @param fieldName
@@ -56,21 +56,21 @@ public interface MapSql {
 	 * @since 1.9.8
 	 */
 	public void putNew(String fieldName, Object value);
-	
+
 	/**
 	 * Set the fields and values that need to be updated for the set part of SQL update
 	 * @param map A map object consisting of fields and values that need to be updated
 	 * @since 1.9.8
 	 */
 	public void putNew(Map<String, ? extends Object> map);
-	
+
 	/**
 	 * Set the configuration for filtering or processing rule.
 	 * @param mapSqlSetting Key of MapSqlSetting 
 	 * @param value setting value
 	 */
 	public void put(MapSqlSetting mapSqlSetting, boolean value);
-	
+
 	/**
 	 * Set the start page when paging query.
 	 * It will be ignore when use count().
@@ -78,6 +78,7 @@ public interface MapSql {
 	 * @since 1.9.8
 	 */
 	public void start(Integer start);
+
 	/**
 	 * During paging query, set the number of data records on one page.
 	 * It will be ignore when use count().
@@ -85,14 +86,14 @@ public interface MapSql {
 	 * @since 1.9.8
 	 */
 	public void size(Integer size);
-	
+
 	/**
 	 * add condition for filter(use in SQL where part).
 	 * @param condition instance of Condition
 	 * @since 2.4.0
 	 */
 	public void where(Condition condition);
-	
+
 	/**
 	 * add condition for update set(use in SQL update set part).
 	 * @param condition instance of Condition
