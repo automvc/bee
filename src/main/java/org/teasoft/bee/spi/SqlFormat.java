@@ -24,7 +24,7 @@ import java.io.Serializable;
  * @author Kingstar
  * @since  2.1.7
  */
-public interface SqlFormat extends Serializable{
+public interface SqlFormat extends Serializable {
 
 	/**
 	 * format the sql

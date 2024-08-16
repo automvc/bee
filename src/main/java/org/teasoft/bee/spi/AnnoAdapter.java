@@ -49,7 +49,7 @@ public interface AnnoAdapter {
 	 * @return boolean value
 	 */
 	public boolean isColumn(Field field);
-	
+
 	/**
 	 * Check the property or field whether is Ignore or Transient annotation.
 	 * The annotation is used to annotate a property or field of an entity class.

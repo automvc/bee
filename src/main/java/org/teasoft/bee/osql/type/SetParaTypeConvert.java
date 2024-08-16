@@ -24,7 +24,7 @@ package org.teasoft.bee.osql.type;
  * @since  1.11
  */
 public interface SetParaTypeConvert<T> {
-	
+
 	public Object convert(T value);
 
 }

@@ -30,7 +30,7 @@ import org.teasoft.bee.osql.Registry;
 public class CalculateRegistry implements Registry {
 
 	private static final Map<String, Calculate> calculateMap = new HashMap<>();
-	
+
 	private CalculateRegistry() {}
 
 	/**

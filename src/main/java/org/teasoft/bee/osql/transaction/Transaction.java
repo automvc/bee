@@ -24,16 +24,20 @@ package org.teasoft.bee.osql.transaction;
  * @since  1.0
  */
 public interface Transaction {
-	
+
 	public void begin();
+
 	public void commit();
+
 	public void rollback();
-	
+
 	public void setReadOnly(boolean readOnly);
+
 	public void setTransactionIsolation(TransactionIsolationLevel transactionIsolationLevel);
 
 	public boolean isReadOnly();
+
 	public int getTransactionIsolation();
-	
+
 	public void setTimeout(int seconds);
 }

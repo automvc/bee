@@ -35,5 +35,4 @@ public interface TypeHandler<T> {
 	 */
 	public T process(final Class<T> fieldType, final Object result);
 
-
 }

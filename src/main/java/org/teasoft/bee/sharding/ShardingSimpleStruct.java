@@ -31,8 +31,8 @@ public class ShardingSimpleStruct {
 	private String tabRule;
 	private String tabName;
 
-	private Object dsShardingValue; //2.0
-	private Object tabShardingValue;//2.0
+	private Object dsShardingValue; // 2.0
+	private Object tabShardingValue;// 2.0
 
 	/**
 	 * get dataSource algorithm

@@ -38,9 +38,9 @@ public class ShardingBean extends ShardingSimpleStruct {
 	private int tabAssignType; // 0: order; 1: polling
 
 	public ShardingBean() {}
-	
+
 	/**
-	 * 
+	 * create ShardingBean instance by fullNodes.
 	 * @param fullNodes
 	 */
 	public ShardingBean(String fullNodes) {
@@ -49,7 +49,7 @@ public class ShardingBean extends ShardingSimpleStruct {
 	}
 
 	/**
-	 * 
+	 * create ShardingBean instance by fullNodes and tabField.
 	 * @param fullNodes
 	 * @param tabField
 	 */
@@ -58,9 +58,9 @@ public class ShardingBean extends ShardingSimpleStruct {
 		this.fullNodes = fullNodes;
 		this.tabField = tabField;
 	}
-	
+
 	/**
-	 * 
+	 * create ShardingBean instance by fullNodes, tabField and dsField.
 	 * @param fullNodes
 	 * @param tabField
 	 * @param dsField
@@ -84,15 +84,15 @@ public class ShardingBean extends ShardingSimpleStruct {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * get dataSource field.
+	 * @return dataSource field.
 	 */
 	public String getDsField() {
 		return dsField;
 	}
 
 	/**
-	 * 
+	 * set dataSource field.
 	 * @param dsField
 	 */
 	public void setDsField(String dsField) {
@@ -100,15 +100,15 @@ public class ShardingBean extends ShardingSimpleStruct {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * get table field.
+	 * @return table field.
 	 */
 	public String getTabField() {
 		return tabField;
 	}
 
 	/**
-	 * 
+	 * set table field.
 	 * @param tabField
 	 */
 	public void setTabField(String tabField) {
@@ -140,15 +140,15 @@ public class ShardingBean extends ShardingSimpleStruct {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * get full nodes string.
+	 * @return full nodes string.
 	 */
 	public String getFullNodes() {
 		return fullNodes;
 	}
 
 	/**
-	 * 
+	 * set full nodes string.
 	 * @param fullNodes
 	 */
 	public void setFullNodes(String fullNodes) {
@@ -170,31 +170,41 @@ public class ShardingBean extends ShardingSimpleStruct {
 	public void setTabAssignType(int tabAssignType) {
 		this.tabAssignType = tabAssignType;
 	}
-	
-	
+
 	/**
 	 * create ShardingBean by map
 	 * @param map include ShardingBean field value
 	 * @since 2.4.0
 	 */
-	public ShardingBean(Map<String,String> map) {
+	public ShardingBean(Map<String, String> map) {
 		super();
-		if(map==null || map.size()==0) return ;
+		if (map == null || map.size() == 0) return;
 		for (Map.Entry<String, String> entry : map.entrySet()) {
-			if("fullNodes".equals(entry.getKey())) setFullNodes(entry.getValue());
-			else if("dsField".equals(entry.getKey())) setDsField(entry.getValue());
-			else if("tabField".equals(entry.getKey())) setTabField(entry.getValue());
-			else if("tabAssignType".equals(entry.getKey())) setTabAssignType(Integer.parseInt(entry.getValue()));
-			else if("dsAlgorithm".equals(entry.getKey())) setDsAlgorithm(Integer.parseInt(entry.getValue()));
-			else if("tabAlgorithm".equals(entry.getKey())) setTabAlgorithm(Integer.parseInt(entry.getValue()));
-			else if("dsRule".equals(entry.getKey())) setDsRule(entry.getValue());
-			else if("dsName".equals(entry.getKey())) setDsName(entry.getValue());
-			else if("tabRule".equals(entry.getKey())) setTabRule(entry.getValue());
-			else if("dsShardingValue".equals(entry.getKey())) setDsShardingValue(entry.getValue());
-			else if("tabShardingValue".equals(entry.getKey())) setTabShardingValue(entry.getValue());
-			
+			if ("fullNodes".equals(entry.getKey()))
+				setFullNodes(entry.getValue());
+			else if ("dsField".equals(entry.getKey()))
+				setDsField(entry.getValue());
+			else if ("tabField".equals(entry.getKey()))
+				setTabField(entry.getValue());
+			else if ("tabAssignType".equals(entry.getKey()))
+				setTabAssignType(Integer.parseInt(entry.getValue()));
+			else if ("dsAlgorithm".equals(entry.getKey()))
+				setDsAlgorithm(Integer.parseInt(entry.getValue()));
+			else if ("tabAlgorithm".equals(entry.getKey()))
+				setTabAlgorithm(Integer.parseInt(entry.getValue()));
+			else if ("dsRule".equals(entry.getKey()))
+				setDsRule(entry.getValue());
+			else if ("dsName".equals(entry.getKey()))
+				setDsName(entry.getValue());
+			else if ("tabRule".equals(entry.getKey()))
+				setTabRule(entry.getValue());
+			else if ("dsShardingValue".equals(entry.getKey()))
+				setDsShardingValue(entry.getValue());
+			else if ("tabShardingValue".equals(entry.getKey()))
+				setTabShardingValue(entry.getValue());
+
 //			dsAlgorithmClass or tabAlgorithmClass,pls use Java style
 		}
-		
+
 	}
 }

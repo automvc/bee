@@ -25,13 +25,13 @@ import java.util.List;
  * @author AiTeaSoft
  * @since  2.0
  */
-public interface JsonTransform extends Serializable{
-	
+public interface JsonTransform extends Serializable {
+
 	public <T> T toEntity(String json, Class<T> clazz);
 
 	public String toJson(Object obj);
 
 	public <T> T toEntity(String json, Class<T> clazz, Class<?> elementClass);
-	
+
 	public <T> List<T> toEntityList(String json, Class<T> elementClass);
 }

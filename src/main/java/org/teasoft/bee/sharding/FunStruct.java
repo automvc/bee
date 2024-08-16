@@ -26,9 +26,9 @@ public class FunStruct {
 
 	private String fieldName;
 	private String functionType;
-	
+
 	public FunStruct() {}
-	
+
 	public FunStruct(String fieldName, String functionType) {
 		super();
 		this.fieldName = fieldName;

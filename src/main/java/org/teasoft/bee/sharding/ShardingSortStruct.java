@@ -31,15 +31,15 @@ import org.teasoft.bee.osql.OrderType;
  */
 public class ShardingSortStruct {
 
-	private String orderSql;  //need when rewrite to union all.
+	private String orderSql; // need when rewrite to union all.
 	private String orderFields[];
 	private OrderType orderTypes[];
 
 //	the following 5 field for:
 //	public List<String[]> select(String sql)
 
-	//The element order corresponds to orderFields []
-	private String type[]; //Number,String...
+	// The element order corresponds to orderFields []
+	private String type[]; // Number,String...
 	private boolean nullFirst[];
 	private boolean caseSensitive[];
 	// the field value in the select column index
@@ -127,5 +127,5 @@ public class ShardingSortStruct {
 	public void setRegFlag(boolean regFlag) {
 		this.regFlag = regFlag;
 	}
-	
+
 }

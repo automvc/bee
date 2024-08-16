@@ -27,19 +27,18 @@ import java.util.Map;
  * @since  2.0
  */
 public class GroupFunStruct {
-	
+
 	private List<String> groupFields;
 //	private FunStruct funStructs[];
 	private List<FunStruct> funStructs;
-	
+
 	private boolean needGroupWhenNoFun;
-	
-	//has avg or String[] type need following
+
+	// has avg or String[] type need following
 	private boolean hasAvg;
 	private String columnNames;
-	
-	private Map<String,Integer> columnIndexMap=new LinkedHashMap<>();
-	
+
+	private Map<String, Integer> columnIndexMap = new LinkedHashMap<>();
 
 	public GroupFunStruct() {}
 
@@ -64,7 +63,7 @@ public class GroupFunStruct {
 //	public void setFunStructs(FunStruct[] funStructs) {
 //		this.funStructs = funStructs;
 //	}
-	
+
 	public List<FunStruct> getFunStructs() {
 		return funStructs;
 	}
@@ -72,7 +71,7 @@ public class GroupFunStruct {
 	public void setFunStructs(List<FunStruct> funStructs) {
 		this.funStructs = funStructs;
 	}
-	
+
 	public boolean isNeedGroupWhenNoFun() {
 		return needGroupWhenNoFun;
 	}
@@ -109,7 +108,7 @@ public class GroupFunStruct {
 			}
 		}
 	}
-	
+
 	public Map<String, Integer> getColumnIndexMap() {
 		return this.columnIndexMap;
 	}

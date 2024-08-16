@@ -26,7 +26,7 @@ import java.util.List;
  * @since  2.1
  */
 public class Result {
-    
+
 	private int total;
 	private List<?> rows;
 	private String code;
@@ -40,7 +40,7 @@ public class Result {
 
 	public Result(String errorMsg) {
 		this.errorMsg = errorMsg;
-		rows = new ArrayList<>(1); // prevent front end null exception; 
+		rows = new ArrayList<>(1); // prevent front end null exception;
 	}
 
 	/**
@@ -107,7 +107,7 @@ public class Result {
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
-	
+
 	/**
 	 * get error type code.
 	 * @return error type code

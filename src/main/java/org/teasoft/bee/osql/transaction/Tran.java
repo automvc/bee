@@ -29,7 +29,7 @@ import java.lang.annotation.Target;
  * @author Kingstar
  * @since 1.17
  */
-@Target({ElementType.TYPE, ElementType.METHOD})
+@Target({ ElementType.TYPE, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
 @Documented
@@ -42,5 +42,5 @@ public @interface Tran {
 	String readOnly() default "";
 
 	TransactionIsolationLevel isolation() default TransactionIsolationLevel.DEFAULT;
-	
+
 }

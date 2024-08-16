@@ -68,7 +68,7 @@ public interface BeeSqlForApp {
 	 * @return List, every element is a Map<String,Object>(transform from record).
 	 */
 	public List<Map<String, Object>> selectMapList(String sql, String[] selectionArgs);
-	
+
 	/**
 	 * select maplist with column name.
 	 * this method just use internally.
@@ -77,7 +77,7 @@ public interface BeeSqlForApp {
 	 * @return List, every element is a Map<String,Object>(transform from record,and the map key use ColumnName).
 	 */
 	public List<Map<String, String>> selectMapListWithColumnName(String sql, String[] selectionArgs);
-	
+
 	/**
 	 * Select and return json format result.
 	 * 
@@ -85,21 +85,21 @@ public interface BeeSqlForApp {
 	 * @return json format result .
 	 */
 	public String selectJson(String sql, String[] selectionArgs, Class entityClass);
-	
+
 	/**
 	 * 
 	 * @param sql
 	 * @param bindArgs
 	 * @return the value of primary key.
 	 */
-	public long insertAndReturnId(String sql, Object[] bindArgs); 
-	
+	public long insertAndReturnId(String sql, Object[] bindArgs);
+
 	/**
 	 * 
 	 * @param sql
 	 * @param listBindArgs
 	 * @return Affected rows.
 	 */
-	public int batchInsert(String sql,List<Object[]> listBindArgs);    
+	public int batchInsert(String sql, List<Object[]> listBindArgs);
 
 }
