@@ -5,39 +5,38 @@ package org.teasoft.bee.osql;
  * @author Kingstar
  * @since  1.3
  */
-//OperationType
 public enum Op {
 
 	/**
 	 * eq is : =
 	 */
 	eq("="),
-	
+
 	/**
 	 * gt is : >
 	 */
 	gt(">"),
-	
+
 	/**
 	 * lt is : <
 	 */
 	lt("<"),
-	
+
 	/**
 	 * nq is : !=
 	 */
-	nq("!="),   // <> 
-	
+	nq("!="), // <>
+
 	/**
 	 * ge is : >=
 	 */
 	ge(">="),
-	
+
 	/**
 	 * le is : <=
 	 */
 	le("<="),
-	
+
 	/**
 	 * Like, the matching character is not limited to the left or right; Suitable for complex fuzzy queries.
 	 * <br> it is necessary to judge whether the final character only contains matching characters ('%'and' _'); 
@@ -46,7 +45,7 @@ public enum Op {
 	 * <br> and can preferentially use likeLeft,likeRight,likeLeftRight.
 	 */
 	like(" like "),
-	
+
 	/**
 	 * not like.
 	 * <br>the user need escape the '%' and '_' in the parameter value.
@@ -56,7 +55,7 @@ public enum Op {
 	 */
 	@Deprecated
 	notLike(" not like "),
-	
+
 	/**
 	 * Like left match, and the framework adds '%' to the left of the parameter value.
 	 * <br> the value of the parameter will be escaped by the framework.
@@ -64,7 +63,7 @@ public enum Op {
 	 * @since 1.17
 	 */
 	likeLeft(" like "),
-	
+
 	/**
 	 * Like right match, and the framework adds '%' to the right of the parameter value.
 	 * <br> the value of the parameter will be escaped by the framework.
@@ -72,7 +71,7 @@ public enum Op {
 	 * @since 1.17
 	 */
 	likeRight(" like "),
-	
+
 	/**
 	 * Like left & right match, and the framework adds '%' to the left & right of the parameter value.
 	 * <br> the value of the parameter will be escaped by the framework.
@@ -80,8 +79,7 @@ public enum Op {
 	 * @since 1.17
 	 */
 	likeLeftRight(" like "),
-	
-	
+
 //	/**
 //	 * not like ,and add '%' on the left of parameter.
 //	 */
@@ -98,54 +96,53 @@ public enum Op {
 //	 */
 //	@Deprecated
 //	notLikeLeftRight(" not like "),
-	
+
 	/**
 	 * in
 	 */
 	in(" in"),
-	
+
 	/**
 	 * not in
 	 */
 	notIn(" not in"),
-	
-	
+
 	/**
 	 * equal is : =
 	 */
 	equal("="),
-	
+
 	/**
 	 * great than(same as gt) is : >
 	 */
 	greatThan(">"),
-	
+
 	/**
 	 * less than(same as lt) is : <
 	 */
 	lessThan("<"),
-	
+
 	/**
 	 * not equal(same as nq) is : !=
 	 */
-	notEqual("!="),   // <> 
-	
+	notEqual("!="), // <>
+
 	/**
 	 * great equal(same as ge) is : >=
 	 */
 	greatEqual(">="),
-	
+
 	/**
 	 * less equal(same as le) is : <=
 	 */
 	lessEqual("<=");
-	
+
 //	not("!");   //????     pls use:  public Condition not()
-	
+
 	private String operator;
-	
-	Op(String operator){
-		this.operator=operator;
+
+	Op(String operator) {
+		this.operator = operator;
 	}
 
 	public String getOperator() {

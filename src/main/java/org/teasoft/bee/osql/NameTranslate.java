@@ -31,15 +31,13 @@ public interface NameTranslate {
 	 * @return table name.
 	 */
 	public String toTableName(String entityName);
-	
-	
+
 	/**
 	 * Field name to column name.
 	 * @param fieldName field name in Java entity.
 	 * @return column name.
 	 */
 	public String toColumnName(String fieldName);
-	
 
 	/**
 	 * Table name to entity name.
@@ -47,8 +45,7 @@ public interface NameTranslate {
 	 * @return entity name(Javabean name).
 	 */
 	public String toEntityName(String tableName);
-	
-	
+
 	/**
 	 * Column name to field name.
 	 * @param columnName DB table's column name.

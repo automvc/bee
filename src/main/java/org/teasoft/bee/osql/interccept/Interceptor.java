@@ -28,7 +28,7 @@ import org.teasoft.bee.osql.SuidType;
  * @author Kingstar
  * @since  1.11
  */
-public interface Interceptor extends Serializable{
+public interface Interceptor extends Serializable {
 
 	/**
 	 * call before parsing entity into SQL
@@ -36,15 +36,15 @@ public interface Interceptor extends Serializable{
 	 * @param suidType
 	 * @return Processed entity
 	 */
-	public Object beforePasreEntity(Object entity,SuidType suidType); 
-	
+	public Object beforePasreEntity(Object entity, SuidType suidType);
+
 	/**
 	 * call before parsing entity array into SQL
 	 * @param entityArray entity array
 	 * @param suidType SuidType
 	 * @return entityArray Processed entity array
 	 */
-	public Object[] beforePasreEntity(Object entityArray[],SuidType suidType); 
+	public Object[] beforePasreEntity(Object entityArray[], SuidType suidType);
 
 	/**
 	 * set OneTime temporary dataSource name.
@@ -58,14 +58,14 @@ public interface Interceptor extends Serializable{
 	 * @return OneTime temporary dataSource name
 	 */
 	public String getOneTimeDataSource();
-	
-	
+
 	public void setTabNameOneTime(String tabName);
+
 	public void setTabSuffixOneTime(String tabSuffix);
-	
+
 	public String getOneTimeTabName();
+
 	public String getOneTimeTabSuffix();
-	
 
 	/**
 	 * call after finished to SQL 
@@ -81,7 +81,7 @@ public interface Interceptor extends Serializable{
 	 */
 	@SuppressWarnings("rawtypes")
 	public void beforeReturn(List list);
-	
+
 	/**
 	 * call after accessing the DB and getting the processing results. 
 	 * <br>it is used for update, insert, delete and query methods that do not return the Javabean structure.

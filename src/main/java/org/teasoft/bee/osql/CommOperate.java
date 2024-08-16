@@ -25,7 +25,7 @@ import org.teasoft.bee.osql.interccept.InterceptorChain;
  * @since  1.11
  */
 public interface CommOperate {
-	
+
 	/**
 	 * Set the dataSource for current instance. If use the default settings that are not required.
 	 * Set dataSource name (corresponding data source must be defined).
@@ -39,13 +39,13 @@ public interface CommOperate {
 	 * @return DataSource name
 	 */
 	public String getDataSourceName();
-	
+
 	/**
 	 * Get the Interceptor chain, which can be used for a generated object set a specific interceptor.
 	 * @return InterceptorChain
 	 */
 	public InterceptorChain getInterceptorChain();
-	
+
 	/**
 	 * Set the NameTranslate for current instance. 
 	 * Since 2.1 only effective once.

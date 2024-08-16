@@ -25,26 +25,26 @@ import java.io.Serializable;
  * @author Kingstar
  * @since  1.4
  */
-public interface Cache extends Serializable{
-	
+public interface Cache extends Serializable {
+
 	/**
 	 * Get the cache result by sql. 
 	 * @param sql sql for select
 	 * @return cache result set.
 	 */
 	public Object get(String sql);
-	
+
 	/**
 	 * Put the result in the cache identify with sql.
 	 * @param sql sql for select
 	 * @param result result of select
 	 */
-	public void add(String sql,Object result);
-	
+	public void add(String sql, Object result);
+
 	/**
 	 * Clear the cache result of related table by sql.
 	 * @param sql  sql for modify
 	 */
 	public void clear(String sql);
-	
+
 }

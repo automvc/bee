@@ -27,50 +27,50 @@ import org.teasoft.bee.osql.api.Condition;
  * @since  1.0
  */
 public interface ObjToSQL {
-	
+
 	/**
 	 * Convert to select SQL statement according to entity.
 	 * @param entity table's entity(do not allow null).
 	 * @return the sql string.
 	 */
-	public  <T> String toSelectSQL(T entity) ;
-	
+	public <T> String toSelectSQL(T entity);
+
 	/**
 	 * Convert to update SQL statement according to entity.
 	 * @param entity table's entity(do not allow null).
 	 * @return the sql string.
 	 */
-	public  <T> String toUpdateSQL(T entity) ;
-	
+	public <T> String toUpdateSQL(T entity);
+
 	/**
 	 * Convert to insert SQL statement according to entity.
 	 * @param entity table's entity(do not allow null).
 	 * @return the sql string.
 	 */
-	public  <T> String toInsertSQL(T entity) ;
-	
+	public <T> String toInsertSQL(T entity);
+
 	/**
 	 * Convert to delete SQL statement according to entity.
 	 * @param entity table's entity(do not allow null).
 	 * @return the sql string.
 	 */
-	public  <T> String toDeleteSQL(T entity) ;
-	
-    /**
-     * Convert to select SQL statement according to entity and condition.
-     * @param entity table's entity(do not allow null).
-     * @param condition instance of Condition.
-     * @return the sql string.
-     * @since  1.6
-     */
-	public  <T> String toSelectSQL(T entity,Condition condition) ;
+	public <T> String toDeleteSQL(T entity);
 
-    /**
-     * Convert to delete SQL statement according to entity and condition
-     * @param entity table's entity(do not allow null).
-     * @param condition instance of Condition.
-     * @return the sql string.
-     * @since  1.7.2
-     */
-	public  <T> String toDeleteSQL(T entity,Condition condition) ;
+	/**
+	 * Convert to select SQL statement according to entity and condition.
+	 * @param entity table's entity(do not allow null).
+	 * @param condition instance of Condition.
+	 * @return the sql string.
+	 * @since  1.6
+	 */
+	public <T> String toSelectSQL(T entity, Condition condition);
+
+	/**
+	 * Convert to delete SQL statement according to entity and condition
+	 * @param entity table's entity(do not allow null).
+	 * @param condition instance of Condition.
+	 * @return the sql string.
+	 * @since  1.7.2
+	 */
+	public <T> String toDeleteSQL(T entity, Condition condition);
 }

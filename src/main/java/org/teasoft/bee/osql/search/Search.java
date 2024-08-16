@@ -35,11 +35,11 @@ public class Search {
 
 	// when like,notLike, value2 is:Left,Right,LeftRight
 	// when function, value2 is: alias name
-	//between, notBetween value2 is:second para
+	// between, notBetween value2 is:second para
 	// other Operator,value2 is null
 	private String value2;
 
-	private String op2; //or ,   and is default
+	private String op2; // or , and is default
 
 	public Search() {}
 

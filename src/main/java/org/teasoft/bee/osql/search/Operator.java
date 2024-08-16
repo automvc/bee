@@ -23,7 +23,7 @@ package org.teasoft.bee.osql.search;
  * @since  1.9.8
  */
 public enum Operator {
-	
+
 	/**
 	 * eq is : =
 	 */

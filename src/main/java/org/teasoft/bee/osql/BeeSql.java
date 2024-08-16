@@ -31,7 +31,7 @@ import java.util.Map;
  * @since  1.0
  */
 public interface BeeSql {
-	
+
 	/**
 	 * According to SQL query data, data type is consistent with entity type.
 	 * @param sql	SQL select statement
@@ -39,7 +39,7 @@ public interface BeeSql {
 	 * @return List can contain more than one entity.
 	 */
 	public <T> List<T> select(String sql, Class<T> entityClass);
-	
+
 	/**
 	 * Select some field.
 	 * @param sql	SQL select statement
@@ -47,7 +47,7 @@ public interface BeeSql {
 	 * @return List entity which just has some field.
 	 */
 	public <T> List<T> selectSomeField(String sql, Class<T> entityClass);
-	
+
 	/**
 	 * Select result with function. SQL function: max,min,avg,sum,count. 
 	 * @param sql	SQL select statement
@@ -55,8 +55,7 @@ public interface BeeSql {
 	 * <br>If the result set of statistics is empty,the count return 0,the other return empty string.
 	 * 
 	 */
-	public String selectFun(String sql) ;
-
+	public String selectFun(String sql);
 
 	/**
 	 * Select and transform every record to string array.
@@ -64,43 +63,43 @@ public interface BeeSql {
 	 * @return List, every element is string array(transform from record).
 	 */
 	public List<String[]> select(String sql);
-	
+
 	/**
 	 * Select and return json format result.
 	 * @param sql	SQL select statement
 	 * @return json format result .
 	 */
 	public String selectJson(String sql);
-	
+
 	/**
 	 * Operate update,insert,delete. corresponding to Jdbc executeUpdate method.
 	 * @param sql  SQL statement to execute
 	 * @return the number of affected successfully records.If fails, return -1.
 	 */
 	public int modify(String sql);
-	
+
 	/**
 	 * insert and return the value of primary key.
 	 * @param sql SQL statement to execute
 	 * @return the value of primary key.If fails, return -1.
 	 */
 	public long insertAndReturnId(String sql);
-	
+
 	/**
 	 * Submits a batch of commands to the database.
 	 * @param sqls Array of SQL statements to execute
 	 * @return Affected rows.If fails, return -1.
 	 */
 	public int batch(String sqls[]);
-	
+
 	/**
 	 * Submits a batch of commands to the database.
 	 * @param sqls Array of SQL statements to execute
 	 * @param batchSize the size of commands in a batch
 	 * @return Affected rows.If fails, return -1.
 	 */
-	public int batch(String []sqls,int batchSize);
-	
+	public int batch(String[] sqls, int batchSize);
+
 	/**
 	 * According to SQL query more table data, data type is consistent with entity type.
 	 * @param sql  SQL select statement
@@ -108,16 +107,16 @@ public interface BeeSql {
 	 * @return List can contain more than one entity.
 	 * @since 1.7
 	 */
-	public <T> List<T> moreTableSelect(String sql,T entity );
-	
+	public <T> List<T> moreTableSelect(String sql, T entity);
+
 	/**
 	 * Select and transform every record to Map<String,Object>.
 	 * @param sql SQL select statement
 	 * @return List, every element is a Map<String,Object>(transform from record).
 	 * @since 1.9
 	 */
-	public List<Map<String,Object>> selectMapList(String sql);
-	
+	public List<Map<String, Object>> selectMapList(String sql);
+
 	/**
 	 * select ResultSet.After using the returned ResultSet results, call HoneyContext.clearConnForSelectRs() to close the connection.
 	 * @param sql SQL select statement

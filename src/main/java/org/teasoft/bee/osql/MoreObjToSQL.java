@@ -26,8 +26,20 @@ import org.teasoft.bee.osql.api.Condition;
  */
 public interface MoreObjToSQL {
 
+	/**
+	 *  Convert to SQL statement according to entity.
+	 * @param entity table's entity(do not allow null).
+	 * @return the sql String.
+	 */
 	public <T> String toSelectSQL(T entity);
 
+	/**
+	 *  Convert to SQL statement according to entity and paging parameters.
+	 * @param entity table's entity(do not allow null).
+	 * @param start
+	 * @param size
+	 * @return the sql String.
+	 */
 	public <T> String toSelectSQL(T entity, int start, int size);
 
 	/**

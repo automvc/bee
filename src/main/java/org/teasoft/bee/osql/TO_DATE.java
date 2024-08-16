@@ -20,11 +20,11 @@ package org.teasoft.bee.osql;
 /**
  * can use TO_DATE in : 
  * <br>Condition op(String field, Op op, Object value) 
- * <br>for Oracle
+ * <br>for Oracle.
  * <br>eg:condition.op("mydatetime", Op.ge, new TO_DATE("2024-07-08", "YYYY-MM-DD"));
  * <br>->  
  * <br>where mydatetime>=TO_DATE('2024-07-08', 'YYYY-MM-DD') ;
- * 
+ * <br>In general, this interface is only used for Oracle.
  * @author Kingstar
  * @since  2.4.0
  */
@@ -34,7 +34,7 @@ public class TO_DATE {
 	private String formatter;
 
 	public TO_DATE() {}
-	
+
 	public TO_DATE(String datetimeValue, String formatter) {
 		this.datetimeValue = datetimeValue;
 		this.formatter = formatter;

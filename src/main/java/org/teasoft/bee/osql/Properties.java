@@ -29,7 +29,7 @@ public interface Properties {
 	public String getProp(String key);
 
 	public String getPropText(String key);
-	
+
 	public Set<String> getKeys();
 
 }

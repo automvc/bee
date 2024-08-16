@@ -29,23 +29,21 @@ public interface ToSql {
 	 * @return sql statement.
 	 */
 	public String toSQL();
-	
+
 	/**
 	 * to SQL statement.
 	 * @param noSemicolon true means: no semicolon.
 	 * @return sql statement.
 	 */
 	public String toSQL(boolean noSemicolon);
-	
-	
+
 	/**
 	 * Pv List
 	 * @return Pv List
 	 * @since 2.4.0
 	 */
 	public List<?> getPvList();
-	
-	
+
 	/**
 	 * get table name
 	 * @return table name

@@ -23,48 +23,48 @@ package org.teasoft.bee.osql;
  * @since  1.9
  */
 public enum MapSqlKey {
-	
-    /**
-     * Declare the table to be operated on.
-     */
+
+	/**
+	 * Declare the table to be operated on.
+	 */
 	Table("Table"),
-	
+
 	/**
 	 * In the method insertAndReturnId(MapSql mapSql) of MapSuid, it is used when the primary key name is not 'id'.
 	 * @since 1.11
 	 */
 	PrimaryKey("PrimaryKey"),
-	
+
 	/**
 	 * Declare the select fields,if more than one,separate with comma.
 	 */
-    SelectColumns("SelectColumns"),
-    
-    /**
-     * It corresponds to the group by of SQL.
-     */
-    GroupBy("GroupBy"),
-    
-    /**
-     * It corresponds to the having of SQL.
-     */
-    Having("Having"),
-    
-    /**
-     * It corresponds to the order by of SQL.
-     */
-    OrderBy("OrderBy")
-    
-    ;
-	
-    String name;
-    
-    MapSqlKey(String name){
-    	this.name = name;  
-    }
-    
-    public String getName(){
-    	return name;
-    }
+	SelectColumns("SelectColumns"),
+
+	/**
+	 * It corresponds to the group by of SQL.
+	 */
+	GroupBy("GroupBy"),
+
+	/**
+	 * It corresponds to the having of SQL.
+	 */
+	Having("Having"),
+
+	/**
+	 * It corresponds to the order by of SQL.
+	 */
+	OrderBy("OrderBy")
+
+	;
+
+	String name;
+
+	MapSqlKey(String name) {
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
 
 }

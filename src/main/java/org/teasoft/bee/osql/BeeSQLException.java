@@ -47,29 +47,29 @@ public class BeeSQLException extends BeeException {
 	protected BeeSQLException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
 		super(message, cause, enableSuppression, writableStackTrace);
 	}
-	
-    public BeeSQLException(String reason,String sqlState, int vendorCode, Throwable cause) {
-        super(reason,cause);
-        this.SQLState = sqlState;
-        this.vendorCode = vendorCode;
-    }
-    
-    /**
-     * Retrieves the SQLState for this <code>BeeSQLException</code> object.
-     *
-     * @return the SQLState value
-     */
-    public String getSQLState() {
-        return (SQLState);
-    }
 
-    /**
-     * Retrieves the vendor-specific exception code
-     * for this <code>BeeSQLException</code> object.
-     *
-     * @return the vendor's error code
-     */
-    public int getErrorCode() {
-        return (vendorCode);
-    }
+	public BeeSQLException(String reason, String sqlState, int vendorCode, Throwable cause) {
+		super(reason, cause);
+		this.SQLState = sqlState;
+		this.vendorCode = vendorCode;
+	}
+
+	/**
+	 * Retrieves the SQLState for this <code>BeeSQLException</code> object.
+	 *
+	 * @return the SQLState value
+	 */
+	public String getSQLState() {
+		return (SQLState);
+	}
+
+	/**
+	 * Retrieves the vendor-specific exception code
+	 * for this <code>BeeSQLException</code> object.
+	 *
+	 * @return the vendor's error code
+	 */
+	public int getErrorCode() {
+		return (vendorCode);
+	}
 }

@@ -24,17 +24,22 @@ package org.teasoft.bee.osql.chain;
  */
 public interface Update extends Where<Update>, ToSql {
 
-	public Update update(String table) ;
+	public Update update(String table);
+
 	public Update set(String field, String value);
+
 	public Update set(String field, Number value);
-	
-	public Update setAdd(String field,Number num);
-	public Update setMultiply(String field,Number num);
+
+	public Update setAdd(String field, Number num);
+
+	public Update setMultiply(String field, Number num);
+
 	public Update setAdd(String field, String otherFieldName);
+
 	public Update setMultiply(String field, String otherFieldName);
-	
+
 	public Update setWithField(String field1, String field2);
-	
+
 	public Update setNull(String fieldName);
-	
+
 }

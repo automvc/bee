@@ -25,17 +25,18 @@ import org.teasoft.bee.osql.OrderType;
  * @since  2.4.0
  */
 public interface Select extends Where<Select>, ToSql {
-	
-	public Select select() ;
+
+	public Select select();
 
 	public Select select(String column);
 
-	public Select distinct(String field) ;
-	public Select distinct(String fieldName, String alias); //2.x
+	public Select distinct(String field);
+
+	public Select distinct(String fieldName, String alias); // 2.x
 
 	public Select from(String table);
 
-	public Select join(String anotherTable) ;
+	public Select join(String anotherTable);
 
 	public Select innerJoin(String anotherTable);
 
@@ -55,22 +56,23 @@ public interface Select extends Where<Select>, ToSql {
 
 	public Select orderBy(String field, OrderType orderType);
 
-	public Select start(int start) ;
+	public Select start(int start);
 
-	public Select size(int size) ;
+	public Select size(int size);
 
-	public Select exists(Select subSelect) ;
+	public Select exists(Select subSelect);
+
 	public Select notExists(Select subSelect);
-	
+
 	public Select in(String field, Select subSelect);
+
 	public Select notIn(String field, Select subSelect);
-	
+
 	public Select forUpdate();
-	
+
 //	public Condition selectFun(FunctionType functionType, String fieldForFun);
 //	public Condition selectFun(FunctionType functionType, String fieldForFun, String alias);
-	
-	
+
 //	public Select selectFun(FunctionType functionType, String fieldForFun);
 //	public Select selectFun(FunctionType functionType, String fieldForFun, String alias);
 //	public Select forUpdate();

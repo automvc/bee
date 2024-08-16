@@ -23,49 +23,48 @@ package org.teasoft.bee.osql;
  * @since  1.9
  */
 public enum MapSqlSetting {
-	
-    /**
-     * Is naming transfer. value is 'true' or 'false',default is 'false'
-     * if true, will transfer by the rule (eg: bee.properties). if false,do not transfer.
-     */
-    IsNamingTransfer("IsNamingTransfer") ,
-    
-    /**
-     * include Null.value is 'true' or 'false',default is 'false'
-     */
-    IsIncludeNull("IsIncludeNull"),
-    
-    /**
-     * include empty string.value is 'true' or 'false',default is 'false'
-     * @since V1.11
-     */
-    IsIncludeEmptyString("IsIncludeEmptyString"),
-    
-    /**
-     * "true" and "false" String transfer to Boolean Type.
-     * It will be transfer by default.
-     */
-    IsTransferTrueFalseStringToBooleanType("IsTransferTrueFalseStringToBooleanType"),
-    
+
+	/**
+	 * Is naming transfer. value is 'true' or 'false',default is 'false'
+	 * if true, will transfer by the rule (eg: bee.properties). if false,do not transfer.
+	 */
+	IsNamingTransfer("IsNamingTransfer"),
+
+	/**
+	 * include Null.value is 'true' or 'false',default is 'false'
+	 */
+	IsIncludeNull("IsIncludeNull"),
+
+	/**
+	 * include empty string.value is 'true' or 'false',default is 'false'
+	 * @since V1.11
+	 */
+	IsIncludeEmptyString("IsIncludeEmptyString"),
+
+	/**
+	 * "true" and "false" String transfer to Boolean Type.
+	 * It will be transfer by default.
+	 */
+	IsTransferTrueFalseStringToBooleanType("IsTransferTrueFalseStringToBooleanType"),
+
 	/**
 	 * if IsGenId is true, will override the old value.
 	 */
 	IsGenId("IsGenId"),
-    
-    /**
-     * id type default is Long,if use Integer need setting.
-     */
-    IsUseIntegerId("IsUseIntegerId")
-    ;
-	
-    String name;
-    
-    MapSqlSetting(String name){
-    	this.name = name;  
-    }
-    
-    public String getName(){
-    	return name;
-    }
+
+	/**
+	 * id type default is Long,if use Integer need setting.
+	 */
+	IsUseIntegerId("IsUseIntegerId");
+
+	String name;
+
+	MapSqlSetting(String name) {
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
 
 }

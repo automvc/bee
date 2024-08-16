@@ -23,22 +23,22 @@ package org.teasoft.bee.osql;
  * @since  1.4
  */
 public enum SuidType {
-	
+
 	/**
 	 * Select operation corresponding to SQL
 	 */
 	SELECT("SELECT"),
-	
+
 	/**
 	 * UPDATE operation corresponding to SQL
 	 */
 	UPDATE("UPDATE"),
-	
+
 	/**
 	 * INSERT operation corresponding to SQL
 	 */
 	INSERT("INSERT"),
-	
+
 	/**
 	 * DELETE operation corresponding to SQL
 	 */
@@ -47,23 +47,22 @@ public enum SuidType {
 	 * UPDATE,INSERT,DELETE operation corresponding to SQL
 	 */
 	MODIFY("MODIFY"),
-	
+
 	/**
 	 * SELECT,UPDATE,INSERT,DELETE
 	 * @since 1.11
 	 */
 	SUID("SUID"),
-	
+
 	/**
 	 * @since 2.0
 	 */
-	DDL("DDL")
-	; 
-	
+	DDL("DDL");
+
 	private String type;
-	
-	SuidType(String type){
-		this.type=type;
+
+	SuidType(String type) {
+		this.type = type;
 	}
 
 	public String getType() {

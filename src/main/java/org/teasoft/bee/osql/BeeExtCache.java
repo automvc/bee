@@ -22,7 +22,7 @@ package org.teasoft.bee.osql;
  * @author Kingstar
  * @since  1.11
  */
-public interface BeeExtCache extends Cache{
+public interface BeeExtCache extends Cache {
 
 	/**
 	 * Get the cache result by key(sql). 

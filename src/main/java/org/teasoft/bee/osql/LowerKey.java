@@ -35,7 +35,7 @@ public class LowerKey implements SqlKeyWord {
 	private static final String values = "values";
 	private static final String and = "and";
 	private static final String or = "or";
-	private static final String not = "!";  //V2.1.10
+	private static final String not = "!"; // V2.1.10
 	private static final String Null = "null";
 	private static final String isNull = "is null";
 	private static final String isNotNull = "is not null";
@@ -66,18 +66,17 @@ public class LowerKey implements SqlKeyWord {
 	private static final String notIn = "not in";
 	private static final String exists = "exists";
 	private static final String notExists = "not exists";
-	
-	//2.0
-	private static final String union="union";
-	private static final String unionAll="union all";
-	
-    //2.4.0	
-	private static final String truncate="truncate";
-	private static final String table="table";
-	private static final String drop="drop";
-	private static final String If="if";
-	private static final String to_date="to_date";
-	
+
+	// 2.0
+	private static final String union = "union";
+	private static final String unionAll = "union all";
+
+	// 2.4.0
+	private static final String truncate = "truncate";
+	private static final String table = "table";
+	private static final String drop = "drop";
+	private static final String If = "if";
+	private static final String to_date = "to_date";
 
 	@Override
 	public String select() {
@@ -128,7 +127,7 @@ public class LowerKey implements SqlKeyWord {
 	public String or() {
 		return or;
 	}
-	
+
 	@Override
 	public String not() {
 		return not;
@@ -273,17 +272,17 @@ public class LowerKey implements SqlKeyWord {
 	public String notExists() {
 		return notExists;
 	}
-	
+
 	@Override
 	public String union() {
 		return union;
 	}
-	
+
 	@Override
 	public String unionAll() {
 		return unionAll;
 	}
-	
+
 	@Override
 	public String truncate() {
 		return truncate;
@@ -303,7 +302,7 @@ public class LowerKey implements SqlKeyWord {
 	public String If() {
 		return If;
 	}
-	
+
 	@Override
 	public String to_date() {
 		return to_date;

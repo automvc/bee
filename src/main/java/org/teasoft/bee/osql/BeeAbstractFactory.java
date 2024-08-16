@@ -33,7 +33,7 @@ public abstract class BeeAbstractFactory {
 	private DataSource dataSource;
 	private Transaction transaction;
 
-	//v1.8
+	// v1.8
 	private Map<String, DataSource> dataSourceMap;
 
 	public DataSource getDataSource() {
@@ -65,6 +65,6 @@ public abstract class BeeAbstractFactory {
 		parseDbNameByDsMap();
 	}
 
-    protected abstract void parseDbNameByDsMap();
-	
+	protected abstract void parseDbNameByDsMap();
+
 }

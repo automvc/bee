@@ -23,7 +23,7 @@ package org.teasoft.bee.osql.dialect;
  * @since  1.0
  */
 public interface DbFeature {
-	
+
 	/**
 	 * add the page part for sql.
 	 * @param sql sql statement
@@ -31,8 +31,8 @@ public interface DbFeature {
 	 * @param size fetch result size (>0).
 	 * @return paging sql.
 	 */
-	public String toPageSql(String sql,int start,int size);
-	
+	public String toPageSql(String sql, int start, int size);
+
 	/**
 	 * add the page part for sql,default start index,min value is 0 or 1
 	 * it is equal: toPageSql(sql,0,size) or toPageSql(sql,1,size)

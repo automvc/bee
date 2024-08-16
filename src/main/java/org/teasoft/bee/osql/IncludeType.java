@@ -10,25 +10,25 @@ public enum IncludeType {
 	/**
 	 * exclude: NULL and ""
 	 */
-	EXCLUDE_BOTH(-1),  //v1.9
-	
+	EXCLUDE_BOTH(-1), // v1.9
+
 	/**
 	 * include: NULL
 	 */
-	INCLUDE_NULL(0), 
+	INCLUDE_NULL(0),
 	/**
 	 * include: ""
 	 */
 	INCLUDE_EMPTY(1),
-	
+
 	/**
 	 * include: NULL and ""
 	 */
-	INCLUDE_BOTH(2), 
+	INCLUDE_BOTH(2),
 	/**
 	 * exclude:  NULL , "" and "  "
 	 */
-	EXCLUDE_THREE(-3); 
+	EXCLUDE_THREE(-3);
 
 	private final int value;
 
