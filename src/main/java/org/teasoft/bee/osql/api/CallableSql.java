@@ -22,8 +22,12 @@ import java.util.List;
 
 /**
  * Procedure sql operate the DB.
+ * CallableSql do not support DB Sharding.
+ * CallableSql have not BeeSql router system.
  * @author Kingstar
  * @since  1.0
+ * some methods support Interceptor.
+ * @since  2.4.0
  */
 public interface CallableSql {
 

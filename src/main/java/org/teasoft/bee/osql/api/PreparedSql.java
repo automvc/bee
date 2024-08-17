@@ -45,32 +45,32 @@ public interface PreparedSql extends CommOperate {
 	 * Select record(s) via the placeholder(?) statement.
 	 * <br>eg: select * from orders where userid=?
 	 * @param sql SQL select statement which direct use ? as placeholder
-	 * @param entityClass its type same as list element.
+	 * @param returnTypeClass its type same as list element.
 	 * @param preValues An object array that values set for the SQL placeholders in index order.
-	 * @return List which element type is same as returnType.
+	 * @return List which element type is same as returnTypeClass.
 	 */
-	public <T> List<T> select(String sql, Class<T> entityClass, Object preValues[]);
+	public <T> List<T> select(String sql, Class<T> returnTypeClass, Object preValues[]);
 
 	/**
 	 * Select record(s) via no placeholder(?) select statement.
 	 * @param sql SQL select statement(no placeholder). 
-	 * @param entityClass its type same as list element.
-	 * @return List which element type is same as returnType.
+	 * @param returnTypeClass its type same as list element.
+	 * @return List which element type is same as returnTypeClass.
 	 * @since V1.11
 	 */
-	public <T> List<T> select(String sql, Class<T> entityClass);
+	public <T> List<T> select(String sql, Class<T> returnTypeClass);
 
 	/**
 	 * Select record(s) via the placeholder(?) statement,paging generate by Bee.
 	 * <br>eg: select * from orders where userid=?
 	 * @param sql SQL select statement(use ? placeholder).
-	 * @param entityClass its type same as list element.
+	 * @param returnTypeClass its type same as list element.
 	 * @param preValues An object array that values set for the SQL placeholders in index order.
 	 * @param start Start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
 	 * @param size Fetch result size (>0).  
-	 * @return List which element type is same as returnType.
+	 * @return List which element type is same as returnTypeClass.
 	 */
-	public <T> List<T> select(String sql, Class<T> entityClass, Object preValues[], int start, int size);
+	public <T> List<T> select(String sql, Class<T> returnTypeClass, Object preValues[], int start, int size);
 
 	/**
 	 * <br>Select the record(s) via the placeholder statement of variable.Both entity and map can pass values to parameters. 

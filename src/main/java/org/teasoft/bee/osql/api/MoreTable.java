@@ -174,6 +174,7 @@ public interface MoreTable extends CommOperate {
 	/**
 	 * insert entity. support oneToOne/oneToMany.
 	 * If the primary key of the main table is used for the foreign key of the sub table, it will be automatically filled in.
+	 * The multiple tables modify is done by calling suidRich, so Interceptor use suidRich's.
 	 * @param entity table's entity(do not allow null).
 	 * @return returns the number of affected records in the main table.
 	 * @since 2.1.8
@@ -188,6 +189,7 @@ public interface MoreTable extends CommOperate {
 	 * updated in association.
 	 * If not all the foreign key corresponding fields are set in the main table, the sub table will also be automatically 
 	 * updated in association if all the foreign key values are set in the sub table; otherwise, it will not be updated.
+	 * The multiple tables modify is done by calling suidRich, so Interceptor use suidRich's.
 	 * @param entity
 	 * @return returns the number of affected records in the main table.
 	 * @since 2.1.8
@@ -200,6 +202,7 @@ public interface MoreTable extends CommOperate {
 	 * in association.
 	 * If not all the foreign key corresponding fields are set in the main table, the sub table will also be automatically 
 	 * updated in association if all the foreign key values are set in the sub table; otherwise, it will not be updated.
+	 * The multiple tables modify is done by calling suidRich, so Interceptor use suidRich's.
 	 * @param entity
 	 * @return returns the number of affected records in the main table.
 	 * @since 2.1.8
