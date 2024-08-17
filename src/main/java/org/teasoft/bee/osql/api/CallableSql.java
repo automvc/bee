@@ -20,6 +20,8 @@ package org.teasoft.bee.osql.api;
 import java.sql.CallableStatement;
 import java.util.List;
 
+import org.teasoft.bee.osql.CommOperate;
+
 /**
  * Procedure sql operate the DB.
  * CallableSql do not support DB Sharding.
@@ -29,7 +31,7 @@ import java.util.List;
  * some methods support Interceptor.
  * @since  2.4.0
  */
-public interface CallableSql {
+public interface CallableSql extends CommOperate {
 
 	/**
 	 * Use Procedure to query data.
