@@ -33,7 +33,8 @@ public class ResultAssemblerRegistry implements Registry {
 
 	}
 
-	public static <T> ResultAssembler<T> getConverter(Class<T> c) {
+	@SuppressWarnings("unchecked")
+	public static <T> ResultAssembler<T> getResultAssembler(Class<T> c) {
 		return (ResultAssembler<T>) assemblerMap.get(c);
 	}
 

@@ -547,7 +547,7 @@ public interface SuidRich extends Suid {
 	 * <br>The object-oriented Interceptor only processes the newEntity; 
 	 * <br>The oldEntity as conditions is not processed in the Interceptor. 
 	 * @param oldEntity Entity with old value field.
-	 * @param newEntity Entity with new value field.
+	 * @param newEntity Entity with new value field.some fields(serialVersionUID,have annotation JoinTable or Ignore, value is null) would be ignored.
 	 * @return the numbers of update record(s) successfully,if fails, return integer less than 0.
 	 */
 	public <T> int update(T oldEntity, T newEntity);
