@@ -25,7 +25,9 @@ import java.util.List;
  */
 public interface ToSql {
 	/**
-	 * to SQL statement.
+	 * to SQL statement,and update context.
+	 * <br>When using placeholder and calling toSQL(), it should be executed next to 
+	 * <br>prevent value in the context have confusion.
 	 * @return sql statement.
 	 */
 	public String toSQL();
