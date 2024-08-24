@@ -19,7 +19,7 @@ package org.teasoft.bee.osql.chain;
 import java.util.List;
 
 /**
- * ToSql interface for SQL with chain programming.
+ * ToSql interface for standard SQL with chain programming.
  * @author Kingstar
  * @since  1.3
  */
@@ -36,6 +36,13 @@ public interface ToSql {
 	 * @return sql statement.
 	 */
 	public String toSQL(boolean noSemicolon);
+	
+	/**
+	 * 
+	 * @param isUsePlaceholder
+	 * @since 2.4.0
+	 */
+	public void setUsePlaceholder(boolean isUsePlaceholder);
 
 	/**
 	 * Pv List

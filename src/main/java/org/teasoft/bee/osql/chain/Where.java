@@ -20,6 +20,7 @@ package org.teasoft.bee.osql.chain;
 import org.teasoft.bee.osql.Op;
 
 /**
+ * generate standard SQL of where part with chain programming.
  * @author Kingstar
  * @since  2.4.0
  */

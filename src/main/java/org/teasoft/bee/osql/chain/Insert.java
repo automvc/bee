@@ -18,6 +18,7 @@
 package org.teasoft.bee.osql.chain;
 
 /**
+ * Insert interface for standard SQL with chain programming.
  * @author Kingstar
  * @since  2.4.0
  */
@@ -25,5 +26,5 @@ public interface Insert extends ToSql {
 
 	public Insert insert(String table);
 
-	public Insert column(String column);
+	public Insert columnAndValue(String column, Object value);
 }

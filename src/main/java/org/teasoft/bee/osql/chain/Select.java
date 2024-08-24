@@ -19,7 +19,7 @@ package org.teasoft.bee.osql.chain;
 import org.teasoft.bee.osql.OrderType;
 
 /**
- * Select interface for SQL with chain programming.
+ * Select interface for standard SQL with chain programming.
  * @author Kingstar
  * @since  1.3
  * @since  2.4.0

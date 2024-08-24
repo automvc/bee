@@ -18,6 +18,7 @@
 package org.teasoft.bee.osql.chain;
 
 /**
+ * Delete interface for standard SQL with chain programming.
  * @author Kingstar
  * @since  2.4.0
  */

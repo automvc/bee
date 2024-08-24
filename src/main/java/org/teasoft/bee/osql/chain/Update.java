@@ -17,7 +17,7 @@
 package org.teasoft.bee.osql.chain;
 
 /**
- * Update interface for SQL with chain programming.
+ * Update interface for standard SQL with chain programming.
  * @author Kingstar
  * @since  1.3
  * @since  2.4.0
