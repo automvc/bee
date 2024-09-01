@@ -774,3 +774,6 @@ SQLite AS 语法少了空格,
   4)分片时,主线程的上下文要清除  
   5).InheritableThreadLocal与parallelStream()不兼容的bug,当不是分片模式时,可以用parallelStream(),而分片时则不建议使用parallelStream()  
 
+
+
+**V2.4.0(2024.08·LTS版)**  
