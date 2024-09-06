@@ -23,6 +23,8 @@ import org.teasoft.bee.sharding.algorithm.Calculate;
 
 /**
  * Bean for Sharding.
+ * <br>The field name(dsField or tabField) prioritizes using the field name of Javabean. 
+ * <br>If it cannot be found, as column name and transfer it to the field name of Javabean.
  * @author AiTeaSoft
  * @since 2.0
  */
@@ -93,6 +95,8 @@ public class ShardingBean extends ShardingSimpleStruct {
 
 	/**
 	 * set dataSource field.
+	 * <br>The field name prioritizes using the field name of the Javabean. 
+	 * <br>If it cannot be found, as column name and transfer it to the field name of Javabean.
 	 * @param dsField
 	 */
 	public void setDsField(String dsField) {
@@ -109,6 +113,8 @@ public class ShardingBean extends ShardingSimpleStruct {
 
 	/**
 	 * set table field.
+	 * <br>The field name prioritizes using the field name of the Javabean. 
+	 * <br>If it cannot be found, as column name and transfer it to the field name of Javabean.
 	 * @param tabField
 	 */
 	public void setTabField(String tabField) {

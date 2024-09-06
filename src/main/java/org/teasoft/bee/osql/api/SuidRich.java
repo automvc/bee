@@ -332,6 +332,7 @@ public interface SuidRich extends Suid {
 
 	/**
 	 * According to entity object insert record and return id value. 
+	 * <br>Just support single primary key.If primary key empty or more one, will use "id".
 	 * @param entity table's entity(do not allow null).
 	 * <br>The entity corresponding to table and can not be null. 
 	 * <br>The not null and not empty field will insert to database.

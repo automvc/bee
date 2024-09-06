@@ -24,14 +24,14 @@ package org.teasoft.bee.file;
  */
 public interface FileCreator extends FileReader{
 	/**
-	 * Write content to generated file.
+	 * Write content to generated file. Can override the file if it exists.
 	 * @param fullPathAndName All paths, including file names
 	 * @param content file of content
 	 */
 	public  void genFile(String fullPathAndName, String content);
 	
 	/**
-	 * Write content to generated file.
+	 * Write content to generated file. Can override the file if it exists.
 	 * @param fullPath full path
 	 * @param fileName file name
 	 * @param content  file of content
@@ -39,7 +39,7 @@ public interface FileCreator extends FileReader{
 	public  void genFile(String fullPath, String fileName, String content);
 	
 	/**
-	 * Write content to generated file.
+	 * Write content to generated file. Can override the file if it exists.
 	 * @param basePath base path
 	 * @param packagePath package path
 	 * @param fileName file name

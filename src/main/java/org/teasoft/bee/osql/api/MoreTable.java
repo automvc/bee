@@ -24,8 +24,10 @@ import org.teasoft.bee.osql.CommOperate;
 /**
  * More table select(multi-table query).
  * 
- * Multi table Select/Update/Insert/Delete
+ * Multi table Select/Update/Insert/Delete.
  * @since 2.4.0
+ * 
+ * In sharding mode, the main table and sub-table need map to same dataSource.
  * <p>
  * example1:
 <p>
