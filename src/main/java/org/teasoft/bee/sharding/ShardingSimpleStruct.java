@@ -123,7 +123,9 @@ public class ShardingSimpleStruct {
 	}
 
 	/**
-	 * set table name
+	 * set table name.
+	 * <br>Can only set tabRule without setting tabName.
+	 * <br>At this point, tabName is converted using entity name.
 	 * @param tabName
 	 */
 	public void setTabName(String tabName) {
