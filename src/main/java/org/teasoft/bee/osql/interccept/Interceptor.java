@@ -32,7 +32,7 @@ public interface Interceptor extends Serializable {
 
 	/**
 	 * call before parsing entity into SQL
-	 * @param entity
+	 * @param entity  entity object. If necessary, can test whether it is Class type.
 	 * @param suidType
 	 * @return Processed entity
 	 */

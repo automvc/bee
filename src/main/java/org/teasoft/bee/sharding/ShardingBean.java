@@ -52,8 +52,8 @@ public class ShardingBean extends ShardingSimpleStruct {
 
 	/**
 	 * create ShardingBean instance by fullNodes and tabField.
-	 * @param fullNodes
-	 * @param tabField
+	 * @param fullNodes fullNodes expression
+	 * @param tabField  table sharding field
 	 */
 	public ShardingBean(String fullNodes, String tabField) {
 		super();

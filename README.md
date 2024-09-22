@@ -600,32 +600,6 @@ API-V1.17(Newest) SourceCode contain bee-1.17 CN & EN API,bee-1.17 CN SourceCode
 
 [CSDN: ORM Bee Document](https://blog.csdn.net/abckingaa/article/details/121664398)
 
-Enterprise Edition:
-=========	
-In order to provide more and more powerful functions, Bee team cooperates with the enterprise to launch the Enterprise Version.  
-### New Features  
-We hope to provide more easy-to-use Bee functions to further improve the efficiency of development!  
-* 1.Reduce the difficulty of development financial computing projects, simplify financial digital calculation, etc  
-* 2.@AutoSetString annotation ease of use improvement, easy to handle automatic filling functions such as CreateBy,UpdateBy  
-Automatically insert values for tenants  
-* 3.@Desensitize, change some sensitive information to mask characters  
-* 4.@Dict specific field dictionary value conversion  
-* 5.@DictI18n multilingual International Dictionary conversion, global unified setting, no need to set one by one, saving time and effort  
-* 6.@MultiTenancy multi-tenant  
-* 7.@Column when Javabean attribute is inconsistent with the table column name, define the mapping relationship (not recommended for new system, mainly for compatibility with old system)  
-* 8.@Json Entity properties are Javabean and the JSON type column of DB table are converted automatically during parameter setting and query results  
-* 9.Support the automatic generation of EDI XML electronic message  
-**Cheer** !  Except for 1, 5, and 9, other items has been added to the V2.1 LTS version
-
-### Price
-**Enterprise** users:  
-USD 199.00  
-**Personal** users:  
-USD 49.00  
-
-### Expiration Dates
-**Permanent use after purchase,Get upgrades for free**  
-
 ### Technical Support
 **The use of Enterprise Edition, professional technical support and solution consultation are provided by the following companies:**  
 **[Shenzhen Caifeng software](https://www.aiteasoft.com)**  
