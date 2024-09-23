@@ -66,21 +66,21 @@ public class BeeExam {
 		Assert.assertEquals(isFinished,true);
 		
 //		V2.4.0
-//		2024-08-27 (yyyy-MM-dd)
+//		2024-09-23 (yyyy-MM-dd)
 //		Instructions Counters	
 //		Element	   Coverage
-//		Bee	        92.9%
-//		Honey	    72.8%	
+//		Bee	        94.0%
+//		Honey	    74.4%	
 // 
 //		Type Counters	
 //		Element	  Coverage
 //		Bee	       100.0%
-//		Honey	   95.6%
+//		Honey	   97.4%
 //
 //		Method Counters	
 //		Element	  Coverage
-//		Bee	       94.7%
-//		Honey	   83.7%
+//		Bee	       96.9%
+//		Honey	   84.8%
  
 		
 //		V2.1
@@ -389,6 +389,18 @@ public class BeeExam {
 //		bee-exam(v2.1)2023-06-13 23.54.19.39-normal(SQLite).txt
 //		bee-exam(v2.1)2023-06-13 23.53.26.232-normal(MongoDB).txt
 //		bee-exam(v2.1)2023-06-13 23.53.23.176-Sharding(MySQL).txt
+ 
+
+//		bee-exam(v2.4.0)2024-09-23 00.43.15.501-Sharding(MySQL).txt
+//		bee-exam(v2.4.0)2024-09-23 00.42.43.120-normal(MySQL).txt
+//		bee-exam(v2.4.0)2024-09-23 00.42.17.739-normal(PostgreSQL).txt
+//		bee-exam(v2.4.0)2024-09-23 00.42.03.859-normal(H2).txt
+//		bee-exam(v2.4.0)2024-09-23 00.41.05.284-normal(Oracle).txt
+//		bee-exam(v2.4.0)2024-09-23 00.40.53.214-normal(Microsoft SQL Server).txt
+//		bee-exam(v2.4.0)2024-09-23 00.40.20.174-normal(SQLite).txt
+//		bee-exam(v2.4.0)2024-09-23 00.37.52.650-cache(MySQL).txt
+//		bee-exam(v2.4.0)2024-09-23 00.37.11.14-normal(MySQL).txt
+//		bee-exam(v2.4.0)2024-09-23 00.36.44.324-normal(MongoDB).txt
 
 	}
 }
