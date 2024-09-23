@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * ResultSet Assembler Registry.
  * @author Kingstar
  * @since  2.4.0
  */

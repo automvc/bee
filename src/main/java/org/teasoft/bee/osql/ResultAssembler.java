@@ -21,6 +21,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
+ * ResultSet Assembler for select type.
  * @author Kingstar
  * @since  2.4.0
  */

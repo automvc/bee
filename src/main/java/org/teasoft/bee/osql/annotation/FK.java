@@ -35,18 +35,12 @@ public @interface FK {
 	 * foreign key
 	 * @return foreign key.
 	 */
-	 String[] value();
-	
+	String[] value();
+
 	/**
 	 * Field referenced by foreign key.
 	 * @return Field referenced by foreign key.
 	 */
-	String[] refBy() default "id"; 
-	
-//	/**
-//	 * whether override the old foreignKey value when it has not blank value.
-//	 * @return the boolean value of whether override
-//	 */
-//	boolean override() default true;
-	
+	String[] refBy() default "id";
+
 }
