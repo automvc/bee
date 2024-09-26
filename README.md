@@ -9,7 +9,7 @@ Bee
 **Good Feature:**  AI, Timesaving/Tasteful, Easy, Automatic (**AiTeaSoft Style**)   
 
 ## **Good News:**  
-Newest version is:**Bee V2.2 LTS**  
+Newest version is:**Bee V2.4.0 LTS**  
 
 Sharding target: It is mainly transparent to business development and coding, with only a little sharding config.  
 #### [Quick Start:Shardign better example](guide/Quick-start-Sharding.md) 
@@ -327,7 +327,7 @@ Quick Start:
        <dependency>
 	      <groupId>org.teasoft</groupId>
 	      <artifactId>bee-all</artifactId>
-	      <version>2.2</version>
+	      <version>2.4.0</version>
         </dependency>
 		
 	    <!-- Mysql config.You need change it to the real database config. -->
@@ -342,9 +342,9 @@ Quick Start:
 Gradle
 
 ```xml
-implementation group: 'org.teasoft', name: 'bee-all', version: '2.2'
+implementation group: 'org.teasoft', name: 'bee-all', version: '2.4.0'
 //Gradle(Short)
-implementation 'org.teasoft:bee-all:2.2'
+implementation 'org.teasoft:bee-all:2.4.0'
 ```
 
 #### 1.2  Of course, can download the jar file directly  
