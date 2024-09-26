@@ -3,7 +3,7 @@ Bee
 =========
 ## 好消息:  
 **Bee 2.1 完善的Sharding分片功能, 完善的MongoDB ORM功能。**  
-当前**最新**版本为:**V2.2 LTS版**  
+当前**最新**版本为:**V2.4.0 LTS版**  
 1.7.x LTS版为:**1.17.21**  
 
 Sharding分片:对业务开发透明,编码透明,只加少量分片配置即可实现分片功能.  
@@ -70,6 +70,7 @@ enhance:
 多表插入时，没有子表，则主表插入使用insert  
 文件生成添加备份已有文件功能  
 22.support pgsql json/jsonb, but in where part, need write the special sql.  
+23.分片功能完善  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
@@ -281,7 +282,7 @@ OrdersService.java
        <dependency>
 	      <groupId>org.teasoft</groupId>
 	      <artifactId>bee-all</artifactId>
-	      <version>2.2</version>
+	      <version>2.4.0</version>
         </dependency>
 		
 	    <!-- Mysql config.You need change it to the real database config. -->
@@ -296,9 +297,9 @@ OrdersService.java
 Gradle
 
 ```xml
-implementation group: 'org.teasoft', name: 'bee-all', version: '2.2'
+implementation group: 'org.teasoft', name: 'bee-all', version: '2.4.0'
 //Gradle(Short)
-implementation 'org.teasoft:bee-all:2.2'
+implementation 'org.teasoft:bee-all:2.4.0'
 ```
 
 #### 1.2  也可以直接下载jar文件  	
