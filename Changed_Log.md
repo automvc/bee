@@ -586,3 +586,36 @@ V1.17.21(2023.06.18  1.17.x LTS版)
 5.multiple data source configurations, dbs supports multiple environment coverage configurations  
 6.support read bee.db.url and other information from application.properties of springboot when use in main method  
 7.fixed bug:two properties item(notSupportUnionQuery,executorSize)have not prefix "sharding_"  
+
+### **V2.1(2023.05.20)** main features:  
+1. Move major commonly used interfaces such as Suid, SuidRich, MoreTable, PreparedSql, MapSuid, etc. to the org.teasoft.bee.osql.api package.  
+2. Better support for MVC programming and Spring RestFul programming.  
+3. Support configuration of multiple data sources in bee.properties (no need for XML or Java code configuration).  
+4. GenBean supports Lombok annotations: @Setter, @Getter, @Data.  
+5. Built-in json tool fastjson support, with the option to use a custom JSON tool.  
+6. Generate all Java bean files for the entire database with a single line of code: new GenBean().genAllBeanFile();  
+7. Bulk insert for broadcast table.  
+8. Improved sharding functionality.  
+9. Full support for MongoDB ORM.  
+9.1. Support for insertion and querying of geospatial information in MongoDB (including sharded queries).  
+9.2. Various operations on GridFs files, with support for annotations.  
+9.3. Direct execution of native statements (MongodbRawSql).  
+9.4. Logging of native statements for object-oriented operations in MongoDB.  
+9.5. Support for MongoDB transactions.  
+9.6. Support for creating and deleting indexes in MongoDB.  
+9.7. MongoDB beans defined as pluggable components.  
+10. Default support for pagination in more databases: MsAccess, Cubrid, HSQL, Derby, Firebird, etc.
+
+**V2.2(2024.1.1·LTS)**  
+1. Javabean entity supports inheritance (configure bee.osql.openEntityCanExtend=true).  
+2. Enhanced the association between batch insert and transaction.  
+   2.2 Before version 2.2, calling batch insertion would commit on each batch, but in version 2.2, it is changed to only call once within a transaction. The content of the batch insertion method is no longer committed, but is controlled by the transaction.  
+3. Fixed bugs:  
+   1) When Condition uses Op.in and the parameter is null, an exception is thrown.  
+   2) Context-related bug in sharding batch insert.  
+   3) Resolved context issues when only sharding databases.  
+   4) When sharding, the context of the main thread needs to be cleared.  
+   5) Bug with InheritableThreadLocal and parallelStream() being incompatible.In 2.2, when not in sharding mode, parallelStream() can be used, but it is not recommended to use parallelStream() when sharding.  
+  
+  
+  

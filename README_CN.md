@@ -35,7 +35,7 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 [主要功能介绍](../../../bee/blob/master/main-feature.md)  
 
 ## 最新功能简介: 
-### **V2.4.0**  
+### **V2.4.0(2024.国庆·LTS版)**  
 1.chaing SQL编程支持占位符预编译,防止注入攻击;增加update,delete的chaing编程支持  
 2.没有指定表名则不放缓存  
 3.添加Calculate默认日期分片实现，添加自定义分片实现样例  
