@@ -61,6 +61,7 @@ https://github.com/automvc/bee-ext
 
 ## Newest main Function
 ### **V2.4.0**  
+
 1. Chaing SQL programming supports placeholder precompilation to prevent injection attacks  
 2. Do not cache if no table name is specified  
 3. Add a default date sharding implementation for Calculate, and add a custom sharding implementation example  
@@ -68,35 +69,35 @@ https://github.com/automvc/bee-ext
 5. PreparedSql support set table name for enhance relative cache  
 6. MongoDB gen Javabean support gen comment  
 
-7.the Sharding template method class uses finally to handle context recycling  
-8.MapSql(MapSuid)supports using Condition to implement more complex where conditions, with updateSet set values  
+7. the Sharding template method class uses finally to handle context recycling  
+8. MapSql(MapSuid)supports using Condition to implement more complex where conditions, with updateSet set values  
 MapSql add methods: public void where(Condition condition);  
                     public void updateSet(Condition condition);  
-9.add ConditionExt to support the use of entity::getName to reference property  
+9. add ConditionExt to support the use of entity::getName to reference property  
   ConditionExt support Condition no need hard code the field name  
-10.add ChainSqlFactory  
+10. add ChainSqlFactory  
 
-11.add select Result Assembler  
-12.MoreTable add methods:selectWithFun,count  
-13.MoreTable add method List<String[]> selectString(T entity, Condition condition)  
-14.enhance MoreTable update  
+11. add select Result Assembler  
+12. MoreTable add methods:selectWithFun,count  
+13. MoreTable add method List<String[]> selectString(T entity, Condition condition)  
+14. enhance MoreTable update  
 
-15.support property style sharding config  
-16.MoreTable support selectJson  
-17.GenBean support java.time.LocalDateTime  
-18.fixed bug: GenConfig baseDir default value support Linux env  
-19.Suid support java.time.LocalDateTime type  
-20.TO_DATE for Oracle filter the record in SQL where part  
+15. support property style sharding config  
+16. MoreTable support selectJson  
+17. GenBean support java.time.LocalDateTime  
+18. fixed bug: GenConfig baseDir default value support Linux env  
+19. Suid support java.time.LocalDateTime type  
+20. TO_DATE for Oracle filter the record in SQL where part  
 
-21.Fixed bug: MoreTable single insertion, automatic value setting before doBeforePasreEntity
+21. Fixed bug: MoreTable single insertion, automatic value setting before doBeforePasreEntity
    InsertAndReturnId in sharding mode need setInitIdByAuto > doBeforePasreEntity  
    InsertAndReturnId: The pkName passed in should be converted to column name  
-22.enhance:  
-   When inserting multiple tables, if there are no child tables, insert is used for inserting the main table  
+22. enhance:  
+    When inserting multiple tables, if there are no child tables, insert is used for inserting the main table  
    File generation, add backup of existing files function  
    TranHandler throws the received exception to the upper level  
-23.support pgsql json/jsonb, but in where part, need write the pgsql special sql  
-24.Improve the sharding function  
+23. support pgsql json/jsonb, but in where part, need write the pgsql special sql  
+24. Improve the sharding function  
 
 **V2.2(2024.1.1·LTS)**  
 1. Javabean entity supports inheritance (configure bee.osql.openEntityCanExtend=true).  
