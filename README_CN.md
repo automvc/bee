@@ -64,13 +64,14 @@ MapSql增加方法: public void where(Condition condition);
 20.添加注解TO_DATE用于Oracle在where条件中过滤记录  
 
 21.fixed bug: MoreTable单条插入,自动设置值要先于doBeforePasreEntity  
-InsertAndReturnId in sharding mode need setInitIdByAuto > doBeforePasreEntity  
-InsertAndReturnId 传入的pkName要转成column name.  
-enhance:
-多表插入时，没有子表，则主表插入使用insert  
-文件生成添加备份已有文件功能  
-22.support pgsql json/jsonb, but in where part, need write the special sql.  
-23.分片功能完善  
+   InsertAndReturnId in sharding mode need setInitIdByAuto > doBeforePasreEntity  
+   InsertAndReturnId 传入的pkName要转成column name.  
+22.enhance:
+     多表插入时，没有子表，则主表插入使用insert  
+     文件生成添加备份已有文件功能  
+   TranHandler往上层抛出接到的异常  
+23.pgsql支持json/jsonb,但在where部分还需要写pgsql的特殊sql  
+24.完善分片功能  
 
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  

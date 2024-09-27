@@ -88,6 +88,15 @@ MapSql add methods: public void where(Condition condition);
 19.Suid support java.time.LocalDateTime type  
 20.TO_DATE for Oracle filter the record in SQL where part  
 
+21.Fixed bug: MoreTable single insertion, automatic value setting before doBeforePasreEntity
+   InsertAndReturnId in sharding mode need setInitIdByAuto > doBeforePasreEntity  
+   InsertAndReturnId: The pkName passed in should be converted to column name  
+22.enhance:  
+   When inserting multiple tables, if there are no child tables, insert is used for inserting the main table  
+   File generation, add backup of existing files function  
+   TranHandler throws the received exception to the upper level  
+23.support pgsql json/jsonb, but in where part, need write the pgsql special sql  
+24.Improve the sharding function  
 
 **V2.2(2024.1.1·LTS)**  
 1. Javabean entity supports inheritance (configure bee.osql.openEntityCanExtend=true).  
