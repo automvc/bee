@@ -38,5 +38,9 @@ public class ResultAssemblerRegistry implements Registry {
 	public static <T> ResultAssembler<T> getResultAssembler(Class<T> c) {
 		return (ResultAssembler<T>) assemblerMap.get(c);
 	}
+	
+	public static <T> boolean hadReg(Class<T> c) {
+		return ResultAssemblerRegistry.getResultAssembler(c) != null;
+	}
 
 }
