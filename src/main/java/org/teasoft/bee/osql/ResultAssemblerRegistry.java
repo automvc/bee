@@ -31,7 +31,6 @@ public class ResultAssemblerRegistry implements Registry {
 
 	public static <T> void register(Class<T> c, ResultAssembler<T> assembler) {
 		assemblerMap.put(c, assembler);
-
 	}
 
 	@SuppressWarnings("unchecked")

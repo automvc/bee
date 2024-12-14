@@ -27,6 +27,15 @@ import java.sql.SQLException;
  */
 public interface ResultAssembler<T> {
 
+	/**
+	 * 
+	 * @param rs ResultSet object
+	 * @param clazz  entity class type.
+	 * @return entity object
+	 * @throws SQLException
+	 * @throws IllegalAccessException
+	 * @throws InstantiationException
+	 */
 	public T rowToEntity(ResultSet rs, Class<T> clazz)
 			throws SQLException, IllegalAccessException, InstantiationException;
 
