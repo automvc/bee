@@ -60,6 +60,11 @@ https://github.com/automvc/bee-ext
 * 26.Use entity name _F (automatically generated) to reference entity field names, e.g., Users_F.name or in SuidRichExt interface using the format Users::getName.  
 
 ## Newest main Function
+### **V2.4.2**  
+1. GenFiles support genFileViaStream  
+2. Genbean:update genFieldFile,toString, add method setUpperFieldNameInFieldFile 
+3. update DoNotSetTabShadngValue tip message(Sharding insert need set the sharding value)   
+
 ### **V2.4.0**  
 
 1. Chaing SQL programming supports placeholder precompilation to prevent injection attacks  
@@ -578,11 +583,6 @@ API-V1.17(Newest) SourceCode contain bee-1.17 CN & EN API,bee-1.17 CN SourceCode
 [wiki Document](../../../bee/wikis)  
 
 [CSDN: ORM Bee Document](https://blog.csdn.net/abckingaa/article/details/121664398)
-
-### Technical Support
-**The use of Enterprise Edition, professional technical support and solution consultation are provided by the following companies:**  
-**[Shenzhen Caifeng software](https://www.aiteasoft.com)**  
-(Enterprises willing to join in, please contact us!)  
 
 Contact & Welcome:
 =========	
