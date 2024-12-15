@@ -17,6 +17,8 @@
 
 package org.teasoft.bee.osql;
 
+import java.io.Serializable;
+
 /**
  * can use TO_DATE in : 
  * <br>Condition op(String field, Op op, Object value) 
@@ -28,7 +30,9 @@ package org.teasoft.bee.osql;
  * @author Kingstar
  * @since  2.4.0
  */
-public class TO_DATE {
+public class TO_DATE implements Serializable {
+	
+	private static final long serialVersionUID = 1596710362290L;
 
 	private String datetimeValue;
 	private String formatter;
