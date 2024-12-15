@@ -63,7 +63,9 @@ https://github.com/automvc/bee-ext
 ### **V2.4.2**  
 1. GenFiles support genFileViaStream  
 2. Genbean:update genFieldFile,toString, add method setUpperFieldNameInFieldFile 
-3. update DoNotSetTabShadngValue tip message(Sharding insert need set the sharding value)   
+3. update DoNotSetTabShadngValue tip message(Sharding insert need set the sharding value)  
+4. SuidRich selectById,deleteById support sharding  
+5. Condition support clone   
 
 ### **V2.4.0**  
 
