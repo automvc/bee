@@ -31,7 +31,14 @@ import org.teasoft.bee.osql.OrderType;
  * @author Kingstar
  * @since  1.6
  */
-public interface Condition extends ConditionAssistant {
+public interface Condition extends ConditionAssistant, Cloneable {
+	
+	/**
+	 * clone Condition
+	 * @return Condition
+	 * @since 2.4.2
+	 */
+	public Condition clone();
 
 	/**
 	 * For setting the start of the page(only for select of SQL).
