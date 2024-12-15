@@ -17,6 +17,8 @@
 
 package org.teasoft.bee.osql.api;
 
+import java.io.Serializable;
+
 import org.teasoft.bee.osql.ConditionAssistant;
 import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.IncludeType;
@@ -31,7 +33,7 @@ import org.teasoft.bee.osql.OrderType;
  * @author Kingstar
  * @since  1.6
  */
-public interface Condition extends ConditionAssistant, Cloneable {
+public interface Condition extends ConditionAssistant, Serializable, Cloneable {
 	
 	/**
 	 * clone Condition
