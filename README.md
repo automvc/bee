@@ -65,7 +65,10 @@ https://github.com/automvc/bee-ext
 2. Genbean:update genFieldFile,toString, add method setUpperFieldNameInFieldFile 
 3. update DoNotSetTabShadngValue tip message(Sharding insert need set the sharding value)  
 4. SuidRich selectById,deleteById support sharding  
-5. Condition support clone   
+5. Condition support clone  
+fixed bug:  
+sharding select all(no paging)  
+sharding modify cache  
 
 ### **V2.4.0**  
 
