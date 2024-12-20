@@ -393,6 +393,11 @@ public class SuidExam {
 			System.out.println(list1.get(i).toString());
 		}
 		
+		//在实体里,默认的运行符是等号,除了等号,Bee是用比较符合书写习惯的方法, 可以任意写不同的条件.
+          //Condition condition=BF.getCondition();   //SuidRich接口有很多带Condition参数的方法
+          //condition.op(Orders_F.userid, Op.ge, 0);   //userid>=0
+          //Op支持除了"="外的,>,<,>=,<=,!=, like, in, not in 等
+		
 		//2:update更新实例
 		orders1.setName("Bee--ORM Framework");
 		//默认只更新需要更新的字段. 过滤条件默认只用id字段,其它需求可用SuidRich中的方法.
