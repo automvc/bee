@@ -400,6 +400,10 @@ public class SuidExamEN {
 			for (int i = 0; i < list1.size(); i++) {
 				Logger.info(list1.get(i).toString());
 			}
+			
+			//Condition condition=BF.getCondition(); // The SuidRich interface has many methods with the Condition parameter
+               //condition.op(Orders_F.userid, Op.ge, 0); // userid>=0
+              //Op supports: =,>,<,>=,<=,!=, Like, in, not in, etc
 
 			orders1.setName("Bee(ORM Framework)");
 			int updateNum = suid.update(orders1); //2. update
