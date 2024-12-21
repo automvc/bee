@@ -35,13 +35,17 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 [主要功能介绍](../../../bee/blob/master/main-feature.md)  
 
 ## 最新功能简介: 
+### **V2.5.0(2025.新年·LTS版)** 
+1. MongoDB update,delete,deleteById支持分片  
+2. MongoDB modify 分片cache增强  
+3.  
+
 ### **V2.4.2(2024.冬至·LTS版)**  
 1. GenFiles增加genFileViaStream,支持读取jar里的配置文件  
 2. Genbean:更新方法genFieldFile,toString, 添加方法setUpperFieldNameInFieldFile用于指定变量大小写风格 
 3. 更新DoNotSetTabShadngValue提示信息(分片插入需要设置分片键的值)  
 4. SuidRich selectById,deleteById支持sharding  
-5. Condition支持clone  
-6. fixed bug:  
+5. Condition支持clone  6. fixed bug:  
 sharding select all(no paging)  
 sharding modify cache  
 
