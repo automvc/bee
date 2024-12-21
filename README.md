@@ -66,7 +66,7 @@ https://github.com/automvc/bee-ext
 3. update DoNotSetTabShadngValue tip message(Sharding insert need set the sharding value)  
 4. SuidRich selectById,deleteById support sharding  
 5. Condition support clone  
-fixed bug:  
+6. fixed bug:  
 sharding select all(no paging)  
 sharding modify cache  
 
