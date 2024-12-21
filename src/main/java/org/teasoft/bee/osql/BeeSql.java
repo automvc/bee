@@ -111,6 +111,7 @@ public interface BeeSql {
 
 	/**
 	 * Select and transform every record to Map<String,Object>.
+	 * <br>This method do not support Sharding.
 	 * @param sql SQL select statement
 	 * @return List, every element is a Map<String,Object>(transform from record).
 	 * @since 1.9
