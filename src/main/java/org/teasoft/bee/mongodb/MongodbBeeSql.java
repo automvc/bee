@@ -132,6 +132,9 @@ public interface MongodbBeeSql extends SuidFile {
 
 	public <T> String count(MongoSqlStruct struct, Class<T> entityClass);
 	
+	//2.5.0
+	public <T> int updateOrDelete(MongoSqlStruct struct);
+	
 	public <T> boolean createTable(Class<T> entityClass, boolean isDropExistTable);
 	
 	public int modify(String commandStr);

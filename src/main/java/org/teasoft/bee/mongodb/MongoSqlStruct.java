@@ -19,6 +19,8 @@ package org.teasoft.bee.mongodb;
 
 import java.io.Serializable;
 
+import org.teasoft.bee.osql.SuidType;
+
 /**
  * MongoSql struct for Mongodb SUID operate.
  * @author Kingstar
@@ -49,6 +51,11 @@ public class MongoSqlStruct implements Serializable{
 	private Object updateSetOrInsertOrFunOrOther;  //for UPDATE,insert,fun,or other
 
 	private String sql;
+	
+	//2.5.0
+//	private boolean isDelete; //SuidType.DELETE
+	private SuidType suidType;
+	private boolean isDeleteOne;
 
 	public MongoSqlStruct(String returnType, String tableName, Object filter, Object sortBson,
 			Integer start, Integer size, String[] selectFields, boolean hasId,Class entityClass) {
@@ -117,9 +124,14 @@ public class MongoSqlStruct implements Serializable{
 	}
 	
 	public MongoSqlStruct copy() {
-		return new MongoSqlStruct(this.returnType, this.tableName, this.filter, this.sortBson,
+		MongoSqlStruct newStruct = new MongoSqlStruct(this.returnType, this.tableName, this.filter, this.sortBson,
 				this.start, this.size, this.selectFields, this.hasId, this.entityClass,
 				this.updateSetOrInsertOrFunOrOther);
+
+		newStruct.setSuidType(this.suidType);
+		newStruct.setDeleteOne(this.isDeleteOne);
+
+		return newStruct;
 	}
 
 	
@@ -170,6 +182,22 @@ public class MongoSqlStruct implements Serializable{
 	//2.1 for Mongodb geo
 	public void setFilter(Object filter) {
 		this.filter = filter;
+	}
+
+	public boolean isDeleteOne() {
+		return isDeleteOne;
+	}
+
+	public void setDeleteOne(boolean isDeleteOne) {
+		this.isDeleteOne = isDeleteOne;
+	}
+
+	public SuidType getSuidType() {
+		return suidType;
+	}
+
+	public void setSuidType(SuidType suidType) {
+		this.suidType = suidType;
 	}
 
 }
