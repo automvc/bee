@@ -41,7 +41,7 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 3. 更新DoNotSetTabShadngValue提示信息(分片插入需要设置分片键的值)  
 4. SuidRich selectById,deleteById支持sharding  
 5. Condition支持clone  
-fixed bug:  
+6. fixed bug:  
 sharding select all(no paging)  
 sharding modify cache  
 
