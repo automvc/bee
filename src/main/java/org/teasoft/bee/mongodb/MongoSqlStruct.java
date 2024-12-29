@@ -52,9 +52,8 @@ public class MongoSqlStruct implements Serializable{
 
 	private String sql;
 	
-	//2.5.0
-//	private boolean isDelete; //SuidType.DELETE
-	private SuidType suidType;
+	//2.5.2
+	private SuidType suidType; //for update/delete
 	private boolean isDeleteOne;
 
 	public MongoSqlStruct(String returnType, String tableName, Object filter, Object sortBson,
