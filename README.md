@@ -60,11 +60,12 @@ https://github.com/automvc/bee-ext
 * 26.Use entity name _F (automatically generated) to reference entity field names, e.g., Users_F.name or in SuidRichExt interface using the format Users::getName.  
 
 ## Newest main Function
-### **V2.5.0(2025.New Year·LTS)** 
+### **V2.5.2(2025.New Year·LTS)** 
 1. MongoDB update,delete,deleteById support for sharding  
 2. MongoDB modify sharding cache enhance  
 3. MongoDB index support for sharding  
-4. add FullOpTemplate  
+4. add ShardingFullOpTemplate  
+5. ObjSQLRich(SuidRich) add selectByTemplate for select  
 
 ### **V2.4.2**  
 1. GenFiles support genFileViaStream  
