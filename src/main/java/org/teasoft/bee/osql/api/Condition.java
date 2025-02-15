@@ -34,7 +34,7 @@ import org.teasoft.bee.osql.OrderType;
  * @since  1.6
  */
 public interface Condition extends ConditionAssistant, Serializable, Cloneable {
-	
+
 	/**
 	 * clone Condition
 	 * @return Condition
@@ -293,7 +293,6 @@ public interface Condition extends ConditionAssistant, Serializable, Cloneable {
 	 * @since 1.8
 	 */
 	public Condition forUpdate();
-
 
 	//////////////////////////////// -------just use in update-------------start-
 

@@ -172,8 +172,7 @@ public interface SuidRich extends Suid {
 	 * <br>If the result set of statistics is empty,the count return 0,the other return empty string.
 	 * @since 1.9
 	 */
-	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun,
-			Condition condition); // selectOneFun
+	public <T> String selectWithFun(T entity, FunctionType functionType, String fieldForFun, Condition condition); // selectOneFun
 
 	/**
 	 * total number of statistical records.
