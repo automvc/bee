@@ -35,7 +35,7 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 [主要功能介绍](../../../bee/blob/master/main-feature.md)  
 
 ## 最新功能简介: 
-### **V2.5.2(2025.新年·LTS版)** 
+### **V2.5.2(2025.新年·LTS版) 开发中...** 
 1. MongoDB update,delete,deleteById支持分片  
 2. MongoDB modify 分片cache增强  
 3. MongoDB index support for sharding  
