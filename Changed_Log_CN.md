@@ -775,5 +775,41 @@ SQLite AS 语法少了空格,
   5).InheritableThreadLocal与parallelStream()不兼容的bug,当不是分片模式时,可以用parallelStream(),而分片时则不建议使用parallelStream()  
 
 
-
 **V2.4.0(2024.国庆·LTS版)**  
+1.chaing SQL编程支持占位符预编译,防止注入攻击;增加update,delete的chaing编程支持  
+2.没有指定表名则不放缓存  
+3.添加Calculate默认日期分片实现，添加自定义分片实现样例  
+4.支持ElasticSearch(7.x) ORM 查询  
+5.自定义sql(PreparedSql)增加关联表名的方法,让自定义sql中,方法没带实体T的,也能纳入缓存管理  
+6.MongoDB根据表生成Javabean,支持生成默认注解  
+
+7.Sharding模板方法类使用finally处理上下文回收  
+8.MapSql(MapSuid)支持使用Condition实现更加复杂的where条件,updateSet设值  
+MapSql增加方法: public void where(Condition condition);  
+               public void updateSet(Condition condition);  
+9.添加ConditionExt支持使用entity::getName形式引用属性名  
+  ConditionExt帮助Condition可以不用写死字段名  
+10.添加链式编程工厂引用类ChainSqlFactory及帮助类ChainSqlFactoryHelper/CSF  
+
+11.添加查询结果自定义组装器ResultAssembler  
+12.MoreTable添加方法:selectWithFun,count  
+13.MoreTable添加方法List<String[]> selectString(T entity, Condition condition)  
+14.MoreTable多表关联update方法增强  
+
+15.支持property风格sharding config  
+16.MoreTable多表查询支持selectJson  
+17.GenBean支持java.time.LocalDateTime类型  
+18.fixed bug: GenConfig baseDir属性默认值支持Linux环境  
+19.Suid支持java.time.LocalDateTime类型  
+20.添加注解TO_DATE用于Oracle在where条件中过滤记录  
+
+21.fixed bug: MoreTable单条插入,自动设置值要先于doBeforePasreEntity  
+   InsertAndReturnId in sharding mode need setInitIdByAuto > doBeforePasreEntity  
+   InsertAndReturnId 传入的pkName要转成column name.  
+22.enhance:
+     多表插入时，没有子表，则主表插入使用insert  
+     文件生成添加备份已有文件功能  
+   TranHandler往上层抛出接到的异常  
+23.pgsql支持json/jsonb,但在where部分还需要写pgsql的特殊sql  
+24.完善分片功能  
+
