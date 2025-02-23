@@ -26,6 +26,12 @@ public enum Op {
 	 * nq is : !=
 	 */
 	nq("!="), // <>
+	
+	/**
+	 * not equal is : !=
+	 * @since 2.5.2
+	 */
+	ne("!="), // <>
 
 	/**
 	 * ge is : >=
@@ -123,7 +129,7 @@ public enum Op {
 	lessThan("<"),
 
 	/**
-	 * not equal(same as nq) is : !=
+	 * not equal(same as nq / ne) is : !=
 	 */
 	notEqual("!="), // <>
 

@@ -9,7 +9,7 @@ Bee
 **Good Feature:**  AI, Timesaving/Tasteful, Easy, Automatic (**AiTeaSoft Style**)   
 
 ## **Good News:**  
-Newest version is:**Bee V2.4.0 LTS**  
+Newest version is:**Bee V2.4.2 LTS**  
 
 Sharding target: It is mainly transparent to business development and coding, with only a little sharding config.  
 #### [Quick Start:Shardign better example](guide/Quick-start-Sharding.md) 
@@ -60,12 +60,18 @@ https://github.com/automvc/bee-ext
 * 26.Use entity name _F (automatically generated) to reference entity field names, e.g., Users_F.name or in SuidRichExt interface using the format Users::getName.  
 
 ## Newest main Function
-### **V2.5.2(2025.New Year·LTS) developing...** 
+### **V2.5.2(2025·LTS) developing...** 
+**2.5.2.1 New Year**  
 1. MongoDB update,delete,deleteById support for sharding  
 2. MongoDB modify sharding cache enhance  
 3. MongoDB index support for sharding  
 4. add ShardingFullOpTemplate  
 5. ObjSQLRich(SuidRich) add selectByTemplate for select  
+**2.5.2.2**  
+6. fixed bug for MongodbShardingDdlEngine  
+7. record and print sql execute time  
+bee.osql.showSqlExecuteTime=true  
+bee.osql.minSqlExecuteTime=0  
 
 ### **V2.4.2**  
 1. GenFiles support genFileViaStream  
@@ -76,45 +82,6 @@ https://github.com/automvc/bee-ext
 6. fixed bug:  
 sharding select all(no paging)  
 sharding modify cache  
-
-### **V2.4.0**  
-
-1. Chaing SQL programming supports placeholder precompilation to prevent injection attacks  
-2. Do not cache if no table name is specified  
-3. Add a default date sharding implementation for Calculate, and add a custom sharding implementation example  
-4. Support ElasticSearch(7.x) ORM query  
-5. PreparedSql support set table name for enhance relative cache  
-6. MongoDB gen Javabean support gen comment  
-
-7. the Sharding template method class uses finally to handle context recycling  
-8. MapSql(MapSuid)supports using Condition to implement more complex where conditions, with updateSet set values  
-MapSql add methods: public void where(Condition condition);  
-                    public void updateSet(Condition condition);  
-9. add ConditionExt to support the use of entity::getName to reference property  
-  ConditionExt support Condition no need hard code the field name  
-10. add ChainSqlFactory  
-
-11. add select Result Assembler  
-12. MoreTable add methods:selectWithFun,count  
-13. MoreTable add method List<String[]> selectString(T entity, Condition condition)  
-14. enhance MoreTable update  
-
-15. support property style sharding config  
-16. MoreTable support selectJson  
-17. GenBean support java.time.LocalDateTime  
-18. fixed bug: GenConfig baseDir default value support Linux env  
-19. Suid support java.time.LocalDateTime type  
-20. TO_DATE for Oracle filter the record in SQL where part  
-
-21. Fixed bug: MoreTable single insertion, automatic value setting before doBeforePasreEntity
-   InsertAndReturnId in sharding mode need setInitIdByAuto > doBeforePasreEntity  
-   InsertAndReturnId: The pkName passed in should be converted to column name  
-22. enhance:  
-    When inserting multiple tables, if there are no child tables, insert is used for inserting the main table  
-   File generation, add backup of existing files function  
-   TranHandler throws the received exception to the upper level  
-23. support pgsql json/jsonb, but in where part, need write the pgsql special sql  
-24. Improve the sharding function  
 
 ## [Function Detail](../../../bee/blob/master/Changed_Log.md)  
 [click for:  Function Detail](../../../bee/blob/master/Changed_Log.md)  
@@ -323,7 +290,7 @@ Quick Start:
        <dependency>
 	      <groupId>org.teasoft</groupId>
 	      <artifactId>bee-all</artifactId>
-	      <version>2.4.0</version>
+	      <version>2.4.2</version>
         </dependency>
 		
 	    <!-- Mysql config.You need change it to the real database config. -->
@@ -338,9 +305,9 @@ Quick Start:
 Gradle
 
 ```xml
-implementation group: 'org.teasoft', name: 'bee-all', version: '2.4.0'
+implementation group: 'org.teasoft', name: 'bee-all', version: '2.4.2'
 //Gradle(Short)
-implementation 'org.teasoft:bee-all:2.4.0'
+implementation 'org.teasoft:bee-all:2.4.2'
 ```
 
 #### 1.2  Of course, can download the jar file directly  

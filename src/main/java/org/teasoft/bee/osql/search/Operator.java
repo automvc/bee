@@ -45,6 +45,12 @@ public enum Operator {
 	nq("!="),   // <> 
 	
 	/**
+	 * ne is : !=
+	 * @since 2.5.2
+	 */
+	ne("!="),   // <> 
+	
+	/**
 	 * ge is : >=
 	 */
 	ge(">="),
