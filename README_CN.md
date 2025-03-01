@@ -3,7 +3,7 @@ Bee
 =========
 ## 好消息:  
 **Bee 2.1 完善的Sharding分片功能, 完善的MongoDB ORM功能。**  
-当前**最新**版本为:**V2.4.2 LTS版**  
+当前**最新**版本为:**V2.4.2 LTS版**(只有940k)  
 1.7.x LTS版为:**1.17.21**  
 
 Sharding分片:对业务开发透明,编码透明,只加少量分片配置即可实现分片功能.  
@@ -44,10 +44,10 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 5. SuidRich的实现类ObjSQLRich增加selectByTemplate  
 **2.5.2.2**
 6. fixed bug for MongodbShardingDdlEngine  
-7. 记录并打印SQL执行时间  
+7. SQL性能分析,记录并打印SQL执行时间  
 bee.osql.showSqlExecuteTime=true  
 bee.osql.minSqlExecuteTime=0  
-8.使用CQRS命令查询责任分离模式操作数据库  
+8. 使用CQRS命令查询责任分离模式操作数据库  
 
 ### **V2.4.2(2024.冬至·LTS版)**  
 1. GenFiles增加genFileViaStream,支持读取jar里的配置文件  
