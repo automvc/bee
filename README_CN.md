@@ -47,6 +47,7 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 7. 记录并打印SQL执行时间  
 bee.osql.showSqlExecuteTime=true  
 bee.osql.minSqlExecuteTime=0  
+8.使用CQRS命令查询责任分离模式操作数据库  
 
 ### **V2.4.2(2024.冬至·LTS版)**  
 1. GenFiles增加genFileViaStream,支持读取jar里的配置文件  

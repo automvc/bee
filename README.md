@@ -72,6 +72,7 @@ https://github.com/automvc/bee-ext
 7. record and print sql execute time  
 bee.osql.showSqlExecuteTime=true  
 bee.osql.minSqlExecuteTime=0  
+8.use CQRS(Command Query Responsibility Segregation) operate database  
 
 ### **V2.4.2**  
 1. GenFiles support genFileViaStream  
