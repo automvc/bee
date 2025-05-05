@@ -426,7 +426,7 @@ public interface SuidRich extends Suid {
 	 * @return the number of deleted record(s) successfully,if fails, return integer less than 0.
 	 * @since  1.4
 	 */
-	public int deleteById(Class c, Integer id);
+	public int deleteById(Class<?> c, Integer id);
 
 	/**
 	 * Delete record by id.
@@ -435,7 +435,7 @@ public interface SuidRich extends Suid {
 	 * @return the number of deleted record(s) successfully,if fails, return integer less than 0.
 	 * @since  1.4
 	 */
-	public int deleteById(Class c, Long id);
+	public int deleteById(Class<?> c, Long id);
 
 	/**
 	 * Delete record by id.
@@ -444,7 +444,7 @@ public interface SuidRich extends Suid {
 	 * @return the number of deleted record(s) successfully,if fails, return integer less than 0.
 	 * @since  1.4
 	 */
-	public int deleteById(Class c, String ids);
+	public int deleteById(Class<?> c, String ids);
 
 	/**
 	 * Select and return data in Json format according to entity object.

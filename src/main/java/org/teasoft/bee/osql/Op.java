@@ -86,23 +86,6 @@ public enum Op {
 	 */
 	likeLeftRight(" like "),
 
-//	/**
-//	 * not like ,and add '%' on the left of parameter.
-//	 */
-//	@Deprecated
-//	notLikeLeft(" not like "),
-//	/**
-//	 * not like ,and add '%' on the right of parameter.
-//	 */
-//	@Deprecated
-//	notLikeRight(" not like "),
-//	
-//	/**
-//	 * not like ,and add '%' on the left and right of parameter.
-//	 */
-//	@Deprecated
-//	notLikeLeftRight(" not like "),
-
 	/**
 	 * in
 	 */
