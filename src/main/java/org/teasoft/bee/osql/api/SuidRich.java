@@ -557,12 +557,12 @@ public interface SuidRich extends Suid {
 	 * <br>This method is called earlier than the select, update, insert, delete methods.
 	 * <br>This method has the same effect as the same name method in suid interface, 
 	 * <br>only for the convenience of chain programming
-	 * @param para parameter name
+	 * @param param parameter name
 	 * @param value parameter value
 	 * @return SuidRich
 	 * @since  1.9
 	 */
-	public SuidRich setDynamicParameter(String para, String value);
+	public SuidRich setDynamicParameter(String param, String value);
 
 	/**
 	 * Check whether the entity corresponding record exist

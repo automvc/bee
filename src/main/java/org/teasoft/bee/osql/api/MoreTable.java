@@ -166,12 +166,12 @@ public interface MoreTable extends CommOperate {
 	/**
 	 * set dynamic parameter for dynamic table & entity name
 	 * <br>This method is called earlier than the select methods.
-	 * @param para parameter name
+	 * @param param parameter name
 	 * @param value parameter value
 	 * @return MoreTable
 	 * @since 1.9
 	 */
-	public MoreTable setDynamicParameter(String para, String value);
+	public MoreTable setDynamicParameter(String param, String value);
 
 	/**
 	 * insert entity. support oneToOne/oneToMany.

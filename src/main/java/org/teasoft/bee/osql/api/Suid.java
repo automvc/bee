@@ -43,10 +43,10 @@ public interface Suid extends CommOperate {
 
 	/**
 	 * According to entity object update record(update record by id).This method just has id field to SQL where expression.
-	 * table's entity(do not allow null);id is where condition,do not allow null.<br>
+	 * The id field of entity cannot be null and as filter condition. <br>
+	 * The not null and not empty field will update to database except id.
+	 * @param entity table's entity(do not allow null); id field is where condition,do not allow null.<br>
 	 * The entity corresponding to table and can not be null. <br>
-	 * The ID field of entity cannot be null and as filter condition. <br>
-	 * The not null and not empty field will update to database except ID.
 	 * @return the numbers of update records successfully, if fails,return integer less than 0.
 	 * @see SuidRich#update(Object,java.lang.String...)
 	 */
@@ -103,12 +103,12 @@ public interface Suid extends CommOperate {
 	/**
 	 * set dynamic parameter for dynamic table & entity name,only effective once
 	 * <br>This method is called earlier than the select, update, insert, delete methods.
-	 * @param para parameter name
+	 * @param param parameter name
 	 * @param value parameter value
 	 * @return Suid
 	 * @since  1.8
 	 */
-	public Suid setDynamicParameter(String para, String value);
+	public Suid setDynamicParameter(String param, String value);
 
 	/**
 	 * declare begin Same Connection for some ORM operation.
