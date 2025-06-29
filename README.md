@@ -73,13 +73,18 @@ https://github.com/automvc/bee-ext
 bee.osql.showSqlExecuteTime=true  
 bee.osql.minSqlExecuteTime=0  
 8.use CQRS(Command Query Responsibility Segregation) operate database 
-
+**2.5.2.6**
 9. open some config in Honeyconfig as default  
 openEntityCanExtend = true  
 showSQL = true  
 showShardingSQL = true  
 showSqlExecuteTime = true  
 minSqlExecuteTime = 5;   //ms   
+10. column allow use keyword  
+#there is a switch for it, default is true  
+bee.osql.naming.allowKeyWordInColumn=true  
+#define for append if bee do not contain them  
+bee.osql.naming.sqlKeyWordInColumn  
 
 ### **V2.4.2**  
 1. GenFiles support genFileViaStream  

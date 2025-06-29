@@ -48,12 +48,18 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 bee.osql.showSqlExecuteTime=true  
 bee.osql.minSqlExecuteTime=0  
 8. 使用CQRS命令查询责任分离模式操作数据库  
+**2.5.2.6**
 9. 默认打开常用配置,防止有人不知道功能  
 openEntityCanExtend = true  
 showSQL = true  
 showShardingSQL = true  
 showSqlExecuteTime = true  
 minSqlExecuteTime = 5;   //ms  
+10. 字段名支持允许使用SQL关键字  
+可以使用开关控制是否使用,默认是开启  
+bee.osql.naming.allowKeyWordInColumn=true  
+若Bee还未包括某些关键字,还可以通过以下项追加  
+bee.osql.naming.sqlKeyWordInColumn  
 
 
 ### **V2.4.2(2024.冬至·LTS版)**  
