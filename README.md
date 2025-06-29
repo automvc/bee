@@ -72,7 +72,14 @@ https://github.com/automvc/bee-ext
 7. record and print sql execute time  
 bee.osql.showSqlExecuteTime=true  
 bee.osql.minSqlExecuteTime=0  
-8.use CQRS(Command Query Responsibility Segregation) operate database  
+8.use CQRS(Command Query Responsibility Segregation) operate database 
+
+9. open some config in Honeyconfig as default  
+openEntityCanExtend = true  
+showSQL = true  
+showShardingSQL = true  
+showSqlExecuteTime = true  
+minSqlExecuteTime = 5;   //ms   
 
 ### **V2.4.2**  
 1. GenFiles support genFileViaStream  

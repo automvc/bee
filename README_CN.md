@@ -2,7 +2,7 @@
 Bee
 =========
 ## 好消息:  
-**ORM Bee除了ORM功能, 还有完善的Sharding分片, 完善的MongoDB ORM功能。**  
+**ORM Bee除了ORM功能, 还有完善的分库分表(Sharding分片), 完善的MongoDB ORM功能。**  
 当前**最新**版本为:**V2.4.2 LTS版**(只有940k)  
 旧版1.17.x LTS版为:**1.17.21**  
 
@@ -48,6 +48,13 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 bee.osql.showSqlExecuteTime=true  
 bee.osql.minSqlExecuteTime=0  
 8. 使用CQRS命令查询责任分离模式操作数据库  
+9. 默认打开常用配置,防止有人不知道功能  
+openEntityCanExtend = true  
+showSQL = true  
+showShardingSQL = true  
+showSqlExecuteTime = true  
+minSqlExecuteTime = 5;   //ms  
+
 
 ### **V2.4.2(2024.冬至·LTS版)**  
 1. GenFiles增加genFileViaStream,支持读取jar里的配置文件  
