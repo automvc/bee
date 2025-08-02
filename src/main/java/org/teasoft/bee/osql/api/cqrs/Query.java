@@ -14,6 +14,7 @@ import org.teasoft.bee.osql.OrderType;
 import org.teasoft.bee.osql.api.Condition;
 
 /**
+ * Query type API.
  * @author Kingstar
  * @since  2.5.2
  */

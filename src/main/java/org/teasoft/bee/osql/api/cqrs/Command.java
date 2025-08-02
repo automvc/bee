@@ -13,6 +13,7 @@ import org.teasoft.bee.osql.IncludeType;
 import org.teasoft.bee.osql.api.Condition;
 
 /**
+ * Command type API.
  * @author Kingstar
  * @since  2.5.2
  */

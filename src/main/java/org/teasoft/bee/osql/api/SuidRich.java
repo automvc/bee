@@ -47,7 +47,8 @@ import org.teasoft.bee.osql.OrderType;
  * <br>so it is not affected by the specified where condition field
  * 
  * <br>About the parameter <B>IncludeType</B>:
- * <br>If IncludeType is not set in condition, null and empty strings are filtered by default (but the fields set in op, between and notBetween methods in condition are not affected by the value of includeType.)
+ * <br>If IncludeType is not set in condition, null and empty strings are filtered by default (but the fields set in op, 
+ * <br>between and notBetween methods in condition are not affected by the value of includeType.)
  * <br>If the field of entity is not null or empty, it will be translate to field=value.Other can define with condition.
  * 
  * <br>The fields set by the Condition of the update and updateBy methods will be parsed, which is not limited by the 
