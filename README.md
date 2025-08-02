@@ -62,7 +62,7 @@ https://github.com/automvc/BeePy
 * 26.Use entity name _F (automatically generated) to reference entity field names, e.g., Users_F.name or in SuidRichExt interface using the format Users::getName.  
 
 ## Newest main Function
-### **V2.5.2(2025·LTS)** 
+### **V2.5.2(2025·LTS)**  
 **2.5.2.1 New Year**  
 1. MongoDB update,delete,deleteById support for sharding  
 2. MongoDB modify sharding cache enhance  
@@ -549,7 +549,7 @@ Operate 10000 records, and the use time comparison is as follows.
 <img src="illustration/Bee-architecture-EN-V2.0.png"  width="520" height="640">  
 
 ## Bee Common Interface  
-<img src="illustration/common-interface-2.4_en.png">  
+<img src="illustration/common-interface-2.5.2_en.png">  
 
 Rapid application development:
 =========	
@@ -562,7 +562,7 @@ Rapid application development:
 [Bee + Spring Boot](../../../bee-springboot)  
 
 ## KmCoding
-[Rapid Application Code Generation Platform](https://www.kmcoding.com)--AiTea Soft made in China!  
+[Rapid Application Code Generation Platform](http://www.kmcoding.com)--AiTea Soft made in China!  
 
 [Generate code automatically](../../../gencode)  
 

@@ -35,7 +35,7 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 [主要功能介绍](../../../bee/blob/master/main-feature.md)  
 
 ## 最新功能简介: 
-### **V2.5.2(2025·LTS版) 开发中...** 
+### **V2.5.2(2025·LTS版)**  
 **2.5.2.1 新年**
 1. MongoDB update,delete,deleteById支持分片  
 2. MongoDB modify 分片cache增强  
@@ -439,7 +439,7 @@ public class SuidExam {
 <img src="illustration/Bee-architecture-V2.0.png"  width="520" height="640">  
 
 ## Bee常用接口介绍  
-<img src="illustration/common-interface-2.4.png">  
+<img src="illustration/common-interface-2.5.2.png">  
 
 综合应用:
 =========	
@@ -461,7 +461,7 @@ public class SuidExam {
 [Generate code automatically](../../../gencode)  
 
 ### 快码加编
-[快码加编——代码生成神器](https://www.kmcoding.com)  
+[快码加编——代码生成神器](http://www.kmcoding.com)  
 * 1.一键生成整个工程(无需再搭建系统框架)  
 * 2.自动生成增删改查等常用功能  
 * 3.生成的工程可以直接运行,不再是只能看不能跑的demo  
