@@ -18,7 +18,7 @@ import org.teasoft.bee.osql.api.Condition;
  * @since  2.5.2
  */
 public interface Query extends CommOperate {
-	
+
 	/**
 	 * According to entity object select records from database.
 	 * @param entity table's entity(do not allow null).<br>
@@ -38,8 +38,6 @@ public interface Query extends CommOperate {
 	 */
 	public <T> List<T> select(T entity, Condition condition);
 
-	
-	
 	/**
 	 * Select record(s) according to entity object,and can specify page information.
 	 * @param entity table's entity(do not allow null).
@@ -189,7 +187,6 @@ public interface Query extends CommOperate {
 	 */
 	public <T> List<T> selectOrderBy(T entity, String orderFields, OrderType[] orderTypes);
 
-	
 //	/**
 //	 * Select record according to entity.
 //	 * @param entity table's entity(do not allow null).
@@ -200,7 +197,7 @@ public interface Query extends CommOperate {
 //	 * @return list which contains more than one entity.
 //	 */
 //	public <T> List<T> select(T entity, IncludeType includeType);
-	
+
 //	/**
 //	 * Select and return data in Json format according to entity object.
 //	 * @param entity table's entity(do not allow null).
@@ -209,7 +206,7 @@ public interface Query extends CommOperate {
 //	 * @since  1.1
 //	 */
 //	public <T> String selectJson(T entity, IncludeType includeType);
-	
+
 	/**
 	 * Select and return data in Json format according to entity object.
 	 * @param entity table's entity(do not allow null).
@@ -218,7 +215,7 @@ public interface Query extends CommOperate {
 	 * @since  1.9
 	 */
 	public <T> String selectJson(T entity, Condition condition);
-	
+
 	/**
 	 * Just select some fields,and return Json string.
 	 * @param entity table's entity(do not allow null).
@@ -278,7 +275,7 @@ public interface Query extends CommOperate {
 	 * @since  1.9
 	 */
 	public <T> List<T> selectByIds(Class<T> entityClass, String ids);
-	
+
 	/**
 	 * Check whether the entity corresponding record exist
 	 * @param entity table's entity(do not allow null).
@@ -286,9 +283,7 @@ public interface Query extends CommOperate {
 	 * @since 1.9
 	 */
 	public <T> boolean exist(T entity);
-	
-	
-	
+
 //	/**
 //	 * set dynamic parameter for dynamic table & entity name,only effective once
 //	 * <br>This method is called earlier than the select, update, insert, delete methods.
@@ -310,5 +305,5 @@ public interface Query extends CommOperate {
 	 * @since 1.9
 	 */
 	public void endSameConnection();
-	
+
 }

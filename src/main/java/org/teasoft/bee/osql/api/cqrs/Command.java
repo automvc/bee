@@ -11,6 +11,7 @@ import java.util.List;
 import org.teasoft.bee.osql.CommOperate;
 import org.teasoft.bee.osql.IncludeType;
 import org.teasoft.bee.osql.api.Condition;
+
 /**
  * @author Kingstar
  * @since  2.5.2
@@ -66,9 +67,6 @@ public interface Command extends CommOperate {
 	 * @since 1.7.2
 	 */
 	public <T> int delete(T entity, Condition condition);
-
-	
-	
 
 	/**
 	 * Update record, can list update fields. 
@@ -164,8 +162,6 @@ public interface Command extends CommOperate {
 	 */
 	public <T> int insert(List<T> entityList, int batchSize, String excludeFields);
 
-
-
 	/**
 	 * Update record according to entity by primary key.
 	 * @param entity table's entity(do not allow null),The id field in entity cannot be empty as a filtering condition.
@@ -201,7 +197,6 @@ public interface Command extends CommOperate {
 //	 * @return the number of deleted record(s) successfully,if fails, return integer less than 0.
 //	 */
 //	public <T> int delete(T entity, IncludeType includeType);
-
 
 	/**
 	 * Delete record by id.
@@ -394,9 +389,7 @@ public interface Command extends CommOperate {
 	 * @since 2.1
 	 */
 	public <T> void dropIndex(Class<T> entityClass, String indexName);
-	
-	
-	
+
 //	/**
 //	 * set dynamic parameter for dynamic table & entity name,only effective once
 //	 * <br>This method is called earlier than the select, update, insert, delete methods.
