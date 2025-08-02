@@ -18,6 +18,7 @@
 package org.teasoft.bee.logging;
 
 /**
+ * Log Sql Config
  * @author Kingstar
  * @since  2.5.2
  */

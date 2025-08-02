@@ -35,7 +35,7 @@ public class DbFeatureRegistry implements Registry {
 	/**
 	 * register DbFeature for database.
 	 * databaseName can use DatabaseConst.
-	 * @param databaseName database name
+	 * @param databaseName database name, like the name in DatabaseConst
 	 * @param dbFeature Implementation class of dbfeature.
 	 */
 	public static void register(String databaseName, DbFeature dbFeature) {
