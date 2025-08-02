@@ -60,6 +60,8 @@ minSqlExecuteTime = 5;   //ms
 bee.osql.naming.allowKeyWordInColumn=true  
 若Bee还未包括某些关键字,还可以通过以下项追加  
 bee.osql.naming.sqlKeyWordInColumn  
+11. 分离logger; config先独立初始化  
+12. BeeSimpleDataSourceBuilder兼容不同风格配置  
 
 
 ### **V2.4.2(2024.冬至·LTS版)**  

@@ -85,6 +85,8 @@ minSqlExecuteTime = 5;   //ms
 bee.osql.naming.allowKeyWordInColumn=true  
 #define for append if bee do not contain them  
 bee.osql.naming.sqlKeyWordInColumn  
+11. separate logger; initialize config independently first  
+12. BeeSimpleDataSourceBuilder is compatible with different style configurations  
 
 ### **V2.4.2**  
 1. GenFiles support genFileViaStream  
