@@ -62,7 +62,7 @@ https://github.com/automvc/BeePy
 * 26.Use entity name _F (automatically generated) to reference entity field names, e.g., Users_F.name or in SuidRichExt interface using the format Users::getName.  
 
 ## Newest main Function
-### **V2.5.2(2025·LTS) developing...** 
+### **V2.5.2(2025·LTS)** 
 **2.5.2.1 New Year**  
 1. MongoDB update,delete,deleteById support for sharding  
 2. MongoDB modify sharding cache enhance  
