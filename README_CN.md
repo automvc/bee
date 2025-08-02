@@ -493,6 +493,8 @@ https://github.com/automvc/bee
 https://gitee.com/automvc/bee  
 bee-ext:  
 https://github.com/automvc/bee-ext  
+Python版Bee:
+https://github.com/automvc/BeePy  
 
   
 联系与欢迎:

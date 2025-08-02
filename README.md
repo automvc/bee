@@ -19,6 +19,8 @@ Sharding target: It is mainly transparent to business development and coding, wi
 https://github.com/automvc/bee  
 bee-ext:  
 https://github.com/automvc/bee-ext  
+Python ORM Bee:
+https://github.com/automvc/BeePy  
 
 ## [中文介绍](../../../bee/blob/master/README_CN.md)  
 [点击链接可查看中文介绍](../../../bee/blob/master/README_CN.md)  
@@ -50,9 +52,9 @@ https://github.com/automvc/bee-ext
 * 17.Complex query can be automatically parsed by the frontend and backend.  
 * 18.L1 cache, simple in concept and powerful in function; L1 cache can also be fine tuned like the JVM; Support updatable long-term cache list and update configuration table without restart. Inherently resistant to cache penetration. L2 cache extension support; Redis L2 cache support.  
 * 19.No third-party plugin dependencies; can be used with zero configuration.  
-* 20.High performance: close to the speed of JDBC; small file size: Bee V1.17.21 is only 502k, V2.4.2 is only 940k.  
+* 20.High performance: close to the speed of JDBC; small file size: Bee V1.17.21 is only 502k, V2.5.2 is only 935k.  
 **Assist function**:  
-* 21.Additional features: 21. Provides a naturally simple solution for generating distributed primary keys: generates globally unique, monotonically increasing (within a worker ID) numeric IDs in a distributed environment.  
+* 21. Provides a naturally simple solution for generating distributed primary keys: generates globally unique, monotonically increasing (within a worker ID) numeric IDs in a distributed environment.  
 * 22.Supports automatic generation of Javabean corresponding to tables(support Swagger), creating tables based on Javabean, and automatically generating backend Javaweb code based on templates. Can print executable SQL statements without placeholders for easy debugging. Supports generating SQL scripts in JSON format.  
 * 23.Supports reading Excel files and importing data into the database; simple operations. Supports generating database tables from Excel configurations.  
 * 24.Stream tool class StreamUtil;DateUtil date conversion, judge date format, calculate age.  
@@ -73,7 +75,7 @@ https://github.com/automvc/bee-ext
 bee.osql.showSqlExecuteTime=true  
 bee.osql.minSqlExecuteTime=0  
 8.use CQRS(Command Query Responsibility Segregation) operate database 
-**2.5.2.6**
+**2.5.2.6**  
 9. open some config in Honeyconfig as default  
 openEntityCanExtend = true  
 showSQL = true  
