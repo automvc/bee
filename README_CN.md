@@ -478,7 +478,7 @@ public class SuidExam {
 =========	
 ### API-DOC  
 API-V1.17      下载代码含有 bee-1.17中文和英文版API,bee-1.17中文版源码  
-API-V2.1(最新版) 下载代码含有 bee-2.1英文版API  
+API-V2.5.2(最新版) 下载代码含有 bee-2.5.2英文版API  
 
 ### 使用文档
 [wiki 文档](../../../bee/wikis)  

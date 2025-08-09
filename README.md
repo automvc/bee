@@ -10,6 +10,7 @@ Bee
 
 ## **Good News:**  
 Newest version is:**Bee V2.5.2 LTS**(just 935k)  
+1.17.x LTS version:**1.17.25**  
 
 Sharding target: It is mainly transparent to business development and coding, with only a little sharding config.  
 #### [Quick Start:Shardign better example](guide/Quick-start-Sharding.md) 
@@ -578,7 +579,8 @@ App Demo:
 Other Document:
 =========	
 ### API-DOC  
-API-V1.17(Newest) SourceCode contain bee-1.17 CN & EN API,bee-1.17 CN SourceCode  
+API-V1.17.x(Newest) SourceCode contain bee-1.17 CN & EN API,bee-1.17 CN SourceCode  
+API-V2.x(Newest) bee-2.5.2 EN API  
 
 [wiki Document](../../../bee/wikis)  
 
