@@ -4,7 +4,7 @@ Bee
 ## 好消息:  
 **ORM Bee除了ORM功能, 还有完善的分库分表(Sharding分片), 完善的MongoDB ORM功能。**  
 当前**最新**版本为:**V2.5.2 LTS版**(只有935k)  
-旧版1.17.x LTS版为:**1.17.21**  
+旧版1.17.x LTS版为:**1.17.25**  
 
 Sharding分片:对业务开发透明,编码透明,只加少量分片配置即可实现分片功能.  
 #### [快速开始:Shardign最佳实践参考实例](guide/Quick-start-Sharding_CN.md) 
@@ -35,7 +35,7 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 [主要功能介绍](../../../bee/blob/master/main-feature.md)  
 
 ## 最新功能简介: 
-### **V2.5.2(2025·LTS版) 开发中...** 
+### **V2.5.2(2025·LTS版)**  
 **2.5.2.1 新年**
 1. MongoDB update,delete,deleteById支持分片  
 2. MongoDB modify 分片cache增强  
@@ -439,7 +439,7 @@ public class SuidExam {
 <img src="illustration/Bee-architecture-V2.0.png"  width="520" height="640">  
 
 ## Bee常用接口介绍  
-<img src="illustration/common-interface-2.4.png">  
+<img src="illustration/common-interface-2.5.2.png">  
 
 综合应用:
 =========	
@@ -461,7 +461,7 @@ public class SuidExam {
 [Generate code automatically](../../../gencode)  
 
 ### 快码加编
-[快码加编——代码生成神器](https://www.kmcoding.com)  
+[快码加编——代码生成神器](http://www.kmcoding.com)  
 * 1.一键生成整个工程(无需再搭建系统框架)  
 * 2.自动生成增删改查等常用功能  
 * 3.生成的工程可以直接运行,不再是只能看不能跑的demo  
@@ -478,7 +478,7 @@ public class SuidExam {
 =========	
 ### API-DOC  
 API-V1.17      下载代码含有 bee-1.17中文和英文版API,bee-1.17中文版源码  
-API-V2.1(最新版) 下载代码含有 bee-2.1英文版API  
+API-V2.5.2(最新版) 下载代码含有 bee-2.5.2英文版API  
 
 ### 使用文档
 [wiki 文档](../../../bee/wikis)  

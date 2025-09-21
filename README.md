@@ -10,6 +10,7 @@ Bee
 
 ## **Good News:**  
 Newest version is:**Bee V2.5.2 LTS**(just 935k)  
+1.17.x LTS version:**1.17.25**  
 
 Sharding target: It is mainly transparent to business development and coding, with only a little sharding config.  
 #### [Quick Start:Shardign better example](guide/Quick-start-Sharding.md) 
@@ -52,7 +53,7 @@ https://github.com/automvc/BeePy
 * 17.Complex query can be automatically parsed by the frontend and backend.  
 * 18.L1 cache, simple in concept and powerful in function; L1 cache can also be fine tuned like the JVM; Support updatable long-term cache list and update configuration table without restart. Inherently resistant to cache penetration. L2 cache extension support; Redis L2 cache support.  
 * 19.No third-party plugin dependencies; can be used with zero configuration.  
-* 20.High performance: close to the speed of JDBC; small file size: Bee V1.17.21 is only 502k, V2.5.2 is only 935k.  
+* 20.High performance: close to the speed of JDBC; small file size: Bee V1.17.25 is only 520k, V2.5.2 is only 935k.  
 **Assist function**:  
 * 21. Provides a naturally simple solution for generating distributed primary keys: generates globally unique, monotonically increasing (within a worker ID) numeric IDs in a distributed environment.  
 * 22.Supports automatic generation of Javabean corresponding to tables(support Swagger), creating tables based on Javabean, and automatically generating backend Javaweb code based on templates. Can print executable SQL statements without placeholders for easy debugging. Supports generating SQL scripts in JSON format.  
@@ -62,7 +63,7 @@ https://github.com/automvc/BeePy
 * 26.Use entity name _F (automatically generated) to reference entity field names, e.g., Users_F.name or in SuidRichExt interface using the format Users::getName.  
 
 ## Newest main Function
-### **V2.5.2(2025·LTS) developing...** 
+### **V2.5.2(2025·LTS)**  
 **2.5.2.1 New Year**  
 1. MongoDB update,delete,deleteById support for sharding  
 2. MongoDB modify sharding cache enhance  
@@ -549,7 +550,7 @@ Operate 10000 records, and the use time comparison is as follows.
 <img src="illustration/Bee-architecture-EN-V2.0.png"  width="520" height="640">  
 
 ## Bee Common Interface  
-<img src="illustration/common-interface-2.4_en.png">  
+<img src="illustration/common-interface-2.5.2_en.png">  
 
 Rapid application development:
 =========	
@@ -562,7 +563,7 @@ Rapid application development:
 [Bee + Spring Boot](../../../bee-springboot)  
 
 ## KmCoding
-[Rapid Application Code Generation Platform](https://www.kmcoding.com)--AiTea Soft made in China!  
+[Rapid Application Code Generation Platform](http://www.kmcoding.com)--AiTea Soft made in China!  
 
 [Generate code automatically](../../../gencode)  
 
@@ -578,7 +579,8 @@ App Demo:
 Other Document:
 =========	
 ### API-DOC  
-API-V1.17(Newest) SourceCode contain bee-1.17 CN & EN API,bee-1.17 CN SourceCode  
+API-V1.17.x(Newest) SourceCode contain bee-1.17 CN & EN API,bee-1.17 CN SourceCode  
+API-V2.x(Newest) bee-2.5.2 EN API  
 
 [wiki Document](../../../bee/wikis)  
 
