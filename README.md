@@ -325,7 +325,7 @@ Quick Start:
        <dependency>
 	      <groupId>org.teasoft</groupId>
 	      <artifactId>bee-all</artifactId>
-	      <version>2.5.2</version>
+	      <version>2.5.10</version>
         </dependency>
 		
 	    <!-- Mysql config.You need change it to the real database config. -->
@@ -340,9 +340,9 @@ Quick Start:
 Gradle
 
 ```xml
-implementation group: 'org.teasoft', name: 'bee-all', version: '2.5.2'
+implementation group: 'org.teasoft', name: 'bee-all', version: '2.5.10'
 //Gradle(Short)
-implementation 'org.teasoft:bee-all:2.5.2'
+implementation 'org.teasoft:bee-all:2.5.10'
 ```
 
 #### 1.2  Of course, can download the jar file directly  
