@@ -63,7 +63,23 @@ https://github.com/automvc/BeePy
 * 26.Use entity name _F (automatically generated) to reference entity field names, e.g., Users_F.name or in SuidRichExt interface using the format Users::getName.  
 
 ## Newest main Function
-### **V2.5.2(2025·LTS)**  
+### **V2.5.10(2.5.x·LTS版)**  
+1. enhance:  
+EntityUtil  
+
+2. fixed bug  
+sharding bug:  
+AbstractCommOperate  
+ObjSQLRich, regByIdForSharding  
+missing params:  
+select(final T entity, final int start, final int size, final String... selectFields)  
+others:  
+bug in allowKeyWordInColumn  
+
+3. close function "column allow use keyword"  
+in 2.5.2 can set set bee.osql.naming.allowKeyWordInColumn=false.  
+
+### **V2.5.2**  
 **2.5.2.1 New Year**  
 1. MongoDB update,delete,deleteById support for sharding  
 2. MongoDB modify sharding cache enhance  
@@ -83,13 +99,14 @@ showSQL = true
 showShardingSQL = true  
 showSqlExecuteTime = true  
 minSqlExecuteTime = 5;   //ms   
-10. column allow use keyword  
+10. separate logger; initialize config independently first  
+11. BeeSimpleDataSourceBuilder is compatible with different style configurations  
+
+12. column allow use keyword(will close in V2.5.10)  
 #there is a switch for it, default is true  
 bee.osql.naming.allowKeyWordInColumn=true  
 #define for append if bee do not contain them  
 bee.osql.naming.sqlKeyWordInColumn  
-11. separate logger; initialize config independently first  
-12. BeeSimpleDataSourceBuilder is compatible with different style configurations  
 
 ### **V2.4.2**  
 1. GenFiles support genFileViaStream  
