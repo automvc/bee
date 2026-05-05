@@ -813,3 +813,42 @@ MapSql增加方法: public void where(Condition condition);
 23.pgsql支持json/jsonb,但在where部分还需要写pgsql的特殊sql  
 24.完善分片功能  
 
+### **V2.4.2(2024.冬至·LTS版)**  
+1. GenFiles增加genFileViaStream,支持读取jar里的配置文件  
+2. Genbean:更新方法genFieldFile,toString, 添加方法setUpperFieldNameInFieldFile用于指定变量大小写风格 
+3. 更新DoNotSetTabShadngValue提示信息(分片插入需要设置分片键的值)  
+4. SuidRich selectById,deleteById支持sharding  
+5. Condition支持clone  
+6. fixed bug:  
+sharding select all(no paging)  
+sharding modify cache  
+
+### **V2.5.2**  
+**2.5.2.1 新年**
+1. MongoDB update,delete,deleteById支持分片  
+2. MongoDB modify 分片cache增强  
+3. MongoDB index support for sharding  
+4. add ShardingFullOpTemplate  
+5. SuidRich的实现类ObjSQLRich增加selectByTemplate  
+**2.5.2.2**
+6. fixed bug for MongodbShardingDdlEngine  
+7. SQL性能分析,记录并打印SQL执行时间  
+bee.osql.showSqlExecuteTime=true  
+bee.osql.minSqlExecuteTime=0  
+8. 使用CQRS命令查询责任分离模式操作数据库  
+**2.5.2.6**
+9. 默认打开常用配置,防止有人不知道功能  
+openEntityCanExtend = true  
+showSQL = true  
+showShardingSQL = true  
+showSqlExecuteTime = true  
+minSqlExecuteTime = 5;   //ms  
+10. 分离logger; config先独立初始化  
+11. BeeSimpleDataSourceBuilder兼容不同风格配置  
+
+12. 字段名支持允许使用SQL关键字  (因为bug,在2.5.10暂时关闭,后期完善了再发布.)
+可以使用开关控制是否使用,默认是开启  
+bee.osql.naming.allowKeyWordInColumn=true  
+若Bee还未包括某些关键字,还可以通过以下项追加  
+bee.osql.naming.sqlKeyWordInColumn  
+
