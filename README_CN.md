@@ -35,7 +35,25 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 [主要功能介绍](../../../bee/blob/master/main-feature.md)  
 
 ## 最新功能简介: 
-### **V2.5.2(2025·LTS版)**  
+
+### **V2.5.10(2.5.x·LTS版)**  
+1. 增强功能:  
+EntityUtil  
+
+2. 修复bug  
+sharding bug:  
+AbstractCommOperate  
+ObjSQLRich, regByIdForSharding  
+missing params:  
+select(final T entity, final int start, final int size, final String... selectFields)  
+其它:  
+bug in allowKeyWordInColumn  
+
+3. 会暂时关闭"字段名支持允许使用SQL关键字"功能.  
+在V2.5.2可以使用设置来关闭,bee.osql.naming.allowKeyWordInColumn=false.  
+
+
+### **V2.5.2**  
 **2.5.2.1 新年**
 1. MongoDB update,delete,deleteById支持分片  
 2. MongoDB modify 分片cache增强  
@@ -55,13 +73,14 @@ showSQL = true
 showShardingSQL = true  
 showSqlExecuteTime = true  
 minSqlExecuteTime = 5;   //ms  
-10. 字段名支持允许使用SQL关键字  
+10. 分离logger; config先独立初始化  
+11. BeeSimpleDataSourceBuilder兼容不同风格配置  
+
+12. 字段名支持允许使用SQL关键字  (因为bug,在2.5.10暂时关闭,后期完善了再发布.)
 可以使用开关控制是否使用,默认是开启  
 bee.osql.naming.allowKeyWordInColumn=true  
 若Bee还未包括某些关键字,还可以通过以下项追加  
 bee.osql.naming.sqlKeyWordInColumn  
-11. 分离logger; config先独立初始化  
-12. BeeSimpleDataSourceBuilder兼容不同风格配置  
 
 
 ### **V2.4.2(2024.冬至·LTS版)**  
