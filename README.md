@@ -9,7 +9,7 @@ Bee
 **Good Feature:**  AI, Timesaving/Tasteful, Easy, Automatic (**AiTeaSoft Style**)   
 
 ## **Good News:**  
-Newest version is:**Bee V2.5.2 LTS**(just 935k)  
+Newest version is:**Bee V2.5.10 LTS**(just 935k)  
 1.17.x LTS version:**1.17.25**  
 
 Sharding target: It is mainly transparent to business development and coding, with only a little sharding config.  
