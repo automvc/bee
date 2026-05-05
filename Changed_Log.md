@@ -656,4 +656,41 @@ MapSql add methods: public void where(Condition condition);
 23. support pgsql json/jsonb, but in where part, need write the pgsql special sql  
 24. Improve the sharding function  
 
-  
+### **V2.4.2**  
+1. GenFiles support genFileViaStream  
+2. Genbean:update genFieldFile,toString, add method setUpperFieldNameInFieldFile 
+3. update DoNotSetTabShadngValue tip message(Sharding insert need set the sharding value)  
+4. SuidRich selectById,deleteById support sharding  
+5. Condition support clone  
+6. fixed bug:  
+sharding select all(no paging)  
+sharding modify cache  
+
+### **V2.5.2**  
+**2.5.2.1 New Year**  
+1. MongoDB update,delete,deleteById support for sharding  
+2. MongoDB modify sharding cache enhance  
+3. MongoDB index support for sharding  
+4. add ShardingFullOpTemplate  
+5. ObjSQLRich(SuidRich) add selectByTemplate for select  
+**2.5.2.2**  
+6. fixed bug for MongodbShardingDdlEngine  
+7. record and print sql execute time  
+bee.osql.showSqlExecuteTime=true  
+bee.osql.minSqlExecuteTime=0  
+8.use CQRS(Command Query Responsibility Segregation) operate database 
+**2.5.2.6**  
+9. open some config in Honeyconfig as default  
+openEntityCanExtend = true  
+showSQL = true  
+showShardingSQL = true  
+showSqlExecuteTime = true  
+minSqlExecuteTime = 5;   //ms   
+10. separate logger; initialize config independently first  
+11. BeeSimpleDataSourceBuilder is compatible with different style configurations  
+
+12. column allow use keyword(will close in V2.5.10)  
+#there is a switch for it, default is true  
+bee.osql.naming.allowKeyWordInColumn=true  
+#define for append if bee do not contain them  
+bee.osql.naming.sqlKeyWordInColumn  
