@@ -21,10 +21,13 @@ package org.teasoft.bee.osql.annotation;
  * SQL join type.
  * @author Kingstar
  * @since  1.7
+ * @since  3.0.0
  */
 public enum JoinType {
 	JOIN(" join "),  //inner join
-	LEFT_JOIN(" left join "),RIGHT_JOIN(" right join "),FULL_JOIN(" full join ");
+	LEFT_JOIN(" left join "),RIGHT_JOIN(" right join "),FULL_JOIN(" full join "),
+	WHERE(""), // 3.0.0
+	;
 	
     String type;
     
