@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2020 the original author.All rights reserved.
+ * Copyright 2016-2026 the original author.All rights reserved.
  * Kingstar(honeysoft@126.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,22 +41,22 @@ public @interface JoinTable3 {
 	 * The join on field of main table.
 	 * @return join field name of main table.
 	 */
-	String[] mainField() default {}; 
+	String[] mainField() default {};
 
 	/**
 	 * The join on field of subtable.
 	 * @return join field name of subtable .
 	 */
-	String[] subField() default {}; 
+	String[] subField() default {};
 
 	/**
 	 * Subtable alias.
 	 * @return subtable alias.
 	 */
-	String subAlias() default ""; 
-	
-	String mainAlias() default ""; 
-	
+	String subAlias() default "";
+
+	String mainAlias() default "";
+
 	/**
 	 * Subtable entity Class type.
 	 * @return subClass Class type.
