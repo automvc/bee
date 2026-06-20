@@ -250,7 +250,6 @@ public interface Query extends CommOperate {
 	/**
 	 * Select record by id.
 	 * @param entityClazz table's entity class(do not allow null).
-	 * <br> The property value of returnType will not be parsed.
 	 * @param id value of entity's id field.
 	 * @return return one entity which owns this id.
 	 * @since  1.9
@@ -260,7 +259,6 @@ public interface Query extends CommOperate {
 	/**
 	 * Select record by id.
 	 * @param entityClass table's entity class(do not allow null).
-	 * <br> The property value of returnType will not be parsed.
 	 * @param id value of entity's id field.
 	 * @return return one entity which owns this id.
 	 * @since  1.9
@@ -270,7 +268,6 @@ public interface Query extends CommOperate {
 	/**
 	 * Select record by id.
 	 * @param entityClass table's entity class(do not allow null).
-	 * <br> The property value of returnType will not be parsed.
 	 * @param ids values of entity's id field,if more than one,separate with comma.
 	 * @return list which contains more than one entity.
 	 * @since  1.9

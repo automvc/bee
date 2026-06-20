@@ -148,8 +148,8 @@ public interface MoreTable extends CommOperate {
 	 * @param entity table's entity(do not allow null).<br>
 	 * entity corresponding to table and can not be null.<br>
 	 * If the field value is not null and not empty string as filter condition, <br>
-	 * the operator is equal sign.eg:field=value
-	 * @param start Start index,min value is 0 or 1(eg:MySQL is 0,Oracle is 1).
+	 * the operator is equal sign. eg:field=value
+	 * @param start Start index, min value is 0 or 1(eg:MySQL is 0, Oracle is 1).
 	 * @param size Fetch result size (>0).
 	 * @return list can contain more than one entity
 	 */
@@ -179,7 +179,7 @@ public interface MoreTable extends CommOperate {
 	 * If the primary key of the main table is used for the foreign key of the sub table, it will be automatically filled in.
 	 * The multiple tables modify is done by calling suidRich, so Interceptor use suidRich's.
 	 * @param entity table's entity(do not allow null).
-	 * @return returns the number of affected records in the main table.
+	 * @return returns the number of affected records in the main table; if fails, return -1.
 	 * @since 2.1.8
 	 */
 	public <T> int insert(T entity);
@@ -251,13 +251,16 @@ public interface MoreTable extends CommOperate {
 	 */
 	public <T> List<String[]> selectString(T entity, Condition condition);
 
-	/**
-	 * Select and return data in Json format according to entity object.
-	 * @param entity table's entity(do not allow null).
-	 * @param condition Condition as filter the record.
-	 * @return Json string, it transform from list which can contain more than one entity.
-	 * @since 2.4.0
-	 */
-	public <T> String selectJson(T entity, Condition condition);
+//	/**
+//	 * Select and return data in Json format according to entity object.
+//	 * @param entity table's entity(do not allow null).
+//	 * @param condition Condition as filter the record.
+//	 * @return Json string, it transform from list which can contain more than one entity.
+//	 * @since 2.4.0
+//	  can replace this method as below:
+//	  List<EntityClass> list = moreTable.select(entityClass, condition);
+//    then use json tool transfer the list
+//	 */
+//	public <T> String selectJson(T entity, Condition condition);
 
 }

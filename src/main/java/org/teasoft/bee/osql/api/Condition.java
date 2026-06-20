@@ -294,6 +294,15 @@ public interface Condition extends ConditionAssistant, Serializable, Cloneable {
 	 */
 	public Condition forUpdate();
 
+	/**
+	 * set the flag of doNotRewritePagingSql.
+	 * @return the flag of doNotRewritePagingSql
+	 * @since 3.0.0
+	 */
+	public Condition doNotRewritePagingSql(boolean doNotRewrite);
+	
+	public boolean isDoNotRewritePagingSql();
+
 	//////////////////////////////// -------just use in update-------------start-
 
 	/**

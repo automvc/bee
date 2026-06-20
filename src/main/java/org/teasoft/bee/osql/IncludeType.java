@@ -8,11 +8,6 @@ package org.teasoft.bee.osql;
 public enum IncludeType {
 
 	/**
-	 * exclude: NULL and ""
-	 */
-	EXCLUDE_BOTH(-1), // v1.9
-
-	/**
 	 * include: NULL
 	 */
 	INCLUDE_NULL(0),
@@ -25,9 +20,23 @@ public enum IncludeType {
 	 * include: NULL and ""
 	 */
 	INCLUDE_BOTH(2),
+
+	
+	/**
+	 * exclude: NULL and ""
+	 */
+	EXCLUDE_BOTH(-1), // v1.9
+	
 	/**
 	 * exclude:  NULL , "" and "  "
 	 */
+	EXCLUDE_BLANK(-3),
+	
+	/**
+	 * exclude:  NULL , "" and "  "
+	 * replace with EXCLUDE_BLANK
+	 */
+	@Deprecated
 	EXCLUDE_THREE(-3);
 
 	private final int value;
