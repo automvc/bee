@@ -25,7 +25,7 @@ import java.lang.annotation.Target;
 /**
  * Foreign Key annotation,use for UPDATE, INSERT, DELETE.
  * if do not use FK, will use JoinTable by default;
- * if define mainField/subField in FK, it will override mainField/subField in JoinTable.
+ * if define mainField/subField in FK, it will override mainField/subField in JoinTable when use update/insert/delete.
  * @author Kingstar
  * @since  3.0.0
  */
