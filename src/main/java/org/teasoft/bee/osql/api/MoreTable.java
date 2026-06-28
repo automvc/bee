@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2023 the original author.All rights reserved.
+ * Copyright 2016-2026 the original author.All rights reserved.
  * Kingstar(honeysoft@126.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,114 +22,75 @@ import java.util.List;
 import org.teasoft.bee.osql.CommOperate;
 
 /**
- * More table select(multi-table query).
- * 
- * Multi table Select/Update/Insert/Delete.
- * @since 2.4.0
+ * More table(multi-table) Select/Update/Insert/Delete.
  * 
  * In sharding mode, the main table and sub-table need map to same dataSource.
  * <p>
- * example1:
-<p>
-public class Orders{
-<p>	private Long id;
-<p>	private String userid;
-<p>	private String name;
-<p>	private BigDecimal total;
-<p>	private Timestamp createtime;
-<p>	private String remark;
-<p>	private String sequence;
-<p>	
-<p>//@JoinTable(mainField="userid", subField="username")
-<p>//@JoinTable(mainField="userid", subField="username", joinType=JoinType.LEFT_JOIN)  //ok 
-<p>//... from orders left join user on orders.userid=user.username where ...
-<p>	@JoinTable(mainField="userid,name", subField="username,name", joinType=JoinType.JOIN)
-<p>//@JoinTable(mainField="userid", subField="username",subAlias="myuser" , joinType=JoinType.FULL_JOIN)
-<p>//@JoinTable()
-<p>	private User user;
-<p>	
-<p>	// ... get,set methods.
-<p>	 }
-<p>	 
-<p>	 public class User {
-<p>
-<p>	private Long id;
-<p>	private String email;
-<p>	private String lastName;
-<p>	private String name;
-<p>	private String password;
-<p>	private String username;
-<p>	private Timestamp createtime;
-<p>	
-<p>		// ... get,set methods.
-<p>	 }
-<p>	 
-<p>public class MoreTableExam {
-<p>	
-<p>	public static void main(String[] args) {
-<p>		MoreTable moreTable=BeeFactory.getHoneyFactory().getMoreTable();
-<p>		
-<p>	 	Orders orders1=new Orders();
-<p>		orders1.setUserid("bee"); 
-<p>		orders1.setName("Bee(ORM Framework)");
-
-<p>		User user=new User();
-<p>		user.setEmail("beeUser@163.com");
-<p>		orders1.setUser(user);
-<p>	    List<Orders> list1 =moreTable.select(orders1);       //select
-<p>//	List<Orders> list1 =moreTable.select(orders1,0,10);  //select,paging
-<p>	    //... process list1
-<p>	    }
-<p>	 }
-
-<p>--------------------------------
-<p> example2:  List type sub entity field
-
-<p>@Entity("Clazz")
-<p>public class Clazz0 implements Serializable {
-<p>
-<p>	private static final long serialVersionUID = 1591972382398L;
-<p>
-<p>	private Integer id;
-<p>	private String classname;
-<p>	private String place;
-<p>	private String teachername;
-<p>	private String remark;
-<p>	
-<p>	@JoinTable(mainField="id", subField="classno", joinType=JoinType.LEFT_JOIN,subClass="Student")
-<p>	private List<Student> studentList=new ArrayList<>();
-<p>	//subClass="Student",  if sub Entity and main Entity in the same package, can use class name only.
-<p>	//full like,  subClass="org.teasoft.exam.bee.osql.entity.Student")
-<p>	
-<p>	//... get,set method
-<p>}
-<p>
-<p>public class Student implements Serializable {
-<p>
-<p>	private static final long serialVersionUID = 1591622324231L;
-<p>
-<p>	private Integer id;
-<p>	private Integer sid;
-<p>	private String name;
-<p>	private Integer age;
-<p>	private Boolean sex;
-<p>	private String majorid;
-<p>	private Boolean flag;
-<p>	private Integer classno;
-<p>	
-<p>	//... get,set method
-<p>}
-<p>
-<p>	public static void main(String[] args) {
-<p>		
-<p>		MoreTable moreTable = BeeFactoryHelper.getMoreTable();
-<p>		Clazz0 c0=new Clazz0();
-<p>		List<Clazz0> list0=moreTable.select(c0);
-<p>		Printer.printList(list0); //print list
-<p>}
-
+ * example:
+<p> 
+<p> public class MoreTableExample {
+<p> 	public static void main(String[] args) {
+<p> 		MoreTable moreTable = BF.getMoreTable();
+<p> 		Province province = new Province();
+<p> 		List<Province> list1 = moreTable.select(province, 0, 10); // 查询前10条记录
+<p> 		if (list1 != null) {
+<p> 			for (int i = 0; i < list1.size(); i++)
+<p> 				Logger.info(JacksonJsonUtil.toJson(list1.get(i)));
+<p> 		}
+<p> 	}
+<p> }
+<p> 
+<p> class Province {
+<p> 	private Integer id;
+<p> 	private String name;
+<p> 	private Integer level;
+<p> 	private String remark;
+<p> 	@JoinTable(mainField = { "id" }, subField = { "provinceId" }, joinType = JoinType.JOIN)
+<p> 	private List<City> listCity;
+<p> 	// @JoinTable(mainField = { "id" }, subField = { "provinceId" }, joinType = JoinType.LEFT_JOIN)
+<p> 	// need use LEFT_JOIN,or would effect listCity
+<p> 	// ProvinceHistory provinceHistory; // Province History
+<p> 	@JoinTable(mainField = { "id" }, subField = { "fId" }, joinType = JoinType.LEFT_JOIN)
+<p> 	private News news;
+<p> 	// ignore getter,setter
+<p> }
+<p> 
+<p> class City {
+<p> 	private Integer id;
+<p> 	private String name;
+<p> 	private Integer level;
+<p> 	private String remark;
+<p> 	private Integer provinceId;
+<p> 	@JoinTable(mainField = { "id" }, subField = { "cityId" }, joinType = JoinType.JOIN, subClass = Town.class)
+<p> 	private Town town;
+<p> 	// ignore getter,setter
+<p> }
+<p> 
+<p> class Town {
+<p> 	private Integer id;
+<p> 	private String name;
+<p> 	private Integer level;
+<p> 	private String remark;
+<p> 	private Integer cityId;
+<p> 	@JoinTable(mainField = { "id" }, subField = { "townId" }, joinType = JoinType.JOIN)
+<p> 	private List<Village> listVillage;
+<p> 	// ignore getter,setter
+<p> }
+<p> 
+<p> class Village {
+<p> 	private Integer id;
+<p> 	private String name;
+<p> 	private Integer level;
+<p> 	private String remark;
+<p> 	private Integer townId;
+<p> 	@JoinTable(mainField = { "id" }, subField = { "villageId" }, joinType = JoinType.JOIN)
+<p> 	private Road road;
+<p> 	// ignore getter,setter
+<p> }
+<p> 
+ * 
  * @author Kingstar
- * @since  1.7
+ * @since  3.0.0
  */
 public interface MoreTable extends CommOperate {
 
