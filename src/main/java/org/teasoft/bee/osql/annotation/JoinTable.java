@@ -25,11 +25,11 @@ import java.lang.annotation.Target;
 /**
  * Annotation for tables join.
  * @author Kingstar
- * @since  3.0
+ * @since  3.0.0
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface JoinTable3 {
+public @interface JoinTable {
 
 	/**
 	 * JoinType: left join,right join,join, (full join need DB support)
