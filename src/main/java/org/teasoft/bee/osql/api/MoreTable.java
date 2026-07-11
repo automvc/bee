@@ -212,16 +212,4 @@ public interface MoreTable extends CommOperate {
 	 */
 	public <T> List<String[]> selectString(T entity, Condition condition);
 
-//	/**
-//	 * Select and return data in Json format according to entity object.
-//	 * @param entity table's entity(do not allow null).
-//	 * @param condition Condition as filter the record.
-//	 * @return Json string, it transform from list which can contain more than one entity.
-//	 * @since 2.4.0
-//	  can replace this method as below:
-//	  List<EntityClass> list = moreTable.select(entityClass, condition);
-//    then use json tool transfer the list
-//	 */
-//	public <T> String selectJson(T entity, Condition condition);
-
 }
