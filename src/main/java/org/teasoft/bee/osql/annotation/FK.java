@@ -44,5 +44,12 @@ public @interface FK {
 	 * @return join field name of subtable .
 	 */
 	String[] subField() default {};
+	
+	/**
+	 * Subtable entity Class type.
+	 * @return subClass Class type.
+	 */
+	@SuppressWarnings("rawtypes")
+	Class subClass() default Object.class;
 
 }
