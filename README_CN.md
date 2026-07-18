@@ -45,6 +45,19 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 6. 多表查询，精确分页  
 7. 支持分库分表  
 8. 多表关联支持update/insert/delete  
+9.update @JoinTable, @FK  
+update @JoinTable:  
+subClass="Student"  
+->
+subClass=Student.class  
+  
+update @FK:  
+@FK(refBy="id", value="classno")  
+->  
+@FK(mainField="id", subField="classno")  
+  
+value -> subField  
+10.  
 
 ### **V2.5.10(2.5.x·LTS版)**  
 1. 增强功能:  
@@ -448,6 +461,12 @@ public class SuidExam {
 //更加应用参考,请查看: 更多例子   和    综合应用 .
 
 ```
+
+多表关联查询;
+
+多表关联update/insert/delete
+
+Sharding
 
 ## 6.操作视频:    
 <img src="guide/bee-quick-start-2.0.gif"  width="840" height="420">  
