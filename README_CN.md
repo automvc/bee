@@ -105,17 +105,6 @@ bee.osql.naming.allowKeyWordInColumn=true
 若Bee还未包括某些关键字,还可以通过以下项追加  
 bee.osql.naming.sqlKeyWordInColumn  
 
-
-### **V2.4.2(2024.冬至·LTS版)**  
-1. GenFiles增加genFileViaStream,支持读取jar里的配置文件  
-2. Genbean:更新方法genFieldFile,toString, 添加方法setUpperFieldNameInFieldFile用于指定变量大小写风格 
-3. 更新DoNotSetTabShadngValue提示信息(分片插入需要设置分片键的值)  
-4. SuidRich selectById,deleteById支持sharding  
-5. Condition支持clone  
-6. fixed bug:  
-sharding select all(no paging)  
-sharding modify cache  
-
 ## [详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 [点击链接可查看  详细完整功能介绍](../../../bee/blob/master/Changed_Log_CN.md)  
 
@@ -526,7 +515,7 @@ Sharding
 =========	
 ### API-DOC  
 API-V1.17      下载代码含有 bee-1.17中文和英文版API,bee-1.17中文版源码  
-API-V2.5.2(最新版) 下载代码含有 bee-2.5.2英文版API  
+API-V2.5.2 下载代码含有 bee-2.5.2英文版API  
 
 ### 使用文档
 [wiki 文档](../../../bee/wikis)  
