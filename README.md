@@ -63,7 +63,30 @@ https://github.com/automvc/BeePy
 * 26.Use entity name _F (automatically generated) to reference entity field names, e.g., Users_F.name or in SuidRichExt interface using the format Users::getName.  
 
 ## Newest main Function
-### **V2.5.10(2.5.x·LTS版)**  
+### **V3.0.0(3.x·LTS)**  
+1. MoreTable select (one-to-one association)  
+2. MoreTable select support (many to one)  
+3. MoreTable select support (one to many)  
+4. MoreTable select supports the Condition parameter  
+5. MoreTable select supports paging  
+6. MoreTable select, accurate paging  
+7. Support database and table sharding  
+8. MoreTable join support: update/insert/delete  
+9.update @JoinTable, @FK  
+update @JoinTable:  
+subClass="Student"  
+->
+subClass=Student.class  
+  
+update @FK:  
+@FK(refBy="id", value="classno")  
+->  
+@FK(mainField="id", subField="classno")  
+  
+value -> subField  
+10.  
+
+### **V2.5.10(2.5.x·LTS)**  
 1. enhance:  
 EntityUtil  
 
