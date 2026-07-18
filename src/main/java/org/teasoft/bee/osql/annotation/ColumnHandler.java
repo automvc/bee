@@ -24,7 +24,7 @@ package org.teasoft.bee.osql.annotation;
  */
 @SuppressWarnings("rawtypes")
 public interface ColumnHandler {
-	
+
 	/**
 	 * translate to Column Name.
 	 * @param fieldName field name
@@ -33,7 +33,6 @@ public interface ColumnHandler {
 	 */
 	public String toColumnName(String fieldName, Class entityClass);
 
-	
 	/**
 	 * translate to Field Name.
 	 * @param columnName column name
@@ -41,5 +40,5 @@ public interface ColumnHandler {
 	 * @return field name.
 	 */
 	public String toFieldName(String columnName, Class entityClass);
-	
+
 }

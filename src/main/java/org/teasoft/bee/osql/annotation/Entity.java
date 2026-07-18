@@ -15,7 +15,6 @@
  * limitations under the License.
  */
 
-
 package org.teasoft.bee.osql.annotation;
 
 import java.lang.annotation.ElementType;

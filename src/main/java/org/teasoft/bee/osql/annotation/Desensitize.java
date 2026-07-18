@@ -44,17 +44,17 @@ public @interface Desensitize {
 	 * @return start position
 	 */
 	int start();
-	
+
 	/**
 	 * the number of characters need to replace;
 	 * if it is - 1, replace it until the end(V2.0).
 	 * @return the number of characters need to replace
 	 */
 	int size();
-	
+
 	/**
 	 * Mask used
 	 * @return mask code
 	 */
-	String mask(); 
+	String mask();
 }

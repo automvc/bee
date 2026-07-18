@@ -27,7 +27,7 @@ import java.lang.annotation.Target;
  * @author Kingstar
  * @since  2.1
  */
-@Target({ElementType.TYPE, ElementType.FIELD})
+@Target({ ElementType.TYPE, ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Geo2dsphere {
 

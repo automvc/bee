@@ -36,50 +36,51 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MultiTenancy {
-	
+
 	/**
 	 * appoint dataSource
 	 * @return  appointed dataSource 
 	 */
 	String appointDS() default "";
-	
+
 	/**
 	 * appoint table name
 	 * @return appointed table name
 	 */
 	String appointTab() default "";
-	
+
 	/**
 	 * 0: operations that can be calculated directly such as remainder; 1: Take part of the string such as date; 2: Custom
 	 * @return value of dsAlgorithm
 	 */
-    int dsAlgorithm() default 0; 
-    
-    /**
-     * 0: operations that can be calculated directly such as remainder; 1: Take part of the string such as date; 2: Custom
-     * @return value of tabAlgorithm
-     */
-    int tabAlgorithm() default 0; 
-	
-    /**
-     * If dsRule is not set, that is, the default empty value is used, it means that is not to consider the database name.
+	int dsAlgorithm() default 0;
+
+	/**
+	 * 0: operations that can be calculated directly such as remainder; 1: Take part of the string such as date; 2: Custom
+	 * @return value of tabAlgorithm
+	 */
+	int tabAlgorithm() default 0;
+
+	/**
+	 * If dsRule is not set, that is, the default empty value is used, it means that is not to consider the database name.
 	 * <br>eg: "id%dsSize
-     * @return value of dsRule
-     */
+	 * @return value of dsRule
+	 */
 	String dsRule() default "";
-	
+
 	/**
 	 * If dsRule is empty and the value of dsName is not set, the database name is not required.
 	 * <br>By default, the value calculated by dsRule() will be automatically used as the suffix of dsName.
 	 * @return dsName
 	 */
 	String dsName() default "";
-	
+
 	/**
 	 * get tabRule
 	 * @return tabRule
 	 */
 	String tabRule() default "";
+
 	/**
 	 * get tabName.
 	 * <br>The default is the value calculated by tabRule() as the suffix of tabName.
@@ -87,7 +88,7 @@ public @interface MultiTenancy {
 	 * @return tabName
 	 */
 	String tabName() default "";
-	
+
 	/**
 	 * use for define DsTabHandler.
 	 * @return class of DsTabHandler type

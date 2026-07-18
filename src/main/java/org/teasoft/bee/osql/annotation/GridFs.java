@@ -41,9 +41,9 @@ public @interface GridFs {
 	 */
 	String fileIdName() default "fileid";
 
-    /**
-     * The field name corresponding to the file name
-     * @return file name
-     */
+	/**
+	 * The field name corresponding to the file name
+	 * @return file name
+	 */
 	String fileName() default "filename";
 }

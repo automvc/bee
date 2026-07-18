@@ -35,7 +35,7 @@ public class UpperKey implements SqlKeyWord {
 	private static final String VALUES = "VALUES";
 	private static final String AND = "AND";
 	private static final String OR = "OR";
-	private static final String NOT = "!"; //2.1.10
+	private static final String NOT = "!"; // 2.1.10
 	private static final String NULL = "NULL";
 	private static final String ISNULL = "IS NULL";
 	private static final String isNotNull = "IS NOT NULL";
@@ -67,18 +67,17 @@ public class UpperKey implements SqlKeyWord {
 	private static final String notIn = "NOT IN";
 	private static final String EXISTS = "EXISTS";
 	private static final String notExists = "NOT EXISTS";
-	
-	//2.0
-	private static final String union="UNION";
-	private static final String unionAll="UNION ALL";
-	
-	
-    //2.4.0	
-	private static final String truncate="TRUNCATE";
-	private static final String table="TABLE";
-	private static final String drop="DROP";
-	private static final String If="IF";
-	private static final String to_date="TO_DATE";
+
+	// 2.0
+	private static final String union = "UNION";
+	private static final String unionAll = "UNION ALL";
+
+	// 2.4.0
+	private static final String truncate = "TRUNCATE";
+	private static final String table = "TABLE";
+	private static final String drop = "DROP";
+	private static final String If = "IF";
+	private static final String to_date = "TO_DATE";
 
 	@Override
 	public String select() {
@@ -129,7 +128,7 @@ public class UpperKey implements SqlKeyWord {
 	public String or() {
 		return OR;
 	}
-	
+
 	@Override
 	public String not() {
 		return NOT;
@@ -274,12 +273,12 @@ public class UpperKey implements SqlKeyWord {
 	public String notExists() {
 		return notExists;
 	}
-	
+
 	@Override
 	public String union() {
 		return union;
 	}
-	
+
 	@Override
 	public String unionAll() {
 		return unionAll;

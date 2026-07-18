@@ -300,7 +300,7 @@ public interface Condition extends ConditionAssistant, Serializable, Cloneable {
 	 * @since 3.0.0
 	 */
 	public Condition doNotRewritePagingSql(boolean doNotRewrite);
-	
+
 	public boolean isDoNotRewritePagingSql();
 
 	//////////////////////////////// -------just use in update-------------start-

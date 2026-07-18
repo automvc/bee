@@ -39,7 +39,7 @@ public @interface GenUUID {
 	 * @return the boolean value of override
 	 */
 	boolean override() default false;
-	
+
 	/**
 	 * whether need the separator("-"),default is false.
 	 * @return the boolean value of useSeparator

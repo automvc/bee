@@ -55,10 +55,10 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface JustFetch {
-	
+
 	/**
 	 *  Since V2.1.8,when value is empty, the corresponding field is parsed and only used to receive the result value
 	 * @return
 	 */
-	String value() default "";  
+	String value() default "";
 }

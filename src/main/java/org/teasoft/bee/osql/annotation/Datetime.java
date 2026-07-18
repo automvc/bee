@@ -36,7 +36,7 @@ public @interface Datetime {
 	String formatter() default "";
 
 	boolean override() default false;
-	
+
 	SuidType suidType();
 
 }
