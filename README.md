@@ -72,7 +72,7 @@ https://github.com/automvc/BeePy
 6. MoreTable select, accurate paging  
 7. Support database and table sharding  
 8. MoreTable join support: update/insert/delete  
-9.update @JoinTable, @FK  
+9. update @JoinTable, @FK  
 update @JoinTable:  
 subClass="Student"  
 ->
@@ -84,7 +84,9 @@ update @FK:
 @FK(mainField="id", subField="classno")  
   
 value -> subField  
-10.  
+10. MoreTable select support Sharding  
+11. MoreTable insert/update/delete support Sharding  
+12. Ddl support @StringLen, @ColumnType  
 
 ### **V2.5.10(2.5.x·LTS)**  
 1. enhance:  

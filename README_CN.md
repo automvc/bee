@@ -57,7 +57,9 @@ update @FK:
 @FK(mainField="id", subField="classno")  
   
 value -> subField  
-10.  
+10. MoreTable select 支持分库分表 Sharding  
+11. MoreTable insert/update/delete 支持分库分表 Sharding  
+12. Ddl 支持 @StringLen, @ColumnType  
 
 ### **V2.5.10(2.5.x·LTS版)**  
 1. 增强功能:  
