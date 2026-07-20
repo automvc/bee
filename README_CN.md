@@ -47,17 +47,17 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 7. 支持分库分表  
 8. 多表关联支持update/insert/delete  
 9. update @JoinTable, @FK  
-update @JoinTable:  
-subClass="Student"  
-->
-subClass=Student.class  
+   update @JoinTable:  
+   subClass="Student"  
+   ->
+   subClass=Student.class  
   
-update @FK:  
-@FK(refBy="id", value="classno")  
-->  
-@FK(mainField="id", subField="classno")  
+   update @FK:  
+   @FK(refBy="id", value="classno")  
+   ->  
+   @FK(mainField="id", subField="classno")  
   
-value -> subField  
+   value -> subField  
 10. MoreTable select 支持分库分表 Sharding  
 11. MoreTable insert/update/delete 支持分库分表 Sharding  
 12. Ddl 支持 @StringLen, @ColumnType  
