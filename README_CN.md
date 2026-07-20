@@ -36,7 +36,8 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 
 ## 最新功能简介: 
 
-### **V3.0.0(3.x·LTS版)**  
+### **V3.0.0(3.0.x·LTS版)**  
+
 1. 多表查询 (一对一关联)  
 2. 多表查询支持 (多对一)  
 3. 多表查询支持 (一对多)  
@@ -45,7 +46,7 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 6. 多表查询，精确分页  
 7. 支持分库分表  
 8. 多表关联支持update/insert/delete  
-9.update @JoinTable, @FK  
+9. update @JoinTable, @FK  
 update @JoinTable:  
 subClass="Student"  
 ->
