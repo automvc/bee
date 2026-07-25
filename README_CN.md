@@ -60,7 +60,8 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
    value -> subField  
 10. MoreTable select 支持分库分表 Sharding  
 11. MoreTable insert/update/delete 支持分库分表 Sharding  
-12. Ddl 支持 @StringLen, @ColumnType  
+12. DDL create table(entity -> table) support  @StringLen, @ColumnType  
+13. DDL create table(entity -> table) support  @NotNull, @Unique  
 
 ### **V2.5.10(2.5.x·LTS版)**  
 1. 增强功能:  
