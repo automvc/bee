@@ -88,6 +88,7 @@ value -> subField
 11. MoreTable insert/update/delete support Sharding  
 12. DDL create table(entity -> table) support  @StringLen, @ColumnType  
 13. DDL create table(entity -> table) support  @NotNull, @Unique  
+14. adjust sharding sql for order by part donot in select list  
 
 ### **V2.5.10(2.5.x·LTS)**  
 1. enhance:  
