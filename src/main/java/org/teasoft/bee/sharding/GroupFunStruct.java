@@ -32,7 +32,7 @@ public class GroupFunStruct {
 //	private FunStruct funStructs[];
 	private List<FunStruct> funStructs;
 
-	private boolean needGroupWhenNoFun;
+//	private boolean needGroupWhenNoFun;
 
 	// has avg or String[] type need following
 	private boolean hasAvg;
@@ -72,13 +72,13 @@ public class GroupFunStruct {
 		this.funStructs = funStructs;
 	}
 
-	public boolean isNeedGroupWhenNoFun() {
-		return needGroupWhenNoFun;
-	}
-
-	public void setNeedGroupWhenNoFun(boolean needGroupWhenNoFun) {
-		this.needGroupWhenNoFun = needGroupWhenNoFun;
-	}
+//	public boolean isNeedGroupWhenNoFun() {
+//		return needGroupWhenNoFun;
+//	}
+//
+//	public void setNeedGroupWhenNoFun(boolean needGroupWhenNoFun) {
+//		this.needGroupWhenNoFun = needGroupWhenNoFun;
+//	}
 
 	public boolean isHasAvg() {
 		return hasAvg;
@@ -103,7 +103,14 @@ public class GroupFunStruct {
 			if (t != null) {
 				t = t.toLowerCase();
 				index = t.indexOf(" as ");
-				if (index > 0) t = t.substring(index + 4);
+				if (index > 0) {
+					t = t.substring(index + 4);
+				} else { // fixed bug V3.0.0.8, process use alias but no as.
+					index = t.indexOf(" ");
+					if (index > 0)
+						t = t.substring(index + 1).trim();
+				}
+				
 				columnIndexMap.put(t, i);
 			}
 		}

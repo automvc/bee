@@ -25,7 +25,7 @@ package org.teasoft.bee.osql;
 public final class BeeVersion {
 
 	public static final String version = "3.0.0";
-	public static final String buildId = version + ".7";
+	public static final String buildId = version + ".8";
 
 	private BeeVersion() {}
 
