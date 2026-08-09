@@ -79,6 +79,11 @@ public class UpperKey implements SqlKeyWord {
 	private static final String If = "IF";
 	private static final String to_date = "TO_DATE";
 
+	private static final String sum = "SUM";
+	private static final String max = "MAX";
+	private static final String min = "MIN";
+	private static final String avg = "AVG";
+
 	@Override
 	public String select() {
 		return SELECT;
@@ -307,6 +312,26 @@ public class UpperKey implements SqlKeyWord {
 	@Override
 	public String to_date() {
 		return to_date;
+	}
+
+	@Override
+	public String sum() {
+		return sum;
+	}
+
+	@Override
+	public String max() {
+		return max;
+	}
+
+	@Override
+	public String min() {
+		return min;
+	}
+
+	@Override
+	public String avg() {
+		return avg;
 	}
 
 }

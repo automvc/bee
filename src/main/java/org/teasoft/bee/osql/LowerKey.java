@@ -78,6 +78,11 @@ public class LowerKey implements SqlKeyWord {
 	private static final String If = "if";
 	private static final String to_date = "to_date";
 
+	private static final String sum = "sum";
+	private static final String max = "max";
+	private static final String min = "min";
+	private static final String avg = "avg";
+
 	@Override
 	public String select() {
 		return select;
@@ -306,6 +311,26 @@ public class LowerKey implements SqlKeyWord {
 	@Override
 	public String to_date() {
 		return to_date;
+	}
+
+	@Override
+	public String sum() {
+		return sum;
+	}
+
+	@Override
+	public String max() {
+		return max;
+	}
+
+	@Override
+	public String min() {
+		return min;
+	}
+
+	@Override
+	public String avg() {
+		return avg;
 	}
 
 }

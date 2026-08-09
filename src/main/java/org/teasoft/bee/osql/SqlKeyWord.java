@@ -86,4 +86,9 @@ public interface SqlKeyWord {
 	String drop();
 	String If();
 	String to_date();
+
+	String sum();
+	String max();
+	String min();
+	String avg();
 }
