@@ -17,6 +17,7 @@
 
 package org.teasoft.bee.sharding;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,6 +32,8 @@ public class GroupFunStruct {
 	private List<String> groupFields;
 //	private FunStruct funStructs[];
 	private List<FunStruct> funStructs;
+
+	private List<String> orginalSelectColumn = new ArrayList<>(); // 3.0.0.8 记录selectString[]原来查的列，以便删除自动加的列
 
 //	private boolean needGroupWhenNoFun;
 
@@ -96,22 +99,22 @@ public class GroupFunStruct {
 		this.columnNames = columnNames;
 
 		String columns[] = columnNames.split(",");
-		String t;
+		String col;
 		int index = -1;
 		for (int i = 0; i < columns.length; i++) {
-			t = columns[i].trim();
-			if (t != null) {
-				t = t.toLowerCase();
-				index = t.indexOf(" as ");
+			col = columns[i].trim();
+			if (col != null) {
+				col = col.toLowerCase();
+				index = col.indexOf(" as ");
 				if (index > 0) {
-					t = t.substring(index + 4);
+					col = col.substring(index + 4);
 				} else { // fixed bug V3.0.0.8, process use alias but no as.
-					index = t.indexOf(" ");
+					index = col.indexOf(" ");
 					if (index > 0)
-						t = t.substring(index + 1).trim();
+						col = col.substring(index + 1).trim();
 				}
-				
-				columnIndexMap.put(t, i);
+
+				columnIndexMap.put(col, i);
 			}
 		}
 	}
@@ -124,4 +127,43 @@ public class GroupFunStruct {
 		return getColumnIndexMap().get(column);
 	}
 
+	public void setColumnIndexMap(Map<String, Integer> columnIndexMap) {
+		this.columnIndexMap = columnIndexMap;
+	}
+
+	public List<String> getOrginalSelectColumn() {
+		return orginalSelectColumn;
+	}
+
+	public void appendOrginalSelectColumn(List<String> orginalSelectColumnList) {
+		if (orginalSelectColumnList != null)
+			this.orginalSelectColumn.addAll(orginalSelectColumnList);
+	}
+
+	public void addFirstOrginalSelectColumn(String orginalSelectColumn) {
+		if (orginalSelectColumn == null) return;
+
+		String columns[] = orginalSelectColumn.split(",");
+		String col;
+		int index = -1;
+//		for (int i = 0; i < columns.length; i++) {
+		for (int i = columns.length - 1; i >= 0; i--) {
+			col = columns[i].trim();
+			if (col != null) {
+				col = col.toLowerCase();
+				index = col.indexOf(" as ");
+				if (index > 0) {
+					col = col.substring(index + 4);
+				} else { // fixed bug V3.0.0.8, process use alias but no as.
+					index = col.indexOf(" ");
+					if (index > 0)
+						col = col.substring(index + 1).trim();
+				}
+//				columnIndexMap.put(col, i);
+//				this.orginalSelectColumn.add(col);
+				this.orginalSelectColumn.addFirst(col);
+			}
+		}
+	}
+	
 }
