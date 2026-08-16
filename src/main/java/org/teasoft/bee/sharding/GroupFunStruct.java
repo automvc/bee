@@ -19,8 +19,10 @@ package org.teasoft.bee.sharding;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Struct for SQL group & function in Sharding.
@@ -33,7 +35,8 @@ public class GroupFunStruct {
 //	private FunStruct funStructs[];
 	private List<FunStruct> funStructs;
 
-	private List<String> orginalSelectColumn = new ArrayList<>(); // 3.0.0.8 记录selectString[]原来查的列，以便删除自动加的列
+	private List<String> orginalSelectColumn = new ArrayList<>(); // V3.0.0.8 记录selectString[]原来查的列，以便删除自动加的列
+	private Set<String> addedGroupByColumn = new LinkedHashSet<>(); // V3.0.0.8 记录分组的字段没在select而加的字段
 
 //	private boolean needGroupWhenNoFun;
 
@@ -42,6 +45,8 @@ public class GroupFunStruct {
 	private String columnNames;
 
 	private Map<String, Integer> columnIndexMap = new LinkedHashMap<>();
+
+	private String mainTableForGroupField = "";
 
 	public GroupFunStruct() {}
 
@@ -166,4 +171,20 @@ public class GroupFunStruct {
 		}
 	}
 	
+	public Set<String> getAddedGroupByColumn() {
+		return addedGroupByColumn;
+	}
+
+	public void appendAddedGroupByColumn(String addedGroupByColumn) {
+		this.addedGroupByColumn.add(addedGroupByColumn);
+	}
+
+	public String getMainTableForGroupField() {
+		return mainTableForGroupField;
+	}
+
+	public void setMainTableForGroupField(String mainTableForGroupField) {
+		this.mainTableForGroupField = mainTableForGroupField;
+	}
+
 }
