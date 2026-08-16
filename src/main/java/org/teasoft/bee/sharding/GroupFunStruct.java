@@ -132,9 +132,9 @@ public class GroupFunStruct {
 		return getColumnIndexMap().get(column);
 	}
 
-	public void setColumnIndexMap(Map<String, Integer> columnIndexMap) {
-		this.columnIndexMap = columnIndexMap;
-	}
+//	public void setColumnIndexMap(Map<String, Integer> columnIndexMap) {
+//		this.columnIndexMap = columnIndexMap;
+//	}
 
 	public List<String> getOrginalSelectColumn() {
 		return orginalSelectColumn;
