@@ -18,4 +18,13 @@ public enum FunctionType {
 	public String getName() {
 		return name;
 	}
+	
+	public static FunctionType getByName(String name) {
+		for (FunctionType type : values()) {
+			if (type.name.equals(name)) {
+				return type;
+			}
+		}
+		return null;
+	}
 }
