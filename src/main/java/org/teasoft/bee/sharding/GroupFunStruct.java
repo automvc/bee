@@ -120,6 +120,11 @@ public class GroupFunStruct {
 				}
 
 				columnIndexMap.put(col, i);
+				// 不带表名的也存一份
+				int dotIndex = col.indexOf('.');
+				if (dotIndex > 0) {
+					columnIndexMap.put(col.substring(dotIndex + 1), i);
+				}
 			}
 		}
 	}
