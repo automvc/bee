@@ -97,7 +97,9 @@ iii) Sharding
 15. adjust sharding sql for group by part donot in select list  
 16. remove sharding auto gen column(group by/order by/avg)  
 17. MoreTable sharding sort  
-18. fixed bug:sharding select fun when no group by  
+18. MoreTable Select Avg in Sharding  
+
+19. fixed bug:sharding select fun when no group by  
 
 
 ### **V2.5.10(2.5.x·LTS)**  

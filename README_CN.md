@@ -68,8 +68,9 @@ iii) Sharding
 15. group by字段没有select, sharding需要补列  
 16. 删除sharding时自动补的列(group by/order by/avg)  
 17. MoreTable sharding多表分片时,结果排序支持 
+18. MoreTable sharding分片查询支持AVG  
 
-18. 修复缺陷:sharding选择聚合函数时没有分组时各分片要归并成一组  
+19. 修复缺陷:sharding选择聚合函数时没有分组时各分片要归并成一组  
  
 
 ### **V2.5.10(2.5.x·LTS版)**  
