@@ -64,6 +64,7 @@ https://github.com/automvc/BeePy
 
 ## Newest main Function
 ### **V3.0.0(3.x·LTS)**  
+i) multi-table query/modify support many layer sub table:  
 1. MoreTable select (one-to-one association)  
 2. MoreTable select support (many to one)  
 3. MoreTable select support (one to many)  
@@ -74,21 +75,30 @@ https://github.com/automvc/BeePy
 8. MoreTable join support: update/insert/delete  
 9. update @JoinTable, @FK  
 update @JoinTable:  
-subClass="Student"  
+subClass = "Student"  
 ->
-subClass=Student.class  
+subClass = Student.class  
   
 update @FK:  
-@FK(refBy="id", value="classno")  
+@FK(refBy = "id", value = "classno")  
 ->  
-@FK(mainField="id", subField="classno")  
+@FK(mainField = "id", subField = "classno")  
   
 value -> subField  
 10. MoreTable select support Sharding  
 11. MoreTable insert/update/delete support Sharding  
+
+ii) DDL enhance  
 12. DDL create table(entity -> table) support  @StringLen, @ColumnType  
 13. DDL create table(entity -> table) support  @NotNull, @Unique  
+
+iii) Sharding  
 14. adjust sharding sql for order by part donot in select list  
+15. adjust sharding sql for group by part donot in select list  
+16. remove sharding auto gen column(group by/order by/avg)  
+17. MoreTable sharding sort  
+18. fixed bug:sharding select fun when no group by  
+
 
 ### **V2.5.10(2.5.x·LTS)**  
 1. enhance:  
