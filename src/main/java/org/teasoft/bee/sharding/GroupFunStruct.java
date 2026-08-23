@@ -119,6 +119,7 @@ public class GroupFunStruct {
 						col = col.substring(index + 1).trim();
 				}
 
+				col = col.replace("'", ""); // remove '
 				columnIndexMap.put(col, i);
 				// 不带表名的也存一份
 				int dotIndex = col.indexOf('.');
