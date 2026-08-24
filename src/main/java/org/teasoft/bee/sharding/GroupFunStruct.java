@@ -172,7 +172,8 @@ public class GroupFunStruct {
 				}
 //				columnIndexMap.put(col, i);
 //				this.orginalSelectColumn.add(col);
-				this.orginalSelectColumn.addFirst(col);
+//				this.orginalSelectColumn.addFirst(col);
+				this.orginalSelectColumn.add(0, col);
 			}
 		}
 	}
