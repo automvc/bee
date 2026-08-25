@@ -37,7 +37,7 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 ## 最新功能简介: 
 
 ### **V3.0.0(3.0.x·LTS版)**  
-i) 多表查询增加支持多层子表:  
+**i) 多表查询增加支持多层子表**:  
 1. 多表查询 (一对一关联)  
 2. 多表查询支持 (多对一)  
 3. 多表查询支持 (一对多)  
@@ -60,10 +60,10 @@ i) 多表查询增加支持多层子表:
    value -> subField  
 10. MoreTable select 支持分库分表 Sharding  
 11. MoreTable insert/update/delete Sharding 多表关联插入/更新/删除,支持分库分表   
-ii) DDL增加支持  
+**ii) DDL增加支持**  
 12. DDL create table(entity -> table) support  @StringLen, @ColumnType  
 13. DDL create table(entity -> table) support  @NotNull, @Unique  
-iii) Sharding  
+**iii) Sharding**  
 14. order by字段没有select, sharding需要补列  
 15. group by字段没有select, sharding需要补列  
 16. 删除sharding时自动补的列(group by/order by/avg)  
