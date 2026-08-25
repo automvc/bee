@@ -1,5 +1,5 @@
 /*
- * Copyright 2020-2023 the original author.All rights reserved.
+ * Copyright 2020-2026 the original author.All rights reserved.
  * Kingstar(honeysoft@126.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,13 +32,10 @@ import java.util.Set;
 public class GroupFunStruct {
 
 	private List<String> groupFields;
-//	private FunStruct funStructs[];
 	private List<FunStruct> funStructs;
 
 	private List<String> orginalSelectColumn = new ArrayList<>(); // V3.0.0.8 记录selectString[]原来查的列，以便删除自动加的列
 	private Set<String> addedGroupByColumn = new LinkedHashSet<>(); // V3.0.0.8 记录分组的字段没在select而加的字段
-
-//	private boolean needGroupWhenNoFun;
 
 	// has avg or String[] type need following
 	private boolean hasAvg;
@@ -50,12 +47,6 @@ public class GroupFunStruct {
 
 	public GroupFunStruct() {}
 
-//	public GroupFunStruct(List<String> groupFields, FunStruct[] funStructs) {
-//		super();
-//		this.groupFields = groupFields;
-//		this.funStructs = funStructs;
-//	}
-
 	public List<String> getGroupFields() {
 		return groupFields;
 	}
@@ -64,14 +55,6 @@ public class GroupFunStruct {
 		this.groupFields = groupFields;
 	}
 
-//	public FunStruct[] getFunStructs() {
-//		return funStructs;
-//	}
-//
-//	public void setFunStructs(FunStruct[] funStructs) {
-//		this.funStructs = funStructs;
-//	}
-
 	public List<FunStruct> getFunStructs() {
 		return funStructs;
 	}
@@ -79,14 +62,6 @@ public class GroupFunStruct {
 	public void setFunStructs(List<FunStruct> funStructs) {
 		this.funStructs = funStructs;
 	}
-
-//	public boolean isNeedGroupWhenNoFun() {
-//		return needGroupWhenNoFun;
-//	}
-//
-//	public void setNeedGroupWhenNoFun(boolean needGroupWhenNoFun) {
-//		this.needGroupWhenNoFun = needGroupWhenNoFun;
-//	}
 
 	public boolean isHasAvg() {
 		return hasAvg;
@@ -170,9 +145,6 @@ public class GroupFunStruct {
 					if (index > 0)
 						col = col.substring(index + 1).trim();
 				}
-//				columnIndexMap.put(col, i);
-//				this.orginalSelectColumn.add(col);
-//				this.orginalSelectColumn.addFirst(col);
 				this.orginalSelectColumn.add(0, col);
 			}
 		}
