@@ -46,6 +46,7 @@ public final class DatabaseConst {
 	public static final String DM = "DM DBMS";
 	public static final String Kingbase = "KingbaseES";
 	public static final String GaussDB = "GaussDB";
+	public static final String OpenGauss = "openGauss";
 
 	public static final String OceanBase = "OceanBase";
 

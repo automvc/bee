@@ -119,9 +119,9 @@ public interface BeeSql {
 	public List<Map<String, Object>> selectMapList(String sql);
 
 	/**
-	 * select ResultSet.After using the returned ResultSet results, call HoneyContext.clearConnForSelectRs() to close the connection.
+	 * select ResultSet. After using the returned ResultSet, need call the close method of SelectRsWrap.
 	 * @param sql SQL select statement
 	 * @return ResultSet
 	 */
-	public ResultSet selectRs(String sql);
+	public SelectRsWrap selectRs(String sql);
 }
