@@ -7,11 +7,12 @@
 package org.teasoft.bee.osql;
 
 /**
+ * The interface just have One Method and one param.
  * @author Kingstar
  * @since  3.0.0
  */
 public interface OneMethod1<T> {
 
-	public T doOneMethod(String para1);
+	public T doOneMethod(String param);
 
 }

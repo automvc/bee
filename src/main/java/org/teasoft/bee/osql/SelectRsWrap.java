@@ -37,9 +37,7 @@ public final class SelectRsWrap implements AutoCloseable {
 		this.preparedStatement = preparedStatement;
 	}
 
-	public SelectRsWrap(Connection connection,
-			PreparedStatement preparedStatement,
-			boolean isPostgreSQLJDBCStream,
+	public SelectRsWrap(Connection connection, PreparedStatement preparedStatement, boolean isPostgreSQLJDBCStream,
 			Boolean oldAutoCommitForPostgreSQLJDBCStreamConn) {
 		this.connection = connection;
 		this.preparedStatement = preparedStatement;
@@ -77,7 +75,6 @@ public final class SelectRsWrap implements AutoCloseable {
 
 		try {
 			if (resultSet != null) {
-//				System.out.println("-------------close rs");
 				resultSet.close();
 			}
 		} catch (SQLException e) {
@@ -86,7 +83,6 @@ public final class SelectRsWrap implements AutoCloseable {
 
 		try {
 			if (preparedStatement != null) {
-//				System.out.println("-------------close pst");
 				preparedStatement.close();
 			}
 		} catch (SQLException e) {
@@ -102,10 +98,7 @@ public final class SelectRsWrap implements AutoCloseable {
 
 		try {
 			if (connection != null) {
-//				System.out.println("-------------close conn");
 				connection.close();
-//				System.out.println("------------connection.isClosed(): " + connection.isClosed()); // true
-//				connection.close();
 			}
 		} catch (SQLException e) {
 			if (error == null) error = e;
@@ -143,7 +136,7 @@ public final class SelectRsWrap implements AutoCloseable {
 		void processCommit(Connection connection) throws SQLException {
 			if (connection != null) {
 //				if (getHaveExceptionProcessPostgreSqlRs() == null) {
-//					System.out.println("-------------still do not set setHaveExceptionProcessPostgreSqlRs(..)");
+//					System.out.println("-----still do not set setHaveExceptionProcessPostgreSqlRs(..)");
 //				}
 				if (Boolean.TRUE.equals(getHaveExceptionProcessPostgreSqlRs())) {
 					connection.rollback();
@@ -151,9 +144,6 @@ public final class SelectRsWrap implements AutoCloseable {
 					connection.commit();
 				}
 
-//				if (Boolean.TRUE.equals(getOldAutoCommitForPostgreSQLJDBCStreamConn())) {
-//					connection.setAutoCommit(true);
-//				}
 				if (getOldAutoCommitForPostgreSQLJDBCStreamConn() != null) {
 					connection.setAutoCommit(getOldAutoCommitForPostgreSQLJDBCStreamConn());
 				}

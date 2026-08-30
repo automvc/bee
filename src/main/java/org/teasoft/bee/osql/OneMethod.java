@@ -7,6 +7,7 @@
 package org.teasoft.bee.osql;
 
 /**
+ * The interface just have One Method.
  * @author Kingstar
  * @since  2.5.2
  */
