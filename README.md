@@ -98,8 +98,12 @@ iii) Sharding
 16. remove sharding auto gen column(group by/order by/avg)  
 17. MoreTable sharding sort  
 18. MoreTable Select Avg in Sharding  
+19. update BeeSql selectRs  
 
-19. fixed bug:sharding select fun when no group by  
+20. fixed bug:sharding select fun when no group by  
+
+iv)
+21. support JDK 21 VirtualThread  
 
 
 ### **V2.5.10(2.5.x·LTS)**  

@@ -69,9 +69,12 @@ Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**
 16. 删除sharding时自动补的列(group by/order by/avg)  
 17. MoreTable sharding多表分片时,结果排序支持 
 18. MoreTable sharding分片查询支持AVG  
+19. update BeeSql selectRs  
 
-19. 修复缺陷:sharding选择聚合函数时没有分组时各分片要归并成一组  
- 
+20. 修复缺陷:sharding选择聚合函数时没有分组时各分片要归并成一组  
+
+iv)
+21. 支持JDK 21 VirtualThread虚拟线程  
 
 ### **V2.5.10(2.5.x·LTS版)**  
 1. 增强功能:  
