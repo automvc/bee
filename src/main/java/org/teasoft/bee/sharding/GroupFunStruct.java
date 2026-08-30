@@ -34,8 +34,10 @@ public class GroupFunStruct {
 	private List<String> groupFields;
 	private List<FunStruct> funStructs;
 
-	private List<String> orginalSelectColumn = new ArrayList<>(); // V3.0.0.8 记录selectString[]原来查的列，以便删除自动加的列
-	private Set<String> addedGroupByColumn = new LinkedHashSet<>(); // V3.0.0.8 记录分组的字段没在select而加的字段
+	// V3.0.0.8 reg the selectString[] original query column for delete the automatically added column
+	private List<String> orginalSelectColumn = new ArrayList<>();
+	// V3.0.0.8 the grouped field is not added in the select field
+	private Set<String> addedGroupByColumn = new LinkedHashSet<>();
 
 	// has avg or String[] type need following
 	private boolean hasAvg;
@@ -96,7 +98,7 @@ public class GroupFunStruct {
 
 				col = col.replace("'", ""); // remove '
 				columnIndexMap.put(col, i);
-				// 不带表名的也存一份
+				// reg another one for no table name
 				int dotIndex = col.indexOf('.');
 				if (dotIndex > 0) {
 					columnIndexMap.put(col.substring(dotIndex + 1), i);

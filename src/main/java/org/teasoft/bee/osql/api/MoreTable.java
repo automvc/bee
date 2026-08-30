@@ -32,7 +32,7 @@ import org.teasoft.bee.osql.CommOperate;
 <p> 	public static void main(String[] args) {
 <p> 		MoreTable moreTable = BF.getMoreTable();
 <p> 		Province province = new Province();
-<p> 		List<Province> list1 = moreTable.select(province, 0, 10); // 查询前10条记录
+<p> 		List<Province> list1 = moreTable.select(province, 0, 10); // Query the first 10 records
 <p> 		if (list1 != null) {
 <p> 			for (int i = 0; i < list1.size(); i++)
 <p> 				Logger.info(JacksonJsonUtil.toJson(list1.get(i)));
