@@ -32,6 +32,11 @@ public final class SelectRsWrap implements AutoCloseable {
 	private ResultSet resultSet;
 	private PostgreSQLBehavior postgreSQLBehavior = null; // for PostgreSQL, GaussDB, OpenGauss ...
 
+	public SelectRsWrap(Connection connection, PreparedStatement preparedStatement) {
+		this.connection = connection;
+		this.preparedStatement = preparedStatement;
+	}
+
 	public SelectRsWrap(Connection connection,
 			PreparedStatement preparedStatement,
 			boolean isPostgreSQLJDBCStream,
@@ -99,8 +104,8 @@ public final class SelectRsWrap implements AutoCloseable {
 			if (connection != null) {
 //				System.out.println("-------------close conn");
 				connection.close();
-				System.err.println("------------connection.isClosed(): "+connection.isClosed()); //true
-				connection.close();
+//				System.out.println("------------connection.isClosed(): " + connection.isClosed()); // true
+//				connection.close();
 			}
 		} catch (SQLException e) {
 			if (error == null) error = e;
@@ -118,20 +123,20 @@ public final class SelectRsWrap implements AutoCloseable {
 		private Boolean haveExceptionProcessPostgreSqlRs = null;
 
 //		public PostgreSQLBehavior(boolean isPostgreSQLJDBCStream, Boolean oldAutoCommitForPostgreSQLJDBCStreamConn) {
-		public PostgreSQLBehavior(Boolean oldAutoCommitForPostgreSQLJDBCStreamConn) {
+		PostgreSQLBehavior(Boolean oldAutoCommitForPostgreSQLJDBCStreamConn) {
 //			this.isPostgreSQLJDBCStream = isPostgreSQLJDBCStream;
 			this.oldAutoCommitForPostgreSQLJDBCStreamConn = oldAutoCommitForPostgreSQLJDBCStreamConn;
 		}
 
-		public Boolean getOldAutoCommitForPostgreSQLJDBCStreamConn() {
+		Boolean getOldAutoCommitForPostgreSQLJDBCStreamConn() {
 			return oldAutoCommitForPostgreSQLJDBCStreamConn;
 		}
 
-		public Boolean getHaveExceptionProcessPostgreSqlRs() {
+		Boolean getHaveExceptionProcessPostgreSqlRs() {
 			return haveExceptionProcessPostgreSqlRs;
 		}
 
-		public void setHaveExceptionProcessPostgreSqlRs(Boolean haveExceptionProcessPostgreSqlRs) {
+		void setHaveExceptionProcessPostgreSqlRs(Boolean haveExceptionProcessPostgreSqlRs) {
 			this.haveExceptionProcessPostgreSqlRs = haveExceptionProcessPostgreSqlRs;
 		}
 
@@ -149,7 +154,7 @@ public final class SelectRsWrap implements AutoCloseable {
 //				if (Boolean.TRUE.equals(getOldAutoCommitForPostgreSQLJDBCStreamConn())) {
 //					connection.setAutoCommit(true);
 //				}
-				if(getOldAutoCommitForPostgreSQLJDBCStreamConn()!=null) {
+				if (getOldAutoCommitForPostgreSQLJDBCStreamConn() != null) {
 					connection.setAutoCommit(getOldAutoCommitForPostgreSQLJDBCStreamConn());
 				}
 			}
