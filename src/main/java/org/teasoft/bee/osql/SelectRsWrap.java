@@ -24,6 +24,9 @@ import java.sql.SQLException;
 /**
  * For Select ResuletSet. And close ResultSet/PreparedStatement/Connection with
  * close() method.
+ * 
+ * @author Kingstar
+ * @since  3.0.0
  */
 public final class SelectRsWrap implements AutoCloseable {
 
