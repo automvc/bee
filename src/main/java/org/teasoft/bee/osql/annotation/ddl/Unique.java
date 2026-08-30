@@ -23,6 +23,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * define unique column.
  * @author Kingstar
  * @since  3.0.0
  */
@@ -30,7 +31,4 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Unique {
 
-//	String value();
-
-	// 联合唯一索引呢?
 }

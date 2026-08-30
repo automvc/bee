@@ -23,6 +23,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * define Column Type in ddl.
  * @author Kingstar
  * @since  3.0.0
  */
