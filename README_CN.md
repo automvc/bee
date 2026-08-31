@@ -30,6 +30,8 @@ Bee2.1.8 + Spring boot3.0.8对应版本**2.1.8.boot3.0.8 需要JDK17**
 Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**  
 
 ## Bee主要功能特点介绍：  
+体积小,速度快,功能强. 接近JDBC的速度,**3.0.0** LTS 版本仅969k.  
+
 <img src="illustration/ORM Bee Outline.png">  
 
 [主要功能介绍](../../../bee/blob/master/main-feature.md)  
@@ -332,7 +334,7 @@ OrdersService.java
        <dependency>
 	      <groupId>org.teasoft</groupId>
 	      <artifactId>bee-all</artifactId>
-	      <version>2.5.10</version>
+	      <version>3.0.0</version>
         </dependency>
 		
 	    <!-- Mysql config.You need change it to the real database config. -->
@@ -347,9 +349,9 @@ OrdersService.java
 Gradle
 
 ```xml
-implementation group: 'org.teasoft', name: 'bee-all', version: '2.5.10'
+implementation group: 'org.teasoft', name: 'bee-all', version: '3.0.0'
 //Gradle(Short)
-implementation 'org.teasoft:bee-all:2.5.10'
+implementation 'org.teasoft:bee-all:3.0.0'
 ```
 
 #### 1.2  也可以直接下载jar文件  	
