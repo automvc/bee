@@ -30,7 +30,7 @@ Bee2.1.8 + Spring boot3.0.8对应版本**2.1.8.boot3.0.8 需要JDK17**
 Bee2.2 + Spring boot3.0.13对应版本**2.2.boot3.0.13 需要JDK17**  
 
 ## Bee主要功能特点介绍：  
-体积小,速度快,功能强. 接近JDBC的速度,**3.0.0** LTS 版本仅969k.  
+#### 体积小,速度快,功能强. 接近JDBC的速度,**3.0.0** LTS 版本仅969k.  
 
 <img src="illustration/ORM Bee Outline.png">  
 
